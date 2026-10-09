@@ -1,0 +1,552 @@
+{
+  "trained_utc": "2026-09-21T05:36:31Z",
+  "sample_meta": {
+    "built_utc": "2026-09-20T11:00:00Z",
+    "n_rows": 4027359,
+    "n_events_used": 3021,
+    "n_events_available": 3546,
+    "pos_frac_threshold": 0.25,
+    "cover_min": 0.9,
+    "neg_sample_rate": 0.15,
+    "seed": 42,
+    "n_dry_total": 17519406,
+    "n_dry_kept": 2626606,
+    "sampled_prevalence": 0.34780932119535407,
+    "true_prevalence_weighted": 0.07406900078058243,
+    "features_terrain": [
+      "terrain_slope_deg",
+      "terrain_slope_max_deg",
+      "terrain_relief_m",
+      "terrain_curv_plan",
+      "terrain_curv_prof",
+      "hydro_flowacc_cells",
+      "hydro_twi",
+      "hydro_hand_m",
+      "hydro_chan_km2",
+      "dist_chan_m",
+      "hydro_hand_small_m",
+      "hydro_chan_small_km2",
+      "dist_chan_small_m"
+    ],
+    "features_soil": [],
+    "features_categorical": [],
+    "columns_kept_but_not_features": [
+      "lc_class_cat",
+      "dem_elev_m"
+    ],
+    "geology_dropped": "APSSDI geology is Arunachal-only; the flood training set extends past the state line, so it cannot be used without reintroducing the clip",
+    "landcover_dropped": "ESA WorldCover class meanings do not transfer from floodplain to high mountain: 'permanent water' is river channel at 200 m and glacial lake at 3,000 m, 'bare/sparse' is sandbar then scree. With it in the feature set the highest-scoring cells statewide were glacial lakes and ridges at a median HAND of 360 m",
+    "label_meaning": ">=25% of the 100 m cell showed Sentinel-1 new water on the event date, relative to a same-orbit dry baseline"
+  },
+  "n_rows": 2558425,
+  "n_events": 1883,
+  "features": [
+    "terrain_slope_deg",
+    "terrain_slope_max_deg",
+    "terrain_relief_m",
+    "terrain_curv_plan",
+    "terrain_curv_prof",
+    "hydro_flowacc_cells",
+    "hydro_twi",
+    "hydro_hand_m",
+    "hydro_chan_km2",
+    "dist_chan_m",
+    "hydro_hand_small_m",
+    "hydro_chan_small_km2",
+    "dist_chan_small_m"
+  ],
+  "categorical": [],
+  "params": {
+    "objective": "binary",
+    "n_estimators": 700,
+    "learning_rate": 0.05,
+    "num_leaves": 63,
+    "min_child_samples": 200,
+    "subsample": 0.8,
+    "subsample_freq": 1,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "verbose": -1,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "steep_threshold_deg": 10.0,
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 2156317,
+      "n_test": 402108,
+      "pooled": {
+        "n": 402108,
+        "auc": 0.8812871320745902,
+        "ap": 0.2503337498147607,
+        "prevalence": 0.05525166364042656
+      },
+      "in_arunachal": {
+        "n": 14868,
+        "auc": 0.8952758346586968,
+        "ap": 0.06179363810934868,
+        "prevalence": 0.0056752114363672074
+      },
+      "steep": {
+        "n": 13026,
+        "auc": 0.8678514659976635,
+        "ap": 0.042935554890779506,
+        "prevalence": 0.0011707747097816693
+      }
+    },
+    {
+      "fold": 1,
+      "n_train": 2447104,
+      "n_test": 111321,
+      "pooled": {
+        "n": 111321,
+        "auc": 0.8734210740331019,
+        "ap": 0.5382855920601841,
+        "prevalence": 0.16826870680568226
+      },
+      "in_arunachal": {
+        "n": 18152,
+        "auc": 0.9337247633357143,
+        "ap": 0.02846459971015318,
+        "prevalence": 0.0008970000545891879
+      },
+      "steep": {
+        "n": 13810,
+        "auc": 0.8377759654718482,
+        "ap": 0.08057194321304607,
+        "prevalence": 0.00042462537803747934
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 2104879,
+      "n_test": 453546,
+      "pooled": {
+        "n": 453546,
+        "auc": 0.8716741708516769,
+        "ap": 0.25382908572957436,
+        "prevalence": 0.05626241029545809
+      },
+      "in_arunachal": {
+        "n": 123447,
+        "auc": 0.9189383109780782,
+        "ap": 0.23086620138532632,
+        "prevalence": 0.008256193612225333
+      },
+      "steep": {
+        "n": 54480,
+        "auc": 0.7119420061138881,
+        "ap": 0.03757190532861335,
+        "prevalence": 0.0022078994258376097
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 1601558,
+      "n_test": 956867,
+      "pooled": {
+        "n": 956867,
+        "auc": 0.8020288018628351,
+        "ap": 0.25364823484722787,
+        "prevalence": 0.0671070514429234
+      },
+      "in_arunachal": {
+        "n": 149505,
+        "auc": 0.8242911563638065,
+        "ap": 0.24944086875467122,
+        "prevalence": 0.05296221725538567
+      },
+      "steep": {
+        "n": 20499,
+        "auc": 0.750015941335884,
+        "ap": 0.01509250670589656,
+        "prevalence": 0.0015054906486628942
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 1923842,
+      "n_test": 634583,
+      "pooled": {
+        "n": 634583,
+        "auc": 0.7463330478887733,
+        "ap": 0.2640318357239636,
+        "prevalence": 0.12687157596333876
+      },
+      "in_arunachal": {
+        "n": 22578,
+        "auc": 0.8004248332084465,
+        "ap": 0.02526658194683052,
+        "prevalence": 0.0071046158646849485
+      },
+      "steep": {
+        "n": 14981,
+        "auc": 0.758833740478819,
+        "ap": 0.03752585410103754,
+        "prevalence": 0.0035337614631419704
+      }
+    }
+  ],
+  "pooled_oof": {
+    "all": {
+      "n": 2558425,
+      "auc": 0.80974683135178,
+      "ap": 0.24734582943216965,
+      "prevalence": 0.07867397065962957
+    },
+    "in_arunachal": {
+      "n": 328550,
+      "auc": 0.8568925070097846,
+      "ap": 0.18616166355757618,
+      "prevalence": 0.025483460429542838
+    },
+    "steep": {
+      "n": 116796,
+      "auc": 0.7198934022475556,
+      "ap": 0.027656259451819366,
+      "prevalence": 0.0019240706625523534
+    }
+  },
+  "calibration": {
+    "method": "isotonic, cross-fitted across spatial folds - each fold mapped by a curve fitted only on the other folds, so the reported error is held-out, not in-sample",
+    "ece_before": 0.04018527391578281,
+    "ece_after": 0.012957561676073827,
+    "ece_after_in_arunachal": 0.013891134290941465,
+    "reliability_before": [
+      {
+        "bin": 0,
+        "p_lo": 1.052438046280857e-05,
+        "p_hi": 0.0006236957814776885,
+        "n": 213202,
+        "n_weighted": 1407758.0,
+        "predicted": 0.00031996878586021795,
+        "observed": 0.0017034178154735314
+      },
+      {
+        "bin": 1,
+        "p_lo": 0.0006236957814776885,
+        "p_hi": 0.0020468510788551318,
+        "n": 213198,
+        "n_weighted": 1394732.0,
+        "predicted": 0.001204679211670927,
+        "observed": 0.003364087230729397
+      },
+      {
+        "bin": 2,
+        "p_lo": 0.0020468510788551318,
+        "p_hi": 0.006138978923145481,
+        "n": 213206,
+        "n_weighted": 1356116.0,
+        "predicted": 0.0037309425953158996,
+        "observed": 0.008491899123844333
+      },
+      {
+        "bin": 3,
+        "p_lo": 0.006138978923145481,
+        "p_hi": 0.016475560391407906,
+        "n": 213202,
+        "n_weighted": 1268108.75,
+        "predicted": 0.010499796155923674,
+        "observed": 0.021324671411689887
+      },
+      {
+        "bin": 4,
+        "p_lo": 0.016475560391407906,
+        "p_hi": 0.036891502367829,
+        "n": 213202,
+        "n_weighted": 1105475.25,
+        "predicted": 0.025578489238799792,
+        "observed": 0.050423559514350985
+      },
+      {
+        "bin": 5,
+        "p_lo": 0.036891502367829,
+        "p_hi": 0.06634493122870316,
+        "n": 213199,
+        "n_weighted": 964990.0,
+        "predicted": 0.05055524037079943,
+        "observed": 0.08345164380953064
+      },
+      {
+        "bin": 6,
+        "p_lo": 0.06634493122870316,
+        "p_hi": 0.10596885284388695,
+        "n": 213205,
+        "n_weighted": 873485.0,
+        "predicted": 0.08493663017325366,
+        "observed": 0.11068879494209494
+      },
+      {
+        "bin": 7,
+        "p_lo": 0.10596885284388695,
+        "p_hi": 0.15587044556129478,
+        "n": 213202,
+        "n_weighted": 793865.375,
+        "predicted": 0.12961771020916715,
+        "observed": 0.13948461738070947
+      },
+      {
+        "bin": 8,
+        "p_lo": 0.15587044556129478,
+        "p_hi": 0.22129933465349114,
+        "n": 213202,
+        "n_weighted": 758182.3125,
+        "predicted": 0.18627685725009058,
+        "observed": 0.15435469439784288
+      },
+      {
+        "bin": 9,
+        "p_lo": 0.22129933465349114,
+        "p_hi": 0.3180468392569274,
+        "n": 213202,
+        "n_weighted": 728234.0,
+        "predicted": 0.2663878082903727,
+        "observed": 0.16795975253337528
+      },
+      {
+        "bin": 10,
+        "p_lo": 0.3180468392569274,
+        "p_hi": 0.49302686563218534,
+        "n": 213200,
+        "n_weighted": 664068.3125,
+        "predicted": 0.39539179996315493,
+        "observed": 0.2012368243402834
+      },
+      {
+        "bin": 11,
+        "p_lo": 0.49302686563218534,
+        "p_hi": 0.9653061835162131,
+        "n": 213205,
+        "n_weighted": 481873.0,
+        "predicted": 0.6233182056329892,
+        "observed": 0.34405953973932996
+      }
+    ],
+    "reliability_after": [
+      {
+        "bin": 0,
+        "p_lo": 0.0,
+        "p_hi": 0.0024464821127154687,
+        "n": 195279,
+        "n_weighted": 1287189.0,
+        "predicted": 0.0013970784772813541,
+        "observed": 0.0020113596850209387
+      },
+      {
+        "bin": 1,
+        "p_lo": 0.0024464821127154687,
+        "p_hi": 0.005632983499053494,
+        "n": 230933,
+        "n_weighted": 1508726.5,
+        "predicted": 0.003388617530836794,
+        "observed": 0.0036056896516921907
+      },
+      {
+        "bin": 2,
+        "p_lo": 0.005632983499053494,
+        "p_hi": 0.01349811943202589,
+        "n": 212284,
+        "n_weighted": 1344172.25,
+        "predicted": 0.008758293650146807,
+        "observed": 0.00932841718670818
+      },
+      {
+        "bin": 3,
+        "p_lo": 0.01349811943202589,
+        "p_hi": 0.03226773001914855,
+        "n": 210094,
+        "n_weighted": 1222478.0,
+        "predicted": 0.021235425526665783,
+        "observed": 0.025716618810534587
+      },
+      {
+        "bin": 4,
+        "p_lo": 0.03226773001914855,
+        "p_hi": 0.06443415317721228,
+        "n": 214244,
+        "n_weighted": 1073543.0,
+        "predicted": 0.047932747670036774,
+        "observed": 0.058314386480591326
+      },
+      {
+        "bin": 5,
+        "p_lo": 0.06443415317721228,
+        "p_hi": 0.09707525717996224,
+        "n": 214575,
+        "n_weighted": 970021.0,
+        "predicted": 0.08155927297733358,
+        "observed": 0.08377241500453235
+      },
+      {
+        "bin": 6,
+        "p_lo": 0.09707525717996224,
+        "p_hi": 0.12942989482820458,
+        "n": 212493,
+        "n_weighted": 889710.6875,
+        "predicted": 0.11265063282597373,
+        "observed": 0.10451038238485895
+      },
+      {
+        "bin": 7,
+        "p_lo": 0.12942989482820458,
+        "p_hi": 0.1466784312534971,
+        "n": 208386,
+        "n_weighted": 724353.0,
+        "predicted": 0.1375718241861766,
+        "observed": 0.1619831799472068
+      },
+      {
+        "bin": 8,
+        "p_lo": 0.1466784312534971,
+        "p_hi": 0.16502315740058915,
+        "n": 211950,
+        "n_weighted": 728007.625,
+        "predicted": 0.15556162923062195,
+        "observed": 0.16604358434432992
+      },
+      {
+        "bin": 9,
+        "p_lo": 0.16502315740058915,
+        "p_hi": 0.2034926620695949,
+        "n": 191957,
+        "n_weighted": 665305.0,
+        "predicted": 0.18360245341570275,
+        "observed": 0.16297037022683789
+      },
+      {
+        "bin": 10,
+        "p_lo": 0.2034926620695949,
+        "p_hi": 0.26346311582574644,
+        "n": 242774,
+        "n_weighted": 881226.0,
+        "predicted": 0.2240418072600398,
+        "observed": 0.1476420380742146
+      },
+      {
+        "bin": 11,
+        "p_lo": 0.26346311582574644,
+        "p_hi": 1.0,
+        "n": 213456,
+        "n_weighted": 502155.65625,
+        "predicted": 0.36065575168956826,
+        "observed": 0.32362275965016457
+      }
+    ],
+    "reliability_after_in_arunachal": [
+      {
+        "bin": 0,
+        "p_lo": 0.0,
+        "p_hi": 0.0007190713878186685,
+        "n": 23452,
+        "n_weighted": 152595.34375,
+        "predicted": 0.00046614760582506886,
+        "observed": 0.004338271697134718
+      },
+      {
+        "bin": 1,
+        "p_lo": 0.0007190713878186685,
+        "p_hi": 0.0015328664967710895,
+        "n": 29876,
+        "n_weighted": 193693.65625,
+        "predicted": 0.0010908196254950859,
+        "observed": 0.004992419419702123
+      },
+      {
+        "bin": 2,
+        "p_lo": 0.0015328664967710895,
+        "p_hi": 0.002012817852901915,
+        "n": 28231,
+        "n_weighted": 186121.34375,
+        "predicted": 0.0017549159041212689,
+        "observed": 0.0019772048811695754
+      },
+      {
+        "bin": 3,
+        "p_lo": 0.002012817852901915,
+        "p_hi": 0.0024464821127154687,
+        "n": 10398,
+        "n_weighted": 68878.0,
+        "predicted": 0.002113028489271149,
+        "observed": 0.0011324370896013097
+      },
+      {
+        "bin": 4,
+        "p_lo": 0.0024464821127154687,
+        "p_hi": 0.0027177227523775163,
+        "n": 43489,
+        "n_weighted": 286883.6875,
+        "predicted": 0.002466417804018041,
+        "observed": 0.0018718389200004858
+      },
+      {
+        "bin": 5,
+        "p_lo": 0.0027177227523775163,
+        "p_hi": 0.0035575412444405325,
+        "n": 26151,
+        "n_weighted": 169602.671875,
+        "predicted": 0.0031584881050204013,
+        "observed": 0.004929167897322054
+      },
+      {
+        "bin": 6,
+        "p_lo": 0.0035575412444405325,
+        "p_hi": 0.006790010658817674,
+        "n": 28261,
+        "n_weighted": 179646.0,
+        "predicted": 0.004811052917225308,
+        "observed": 0.00860581385915805
+      },
+      {
+        "bin": 7,
+        "p_lo": 0.006790010658817674,
+        "p_hi": 0.018854528446057582,
+        "n": 29079,
+        "n_weighted": 175579.328125,
+        "predicted": 0.010762722512321032,
+        "observed": 0.018373461239747247
+      },
+      {
+        "bin": 8,
+        "p_lo": 0.018854528446057582,
+        "p_hi": 0.06471237462063568,
+        "n": 27348,
+        "n_weighted": 148512.671875,
+        "predicted": 0.03668850564639306,
+        "observed": 0.04017165855567756
+      },
+      {
+        "bin": 9,
+        "p_lo": 0.06471237462063568,
+        "p_hi": 0.1317962011310069,
+        "n": 27224,
+        "n_weighted": 137163.0,
+        "predicted": 0.09678753149708869,
+        "observed": 0.05703433269815554
+      },
+      {
+        "bin": 10,
+        "p_lo": 0.1317962011310069,
+        "p_hi": 0.20159489250749715,
+        "n": 27300,
+        "n_weighted": 130382.3359375,
+        "predicted": 0.15813242823665022,
+        "observed": 0.06986376121000129
+      },
+      {
+        "bin": 11,
+        "p_lo": 0.20159489250749715,
+        "p_hi": 1.0,
+        "n": 27741,
+        "n_weighted": 84889.328125,
+        "predicted": 0.2688191572707114,
+        "observed": 0.20798844377855166
+      }
+    ],
+    "shipped_curve": "fitted on the full out-of-fold vector"
+  },
+  "ablation_no_landcover": null,
+  "score_meaning": "calibrated probability that a 100 m cell is inundated GIVEN a flood event in its catchment - not an unconditional annual flood chance",
+  "report_from": "fold models (out-of-fold)",
+  "deploy_with": "full.txt + calibrator_isotonic.pkl"
+}
