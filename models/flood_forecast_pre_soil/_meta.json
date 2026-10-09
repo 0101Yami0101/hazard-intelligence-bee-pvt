@@ -1,0 +1,25 @@
+{
+  "event": "a flood from the verified record (build_verified_floods.py: confirmed by the validated radar test, Google's Global Flood Database or a gauge crossing), centred in the ~10 km rain cell, on its date",
+  "valley_factor_mask_share": 0.756,
+  "tree_years": "2015-2023",
+  "calibration_days": "2024-01-01..2025-10-31 (the flood record ends there; before 2026-09-27 this ran to 2026-07-29 and counted Feb-Jul 2026 as flood-free)",
+  "n_tree_rows": 6021784,
+  "n_tree_pos": 1187,
+  "n_cal_rows": 1227440,
+  "n_cal_pos": 207,
+  "day_features": [
+    "WHEN local score",
+    "upstream 3-day rain pct",
+    "upstream 7-day rain pct",
+    "log floodable km2"
+  ],
+  "n_events": 1570,
+  "excluded": "braided-channel-shift suspects (reports/flood_paddy_check.json)",
+  "valley_factor": {
+    "flat (<5 deg)": 1.028045885703922,
+    "hilly (5-15 deg)": 0.16668651652714842,
+    "steep (>=15 deg)": 0.024609780555608685
+  },
+  "valley_factor_days": "2021-01-01..2025-10-31",
+  "replay": "reports/flood_forecast_replay.json"
+}

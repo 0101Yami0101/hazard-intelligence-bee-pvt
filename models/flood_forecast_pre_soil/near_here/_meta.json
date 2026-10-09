@@ -1,0 +1,75 @@
+{
+  "what": "flood chance within 10 km (day, 7 days) and anywhere in Arunachal (day, 7 days)",
+  "truth": "the verified flood record (build_verified_floods.py, PARKED \u00a70x)",
+  "day_model": "models/flood_forecast/day_model.pkl (production, unchanged)",
+  "rain": "Open-Meteo archive scored as the live path scores live rain",
+  "fit": {
+    "from": "2024-01-01",
+    "to": "2025-10-31",
+    "n_days": 670,
+    "near_here_place_days_with_a_flood": 588,
+    "arunachal_days_with_a_flood": 30
+  },
+  "radius_km": 10.0,
+  "truth_end": "2025-10-31",
+  "held_out_test": {
+    "GATE_A_PASS": false,
+    "gate": {
+      "day_in_arunachal": {
+        "A1_pass": false,
+        "A2_pass": false,
+        "A3_pass": true
+      },
+      "week_in_arunachal": {
+        "A1_pass": false,
+        "A2_pass": false,
+        "A3_pass": true
+      },
+      "state_day": {
+        "A1_pass": false,
+        "A2_pass": false,
+        "A3_pass": true
+      },
+      "state_week": {
+        "A1_pass": true,
+        "A2_pass": true,
+        "A3_pass": true
+      }
+    },
+    "report": "flood_near_here_check_verified.json",
+    "truth": "verified flood record"
+  },
+  "status": "APPROXIMATE \u2014 Gate A failed (level not stable between years); shown by the user's decision of 2026-09-27 with the measured error stated",
+  "measured_error": {
+    "source": "production-like test, 2023-01-01..2025-10-31, weekly, inside Arunachal (post-hoc: designed after Gate A failed)",
+    "happened_over_said_low": 0.81,
+    "happened_over_said_high": 6.08,
+    "said_over_happened_total": 0.573,
+    "ranking_auc": 0.893
+  },
+  "confidence": {
+    "evidence": "distinct flood days on record within 10 km, 2015-06-01..2025-10-31",
+    "levels": [
+      "Low",
+      "Floods on record"
+    ],
+    "gate_c_prime_keep_three": false,
+    "measured_by_level": {
+      "on_record": {
+        "place_weeks": 23467,
+        "weeks_with_a_flood": 87,
+        "said": 53.84,
+        "happened_over_said": 1.616,
+        "auc": 0.8498
+      },
+      "none_on_record": {
+        "place_weeks": 86930,
+        "weeks_with_a_flood": 40,
+        "said": 18.96,
+        "happened_over_said": 2.109,
+        "auc": 0.8768
+      }
+    }
+  },
+  "fitted_utc": "2026-09-27T20:26:46Z"
+}
