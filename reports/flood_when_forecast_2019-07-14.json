@@ -1,0 +1,449 @@
+{
+  "date": "2019-07-14",
+  "n_stations": 29,
+  "input_source": "archived IMERG rainfall stack (hindcast path - see module docstring)",
+  "bands": {
+    "SEVERE": ">= 25%",
+    "HIGH": ">= 10%",
+    "MODERATE": ">= 5%",
+    "ELEVATED": ">= 2%",
+    "NORMAL": ">= 0%"
+  },
+  "forecasts": [
+    {
+      "station_code": "002-ubddib",
+      "station_name": "Tuting",
+      "network": "CWC",
+      "probability_pct": 36.01,
+      "alert_band": "SEVERE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.5628,
+      "panel": {
+        "rule": 0.9735,
+        "pooled_tree": 0.472,
+        "transfer_tree": 0.2428
+      }
+    },
+    {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "network": "CWC",
+      "probability_pct": 36.01,
+      "alert_band": "SEVERE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.5767,
+      "panel": {
+        "rule": 0.9721,
+        "pooled_tree": 0.515,
+        "transfer_tree": 0.2428
+      }
+    },
+    {
+      "station_code": "003NEID-3",
+      "station_name": "Pangin",
+      "network": "CWC",
+      "probability_pct": 36.01,
+      "alert_band": "SEVERE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.618,
+      "panel": {
+        "rule": 0.9587,
+        "pooled_tree": 0.5219,
+        "transfer_tree": 0.3735
+      }
+    },
+    {
+      "station_code": "004-UBDDIB",
+      "station_name": "Lemeking",
+      "network": "CWC",
+      "probability_pct": 36.01,
+      "alert_band": "SEVERE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.5173,
+      "panel": {
+        "rule": 0.9302,
+        "pooled_tree": 0.1568,
+        "transfer_tree": 0.4647
+      }
+    },
+    {
+      "station_code": "Aalo_1",
+      "station_name": "Aalo",
+      "network": "NWDP",
+      "probability_pct": 24.46,
+      "alert_band": "HIGH",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.4816,
+      "panel": {
+        "rule": 0.9507,
+        "pooled_tree": 0.0946,
+        "transfer_tree": 0.3993
+      }
+    },
+    {
+      "station_code": "Darak(Kamba)",
+      "station_name": "Darak (Kamba)",
+      "network": "NWDP",
+      "probability_pct": 14.17,
+      "alert_band": "HIGH",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.4514,
+      "panel": {
+        "rule": 0.9832,
+        "pooled_tree": 0.1281,
+        "transfer_tree": 0.2428
+      }
+    },
+    {
+      "station_code": "009-UBDDIB",
+      "station_name": "Namsai",
+      "network": "CWC",
+      "probability_pct": 14.0,
+      "alert_band": "HIGH",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3786,
+      "panel": {
+        "rule": 0.874,
+        "pooled_tree": 0.1241,
+        "transfer_tree": 0.1376
+      }
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "network": "CWC",
+      "probability_pct": 9.73,
+      "alert_band": "MODERATE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3648,
+      "panel": {
+        "rule": 0.9191,
+        "pooled_tree": 0.1241,
+        "transfer_tree": 0.051
+      }
+    },
+    {
+      "station_code": "001NEID3",
+      "station_name": "Rho Basti",
+      "network": "CWC",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3409,
+      "panel": {
+        "rule": 0.8388,
+        "pooled_tree": 0.1136,
+        "transfer_tree": 0.0703
+      }
+    },
+    {
+      "station_code": "002Neid3",
+      "station_name": "Murga Bridge",
+      "network": "CWC",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3473,
+      "panel": {
+        "rule": 0.8388,
+        "pooled_tree": 0.1327,
+        "transfer_tree": 0.0703
+      }
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "network": "CWC",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3546,
+      "panel": {
+        "rule": 0.9183,
+        "pooled_tree": 0.0791,
+        "transfer_tree": 0.0664
+      }
+    },
+    {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "network": "CWC",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3295,
+      "panel": {
+        "rule": 0.8907,
+        "pooled_tree": 0.0417,
+        "transfer_tree": 0.056
+      }
+    },
+    {
+      "station_code": "027-UBDDIB",
+      "station_name": "Seppa",
+      "network": "CWC",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3286,
+      "panel": {
+        "rule": 0.8992,
+        "pooled_tree": 0.0689,
+        "transfer_tree": 0.0178
+      }
+    },
+    {
+      "station_code": "Kamlang_1",
+      "station_name": "Kamlang",
+      "network": "NWDP",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.33,
+      "panel": {
+        "rule": 0.8824,
+        "pooled_tree": 0.0855,
+        "transfer_tree": 0.022
+      }
+    },
+    {
+      "station_code": "Kanubari_1",
+      "station_name": "Kanubari",
+      "network": "NWDP",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3382,
+      "panel": {
+        "rule": 0.9102,
+        "pooled_tree": 0.0858,
+        "transfer_tree": 0.0187
+      }
+    },
+    {
+      "station_code": "Tenga_1",
+      "station_name": "Tenga",
+      "network": "NWDP",
+      "probability_pct": 7.68,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3513,
+      "panel": {
+        "rule": 0.9334,
+        "pooled_tree": 0.0951,
+        "transfer_tree": 0.0253
+      }
+    },
+    {
+      "station_code": "Basar_1",
+      "station_name": "Basar",
+      "network": "NWDP",
+      "probability_pct": 6.21,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3282,
+      "panel": {
+        "rule": 0.8998,
+        "pooled_tree": 0.0387,
+        "transfer_tree": 0.0461
+      }
+    },
+    {
+      "station_code": "Tengapani Bridge_1",
+      "station_name": "Tengapani Bridge",
+      "network": "NWDP",
+      "probability_pct": 6.21,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3258,
+      "panel": {
+        "rule": 0.9126,
+        "pooled_tree": 0.0352,
+        "transfer_tree": 0.0297
+      }
+    },
+    {
+      "station_code": "059-UBDDIB",
+      "station_name": "Pagoda",
+      "network": "CWC",
+      "probability_pct": 5.95,
+      "alert_band": "MODERATE",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.3229,
+      "panel": {
+        "rule": 0.9126,
+        "pooled_tree": 0.0263,
+        "transfer_tree": 0.0297
+      }
+    },
+    {
+      "station_code": "Tissa Camp_1",
+      "station_name": "Tissa Camp",
+      "network": "NWDP",
+      "probability_pct": 5.34,
+      "alert_band": "MODERATE",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3162,
+      "panel": {
+        "rule": 0.85,
+        "pooled_tree": 0.0675,
+        "transfer_tree": 0.0311
+      }
+    },
+    {
+      "station_code": "078-UBDDIB",
+      "station_name": "Pare HEP",
+      "network": "CWC",
+      "probability_pct": 4.7,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.3079,
+      "panel": {
+        "rule": 0.734,
+        "pooled_tree": 0.1845,
+        "transfer_tree": 0.0051
+      }
+    },
+    {
+      "station_code": "070-UBDDIB",
+      "station_name": "Tamen",
+      "network": "CWC",
+      "probability_pct": 4.47,
+      "alert_band": "ELEVATED",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.2819,
+      "panel": {
+        "rule": 0.8117,
+        "pooled_tree": 0.0289,
+        "transfer_tree": 0.0052
+      }
+    },
+    {
+      "station_code": "Changlang",
+      "station_name": "Changlang",
+      "network": "NWDP",
+      "probability_pct": 4.47,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.2817,
+      "panel": {
+        "rule": 0.8018,
+        "pooled_tree": 0.0315,
+        "transfer_tree": 0.0118
+      }
+    },
+    {
+      "station_code": "Changlang_1",
+      "station_name": "Changlang (2nd station)",
+      "network": "NWDP",
+      "probability_pct": 4.47,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.2817,
+      "panel": {
+        "rule": 0.8018,
+        "pooled_tree": 0.0315,
+        "transfer_tree": 0.0118
+      }
+    },
+    {
+      "station_code": "Sagalee_1",
+      "station_name": "Sagalee",
+      "network": "NWDP",
+      "probability_pct": 4.47,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.2817,
+      "panel": {
+        "rule": 0.77,
+        "pooled_tree": 0.0705,
+        "transfer_tree": 0.0047
+      }
+    },
+    {
+      "station_code": "Ziro",
+      "station_name": "Ziro",
+      "network": "NWDP",
+      "probability_pct": 4.47,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.2897,
+      "panel": {
+        "rule": 0.7899,
+        "pooled_tree": 0.0739,
+        "transfer_tree": 0.0052
+      }
+    },
+    {
+      "station_code": "001-UBDDIB",
+      "station_name": "Kibithu",
+      "network": "CWC",
+      "probability_pct": 3.98,
+      "alert_band": "ELEVATED",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.2702,
+      "panel": {
+        "rule": 0.7791,
+        "pooled_tree": 0.0199,
+        "transfer_tree": 0.0118
+      }
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "network": "CWC",
+      "probability_pct": 2.33,
+      "alert_band": "ELEVATED",
+      "means": "P(today is in this river's own wettest 2% of days)",
+      "label_basis": "self-derived top-2%",
+      "raw_blend_score": 0.2541,
+      "panel": {
+        "rule": 0.6865,
+        "pooled_tree": 0.0546,
+        "transfer_tree": 0.0212
+      }
+    },
+    {
+      "station_code": "058-UBDDIB",
+      "station_name": "Doimukh",
+      "network": "CWC",
+      "probability_pct": 1.7,
+      "alert_band": "NORMAL",
+      "means": "P(crosses official CWC danger level today)",
+      "label_basis": "official CWC danger level",
+      "raw_blend_score": 0.2448,
+      "panel": {
+        "rule": 0.7203,
+        "pooled_tree": 0.0072,
+        "transfer_tree": 0.0068
+      }
+    }
+  ]
+}

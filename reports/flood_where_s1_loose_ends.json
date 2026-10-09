@@ -1,0 +1,83 @@
+{
+  "n_checked": 7,
+  "n_targeted": 7,
+  "results": [
+    {
+      "station_code": "002-ubddib",
+      "station_name": "Tuting",
+      "note": "newly-fixed (zero-crossing fallback) -- 2nd retry, orbit 4 doesn't cover Tuting at all (not date-specific)",
+      "flood_date": "2017-07-07",
+      "orbit": 143,
+      "pct_nodata_excluded": 7.27,
+      "pct_water_flood_day": 0.52,
+      "pct_water_baseline_day": 0.2,
+      "pct_new_water_flood_only": 0.48
+    },
+    {
+      "station_code": "003NEID-3",
+      "station_name": "Pangin",
+      "note": "newly-fixed (zero-crossing fallback)",
+      "flood_date": "2019-08-09",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.23,
+      "pct_water_baseline_day": 6.21,
+      "pct_new_water_flood_only": 4.69
+    },
+    {
+      "station_code": "004-UBDDIB",
+      "station_name": "Lemeking",
+      "note": "newly-fixed (zero-crossing fallback)",
+      "flood_date": "2021-08-29",
+      "orbit": 4,
+      "pct_nodata_excluded": 7.32,
+      "pct_water_flood_day": 2.5,
+      "pct_water_baseline_day": 2.97,
+      "pct_new_water_flood_only": 1.57
+    },
+    {
+      "station_code": "009-UBDDIB",
+      "station_name": "Namsai",
+      "note": "newly-fixed (zero-crossing fallback)",
+      "flood_date": "2020-07-12",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.29,
+      "pct_water_baseline_day": 2.9,
+      "pct_new_water_flood_only": 2.81
+    },
+    {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "note": "Yinkiang retry \u2014 first date (2023-08-29) scored exact 0.0%",
+      "flood_date": "2020-06-28",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.35,
+      "pct_water_baseline_day": 6.54,
+      "pct_new_water_flood_only": 2.12
+    },
+    {
+      "station_code": "027-UBDDIB",
+      "station_name": "Seppa",
+      "note": "Seppa \u2014 nearest scene to 2026-07-13 flood day, 2 days off",
+      "flood_date": "2026-07-15",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.34,
+      "pct_water_baseline_day": 2.0,
+      "pct_new_water_flood_only": 1.74
+    },
+    {
+      "station_code": "070-UBDDIB",
+      "station_name": "Tamen",
+      "note": "Tamen \u2014 nearest scene to 2022-07-09 flood day, 2 days off",
+      "flood_date": "2022-07-07",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.68,
+      "pct_water_baseline_day": 7.37,
+      "pct_new_water_flood_only": 2.22
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "note": "D is the actual shipped WHEN score: an equal-weight blend of the rule, B, and C \u2014 real ML weight in production today, not gated behind solo-beats-baseline. A is excluded from the blend (strictly dominated by B, adds no offsetting signal) but stays on record, not deleted. Variant C alone is still a diagnostic label, not a standalone panel candidate \u2014 its role is as an input to D. See FLOOD_WHEN_PILOT_PLAN.md \u00a75/\u00a78. A/B/D are scored by 5-fold year-grouped cross-validation, not a single holdout.",
+  "n_stations": 17,
+  "skipped_stations": {
+    "029-UBDDIB": "(27.016389,92.642222) falls outside the IMERG-indexed grid"
+  },
+  "results": {
+    "001-UBDDIB": {
+      "name": "Kibithu",
+      "baseline_rule": 0.825,
+      "A_per_station": 0.7,
+      "B_pooled_size_aware": 0.813,
+      "C_bigriver_naive_diagnostic": 0.839,
+      "D_blend_shipped": 0.824
+    },
+    "001NEID3": {
+      "name": "Rho Basti",
+      "baseline_rule": 0.812,
+      "A_per_station": 0.581,
+      "B_pooled_size_aware": 0.755,
+      "C_bigriver_naive_diagnostic": 0.808,
+      "D_blend_shipped": 0.808
+    },
+    "002-ubddib": {
+      "name": "Tuting",
+      "baseline_rule": 0.89,
+      "A_per_station": 0.869,
+      "B_pooled_size_aware": 0.896,
+      "C_bigriver_naive_diagnostic": 0.89,
+      "D_blend_shipped": 0.892
+    },
+    "002Neid3": {
+      "name": "Murga Bridge",
+      "baseline_rule": 0.918,
+      "A_per_station": 0.679,
+      "B_pooled_size_aware": 0.899,
+      "C_bigriver_naive_diagnostic": 0.906,
+      "D_blend_shipped": 0.918
+    },
+    "003-UBDDIB": {
+      "name": "Yinkiang",
+      "baseline_rule": 0.901,
+      "A_per_station": 0.48,
+      "B_pooled_size_aware": 0.896,
+      "C_bigriver_naive_diagnostic": 0.908,
+      "D_blend_shipped": 0.9
+    },
+    "003NEID-3": {
+      "name": "Pangin",
+      "baseline_rule": 0.935,
+      "A_per_station": 0.906,
+      "B_pooled_size_aware": 0.934,
+      "C_bigriver_naive_diagnostic": 0.934,
+      "D_blend_shipped": 0.937
+    },
+    "004-UBDDIB": {
+      "name": "Lemeking",
+      "baseline_rule": 0.909,
+      "A_per_station": 0.842,
+      "B_pooled_size_aware": 0.891,
+      "C_bigriver_naive_diagnostic": 0.9,
+      "D_blend_shipped": 0.909
+    },
+    "005-UBDDIB": {
+      "name": "Passighat",
+      "baseline_rule": 0.954,
+      "A_per_station": 0.926,
+      "B_pooled_size_aware": 0.95,
+      "C_bigriver_naive_diagnostic": 0.926,
+      "D_blend_shipped": 0.953
+    },
+    "007NEID3": {
+      "name": "Jollang",
+      "baseline_rule": 0.912,
+      "A_per_station": 0.893,
+      "B_pooled_size_aware": 0.901,
+      "C_bigriver_naive_diagnostic": 0.907,
+      "D_blend_shipped": 0.909
+    },
+    "008-ubddib": {
+      "name": "Miao",
+      "baseline_rule": 0.945,
+      "A_per_station": 0.935,
+      "B_pooled_size_aware": 0.942,
+      "C_bigriver_naive_diagnostic": 0.931,
+      "D_blend_shipped": 0.944
+    },
+    "009-UBDDIB": {
+      "name": "Namsai",
+      "baseline_rule": 0.912,
+      "A_per_station": 0.864,
+      "B_pooled_size_aware": 0.904,
+      "C_bigriver_naive_diagnostic": 0.899,
+      "D_blend_shipped": 0.911
+    },
+    "020-UBDDIB": {
+      "name": "Daporizo",
+      "baseline_rule": 0.885,
+      "A_per_station": 0.104,
+      "B_pooled_size_aware": 0.868,
+      "C_bigriver_naive_diagnostic": 0.876,
+      "D_blend_shipped": 0.882
+    },
+    "027-UBDDIB": {
+      "name": "Seppa",
+      "baseline_rule": 0.898,
+      "A_per_station": 0.853,
+      "B_pooled_size_aware": 0.881,
+      "C_bigriver_naive_diagnostic": 0.886,
+      "D_blend_shipped": 0.897
+    },
+    "058-UBDDIB": {
+      "name": "Doimukh",
+      "baseline_rule": 0.364,
+      "A_per_station": 0.341,
+      "B_pooled_size_aware": 0.225,
+      "C_bigriver_naive_diagnostic": 0.226,
+      "D_blend_shipped": 0.363
+    },
+    "059-UBDDIB": {
+      "name": "Pagoda",
+      "baseline_rule": 0.871,
+      "A_per_station": 0.812,
+      "B_pooled_size_aware": 0.839,
+      "C_bigriver_naive_diagnostic": 0.886,
+      "D_blend_shipped": 0.865
+    },
+    "070-UBDDIB": {
+      "name": "Tamen",
+      "baseline_rule": 0.37,
+      "A_per_station": null,
+      "B_pooled_size_aware": 0.443,
+      "C_bigriver_naive_diagnostic": 0.558,
+      "D_blend_shipped": 0.37
+    },
+    "078-UBDDIB": {
+      "name": "Pare HEP",
+      "baseline_rule": 0.87,
+      "A_per_station": null,
+      "B_pooled_size_aware": null,
+      "C_bigriver_naive_diagnostic": 0.824,
+      "D_blend_shipped": 0.87
+    }
+  }
+}

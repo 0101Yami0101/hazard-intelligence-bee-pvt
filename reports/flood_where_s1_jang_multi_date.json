@@ -1,0 +1,116 @@
+{
+  "aoi": "Jang valley, Tawang",
+  "water_threshold_db": -17.0,
+  "n_dates_checked": 12,
+  "n_dates_total": 13,
+  "results": [
+    {
+      "flood_date": "2019-07-09",
+      "orbit": 150,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250303T235509_20250303T235534_058147_072EBE_9F60_COG.SAFE",
+      "pct_nodata_excluded": 4.28,
+      "pct_water_flood_day": 2.03,
+      "pct_water_baseline_day": 4.74,
+      "pct_new_water_flood_only": 1.29
+    },
+    {
+      "flood_date": "2019-07-14",
+      "orbit": 41,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250224T115734_20250224T115759_058038_072A4F_B044_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 10.84,
+      "pct_water_baseline_day": 19.34,
+      "pct_new_water_flood_only": 8.1
+    },
+    {
+      "flood_date": "2019-08-02",
+      "orbit": 150,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250303T235509_20250303T235534_058147_072EBE_9F60_COG.SAFE",
+      "pct_nodata_excluded": 4.18,
+      "pct_water_flood_day": 2.23,
+      "pct_water_baseline_day": 4.73,
+      "pct_new_water_flood_only": 1.42
+    },
+    {
+      "flood_date": "2020-05-21",
+      "orbit": 41,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250224T115734_20250224T115759_058038_072A4F_B044_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 14.11,
+      "pct_water_baseline_day": 19.34,
+      "pct_new_water_flood_only": 4.03
+    },
+    {
+      "flood_date": "2020-05-23",
+      "orbit": 77,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250226T234652_20250226T234717_058074_072BC7_396C_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 17.4,
+      "pct_water_baseline_day": 22.04,
+      "pct_new_water_flood_only": 4.11
+    },
+    {
+      "flood_date": "2020-06-21",
+      "orbit": 150,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250303T235509_20250303T235534_058147_072EBE_9F60_COG.SAFE",
+      "pct_nodata_excluded": 3.55,
+      "pct_water_flood_day": 2.3,
+      "pct_water_baseline_day": 4.67,
+      "pct_new_water_flood_only": 0.79
+    },
+    {
+      "flood_date": "2020-06-26",
+      "orbit": 41,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250224T115734_20250224T115759_058038_072A4F_B044_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 10.12,
+      "pct_water_baseline_day": 19.34,
+      "pct_new_water_flood_only": 2.03
+    },
+    {
+      "flood_date": "2020-07-21",
+      "orbit": 77,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250226T234652_20250226T234717_058074_072BC7_396C_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 14.43,
+      "pct_water_baseline_day": 22.04,
+      "pct_new_water_flood_only": 2.64
+    },
+    {
+      "flood_date": "2020-07-22",
+      "orbit": 77,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250226T234652_20250226T234717_058074_072BC7_396C_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 14.43,
+      "pct_water_baseline_day": 22.04,
+      "pct_new_water_flood_only": 2.64
+    },
+    {
+      "flood_date": "2021-08-27",
+      "orbit": 150,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250303T235509_20250303T235534_058147_072EBE_9F60_COG.SAFE",
+      "pct_nodata_excluded": 3.39,
+      "pct_water_flood_day": 2.1,
+      "pct_water_baseline_day": 4.72,
+      "pct_new_water_flood_only": 0.61
+    },
+    {
+      "flood_date": "2023-08-24",
+      "orbit": 77,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250226T234652_20250226T234717_058074_072BC7_396C_COG.SAFE",
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 14.14,
+      "pct_water_baseline_day": 22.04,
+      "pct_new_water_flood_only": 2.04
+    },
+    {
+      "flood_date": "2025-08-31",
+      "orbit": 77,
+      "baseline_scene": "S1A_IW_GRDH_1SDV_20250226T234652_20250226T234717_058074_072BC7_396C_COG.SAFE",
+      "pct_nodata_excluded": 0.88,
+      "pct_water_flood_day": 16.03,
+      "pct_water_baseline_day": 22.06,
+      "pct_new_water_flood_only": 8.77
+    }
+  ]
+}

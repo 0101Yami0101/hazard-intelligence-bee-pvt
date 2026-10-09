@@ -1,0 +1,153 @@
+{
+  "what": "WHERE out-of-fold on the VERIFIED events' rows: trained on reported vs verified",
+  "verified_events": 1081,
+  "rows": 1724850,
+  "trained on reported": {
+    "pooled": {
+      "rows": 1724850,
+      "flooded": 864550,
+      "auc": 0.7798
+    },
+    "Arunachal": {
+      "rows": 125363,
+      "flooded": 17842,
+      "auc": 0.868
+    },
+    "steep": {
+      "rows": 44933,
+      "flooded": 378,
+      "auc": 0.6749
+    },
+    "Arunachal_calibration": [
+      {
+        "range": "0-1%",
+        "lo": 0.0,
+        "rows": 75446,
+        "flooded_rows": 1698,
+        "said_pct": 0.237,
+        "happened_pct": 0.344,
+        "happened_over_said": 1.455
+      },
+      {
+        "range": "1-2%",
+        "lo": 0.01,
+        "rows": 6403,
+        "flooded_rows": 791,
+        "said_pct": 1.39,
+        "happened_pct": 2.07,
+        "happened_over_said": 1.489
+      },
+      {
+        "range": "2-5%",
+        "lo": 0.02,
+        "rows": 8881,
+        "flooded_rows": 1760,
+        "said_pct": 3.323,
+        "happened_pct": 3.575,
+        "happened_over_said": 1.076
+      },
+      {
+        "range": "5-10%",
+        "lo": 0.05,
+        "rows": 7242,
+        "flooded_rows": 1717,
+        "said_pct": 7.234,
+        "happened_pct": 4.454,
+        "happened_over_said": 0.616
+      },
+      {
+        "range": "10-20%",
+        "lo": 0.1,
+        "rows": 13538,
+        "flooded_rows": 3537,
+        "said_pct": 14.905,
+        "happened_pct": 5.038,
+        "happened_over_said": 0.338
+      },
+      {
+        "range": "20-100%",
+        "lo": 0.2,
+        "rows": 13853,
+        "flooded_rows": 8339,
+        "said_pct": 26.878,
+        "happened_pct": 18.49,
+        "happened_over_said": 0.688
+      }
+    ],
+    "Arunachal_ece": 0.01728
+  },
+  "trained on verified": {
+    "pooled": {
+      "rows": 1724850,
+      "flooded": 864550,
+      "auc": 0.7811
+    },
+    "Arunachal": {
+      "rows": 125363,
+      "flooded": 17842,
+      "auc": 0.8716
+    },
+    "steep": {
+      "rows": 44933,
+      "flooded": 378,
+      "auc": 0.6537
+    },
+    "Arunachal_calibration": [
+      {
+        "range": "0-1%",
+        "lo": 0.0,
+        "rows": 71357,
+        "flooded_rows": 1206,
+        "said_pct": 0.196,
+        "happened_pct": 0.257,
+        "happened_over_said": 1.314
+      },
+      {
+        "range": "1-2%",
+        "lo": 0.01,
+        "rows": 4162,
+        "flooded_rows": 360,
+        "said_pct": 1.397,
+        "happened_pct": 1.4,
+        "happened_over_said": 1.002
+      },
+      {
+        "range": "2-5%",
+        "lo": 0.02,
+        "rows": 11112,
+        "flooded_rows": 1774,
+        "said_pct": 3.22,
+        "happened_pct": 2.771,
+        "happened_over_said": 0.861
+      },
+      {
+        "range": "5-10%",
+        "lo": 0.05,
+        "rows": 7051,
+        "flooded_rows": 1679,
+        "said_pct": 7.296,
+        "happened_pct": 4.478,
+        "happened_over_said": 0.614
+      },
+      {
+        "range": "10-20%",
+        "lo": 0.1,
+        "rows": 8805,
+        "flooded_rows": 2105,
+        "said_pct": 15.415,
+        "happened_pct": 4.501,
+        "happened_over_said": 0.292
+      },
+      {
+        "range": "20-100%",
+        "lo": 0.2,
+        "rows": 22876,
+        "flooded_rows": 10718,
+        "said_pct": 29.263,
+        "happened_pct": 11.679,
+        "happened_over_said": 0.399
+      }
+    ],
+    "Arunachal_ece": 0.03157
+  }
+}

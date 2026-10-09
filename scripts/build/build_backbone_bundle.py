@@ -35,6 +35,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -80,8 +81,16 @@ GROUPS = {
                                 "hazard would actually reach."),
     "10_context": ("Context & benchmarks", "Official hazard products we are "
                                            "measured against, not trained on."),
-    "11_satellite": ("Satellite", "Radar imagery, held for change detection "
-                                  "work that is not in the shipped models."),
+    "11_gauges": ("River gauges", "Measured river levels and flows — what a "
+                                  "river forecast is trained on and graded "
+                                  "against."),
+    "11_satellite": ("Satellite", "Radar scenes from flood dates, read by the "
+                                  "water test that verifies the flood record."),
+    "15_dfo_flood_records": ("Flood records", "A global archive of dated "
+                                              "large floods — candidates to "
+                                              "verify, not labels."),
+    "16_groundsource": ("Flood reports", "News-derived, dated, located flood "
+                                         "reports — candidates to verify."),
 }
 
 # Every derived layer, with what it means and the units it is in. Written out
@@ -154,19 +163,45 @@ def build_catalogue() -> dict:
         title, purpose = GROUPS[key]
         n, b = dir_stats(d)
         srcs = []
-        sp = d / "_SOURCES.json"
-        if sp.exists():
-            for s in json.loads(sp.read_text(encoding="utf-8")):
+        # Files are counted off the disk, by name, not off the manifest: a
+        # manifest lists what a fetch wrote, and a file since renamed or
+        # replaced would otherwise be counted twice (CWC's first three
+        # stations were re-fetched under their station codes).
+        on_disk = {f.name: f.stat().st_size for f in d.rglob("*") if f.is_file()}
+        # A group may keep one manifest per sub-folder (11_gauges/cwc, /nwdp).
+        for sp in sorted(d.rglob("_SOURCES.json")):
+            entries = json.loads(sp.read_text(encoding="utf-8"))
+            for s in entries:
+                s["files"] = [{"name": f["name"], "bytes": on_disk[f["name"]]}
+                              for f in s.get("files", []) if f.get("name") in on_disk]
+            entries = [s for s in entries if s["files"]]
+            # A fetcher that records once PER STATION (CWC: 21 entries named
+            # "CWC FFS (<station>)") is one source, not 21. Entries are merged
+            # only when three or more in one manifest share the name before
+            # the bracket — "ERA5-Land hourly (Copernicus CDS)" stays itself.
+            base = [re.sub(r"\s*\([^)]*\)\s*$", "", s.get("source", "—")) for s in entries]
+            many = {x for x in base if base.count(x) >= 3}
+            merged: dict[str, dict] = {}
+            for s, bname in zip(entries, base):
                 files = s.get("files", [])
-                srcs.append({
-                    "source": s.get("source", "—"),
-                    "url": s.get("url", ""),
-                    "license": s.get("license", "—"),
-                    "fetched": (s.get("fetched_utc") or "")[:10],
-                    "notes": s.get("notes", ""),
-                    "n_files": len(files),
-                    "bytes": int(sum(f.get("bytes", 0) for f in files)),
-                })
+                name = bname if bname in many else s.get("source", "—")
+                m = merged.setdefault(name, {
+                    "source": name, "url": s.get("url", ""),
+                    "license": s.get("license", "—"), "fetched": "",
+                    "notes": "" if bname in many else s.get("notes", ""),
+                    "n_files": 0, "bytes": 0, "n_fetches": 0, "_seen": set()})
+                # a file two entries both list is one file (and one series)
+                fresh = [f for f in files if f["name"] not in m["_seen"]]
+                m["_seen"] |= {f["name"] for f in fresh}
+                m["fetched"] = max(m["fetched"], (s.get("fetched_utc") or "")[:10])
+                m["n_files"] += len(fresh)
+                m["bytes"] += int(sum(f.get("bytes", 0) for f in fresh))
+                m["n_fetches"] += bool(fresh)
+            for m in merged.values():
+                del m["_seen"]
+                if m["n_fetches"] > 1:
+                    m["source"] = f"{m['source']} ({m['n_fetches']} series)"
+                srcs.append(m)
         groups.append({"key": key, "title": title, "purpose": purpose,
                        "n_files": n, "bytes": b, "sources": srcs})
     return {"groups": groups,
@@ -348,6 +383,207 @@ def rainfall_timeline() -> dict:
             "cells_over_state": meta.get("imerg_cells_over_state")}
 
 
+def _day(ts: float) -> str:
+    return datetime.fromtimestamp(ts, timezone.utc).date().isoformat()
+
+
+def _newest(paths) -> str:
+    paths = [p for p in paths if p.exists()]
+    return _day(max(p.stat().st_mtime for p in paths)) if paths else ""
+
+
+def build_status(layers: dict, lab: dict, tl: dict) -> dict:
+    """What the platform holds today, dataset by dataset: how much, what
+    period it covers, when it last changed, and how it is kept up to date.
+
+    COUNTS AND DATES ONLY — the same rule as the rest of this bundle. No
+    reading, level, coordinate or event is written, only how many there are
+    and what span they cover. Every block is skipped when its files are not
+    on disk, so the bundle describes what is actually there.
+
+    `kept` is one of: "static" (computed once), "archive" (fetched once, on
+    the date shown), "daily" (moved by the daily forecast run).
+    """
+    import pandas as pd
+
+    rows, models = [], []
+
+    def row(name, held, covers, updated, kept, note=""):
+        rows.append({"name": name, "held": held, "covers": covers,
+                     "updated": updated, "kept": kept, "note": note})
+
+    tifs = list((INTERIM / "terrain").glob("*.tif")) + list((INTERIM / "features").glob("*.tif"))
+    if layers:
+        row("Terrain, soil, geology, land cover", f"{len(layers)} layers · 100 m grid",
+            "all of Arunachal", _newest(tifs), "static")
+
+    if tl.get("n_days"):
+        row("Rainfall archive (IMERG)", f"{tl['n_days']:,} days · ~{tl['cell_km']} km",
+            f"{tl['first']} to {tl['last']}", _newest([INTERIM / "rainfall" / "dates.npy"]),
+            "archive", "The landslide trigger's history.")
+
+    om = INTERIM / "rainfall_om"
+    if (om / "dates.npy").exists():
+        d = np.load(om / "dates.npy", allow_pickle=True)
+        npts = len(json.loads((om / "points.json").read_text(encoding="utf-8"))["lat"])
+        row("Live-rain history (Open-Meteo)", f"{npts} points · {len(d):,} days",
+            f"{str(d[0])[:10]} to {str(d[-1])[:10]}", _newest([om / "dates.npy"]), "archive",
+            "The same source the live forecast reads each morning, so a day's rain is "
+            "scored against its own history.")
+
+    sm = INTERIM / "soil_wetness" / "era5land_meta.json"
+    if sm.exists():
+        m = json.loads(sm.read_text(encoding="utf-8"))
+        row("Soil wetness (ERA5-Land)", f"{m['lattice_cells']:,} cells · {m['n_days']:,} days",
+            f"{m['start']} to {m['end']}", _newest([sm]), "archive",
+            "Read by the flood forecast on flat ground.")
+
+    cwc = RAW / "11_gauges" / "cwc"
+    files = sorted(cwc.glob("*_hhs.csv"))
+    if files:
+        n, lo, hi = 0, None, None
+        for f in files:
+            dt_ = pd.read_csv(f, usecols=["datetime"])["datetime"]
+            n += len(dt_)
+            lo = min(lo, dt_.min()) if lo else dt_.min()
+            hi = max(hi, dt_.max()) if hi else dt_.max()
+        row("River levels (CWC)", f"{len(files)} gauges · {n:,} readings",
+            f"{lo[:10]} to {hi[:10]}", _newest(files), "archive",
+            "The history the river models learned from. New readings are read live at "
+            "every forecast run.")
+
+    nw = sorted((RAW / "11_gauges" / "nwdp").glob("*.csv"))
+    if nw:
+        col = "Data Acquisition Time"
+        n, st_, lo, hi, stray = 0, set(), None, None, 0
+        for f in nw:
+            d = pd.read_csv(f, usecols=["Station", col])
+            n += len(d)
+            st_ |= set(d["Station"].unique())
+            when = pd.to_datetime(d[col], format="%d-%m-%Y %H:%M", errors="coerce").dropna()
+            # the span of the record proper: a few readings in the source
+            # carry a stray year (4 stamped 2000 in a 2023-2025 file)
+            start = when.quantile(0.001)
+            stray += int((when < start - pd.Timedelta(days=366)).sum())
+            lo = min(lo, start) if lo is not None else start
+            hi = max(hi, when.max()) if hi is not None else when.max()
+        row("River flows (NWDP)", f"{len(st_)} gauges · {n:,} readings",
+            f"{lo.date()} to {hi.date()}", _newest(nw), "archive",
+            "The history the river models learned from. New readings are read live at "
+            "every forecast run; this network publishes about 2 days late."
+            + (f" {stray} readings carry a much earlier date in the source and are left "
+               "out of the span." if stray else ""))
+
+    sat = sorted((RAW / "11_satellite").glob("*.zip"))
+    if sat:
+        days = sorted(m.group(1) for m in (re.search(r"_(\d{8})T\d{6}_", f.name) for f in sat) if m)
+        span = (f"{days[0][:4]}-{days[0][4:6]}-{days[0][6:]} to "
+                f"{days[-1][:4]}-{days[-1][4:6]}-{days[-1][6:]}") if days else ""
+        row("Radar scenes (Sentinel-1)",
+            f"{len(sat)} scenes · {sum(f.stat().st_size for f in sat)/1e9:.0f} GB",
+            span, _newest(sat), "archive", "Scenes on and around flood dates.")
+
+    dfo = RAW / "15_dfo_flood_records" / "Global_Flood_Records.csv"
+    gs = RAW / "16_groundsource" / "groundsource_2026.parquet"
+    held = []
+    if dfo.exists():
+        held.append(f"{len(pd.read_csv(dfo, usecols=[0])):,} DFO")
+    if gs.exists():
+        import pyarrow.parquet as pq
+        held.append(f"{pq.ParquetFile(gs).metadata.num_rows:,} Groundsource")
+    if held:
+        row("Flood reports to check", " · ".join(held), "worldwide",
+            _newest([dfo, gs]), "archive",
+            "Candidates only: a report counts once radar, a satellite flood map or a "
+            "gauge confirms it.")
+
+    ve = INTERIM / "flood_events" / "verified_events.parquet"
+    if ve.exists():
+        v = pd.read_parquet(ve)
+        day = pd.to_datetime(v["date"])
+        by = v["routes"].astype(str).str.split("[,+|; ]+").explode().value_counts()
+        # ⚠️ No count of what the daily run has logged since
+        # (records/flood_events/new_records.csv). On 2026-10-07 that file held
+        # one entry, and it was false — a single wrong gauge reading from
+        # before the spike filter. A number here would have published it.
+        row("Verified flood record", f"{len(v):,} floods",
+            f"{day.min().date()} to {day.max().date()}", _newest([ve]), "archive",
+            "Confirmed by: " + ", ".join(f"{k} {int(n):,}" for k, n in by.items() if k)
+            + ". Rebuilt by hand; what the daily run finds (a gauge crossing its line, "
+              "a confirmed report) is logged beside it and joins at the next rebuild.")
+
+    if lab.get("positive_cells"):
+        row("Landslide evidence", f"{sum(s['features'] for s in lab['sources']):,} mapped slides",
+            f"{len(lab['sources'])} surveys", _newest([INTERIM / "labels" / "_label_meta.json"]),
+            "static")
+
+    # ── the forecast loop: what is written down, and what has been graded ──
+    loop = {}
+    snap_p = OUT.parent / "flood" / "live_forecast.json"
+    if snap_p.exists():
+        s = json.loads(snap_p.read_text(encoding="utf-8"))
+        tr = s.get("track_record") or {}
+        chk = tr.get("checked") or {}
+        nh = tr.get("near_here") or {}
+        loop = {"issued_on": s.get("issued_on"), "generated_at": s.get("generated_at"),
+                "gauges": len(s.get("rivers", [])),
+                "gauges_offline": sum(1 for r in s.get("rivers", []) if r.get("gauge_offline")),
+                "first_issue": tr.get("first_issue"),
+                "forecasts_logged": tr.get("forecasts_logged"),
+                "forecasts_checked": chk.get("n_forecasts"),
+                "outlook_issues_logged": nh.get("issues_logged"),
+                "outlook_issues_graded": nh.get("issues_graded")}
+        obs = ROOT / "records" / "flood_forecast" / "gauge_observed.csv"
+        if obs.exists():
+            o = pd.read_csv(obs)
+            row("River readings logged live",
+                f"{o['station_code'].nunique()} gauges · {len(o):,} daily highs",
+                f"{o['date'].min()} to {o['date'].max()}", _newest([obs]), "daily",
+                "What the gauges read on each forecast day — the readings forecasts are "
+                "graded against.")
+        row("Flood forecast log",
+            f"{tr.get('forecasts_logged', 0):,} river forecasts",
+            f"{tr.get('first_issue', '')} to {s.get('issued_on', '')}", s.get("issued_on", ""),
+            "daily", f"{chk.get('n_forecasts', 0):,} graded against the gauges so far.")
+
+    # ── the daily run: how many mornings it has run, and which it missed ───
+    runs = {}
+    logs = sorted((ROOT / "logs" / "flood_forecast_daily").glob("20??-??-??.log"))
+    if logs:
+        have = [f.stem for f in logs if "=== done ===" in f.read_text(encoding="utf-8",
+                                                                   errors="replace")]
+        if have:
+            span = pd.date_range(have[0], have[-1]).strftime("%Y-%m-%d")
+            runs = {"first": have[0], "last": have[-1], "n_days_run": len(have),
+                    "missed": [d for d in span if d not in set(have)]}
+
+    # ── the models: what is trained, and when ──────────────────────────────
+    M = ROOT / "models"
+
+    def model(name, files, what):
+        files = [f for f in files if f.exists()]
+        if files:
+            models.append({"name": name, "trained": _newest(files), "what": what})
+
+    model("Landslide — where", [M / "susceptibility_full.txt"],
+          "Where slopes fail, from mapped landslides.")
+    model("Landslide — when", [M / "trigger.json"],
+          "How unusual today's rain is for each place.")
+    model("Flood — when", [M / "flood_forecast" / "day_model.pkl"],
+          "The chance of a flood near a place on a day.")
+    model("Flood — where", [M / "flood_where" / "full.txt"],
+          "Where water goes if a flood comes.")
+    g = M / "flood_when_gauge"
+    lj = json.loads((g / "level.json").read_text(encoding="utf-8")) if (g / "level.json").exists() else {}
+    model("River — chance of reaching its line", sorted(g.glob("lead*.pkl")),
+          f"One model per day ahead, {len(list(g.glob('lead*.pkl')))} days, "
+          f"{lj.get('gauges', 0)} gauges.")
+    model("River — level", sorted(g.glob("level*.pkl")),
+          f"The river's daily high; drawn {lj.get('draw_to_lead', 0)} days ahead.")
+
+    return {"datasets": rows, "loop": loop, "runs": runs, "models": models}
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     print("Building Data Backbone bundle")
@@ -404,6 +640,13 @@ def main() -> None:
     tick(f"rainfall archive: {tl.get('n_days', 0):,} days "
          f"{tl.get('first', '?')} to {tl.get('last', '?')}")
 
+    status = build_status(layers, lab, tl)
+    tick(f"status: {len(status['datasets'])} datasets, {len(status['models'])} models, "
+         f"daily run {status['runs'].get('n_days_run', 0)} mornings "
+         f"({len(status['runs'].get('missed', []))} missed)")
+    for r in status["datasets"]:
+        print(f"      {r['name']:<38} {r['held']:<44} {r['covers']:<26} {r['updated']} {r['kept']}")
+
     # Pipeline stages, with the script count actually on disk behind each.
     def nscripts(sub, pat=""):
         d = ROOT / "scripts" / sub
@@ -418,7 +661,8 @@ def main() -> None:
         "stages": [
             {"name": "Fetch", "scripts": nscripts("fetch"),
              "what": "Pull from source archives — NASA, Copernicus, ESA, GSI, "
-                     "HydroSHEDS, OpenStreetMap and the state portals.",
+                     "HydroSHEDS, OpenStreetMap, the state portals, and the "
+                     "river gauges of CWC and NWDP.",
              "out": f"{cat['total_files']:,} raw files, "
                     f"{cat['total_bytes']/1e9:.1f} GB",
              "note": "Raw files are never edited in place, and every fetch "
@@ -436,8 +680,9 @@ def main() -> None:
              "note": "Terrain and soil are static and computed once; rainfall "
                      "is rebuilt every day."},
             {"name": "Model", "scripts": nscripts("model"),
-             "what": "Fit where-it-fails on mapped evidence; score how unusual "
-                     "today's weather is against each place's own history.",
+             "what": "Fit where-it-fails and where-it-floods on verified "
+                     "evidence; score today's weather and river readings against "
+                     "each place's own history.",
              "out": f"{tl.get('n_days', 0):,} days of rainfall history",
              "note": "Validated by hiding whole regions during training, so "
                      "scores come from ground the model has never seen."},
@@ -472,7 +717,7 @@ def main() -> None:
     def _layers_json(pipe: dict) -> str:
         return json.dumps(
             {"layers": layers, "labels": lab, "demo_rows": demo,
-             "timeline": tl, "pipeline": pipe,
+             "timeline": tl, "pipeline": pipe, "status": status,
              "generated_utc": datetime.now(timezone.utc).isoformat()[:19],
              "privacy": {
                  "rule": "No source dataset can be reconstructed from this "

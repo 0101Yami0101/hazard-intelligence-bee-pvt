@@ -80,14 +80,32 @@ def count(collection: str, start: dt.date, end: dt.date, extra: str = "") -> int
 
 def search(collection: str, start: dt.date, end: dt.date,
            extra: str = "", limit: int = 1000) -> list[dict]:
-    """Page through results — a single request caps out and silently truncates."""
+    """Page through results — a single request caps out and silently truncates.
+
+    IMPORTANT: a request that fails all its retries (network outage, server
+    hiccup) must NOT look the same as a request that succeeded and genuinely
+    found zero results — a caller checking "no scenes found" (e.g. to record
+    a real, permanent no-coverage result) needs to be able to tell those
+    apart. Found and fixed 2026-09-05: this used to collapse both cases to
+    an empty list, which silently mislabeled a batch of real network
+    failures as confirmed "no Sentinel-1 coverage" during a mid-run outage
+    (caught by a same-station re-check right after the outage cleared
+    finding a real scene immediately — see fetch_27/fetch_29's no-coverage
+    handling and docs/design/PARKED_HIMALAYAN_FLOOD_WHERE.md §5e/§5f)."""
     out, skip = [], 0
     while len(out) < limit:
         j = _get({"$filter": _filter(collection, start, end, extra),
                   "$top": 100, "$skip": skip,
                   "$orderby": "ContentDate/Start desc",
                   "$expand": "Attributes"})
-        page = [] if j is None else j.get("value", [])
+        if j is None:
+            if skip == 0:
+                raise RuntimeError(
+                    f"OData search failed after retries (collection={collection}, "
+                    f"{start}..{end}) — treat as unknown/transient, NOT as confirmed "
+                    f"zero results")
+            break  # already have some real results; a trailing failure just ends paging
+        page = j.get("value", [])
         if not page:
             break
         out.extend(page)
@@ -168,13 +186,19 @@ def download_one(prod: dict, tok: str) -> Path | None:
         return dest
     url = DOWNLOAD.format(id=prod["Id"])
     print(f"  downloading {prod['Name'][:60]}... ({prod.get('ContentLength', 0) / 1e9:.2f} GB)")
+    # (connect, read) tuple, not one flat 1800s: a flat timeout only guards
+    # the FIRST byte reliably — a stream that goes silent mid-transfer (hit
+    # in practice: stuck for 10+ minutes at a constant byte count, no
+    # exception raised) can hang well past any reasonable wait. A short read
+    # timeout makes a stall fail fast so the caller's retry loop can recover.
+    TIMEOUT = (30, 90)
     try:
         # Dataspace redirects to a separate download host. requests drops the
         # Authorization header across hosts, so follow the redirect by hand
         # and re-attach the bearer token.
         sess = requests.Session()
         hdr = {"Authorization": f"Bearer {tok}"}
-        r = sess.get(url, headers=hdr, stream=True, timeout=1800,
+        r = sess.get(url, headers=hdr, stream=True, timeout=TIMEOUT,
                      allow_redirects=False)
         hops = 0
         while r.is_redirect or r.status_code in (301, 302, 303, 307, 308):
@@ -184,16 +208,26 @@ def download_one(prod: dict, tok: str) -> Path | None:
             if hops > 5:
                 print("  [fail] too many redirects")
                 return None
-            r = sess.get(nxt, headers=hdr, stream=True, timeout=1800,
+            r = sess.get(nxt, headers=hdr, stream=True, timeout=TIMEOUT,
                          allow_redirects=False)
         with r:
             if not r.ok:
                 print(f"  [fail] HTTP {r.status_code} after {hops} redirect(s)")
                 return None
             tmp = dest.with_suffix(".part")
+            total = prod.get("ContentLength", 0)
+            got = 0
+            import time
+            t0 = last_print = time.time()
             with open(tmp, "wb") as fh:
                 for chunk in r.iter_content(1 << 22):
                     fh.write(chunk)
+                    got += len(chunk)
+                    if time.time() - last_print > 30:
+                        pct = f"{100*got/total:.0f}%" if total else f"{got/1e9:.2f} GB"
+                        print(f"    ... {pct}, {got/1e9:.2f} GB, "
+                              f"{(time.time()-t0):.0f}s elapsed", flush=True)
+                        last_print = time.time()
             tmp.replace(dest)
         print(f"  [ok]   {dest.name} ({dest.stat().st_size / 1e9:.2f} GB)")
         return dest

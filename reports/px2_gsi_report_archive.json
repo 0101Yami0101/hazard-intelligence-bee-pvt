@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-20",
+  "source": "bhusanket.gsi.gov.in/statewiseLandslideReport.html",
+  "method": "scripts/proto/px2_gsi_report_archive.py",
+  "national_catalog_records": 1179,
+  "reports_targeted": 255,
+  "reports_downloaded": 243,
+  "reports_still_missing": 12,
+  "missing_reasons": {"too_large_over_60mb": 5, "http_403": 6, "other": 1},
+  "arunachal_pradesh": {
+    "total_records": 48,
+    "by_project_type": {
+      "Macro scale studies": 18,
+      "Meso scale studies": 3,
+      "Site Specific Studies": 16,
+      "Post Disaster Studies": 11
+    },
+    "event_relevant_categories": ["Post Disaster Studies", "Site Specific Studies"],
+    "event_relevant_reports": 27,
+    "event_relevant_downloaded": 25,
+    "event_relevant_with_date_signal": 20,
+    "estimated_new_events_low": 25,
+    "estimated_new_events_high": 40,
+    "prior_dated_events_nasa_glc": 72,
+    "estimated_new_total_low": 97,
+    "estimated_new_total_high": 112,
+    "calibration_note": "PDLS_2024_50185.pdf: automated n_date_of_initiation=4 exactly matched manual read of 4 distinct events. 5 more narrative reports (Bomdila 1973, Jamiri/Munna Camp 1989, Minutang 1948, Bhalukpong 2016, NH-313 Abrali 2024) spot-verified by direct reading."
+  },
+  "himalayan_region_post_disaster_studies_only": {
+    "states_covered": ["Arunachal Pradesh", "Uttarakhand", "Sikkim", "UT_Jammu & Kashmir",
+                         "Himachal Pradesh", "Nagaland", "Meghalaya", "Assam", "Mizoram",
+                         "Manipur", "UT_Ladakh"],
+    "total_reports": 215,
+    "downloaded": 209,
+    "with_date_signal": 156,
+    "by_state_with_date_signal": {
+      "Uttarakhand": 69,
+      "Sikkim": 17,
+      "UT_Jammu & Kashmir": 14,
+      "Himachal Pradesh": 11,
+      "Nagaland": 10,
+      "Arunachal Pradesh": 10,
+      "Meghalaya": 9,
+      "Assam": 5,
+      "Mizoram": 5,
+      "Manipur": 5,
+      "UT_Ladakh": 1
+    },
+    "estimated_new_events_low": 200,
+    "estimated_new_events_high": 280
+  },
+  "verdict": {
+    "arunachal_alone": "Still short of what a trustworthy ML trigger model needs — same conclusion as at 72 events (5-fold CV would leave too few per fold).",
+    "himalayan_pooled": "A different regime — enough to seriously attempt a properly cross-validated tree-based model (not deep learning), trained on the pool and fine-tuned to Arunachal.",
+    "deep_learning": "Not justified at this scale either way; would want low thousands, and rainfall input resolution is a separate limiting factor."
+  },
+  "next_step_not_done": "Read the ~176 flagged reports (20 Arunachal + 156 regional) one at a time and extract each into a structured event table. data/interim/gsi_reports/scan_results.json is the exact queue — filter has_date_signal: true. PDFs are not cached in the repo (re-download via the script; URLs are deterministic from state/type/accession-number).",
+  "full_writeup": [
+    "docs/data_research/DATA_VERIFICATION.md §D",
+    "docs/design/TEMPORAL_INVENTORY_ATTEMPTS.md"
+  ],
+  "memory": ["gsi-report-archive-open", "himalayan-pooling-is-the-live-ml-route", "only-90-dated-landslide-events-exist"]
+}

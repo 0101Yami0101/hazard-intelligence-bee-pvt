@@ -65,7 +65,7 @@ BASE = ASSETS / "base"
 OUT = ASSETS / "landslide"
 # ⚠️ points.json and clim_quantiles.npz live in BASE, not here. Rainfall is
 # the one input BOTH hazards read — the landslide trigger and the flood
-# catchment signal are the same 97 points against the same climatology.
+# catchment signal are the same points against the same climatology.
 # Filing them under one hazard would make the other import from it.
 OM = INTERIM / "rainfall_om"
 DOWNSAMPLE = 5                     # 100 m -> 500 m
@@ -145,7 +145,7 @@ def main() -> None:
         ez[eok] = np.clip(np.round(elev[eok]), 0, 65534).astype(np.uint16)
         np.savez_compressed(BASE / "elevation.npz", elev=ez)
         print(f"  elevation       {h}x{w}  {elev[eok].min():.0f}-{elev[eok].max():.0f} m  "
-              f"{(OUT/'elevation.npz').stat().st_size/1e6:.2f} MB")
+              f"{(BASE/'elevation.npz').stat().st_size/1e6:.2f} MB")
     else:
         print(f"  [!] {dem_src.name} missing — 3D view will fall back to flat")
 
@@ -170,10 +170,14 @@ def main() -> None:
         (BASE / "points.json").write_text(json.dumps(pts, indent=2))
         print(f"  clim_quantiles  {N_Q} breakpoints x {P.shape[1]} points x "
               f"{len(FEATURES)} feats  "
-              f"{(OUT/'clim_quantiles.npz').stat().st_size/1e6:.2f} MB")
+              f"{(BASE/'clim_quantiles.npz').stat().st_size/1e6:.2f} MB")
 
         plat = np.array(pts["lat"], dtype=np.float32)
         plon = np.array(pts["lon"], dtype=np.float32)
+        # `near` below is uint8, so an index must fit in 0-255 — true today
+        # (219 points) but a silent wrap, not a crash, the day this grid gets
+        # denser again. Fail loudly instead.
+        assert len(plat) <= 256, f"{len(plat)} query points overflows uint8 near-point index"
         # Nearest query point per pixel. Chunked so we never build an
         # (h*w x n_points) array in one go.
         near = np.empty((h, w), dtype=np.uint8)
@@ -186,6 +190,14 @@ def main() -> None:
         np.savez_compressed(OUT / "nearest_point.npz", near=near)
         print(f"  nearest_point   {len(plat)} points  "
               f"{(OUT/'nearest_point.npz').stat().st_size/1e6:.2f} MB")
+
+        # FloodSense's catchments also hold POSITIONS in points.json. When the
+        # points changed (97 -> 219, 2026-09-22) that mapping was built by a
+        # different script and nothing re-ran it, so every catchment read some
+        # other place's rain for five days. Re-map it here, with the points.
+        if (ASSETS / "flood" / "catchments.npz").exists():
+            from build_flood_layers import rain_points_only
+            rain_points_only()
 
     # ── vectors ──────────────────────────────────────────────────────────
     d = gpd.read_file(BOUNDARIES / "gadm_district-boundary_vector_arunachal.gpkg")
@@ -241,7 +253,7 @@ def main() -> None:
         r.to_file(BASE / "roads.geojson", driver="GeoJSON")
         print(f"  roads      {len(r):,} inside the state "
               f"(clipped from {before:,} in the bbox)  "
-              f"{(OUT/'roads.geojson').stat().st_size/1e6:.2f} MB")
+              f"{(BASE/'roads.geojson').stat().st_size/1e6:.2f} MB")
 
     # ── rivers: main stems, also clipped ─────────────────────────────────
     hp = HYDROLOGY / "hydrosheds_rivers_vector_arunachal.gpkg"
@@ -257,7 +269,7 @@ def main() -> None:
         rv.to_file(BASE / "rivers.geojson", driver="GeoJSON")
         print(f"  rivers     {len(rv):,} inside the state "
               f"(clipped from {before:,})  "
-              f"{(OUT/'rivers.geojson').stat().st_size/1e6:.2f} MB")
+              f"{(BASE/'rivers.geojson').stat().st_size/1e6:.2f} MB")
 
     # ── an inverted mask: everything OUTSIDE the displayed outline ───────
     # Arunachal pinches to a narrow neck near 95E where Assam pushes up, so
@@ -281,7 +293,7 @@ def main() -> None:
                  if str(nm) not in ("nan", "None", "")]
         (BASE / "towns.json").write_text(json.dumps(towns, separators=(",", ":")))
         print(f"  towns      {len(towns):,} searchable  "
-              f"{(OUT/'towns.json').stat().st_size/1e6:.2f} MB")
+              f"{(BASE/'towns.json').stat().st_size/1e6:.2f} MB")
 
     # ── the landslide inventory itself — the project's strongest evidence ──
     # Centroids, 4 dp (~11 m), so ~37,300 real mapped failures ship in ~0.6 MB.

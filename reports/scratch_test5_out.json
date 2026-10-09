@@ -1,0 +1,48 @@
+{
+  "note": "Real CWC gauge flood-crossing dates (2000-2018, Himachal/Uttarakhand/J&K/Sub-Himalayan WB) cross-checked against Google's Global Flood Database. gfd_match=True means a GFD image exists near that date/place at all; real_new_flood=True means it shows an actual new (non-permanent) flooded pixel at the station's own coordinates \u2014 two independent real data sources agreeing.",
+  "n_candidates": 5,
+  "n_gfd_match": 0,
+  "n_real_new_flood": 0,
+  "results": [
+    {
+      "station_code": "003-UYDDEL",
+      "lat": 30.954722222222223,
+      "lon": 77.85305555555556,
+      "peak_date": "2006-03-11",
+      "span": "2006-03-11..2006-03-11",
+      "gfd_match": false
+    },
+    {
+      "station_code": "003-UYDDEL",
+      "lat": 30.954722222222223,
+      "lon": 77.85305555555556,
+      "peak_date": "2007-04-16",
+      "span": "2007-04-16..2007-04-16",
+      "gfd_match": false
+    },
+    {
+      "station_code": "013-HGDDDN",
+      "lat": 29.937305555555557,
+      "lon": 78.70244444444445,
+      "peak_date": "2000-08-16",
+      "span": "2000-06-16..2000-10-15",
+      "gfd_match": false
+    },
+    {
+      "station_code": "013-HGDDDN",
+      "lat": 29.937305555555557,
+      "lon": 78.70244444444445,
+      "peak_date": "2001-08-14",
+      "span": "2001-06-16..2001-10-11",
+      "gfd_match": false
+    },
+    {
+      "station_code": "013-HGDDDN",
+      "lat": 29.937305555555557,
+      "lon": 78.70244444444445,
+      "peak_date": "2002-08-16",
+      "span": "2002-06-16..2002-10-15",
+      "gfd_match": false
+    }
+  ]
+}

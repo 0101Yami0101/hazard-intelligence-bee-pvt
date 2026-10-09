@@ -1,0 +1,78 @@
+{
+  "date": "2024-01-15",
+  "means": "per 100 m patch: chance a reported, satellite-confirmed flood puts water on it today. A floor - unreported floods are not in the record, and inside Arunachal the replay found the absolute level still runs ~3x high; 'times normal' is the robust read",
+  "expected_flooded_km2_in_state": 0.017409877851605415,
+  "normal_expected_flooded_km2_in_state": 0.22560791696406882,
+  "areas_most_ground_at_risk": [
+    {
+      "lat": 27.95,
+      "lon": 95.45,
+      "expected_flooded_km2_today": 0.0011,
+      "times_normal": 0.1,
+      "floodable_km2": 13.8
+    },
+    {
+      "lat": 27.75,
+      "lon": 95.85,
+      "expected_flooded_km2_today": 0.0008,
+      "times_normal": 0.1,
+      "floodable_km2": 10.1
+    },
+    {
+      "lat": 27.85,
+      "lon": 95.45,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 21.3
+    },
+    {
+      "lat": 27.55,
+      "lon": 95.95,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 8.9
+    },
+    {
+      "lat": 27.85,
+      "lon": 96.05,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 8.9
+    },
+    {
+      "lat": 27.45,
+      "lon": 96.05,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 8.6
+    },
+    {
+      "lat": 27.65,
+      "lon": 95.85,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 8.5
+    },
+    {
+      "lat": 27.85,
+      "lon": 95.95,
+      "expected_flooded_km2_today": 0.0007,
+      "times_normal": 0.1,
+      "floodable_km2": 9.6
+    },
+    {
+      "lat": 28.05,
+      "lon": 95.45,
+      "expected_flooded_km2_today": 0.0006,
+      "times_normal": 0.1,
+      "floodable_km2": 7.7
+    },
+    {
+      "lat": 27.95,
+      "lon": 95.35,
+      "expected_flooded_km2_today": 0.0006,
+      "times_normal": 0.1,
+      "floodable_km2": 7.6
+    }
+  ]
+}

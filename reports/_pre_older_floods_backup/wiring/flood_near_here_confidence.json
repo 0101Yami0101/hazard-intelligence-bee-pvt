@@ -1,0 +1,51 @@
+{
+  "what": "Gate C\u2032: evidence levels (flood days on record within 10 km, up to 2022) vs how the weekly near-here chance did on 2023-01-01..2025-10-31",
+  "levels": "High >= 3 days, Medium 1-2, Low 0",
+  "by_level": {
+    "High": {
+      "places": 56,
+      "place_weeks": 8232,
+      "weeks_with_a_flood": 60,
+      "said": 32.32,
+      "said_over_happened": 0.539,
+      "auc": 0.8231,
+      "measurable": true
+    },
+    "Medium": {
+      "places": 108,
+      "place_weeks": 15876,
+      "weeks_with_a_flood": 24,
+      "said": 10.37,
+      "said_over_happened": 0.432,
+      "auc": 0.8572,
+      "measurable": true
+    },
+    "Low": {
+      "places": 587,
+      "place_weeks": 86289,
+      "weeks_with_a_flood": 43,
+      "said": 17.92,
+      "said_over_happened": 0.417,
+      "auc": 0.8535,
+      "measurable": true
+    }
+  },
+  "keep_high_and_medium_separate": false,
+  "production_like_two_levels": {
+    "design": "post-hoc, for the label text: curves re-fitted yearly on the latest two years; evidence counted from records before each graded year",
+    "on_record": {
+      "place_weeks": 24790,
+      "weeks_with_a_flood": 87,
+      "said": 54.32,
+      "happened_over_said": 1.602,
+      "auc": 0.8589
+    },
+    "none_on_record": {
+      "place_weeks": 85607,
+      "weeks_with_a_flood": 40,
+      "said": 20.03,
+      "happened_over_said": 1.997,
+      "auc": 0.8675
+    }
+  }
+}

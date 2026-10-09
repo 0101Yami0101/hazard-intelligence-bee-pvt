@@ -1,0 +1,346 @@
+{
+  "protocol": "docs/design/OLDER_FLOODS_TEST.md \u00a72",
+  "gates": {
+    "G1_region_gain_min": 0.01,
+    "G3_arunachal_gain_min": -0.005,
+    "G4_near_here_drop_max": 0.005,
+    "tie_within": 0.002
+  },
+  "inputs_reproduce_production": {
+    "when_max_diff": 0.0,
+    "when_nan_pattern_same": true,
+    "up_r3_max_diff": 0.0,
+    "up_r3_nan_pattern_same": true,
+    "up_r7_max_diff": 0.0,
+    "up_r7_nan_pattern_same": true
+  },
+  "fits": {
+    "baseline": {
+      "n_tree_rows": 4015744,
+      "n_tree_pos": 903,
+      "n_cal_rows": 1337360,
+      "n_cal_pos": 159,
+      "soil_model": {
+        "n_tree_rows": 4015744,
+        "n_tree_pos": 903,
+        "n_cal_rows": 1337360,
+        "n_cal_pos": 159
+      }
+    },
+    "+2010-14": {
+      "n_tree_rows": 7360976,
+      "n_tree_pos": 1120,
+      "n_cal_rows": 1337360,
+      "n_cal_pos": 159,
+      "soil_model": {
+        "n_tree_rows": 7360976,
+        "n_tree_pos": 1120,
+        "n_cal_rows": 1337360,
+        "n_cal_pos": 159
+      }
+    },
+    "+2003-14": {
+      "n_tree_rows": 12045400,
+      "n_tree_pos": 1165,
+      "n_cal_rows": 1337360,
+      "n_cal_pos": 159,
+      "soil_model": {
+        "n_tree_rows": 12045400,
+        "n_tree_pos": 1165,
+        "n_cal_rows": 1337360,
+        "n_cal_pos": 159
+      }
+    }
+  },
+  "areas": {
+    "region": {
+      "n_floods": 332,
+      "n_flood_days": 126,
+      "timing_auc": {
+        "baseline": 0.889,
+        "+2010-14": 0.9093,
+        "+2003-14": 0.9086
+      },
+      "gain": {
+        "+2010-14": {
+          "gain": 0.020269800168622624,
+          "ci975": [
+            0.011721259723439868,
+            0.02955685422528446
+          ],
+          "n_groups": 126
+        },
+        "+2003-14": {
+          "gain": 0.01956974669121532,
+          "ci975": [
+            0.011087173183368725,
+            0.02871831271623487
+          ],
+          "n_groups": 126
+        }
+      }
+    },
+    "arunachal": {
+      "n_floods": 44,
+      "n_flood_days": 33,
+      "timing_auc": {
+        "baseline": 0.8456,
+        "+2010-14": 0.8665,
+        "+2003-14": 0.8734
+      },
+      "gain": {
+        "+2010-14": {
+          "gain": 0.020918089297378765,
+          "ci975": [
+            -0.007478028404884488,
+            0.05700832070066094
+          ],
+          "n_groups": 33
+        },
+        "+2003-14": {
+          "gain": 0.027743970944708526,
+          "ci975": [
+            0.007780309192541094,
+            0.052549183022392885
+          ],
+          "n_groups": 33
+        }
+      }
+    }
+  },
+  "near_here_week_in_arunachal": {
+    "baseline": {
+      "auc": 0.893,
+      "n_with_flood": 127,
+      "said_over_happened": 0.585
+    },
+    "+2010-14": {
+      "auc": 0.8619,
+      "n_with_flood": 127,
+      "said_over_happened": 0.624
+    },
+    "+2003-14": {
+      "auc": 0.8901,
+      "n_with_flood": 127,
+      "said_over_happened": 0.609
+    }
+  },
+  "verdict": {
+    "+2010-14": {
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "G4": false,
+      "pass": false
+    },
+    "+2003-14": {
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "G4": true,
+      "pass": true
+    }
+  },
+  "ships": "+2003-14",
+  "diagnostics": {
+    "verified_floods_per_year": {
+      "region": {
+        "2003": 1,
+        "2004": 2,
+        "2006": 4,
+        "2007": 12,
+        "2008": 22,
+        "2009": 13,
+        "2010": 23,
+        "2011": 21,
+        "2012": 87,
+        "2013": 1,
+        "2014": 140,
+        "2015": 186,
+        "2016": 224,
+        "2017": 226,
+        "2018": 181,
+        "2019": 105,
+        "2020": 237,
+        "2021": 63,
+        "2022": 186,
+        "2023": 163,
+        "2024": 178,
+        "2025": 104,
+        "2026": 6
+      },
+      "arunachal": {
+        "2010": 1,
+        "2011": 1,
+        "2012": 14,
+        "2013": 1,
+        "2014": 22,
+        "2015": 47,
+        "2016": 59,
+        "2017": 39,
+        "2018": 11,
+        "2019": 19,
+        "2020": 37,
+        "2021": 10,
+        "2022": 9,
+        "2023": 3,
+        "2024": 18,
+        "2025": 23,
+        "2026": 6
+      }
+    },
+    "record_completeness_top1pct_wet_monsoon_cell_days": {
+      "threshold_when_score": 0.4603,
+      "by_year": {
+        "2003": {
+          "wettest_cell_days": 3710,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2004": {
+          "wettest_cell_days": 6463,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2005": {
+          "wettest_cell_days": 1939,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2006": {
+          "wettest_cell_days": 1156,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2007": {
+          "wettest_cell_days": 4726,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2008": {
+          "wettest_cell_days": 2618,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2009": {
+          "wettest_cell_days": 2375,
+          "with_a_verified_flood_pct": 0.042
+        },
+        "2010": {
+          "wettest_cell_days": 2832,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2011": {
+          "wettest_cell_days": 3142,
+          "with_a_verified_flood_pct": 0.095
+        },
+        "2012": {
+          "wettest_cell_days": 5499,
+          "with_a_verified_flood_pct": 0.073
+        },
+        "2013": {
+          "wettest_cell_days": 3139,
+          "with_a_verified_flood_pct": 0.0
+        },
+        "2014": {
+          "wettest_cell_days": 2521,
+          "with_a_verified_flood_pct": 0.119
+        },
+        "2015": {
+          "wettest_cell_days": 1829,
+          "with_a_verified_flood_pct": 0.219
+        },
+        "2016": {
+          "wettest_cell_days": 2472,
+          "with_a_verified_flood_pct": 0.081
+        },
+        "2017": {
+          "wettest_cell_days": 5868,
+          "with_a_verified_flood_pct": 0.204
+        },
+        "2018": {
+          "wettest_cell_days": 1365,
+          "with_a_verified_flood_pct": 0.366
+        },
+        "2019": {
+          "wettest_cell_days": 4761,
+          "with_a_verified_flood_pct": 0.105
+        },
+        "2020": {
+          "wettest_cell_days": 3229,
+          "with_a_verified_flood_pct": 0.526
+        },
+        "2021": {
+          "wettest_cell_days": 3603,
+          "with_a_verified_flood_pct": 0.056
+        },
+        "2022": {
+          "wettest_cell_days": 2753,
+          "with_a_verified_flood_pct": 0.472
+        },
+        "2023": {
+          "wettest_cell_days": 3586,
+          "with_a_verified_flood_pct": 0.084
+        },
+        "2024": {
+          "wettest_cell_days": 5863,
+          "with_a_verified_flood_pct": 0.563
+        },
+        "2025": {
+          "wettest_cell_days": 3380,
+          "with_a_verified_flood_pct": 0.089
+        }
+      }
+    },
+    "timing_by_terrain_posthoc": {
+      "flat (<5 deg)": {
+        "n_floods": 298,
+        "n_flood_days": 111,
+        "timing_auc": {
+          "baseline": 0.8959,
+          "+2010-14": 0.8973,
+          "+2003-14": 0.9009
+        },
+        "gain": {
+          "+2010-14": {
+            "gain": 0.001386027965864245,
+            "ci975": [
+              -0.007076767639806176,
+              0.009380486120657068
+            ],
+            "n_groups": 111
+          },
+          "+2003-14": {
+            "gain": 0.004952097865912327,
+            "ci975": [
+              -0.0016702443629451286,
+              0.011438229907980716
+            ],
+            "n_groups": 111
+          }
+        }
+      },
+      "steep (>=15 deg)": {
+        "n_floods": 29,
+        "n_flood_days": 23,
+        "timing_auc": {
+          "baseline": 0.8353,
+          "+2010-14": 0.8595,
+          "+2003-14": 0.8643
+        },
+        "gain": {
+          "+2010-14": {
+            "gain": 0.02424354776084483,
+            "ci975": [
+              -0.01391560601454686,
+              0.06798809939942808
+            ],
+            "n_groups": 23
+          },
+          "+2003-14": {
+            "gain": 0.029007156933697806,
+            "ci975": [
+              0.006928402571647654,
+              0.04827884021867687
+            ],
+            "n_groups": 23
+          }
+        }
+      }
+    }
+  }
+}

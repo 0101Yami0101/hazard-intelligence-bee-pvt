@@ -1,0 +1,748 @@
+{
+  "method": "CWC published danger level where available (13/18 stations); self-derived top-2%-of-history label elsewhere \u2014 see flood_stations.py for which is which per station",
+  "station_location": "real per-station coordinates (layer-station-geo endpoint) \u2014 see flood_stations.py",
+  "n_stations": 18,
+  "skipped_stations": [
+    "029-UBDDIB"
+  ],
+  "stations": {
+    "001-UBDDIB": {
+      "station_code": "001-UBDDIB",
+      "station_name": "Kibithu",
+      "n_daily_readings": 7016,
+      "date_range": [
+        "1995-02-15",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 38
+      },
+      "backtest": {
+        "n_days_scored": 6983,
+        "auc_tie_corrected": 0.831,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 81.6
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 52.6
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 44.7
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 15.8
+          }
+        ]
+      }
+    },
+    "001NEID3": {
+      "station_code": "001NEID3",
+      "station_name": "Rho Basti",
+      "n_daily_readings": 4451,
+      "date_range": [
+        "2005-06-01",
+        "2026-08-24"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 2232.17,
+        "n_annual_maxima": 14,
+        "gumbel_cross_check": {
+          "2yr_return_level": 2232.1,
+          "5yr_return_level": 2232.72
+        },
+        "label_source": "self-derived (top 2% of own history)",
+        "n_flood_days": 91
+      },
+      "backtest": {
+        "n_days_scored": 4426,
+        "auc_tie_corrected": 0.817,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 74.7
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 44.0
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 26.4
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 6.6
+          }
+        ]
+      }
+    },
+    "002-ubddib": {
+      "station_code": "002-ubddib",
+      "station_name": "Tuting",
+      "n_daily_readings": 7182,
+      "date_range": [
+        "2006-12-01",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 430.26,
+        "n_annual_maxima": 21,
+        "gumbel_cross_check": {
+          "2yr_return_level": 430.5,
+          "5yr_return_level": 435.02
+        },
+        "label_source": "self-derived (top 2% of own history) \u2014 real danger level never reached in this station's full record, max 435.89 vs danger 441.00",
+        "n_flood_days": 146
+      },
+      "backtest": {
+        "n_days_scored": 7150,
+        "auc_tie_corrected": 0.896,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 86.3
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 61.6
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 38.4
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 14.4
+          }
+        ]
+      }
+    },
+    "002Neid3": {
+      "station_code": "002Neid3",
+      "station_name": "Murga Bridge",
+      "n_daily_readings": 2730,
+      "date_range": [
+        "2018-11-14",
+        "2026-08-24"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 2135.02,
+        "n_annual_maxima": 9,
+        "gumbel_cross_check": {
+          "2yr_return_level": 2134.99,
+          "5yr_return_level": 2135.5
+        },
+        "label_source": "self-derived (top 2% of own history)",
+        "n_flood_days": 56
+      },
+      "backtest": {
+        "n_days_scored": 2705,
+        "auc_tie_corrected": 0.919,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.1,
+            "pct_flood_days_caught": 96.4
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.1,
+            "pct_flood_days_caught": 62.5
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 41.1
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.1,
+            "pct_flood_days_caught": 7.1
+          }
+        ]
+      }
+    },
+    "003-UBDDIB": {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "n_daily_readings": 1457,
+      "date_range": [
+        "2015-05-15",
+        "2024-06-12"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 272.0,
+        "n_annual_maxima": 8,
+        "gumbel_cross_check": {
+          "2yr_return_level": 288.89,
+          "5yr_return_level": 321.56
+        },
+        "label_source": "self-derived (top 2% of own history)",
+        "n_flood_days": 30
+      },
+      "backtest": {
+        "n_days_scored": 1457,
+        "auc_tie_corrected": 0.903,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.1,
+            "pct_flood_days_caught": 90.0
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 56.7
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 46.7
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.1,
+            "pct_flood_days_caught": 26.7
+          }
+        ]
+      }
+    },
+    "003NEID-3": {
+      "station_code": "003NEID-3",
+      "station_name": "Pangin",
+      "n_daily_readings": 3074,
+      "date_range": [
+        "2015-08-03",
+        "2025-09-05"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 204.9,
+        "n_annual_maxima": 10,
+        "gumbel_cross_check": {
+          "2yr_return_level": 205.76,
+          "5yr_return_level": 213.59
+        },
+        "label_source": "self-derived (top 2% of own history) \u2014 real danger level never reached in this station's full record, max 212.02 vs danger 220.00",
+        "n_flood_days": 62
+      },
+      "backtest": {
+        "n_days_scored": 3074,
+        "auc_tie_corrected": 0.941,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 96.8
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 85.5
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 62.9
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 17.7
+          }
+        ]
+      }
+    },
+    "004-UBDDIB": {
+      "station_code": "004-UBDDIB",
+      "station_name": "Lemeking",
+      "n_daily_readings": 5980,
+      "date_range": [
+        "1995-02-15",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 1105.98,
+        "n_annual_maxima": 22,
+        "gumbel_cross_check": {
+          "2yr_return_level": 1106.12,
+          "5yr_return_level": 1107.67
+        },
+        "label_source": "self-derived (top 2% of own history) \u2014 real danger level never reached in this station's full record, max 1107.73 vs danger 1109.74",
+        "n_flood_days": 121
+      },
+      "backtest": {
+        "n_days_scored": 5947,
+        "auc_tie_corrected": 0.916,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 90.1
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 66.9
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 51.2
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 18.2
+          }
+        ]
+      }
+    },
+    "005-UBDDIB": {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "n_daily_readings": 14007,
+      "date_range": [
+        "1971-06-02",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 189
+      },
+      "backtest": {
+        "n_days_scored": 8721,
+        "auc_tie_corrected": 0.957,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 98.1
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 88.9
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 74.1
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 35.2
+          }
+        ]
+      }
+    },
+    "007NEID3": {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "n_daily_readings": 2793,
+      "date_range": [
+        "2018-11-01",
+        "2026-08-24"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 166.1,
+        "n_annual_maxima": 9,
+        "gumbel_cross_check": {
+          "2yr_return_level": 194.01,
+          "5yr_return_level": 228.73
+        },
+        "label_source": "self-derived (top 2% of own history)",
+        "n_flood_days": 56
+      },
+      "backtest": {
+        "n_days_scored": 2768,
+        "auc_tie_corrected": 0.904,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 89.3
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 71.4
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 55.4
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 14.3
+          }
+        ]
+      }
+    },
+    "008-ubddib": {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "n_daily_readings": 12339,
+      "date_range": [
+        "1978-06-01",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 179
+      },
+      "backtest": {
+        "n_days_scored": 7557,
+        "auc_tie_corrected": 0.942,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 95.5
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 75.4
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 59.2
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 28.5
+          }
+        ]
+      }
+    },
+    "009-UBDDIB": {
+      "station_code": "009-UBDDIB",
+      "station_name": "Namsai",
+      "n_daily_readings": 4444,
+      "date_range": [
+        "1978-12-30",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 144.14,
+        "n_annual_maxima": 15,
+        "gumbel_cross_check": {
+          "2yr_return_level": 142.48,
+          "5yr_return_level": 144.97
+        },
+        "label_source": "self-derived (top 2% of own history) \u2014 real danger level never reached in this station's full record, max 144.77 vs danger 145.80",
+        "n_flood_days": 90
+      },
+      "backtest": {
+        "n_days_scored": 4411,
+        "auc_tie_corrected": 0.877,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 84.4
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 48.9
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 38.9
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 16.7
+          }
+        ]
+      }
+    },
+    "020-UBDDIB": {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "n_daily_readings": 12449,
+      "date_range": [
+        "1971-06-02",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 362
+      },
+      "backtest": {
+        "n_days_scored": 8620,
+        "auc_tie_corrected": 0.896,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 82.4
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 70.6
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 41.2
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 0.0
+          }
+        ]
+      }
+    },
+    "027-UBDDIB": {
+      "station_code": "027-UBDDIB",
+      "station_name": "Seppa",
+      "n_daily_readings": 10425,
+      "date_range": [
+        "1978-12-30",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 74
+      },
+      "backtest": {
+        "n_days_scored": 9305,
+        "auc_tie_corrected": 0.888,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 82.0
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 60.0
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 40.0
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 8.0
+          }
+        ]
+      }
+    },
+    "058-UBDDIB": {
+      "station_code": "058-UBDDIB",
+      "station_name": "Doimukh",
+      "n_daily_readings": 1874,
+      "date_range": [
+        "2015-08-03",
+        "2025-05-01"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 2
+      },
+      "backtest": {
+        "n_days_scored": 1874,
+        "auc_tie_corrected": 0.349,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.1,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 0.0
+          }
+        ]
+      }
+    },
+    "059-UBDDIB": {
+      "station_code": "059-UBDDIB",
+      "station_name": "Pagoda",
+      "n_daily_readings": 1914,
+      "date_range": [
+        "2019-06-30",
+        "2025-05-01"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 11
+      },
+      "backtest": {
+        "n_days_scored": 1914,
+        "auc_tie_corrected": 0.865,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 90.9
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 72.7
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 63.6
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 45.5
+          }
+        ]
+      }
+    },
+    "070-UBDDIB": {
+      "station_code": "070-UBDDIB",
+      "station_name": "Tamen",
+      "n_daily_readings": 1736,
+      "date_range": [
+        "2019-10-08",
+        "2025-04-30"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": null,
+        "n_annual_maxima": null,
+        "gumbel_cross_check": {},
+        "label_source": "CWC published danger level",
+        "n_flood_days": 2
+      },
+      "backtest": {
+        "n_days_scored": 1736,
+        "auc_tie_corrected": 0.42,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.1,
+            "pct_flood_days_caught": 0.0
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.1,
+            "pct_flood_days_caught": 0.0
+          }
+        ]
+      }
+    },
+    "078-UBDDIB": {
+      "station_code": "078-UBDDIB",
+      "station_name": "Pare HEP",
+      "n_daily_readings": 62,
+      "date_range": [
+        "2026-06-18",
+        "2026-08-31"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 245.2,
+        "n_annual_maxima": 1,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history)",
+        "n_flood_days": 2
+      },
+      "backtest": {
+        "n_days_scored": 30,
+        "auc_tie_corrected": 0.839,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 26.7,
+            "pct_flood_days_caught": 50.0
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 50.0
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 6.7,
+            "pct_flood_days_caught": 50.0
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 6.7,
+            "pct_flood_days_caught": 50.0
+          }
+        ]
+      }
+    }
+  }
+}

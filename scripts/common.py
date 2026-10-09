@@ -89,6 +89,7 @@ SEISMIC = RAW / "07_seismic"
 LABELS = RAW / "08_labels"
 EXPOSURE = RAW / "09_exposure"
 CONTEXT = RAW / "10_context"
+GAUGES = RAW / "11_gauges"
 
 # --------------------------------------------------------------------------
 # Area of interest — Arunachal Pradesh, with a small buffer

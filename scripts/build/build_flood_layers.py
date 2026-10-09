@@ -99,6 +99,44 @@ INDEX_BREAKS = [0.08, 0.20, 0.40, 0.65]
 T0 = time.time()
 
 
+def catchment_rain_points(g, pts: dict) -> np.ndarray:
+    """Which rainfall point speaks for each catchment: the one nearest its
+    representative point. The same points the landslide trigger uses — one
+    rainfall spine, two hazards.
+
+    ⚠️ The result is POSITIONS in points.json, so it must be rebuilt whenever
+    that file changes. It went stale once: the spine moved from 97 to 219
+    points on 2026-09-22 and this mapping still held the old positions, so
+    every catchment silently read some other place's rain until 2026-09-27.
+    `--rain-points-only` redoes just this step; the app refuses a mapping
+    whose `n_points` doesn't match the points it fetches."""
+    plat = np.asarray(pts["lat"], np.float64)
+    plon = np.asarray(pts["lon"], np.float64)
+    cen = g.geometry.representative_point()
+    d2 = ((cen.y.to_numpy()[:, None] - plat[None, :]) ** 2
+          + ((cen.x.to_numpy()[:, None] - plon[None, :]) * 0.89) ** 2)
+    return np.argmin(d2, axis=1).astype(np.int32)
+
+
+def rain_points_only() -> None:
+    """Re-map catchments to the current rainfall points, touching nothing else.
+    Refuses if the basins on disk are not the ones the bundle was built from."""
+    g = gpd.read_file(HYDROLOGY / "hydrosheds_basins-lev12_vector_arunachal.gpkg")
+    g = g.to_crs("EPSG:4326").reset_index(drop=True)
+    old = dict(np.load(OUT / "catchments.npz"))
+    hyb = {int(v): i for i, v in enumerate(g["HYBAS_ID"])}
+    nd = np.array([hyb.get(int(v), -1) for v in g["NEXT_DOWN"]], np.int32)
+    if len(g) != len(old["rain_pt"]) or not np.array_equal(nd, old["next_down"]):
+        raise SystemExit("catchments on disk differ from the bundle — run the full build")
+    pts = json.loads((BASE / "points.json").read_text())
+    rp = catchment_rain_points(g, pts)
+    changed = int((rp != old["rain_pt"]).sum())
+    old.update(rain_pt=rp, n_points=np.int32(len(pts["lat"])))
+    np.savez_compressed(OUT / "catchments.npz", **old)
+    tick(f"{len(g)} catchments re-mapped to {len(np.unique(rp))} of {len(pts['lat'])} "
+         f"rainfall points ({changed} changed); nothing else touched")
+
+
 def tick(msg: str) -> None:
     print(f"  [{time.time()-T0:6.1f}s] {msg}", flush=True)
 
@@ -320,21 +358,14 @@ def main() -> None:
     tick(f"routing order checked: {bad} basins ordered after their receiver "
          f"({'OK' if bad == 0 else 'PROBLEM'})")
 
-    # Which rainfall point speaks for each catchment. The same 97 points the
-    # landslide trigger uses — one rainfall spine, two hazards.
     pts = json.loads((BASE / "points.json").read_text())
-    plat = np.asarray(pts["lat"], np.float64)
-    plon = np.asarray(pts["lon"], np.float64)
-    cen = g.geometry.representative_point()
-    d2 = ((cen.y.to_numpy()[:, None] - plat[None, :]) ** 2
-          + ((cen.x.to_numpy()[:, None] - plon[None, :]) * 0.89) ** 2)
-    rain_pt = np.argmin(d2, axis=1).astype(np.int32)
-    tick(f"catchments mapped to {len(np.unique(rain_pt))} of {len(plat)} "
+    rain_pt = catchment_rain_points(g, pts)
+    tick(f"catchments mapped to {len(np.unique(rain_pt))} of {len(pts['lat'])} "
          f"rainfall points")
 
     np.savez_compressed(OUT / "catchments.npz", bid=bid, next_down=next_down,
                         order=order, up_area=up_area, sub_area=sub_area,
-                        rain_pt=rain_pt)
+                        rain_pt=rain_pt, n_points=np.int32(len(pts["lat"])))
 
     # ── the attempted validation ─────────────────────────────────────────
     # ⚠️ Computed here, every build, never typed into the app. These numbers
@@ -374,4 +405,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    rain_points_only() if "--rain-points-only" in sys.argv else main()

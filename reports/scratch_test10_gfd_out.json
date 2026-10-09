@@ -1,0 +1,113 @@
+{
+  "note": "Groundsource pre-2019 Arunachal candidates cross-checked against Google's Global Flood Database. gfd_match=True means a GFD image exists near that date/place at all; real_new_flood=True means it shows a real new (non-permanent) flooded pixel in a 2km buffer around the candidate's representative_point().",
+  "n_candidates": 10,
+  "n_checked_so_far": 10,
+  "n_gfd_match": 8,
+  "n_real_new_flood": 6,
+  "results": [
+    {
+      "uuid": "0525451f20a74d7d8f2ddfc4745023fa",
+      "date_str": "2000-06-11",
+      "area_km2": 22.8854067957,
+      "lat": 28.0644705,
+      "lon": 95.3218852419,
+      "gfd_match": false
+    },
+    {
+      "uuid": "0ec6b2470e184e008386f3fa69cff028",
+      "date_str": "2000-06-11",
+      "area_km2": 0.0217676659,
+      "lat": 28.167391,
+      "lon": 95.409039,
+      "gfd_match": false
+    },
+    {
+      "uuid": "df248b527de749c380b5f3e1e663ceef",
+      "date_str": "2003-07-06",
+      "area_km2": 2513.1642813223,
+      "lat": 27.5755225,
+      "lon": 94.6991124079,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 3,
+      "pct_new_flood_in_buffer": 0,
+      "real_new_flood": false
+    },
+    {
+      "uuid": "9f73b04306184b22b668ee4b8a071336",
+      "date_str": "2004-07-13",
+      "area_km2": 3147.1172192751,
+      "lat": 26.1328205,
+      "lon": 91.3041265742,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 99.6,
+      "real_new_flood": true
+    },
+    {
+      "uuid": "8edefdd758e14a17b20d862b55b75064",
+      "date_str": "2004-07-20",
+      "area_km2": 2593.9895478851,
+      "lat": 26.334838,
+      "lon": 92.7548724811,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 0,
+      "real_new_flood": false
+    },
+    {
+      "uuid": "a63c5a9cf87c4dccb551c3ab489c728c",
+      "date_str": "2006-05-31",
+      "area_km2": 13.441844784,
+      "lat": 27.4731655,
+      "lon": 94.5570680814,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 2.29,
+      "real_new_flood": true
+    },
+    {
+      "uuid": "0795f125ff87453a8d9cba5438d068a8",
+      "date_str": "2006-05-31",
+      "area_km2": 2931.6516183724,
+      "lat": 27.1756075,
+      "lon": 94.1907298237,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 24.27,
+      "real_new_flood": true
+    },
+    {
+      "uuid": "837ff5f914514f75b4662ac97be66fb4",
+      "date_str": "2006-06-13",
+      "area_km2": 2931.6516183724,
+      "lat": 27.1756075,
+      "lon": 94.1907298237,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 24.27,
+      "real_new_flood": true
+    },
+    {
+      "uuid": "71829cababff44acac82219d2bcdd680",
+      "date_str": "2006-06-13",
+      "area_km2": 13.441844784,
+      "lat": 27.4731655,
+      "lon": 94.5570680814,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 2,
+      "pct_new_flood_in_buffer": 2.29,
+      "real_new_flood": true
+    },
+    {
+      "uuid": "bfdefc4d6acf46f489af67d8bd0d3bc6",
+      "date_str": "2007-07-25",
+      "area_km2": 2931.6516183724,
+      "lat": 27.1756075,
+      "lon": 94.1907298237,
+      "gfd_match": true,
+      "n_gfd_events_in_window": 6,
+      "pct_new_flood_in_buffer": 38.87,
+      "real_new_flood": true
+    }
+  ]
+}

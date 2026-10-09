@@ -1,0 +1,78 @@
+{
+  "date": "2024-05-27",
+  "means": "per 100 m patch: chance a reported, satellite-confirmed flood puts water on it today. A floor - unreported floods are not in the record, and inside Arunachal the replay found the absolute level still runs ~3x high; 'times normal' is the robust read",
+  "expected_flooded_km2_in_state": 0.38382160663604736,
+  "normal_expected_flooded_km2_in_state": 0.29231449524293207,
+  "areas_most_ground_at_risk": [
+    {
+      "lat": 27.45,
+      "lon": 96.05,
+      "expected_flooded_km2_today": 0.0267,
+      "times_normal": 2.0,
+      "floodable_km2": 9.0
+    },
+    {
+      "lat": 27.55,
+      "lon": 95.95,
+      "expected_flooded_km2_today": 0.02,
+      "times_normal": 1.9,
+      "floodable_km2": 8.1
+    },
+    {
+      "lat": 28.05,
+      "lon": 95.65,
+      "expected_flooded_km2_today": 0.0199,
+      "times_normal": 1.8,
+      "floodable_km2": 8.1
+    },
+    {
+      "lat": 28.15,
+      "lon": 95.65,
+      "expected_flooded_km2_today": 0.0191,
+      "times_normal": 1.8,
+      "floodable_km2": 7.8
+    },
+    {
+      "lat": 27.45,
+      "lon": 95.95,
+      "expected_flooded_km2_today": 0.0188,
+      "times_normal": 2.5,
+      "floodable_km2": 7.7
+    },
+    {
+      "lat": 27.65,
+      "lon": 95.85,
+      "expected_flooded_km2_today": 0.0184,
+      "times_normal": 1.9,
+      "floodable_km2": 7.5
+    },
+    {
+      "lat": 27.45,
+      "lon": 96.15,
+      "expected_flooded_km2_today": 0.0166,
+      "times_normal": 2.2,
+      "floodable_km2": 5.9
+    },
+    {
+      "lat": 27.75,
+      "lon": 96.15,
+      "expected_flooded_km2_today": 0.0156,
+      "times_normal": 1.8,
+      "floodable_km2": 6.4
+    },
+    {
+      "lat": 27.95,
+      "lon": 95.45,
+      "expected_flooded_km2_today": 0.0147,
+      "times_normal": 0.8,
+      "floodable_km2": 12.4
+    },
+    {
+      "lat": 28.15,
+      "lon": 95.75,
+      "expected_flooded_km2_today": 0.0137,
+      "times_normal": 1.8,
+      "floodable_km2": 5.6
+    }
+  ]
+}

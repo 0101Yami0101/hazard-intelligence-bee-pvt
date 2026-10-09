@@ -1,0 +1,1168 @@
+{
+  "protocol": "docs/design/FLOOD_WHEN_PILOT_PLAN.md \u00a714",
+  "versions": {
+    "A": "stepped curve, five inputs, history as it was (the models of 2026-09-22)",
+    "C": "S-curve, five inputs, cleaned history (\u00a713i)",
+    "W": "S-curve, five inputs + the six week inputs, cleaned history"
+  },
+  "week_inputs": [
+    "rise3",
+    "mean7",
+    "max7",
+    "above7",
+    "end",
+    "day_rise"
+  ],
+  "gauges": 32,
+  "line_unchanged": 27,
+  "chance": {
+    "1": {
+      "gauge_days": 81664,
+      "flood_days": 979,
+      "river_above_days": 978,
+      "river_above_flood_days": 602,
+      "all days": {
+        "A": {
+          "auc": 0.9746,
+          "brier_skill": 0.4063
+        },
+        "C": {
+          "auc": 0.9752,
+          "brier_skill": 0.4109
+        },
+        "W": {
+          "auc": 0.9811,
+          "brier_skill": 0.5484
+        },
+        "W1": {
+          "auc_change": 0.0065,
+          "brier_skill_change": 0.1421,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0059,
+          "brier_skill_change": 0.1374,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9439,
+          "brier_skill": 0.0948
+        },
+        "C": {
+          "auc": 0.9432,
+          "brier_skill": 0.0966
+        },
+        "W": {
+          "auc": 0.9557,
+          "brier_skill": 0.1193
+        },
+        "W1": {
+          "auc_change": 0.0118,
+          "brier_skill_change": 0.0245,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0124,
+          "brier_skill_change": 0.0227,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.6263,
+          "C": 0.6344,
+          "W": 0.9049
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 1,
+            "flooded": 1
+          },
+          "C": {
+            "days": 6,
+            "flooded": 3
+          },
+          "W": {
+            "days": 60,
+            "flooded": 5
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 1,
+          "C": 0,
+          "W": 1
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 2.66,
+          "W": 0.52
+        }
+      }
+    },
+    "2": {
+      "gauge_days": 81416,
+      "flood_days": 978,
+      "river_above_days": 974,
+      "river_above_flood_days": 421,
+      "all days": {
+        "A": {
+          "auc": 0.938,
+          "brier_skill": 0.228
+        },
+        "C": {
+          "auc": 0.9613,
+          "brier_skill": 0.2386
+        },
+        "W": {
+          "auc": 0.967,
+          "brier_skill": 0.3012
+        },
+        "W1": {
+          "auc_change": 0.0291,
+          "brier_skill_change": 0.0732,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0057,
+          "brier_skill_change": 0.0626,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9417,
+          "brier_skill": 0.103
+        },
+        "C": {
+          "auc": 0.9426,
+          "brier_skill": 0.1075
+        },
+        "W": {
+          "auc": 0.9495,
+          "brier_skill": 0.1153
+        },
+        "W1": {
+          "auc_change": 0.0078,
+          "brier_skill_change": 0.0124,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0069,
+          "brier_skill_change": 0.0078,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.5859,
+          "C": 0.6073,
+          "W": 0.7776
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 61,
+            "flooded": 25
+          },
+          "C": {
+            "days": 41,
+            "flooded": 17
+          },
+          "W": {
+            "days": 21,
+            "flooded": 5
+          }
+        },
+        "pass": false
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 25,
+          "C": 2,
+          "W": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.25,
+          "W": 2.18
+        }
+      }
+    },
+    "3": {
+      "gauge_days": 81240,
+      "flood_days": 976,
+      "river_above_days": 974,
+      "river_above_flood_days": 323,
+      "all days": {
+        "A": {
+          "auc": 0.9417,
+          "brier_skill": 0.1867
+        },
+        "C": {
+          "auc": 0.9564,
+          "brier_skill": 0.1895
+        },
+        "W": {
+          "auc": 0.9615,
+          "brier_skill": 0.2252
+        },
+        "W1": {
+          "auc_change": 0.0198,
+          "brier_skill_change": 0.0385,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0051,
+          "brier_skill_change": 0.0357,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9444,
+          "brier_skill": 0.1157
+        },
+        "C": {
+          "auc": 0.945,
+          "brier_skill": 0.119
+        },
+        "W": {
+          "auc": 0.9507,
+          "brier_skill": 0.1311
+        },
+        "W1": {
+          "auc_change": 0.0062,
+          "brier_skill_change": 0.0154,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0057,
+          "brier_skill_change": 0.012,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.6409,
+          "C": 0.6341,
+          "W": 0.7355
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 118,
+            "flooded": 21
+          },
+          "C": {
+            "days": 55,
+            "flooded": 9
+          },
+          "W": {
+            "days": 80,
+            "flooded": 9
+          }
+        },
+        "pass": false
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 16,
+          "C": 2,
+          "W": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.22,
+          "W": 0.58
+        }
+      }
+    },
+    "4": {
+      "gauge_days": 81099,
+      "flood_days": 974,
+      "river_above_days": 973,
+      "river_above_flood_days": 257,
+      "all days": {
+        "A": {
+          "auc": 0.9336,
+          "brier_skill": 0.1465
+        },
+        "C": {
+          "auc": 0.9456,
+          "brier_skill": 0.1563
+        },
+        "W": {
+          "auc": 0.9502,
+          "brier_skill": 0.1853
+        },
+        "W1": {
+          "auc_change": 0.0166,
+          "brier_skill_change": 0.0388,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0046,
+          "brier_skill_change": 0.029,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9381,
+          "brier_skill": 0.1021
+        },
+        "C": {
+          "auc": 0.9369,
+          "brier_skill": 0.1073
+        },
+        "W": {
+          "auc": 0.9412,
+          "brier_skill": 0.1222
+        },
+        "W1": {
+          "auc_change": 0.0031,
+          "brier_skill_change": 0.0201,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0043,
+          "brier_skill_change": 0.0149,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.6577,
+          "C": 0.6626,
+          "W": 0.7389
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 193,
+            "flooded": 21
+          },
+          "C": {
+            "days": 148,
+            "flooded": 23
+          },
+          "W": {
+            "days": 135,
+            "flooded": 14
+          }
+        },
+        "pass": false
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 16,
+          "C": 6,
+          "W": 3
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.12,
+          "W": 0.13
+        }
+      }
+    },
+    "5": {
+      "gauge_days": 80966,
+      "flood_days": 972,
+      "river_above_days": 969,
+      "river_above_flood_days": 205,
+      "all days": {
+        "A": {
+          "auc": 0.9349,
+          "brier_skill": 0.1337
+        },
+        "C": {
+          "auc": 0.9435,
+          "brier_skill": 0.1366
+        },
+        "W": {
+          "auc": 0.944,
+          "brier_skill": 0.1649
+        },
+        "W1": {
+          "auc_change": 0.009,
+          "brier_skill_change": 0.0313,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0005,
+          "brier_skill_change": 0.0283,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9374,
+          "brier_skill": 0.1035
+        },
+        "C": {
+          "auc": 0.9385,
+          "brier_skill": 0.1047
+        },
+        "W": {
+          "auc": 0.9385,
+          "brier_skill": 0.1208
+        },
+        "W1": {
+          "auc_change": 0.0011,
+          "brier_skill_change": 0.0173,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": -0.0,
+          "brier_skill_change": 0.0161,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.6864,
+          "C": 0.693,
+          "W": 0.7549
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 205,
+            "flooded": 15
+          },
+          "C": {
+            "days": 214,
+            "flooded": 16
+          },
+          "W": {
+            "days": 218,
+            "flooded": 20
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 12,
+          "C": 6,
+          "W": 6
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.04,
+          "W": 0.01
+        }
+      }
+    },
+    "6": {
+      "gauge_days": 80844,
+      "flood_days": 968,
+      "river_above_days": 962,
+      "river_above_flood_days": 175,
+      "all days": {
+        "A": {
+          "auc": 0.9296,
+          "brier_skill": 0.1229
+        },
+        "C": {
+          "auc": 0.9388,
+          "brier_skill": 0.1232
+        },
+        "W": {
+          "auc": 0.9422,
+          "brier_skill": 0.1473
+        },
+        "W1": {
+          "auc_change": 0.0126,
+          "brier_skill_change": 0.0244,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0034,
+          "brier_skill_change": 0.0242,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9368,
+          "brier_skill": 0.1036
+        },
+        "C": {
+          "auc": 0.9351,
+          "brier_skill": 0.0987
+        },
+        "W": {
+          "auc": 0.9386,
+          "brier_skill": 0.1129
+        },
+        "W1": {
+          "auc_change": 0.0018,
+          "brier_skill_change": 0.0093,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0035,
+          "brier_skill_change": 0.0142,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.6869,
+          "C": 0.697,
+          "W": 0.7548
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 294,
+            "flooded": 22
+          },
+          "C": {
+            "days": 267,
+            "flooded": 26
+          },
+          "W": {
+            "days": 279,
+            "flooded": 18
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 13,
+          "C": 5,
+          "W": 5
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.08,
+          "W": 0.08
+        }
+      }
+    },
+    "7": {
+      "gauge_days": 80746,
+      "flood_days": 967,
+      "river_above_days": 960,
+      "river_above_flood_days": 155,
+      "all days": {
+        "A": {
+          "auc": 0.9329,
+          "brier_skill": 0.1238
+        },
+        "C": {
+          "auc": 0.939,
+          "brier_skill": 0.1308
+        },
+        "W": {
+          "auc": 0.9384,
+          "brier_skill": 0.1476
+        },
+        "W1": {
+          "auc_change": 0.0055,
+          "brier_skill_change": 0.0238,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": -0.0006,
+          "brier_skill_change": 0.0168,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9363,
+          "brier_skill": 0.103
+        },
+        "C": {
+          "auc": 0.936,
+          "brier_skill": 0.1089
+        },
+        "W": {
+          "auc": 0.9346,
+          "brier_skill": 0.1203
+        },
+        "W1": {
+          "auc_change": -0.0017,
+          "brier_skill_change": 0.0172,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": -0.0015,
+          "brier_skill_change": 0.0113,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.7358,
+          "C": 0.7425,
+          "W": 0.7932
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 367,
+            "flooded": 28
+          },
+          "C": {
+            "days": 305,
+            "flooded": 20
+          },
+          "W": {
+            "days": 332,
+            "flooded": 11
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 8,
+          "C": 4,
+          "W": 4
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.02,
+          "W": 0.01
+        }
+      }
+    },
+    "8": {
+      "gauge_days": 80609,
+      "flood_days": 959,
+      "river_above_days": 958,
+      "river_above_flood_days": 141,
+      "all days": {
+        "A": {
+          "auc": 0.9362,
+          "brier_skill": 0.1285
+        },
+        "C": {
+          "auc": 0.9389,
+          "brier_skill": 0.1343
+        },
+        "W": {
+          "auc": 0.9408,
+          "brier_skill": 0.1429
+        },
+        "W1": {
+          "auc_change": 0.0046,
+          "brier_skill_change": 0.0144,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0019,
+          "brier_skill_change": 0.0086,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9373,
+          "brier_skill": 0.113
+        },
+        "C": {
+          "auc": 0.9357,
+          "brier_skill": 0.1154
+        },
+        "W": {
+          "auc": 0.9376,
+          "brier_skill": 0.1213
+        },
+        "W1": {
+          "auc_change": 0.0003,
+          "brier_skill_change": 0.0083,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0019,
+          "brier_skill_change": 0.0059,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.755,
+          "C": 0.7743,
+          "W": 0.7982
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 399,
+            "flooded": 26
+          },
+          "C": {
+            "days": 307,
+            "flooded": 12
+          },
+          "W": {
+            "days": 332,
+            "flooded": 10
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 6,
+          "C": 2,
+          "W": 3
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.07,
+          "W": 0.06
+        }
+      }
+    },
+    "9": {
+      "gauge_days": 80458,
+      "flood_days": 957,
+      "river_above_days": 956,
+      "river_above_flood_days": 138,
+      "all days": {
+        "A": {
+          "auc": 0.9342,
+          "brier_skill": 0.1214
+        },
+        "C": {
+          "auc": 0.9366,
+          "brier_skill": 0.1238
+        },
+        "W": {
+          "auc": 0.9381,
+          "brier_skill": 0.1305
+        },
+        "W1": {
+          "auc_change": 0.0039,
+          "brier_skill_change": 0.0091,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0014,
+          "brier_skill_change": 0.0067,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9324,
+          "brier_skill": 0.1066
+        },
+        "C": {
+          "auc": 0.9333,
+          "brier_skill": 0.1074
+        },
+        "W": {
+          "auc": 0.935,
+          "brier_skill": 0.1136
+        },
+        "W1": {
+          "auc_change": 0.0026,
+          "brier_skill_change": 0.0069,
+          "pass": true
+        },
+        "W2": {
+          "auc_change": 0.0017,
+          "brier_skill_change": 0.0061,
+          "pass": true
+        }
+      },
+      "W4": {
+        "auc_within_river_above": {
+          "A": 0.7391,
+          "C": 0.7545,
+          "W": 0.759
+        },
+        "pass": true
+      },
+      "W3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 345,
+            "flooded": 21
+          },
+          "C": {
+            "days": 280,
+            "flooded": 13
+          },
+          "W": {
+            "days": 272,
+            "flooded": 12
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 2,
+          "C": 0,
+          "W": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.31,
+          "W": 0.35
+        }
+      }
+    }
+  },
+  "level": {
+    "1": {
+      "gauge_days": 91886,
+      "river_above_days": 1188,
+      "all days": {
+        "days": 91886,
+        "avg_miss_middle_line": 0.0375,
+        "avg_miss_no_change": 0.0461,
+        "miss_vs_no_change_pct": -18.8,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.1018,
+        "cwc_avg_miss_metres": 0.134,
+        "cwc_avg_miss_no_change_metres": 0.169,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1188,
+        "avg_miss_middle_line": 0.161,
+        "avg_miss_no_change": 0.246,
+        "miss_vs_no_change_pct": -34.6,
+        "range_holds_pct": 80.2,
+        "avg_range_width": 0.4321,
+        "cwc_avg_miss_metres": 0.331,
+        "cwc_avg_miss_no_change_metres": 0.554,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 350,
+          "crossed_pct": 93.4,
+          "W_avg_pct": 87.7
+        },
+        "range_wholly_below": {
+          "days": 89736,
+          "crossed_pct": 0.29,
+          "W_avg_pct": 0.32
+        },
+        "pass": true
+      },
+      "L1": true,
+      "L2": true
+    },
+    "2": {
+      "gauge_days": 91622,
+      "river_above_days": 1183,
+      "all days": {
+        "days": 91622,
+        "avg_miss_middle_line": 0.0566,
+        "avg_miss_no_change": 0.0686,
+        "miss_vs_no_change_pct": -17.5,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.1629,
+        "cwc_avg_miss_metres": 0.215,
+        "cwc_avg_miss_no_change_metres": 0.261,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1183,
+        "avg_miss_middle_line": 0.2018,
+        "avg_miss_no_change": 0.3486,
+        "miss_vs_no_change_pct": -42.1,
+        "range_holds_pct": 80.6,
+        "avg_range_width": 0.6009,
+        "cwc_avg_miss_metres": 0.568,
+        "cwc_avg_miss_no_change_metres": 0.918,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 76,
+          "crossed_pct": 80.3,
+          "W_avg_pct": 65.8
+        },
+        "range_wholly_below": {
+          "days": 89154,
+          "crossed_pct": 0.43,
+          "W_avg_pct": 0.46
+        },
+        "pass": true
+      },
+      "L1": true,
+      "L2": true
+    },
+    "3": {
+      "gauge_days": 91432,
+      "river_above_days": 1183,
+      "all days": {
+        "days": 91432,
+        "avg_miss_middle_line": 0.0675,
+        "avg_miss_no_change": 0.083,
+        "miss_vs_no_change_pct": -18.6,
+        "range_holds_pct": 79.9,
+        "avg_range_width": 0.1987,
+        "cwc_avg_miss_metres": 0.265,
+        "cwc_avg_miss_no_change_metres": 0.324,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1183,
+        "avg_miss_middle_line": 0.1971,
+        "avg_miss_no_change": 0.3929,
+        "miss_vs_no_change_pct": -49.9,
+        "range_holds_pct": 79.0,
+        "avg_range_width": 0.6046,
+        "cwc_avg_miss_metres": 0.643,
+        "cwc_avg_miss_no_change_metres": 1.139,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 38,
+          "crossed_pct": 65.8,
+          "W_avg_pct": 52.0
+        },
+        "range_wholly_below": {
+          "days": 88740,
+          "crossed_pct": 0.49,
+          "W_avg_pct": 0.52
+        },
+        "pass": false
+      },
+      "L1": true,
+      "L2": true
+    },
+    "4": {
+      "gauge_days": 91279,
+      "river_above_days": 1182,
+      "all days": {
+        "days": 91279,
+        "avg_miss_middle_line": 0.0759,
+        "avg_miss_no_change": 0.0935,
+        "miss_vs_no_change_pct": -18.8,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.222,
+        "cwc_avg_miss_metres": 0.301,
+        "cwc_avg_miss_no_change_metres": 0.368,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1182,
+        "avg_miss_middle_line": 0.1988,
+        "avg_miss_no_change": 0.4357,
+        "miss_vs_no_change_pct": -54.4,
+        "range_holds_pct": 78.8,
+        "avg_range_width": 0.6207,
+        "cwc_avg_miss_metres": 0.64,
+        "cwc_avg_miss_no_change_metres": 1.305,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 23,
+          "crossed_pct": 52.2,
+          "W_avg_pct": 41.1
+        },
+        "range_wholly_below": {
+          "days": 88558,
+          "crossed_pct": 0.56,
+          "W_avg_pct": 0.59
+        },
+        "pass": false
+      },
+      "L1": true,
+      "L2": true
+    },
+    "5": {
+      "gauge_days": 91134,
+      "river_above_days": 1178,
+      "all days": {
+        "days": 91134,
+        "avg_miss_middle_line": 0.0823,
+        "avg_miss_no_change": 0.1018,
+        "miss_vs_no_change_pct": -19.2,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.2457,
+        "cwc_avg_miss_metres": 0.331,
+        "cwc_avg_miss_no_change_metres": 0.406,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1178,
+        "avg_miss_middle_line": 0.2094,
+        "avg_miss_no_change": 0.4725,
+        "miss_vs_no_change_pct": -55.7,
+        "range_holds_pct": 80.1,
+        "avg_range_width": 0.6539,
+        "cwc_avg_miss_metres": 0.666,
+        "cwc_avg_miss_no_change_metres": 1.469,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 14,
+          "crossed_pct": 57.1,
+          "W_avg_pct": 32.6
+        },
+        "range_wholly_below": {
+          "days": 88340,
+          "crossed_pct": 0.6,
+          "W_avg_pct": 0.64
+        },
+        "pass": false
+      },
+      "L1": true,
+      "L2": true
+    },
+    "6": {
+      "gauge_days": 91002,
+      "river_above_days": 1171,
+      "all days": {
+        "days": 91002,
+        "avg_miss_middle_line": 0.0871,
+        "avg_miss_no_change": 0.1085,
+        "miss_vs_no_change_pct": -19.7,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.273,
+        "cwc_avg_miss_metres": 0.354,
+        "cwc_avg_miss_no_change_metres": 0.437,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1171,
+        "avg_miss_middle_line": 0.215,
+        "avg_miss_no_change": 0.5037,
+        "miss_vs_no_change_pct": -57.3,
+        "range_holds_pct": 79.2,
+        "avg_range_width": 0.6315,
+        "cwc_avg_miss_metres": 0.695,
+        "cwc_avg_miss_no_change_metres": 1.613,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 10,
+          "crossed_pct": 30.0,
+          "W_avg_pct": 17.3
+        },
+        "range_wholly_below": {
+          "days": 88247,
+          "crossed_pct": 0.65,
+          "W_avg_pct": 0.67
+        },
+        "pass": false
+      },
+      "L1": true,
+      "L2": true
+    },
+    "7": {
+      "gauge_days": 90893,
+      "river_above_days": 1170,
+      "all days": {
+        "days": 90893,
+        "avg_miss_middle_line": 0.0912,
+        "avg_miss_no_change": 0.1144,
+        "miss_vs_no_change_pct": -20.3,
+        "range_holds_pct": 80.0,
+        "avg_range_width": 0.2804,
+        "cwc_avg_miss_metres": 0.373,
+        "cwc_avg_miss_no_change_metres": 0.464,
+        "L1": true,
+        "L2": true
+      },
+      "river above": {
+        "days": 1170,
+        "avg_miss_middle_line": 0.2103,
+        "avg_miss_no_change": 0.5194,
+        "miss_vs_no_change_pct": -59.5,
+        "range_holds_pct": 79.7,
+        "avg_range_width": 0.6396,
+        "cwc_avg_miss_metres": 0.712,
+        "cwc_avg_miss_no_change_metres": 1.704,
+        "L1": true,
+        "L2": true
+      },
+      "L3": {
+        "range_wholly_above": {
+          "days": 9,
+          "crossed_pct": 11.1,
+          "W_avg_pct": 16.9
+        },
+        "range_wholly_below": {
+          "days": 88138,
+          "crossed_pct": 0.65,
+          "W_avg_pct": 0.68
+        },
+        "pass": false
+      },
+      "L1": true,
+      "L2": true
+    }
+  },
+  "W3_small_leads_together": {
+    "A": {
+      "days": 1,
+      "flooded": 1
+    },
+    "C": {
+      "days": 6,
+      "flooded": 3
+    },
+    "W": {
+      "days": 0,
+      "flooded": 0
+    }
+  },
+  "level_line_may_be_drawn_to_lead": 7,
+  "gates": {
+    "W1": true,
+    "W2": true,
+    "W3": false,
+    "W4": true,
+    "L1": true,
+    "L2": true,
+    "L3": true
+  },
+  "chance_pass": false,
+  "level_pass": true
+}

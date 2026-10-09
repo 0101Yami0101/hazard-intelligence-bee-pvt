@@ -1,0 +1,226 @@
+{
+  "001-UBDDIB": {
+    "name": "Kibithu",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 11890.6,
+    "path_km": 213.8,
+    "cells_reached": 24
+  },
+  "001NEID3": {
+    "name": "Rho Basti",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 2937.4,
+    "path_km": 77.4,
+    "cells_reached": 11
+  },
+  "002-ubddib": {
+    "name": "Tuting",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 4352.1,
+    "path_km": 286.3,
+    "cells_reached": 27
+  },
+  "002Neid3": {
+    "name": "Murga Bridge",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 2926.4,
+    "path_km": 79.0,
+    "cells_reached": 12
+  },
+  "003-UBDDIB": {
+    "name": "Yinkiang",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 8823.5,
+    "path_km": 192.3,
+    "cells_reached": 19
+  },
+  "003NEID-3": {
+    "name": "Pangin",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 15935.2,
+    "path_km": 119.9,
+    "cells_reached": 12
+  },
+  "004-UBDDIB": {
+    "name": "Lemeking",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 11321.1,
+    "path_km": 212.7,
+    "cells_reached": 22
+  },
+  "005-UBDDIB": {
+    "name": "Passighat",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 18129.8,
+    "path_km": 66.8,
+    "cells_reached": 7
+  },
+  "007NEID3": {
+    "name": "Jollang",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 142.3,
+    "path_km": 85.7,
+    "cells_reached": 9
+  },
+  "008-ubddib": {
+    "name": "Miao",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 2459.5,
+    "path_km": 101.6,
+    "cells_reached": 13
+  },
+  "009-UBDDIB": {
+    "name": "Namsai",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 2637.1,
+    "path_km": 48.5,
+    "cells_reached": 6
+  },
+  "020-UBDDIB": {
+    "name": "Daporizo",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 15301.3,
+    "path_km": 102.6,
+    "cells_reached": 9
+  },
+  "027-UBDDIB": {
+    "name": "Seppa",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 3645.8,
+    "path_km": 143.9,
+    "cells_reached": 16
+  },
+  "029-UBDDIB": {
+    "name": "Bhalukpong",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 8969.2,
+    "path_km": 61.6,
+    "cells_reached": 7
+  },
+  "058-UBDDIB": {
+    "name": "Doimukh",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 1224.3,
+    "path_km": 60.9,
+    "cells_reached": 7
+  },
+  "059-UBDDIB": {
+    "name": "Pagoda",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 1472.0,
+    "path_km": 52.8,
+    "cells_reached": 6
+  },
+  "070-UBDDIB": {
+    "name": "Tamen",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 7574.2,
+    "path_km": 103.0,
+    "cells_reached": 9
+  },
+  "078-UBDDIB": {
+    "name": "Pare HEP",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 830.8,
+    "path_km": 81.4,
+    "cells_reached": 8
+  },
+  "Aalo_1": {
+    "name": "Aalo",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 291.5,
+    "path_km": 151.9,
+    "cells_reached": 16
+  },
+  "Basar_1": {
+    "name": "Basar",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 132.8,
+    "path_km": 127.4,
+    "cells_reached": 11
+  },
+  "Changlang": {
+    "name": "Changlang",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 561.6,
+    "path_km": 181.6,
+    "cells_reached": 15
+  },
+  "Changlang_1": {
+    "name": "Changlang (2nd station)",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 578.1,
+    "path_km": 178.2,
+    "cells_reached": 15
+  },
+  "Darak(Kamba)": {
+    "name": "Darak (Kamba)",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 4269.8,
+    "path_km": 165.5,
+    "cells_reached": 19
+  },
+  "Deomali_1": {
+    "name": "Deomali",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 349.7,
+    "path_km": 40.9,
+    "cells_reached": 5
+  },
+  "Kamlang_1": {
+    "name": "Kamlang",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 536.8,
+    "path_km": 104.3,
+    "cells_reached": 12
+  },
+  "Kanubari_1": {
+    "name": "Kanubari",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 142.5,
+    "path_km": 271.5,
+    "cells_reached": 26
+  },
+  "Miao_2": {
+    "name": "Miao (NWDP)",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 86.1,
+    "path_km": 110.4,
+    "cells_reached": 12
+  },
+  "Sagalee_1": {
+    "name": "Sagalee",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 638.3,
+    "path_km": 99.6,
+    "cells_reached": 9
+  },
+  "Tenga_1": {
+    "name": "Tenga",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 942.0,
+    "path_km": 174.8,
+    "cells_reached": 17
+  },
+  "Tengapani Bridge_1": {
+    "name": "Tengapani Bridge",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 1472.0,
+    "path_km": 52.7,
+    "cells_reached": 6
+  },
+  "Tissa Camp_1": {
+    "name": "Tissa Camp",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 505.3,
+    "path_km": 270.1,
+    "cells_reached": 25
+  },
+  "Ziro": {
+    "name": "Ziro",
+    "snapped": true,
+    "snapped_catchment_km2_in_window": 8.6,
+    "path_km": 121.6,
+    "cells_reached": 11
+  }
+}

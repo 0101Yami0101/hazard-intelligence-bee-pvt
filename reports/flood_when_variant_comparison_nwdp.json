@@ -1,0 +1,105 @@
+{
+  "n_stations": 12,
+  "skipped_stations": {
+    "Deomali_1": "(27.2,95.458) falls outside the IMERG-indexed grid",
+    "Miao_2": "(27.443,95.941) falls outside the IMERG-indexed grid"
+  },
+  "results": {
+    "Aalo_1": {
+      "name": "Aalo",
+      "baseline_rule": 0.89,
+      "A_per_station": 0.418,
+      "B_pooled": 0.828,
+      "C_bigriver_naive_diagnostic": 0.789,
+      "D_blend_shipped": 0.885
+    },
+    "Basar_1": {
+      "name": "Basar",
+      "baseline_rule": 0.883,
+      "A_per_station": 0.726,
+      "B_pooled": 0.866,
+      "C_bigriver_naive_diagnostic": 0.848,
+      "D_blend_shipped": 0.882
+    },
+    "Changlang": {
+      "name": "Changlang",
+      "baseline_rule": 0.799,
+      "A_per_station": 0.687,
+      "B_pooled": 0.759,
+      "C_bigriver_naive_diagnostic": 0.77,
+      "D_blend_shipped": 0.793
+    },
+    "Changlang_1": {
+      "name": "Changlang (2nd station)",
+      "baseline_rule": 0.796,
+      "A_per_station": 0.487,
+      "B_pooled": 0.796,
+      "C_bigriver_naive_diagnostic": 0.788,
+      "D_blend_shipped": 0.798
+    },
+    "Darak(Kamba)": {
+      "name": "Darak (Kamba)",
+      "baseline_rule": 0.909,
+      "A_per_station": 0.802,
+      "B_pooled": 0.915,
+      "C_bigriver_naive_diagnostic": 0.881,
+      "D_blend_shipped": 0.915
+    },
+    "Kamlang_1": {
+      "name": "Kamlang",
+      "baseline_rule": 0.961,
+      "A_per_station": null,
+      "B_pooled": 0.956,
+      "C_bigriver_naive_diagnostic": 0.961,
+      "D_blend_shipped": 0.961
+    },
+    "Kanubari_1": {
+      "name": "Kanubari",
+      "baseline_rule": 0.907,
+      "A_per_station": 0.732,
+      "B_pooled": 0.891,
+      "C_bigriver_naive_diagnostic": 0.88,
+      "D_blend_shipped": 0.906
+    },
+    "Sagalee_1": {
+      "name": "Sagalee",
+      "baseline_rule": 0.954,
+      "A_per_station": 0.804,
+      "B_pooled": 0.939,
+      "C_bigriver_naive_diagnostic": 0.942,
+      "D_blend_shipped": 0.953
+    },
+    "Tenga_1": {
+      "name": "Tenga",
+      "baseline_rule": 0.948,
+      "A_per_station": 0.867,
+      "B_pooled": 0.924,
+      "C_bigriver_naive_diagnostic": 0.939,
+      "D_blend_shipped": 0.949
+    },
+    "Tengapani Bridge_1": {
+      "name": "Tengapani Bridge",
+      "baseline_rule": 0.887,
+      "A_per_station": 0.825,
+      "B_pooled": 0.882,
+      "C_bigriver_naive_diagnostic": 0.877,
+      "D_blend_shipped": 0.89
+    },
+    "Tissa Camp_1": {
+      "name": "Tissa Camp",
+      "baseline_rule": 0.695,
+      "A_per_station": 0.478,
+      "B_pooled": 0.666,
+      "C_bigriver_naive_diagnostic": 0.66,
+      "D_blend_shipped": 0.69
+    },
+    "Ziro": {
+      "name": "Ziro",
+      "baseline_rule": 0.984,
+      "A_per_station": null,
+      "B_pooled": 0.976,
+      "C_bigriver_naive_diagnostic": 0.966,
+      "D_blend_shipped": 0.984
+    }
+  }
+}

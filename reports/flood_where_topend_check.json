@@ -1,0 +1,204 @@
+{
+  "what": "WHERE's shown chance inside Arunachal: first stage vs a second stage by terrain setting (open < 50 m relief within ~2 km, valley >= 50 m), cross-fitted over the 5 spatial folds; pre-registered in FLOOD_SCREEN_PLAN.md Phase 3",
+  "gate": {
+    "B1_pooled_in_arunachal": false,
+    "B2_stable_by_fold_and_year": false,
+    "B3_outside_not_worse": false,
+    "B4_physical_checks": true
+  },
+  "GATE_B_PASS": false,
+  "results": {
+    "before_in_arunachal": [
+      {
+        "range": "0-1%",
+        "lo": 0.0,
+        "rows": 307835,
+        "flooded_rows": 6776,
+        "said_pct": 0.223,
+        "happened_pct": 0.336,
+        "happened_over_said": 1.509
+      },
+      {
+        "range": "1-2%",
+        "lo": 0.01,
+        "rows": 21649,
+        "flooded_rows": 2405,
+        "said_pct": 1.391,
+        "happened_pct": 1.84,
+        "happened_over_said": 1.322
+      },
+      {
+        "range": "2-5%",
+        "lo": 0.02,
+        "rows": 29352,
+        "flooded_rows": 6371,
+        "said_pct": 3.306,
+        "happened_pct": 3.992,
+        "happened_over_said": 1.208
+      },
+      {
+        "range": "5-10%",
+        "lo": 0.05,
+        "rows": 21950,
+        "flooded_rows": 5723,
+        "said_pct": 7.15,
+        "happened_pct": 5.024,
+        "happened_over_said": 0.703
+      },
+      {
+        "range": "10-20%",
+        "lo": 0.1,
+        "rows": 36006,
+        "flooded_rows": 10445,
+        "said_pct": 14.915,
+        "happened_pct": 5.775,
+        "happened_over_said": 0.387
+      },
+      {
+        "range": "20-100%",
+        "lo": 0.2,
+        "rows": 26999,
+        "flooded_rows": 15683,
+        "said_pct": 26.328,
+        "happened_pct": 17.211,
+        "happened_over_said": 0.654
+      }
+    ],
+    "after_in_arunachal": [
+      {
+        "range": "0-1%",
+        "lo": 0.0,
+        "rows": 313925,
+        "flooded_rows": 6852,
+        "said_pct": 0.143,
+        "happened_pct": 0.334,
+        "happened_over_said": 2.34
+      },
+      {
+        "range": "1-2%",
+        "lo": 0.01,
+        "rows": 15240,
+        "flooded_rows": 3034,
+        "said_pct": 1.456,
+        "happened_pct": 3.594,
+        "happened_over_said": 2.468
+      },
+      {
+        "range": "2-5%",
+        "lo": 0.02,
+        "rows": 22817,
+        "flooded_rows": 4247,
+        "said_pct": 3.344,
+        "happened_pct": 3.317,
+        "happened_over_said": 0.992
+      },
+      {
+        "range": "5-10%",
+        "lo": 0.05,
+        "rows": 26164,
+        "flooded_rows": 5991,
+        "said_pct": 7.409,
+        "happened_pct": 4.265,
+        "happened_over_said": 0.576
+      },
+      {
+        "range": "10-20%",
+        "lo": 0.1,
+        "rows": 38973,
+        "flooded_rows": 10660,
+        "said_pct": 15.982,
+        "happened_pct": 5.346,
+        "happened_over_said": 0.334
+      },
+      {
+        "range": "20-100%",
+        "lo": 0.2,
+        "rows": 26672,
+        "flooded_rows": 16619,
+        "said_pct": 31.086,
+        "happened_pct": 19.87,
+        "happened_over_said": 0.639
+      }
+    ],
+    "b2_top_ranges_by_fold_and_year": {
+      "fold 0": {
+        "flooded_rows": 224,
+        "said_pct": 6.463,
+        "happened_pct": 3.638,
+        "happened_over_said": 0.563,
+        "judged": true
+      },
+      "fold 1": {
+        "flooded_rows": 9,
+        "said_pct": 12.32,
+        "happened_pct": 0.489,
+        "happened_over_said": 0.04,
+        "judged": false
+      },
+      "fold 2": {
+        "flooded_rows": 3160,
+        "said_pct": 14.646,
+        "happened_pct": 2.24,
+        "happened_over_said": 0.153,
+        "judged": true
+      },
+      "fold 3": {
+        "flooded_rows": 29391,
+        "said_pct": 17.587,
+        "happened_pct": 11.864,
+        "happened_over_said": 0.675,
+        "judged": true
+      },
+      "fold 4": {
+        "flooded_rows": 486,
+        "said_pct": 12.805,
+        "happened_pct": 1.818,
+        "happened_over_said": 0.142,
+        "judged": true
+      },
+      "2015-2018": {
+        "flooded_rows": 3174,
+        "said_pct": 15.583,
+        "happened_pct": 2.148,
+        "happened_over_said": 0.138,
+        "judged": true
+      },
+      "2019-2021": {
+        "flooded_rows": 21642,
+        "said_pct": 17.439,
+        "happened_pct": 18.211,
+        "happened_over_said": 1.044,
+        "judged": true
+      },
+      "2022-2025": {
+        "flooded_rows": 8454,
+        "said_pct": 15.63,
+        "happened_pct": 5.387,
+        "happened_over_said": 0.345,
+        "judged": true
+      }
+    },
+    "ece_outside_arunachal": {
+      "before": 0.01526,
+      "after": 0.03904
+    },
+    "ece_in_arunachal": {
+      "before": 0.01106,
+      "after": 0.01525
+    }
+  },
+  "state_area_at_or_above": {
+    "0.05": {
+      "model_km2": 1793.5,
+      "shown_km2": 1757.5
+    },
+    "0.10": {
+      "model_km2": 1047.9,
+      "shown_km2": 1065.2
+    },
+    "0.20": {
+      "model_km2": 187.9,
+      "shown_km2": 185.6
+    }
+  }
+}

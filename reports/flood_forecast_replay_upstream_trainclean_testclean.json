@@ -1,0 +1,6635 @@
+{
+  "what": "WHEN x WHERE joined, replayed over 2023-01-01..2025-10-31 with every component fitted on 2022 and earlier only",
+  "truth": "reported floods confirmed by Sentinel-1 - unreported floods are not counted",
+  "day_model_fit": {
+    "n_tree_rows": 4015744,
+    "n_tree_pos": 1178,
+    "n_cal_rows": 1337360,
+    "n_cal_pos": 408
+  },
+  "right_day": {
+    "n_area_days": 1896120,
+    "n_floods": 945,
+    "auc": 0.9501239174419753,
+    "auc_in_arunachal": 0.882913835219535,
+    "average_precision": 0.014900281194685075,
+    "base_rate": 0.0002962767022647047,
+    "brier_skill_vs_climatology": 0.0083927810077844,
+    "expected_floods": 618.6219482421875,
+    "observed_floods": 945,
+    "expected_floods_in_arunachal": 104.35514831542969,
+    "observed_floods_in_arunachal": 150,
+    "reliability": [
+      {
+        "p_lo": 0.0,
+        "p_hi": 1e-06,
+        "n": 669690,
+        "predicted": 0.0,
+        "observed": 4.4796846302020335e-06,
+        "n_pos": 3
+      },
+      {
+        "p_lo": 4.641588833612772e-05,
+        "p_hi": 0.0001,
+        "n": 975004,
+        "predicted": 6.0616399423452094e-05,
+        "observed": 8.820476633942014e-05,
+        "n_pos": 86
+      },
+      {
+        "p_lo": 0.00021544346900318823,
+        "p_hi": 0.00046415888336127773,
+        "n": 100060,
+        "predicted": 0.00026167253963649273,
+        "observed": 0.0004597241655006996,
+        "n_pos": 46
+      },
+      {
+        "p_lo": 0.00046415888336127773,
+        "p_hi": 0.001,
+        "n": 38837,
+        "predicted": 0.0009253578027710319,
+        "observed": 0.0013131807297165074,
+        "n_pos": 51
+      },
+      {
+        "p_lo": 0.001,
+        "p_hi": 0.002154434690031882,
+        "n": 49206,
+        "predicted": 0.0016836147988215089,
+        "observed": 0.002967117831158802,
+        "n_pos": 146
+      },
+      {
+        "p_lo": 0.002154434690031882,
+        "p_hi": 0.004641588833612777,
+        "n": 12402,
+        "predicted": 0.0038723188918083906,
+        "observed": 0.0034671827124657315,
+        "n_pos": 43
+      },
+      {
+        "p_lo": 0.004641588833612777,
+        "p_hi": 0.01,
+        "n": 44334,
+        "predicted": 0.005840661469846964,
+        "observed": 0.00845851942076059,
+        "n_pos": 375
+      },
+      {
+        "p_lo": 0.01,
+        "p_hi": 0.021544346900318822,
+        "n": 5179,
+        "predicted": 0.013707457110285759,
+        "observed": 0.028190770418999807,
+        "n_pos": 146
+      },
+      {
+        "p_lo": 0.021544346900318822,
+        "p_hi": 0.046415888336127725,
+        "n": 1403,
+        "predicted": 0.0260869562625885,
+        "observed": 0.03492516037063435,
+        "n_pos": 49
+      }
+    ],
+    "warning_levels": [
+      {
+        "warn_when_times_normal_at_least": 2,
+        "floods_caught_pct": 69.2063492063492,
+        "floods_caught_pct_day_or_day_before": 73.86243386243386,
+        "share_of_area_days_under_warning_pct": 8.06367740438369
+      },
+      {
+        "warn_when_times_normal_at_least": 5,
+        "floods_caught_pct": 26.984126984126984,
+        "floods_caught_pct_day_or_day_before": 30.37037037037037,
+        "share_of_area_days_under_warning_pct": 0.9625973039681033
+      },
+      {
+        "warn_when_times_normal_at_least": 10,
+        "floods_caught_pct": 9.841269841269842,
+        "floods_caught_pct_day_or_day_before": 13.333333333333334,
+        "share_of_area_days_under_warning_pct": 0.2824715735291015
+      },
+      {
+        "warn_when_times_normal_at_least": 20,
+        "floods_caught_pct": 0.0,
+        "floods_caught_pct_day_or_day_before": 0.0,
+        "share_of_area_days_under_warning_pct": 0.13712212307237936
+      }
+    ],
+    "median_times_normal_on_flood_days": 2.883544921875,
+    "auc_timing_only": 0.8453217235107562,
+    "gauged_river_cells": {
+      "all": {
+        "n_cells": 196,
+        "n_floods": 279,
+        "auc_timing_only": 0.8367025861012735,
+        "warn_2x_floods_caught_pct": 68.10035842293907,
+        "warn_2x_time_under_warning_pct": 13.229813664596273
+      },
+      "in_arunachal": {
+        "n_cells": 128,
+        "n_floods": 75,
+        "auc_timing_only": 0.7502736301499189,
+        "warn_2x_floods_caught_pct": 42.66666666666667,
+        "warn_2x_time_under_warning_pct": 9.047403381642512
+      }
+    },
+    "named_days": {
+      "2024-05-24": {
+        "n_floods": 8,
+        "median_times_normal": 1.458439588546753,
+        "share_at_2x_or_more_pct": 0.0
+      },
+      "2024-06-30": {
+        "n_floods": 34,
+        "median_times_normal": 11.241857528686523,
+        "share_at_2x_or_more_pct": 100.0
+      }
+    }
+  },
+  "right_place": {
+    "n_floods_scored": 1046,
+    "n_cells": 6533190,
+    "n_wet": 424437,
+    "auc": 0.906035313041441,
+    "auc_in_arunachal": 0.9365822912015627,
+    "auc_steep": 0.6017114680883723,
+    "expected_wet_cells_total": 465305.46875,
+    "observed_wet_cells_total": 424437,
+    "expected_wet_cells_in_arunachal": 20393.2421875,
+    "observed_wet_cells_in_arunachal": 7980,
+    "expected_wet_cells_steep": 423.7188720703125,
+    "observed_wet_cells_steep": 482,
+    "reliability": [
+      {
+        "p_lo": 0.0,
+        "p_hi": 0.0001,
+        "n": 601617,
+        "predicted": 0.0,
+        "observed": 0.0006349554616973922,
+        "n_pos": 382
+      },
+      {
+        "p_lo": 0.0001,
+        "p_hi": 0.01,
+        "n": 1935582,
+        "predicted": 0.003829470369964838,
+        "observed": 0.0004091792546117912,
+        "n_pos": 792
+      },
+      {
+        "p_lo": 0.01,
+        "p_hi": 0.02,
+        "n": 473319,
+        "predicted": 0.014072630554437637,
+        "observed": 0.002852199045464053,
+        "n_pos": 1350
+      },
+      {
+        "p_lo": 0.02,
+        "p_hi": 0.05,
+        "n": 741539,
+        "predicted": 0.032874833792448044,
+        "observed": 0.009476237932192372,
+        "n_pos": 7027
+      },
+      {
+        "p_lo": 0.05,
+        "p_hi": 0.1,
+        "n": 715320,
+        "predicted": 0.07498816400766373,
+        "observed": 0.028982832858021584,
+        "n_pos": 20732
+      },
+      {
+        "p_lo": 0.1,
+        "p_hi": 0.15,
+        "n": 684303,
+        "predicted": 0.12452032417058945,
+        "observed": 0.06934647371120688,
+        "n_pos": 47454
+      },
+      {
+        "p_lo": 0.15,
+        "p_hi": 0.2,
+        "n": 862824,
+        "predicted": 0.1745229959487915,
+        "observed": 0.16853495034908625,
+        "n_pos": 145416
+      },
+      {
+        "p_lo": 0.2,
+        "p_hi": 0.3,
+        "n": 377439,
+        "predicted": 0.22761991620063782,
+        "observed": 0.333134625727601,
+        "n_pos": 125738
+      },
+      {
+        "p_lo": 0.3,
+        "p_hi": 0.5,
+        "n": 141195,
+        "predicted": 0.3646102249622345,
+        "observed": 0.5347002372605262,
+        "n_pos": 75497
+      }
+    ],
+    "median_event_expected_over_observed": 2.7377360836395437
+  },
+  "together": {
+    "n_flooded_patch_days": 363429,
+    "auc": 0.9912023962011838,
+    "auc_in_arunachal": 0.9699639902787485,
+    "expected_flooded_patch_days": 578369.4724803315,
+    "observed_flooded_patch_days": 363429,
+    "expected_in_arunachal": 49656.964269393124,
+    "observed_in_arunachal": 7619,
+    "flooded_patches_in_top_1pct_pct": 74.63025790457009,
+    "flooded_patches_in_top_0.1pct_pct": 23.07740989299148,
+    "mean_score_flooded_over_ordinary": 69.08539581298828
+  },
+  "together_corrected": {
+    "method": "scale factor per group = observed/expected flooded patch-days on 2021-2022, tested on 2023-2026",
+    "variants": {
+      "terrain (shipped)": {
+        "groups": [
+          {
+            "group": "flat (<5 deg)",
+            "factor": 0.5417933893954374,
+            "fit_expected": 365512.0270496008,
+            "fit_observed": 198032,
+            "test_expected_uncorrected": 557471.7037552244,
+            "test_expected_corrected": 302034.4838695922,
+            "test_observed": 360229
+          },
+          {
+            "group": "hilly (5-15 deg)",
+            "factor": 0.12975371962263949,
+            "fit_expected": 9502.617756052872,
+            "fit_observed": 1233,
+            "test_expected_uncorrected": 13382.35298970763,
+            "test_expected_corrected": 1736.410077717715,
+            "test_observed": 2101
+          },
+          {
+            "group": "steep (>=15 deg)",
+            "factor": 0.29330458157428835,
+            "fit_expected": 5840.345182491226,
+            "fit_observed": 1713,
+            "test_expected_uncorrected": 7515.415735399547,
+            "test_expected_corrected": 2204.3058676281867,
+            "test_observed": 1099
+          }
+        ],
+        "test_expected_corrected_total": 305975.1998149381,
+        "test_observed_total": 363429,
+        "test_expected_corrected_in_arunachal": 25733.53871985726,
+        "test_observed_in_arunachal": 7619
+      },
+      "terrain+state (rejected)": {
+        "groups": [
+          {
+            "group": "flat (<5 deg) / outside",
+            "factor": 0.5558918074618906,
+            "fit_expected": 334460.76647342223,
+            "fit_observed": 185924,
+            "test_expected_uncorrected": 511291.4579978694,
+            "test_expected_corrected": 284222.73272626096,
+            "test_observed": 353896
+          },
+          {
+            "group": "hilly (5-15 deg) / outside",
+            "factor": 0.1345340509401386,
+            "fit_expected": 8317.596862506602,
+            "fit_observed": 1119,
+            "test_expected_uncorrected": 11509.231583292385,
+            "test_expected_corrected": 1548.3835481085098,
+            "test_observed": 1865
+          },
+          {
+            "group": "steep (>=15 deg) / outside",
+            "factor": 0.07553090139219026,
+            "fit_expected": 4620.62538070128,
+            "fit_observed": 349,
+            "test_expected_uncorrected": 5911.8186297766615,
+            "test_expected_corrected": 446.5249899741744,
+            "test_observed": 49
+          },
+          {
+            "group": "flat (<5 deg) / inside",
+            "factor": 0.3899358601012429,
+            "fit_expected": 31051.260576178553,
+            "fit_observed": 12108,
+            "test_expected_uncorrected": 46180.24575735498,
+            "test_expected_corrected": 18007.333849080987,
+            "test_observed": 6333
+          },
+          {
+            "group": "hilly (5-15 deg) / inside",
+            "factor": 0.09620083546277886,
+            "fit_expected": 1185.020893546271,
+            "fit_observed": 114,
+            "test_expected_uncorrected": 1873.1214064152448,
+            "test_expected_corrected": 180.1958442203619,
+            "test_observed": 236
+          },
+          {
+            "group": "steep (>=15 deg) / inside",
+            "factor": 1.118289625205987,
+            "fit_expected": 1219.7198017899464,
+            "fit_observed": 1364,
+            "test_expected_uncorrected": 1603.5971056228852,
+            "test_expected_corrected": 1793.286006228422,
+            "test_observed": 1050
+          }
+        ],
+        "test_expected_corrected_total": 306198.4569638734,
+        "test_observed_total": 363429,
+        "test_expected_corrected_in_arunachal": 19980.815699529776,
+        "test_observed_in_arunachal": 7619
+      }
+    },
+    "shipped": "terrain (shipped)"
+  },
+  "per_event": [
+    {
+      "uuid": "23f2d85c223641b59130f6bf6f719803",
+      "date": "2023-06-09",
+      "expected_wet_cells": 692.9886474609375,
+      "observed_wet_cells": 18
+    },
+    {
+      "uuid": "500bebae7bff48a4923c72fb0568e483",
+      "date": "2023-06-10",
+      "expected_wet_cells": 162.40423583984375,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "1cdb2ea2392446c6b57735e8f3daade4",
+      "date": "2023-06-11",
+      "expected_wet_cells": 446.9360656738281,
+      "observed_wet_cells": 605
+    },
+    {
+      "uuid": "396a27666ea24eda84beb30c3b34b074",
+      "date": "2023-06-14",
+      "expected_wet_cells": 584.664306640625,
+      "observed_wet_cells": 655
+    },
+    {
+      "uuid": "5fefb45ae4df4037875d09e5c6f44421",
+      "date": "2023-06-14",
+      "expected_wet_cells": 483.5956726074219,
+      "observed_wet_cells": 924
+    },
+    {
+      "uuid": "50e85c5523fe44f7a7f9f62f37b34c21",
+      "date": "2023-06-15",
+      "expected_wet_cells": 328.98236083984375,
+      "observed_wet_cells": 469
+    },
+    {
+      "uuid": "417532fe8b774334af6b4506dcc4bfba",
+      "date": "2023-06-15",
+      "expected_wet_cells": 137.7908935546875,
+      "observed_wet_cells": 413
+    },
+    {
+      "uuid": "9d3165bd4944461095856207cabb53aa",
+      "date": "2023-06-16",
+      "expected_wet_cells": 545.9989624023438,
+      "observed_wet_cells": 2314
+    },
+    {
+      "uuid": "a61f6f4f6f2a409b865289a5b0e2da6b",
+      "date": "2023-06-16",
+      "expected_wet_cells": 412.2391357421875,
+      "observed_wet_cells": 610
+    },
+    {
+      "uuid": "44ef52a681bb4f1db919760e3a0b4884",
+      "date": "2023-06-16",
+      "expected_wet_cells": 487.35052490234375,
+      "observed_wet_cells": 61
+    },
+    {
+      "uuid": "3de75640a2004053b054e8f130722c65",
+      "date": "2023-06-16",
+      "expected_wet_cells": 342.0513916015625,
+      "observed_wet_cells": 101
+    },
+    {
+      "uuid": "64ad460e9da84fc6b8e489f77253d381",
+      "date": "2023-06-16",
+      "expected_wet_cells": 486.1292724609375,
+      "observed_wet_cells": 236
+    },
+    {
+      "uuid": "7ee26f3f99014d3dac3b5fae0f86ad96",
+      "date": "2023-06-16",
+      "expected_wet_cells": 452.03021240234375,
+      "observed_wet_cells": 842
+    },
+    {
+      "uuid": "90f4a6a4ef8745abaddaac8252241e07",
+      "date": "2023-06-16",
+      "expected_wet_cells": 460.24017333984375,
+      "observed_wet_cells": 1911
+    },
+    {
+      "uuid": "8abd41c2a2c34408b3a53d0fb109edb5",
+      "date": "2023-06-16",
+      "expected_wet_cells": 779.916748046875,
+      "observed_wet_cells": 457
+    },
+    {
+      "uuid": "f29e0fab657049bca9c34b84d3d63beb",
+      "date": "2023-06-16",
+      "expected_wet_cells": 358.8271484375,
+      "observed_wet_cells": 1004
+    },
+    {
+      "uuid": "f6da322987214570bc53cecf5558b6aa",
+      "date": "2023-06-16",
+      "expected_wet_cells": 234.51255798339844,
+      "observed_wet_cells": 76
+    },
+    {
+      "uuid": "ec5c83fd7b7e4b18867286f14d9b62aa",
+      "date": "2023-06-16",
+      "expected_wet_cells": 32.226341247558594,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "09d69c58d4b746c1a992a6957e647512",
+      "date": "2023-06-17",
+      "expected_wet_cells": 95.89665222167969,
+      "observed_wet_cells": 155
+    },
+    {
+      "uuid": "bc0929a8a5bc4f3ca98a6f71d789baf2",
+      "date": "2023-06-18",
+      "expected_wet_cells": 328.98236083984375,
+      "observed_wet_cells": 469
+    },
+    {
+      "uuid": "c7fefa771d084a7482d6a52471c056d2",
+      "date": "2023-06-18",
+      "expected_wet_cells": 578.4898071289062,
+      "observed_wet_cells": 119
+    },
+    {
+      "uuid": "9ea1607c9f304306a2036a5c49b3f15c",
+      "date": "2023-06-18",
+      "expected_wet_cells": 155.0289306640625,
+      "observed_wet_cells": 109
+    },
+    {
+      "uuid": "9c6c4ff67d854dc29c6e683b6123d9f8",
+      "date": "2023-06-18",
+      "expected_wet_cells": 621.88623046875,
+      "observed_wet_cells": 1476
+    },
+    {
+      "uuid": "812f831908bf49139379b25a0db3f528",
+      "date": "2023-06-18",
+      "expected_wet_cells": 490.6588134765625,
+      "observed_wet_cells": 254
+    },
+    {
+      "uuid": "d7baa483d57b480ba5ffeeb8d3f15e82",
+      "date": "2023-06-18",
+      "expected_wet_cells": 652.0850830078125,
+      "observed_wet_cells": 1562
+    },
+    {
+      "uuid": "d2f990a762484587bfaf5b8c4a1c36c1",
+      "date": "2023-06-19",
+      "expected_wet_cells": 138.48260498046875,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "5cdcb6a222d44dcf9e249817dd6ca154",
+      "date": "2023-06-19",
+      "expected_wet_cells": 264.7799072265625,
+      "observed_wet_cells": 391
+    },
+    {
+      "uuid": "539b0a79e1eb4e3eacbb9551c69307a9",
+      "date": "2023-06-19",
+      "expected_wet_cells": 471.14862060546875,
+      "observed_wet_cells": 321
+    },
+    {
+      "uuid": "14657f1c80d5436ea07fb39c3c64d883",
+      "date": "2023-06-19",
+      "expected_wet_cells": 429.365234375,
+      "observed_wet_cells": 489
+    },
+    {
+      "uuid": "c6485eee09bb4e9daf1329da0c73f125",
+      "date": "2023-06-19",
+      "expected_wet_cells": 779.916748046875,
+      "observed_wet_cells": 457
+    },
+    {
+      "uuid": "ac6bb3e931ed429ab452459c0c83f31e",
+      "date": "2023-06-20",
+      "expected_wet_cells": 20.624004364013672,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "029d644869564a14af876e2831b306a8",
+      "date": "2023-06-20",
+      "expected_wet_cells": 295.0709228515625,
+      "observed_wet_cells": 58
+    },
+    {
+      "uuid": "3f6379c397514958b16269742408184e",
+      "date": "2023-06-20",
+      "expected_wet_cells": 338.39501953125,
+      "observed_wet_cells": 379
+    },
+    {
+      "uuid": "545e025e232b4d51a40b7f0f77a7a21d",
+      "date": "2023-06-20",
+      "expected_wet_cells": 382.5289306640625,
+      "observed_wet_cells": 261
+    },
+    {
+      "uuid": "f4cb65daccfe4bf3a21e62611ae4bea0",
+      "date": "2023-06-21",
+      "expected_wet_cells": 741.0828247070312,
+      "observed_wet_cells": 237
+    },
+    {
+      "uuid": "6fcac4ba3884479f965cbe9d8aadc2d0",
+      "date": "2023-06-21",
+      "expected_wet_cells": 175.59800720214844,
+      "observed_wet_cells": 23
+    },
+    {
+      "uuid": "33683078f078443c896c7e26693d0917",
+      "date": "2023-06-21",
+      "expected_wet_cells": 407.7750244140625,
+      "observed_wet_cells": 390
+    },
+    {
+      "uuid": "301b74f963434c569d2a17eeebf0f928",
+      "date": "2023-06-21",
+      "expected_wet_cells": 739.317626953125,
+      "observed_wet_cells": 789
+    },
+    {
+      "uuid": "b5ba3039def1499cbc76aeec2bfd4b3d",
+      "date": "2023-06-21",
+      "expected_wet_cells": 547.0912475585938,
+      "observed_wet_cells": 742
+    },
+    {
+      "uuid": "c74218fd3d07467e9216156aa9858dda",
+      "date": "2023-06-21",
+      "expected_wet_cells": 375.0028381347656,
+      "observed_wet_cells": 153
+    },
+    {
+      "uuid": "a391d4e656e04836bfe88dea7b85e8ba",
+      "date": "2023-06-22",
+      "expected_wet_cells": 328.6562194824219,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "a7c6f94b869c4da3b0c3768f4093335c",
+      "date": "2023-06-22",
+      "expected_wet_cells": 803.810791015625,
+      "observed_wet_cells": 1265
+    },
+    {
+      "uuid": "13e603df1537483ebdf480a40ed4c4be",
+      "date": "2023-06-22",
+      "expected_wet_cells": 402.70428466796875,
+      "observed_wet_cells": 343
+    },
+    {
+      "uuid": "24fa377f909a43529e0d366919f32958",
+      "date": "2023-06-22",
+      "expected_wet_cells": 242.21018981933594,
+      "observed_wet_cells": 180
+    },
+    {
+      "uuid": "3e7af5169e8644ce8a96421cc59e1678",
+      "date": "2023-06-22",
+      "expected_wet_cells": 9.20292854309082,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "52248859e7fb441fb3d81580785918ed",
+      "date": "2023-06-22",
+      "expected_wet_cells": 745.0271606445312,
+      "observed_wet_cells": 829
+    },
+    {
+      "uuid": "93cff185e6db4d15beffbd71c0f6f817",
+      "date": "2023-06-22",
+      "expected_wet_cells": 527.512939453125,
+      "observed_wet_cells": 120
+    },
+    {
+      "uuid": "883ccdf5b25042608da2ba603f72aff3",
+      "date": "2023-06-22",
+      "expected_wet_cells": 102.2249984741211,
+      "observed_wet_cells": 128
+    },
+    {
+      "uuid": "df92dcdf13e842548cd20bae50970ea4",
+      "date": "2023-06-22",
+      "expected_wet_cells": 805.300048828125,
+      "observed_wet_cells": 363
+    },
+    {
+      "uuid": "f46638f683a8477f8aee81831d43fd05",
+      "date": "2023-06-22",
+      "expected_wet_cells": 165.6318359375,
+      "observed_wet_cells": 37
+    },
+    {
+      "uuid": "ff980682294745558638a0b6541b9490",
+      "date": "2023-06-22",
+      "expected_wet_cells": 338.39501953125,
+      "observed_wet_cells": 379
+    },
+    {
+      "uuid": "8341e3f22372466fbd351ea2e2d3e96b",
+      "date": "2023-06-23",
+      "expected_wet_cells": 522.3973388671875,
+      "observed_wet_cells": 704
+    },
+    {
+      "uuid": "7d41ef70f7a64926bd67120172074b78",
+      "date": "2023-06-23",
+      "expected_wet_cells": 510.47198486328125,
+      "observed_wet_cells": 640
+    },
+    {
+      "uuid": "995b31189e114a21a071b077d3ae295d",
+      "date": "2023-06-23",
+      "expected_wet_cells": 672.546630859375,
+      "observed_wet_cells": 516
+    },
+    {
+      "uuid": "94cfcdcf497941fb873698359fbfbf41",
+      "date": "2023-06-23",
+      "expected_wet_cells": 364.4617004394531,
+      "observed_wet_cells": 100
+    },
+    {
+      "uuid": "21a7e9482c894ffeab630a963e49d62e",
+      "date": "2023-06-23",
+      "expected_wet_cells": 305.113037109375,
+      "observed_wet_cells": 272
+    },
+    {
+      "uuid": "1381a9c088cc4f3ca89bfc88940a46ea",
+      "date": "2023-06-23",
+      "expected_wet_cells": 547.0912475585938,
+      "observed_wet_cells": 742
+    },
+    {
+      "uuid": "b4ce53a85c924002b182e25ba64a01bf",
+      "date": "2023-06-24",
+      "expected_wet_cells": 39.075714111328125,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "ba1760c7758e4a0cab386ef29578de7f",
+      "date": "2023-06-24",
+      "expected_wet_cells": 146.83981323242188,
+      "observed_wet_cells": 79
+    },
+    {
+      "uuid": "093839627d174d5aa3072747babcec31",
+      "date": "2023-06-26",
+      "expected_wet_cells": 1108.687255859375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3347607694564034ae1a37756f678751",
+      "date": "2023-06-26",
+      "expected_wet_cells": 330.66644287109375,
+      "observed_wet_cells": 716
+    },
+    {
+      "uuid": "55cca5f8996945969476aa0a16666220",
+      "date": "2023-06-26",
+      "expected_wet_cells": 10.634391784667969,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "841f7d283d3147d285a3459c2ddd94db",
+      "date": "2023-06-26",
+      "expected_wet_cells": 226.53799438476562,
+      "observed_wet_cells": 53
+    },
+    {
+      "uuid": "dae2dd3f896846aea86b67c90b50a01a",
+      "date": "2023-06-27",
+      "expected_wet_cells": 406.1391296386719,
+      "observed_wet_cells": 161
+    },
+    {
+      "uuid": "9ab1c836443c457bafa06948df289166",
+      "date": "2023-06-27",
+      "expected_wet_cells": 452.2745361328125,
+      "observed_wet_cells": 199
+    },
+    {
+      "uuid": "466c89fd9cf245c693d37d8ce8e472e0",
+      "date": "2023-06-27",
+      "expected_wet_cells": 261.4739990234375,
+      "observed_wet_cells": 98
+    },
+    {
+      "uuid": "35cd2cbfcb5549f9a72fd2d90bed404e",
+      "date": "2023-06-27",
+      "expected_wet_cells": 689.0263671875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c469446b71424b1f9b41d35bc920a258",
+      "date": "2023-06-27",
+      "expected_wet_cells": 510.68914794921875,
+      "observed_wet_cells": 144
+    },
+    {
+      "uuid": "c5674b6095ca4525b0e70f7e63608d7e",
+      "date": "2023-06-28",
+      "expected_wet_cells": 330.66644287109375,
+      "observed_wet_cells": 716
+    },
+    {
+      "uuid": "a776046ade9e46d1b4b586e10f9154d7",
+      "date": "2023-06-28",
+      "expected_wet_cells": 229.19024658203125,
+      "observed_wet_cells": 68
+    },
+    {
+      "uuid": "b8811c1257444cbd9732a54d606e38ed",
+      "date": "2023-06-30",
+      "expected_wet_cells": 344.11395263671875,
+      "observed_wet_cells": 61
+    },
+    {
+      "uuid": "9316bbee847241be952cc341133918ee",
+      "date": "2023-06-30",
+      "expected_wet_cells": 456.7978515625,
+      "observed_wet_cells": 88
+    },
+    {
+      "uuid": "a774ade8908d4853a0483b791fafbc60",
+      "date": "2023-07-04",
+      "expected_wet_cells": 259.3711853027344,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "b266988d59cf4e2fb2359859155213c6",
+      "date": "2023-07-04",
+      "expected_wet_cells": 493.40582275390625,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "afc6602ec9234548a07c2cc4bde7bfdc",
+      "date": "2023-07-04",
+      "expected_wet_cells": 821.2340087890625,
+      "observed_wet_cells": 300
+    },
+    {
+      "uuid": "14e5af7e9804492e8eea0ef055966dd4",
+      "date": "2023-07-04",
+      "expected_wet_cells": 527.8858032226562,
+      "observed_wet_cells": 33
+    },
+    {
+      "uuid": "0c6b9049845640f2af87ee65c1dbfff1",
+      "date": "2023-07-04",
+      "expected_wet_cells": 388.920654296875,
+      "observed_wet_cells": 9
+    },
+    {
+      "uuid": "807c091a87c6491383fd1776886808ad",
+      "date": "2023-07-04",
+      "expected_wet_cells": 444.5766906738281,
+      "observed_wet_cells": 476
+    },
+    {
+      "uuid": "e96bb47644f747bfacaafc3e9cfb037f",
+      "date": "2023-07-04",
+      "expected_wet_cells": 335.35565185546875,
+      "observed_wet_cells": 72
+    },
+    {
+      "uuid": "ce262d135b3f4c3488d81da6cdd6f0fb",
+      "date": "2023-07-04",
+      "expected_wet_cells": 438.3074951171875,
+      "observed_wet_cells": 276
+    },
+    {
+      "uuid": "c6f9493ee3664c3e912c8bff614dc47f",
+      "date": "2023-07-06",
+      "expected_wet_cells": 532.82177734375,
+      "observed_wet_cells": 1766
+    },
+    {
+      "uuid": "acd008c3cd4d4fea9d827daa51823b30",
+      "date": "2023-07-06",
+      "expected_wet_cells": 111.07305908203125,
+      "observed_wet_cells": 248
+    },
+    {
+      "uuid": "87286ce1b4844c55b4d7e3fc31c19469",
+      "date": "2023-07-06",
+      "expected_wet_cells": 592.9307861328125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "fc2dcad0795c44868f7cd6dc1816541f",
+      "date": "2023-07-06",
+      "expected_wet_cells": 349.14794921875,
+      "observed_wet_cells": 554
+    },
+    {
+      "uuid": "f1c20032408140e684f560e05a3792cd",
+      "date": "2023-07-06",
+      "expected_wet_cells": 1033.6051025390625,
+      "observed_wet_cells": 584
+    },
+    {
+      "uuid": "f29a5df5c0be4fb1b756fa432c7448f0",
+      "date": "2023-07-07",
+      "expected_wet_cells": 276.17498779296875,
+      "observed_wet_cells": 299
+    },
+    {
+      "uuid": "de332649fe4740158fd16f73caba5902",
+      "date": "2023-07-07",
+      "expected_wet_cells": 74.21084594726562,
+      "observed_wet_cells": 41
+    },
+    {
+      "uuid": "888e772f0e8c4465b3dd619228953cdb",
+      "date": "2023-07-07",
+      "expected_wet_cells": 528.822021484375,
+      "observed_wet_cells": 1016
+    },
+    {
+      "uuid": "76a0e2cee61345c095f4355f6e8c6038",
+      "date": "2023-07-07",
+      "expected_wet_cells": 210.78744506835938,
+      "observed_wet_cells": 236
+    },
+    {
+      "uuid": "6abf7945b556438787377b49165b0982",
+      "date": "2023-07-07",
+      "expected_wet_cells": 448.0367431640625,
+      "observed_wet_cells": 1310
+    },
+    {
+      "uuid": "6f1c7ce8339e4916863a3c6b4af4e120",
+      "date": "2023-07-07",
+      "expected_wet_cells": 268.1905822753906,
+      "observed_wet_cells": 230
+    },
+    {
+      "uuid": "35c364c320604a04b7e34f265665967c",
+      "date": "2023-07-07",
+      "expected_wet_cells": 547.6598510742188,
+      "observed_wet_cells": 1313
+    },
+    {
+      "uuid": "0e4f4bcbf49c487bb737a8cc44e41aa3",
+      "date": "2023-07-07",
+      "expected_wet_cells": 125.51731872558594,
+      "observed_wet_cells": 112
+    },
+    {
+      "uuid": "03cbb4a2142e4c1288116698708c72cc",
+      "date": "2023-07-07",
+      "expected_wet_cells": 471.62701416015625,
+      "observed_wet_cells": 670
+    },
+    {
+      "uuid": "9c41b6a7731c49f884e72ef3660b24c0",
+      "date": "2023-07-07",
+      "expected_wet_cells": 1014.953369140625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2f404ec1f9794e27a5eb419a12f2d109",
+      "date": "2023-07-08",
+      "expected_wet_cells": 342.5230712890625,
+      "observed_wet_cells": 1474
+    },
+    {
+      "uuid": "662a8c9c68f54435bd69cd1bff5441fe",
+      "date": "2023-07-08",
+      "expected_wet_cells": 471.94891357421875,
+      "observed_wet_cells": 1594
+    },
+    {
+      "uuid": "e3244d9e372f4d07b30639866896819b",
+      "date": "2023-07-08",
+      "expected_wet_cells": 515.574462890625,
+      "observed_wet_cells": 1799
+    },
+    {
+      "uuid": "ee72e55b35974631840953edcd8768a5",
+      "date": "2023-07-09",
+      "expected_wet_cells": 616.4688110351562,
+      "observed_wet_cells": 2203
+    },
+    {
+      "uuid": "f27952fa9f114ec89c2c1b20e7511226",
+      "date": "2023-07-09",
+      "expected_wet_cells": 514.1950073242188,
+      "observed_wet_cells": 1394
+    },
+    {
+      "uuid": "db97c6d4d4544adebbfa55dfb7d8a1e3",
+      "date": "2023-07-09",
+      "expected_wet_cells": 494.06146240234375,
+      "observed_wet_cells": 1575
+    },
+    {
+      "uuid": "fe294352598149d682c48175194fdda0",
+      "date": "2023-07-09",
+      "expected_wet_cells": 460.01458740234375,
+      "observed_wet_cells": 1480
+    },
+    {
+      "uuid": "7b0d5987694e4113a51dcff28f914fd2",
+      "date": "2023-07-09",
+      "expected_wet_cells": 230.5277099609375,
+      "observed_wet_cells": 211
+    },
+    {
+      "uuid": "962e1cdcf0dd4084bc702509bcd7e434",
+      "date": "2023-07-09",
+      "expected_wet_cells": 1084.029296875,
+      "observed_wet_cells": 2245
+    },
+    {
+      "uuid": "48e018fec0af4003ac0d1e5b4ce300ae",
+      "date": "2023-07-09",
+      "expected_wet_cells": 415.2076721191406,
+      "observed_wet_cells": 1114
+    },
+    {
+      "uuid": "2f22160bc31d43d88cbf8d544d6472e8",
+      "date": "2023-07-09",
+      "expected_wet_cells": 383.70196533203125,
+      "observed_wet_cells": 1524
+    },
+    {
+      "uuid": "0e97ad63afaa4c7fa8cb47e2e2cc2985",
+      "date": "2023-07-09",
+      "expected_wet_cells": 59.60680389404297,
+      "observed_wet_cells": 26
+    },
+    {
+      "uuid": "15b5829b04d5416ca40701bc44b733c3",
+      "date": "2023-07-09",
+      "expected_wet_cells": 480.4181213378906,
+      "observed_wet_cells": 598
+    },
+    {
+      "uuid": "b7f2ed7024ee4efda0937c8c7a933282",
+      "date": "2023-07-09",
+      "expected_wet_cells": 1075.27392578125,
+      "observed_wet_cells": 2033
+    },
+    {
+      "uuid": "ae6b264fcf344c41ac43c9813bd8cf0c",
+      "date": "2023-07-10",
+      "expected_wet_cells": 449.1660461425781,
+      "observed_wet_cells": 1642
+    },
+    {
+      "uuid": "68604b9ab9b74fad821cc5b021540574",
+      "date": "2023-07-10",
+      "expected_wet_cells": 421.24981689453125,
+      "observed_wet_cells": 88
+    },
+    {
+      "uuid": "5ae137f9762a4c35b51cecbd418c5c95",
+      "date": "2023-07-10",
+      "expected_wet_cells": 92.15155029296875,
+      "observed_wet_cells": 72
+    },
+    {
+      "uuid": "ed8ebc81950c47f9af54746f05de2fcb",
+      "date": "2023-07-11",
+      "expected_wet_cells": 429.44683837890625,
+      "observed_wet_cells": 571
+    },
+    {
+      "uuid": "f3ee304c52e24121b7c8c66f75d5cf33",
+      "date": "2023-07-11",
+      "expected_wet_cells": 381.1335754394531,
+      "observed_wet_cells": 806
+    },
+    {
+      "uuid": "87e92d0dbe7e4d4aa9c8ad7d283bdcd2",
+      "date": "2023-07-11",
+      "expected_wet_cells": 557.9163818359375,
+      "observed_wet_cells": 1208
+    },
+    {
+      "uuid": "081c4143c07442a4b6ec5d0f7d12ae2e",
+      "date": "2023-07-11",
+      "expected_wet_cells": 1444.75244140625,
+      "observed_wet_cells": 3182
+    },
+    {
+      "uuid": "bc8838b893cf4c9d8d3a3ee9b51cc83e",
+      "date": "2023-07-12",
+      "expected_wet_cells": 444.48651123046875,
+      "observed_wet_cells": 844
+    },
+    {
+      "uuid": "c5b4904fb5ad4109b5bad3a95e72a27f",
+      "date": "2023-07-12",
+      "expected_wet_cells": 484.765380859375,
+      "observed_wet_cells": 1001
+    },
+    {
+      "uuid": "a0f825cb8bbd4155b78021806a84d95b",
+      "date": "2023-07-12",
+      "expected_wet_cells": 479.38494873046875,
+      "observed_wet_cells": 1203
+    },
+    {
+      "uuid": "ac1468caa95e46b2a0ae4f3d76579c3d",
+      "date": "2023-07-12",
+      "expected_wet_cells": 779.6318359375,
+      "observed_wet_cells": 2972
+    },
+    {
+      "uuid": "ac07048e1513467a9f3435ac2fbc357a",
+      "date": "2023-07-12",
+      "expected_wet_cells": 415.2076721191406,
+      "observed_wet_cells": 1114
+    },
+    {
+      "uuid": "0d41610a8ff14208895c191df434b37a",
+      "date": "2023-07-12",
+      "expected_wet_cells": 438.38092041015625,
+      "observed_wet_cells": 1031
+    },
+    {
+      "uuid": "360cd50495af4d369c14c64e6da35650",
+      "date": "2023-07-12",
+      "expected_wet_cells": 358.0706481933594,
+      "observed_wet_cells": 243
+    },
+    {
+      "uuid": "6d7aec524be5473098c358de7be1fc7e",
+      "date": "2023-07-12",
+      "expected_wet_cells": 267.1258239746094,
+      "observed_wet_cells": 155
+    },
+    {
+      "uuid": "6a99356265ca426d8ba70c66180076be",
+      "date": "2023-07-12",
+      "expected_wet_cells": 1089.9498291015625,
+      "observed_wet_cells": 2873
+    },
+    {
+      "uuid": "3f186a21a2d34f8bb66db07f35744f48",
+      "date": "2023-07-12",
+      "expected_wet_cells": 514.1950073242188,
+      "observed_wet_cells": 1394
+    },
+    {
+      "uuid": "51cdf33c140546f1af8208da0384c3a6",
+      "date": "2023-07-12",
+      "expected_wet_cells": 512.7457885742188,
+      "observed_wet_cells": 1259
+    },
+    {
+      "uuid": "4eae7cb4bdea4996b78edd5e85dde8be",
+      "date": "2023-07-12",
+      "expected_wet_cells": 718.3577880859375,
+      "observed_wet_cells": 1523
+    },
+    {
+      "uuid": "61d6a926893446f8b8a3f3f575d76307",
+      "date": "2023-07-12",
+      "expected_wet_cells": 504.1866455078125,
+      "observed_wet_cells": 976
+    },
+    {
+      "uuid": "937bc88caf684fc789d8639708fed648",
+      "date": "2023-07-12",
+      "expected_wet_cells": 635.1277465820312,
+      "observed_wet_cells": 1888
+    },
+    {
+      "uuid": "df2e3efdce9446218e1de82b9bab0e43",
+      "date": "2023-07-12",
+      "expected_wet_cells": 480.4181213378906,
+      "observed_wet_cells": 598
+    },
+    {
+      "uuid": "dfa110bd101545078d66723bf6d29042",
+      "date": "2023-07-12",
+      "expected_wet_cells": 429.86236572265625,
+      "observed_wet_cells": 22
+    },
+    {
+      "uuid": "e086ab56982444bca417acdf30c6db94",
+      "date": "2023-07-13",
+      "expected_wet_cells": 958.26025390625,
+      "observed_wet_cells": 1073
+    },
+    {
+      "uuid": "dcb4d2ed831345da948d473c5cf076b7",
+      "date": "2023-07-13",
+      "expected_wet_cells": 381.1335754394531,
+      "observed_wet_cells": 806
+    },
+    {
+      "uuid": "4afeb14a029844de90e26f740459247e",
+      "date": "2023-07-13",
+      "expected_wet_cells": 287.15228271484375,
+      "observed_wet_cells": 563
+    },
+    {
+      "uuid": "46cdc61bbd984ab09358268a3951ae4a",
+      "date": "2023-07-13",
+      "expected_wet_cells": 752.5138549804688,
+      "observed_wet_cells": 587
+    },
+    {
+      "uuid": "71075d9971fb4a92b814f14897bf4656",
+      "date": "2023-07-13",
+      "expected_wet_cells": 131.60794067382812,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "17eacbf23783411b8112c42d6d7b188f",
+      "date": "2023-07-13",
+      "expected_wet_cells": 283.2214660644531,
+      "observed_wet_cells": 61
+    },
+    {
+      "uuid": "bc7b44e3a1294ca7972020f24869f165",
+      "date": "2023-07-14",
+      "expected_wet_cells": 396.98944091796875,
+      "observed_wet_cells": 455
+    },
+    {
+      "uuid": "aa24fe304fcf4e608d9ef2077c276b6a",
+      "date": "2023-07-14",
+      "expected_wet_cells": 392.01495361328125,
+      "observed_wet_cells": 868
+    },
+    {
+      "uuid": "46849660d11a4c2f9fdc1f97d1bb232c",
+      "date": "2023-07-14",
+      "expected_wet_cells": 151.0497589111328,
+      "observed_wet_cells": 375
+    },
+    {
+      "uuid": "4ffe942eb7ac415fbbf95499d6bd515e",
+      "date": "2023-07-14",
+      "expected_wet_cells": 279.7764892578125,
+      "observed_wet_cells": 177
+    },
+    {
+      "uuid": "57b47fc919034b80a1a3e54d9b4a38b4",
+      "date": "2023-07-14",
+      "expected_wet_cells": 1307.3671875,
+      "observed_wet_cells": 3630
+    },
+    {
+      "uuid": "77c679dcafc54f2d9bd68efd554f47a7",
+      "date": "2023-07-14",
+      "expected_wet_cells": 667.92919921875,
+      "observed_wet_cells": 1041
+    },
+    {
+      "uuid": "db640bbe9a304ba2991d70c54d556c52",
+      "date": "2023-07-14",
+      "expected_wet_cells": 442.6336669921875,
+      "observed_wet_cells": 742
+    },
+    {
+      "uuid": "d36a5ec57fac49ab9501645a3e338f5c",
+      "date": "2023-07-14",
+      "expected_wet_cells": 618.38916015625,
+      "observed_wet_cells": 198
+    },
+    {
+      "uuid": "f7218df657174d278b38e2561ee4ecd3",
+      "date": "2023-07-14",
+      "expected_wet_cells": 395.0819396972656,
+      "observed_wet_cells": 102
+    },
+    {
+      "uuid": "ecfac228f0044fa18975bd30e20e0f75",
+      "date": "2023-07-15",
+      "expected_wet_cells": 226.08248901367188,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "e7e056e922474837aef71f94f7e3446b",
+      "date": "2023-07-15",
+      "expected_wet_cells": 155.45343017578125,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "582751359a2147f780b70df776d345c7",
+      "date": "2023-07-15",
+      "expected_wet_cells": 1053.6051025390625,
+      "observed_wet_cells": 801
+    },
+    {
+      "uuid": "52ff310a3f1d4c5db542ecc75b6617c5",
+      "date": "2023-07-15",
+      "expected_wet_cells": 371.6012878417969,
+      "observed_wet_cells": 305
+    },
+    {
+      "uuid": "c92ff7b0648d44b1bd5474a529303fdc",
+      "date": "2023-07-16",
+      "expected_wet_cells": 637.5126342773438,
+      "observed_wet_cells": 756
+    },
+    {
+      "uuid": "b2386a31443d4f559bda9a30b5c391bc",
+      "date": "2023-07-16",
+      "expected_wet_cells": 349.761962890625,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "b2dffffc467f4a9a82056452b0d8d618",
+      "date": "2023-07-16",
+      "expected_wet_cells": 427.1104736328125,
+      "observed_wet_cells": 730
+    },
+    {
+      "uuid": "b03a3d6067ee48dabb9ff929759869fa",
+      "date": "2023-07-16",
+      "expected_wet_cells": 398.21282958984375,
+      "observed_wet_cells": 423
+    },
+    {
+      "uuid": "b35ddeeae7054b478ed2ae061e8fcf71",
+      "date": "2023-07-16",
+      "expected_wet_cells": 329.5012512207031,
+      "observed_wet_cells": 69
+    },
+    {
+      "uuid": "2fa06137320b42d7a713c939cbbe5b14",
+      "date": "2023-07-16",
+      "expected_wet_cells": 635.584228515625,
+      "observed_wet_cells": 367
+    },
+    {
+      "uuid": "1bbcaf8026b64bab9dc15cd64306983e",
+      "date": "2023-07-16",
+      "expected_wet_cells": 476.84991455078125,
+      "observed_wet_cells": 847
+    },
+    {
+      "uuid": "10ea443b6fae4737a1312ef7627c1c6b",
+      "date": "2023-07-16",
+      "expected_wet_cells": 413.199951171875,
+      "observed_wet_cells": 95
+    },
+    {
+      "uuid": "1035d2c03e984fafaa4b4030f29fa253",
+      "date": "2023-07-16",
+      "expected_wet_cells": 540.233642578125,
+      "observed_wet_cells": 1487
+    },
+    {
+      "uuid": "04c78d3128b048878f22a412c71a2117",
+      "date": "2023-07-16",
+      "expected_wet_cells": 745.876708984375,
+      "observed_wet_cells": 207
+    },
+    {
+      "uuid": "2e9ccaa9dbb34ec1889571dd0ba7f809",
+      "date": "2023-07-16",
+      "expected_wet_cells": 585.106689453125,
+      "observed_wet_cells": 1249
+    },
+    {
+      "uuid": "256c03b342ba4b9396e9b6af9b1c26b9",
+      "date": "2023-07-16",
+      "expected_wet_cells": 286.3404541015625,
+      "observed_wet_cells": 397
+    },
+    {
+      "uuid": "7f090d525f38405a97f4d7a0a116d5b8",
+      "date": "2023-07-16",
+      "expected_wet_cells": 1293.784423828125,
+      "observed_wet_cells": 2901
+    },
+    {
+      "uuid": "8734891c42744e30940185ffdf0b4d75",
+      "date": "2023-07-16",
+      "expected_wet_cells": 476.0162353515625,
+      "observed_wet_cells": 2207
+    },
+    {
+      "uuid": "85facbd30acd47719bb09277da55a1a0",
+      "date": "2023-07-16",
+      "expected_wet_cells": 640.2095947265625,
+      "observed_wet_cells": 1648
+    },
+    {
+      "uuid": "e33235147ab14909b5cec58bd58e1898",
+      "date": "2023-07-16",
+      "expected_wet_cells": 508.3365783691406,
+      "observed_wet_cells": 961
+    },
+    {
+      "uuid": "d1ce01c739ba4cbe8a4783488e8f9d0e",
+      "date": "2023-07-16",
+      "expected_wet_cells": 796.6832275390625,
+      "observed_wet_cells": 826
+    },
+    {
+      "uuid": "f1741557fab248d5a8f18fe8dd80ed86",
+      "date": "2023-07-16",
+      "expected_wet_cells": 361.8646240234375,
+      "observed_wet_cells": 1264
+    },
+    {
+      "uuid": "f3d7628bbe96439c822dfb2df7504060",
+      "date": "2023-07-17",
+      "expected_wet_cells": 455.475830078125,
+      "observed_wet_cells": 139
+    },
+    {
+      "uuid": "ced62bd968eb4119a5a92fe0281a55f1",
+      "date": "2023-07-17",
+      "expected_wet_cells": 367.5898132324219,
+      "observed_wet_cells": 638
+    },
+    {
+      "uuid": "0cbc92e6d8024e8f8f90a9e29fc10b48",
+      "date": "2023-07-17",
+      "expected_wet_cells": 279.7764892578125,
+      "observed_wet_cells": 177
+    },
+    {
+      "uuid": "369b8d100fef4c71a4d7c8e6f6cec095",
+      "date": "2023-07-17",
+      "expected_wet_cells": 780.3978271484375,
+      "observed_wet_cells": 2229
+    },
+    {
+      "uuid": "b8d6183fcdbc4be5a61b8dbe43cce5a8",
+      "date": "2023-07-17",
+      "expected_wet_cells": 413.0911560058594,
+      "observed_wet_cells": 143
+    },
+    {
+      "uuid": "ceb73959a02749f995664e96583e098c",
+      "date": "2023-07-18",
+      "expected_wet_cells": 65.57926177978516,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "e6eb8fec0a804ea99b488fc086d7bd76",
+      "date": "2023-07-19",
+      "expected_wet_cells": 309.73052978515625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f8f68605335a4242842db24c978b32c3",
+      "date": "2023-07-21",
+      "expected_wet_cells": 833.9558715820312,
+      "observed_wet_cells": 601
+    },
+    {
+      "uuid": "d8f89b1bac1e4f86bdbcf28201eaf163",
+      "date": "2023-07-21",
+      "expected_wet_cells": 5.536651611328125,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "dbc6f44833d24fe4b24ca1193d0bda43",
+      "date": "2023-07-21",
+      "expected_wet_cells": 424.2050476074219,
+      "observed_wet_cells": 239
+    },
+    {
+      "uuid": "84b1ddbf68574229a6160b207a22b260",
+      "date": "2023-07-21",
+      "expected_wet_cells": 6.586891174316406,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "8de2b449102f4c21b65019d270a23e4d",
+      "date": "2023-07-21",
+      "expected_wet_cells": 629.9098510742188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7bf529ecdf774106ab6516d86238a08a",
+      "date": "2023-07-21",
+      "expected_wet_cells": 7.519238471984863,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "a0591e4da4754c57891e04ec3e6efdf7",
+      "date": "2023-07-21",
+      "expected_wet_cells": 684.609619140625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "a162059f529947d0a57286d649eb71bd",
+      "date": "2023-07-22",
+      "expected_wet_cells": 403.8113098144531,
+      "observed_wet_cells": 498
+    },
+    {
+      "uuid": "249e46689fda4283b68820abee7ed6bc",
+      "date": "2023-07-22",
+      "expected_wet_cells": 228.28329467773438,
+      "observed_wet_cells": 971
+    },
+    {
+      "uuid": "9abd6d0733c0497883c166197cc294f0",
+      "date": "2023-07-22",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ecb01d428bb34df9ab9f0bdedc56d332",
+      "date": "2023-07-23",
+      "expected_wet_cells": 416.3807373046875,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "f9bbe14098b0421782396d1530383009",
+      "date": "2023-07-23",
+      "expected_wet_cells": 356.224853515625,
+      "observed_wet_cells": 398
+    },
+    {
+      "uuid": "569e051876574fd3b6ea0fe43498516e",
+      "date": "2023-07-23",
+      "expected_wet_cells": 368.74163818359375,
+      "observed_wet_cells": 949
+    },
+    {
+      "uuid": "359bcf78732b478aaa721656dfed2dc4",
+      "date": "2023-07-23",
+      "expected_wet_cells": 377.0001525878906,
+      "observed_wet_cells": 538
+    },
+    {
+      "uuid": "12b37df5f4e3414ab02b66a5f2a9c836",
+      "date": "2023-07-23",
+      "expected_wet_cells": 514.517333984375,
+      "observed_wet_cells": 709
+    },
+    {
+      "uuid": "debfebc783844e15a72ae5195b95c561",
+      "date": "2023-07-25",
+      "expected_wet_cells": 589.3836669921875,
+      "observed_wet_cells": 1067
+    },
+    {
+      "uuid": "7ef21419b90744cb92e922c7c88b0d3e",
+      "date": "2023-07-25",
+      "expected_wet_cells": 833.9558715820312,
+      "observed_wet_cells": 601
+    },
+    {
+      "uuid": "a3e53c669e9147f08fe879bfc2989583",
+      "date": "2023-07-26",
+      "expected_wet_cells": 569.998291015625,
+      "observed_wet_cells": 287
+    },
+    {
+      "uuid": "aae3f7a457964fc395e216123341a562",
+      "date": "2023-07-26",
+      "expected_wet_cells": 323.3958740234375,
+      "observed_wet_cells": 448
+    },
+    {
+      "uuid": "2e161a4d82f2496da74945cb5bcb15c9",
+      "date": "2023-07-26",
+      "expected_wet_cells": 495.4493103027344,
+      "observed_wet_cells": 311
+    },
+    {
+      "uuid": "67d332d2231448aa8b9ade24d31ba556",
+      "date": "2023-07-26",
+      "expected_wet_cells": 432.74493408203125,
+      "observed_wet_cells": 443
+    },
+    {
+      "uuid": "98b4609f355448b2a31e8c0fda33a3d3",
+      "date": "2023-07-26",
+      "expected_wet_cells": 103.79135131835938,
+      "observed_wet_cells": 157
+    },
+    {
+      "uuid": "897c9d5075bb4f5bb43c2904ba5791fb",
+      "date": "2023-07-26",
+      "expected_wet_cells": 261.1763000488281,
+      "observed_wet_cells": 104
+    },
+    {
+      "uuid": "ed89bc950c81492fa2584375aa958641",
+      "date": "2023-07-27",
+      "expected_wet_cells": 287.38958740234375,
+      "observed_wet_cells": 120
+    },
+    {
+      "uuid": "e68401edd3cb46c18bea03e88e9436d1",
+      "date": "2023-07-27",
+      "expected_wet_cells": 468.014404296875,
+      "observed_wet_cells": 567
+    },
+    {
+      "uuid": "76c6aa14624c49c18e41a9e061f48443",
+      "date": "2023-07-27",
+      "expected_wet_cells": 422.4976806640625,
+      "observed_wet_cells": 94
+    },
+    {
+      "uuid": "6160d75fec974e5a89b649898266d903",
+      "date": "2023-07-27",
+      "expected_wet_cells": 216.0438232421875,
+      "observed_wet_cells": 324
+    },
+    {
+      "uuid": "bdeddb8f5ceb4ac88f9b8e2e0ba043b8",
+      "date": "2023-07-27",
+      "expected_wet_cells": 286.6612548828125,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "dfd23d85428842b38a85e29b760c8754",
+      "date": "2023-07-29",
+      "expected_wet_cells": 547.9222412109375,
+      "observed_wet_cells": 361
+    },
+    {
+      "uuid": "729b15fdd48a425ab1c12f85673c708c",
+      "date": "2023-07-29",
+      "expected_wet_cells": 373.84344482421875,
+      "observed_wet_cells": 678
+    },
+    {
+      "uuid": "3934567ac1174c8e8ff841d918c46637",
+      "date": "2023-08-03",
+      "expected_wet_cells": 9.857874870300293,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "22d6161ef11c462e8cd6a797b80a5c91",
+      "date": "2023-08-06",
+      "expected_wet_cells": 275.7047424316406,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "9c490b8207f04fa599fd99dfbf943f6d",
+      "date": "2023-08-07",
+      "expected_wet_cells": 406.77606201171875,
+      "observed_wet_cells": 24
+    },
+    {
+      "uuid": "6d24c65c4b694f309fc4066621ddbeda",
+      "date": "2023-08-07",
+      "expected_wet_cells": 764.866943359375,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "8b16f32f8b094e9988219134bb15ed05",
+      "date": "2023-08-07",
+      "expected_wet_cells": 280.2340393066406,
+      "observed_wet_cells": 812
+    },
+    {
+      "uuid": "e624238a102f4c4c9b7f7bc1d5ab5ea9",
+      "date": "2023-08-07",
+      "expected_wet_cells": 352.49090576171875,
+      "observed_wet_cells": 976
+    },
+    {
+      "uuid": "ea7ebd32beb54d9c9792b8158ae638d9",
+      "date": "2023-08-08",
+      "expected_wet_cells": 97.3097152709961,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "123d697a0a314a09a864dbcf6f8a785f",
+      "date": "2023-08-08",
+      "expected_wet_cells": 354.95428466796875,
+      "observed_wet_cells": 1001
+    },
+    {
+      "uuid": "caa228f049cd411e8a57f8c77f6bf80e",
+      "date": "2023-08-08",
+      "expected_wet_cells": 136.94439697265625,
+      "observed_wet_cells": 174
+    },
+    {
+      "uuid": "5a5e1ed7815a477eaa15d7d5aebaaaab",
+      "date": "2023-08-10",
+      "expected_wet_cells": 387.55859375,
+      "observed_wet_cells": 781
+    },
+    {
+      "uuid": "5ff5f6583ab340e6b97ff8372943667f",
+      "date": "2023-08-10",
+      "expected_wet_cells": 354.95428466796875,
+      "observed_wet_cells": 1001
+    },
+    {
+      "uuid": "559c761091c7418cb87d4e7856ebc554",
+      "date": "2023-08-10",
+      "expected_wet_cells": 275.7047424316406,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "7170590311b04988a6caf9ceec9126ce",
+      "date": "2023-08-10",
+      "expected_wet_cells": 690.8611450195312,
+      "observed_wet_cells": 142
+    },
+    {
+      "uuid": "bfeaf95fe72e4f458a10c541ccbc8148",
+      "date": "2023-08-10",
+      "expected_wet_cells": 855.25341796875,
+      "observed_wet_cells": 163
+    },
+    {
+      "uuid": "ef71d7d2abd140aa8129337657561fed",
+      "date": "2023-08-13",
+      "expected_wet_cells": 156.61569213867188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ef714f704b2043d786ad80128d7be983",
+      "date": "2023-08-14",
+      "expected_wet_cells": 509.1344299316406,
+      "observed_wet_cells": 112
+    },
+    {
+      "uuid": "92d4f29f99bf45698110543467ed986c",
+      "date": "2023-08-14",
+      "expected_wet_cells": 442.29388427734375,
+      "observed_wet_cells": 194
+    },
+    {
+      "uuid": "624b88dabef6481aa6236210c0db245e",
+      "date": "2023-08-14",
+      "expected_wet_cells": 444.25225830078125,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "377c20f02534487eb3a2a564ca293d1b",
+      "date": "2023-08-14",
+      "expected_wet_cells": 567.663818359375,
+      "observed_wet_cells": 126
+    },
+    {
+      "uuid": "c037d58eac414dffbcd4ebd2e4d3b55d",
+      "date": "2023-08-14",
+      "expected_wet_cells": 320.68072509765625,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "7ebc220e04c94f59924efbe5c49b0cba",
+      "date": "2023-08-16",
+      "expected_wet_cells": 80.06865692138672,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "5b163c8ab14e4c66a73c1b0dd9c2dd3b",
+      "date": "2023-08-16",
+      "expected_wet_cells": 617.927490234375,
+      "observed_wet_cells": 575
+    },
+    {
+      "uuid": "a2fed6daff394c62bea32d2cae8e4a8f",
+      "date": "2023-08-16",
+      "expected_wet_cells": 442.29388427734375,
+      "observed_wet_cells": 194
+    },
+    {
+      "uuid": "50b6374598b64287a3fde282fb7c63f0",
+      "date": "2023-08-18",
+      "expected_wet_cells": 512.0254516601562,
+      "observed_wet_cells": 926
+    },
+    {
+      "uuid": "726086b9336241cfbc4478bd5e238f1d",
+      "date": "2023-08-20",
+      "expected_wet_cells": 376.0091552734375,
+      "observed_wet_cells": 77
+    },
+    {
+      "uuid": "af6b66799623427e819e84a86f49d278",
+      "date": "2023-08-20",
+      "expected_wet_cells": 423.44830322265625,
+      "observed_wet_cells": 364
+    },
+    {
+      "uuid": "ff875e0f5fba4539be659024927709fe",
+      "date": "2023-08-22",
+      "expected_wet_cells": 287.4226379394531,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "33dcd6128b8d48a8a9a0b6e02b1b6cfa",
+      "date": "2023-08-22",
+      "expected_wet_cells": 571.1552124023438,
+      "observed_wet_cells": 261
+    },
+    {
+      "uuid": "d7a70d88f0ba4fd7820ad66e5b960bd7",
+      "date": "2023-08-23",
+      "expected_wet_cells": 77.58265686035156,
+      "observed_wet_cells": 140
+    },
+    {
+      "uuid": "d686bb24e5bc48e1a9e17c3e2ad7167e",
+      "date": "2023-08-26",
+      "expected_wet_cells": 812.8699951171875,
+      "observed_wet_cells": 2256
+    },
+    {
+      "uuid": "ca796dd4846148b78916a2d8891fcd60",
+      "date": "2023-08-27",
+      "expected_wet_cells": 812.5360107421875,
+      "observed_wet_cells": 2393
+    },
+    {
+      "uuid": "c982513f33fc4e318bed160149f12b87",
+      "date": "2023-08-27",
+      "expected_wet_cells": 528.6500244140625,
+      "observed_wet_cells": 872
+    },
+    {
+      "uuid": "bbdeee0814dd4b8381d73c6d09c4c734",
+      "date": "2023-08-27",
+      "expected_wet_cells": 791.7279052734375,
+      "observed_wet_cells": 195
+    },
+    {
+      "uuid": "bce1efd662ef4dbe9b17c2b6d2d293c1",
+      "date": "2023-08-27",
+      "expected_wet_cells": 558.7693481445312,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "c94dba1d1378448c8e42617788660de3",
+      "date": "2023-08-27",
+      "expected_wet_cells": 644.7334594726562,
+      "observed_wet_cells": 2106
+    },
+    {
+      "uuid": "cab2b2a11b1b4b13b1d64527df3a010f",
+      "date": "2023-08-27",
+      "expected_wet_cells": 648.3707275390625,
+      "observed_wet_cells": 454
+    },
+    {
+      "uuid": "9e0ec7de63f445fda356bbacdbcc88b6",
+      "date": "2023-08-27",
+      "expected_wet_cells": 610.7223510742188,
+      "observed_wet_cells": 328
+    },
+    {
+      "uuid": "37ed54bee0c743a6b0132c917557094c",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1183.9237060546875,
+      "observed_wet_cells": 3282
+    },
+    {
+      "uuid": "18a85181226f4c7aacca95f5ea03bdce",
+      "date": "2023-08-27",
+      "expected_wet_cells": 756.43505859375,
+      "observed_wet_cells": 787
+    },
+    {
+      "uuid": "18f6acc346fd452f89accb81ddba0daf",
+      "date": "2023-08-27",
+      "expected_wet_cells": 656.4414672851562,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "1a8ed54678624a09a21bbe9c774ce065",
+      "date": "2023-08-27",
+      "expected_wet_cells": 609.264404296875,
+      "observed_wet_cells": 859
+    },
+    {
+      "uuid": "04345483995547539e0f3d12d36117f7",
+      "date": "2023-08-27",
+      "expected_wet_cells": 675.5462036132812,
+      "observed_wet_cells": 134
+    },
+    {
+      "uuid": "0c859bf7a0894490abbe43687a4ad2e5",
+      "date": "2023-08-27",
+      "expected_wet_cells": 799.1322021484375,
+      "observed_wet_cells": 155
+    },
+    {
+      "uuid": "013f2515849041b59febd660163d24f7",
+      "date": "2023-08-27",
+      "expected_wet_cells": 899.4053955078125,
+      "observed_wet_cells": 1499
+    },
+    {
+      "uuid": "0ea1057078444f8288bcdfd63f621929",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1142.2811279296875,
+      "observed_wet_cells": 3312
+    },
+    {
+      "uuid": "2c494446ecd7421caf1f848819f8fd99",
+      "date": "2023-08-27",
+      "expected_wet_cells": 811.5697021484375,
+      "observed_wet_cells": 184
+    },
+    {
+      "uuid": "30f389e3b5c4417fbe99cd878f7e2921",
+      "date": "2023-08-27",
+      "expected_wet_cells": 815.5379638671875,
+      "observed_wet_cells": 1939
+    },
+    {
+      "uuid": "727a93c6213246399ec8119ab6a793c6",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1511.621826171875,
+      "observed_wet_cells": 4685
+    },
+    {
+      "uuid": "71c847c847db44aea06100a2f1ff8ea1",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1283.1689453125,
+      "observed_wet_cells": 3407
+    },
+    {
+      "uuid": "40616e8283cd44b39472bddf12dcf134",
+      "date": "2023-08-27",
+      "expected_wet_cells": 906.5270385742188,
+      "observed_wet_cells": 1536
+    },
+    {
+      "uuid": "3c7e4f9e06e3477397e08ac868b547ee",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1284.2998046875,
+      "observed_wet_cells": 3856
+    },
+    {
+      "uuid": "4aa92d13ed3c4e26a5e36bd514024042",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1408.880615234375,
+      "observed_wet_cells": 4585
+    },
+    {
+      "uuid": "828d8c97db3a48149d8b1da23a698612",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1595.6060791015625,
+      "observed_wet_cells": 4851
+    },
+    {
+      "uuid": "8e84d5eb8057493ca3f264f63f9cade2",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1151.498779296875,
+      "observed_wet_cells": 2765
+    },
+    {
+      "uuid": "86c5622a40a14174bd2d5f04ab8bcb08",
+      "date": "2023-08-27",
+      "expected_wet_cells": 680.047119140625,
+      "observed_wet_cells": 1197
+    },
+    {
+      "uuid": "fd67f8be11e44d2a96000b4ddfca6329",
+      "date": "2023-08-27",
+      "expected_wet_cells": 844.0692138671875,
+      "observed_wet_cells": 482
+    },
+    {
+      "uuid": "e098a2b8306b4c078881abbb5e0e2a50",
+      "date": "2023-08-27",
+      "expected_wet_cells": 1237.549560546875,
+      "observed_wet_cells": 3217
+    },
+    {
+      "uuid": "f7bb2c4161064c9a81e1e96a53a4a493",
+      "date": "2023-08-27",
+      "expected_wet_cells": 565.519775390625,
+      "observed_wet_cells": 494
+    },
+    {
+      "uuid": "f7e81aa095d744c68f605a98b20228a0",
+      "date": "2023-08-27",
+      "expected_wet_cells": 914.5222778320312,
+      "observed_wet_cells": 1859
+    },
+    {
+      "uuid": "eabf66e78aab4af2a9478379e42a056d",
+      "date": "2023-08-27",
+      "expected_wet_cells": 776.4447021484375,
+      "observed_wet_cells": 143
+    },
+    {
+      "uuid": "85e40799ff3340dc8ef207393221cb94",
+      "date": "2023-08-28",
+      "expected_wet_cells": 269.02783203125,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "8e7448ab77b740a09ae1161c35c8bf3e",
+      "date": "2023-08-28",
+      "expected_wet_cells": 461.39727783203125,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "78189aacb3964166a33cc34d990b6a82",
+      "date": "2023-08-28",
+      "expected_wet_cells": 164.8492889404297,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "972e3bc7d91c4df1bf3bf6f39c8ba701",
+      "date": "2023-08-28",
+      "expected_wet_cells": 823.05322265625,
+      "observed_wet_cells": 2632
+    },
+    {
+      "uuid": "a2c5b31c23cf45e8aac58e9a0108250a",
+      "date": "2023-08-28",
+      "expected_wet_cells": 108.95045471191406,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "be8ca9747aa847629967d237eccc9fa9",
+      "date": "2023-08-28",
+      "expected_wet_cells": 604.7811279296875,
+      "observed_wet_cells": 67
+    },
+    {
+      "uuid": "ba56d025d5be4dafb74f7bfe40c39297",
+      "date": "2023-08-29",
+      "expected_wet_cells": 157.02352905273438,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "feab228776b24cf69eccb79128053e25",
+      "date": "2023-08-29",
+      "expected_wet_cells": 235.68753051757812,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "f5c2b326e0d94d64ae8ca0ac42f0e7fb",
+      "date": "2023-08-30",
+      "expected_wet_cells": 347.2738037109375,
+      "observed_wet_cells": 433
+    },
+    {
+      "uuid": "965821e0be804399939c754f4a8b14fb",
+      "date": "2023-08-30",
+      "expected_wet_cells": 1008.6301879882812,
+      "observed_wet_cells": 2523
+    },
+    {
+      "uuid": "c3068e914ad34dfaa8dda44863e71e73",
+      "date": "2023-08-30",
+      "expected_wet_cells": 122.21269989013672,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "123e74804f5943c28a7e7f0895e17221",
+      "date": "2023-08-31",
+      "expected_wet_cells": 488.8060302734375,
+      "observed_wet_cells": 814
+    },
+    {
+      "uuid": "4a04456591c54392ae2f294177b95ba8",
+      "date": "2023-08-31",
+      "expected_wet_cells": 269.02783203125,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "24361afc04e046cfae38b1c669b2847e",
+      "date": "2023-09-01",
+      "expected_wet_cells": 516.647705078125,
+      "observed_wet_cells": 327
+    },
+    {
+      "uuid": "07be3b9c3b4a495a9f4a684dbac78e83",
+      "date": "2023-09-02",
+      "expected_wet_cells": 369.58770751953125,
+      "observed_wet_cells": 62
+    },
+    {
+      "uuid": "5586792091c3407c91d4afb47e78ef1e",
+      "date": "2023-09-02",
+      "expected_wet_cells": 507.8160095214844,
+      "observed_wet_cells": 9
+    },
+    {
+      "uuid": "e9f189c7d9464635b66b96d28e2fba93",
+      "date": "2023-09-19",
+      "expected_wet_cells": 212.7105255126953,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "3a93b4244bd34e308bc5ccb8280cab8c",
+      "date": "2023-09-19",
+      "expected_wet_cells": 104.59503173828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "377a34ce9edb4f4fb479f6254e899b86",
+      "date": "2023-09-20",
+      "expected_wet_cells": 505.86492919921875,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "9b1b063d15e94b7bac8c147f6f7a0bc6",
+      "date": "2023-10-03",
+      "expected_wet_cells": 566.0128173828125,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "b301bf968df749bf89d3cf8bdf6be386",
+      "date": "2023-10-03",
+      "expected_wet_cells": 306.3328857421875,
+      "observed_wet_cells": 121
+    },
+    {
+      "uuid": "ca16180513cb407fadc1c3007cb598f7",
+      "date": "2023-10-04",
+      "expected_wet_cells": 266.6534423828125,
+      "observed_wet_cells": 19
+    },
+    {
+      "uuid": "2a5e9a1471e54efbb224cc066e9fa878",
+      "date": "2023-10-04",
+      "expected_wet_cells": 109.53514862060547,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "2886afbfee324c83a433409e422dbb92",
+      "date": "2023-10-04",
+      "expected_wet_cells": 272.3240966796875,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "2860feffa3d44f96bcf5985a087f5d66",
+      "date": "2023-10-04",
+      "expected_wet_cells": 568.922119140625,
+      "observed_wet_cells": 133
+    },
+    {
+      "uuid": "5528d5a2cd664358a63ea44f07b86476",
+      "date": "2023-10-04",
+      "expected_wet_cells": 248.71383666992188,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "5a509512c5f44346bf31e25037637140",
+      "date": "2023-10-04",
+      "expected_wet_cells": 474.35601806640625,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "9634e3174268498690e0999af019e007",
+      "date": "2023-10-04",
+      "expected_wet_cells": 379.94927978515625,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "7e240a42c8974205a2f29701b453d556",
+      "date": "2023-10-04",
+      "expected_wet_cells": 51.575992584228516,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "e497a769aa804dc787a7b55ffb4a5ead",
+      "date": "2023-10-04",
+      "expected_wet_cells": 52.18070602416992,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "cd001ff2ca844116b2fd291a4b355911",
+      "date": "2023-10-04",
+      "expected_wet_cells": 371.70361328125,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "1da55c198e8a40f69f7b255ff2c1df27",
+      "date": "2023-10-06",
+      "expected_wet_cells": 717.7205810546875,
+      "observed_wet_cells": 85
+    },
+    {
+      "uuid": "34b56e643be841efa5f475345e8c08f6",
+      "date": "2023-10-06",
+      "expected_wet_cells": 301.1206359863281,
+      "observed_wet_cells": 156
+    },
+    {
+      "uuid": "665f1fa162cd4335a5e6efa27e7dfcd7",
+      "date": "2023-10-06",
+      "expected_wet_cells": 424.9029541015625,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "9a5f2eebd01848de8bf0a6ebc1d594be",
+      "date": "2023-10-06",
+      "expected_wet_cells": 724.1395263671875,
+      "observed_wet_cells": 31
+    },
+    {
+      "uuid": "83fa2b9668114d1d8d9f69b4cfe7b1af",
+      "date": "2023-10-06",
+      "expected_wet_cells": 526.0442504882812,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "f70a004d942c4322a04baa401901bb4b",
+      "date": "2023-10-06",
+      "expected_wet_cells": 332.47015380859375,
+      "observed_wet_cells": 299
+    },
+    {
+      "uuid": "0996bc4f82fe41ada1a796c73243c8a2",
+      "date": "2023-10-09",
+      "expected_wet_cells": 381.69970703125,
+      "observed_wet_cells": 19
+    },
+    {
+      "uuid": "146a1332a05f4c10bd75c69825ac8964",
+      "date": "2023-10-18",
+      "expected_wet_cells": 504.978271484375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "4c9ba76a915045cdbd5de070a6c222fa",
+      "date": "2023-10-18",
+      "expected_wet_cells": 655.9803466796875,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "ce1bd0ce39a74733a706e44b68aaee1d",
+      "date": "2024-02-12",
+      "expected_wet_cells": 426.62939453125,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "735c354bdbf04db8b87e60493fdf582f",
+      "date": "2024-02-12",
+      "expected_wet_cells": 354.26116943359375,
+      "observed_wet_cells": 200
+    },
+    {
+      "uuid": "7e3dd5b9c6a3492799007149d53e04f6",
+      "date": "2024-02-12",
+      "expected_wet_cells": 169.5032501220703,
+      "observed_wet_cells": 13
+    },
+    {
+      "uuid": "60705a76007d476e95f19f9b0d0aa573",
+      "date": "2024-02-12",
+      "expected_wet_cells": 281.6062316894531,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "62018fe60d0a4f81bde221267edfd711",
+      "date": "2024-02-12",
+      "expected_wet_cells": 85.06366729736328,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "d1e426ab54f44a74bf060ba1957871c8",
+      "date": "2024-04-30",
+      "expected_wet_cells": 107.98628234863281,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "df2c5b95d8ca43d0b17675a6125a0b83",
+      "date": "2024-04-30",
+      "expected_wet_cells": 334.3766174316406,
+      "observed_wet_cells": 10
+    },
+    {
+      "uuid": "04b45e28c0b047e69b3eef93eff0c2a4",
+      "date": "2024-04-30",
+      "expected_wet_cells": 341.1372985839844,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "78441160b9894226ac6bb3c7a4dbb4b4",
+      "date": "2024-05-16",
+      "expected_wet_cells": 893.506591796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "1a84f7b554514a3999ea8cad2fa1f831",
+      "date": "2024-05-16",
+      "expected_wet_cells": 449.1718444824219,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "e42fe662411c4df78435031f7bee89cb",
+      "date": "2024-05-24",
+      "expected_wet_cells": 15.774931907653809,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "930fae52d989488c9ca12ab5671e525c",
+      "date": "2024-05-24",
+      "expected_wet_cells": 9.492311477661133,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "95b844cc3e9b4c78897ff15c4e91b4e9",
+      "date": "2024-05-24",
+      "expected_wet_cells": 17.14806365966797,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "57b3b1f0a6e54f8d9771f1549c73b41c",
+      "date": "2024-05-24",
+      "expected_wet_cells": 11.487485885620117,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "66e847c832bb4322979af58a68fd38e4",
+      "date": "2024-05-24",
+      "expected_wet_cells": 5.811090469360352,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "b72754c1cd6042fe867af60705066026",
+      "date": "2024-05-24",
+      "expected_wet_cells": 1.6581441164016724,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "b21faa5498124838bea1c2c9420a5c24",
+      "date": "2024-05-24",
+      "expected_wet_cells": 1.573462963104248,
+      "observed_wet_cells": 46
+    },
+    {
+      "uuid": "c7371bcae0cb4645afc1df9cd6bc65c6",
+      "date": "2024-05-24",
+      "expected_wet_cells": 1.100674033164978,
+      "observed_wet_cells": 18
+    },
+    {
+      "uuid": "3700a643d475456c80933a3765f92bb2",
+      "date": "2024-05-28",
+      "expected_wet_cells": 53.79188919067383,
+      "observed_wet_cells": 10
+    },
+    {
+      "uuid": "00a9827931c64a1daa2dbc41ed03b5f9",
+      "date": "2024-05-29",
+      "expected_wet_cells": 416.93902587890625,
+      "observed_wet_cells": 675
+    },
+    {
+      "uuid": "6b3f88dd3e294d169fe65c274e7d6d62",
+      "date": "2024-05-29",
+      "expected_wet_cells": 11.432040214538574,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "62605d9d84114206b013daf17019ee07",
+      "date": "2024-05-29",
+      "expected_wet_cells": 1.0586011409759521,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "755c96f163524631aa8ed7341fc633e1",
+      "date": "2024-05-29",
+      "expected_wet_cells": 2.5601048469543457,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9b64d157511f44cab7c027860d439a2a",
+      "date": "2024-05-29",
+      "expected_wet_cells": 9.492311477661133,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "ceacf37de68747fea5fd67361edb15dd",
+      "date": "2024-05-30",
+      "expected_wet_cells": 696.6890869140625,
+      "observed_wet_cells": 47
+    },
+    {
+      "uuid": "749048c9ffde4455964d3e51efd1c44e",
+      "date": "2024-05-30",
+      "expected_wet_cells": 181.28036499023438,
+      "observed_wet_cells": 22
+    },
+    {
+      "uuid": "3920b4c367a04b24a59ad0519d73fd47",
+      "date": "2024-05-30",
+      "expected_wet_cells": 138.87522888183594,
+      "observed_wet_cells": 472
+    },
+    {
+      "uuid": "349f198128c84ee4bb3a35fadb6f6e0d",
+      "date": "2024-05-30",
+      "expected_wet_cells": 608.1746215820312,
+      "observed_wet_cells": 28
+    },
+    {
+      "uuid": "1034aee9f6264af591cac814a305b276",
+      "date": "2024-05-30",
+      "expected_wet_cells": 70.96917724609375,
+      "observed_wet_cells": 201
+    },
+    {
+      "uuid": "22db25548c9f47fd877e951a426dea19",
+      "date": "2024-05-30",
+      "expected_wet_cells": 772.386474609375,
+      "observed_wet_cells": 100
+    },
+    {
+      "uuid": "2450bee0fda640a09ba0fc7036ebe1bb",
+      "date": "2024-05-30",
+      "expected_wet_cells": 150.1256866455078,
+      "observed_wet_cells": 60
+    },
+    {
+      "uuid": "a3d8848f98244f88a8dddc2bbf3740f1",
+      "date": "2024-05-30",
+      "expected_wet_cells": 133.23065185546875,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "c5e8f39dcfa1443589c1f0afe1488460",
+      "date": "2024-05-30",
+      "expected_wet_cells": 792.052734375,
+      "observed_wet_cells": 381
+    },
+    {
+      "uuid": "adcf2438f0634829a18baef12421bae2",
+      "date": "2024-05-31",
+      "expected_wet_cells": 167.77206420898438,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "81df150ec09849459360f2a763d0634f",
+      "date": "2024-05-31",
+      "expected_wet_cells": 825.0573120117188,
+      "observed_wet_cells": 175
+    },
+    {
+      "uuid": "7891eacbca53467ab660fdad964eff1c",
+      "date": "2024-05-31",
+      "expected_wet_cells": 302.5177917480469,
+      "observed_wet_cells": 691
+    },
+    {
+      "uuid": "f9b5e2455b534ab3bb26e71be9bf5e20",
+      "date": "2024-05-31",
+      "expected_wet_cells": 466.7780456542969,
+      "observed_wet_cells": 109
+    },
+    {
+      "uuid": "eb5cd0cc99ff40c9b523bcae68e5127f",
+      "date": "2024-05-31",
+      "expected_wet_cells": 161.1503448486328,
+      "observed_wet_cells": 308
+    },
+    {
+      "uuid": "e6270007ead84f7cb998f972a7ba00ca",
+      "date": "2024-06-01",
+      "expected_wet_cells": 330.4051818847656,
+      "observed_wet_cells": 593
+    },
+    {
+      "uuid": "fb641fc284ed447e84ee2624c7f98b6a",
+      "date": "2024-06-01",
+      "expected_wet_cells": 302.73297119140625,
+      "observed_wet_cells": 370
+    },
+    {
+      "uuid": "769cbc16b32c4234958fb3f8ca07416b",
+      "date": "2024-06-01",
+      "expected_wet_cells": 268.85638427734375,
+      "observed_wet_cells": 210
+    },
+    {
+      "uuid": "4c8c881e8e954de09ecb572b0fd068f8",
+      "date": "2024-06-01",
+      "expected_wet_cells": 340.69921875,
+      "observed_wet_cells": 403
+    },
+    {
+      "uuid": "45c1c0557bf749e2a960a7be37831115",
+      "date": "2024-06-01",
+      "expected_wet_cells": 133.23065185546875,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "043020bba86846e98ecc3b491219b013",
+      "date": "2024-06-01",
+      "expected_wet_cells": 15.065601348876953,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "22c4eb0388be4e428f6a95c657764b1c",
+      "date": "2024-06-01",
+      "expected_wet_cells": 673.8779296875,
+      "observed_wet_cells": 37
+    },
+    {
+      "uuid": "c1e53bc12e3648b89ff26c2b16bd4415",
+      "date": "2024-06-02",
+      "expected_wet_cells": 477.3582763671875,
+      "observed_wet_cells": 148
+    },
+    {
+      "uuid": "8b41c3749aac46d694467b917893b621",
+      "date": "2024-06-02",
+      "expected_wet_cells": 1155.280029296875,
+      "observed_wet_cells": 1872
+    },
+    {
+      "uuid": "f11b788f455d4eaf8d6c19e7940a55e5",
+      "date": "2024-06-02",
+      "expected_wet_cells": 162.0565185546875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "05ac5bf7a154413aa089ac5539888a77",
+      "date": "2024-06-04",
+      "expected_wet_cells": 15.065601348876953,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "d048923d760b4b07ad63805bd99490dd",
+      "date": "2024-06-04",
+      "expected_wet_cells": 133.23065185546875,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "95aace45187642a2973224f83da951af",
+      "date": "2024-06-05",
+      "expected_wet_cells": 162.0565185546875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "eef46480a36d425c846aaae0f4260c9e",
+      "date": "2024-06-09",
+      "expected_wet_cells": 727.1372680664062,
+      "observed_wet_cells": 119
+    },
+    {
+      "uuid": "2aa618f6bc6043099ae3dcad2035fb0c",
+      "date": "2024-06-10",
+      "expected_wet_cells": 13.003349304199219,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d5c842844d3c4ee988c51df26f86499d",
+      "date": "2024-06-10",
+      "expected_wet_cells": 628.37109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b9bb3474ed5949399886bd0861710750",
+      "date": "2024-06-12",
+      "expected_wet_cells": 566.83349609375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "1353d8d8a57749759f854459acd01fb8",
+      "date": "2024-06-12",
+      "expected_wet_cells": 286.3660583496094,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "6fd4edc4ce524682a930eb06e793a823",
+      "date": "2024-06-12",
+      "expected_wet_cells": 164.4579315185547,
+      "observed_wet_cells": 22
+    },
+    {
+      "uuid": "541cc885404c4439beecd997661f30c6",
+      "date": "2024-06-12",
+      "expected_wet_cells": 15.55395221710205,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "e29f8cb5717541b9811ac3f10119c49c",
+      "date": "2024-06-13",
+      "expected_wet_cells": 634.9815673828125,
+      "observed_wet_cells": 91
+    },
+    {
+      "uuid": "259f43d80ef94e38a2382391d2aea76b",
+      "date": "2024-06-16",
+      "expected_wet_cells": 651.4942626953125,
+      "observed_wet_cells": 90
+    },
+    {
+      "uuid": "0fc132765be94ddbb441d42c49f4665d",
+      "date": "2024-06-16",
+      "expected_wet_cells": 10.716976165771484,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "3336f76d23924c9b8932968438dde920",
+      "date": "2024-06-16",
+      "expected_wet_cells": 168.3513946533203,
+      "observed_wet_cells": 57
+    },
+    {
+      "uuid": "6f1b8e311ce4489caab1b1512cfee77f",
+      "date": "2024-06-16",
+      "expected_wet_cells": 233.06446838378906,
+      "observed_wet_cells": 25
+    },
+    {
+      "uuid": "6dafdc9ff83a416dbc842fadc0fe9e17",
+      "date": "2024-06-16",
+      "expected_wet_cells": 190.36293029785156,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "62ff79131b5a4a1caed1fed73b3e0681",
+      "date": "2024-06-16",
+      "expected_wet_cells": 293.1621398925781,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "93c3cf85097e42a3a43d2b9999b3b7b4",
+      "date": "2024-06-16",
+      "expected_wet_cells": 885.4224243164062,
+      "observed_wet_cells": 164
+    },
+    {
+      "uuid": "903b1fb64f0241f5b3390835724631b8",
+      "date": "2024-06-16",
+      "expected_wet_cells": 164.4579315185547,
+      "observed_wet_cells": 22
+    },
+    {
+      "uuid": "8590117672664f1b88441624a7e76f8b",
+      "date": "2024-06-16",
+      "expected_wet_cells": 436.1278381347656,
+      "observed_wet_cells": 269
+    },
+    {
+      "uuid": "d44f0ae0875349919fb024d330efad77",
+      "date": "2024-06-16",
+      "expected_wet_cells": 303.52496337890625,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "d922544dcb2941b5b0774a1d6e56c0bf",
+      "date": "2024-06-16",
+      "expected_wet_cells": 285.2471008300781,
+      "observed_wet_cells": 316
+    },
+    {
+      "uuid": "9e723353b28746fc966d2a55c4eed2db",
+      "date": "2024-06-18",
+      "expected_wet_cells": 1.3402882814407349,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b0f1c6a0c9b744dbad8a8fcbbd359d34",
+      "date": "2024-06-18",
+      "expected_wet_cells": 456.28863525390625,
+      "observed_wet_cells": 1255
+    },
+    {
+      "uuid": "37fed2fce9d4465f847bb376f954d047",
+      "date": "2024-06-18",
+      "expected_wet_cells": 4.1166486740112305,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "71088def5383488280952d0ac030aeaa",
+      "date": "2024-06-18",
+      "expected_wet_cells": 102.97029113769531,
+      "observed_wet_cells": 37
+    },
+    {
+      "uuid": "41bfedec721e48848264b163e2e7dd77",
+      "date": "2024-06-18",
+      "expected_wet_cells": 264.15692138671875,
+      "observed_wet_cells": 128
+    },
+    {
+      "uuid": "78d144ce154048b9aefb141571cc590c",
+      "date": "2024-06-18",
+      "expected_wet_cells": 310.63092041015625,
+      "observed_wet_cells": 250
+    },
+    {
+      "uuid": "0224491e6a4a4d90a43dc4b4c65feaaf",
+      "date": "2024-06-22",
+      "expected_wet_cells": 10.091276168823242,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "da29ec6330bb438090074d0e32376e46",
+      "date": "2024-06-23",
+      "expected_wet_cells": 7.190498352050781,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "5b2755a151ca4723a98a99fd6508b0dd",
+      "date": "2024-06-23",
+      "expected_wet_cells": 93.01476287841797,
+      "observed_wet_cells": 57
+    },
+    {
+      "uuid": "5c10efef5264438e98bcc6f968e0c090",
+      "date": "2024-06-23",
+      "expected_wet_cells": 10.114152908325195,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "4ba6cdd2d2f246279240f120f43fea0f",
+      "date": "2024-06-23",
+      "expected_wet_cells": 37.681884765625,
+      "observed_wet_cells": 19
+    },
+    {
+      "uuid": "6ffeff2660fc48e1afa702a1177bbb1f",
+      "date": "2024-06-23",
+      "expected_wet_cells": 8.403955459594727,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "12c2fad035014126b7f6a3d1db6179ec",
+      "date": "2024-06-23",
+      "expected_wet_cells": 656.268798828125,
+      "observed_wet_cells": 925
+    },
+    {
+      "uuid": "a86a5cb2526d4a90aa4ee4a955f5edfe",
+      "date": "2024-06-23",
+      "expected_wet_cells": 284.2748107910156,
+      "observed_wet_cells": 108
+    },
+    {
+      "uuid": "b7ea9ecef17d4fd1920ea725de573a0a",
+      "date": "2024-06-24",
+      "expected_wet_cells": 556.9390869140625,
+      "observed_wet_cells": 46
+    },
+    {
+      "uuid": "d94d73eea19c4c368f8cf0502ed585ff",
+      "date": "2024-06-27",
+      "expected_wet_cells": 631.4476318359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d6ffc61d23e44024a6d2220afea347a6",
+      "date": "2024-06-27",
+      "expected_wet_cells": 676.9894409179688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d05fcf29186641778c50efb3039494aa",
+      "date": "2024-06-27",
+      "expected_wet_cells": 464.5469665527344,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "e93f02d7979f4b178ca8201af6f0513d",
+      "date": "2024-06-27",
+      "expected_wet_cells": 422.03411865234375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8b6529bd6c974cc1bd68bdda2fc5ae44",
+      "date": "2024-06-27",
+      "expected_wet_cells": 407.8619079589844,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "821faf07a9ac4ccbb1a89fa2812d4b9b",
+      "date": "2024-06-27",
+      "expected_wet_cells": 312.2623291015625,
+      "observed_wet_cells": 755
+    },
+    {
+      "uuid": "90d2eabbb29440b3a2be381f459b4360",
+      "date": "2024-06-27",
+      "expected_wet_cells": 510.6691589355469,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c42a92fbc6884cada0281db07e31dfc5",
+      "date": "2024-06-27",
+      "expected_wet_cells": 683.2301025390625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c8364d44f4c04aaca6bbf1c48a4aaa5b",
+      "date": "2024-06-28",
+      "expected_wet_cells": 1323.694091796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b2e4392d8a9b4b5daa9173d73ad1c336",
+      "date": "2024-06-28",
+      "expected_wet_cells": 433.95501708984375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "41f2a873285146aba554fedb82c728de",
+      "date": "2024-06-28",
+      "expected_wet_cells": 254.45648193359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7d8b90d403c74bef82da8ce6df2dd9e7",
+      "date": "2024-06-28",
+      "expected_wet_cells": 577.5635375976562,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8add4e4f834c41399efe352121c43e68",
+      "date": "2024-06-28",
+      "expected_wet_cells": 782.31787109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d68628ccb08a4c64a7655d6ab07f36d1",
+      "date": "2024-06-29",
+      "expected_wet_cells": 937.28173828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "fd4016ca474b44ae994680109c6a485d",
+      "date": "2024-06-29",
+      "expected_wet_cells": 1503.0992431640625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "59af3ecb59f54fa2a5a66fda45a701bb",
+      "date": "2024-06-29",
+      "expected_wet_cells": 224.14674377441406,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "54c4c91c90cc4e75a6ef0cf3448087f9",
+      "date": "2024-06-29",
+      "expected_wet_cells": 17.093143463134766,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b834157e51494f0bb1ede10f7878dfc7",
+      "date": "2024-06-29",
+      "expected_wet_cells": 231.7411346435547,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "bcb325bef556421e8a177bc40c25c22a",
+      "date": "2024-06-29",
+      "expected_wet_cells": 319.9637756347656,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c218c28d953b4d7eb71483199e7edea5",
+      "date": "2024-06-29",
+      "expected_wet_cells": 2.2983691692352295,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c0c35c64425e44eca70ba47799c58fbc",
+      "date": "2024-06-30",
+      "expected_wet_cells": 731.7196044921875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "bf9223ee73f147609855f2ce2053c00b",
+      "date": "2024-06-30",
+      "expected_wet_cells": 768.62841796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c89c497b876e4c7781ebadc155733ebe",
+      "date": "2024-06-30",
+      "expected_wet_cells": 340.208740234375,
+      "observed_wet_cells": 458
+    },
+    {
+      "uuid": "9eda1c7da95f445385b10270b288c36b",
+      "date": "2024-06-30",
+      "expected_wet_cells": 914.20947265625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "387065e0e9e74f36a815df81e442e319",
+      "date": "2024-06-30",
+      "expected_wet_cells": 604.082763671875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "199041881afb47e98ad047113cbf145a",
+      "date": "2024-06-30",
+      "expected_wet_cells": 63.001136779785156,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0d548ccf8ea5414fb9f1d134852ca975",
+      "date": "2024-06-30",
+      "expected_wet_cells": 452.7934875488281,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2fe470cdb18f4fdba974990c68899659",
+      "date": "2024-06-30",
+      "expected_wet_cells": 615.1043701171875,
+      "observed_wet_cells": 171
+    },
+    {
+      "uuid": "6ebe9e8b93404f7eb6fdefed4070bf37",
+      "date": "2024-06-30",
+      "expected_wet_cells": 855.38427734375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3a746943b7a14361928c318b34bc2319",
+      "date": "2024-06-30",
+      "expected_wet_cells": 118.90946960449219,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "420c5544180c461f9bd5a9e59689d8eb",
+      "date": "2024-06-30",
+      "expected_wet_cells": 652.2347412109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "44c89e9e7f07462ab4a2671b116ccbab",
+      "date": "2024-06-30",
+      "expected_wet_cells": 6.954880237579346,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3f67f5e8bfc84c0e9c74c7ed44388ec4",
+      "date": "2024-06-30",
+      "expected_wet_cells": 542.1688842773438,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4845e1780e714ec4a4dd25ae787c07ea",
+      "date": "2024-06-30",
+      "expected_wet_cells": 938.1116943359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5ce71bb207c94df0ab27b313a0e63a3d",
+      "date": "2024-06-30",
+      "expected_wet_cells": 782.31787109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5e22522d0c5048218126fba64dd19f08",
+      "date": "2024-06-30",
+      "expected_wet_cells": 135.31088256835938,
+      "observed_wet_cells": 84
+    },
+    {
+      "uuid": "95fb7ac7b1d449f8b1954e2e8c82bc0b",
+      "date": "2024-06-30",
+      "expected_wet_cells": 673.5022583007812,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7ffd42bbe6234461afe1cab9f472b1b3",
+      "date": "2024-06-30",
+      "expected_wet_cells": 792.5120239257812,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ea58f9def1fc44149710c13a9e146ac5",
+      "date": "2024-06-30",
+      "expected_wet_cells": 399.156494140625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f5704377abf94fa7abc635054582e489",
+      "date": "2024-07-01",
+      "expected_wet_cells": 706.048583984375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ce1c1b80d4984f678b53fa4bf475bc64",
+      "date": "2024-07-01",
+      "expected_wet_cells": 346.55078125,
+      "observed_wet_cells": 234
+    },
+    {
+      "uuid": "81c4eada703b47bdbebf9d4385000eb8",
+      "date": "2024-07-01",
+      "expected_wet_cells": 132.46226501464844,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "957b46b6c395456cbdb66f01dacfe084",
+      "date": "2024-07-01",
+      "expected_wet_cells": 548.9222412109375,
+      "observed_wet_cells": 145
+    },
+    {
+      "uuid": "62629b7478684e208f36f5c090a18354",
+      "date": "2024-07-01",
+      "expected_wet_cells": 161.01756286621094,
+      "observed_wet_cells": 251
+    },
+    {
+      "uuid": "511dcd9f28634ab7875de832784a6a35",
+      "date": "2024-07-01",
+      "expected_wet_cells": 668.7418212890625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "520e0ae71e14465aa7b2d5000d259064",
+      "date": "2024-07-01",
+      "expected_wet_cells": 48.613075256347656,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "43f8c151440049d79586f6c32573226f",
+      "date": "2024-07-01",
+      "expected_wet_cells": 555.5906982421875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "67ae289cc1444c7c8ba31e82c7e3b065",
+      "date": "2024-07-01",
+      "expected_wet_cells": 118.52114868164062,
+      "observed_wet_cells": 298
+    },
+    {
+      "uuid": "241a7fb9f9a449b8a9c72a4d558955af",
+      "date": "2024-07-01",
+      "expected_wet_cells": 139.1905059814453,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "260156b852e3497d9b6ae3d383969918",
+      "date": "2024-07-01",
+      "expected_wet_cells": 125.18681335449219,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2bee25a3646745b3ab07795ebda3bedc",
+      "date": "2024-07-01",
+      "expected_wet_cells": 605.1530151367188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b9b1ff8ec1234042ab7e46d522b44b0e",
+      "date": "2024-07-01",
+      "expected_wet_cells": 177.29637145996094,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9df5d66a35824ee6be63df9e8b08818c",
+      "date": "2024-07-01",
+      "expected_wet_cells": 501.9394226074219,
+      "observed_wet_cells": 438
+    },
+    {
+      "uuid": "bfaa8f6a271648c88d0715d0a53ea0c8",
+      "date": "2024-07-01",
+      "expected_wet_cells": 612.1044921875,
+      "observed_wet_cells": 474
+    },
+    {
+      "uuid": "bcd8a45bbe064424b70541208fcd3d46",
+      "date": "2024-07-02",
+      "expected_wet_cells": 577.5635375976562,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2dd3c55043b944fb809c0a2919ad4f32",
+      "date": "2024-07-02",
+      "expected_wet_cells": 4.995512008666992,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "164b594e8ee44f368a7ef79e4c537429",
+      "date": "2024-07-02",
+      "expected_wet_cells": 579.1992797851562,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "12338b2f1b2447d297eeb16010985323",
+      "date": "2024-07-02",
+      "expected_wet_cells": 118.90946960449219,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "6718ec9aa9f34082aede447096ec5644",
+      "date": "2024-07-02",
+      "expected_wet_cells": 1038.101318359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "475bafc799bc45f59afed32e10dca1b4",
+      "date": "2024-07-02",
+      "expected_wet_cells": 505.5377197265625,
+      "observed_wet_cells": 683
+    },
+    {
+      "uuid": "796087c14305442c8a103f23f055d20f",
+      "date": "2024-07-02",
+      "expected_wet_cells": 424.45037841796875,
+      "observed_wet_cells": 132
+    },
+    {
+      "uuid": "7aeca28c1859402982d6c4eb24aa3cf0",
+      "date": "2024-07-02",
+      "expected_wet_cells": 610.0390625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "773a23ffa0c641298266e560d0edb12a",
+      "date": "2024-07-02",
+      "expected_wet_cells": 218.81954956054688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "fe51b77755a44d26946efcc17433bc88",
+      "date": "2024-07-02",
+      "expected_wet_cells": 720.7579345703125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ea45dda4915a49f2ac6b4b6db2b7055b",
+      "date": "2024-07-02",
+      "expected_wet_cells": 70.42888641357422,
+      "observed_wet_cells": 71
+    },
+    {
+      "uuid": "ea411772d4134724b430a66da71b6e9c",
+      "date": "2024-07-02",
+      "expected_wet_cells": 75.17262268066406,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f7e3dfcf4de44f3ca71306c03b8f4031",
+      "date": "2024-07-03",
+      "expected_wet_cells": 533.7766723632812,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "cce5fd2acfb249fe9c2f14182623da13",
+      "date": "2024-07-03",
+      "expected_wet_cells": 433.95501708984375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d32e2450daf54707bd6519adb5d71063",
+      "date": "2024-07-03",
+      "expected_wet_cells": 584.6369018554688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "82f3d831c2ba4a3683fca950e9dfc054",
+      "date": "2024-07-03",
+      "expected_wet_cells": 6.954880237579346,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "949a694b50e14022a5fd32168976d8e2",
+      "date": "2024-07-03",
+      "expected_wet_cells": 788.0404052734375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5eda983c77a344608f9f7068f82c63fc",
+      "date": "2024-07-03",
+      "expected_wet_cells": 178.5020751953125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "61357c9607bd4fb99ee9cf4518020152",
+      "date": "2024-07-03",
+      "expected_wet_cells": 918.2999267578125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "16d89175f93449aca59044ee9bc4f089",
+      "date": "2024-07-03",
+      "expected_wet_cells": 1154.74853515625,
+      "observed_wet_cells": 2722
+    },
+    {
+      "uuid": "2c0703a56c1c4e5f9ffada200dfa701c",
+      "date": "2024-07-03",
+      "expected_wet_cells": 473.3424377441406,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b45330ebccba482c8d42fd73403c993e",
+      "date": "2024-07-03",
+      "expected_wet_cells": 266.81915283203125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b0e143842e024c16add466c6d6b7c0ef",
+      "date": "2024-07-03",
+      "expected_wet_cells": 382.3079833984375,
+      "observed_wet_cells": 318
+    },
+    {
+      "uuid": "9c827896922f4b74a10d1d8b6e27241f",
+      "date": "2024-07-03",
+      "expected_wet_cells": 281.7457580566406,
+      "observed_wet_cells": 501
+    },
+    {
+      "uuid": "cb1c844d08e54e7f90a5f3e4441489d6",
+      "date": "2024-07-04",
+      "expected_wet_cells": 15.897979736328125,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "a2ed9e7057404833b9efc7173e445003",
+      "date": "2024-07-04",
+      "expected_wet_cells": 675.4488525390625,
+      "observed_wet_cells": 860
+    },
+    {
+      "uuid": "9d314131ee0a4445b799074f68d7e6cf",
+      "date": "2024-07-04",
+      "expected_wet_cells": 2.2983691692352295,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ad64255de9be417e97a841bed4ac19fd",
+      "date": "2024-07-04",
+      "expected_wet_cells": 402.43756103515625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b91053c816b14744b581d5edba229db9",
+      "date": "2024-07-04",
+      "expected_wet_cells": 101.50665283203125,
+      "observed_wet_cells": 178
+    },
+    {
+      "uuid": "368846ed896a4761a7125f6d5c6f5183",
+      "date": "2024-07-04",
+      "expected_wet_cells": 0.25727710127830505,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0ddfff292334464eb904b44fc83fa07f",
+      "date": "2024-07-04",
+      "expected_wet_cells": 624.3336791992188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "020df57cf23944ca9fa24c061c158170",
+      "date": "2024-07-04",
+      "expected_wet_cells": 365.9704284667969,
+      "observed_wet_cells": 705
+    },
+    {
+      "uuid": "68650fba9ad3413c8236cd4d60f69322",
+      "date": "2024-07-04",
+      "expected_wet_cells": 759.83984375,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "43d6701acb324fd98a128a26fdbd98b2",
+      "date": "2024-07-04",
+      "expected_wet_cells": 467.7759094238281,
+      "observed_wet_cells": 1319
+    },
+    {
+      "uuid": "3e58b4f00c004140847b9b1635ceceac",
+      "date": "2024-07-04",
+      "expected_wet_cells": 389.6121826171875,
+      "observed_wet_cells": 1130
+    },
+    {
+      "uuid": "504ccba0decd42b5b9a7525179948dd5",
+      "date": "2024-07-04",
+      "expected_wet_cells": 142.89163208007812,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8ac5eb587d46449183d76878fe3ec836",
+      "date": "2024-07-04",
+      "expected_wet_cells": 567.8338623046875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8b51b8730c6643c2b2ee4ad06879ac19",
+      "date": "2024-07-04",
+      "expected_wet_cells": 3.1617183685302734,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f983564eea1d4d95907699cc9fb6cac9",
+      "date": "2024-07-04",
+      "expected_wet_cells": 477.16033935546875,
+      "observed_wet_cells": 1044
+    },
+    {
+      "uuid": "dbf2b7314c894559a82b9f9274f4304c",
+      "date": "2024-07-04",
+      "expected_wet_cells": 918.2470703125,
+      "observed_wet_cells": 2317
+    },
+    {
+      "uuid": "e824ecb5dad849f58e92e251492432dd",
+      "date": "2024-07-05",
+      "expected_wet_cells": 563.9711303710938,
+      "observed_wet_cells": 1480
+    },
+    {
+      "uuid": "8a870256428d432cb0bf31e7a5018534",
+      "date": "2024-07-05",
+      "expected_wet_cells": 285.17352294921875,
+      "observed_wet_cells": 488
+    },
+    {
+      "uuid": "b8292185bca641e2aa65aa75026aa68b",
+      "date": "2024-07-05",
+      "expected_wet_cells": 686.0831298828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b37a524ccaf14b25acb66f35e5f747b3",
+      "date": "2024-07-05",
+      "expected_wet_cells": 1317.623046875,
+      "observed_wet_cells": 3561
+    },
+    {
+      "uuid": "b143924ab21845dfad0dfb40dec7ce7a",
+      "date": "2024-07-05",
+      "expected_wet_cells": 448.5261535644531,
+      "observed_wet_cells": 1123
+    },
+    {
+      "uuid": "c4b2fc62469f4354b436b26f2615c7e1",
+      "date": "2024-07-05",
+      "expected_wet_cells": 493.1660461425781,
+      "observed_wet_cells": 1006
+    },
+    {
+      "uuid": "a4d17f4484c44d83b6c4de6787f5ffa5",
+      "date": "2024-07-06",
+      "expected_wet_cells": 602.0325927734375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "06c9774b3d744eb79e8cfa67e7aca406",
+      "date": "2024-07-06",
+      "expected_wet_cells": 831.5838623046875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0462ccb8f06c49ab8565c168028cbdde",
+      "date": "2024-07-06",
+      "expected_wet_cells": 467.7759094238281,
+      "observed_wet_cells": 1319
+    },
+    {
+      "uuid": "09f96af173a84684ae0bf1f2ce1e81da",
+      "date": "2024-07-06",
+      "expected_wet_cells": 1540.62109375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "3388e0bb6f074423bbea7f5631b1bed3",
+      "date": "2024-07-06",
+      "expected_wet_cells": 495.84466552734375,
+      "observed_wet_cells": 81
+    },
+    {
+      "uuid": "fd0933ddf22f4bccae74fec0c61b6ba4",
+      "date": "2024-07-06",
+      "expected_wet_cells": 51.52052688598633,
+      "observed_wet_cells": 111
+    },
+    {
+      "uuid": "daf86060274445a9a6be040b90abf775",
+      "date": "2024-07-06",
+      "expected_wet_cells": 419.9747619628906,
+      "observed_wet_cells": 1343
+    },
+    {
+      "uuid": "dd915e5b9c7342818e621c87215f4210",
+      "date": "2024-07-06",
+      "expected_wet_cells": 101.50665283203125,
+      "observed_wet_cells": 178
+    },
+    {
+      "uuid": "f5bb3bb32d1441dfaba18c2499052f3c",
+      "date": "2024-07-07",
+      "expected_wet_cells": 591.4712524414062,
+      "observed_wet_cells": 2117
+    },
+    {
+      "uuid": "8321b773f9584f4b8dbe3d47bf1fd8c4",
+      "date": "2024-07-07",
+      "expected_wet_cells": 149.91737365722656,
+      "observed_wet_cells": 351
+    },
+    {
+      "uuid": "5dfe003e6d474963b403ce9dd2e4b13c",
+      "date": "2024-07-07",
+      "expected_wet_cells": 548.4918212890625,
+      "observed_wet_cells": 2036
+    },
+    {
+      "uuid": "59170a914d18417eaf1c0929485d5433",
+      "date": "2024-07-07",
+      "expected_wet_cells": 481.79425048828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3ec4c4d1e82a4092bfdf172dfcfffb38",
+      "date": "2024-07-07",
+      "expected_wet_cells": 520.769287109375,
+      "observed_wet_cells": 1765
+    },
+    {
+      "uuid": "1b26d9c624164a6bbf258ee32ec6bf12",
+      "date": "2024-07-07",
+      "expected_wet_cells": 498.951171875,
+      "observed_wet_cells": 1447
+    },
+    {
+      "uuid": "a9c9c93938b841fca882f1dcdeda4a05",
+      "date": "2024-07-08",
+      "expected_wet_cells": 800.2490234375,
+      "observed_wet_cells": 1778
+    },
+    {
+      "uuid": "b4ac0480de834210b76958a72b2ea823",
+      "date": "2024-07-08",
+      "expected_wet_cells": 1048.9879150390625,
+      "observed_wet_cells": 2416
+    },
+    {
+      "uuid": "25f907972c464361b589110eb6008cdf",
+      "date": "2024-07-08",
+      "expected_wet_cells": 51.11647415161133,
+      "observed_wet_cells": 236
+    },
+    {
+      "uuid": "6c715e69c80f440796b9ca15a768db2a",
+      "date": "2024-07-08",
+      "expected_wet_cells": 179.18394470214844,
+      "observed_wet_cells": 380
+    },
+    {
+      "uuid": "65f8042753ba4bf8a86c90c61ccf0a2e",
+      "date": "2024-07-08",
+      "expected_wet_cells": 365.9704284667969,
+      "observed_wet_cells": 705
+    },
+    {
+      "uuid": "74525d70daf042ef8c0323b2ea7f33fa",
+      "date": "2024-07-08",
+      "expected_wet_cells": 419.9747619628906,
+      "observed_wet_cells": 1343
+    },
+    {
+      "uuid": "f64ce86bf90444e3bec59b7ccf0dca11",
+      "date": "2024-07-09",
+      "expected_wet_cells": 872.48291015625,
+      "observed_wet_cells": 2411
+    },
+    {
+      "uuid": "cc2fc817d021474a8ef1ae15a8f55cc5",
+      "date": "2024-07-09",
+      "expected_wet_cells": 526.76904296875,
+      "observed_wet_cells": 1628
+    },
+    {
+      "uuid": "aeef8da9cc5e4e7baa2a0a04f5abfc84",
+      "date": "2024-07-09",
+      "expected_wet_cells": 841.0890502929688,
+      "observed_wet_cells": 2620
+    },
+    {
+      "uuid": "fb0a09326b524e42ba50287c6fa24d68",
+      "date": "2024-07-10",
+      "expected_wet_cells": 52.50982666015625,
+      "observed_wet_cells": 74
+    },
+    {
+      "uuid": "9b2c5a667c764d16894b3efcf0e00b6f",
+      "date": "2024-07-13",
+      "expected_wet_cells": 95.80831909179688,
+      "observed_wet_cells": 372
+    },
+    {
+      "uuid": "f02e7306296645e580a81410f0bea000",
+      "date": "2024-07-15",
+      "expected_wet_cells": 596.4871826171875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "cf0f4d5ad0754a218c695256524369de",
+      "date": "2024-07-15",
+      "expected_wet_cells": 616.4730834960938,
+      "observed_wet_cells": 613
+    },
+    {
+      "uuid": "0a64f377da064277942ea48b54beaaf4",
+      "date": "2024-07-16",
+      "expected_wet_cells": 125.42658996582031,
+      "observed_wet_cells": 159
+    },
+    {
+      "uuid": "589e045fca274305b2357c069a878276",
+      "date": "2024-07-18",
+      "expected_wet_cells": 839.3795776367188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9718985071f640e188b030622002cb88",
+      "date": "2024-07-18",
+      "expected_wet_cells": 383.7023620605469,
+      "observed_wet_cells": 182
+    },
+    {
+      "uuid": "96a6105670c5403fb96843e1f8ef4862",
+      "date": "2024-07-18",
+      "expected_wet_cells": 693.7238159179688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "e9591b24d65a433e91477241d3a772eb",
+      "date": "2024-07-18",
+      "expected_wet_cells": 337.4861755371094,
+      "observed_wet_cells": 579
+    },
+    {
+      "uuid": "f77adb8b0b4d4e1f9bc5ee4951a0ffaa",
+      "date": "2024-07-18",
+      "expected_wet_cells": 810.9456787109375,
+      "observed_wet_cells": 1103
+    },
+    {
+      "uuid": "c025a6598a634fbf940d7fe8d4891262",
+      "date": "2024-07-20",
+      "expected_wet_cells": 693.7238159179688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "de83f561931c45f78774bf0deb660a6d",
+      "date": "2024-07-21",
+      "expected_wet_cells": 435.390380859375,
+      "observed_wet_cells": 398
+    },
+    {
+      "uuid": "e81ad21e296a48eb939dc40d85dd5463",
+      "date": "2024-07-21",
+      "expected_wet_cells": 234.72691345214844,
+      "observed_wet_cells": 29
+    },
+    {
+      "uuid": "e43df75a53354bedba4417a1a6bd8c32",
+      "date": "2024-07-21",
+      "expected_wet_cells": 76.18463134765625,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "fbcb1b1c4644450282fc2d3c717c467b",
+      "date": "2024-07-21",
+      "expected_wet_cells": 153.59951782226562,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "fb7393ef6f6f44eaa639337b9a62a2d0",
+      "date": "2024-07-24",
+      "expected_wet_cells": 162.3666534423828,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0550cb81c6f948bc92c41b9da99db023",
+      "date": "2024-07-27",
+      "expected_wet_cells": 448.3073425292969,
+      "observed_wet_cells": 157
+    },
+    {
+      "uuid": "f67cc45361ae44319637673af972ab58",
+      "date": "2024-07-28",
+      "expected_wet_cells": 442.31207275390625,
+      "observed_wet_cells": 162
+    },
+    {
+      "uuid": "2c3853f687fb4384a8f169d86aa9ca11",
+      "date": "2024-07-30",
+      "expected_wet_cells": 447.6915283203125,
+      "observed_wet_cells": 595
+    },
+    {
+      "uuid": "e16793672f8b4952a04cc466c95d0003",
+      "date": "2024-07-30",
+      "expected_wet_cells": 61.61209487915039,
+      "observed_wet_cells": 117
+    },
+    {
+      "uuid": "48a22d96ccce44aa85523c332e7c79eb",
+      "date": "2024-08-02",
+      "expected_wet_cells": 309.3758544921875,
+      "observed_wet_cells": 212
+    },
+    {
+      "uuid": "0cde4a9fdfb9411d89bdccc9d8fc26d6",
+      "date": "2024-08-02",
+      "expected_wet_cells": 30.65052032470703,
+      "observed_wet_cells": 81
+    },
+    {
+      "uuid": "c69add253ef94b169636ea2d0f5faf4c",
+      "date": "2024-08-02",
+      "expected_wet_cells": 448.3073425292969,
+      "observed_wet_cells": 157
+    },
+    {
+      "uuid": "c6059f88ee2e4ee39218469b4e35c9a2",
+      "date": "2024-08-02",
+      "expected_wet_cells": 823.4962158203125,
+      "observed_wet_cells": 495
+    },
+    {
+      "uuid": "8fb531021c414dd4a550edfecb4f88b1",
+      "date": "2024-08-07",
+      "expected_wet_cells": 10.254117965698242,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f27214c0c12d4b84b7d37e1895b1592f",
+      "date": "2024-08-08",
+      "expected_wet_cells": 238.97499084472656,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "74c65dbba70241f3bdbabc4353225c4d",
+      "date": "2024-08-10",
+      "expected_wet_cells": 440.98052978515625,
+      "observed_wet_cells": 624
+    },
+    {
+      "uuid": "70945d71bdf34d9ba292bdbec3fe016d",
+      "date": "2024-08-10",
+      "expected_wet_cells": 513.7564086914062,
+      "observed_wet_cells": 685
+    },
+    {
+      "uuid": "6412ba5ef38844d0910df77a7e069b92",
+      "date": "2024-08-11",
+      "expected_wet_cells": 289.7236328125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "82db24bfa8564960bf0bfdd63eacc959",
+      "date": "2024-08-11",
+      "expected_wet_cells": 274.32147216796875,
+      "observed_wet_cells": 343
+    },
+    {
+      "uuid": "992408c2779d4eb386ce70caa71b386a",
+      "date": "2024-08-12",
+      "expected_wet_cells": 435.978759765625,
+      "observed_wet_cells": 1862
+    },
+    {
+      "uuid": "40ad5d7006d54594a910b4a30cdb4ffd",
+      "date": "2024-08-12",
+      "expected_wet_cells": 512.2184448242188,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "a4ffe14b07e84d43af6e032ea4d8c3c6",
+      "date": "2024-08-13",
+      "expected_wet_cells": 691.74267578125,
+      "observed_wet_cells": 227
+    },
+    {
+      "uuid": "ad1b022763d04c16b7281b4c8a9654d3",
+      "date": "2024-08-13",
+      "expected_wet_cells": 5.220332622528076,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "ffbd45641c9b4f3d8a01570d3ae35cda",
+      "date": "2024-08-13",
+      "expected_wet_cells": 259.837890625,
+      "observed_wet_cells": 152
+    },
+    {
+      "uuid": "f54091d38a154247a47eef59bdfb06fa",
+      "date": "2024-08-14",
+      "expected_wet_cells": 648.035888671875,
+      "observed_wet_cells": 971
+    },
+    {
+      "uuid": "d1e25d18572f4444a4e6c99eb04a457c",
+      "date": "2024-08-14",
+      "expected_wet_cells": 352.13519287109375,
+      "observed_wet_cells": 657
+    },
+    {
+      "uuid": "fe6a46b10d5946a7ba9e9d25fda08be2",
+      "date": "2024-08-14",
+      "expected_wet_cells": 93.82428741455078,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "7367be61376f40588234b69878ee36b7",
+      "date": "2024-08-14",
+      "expected_wet_cells": 358.0425720214844,
+      "observed_wet_cells": 912
+    },
+    {
+      "uuid": "62d4d759890344e88467f6b15d8047cf",
+      "date": "2024-08-14",
+      "expected_wet_cells": 450.2441711425781,
+      "observed_wet_cells": 1896
+    },
+    {
+      "uuid": "339b95a45fdf4cf0bae54d35e411fc10",
+      "date": "2024-08-14",
+      "expected_wet_cells": 906.3649291992188,
+      "observed_wet_cells": 351
+    },
+    {
+      "uuid": "b90ea922bb874f7f938b260957a6c40a",
+      "date": "2024-08-14",
+      "expected_wet_cells": 3.0686116218566895,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "bec0a2b25322467a8466c79ad98fde4d",
+      "date": "2024-08-14",
+      "expected_wet_cells": 653.0310668945312,
+      "observed_wet_cells": 127
+    },
+    {
+      "uuid": "ab4d09c18c1f42e0997ceac7ab2ec0a1",
+      "date": "2024-09-01",
+      "expected_wet_cells": 434.4232482910156,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9d4275808e744223b4179c48085de923",
+      "date": "2024-09-01",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5646316db5ff4195b74fbfd53697b7be",
+      "date": "2024-09-10",
+      "expected_wet_cells": 629.9098510742188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "e968d03b392640d5a63a5fe26b2d6c5f",
+      "date": "2024-09-15",
+      "expected_wet_cells": 117.53784942626953,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "d9461540900e4c71a01887992cc514c9",
+      "date": "2024-10-05",
+      "expected_wet_cells": 558.550048828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c0290872427a4e469e173481e37db06f",
+      "date": "2024-10-06",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "296ec05ac54e4419aa33203e5714c97b",
+      "date": "2024-10-06",
+      "expected_wet_cells": 317.5611572265625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0eb1cdde4948408394d2b6c56912d14a",
+      "date": "2024-10-06",
+      "expected_wet_cells": 434.4232482910156,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "414337c8ceb5495ab5ea301562586af1",
+      "date": "2024-10-10",
+      "expected_wet_cells": 342.2372741699219,
+      "observed_wet_cells": 86
+    },
+    {
+      "uuid": "781f7424f94348868087e61e2f072b50",
+      "date": "2024-10-13",
+      "expected_wet_cells": 502.443115234375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "c088a480e4a74ab4824a766ff5e2b2ef",
+      "date": "2024-10-13",
+      "expected_wet_cells": 423.5482177734375,
+      "observed_wet_cells": 72
+    },
+    {
+      "uuid": "8f99a5da86884eae98106eb6e8fd1fe8",
+      "date": "2024-10-15",
+      "expected_wet_cells": 502.443115234375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "2f9e164d14884a62a8c4f6f10c9438be",
+      "date": "2024-10-24",
+      "expected_wet_cells": 56.807373046875,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "cbecf9abb2e64d0da983ca3314d2e7e2",
+      "date": "2025-03-28",
+      "expected_wet_cells": 83.64404296875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "bfcf80f4c9544f3a9e63bb6abbbd060f",
+      "date": "2025-05-14",
+      "expected_wet_cells": 636.9446411132812,
+      "observed_wet_cells": 178
+    },
+    {
+      "uuid": "701ee5c39e23419eba09c67b2c5b45f0",
+      "date": "2025-05-14",
+      "expected_wet_cells": 671.16162109375,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "6880555e1e1f4de4b2993fc192876136",
+      "date": "2025-05-14",
+      "expected_wet_cells": 416.33447265625,
+      "observed_wet_cells": 240
+    },
+    {
+      "uuid": "415747b3ff0e4cf0a2eb4e26e01d1f83",
+      "date": "2025-05-14",
+      "expected_wet_cells": 713.677001953125,
+      "observed_wet_cells": 121
+    },
+    {
+      "uuid": "89c35c12de474ba090bd6a3c69191f73",
+      "date": "2025-05-14",
+      "expected_wet_cells": 547.9624633789062,
+      "observed_wet_cells": 249
+    },
+    {
+      "uuid": "d1332d7c140b4cd48507e9dedeb738aa",
+      "date": "2025-05-14",
+      "expected_wet_cells": 467.1781311035156,
+      "observed_wet_cells": 249
+    },
+    {
+      "uuid": "596d5bf0bc2a4fa68017bf67cf04b242",
+      "date": "2025-05-15",
+      "expected_wet_cells": 574.3328857421875,
+      "observed_wet_cells": 24
+    },
+    {
+      "uuid": "506a097de44248ff83ccbcf44eea71b4",
+      "date": "2025-05-15",
+      "expected_wet_cells": 49.812957763671875,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "11940f6e32a74e488e35d1d54d82cec5",
+      "date": "2025-05-15",
+      "expected_wet_cells": 586.0308837890625,
+      "observed_wet_cells": 237
+    },
+    {
+      "uuid": "6d067779f4894a3d96b460fff8e8ff51",
+      "date": "2025-05-16",
+      "expected_wet_cells": 248.95223999023438,
+      "observed_wet_cells": 86
+    },
+    {
+      "uuid": "8a0f8fb3af354fdfb5516d5fa3327e79",
+      "date": "2025-05-16",
+      "expected_wet_cells": 42.85064697265625,
+      "observed_wet_cells": 9
+    },
+    {
+      "uuid": "dbda355cb27645ee9f104a69e5a08c22",
+      "date": "2025-05-16",
+      "expected_wet_cells": 846.90478515625,
+      "observed_wet_cells": 319
+    },
+    {
+      "uuid": "2292ba13671f47ce942183aeecd1b80d",
+      "date": "2025-05-24",
+      "expected_wet_cells": 11.135475158691406,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "30083edba4564b0f94651abe55b0c92d",
+      "date": "2025-05-24",
+      "expected_wet_cells": 56.78071975708008,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "98e1979631ce4fa9989170ac41c3281e",
+      "date": "2025-05-24",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f16d2d27b1c14f0db09f4c4da40865df",
+      "date": "2025-05-24",
+      "expected_wet_cells": 601.534912109375,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "6592d11ef84942788ce8a8158ce4c682",
+      "date": "2025-05-28",
+      "expected_wet_cells": 32.02723693847656,
+      "observed_wet_cells": 13
+    },
+    {
+      "uuid": "7d85587e64f142f4ae5b7944c0675b77",
+      "date": "2025-05-28",
+      "expected_wet_cells": 33.77666473388672,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "fd73793a7b8344038d64f765babc06a9",
+      "date": "2025-05-28",
+      "expected_wet_cells": 948.7581176757812,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "eb1722954051442f9f9b106758678380",
+      "date": "2025-05-28",
+      "expected_wet_cells": 33.07101821899414,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "5bcf4c89500e4f1bbc25c1dbad6081b4",
+      "date": "2025-05-29",
+      "expected_wet_cells": 3.316671848297119,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "48f2c3b3f784470daa4ea5b3985b5599",
+      "date": "2025-05-29",
+      "expected_wet_cells": 1.5328352451324463,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2078ba8c37bf43fd8936b854aa5b8820",
+      "date": "2025-05-29",
+      "expected_wet_cells": 35.95412826538086,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "c1df4e28e4f54e72bd3476ea5a7caf49",
+      "date": "2025-05-30",
+      "expected_wet_cells": 613.890869140625,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "9eac80cd91e440e6bf1854b591707aef",
+      "date": "2025-05-30",
+      "expected_wet_cells": 649.3048095703125,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "b84f1f220e054e18bc2641067b8e7e59",
+      "date": "2025-05-30",
+      "expected_wet_cells": 56.76800537109375,
+      "observed_wet_cells": 131
+    },
+    {
+      "uuid": "36ba08384f854e4cb48c69e7f651a1c4",
+      "date": "2025-05-30",
+      "expected_wet_cells": 623.4443969726562,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "1ab6ef4f744a42ecb6bc9b6b505fd799",
+      "date": "2025-05-30",
+      "expected_wet_cells": 676.3670654296875,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "03e29404a41648908d596e96338bfabe",
+      "date": "2025-05-30",
+      "expected_wet_cells": 180.4666290283203,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "549640afd02f4710977488265fb1e48b",
+      "date": "2025-05-30",
+      "expected_wet_cells": 611.9811401367188,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "5dda2eb3daf64365b7a1f1b64d79f8b0",
+      "date": "2025-05-30",
+      "expected_wet_cells": 638.1663208007812,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "5e8a2f7620ab4ff7b84829b835a861ac",
+      "date": "2025-05-30",
+      "expected_wet_cells": 321.6236572265625,
+      "observed_wet_cells": 289
+    },
+    {
+      "uuid": "754c568f1a5c473083d295350e6122c9",
+      "date": "2025-05-30",
+      "expected_wet_cells": 153.8928985595703,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "758965c38cde4c2793ec1c98da4706b7",
+      "date": "2025-05-30",
+      "expected_wet_cells": 657.2078247070312,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "d9b0bf07e612477a9d3d23ca024c1630",
+      "date": "2025-05-30",
+      "expected_wet_cells": 755.0236206054688,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "d635499110e9462c99d4b24196c6ae1e",
+      "date": "2025-05-31",
+      "expected_wet_cells": 696.5303955078125,
+      "observed_wet_cells": 25
+    },
+    {
+      "uuid": "e15242aaface4aae9dae287ce6b8cd0b",
+      "date": "2025-05-31",
+      "expected_wet_cells": 146.93128967285156,
+      "observed_wet_cells": 30
+    },
+    {
+      "uuid": "8ca063f24da7467b806c5d0b64cc0044",
+      "date": "2025-05-31",
+      "expected_wet_cells": 301.6480712890625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5aee57d5fdc345ae89d532edcceef913",
+      "date": "2025-05-31",
+      "expected_wet_cells": 16.406457901000977,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "5138e379d14e4c5b81fa2a0dbe1470f3",
+      "date": "2025-05-31",
+      "expected_wet_cells": 760.0743408203125,
+      "observed_wet_cells": 72
+    },
+    {
+      "uuid": "572020557560469d83f5e0f04655b519",
+      "date": "2025-05-31",
+      "expected_wet_cells": 183.7598114013672,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "35e692bed9ff4757a73751c9c7623118",
+      "date": "2025-05-31",
+      "expected_wet_cells": 427.7672119140625,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "0166e06618b94c75882146ae813474d1",
+      "date": "2025-05-31",
+      "expected_wet_cells": 819.9041748046875,
+      "observed_wet_cells": 70
+    },
+    {
+      "uuid": "0e84b77bbbfa44338a0924f1bf2a66d5",
+      "date": "2025-05-31",
+      "expected_wet_cells": 6.892641067504883,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "a6180a8acd4f45fdbf3713d384281f00",
+      "date": "2025-06-03",
+      "expected_wet_cells": 394.47357177734375,
+      "observed_wet_cells": 110
+    },
+    {
+      "uuid": "cdb213a7322a4a47b40009b447eeefb6",
+      "date": "2025-06-03",
+      "expected_wet_cells": 366.04168701171875,
+      "observed_wet_cells": 378
+    },
+    {
+      "uuid": "3599b7cecf974b899617ad8d0c316693",
+      "date": "2025-06-04",
+      "expected_wet_cells": 625.5406494140625,
+      "observed_wet_cells": 415
+    },
+    {
+      "uuid": "9e145368b70549b692ce0660b551650e",
+      "date": "2025-06-05",
+      "expected_wet_cells": 530.0095825195312,
+      "observed_wet_cells": 429
+    },
+    {
+      "uuid": "53cafeb71ded457b8baffc7e2f2a127e",
+      "date": "2025-06-05",
+      "expected_wet_cells": 533.4144287109375,
+      "observed_wet_cells": 221
+    },
+    {
+      "uuid": "77e7194a54a14dac96bb2e2fd0f094b8",
+      "date": "2025-06-05",
+      "expected_wet_cells": 1168.6044921875,
+      "observed_wet_cells": 2598
+    },
+    {
+      "uuid": "f2b5ff394a524a599889a0fc16e4a8d0",
+      "date": "2025-06-06",
+      "expected_wet_cells": 587.1585693359375,
+      "observed_wet_cells": 59
+    },
+    {
+      "uuid": "e657685e7a4d48d083fab19cd265e099",
+      "date": "2025-06-06",
+      "expected_wet_cells": 684.1551513671875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9d3a1c4219f645fdaae04bb2ae7e63ef",
+      "date": "2025-06-06",
+      "expected_wet_cells": 408.079345703125,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "a030df5edbf74402a359a92ff256b61b",
+      "date": "2025-06-06",
+      "expected_wet_cells": 705.88720703125,
+      "observed_wet_cells": 568
+    },
+    {
+      "uuid": "8f640024f6fa4e5299fb4378299a7eac",
+      "date": "2025-06-07",
+      "expected_wet_cells": 11.817367553710938,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "1ef17d80345642b8b24e44dde33133bc",
+      "date": "2025-06-08",
+      "expected_wet_cells": 705.88720703125,
+      "observed_wet_cells": 568
+    },
+    {
+      "uuid": "b3534606af6e4330b837e52a19e63a61",
+      "date": "2025-06-09",
+      "expected_wet_cells": 386.6683349609375,
+      "observed_wet_cells": 56
+    },
+    {
+      "uuid": "5f712fa2baf5485ea9c8c936d9de26f7",
+      "date": "2025-06-09",
+      "expected_wet_cells": 692.2977905273438,
+      "observed_wet_cells": 393
+    },
+    {
+      "uuid": "6080f3edd2444968ab870794a0f9fd87",
+      "date": "2025-06-13",
+      "expected_wet_cells": 421.5769958496094,
+      "observed_wet_cells": 29
+    },
+    {
+      "uuid": "2071490704a54982813305ef90a7e6fe",
+      "date": "2025-06-17",
+      "expected_wet_cells": 51.30126190185547,
+      "observed_wet_cells": 28
+    },
+    {
+      "uuid": "20a902796f0342c08b8a8c06fe405d03",
+      "date": "2025-06-17",
+      "expected_wet_cells": 10.443122863769531,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "372ac24dee574c29bd0986895e20ecac",
+      "date": "2025-06-17",
+      "expected_wet_cells": 89.55452728271484,
+      "observed_wet_cells": 37
+    },
+    {
+      "uuid": "67c3d31a9b4b46faac14b48f4a85c054",
+      "date": "2025-06-17",
+      "expected_wet_cells": 71.25692749023438,
+      "observed_wet_cells": 29
+    },
+    {
+      "uuid": "3aa8af3e10c443f9a66dcb7c8e83af0d",
+      "date": "2025-06-17",
+      "expected_wet_cells": 1.6839663982391357,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8f5db2308da745afb53f7275f7707e52",
+      "date": "2025-06-22",
+      "expected_wet_cells": 537.1928100585938,
+      "observed_wet_cells": 38
+    },
+    {
+      "uuid": "4f55f8ed0b134555a6b31e26444e7421",
+      "date": "2025-06-22",
+      "expected_wet_cells": 323.0870056152344,
+      "observed_wet_cells": 118
+    },
+    {
+      "uuid": "d91c6d45fdc94571bf28bc8d13a8855a",
+      "date": "2025-06-25",
+      "expected_wet_cells": 131.9814453125,
+      "observed_wet_cells": 70
+    },
+    {
+      "uuid": "8195395126714fbeaff7a0948d0a2a38",
+      "date": "2025-06-27",
+      "expected_wet_cells": 131.529296875,
+      "observed_wet_cells": 78
+    },
+    {
+      "uuid": "8ed533352c8a42a789a9adcdf59b3672",
+      "date": "2025-06-29",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d1d0da2969474fef9fd65c2674359456",
+      "date": "2025-06-30",
+      "expected_wet_cells": 450.8203125,
+      "observed_wet_cells": 785
+    },
+    {
+      "uuid": "e4a322e732ff4023b8fc9e9dc6cecd9d",
+      "date": "2025-06-30",
+      "expected_wet_cells": 852.20068359375,
+      "observed_wet_cells": 329
+    },
+    {
+      "uuid": "983f4e51d44640c0ac367c3fcd69a891",
+      "date": "2025-06-30",
+      "expected_wet_cells": 457.56341552734375,
+      "observed_wet_cells": 152
+    },
+    {
+      "uuid": "340fb9aaaaaa482fab63132bfa597244",
+      "date": "2025-06-30",
+      "expected_wet_cells": 255.55685424804688,
+      "observed_wet_cells": 30
+    },
+    {
+      "uuid": "c18bbc18788c4be4a88a44e6afe7e501",
+      "date": "2025-07-01",
+      "expected_wet_cells": 426.2159423828125,
+      "observed_wet_cells": 720
+    },
+    {
+      "uuid": "cd74d35850f4432eb5c0c16b32f97991",
+      "date": "2025-07-02",
+      "expected_wet_cells": 304.0274658203125,
+      "observed_wet_cells": 554
+    },
+    {
+      "uuid": "fa20bb7d62fc470db5774ffab566e776",
+      "date": "2025-07-02",
+      "expected_wet_cells": 400.1488037109375,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "7b16b818333c453d8fba3d066daa24f8",
+      "date": "2025-07-02",
+      "expected_wet_cells": 528.3887939453125,
+      "observed_wet_cells": 689
+    },
+    {
+      "uuid": "4f06f959432a4ecab4c95f88af21227b",
+      "date": "2025-07-02",
+      "expected_wet_cells": 142.62344360351562,
+      "observed_wet_cells": 32
+    },
+    {
+      "uuid": "49ffb4bacdd9485c878c7c61b3d49d6f",
+      "date": "2025-07-02",
+      "expected_wet_cells": 511.5864562988281,
+      "observed_wet_cells": 66
+    },
+    {
+      "uuid": "3ec5549a882a4a81b88c8291bc48a09c",
+      "date": "2025-07-02",
+      "expected_wet_cells": 600.420166015625,
+      "observed_wet_cells": 870
+    },
+    {
+      "uuid": "38c539d0ee514f1bbee2bb4796e58bc7",
+      "date": "2025-07-02",
+      "expected_wet_cells": 446.925537109375,
+      "observed_wet_cells": 165
+    },
+    {
+      "uuid": "6ad96716f2344f1088d365479e26a694",
+      "date": "2025-07-02",
+      "expected_wet_cells": 389.0162353515625,
+      "observed_wet_cells": 795
+    },
+    {
+      "uuid": "70e490842fde4e1fa52d0fd4e52a4590",
+      "date": "2025-07-02",
+      "expected_wet_cells": 330.158203125,
+      "observed_wet_cells": 182
+    },
+    {
+      "uuid": "356083ced101459382d1b09f7b2de80f",
+      "date": "2025-07-02",
+      "expected_wet_cells": 364.4765930175781,
+      "observed_wet_cells": 94
+    },
+    {
+      "uuid": "3157343e4a9442058dc4e3e76fc83e5a",
+      "date": "2025-07-02",
+      "expected_wet_cells": 450.8203125,
+      "observed_wet_cells": 785
+    },
+    {
+      "uuid": "0f4432b22cea4779bd901857d8d16187",
+      "date": "2025-07-02",
+      "expected_wet_cells": 457.56341552734375,
+      "observed_wet_cells": 152
+    },
+    {
+      "uuid": "027f102692ce4cf39fd18c7ad2059f52",
+      "date": "2025-07-02",
+      "expected_wet_cells": 189.84962463378906,
+      "observed_wet_cells": 242
+    },
+    {
+      "uuid": "2b84899b3f6e4776aeb6a8af2bbc19d5",
+      "date": "2025-07-02",
+      "expected_wet_cells": 94.24832153320312,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "3847238d823f41e2a3508a3c23609c75",
+      "date": "2025-07-02",
+      "expected_wet_cells": 135.85157775878906,
+      "observed_wet_cells": 414
+    },
+    {
+      "uuid": "aae24e52097744aa809c1b3c9457285b",
+      "date": "2025-07-02",
+      "expected_wet_cells": 478.6898498535156,
+      "observed_wet_cells": 90
+    },
+    {
+      "uuid": "b7216030ecc74ce5baf2ccd2ceee9b85",
+      "date": "2025-07-02",
+      "expected_wet_cells": 451.2025146484375,
+      "observed_wet_cells": 390
+    },
+    {
+      "uuid": "aec53f36438840efb82b23bbefe0fb12",
+      "date": "2025-07-02",
+      "expected_wet_cells": 852.20068359375,
+      "observed_wet_cells": 329
+    },
+    {
+      "uuid": "a4ac68e647f14bc69d4abd0c22ab175f",
+      "date": "2025-07-02",
+      "expected_wet_cells": 377.55682373046875,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "9c27b37179a1454dbfe1a4dfb6789be3",
+      "date": "2025-07-02",
+      "expected_wet_cells": 255.55685424804688,
+      "observed_wet_cells": 30
+    },
+    {
+      "uuid": "faad1668afdd4226a2f33f9e15dbca84",
+      "date": "2025-07-03",
+      "expected_wet_cells": 11.871317863464355,
+      "observed_wet_cells": 24
+    },
+    {
+      "uuid": "f8ea20f5443c4a97ba53a67526df7ea9",
+      "date": "2025-07-04",
+      "expected_wet_cells": 355.0802001953125,
+      "observed_wet_cells": 377
+    },
+    {
+      "uuid": "e1b3380e61034bd4979a4f2b3a39678a",
+      "date": "2025-07-04",
+      "expected_wet_cells": 533.4335327148438,
+      "observed_wet_cells": 103
+    },
+    {
+      "uuid": "f925360d99d94893a73c3fb33781a8f6",
+      "date": "2025-07-04",
+      "expected_wet_cells": 313.5302429199219,
+      "observed_wet_cells": 146
+    },
+    {
+      "uuid": "76cf6f994e8b4569aad27e342d42bd68",
+      "date": "2025-07-04",
+      "expected_wet_cells": 255.22781372070312,
+      "observed_wet_cells": 871
+    },
+    {
+      "uuid": "648845ab4ca04cc69d9214c5f0083c07",
+      "date": "2025-07-04",
+      "expected_wet_cells": 253.43795776367188,
+      "observed_wet_cells": 195
+    },
+    {
+      "uuid": "62309fae664c4a8db631904a380c6598",
+      "date": "2025-07-04",
+      "expected_wet_cells": 529.1992797851562,
+      "observed_wet_cells": 105
+    },
+    {
+      "uuid": "54d7b94ab19c4d3092dde4f4b4e89969",
+      "date": "2025-07-04",
+      "expected_wet_cells": 363.73370361328125,
+      "observed_wet_cells": 897
+    },
+    {
+      "uuid": "3d4bbc2f2a474f96ab83202d87149964",
+      "date": "2025-07-04",
+      "expected_wet_cells": 304.0274658203125,
+      "observed_wet_cells": 554
+    },
+    {
+      "uuid": "472c4ac9614d40d3ba1922ae974bc010",
+      "date": "2025-07-04",
+      "expected_wet_cells": 552.8018798828125,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "332b936142954e53bc2e12d533727c63",
+      "date": "2025-07-04",
+      "expected_wet_cells": 189.84962463378906,
+      "observed_wet_cells": 242
+    },
+    {
+      "uuid": "09f6eb4146b64ea5b5fd7efb7df5c49b",
+      "date": "2025-07-04",
+      "expected_wet_cells": 600.420166015625,
+      "observed_wet_cells": 870
+    },
+    {
+      "uuid": "2030f1a0134544bc9cfc0bab3ee73da6",
+      "date": "2025-07-04",
+      "expected_wet_cells": 142.62344360351562,
+      "observed_wet_cells": 32
+    },
+    {
+      "uuid": "ba7c938f09f34e1a8c0b61b44eeaf3af",
+      "date": "2025-07-04",
+      "expected_wet_cells": 364.4765930175781,
+      "observed_wet_cells": 94
+    },
+    {
+      "uuid": "a6b7e3763d17421ba7d1875e2b81bed2",
+      "date": "2025-07-04",
+      "expected_wet_cells": 452.097412109375,
+      "observed_wet_cells": 159
+    },
+    {
+      "uuid": "c88de1d83d8942e785f9f3aec192f083",
+      "date": "2025-07-04",
+      "expected_wet_cells": 135.85157775878906,
+      "observed_wet_cells": 414
+    },
+    {
+      "uuid": "e03916a779164314adbba18eb82c92c5",
+      "date": "2025-07-06",
+      "expected_wet_cells": 249.94996643066406,
+      "observed_wet_cells": 358
+    },
+    {
+      "uuid": "7881106978694934b0393a8bd9687f0e",
+      "date": "2025-07-06",
+      "expected_wet_cells": 129.71365356445312,
+      "observed_wet_cells": 318
+    },
+    {
+      "uuid": "7e41dccdeb0f411097070cdfa96c3d80",
+      "date": "2025-07-06",
+      "expected_wet_cells": 669.79443359375,
+      "observed_wet_cells": 248
+    },
+    {
+      "uuid": "520eb4818c324c98a68e754dad185cd8",
+      "date": "2025-07-06",
+      "expected_wet_cells": 189.84962463378906,
+      "observed_wet_cells": 242
+    },
+    {
+      "uuid": "82cfe52f183b410c90d63602515776be",
+      "date": "2025-07-08",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4ea59f0cb707446fa0534b8d1486ac36",
+      "date": "2025-07-08",
+      "expected_wet_cells": 448.7568054199219,
+      "observed_wet_cells": 264
+    },
+    {
+      "uuid": "66d92d1e59c34372884a141005304edb",
+      "date": "2025-07-08",
+      "expected_wet_cells": 960.5301513671875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "23687e97c15f40678d2128fe1e3ceba2",
+      "date": "2025-07-08",
+      "expected_wet_cells": 529.7646484375,
+      "observed_wet_cells": 503
+    },
+    {
+      "uuid": "5d0aafa79cc5407585a17781aa2e7ea1",
+      "date": "2025-07-09",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c5c93e0871d94d4da7b7f21aae3bff5f",
+      "date": "2025-07-13",
+      "expected_wet_cells": 447.1065673828125,
+      "observed_wet_cells": 412
+    },
+    {
+      "uuid": "384e96c4a07b4f83934ea60886be999e",
+      "date": "2025-07-13",
+      "expected_wet_cells": 168.21774291992188,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "ff9a4ae6a5bb42a593e7014ac74cc486",
+      "date": "2025-07-14",
+      "expected_wet_cells": 497.39959716796875,
+      "observed_wet_cells": 55
+    },
+    {
+      "uuid": "61e086a63de84396bed90fa735a201e6",
+      "date": "2025-07-14",
+      "expected_wet_cells": 79.20634460449219,
+      "observed_wet_cells": 26
+    },
+    {
+      "uuid": "3d714fac74774a54b2cde2d02677ad33",
+      "date": "2025-07-14",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2430a3d53dc4464aa2c2fcda742fb85a",
+      "date": "2025-07-14",
+      "expected_wet_cells": 450.0760803222656,
+      "observed_wet_cells": 128
+    },
+    {
+      "uuid": "836c3dbc591e49dc9377add2832d8e51",
+      "date": "2025-07-18",
+      "expected_wet_cells": 37.195682525634766,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "76dc80c1f1324dba928f21c3422d539d",
+      "date": "2025-07-18",
+      "expected_wet_cells": 390.3233337402344,
+      "observed_wet_cells": 70
+    },
+    {
+      "uuid": "91ff18727e97455ea406a92a9f9badc5",
+      "date": "2025-07-18",
+      "expected_wet_cells": 209.40045166015625,
+      "observed_wet_cells": 59
+    },
+    {
+      "uuid": "54bbd9c24bd746ecabbcb66724277dce",
+      "date": "2025-07-18",
+      "expected_wet_cells": 576.4608154296875,
+      "observed_wet_cells": 205
+    },
+    {
+      "uuid": "023e9bc63f78457db5c281c52c3da400",
+      "date": "2025-07-18",
+      "expected_wet_cells": 215.959228515625,
+      "observed_wet_cells": 80
+    },
+    {
+      "uuid": "2c22b6f51d674590aa036678231a176d",
+      "date": "2025-07-18",
+      "expected_wet_cells": 78.46783447265625,
+      "observed_wet_cells": 57
+    },
+    {
+      "uuid": "c8098b1048e5408589eacf644af03d9b",
+      "date": "2025-07-18",
+      "expected_wet_cells": 287.87652587890625,
+      "observed_wet_cells": 125
+    },
+    {
+      "uuid": "c3305c53adb245198d792a5e445d045f",
+      "date": "2025-07-19",
+      "expected_wet_cells": 728.8909912109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "bc28a9b936a94765b13a66c2a26c706e",
+      "date": "2025-07-19",
+      "expected_wet_cells": 530.242919921875,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "a40070c7df0a431ab5239c552eda2ca3",
+      "date": "2025-07-19",
+      "expected_wet_cells": 47.080020904541016,
+      "observed_wet_cells": 33
+    },
+    {
+      "uuid": "a3b365e5a7304bb2960f30a33fff4144",
+      "date": "2025-07-19",
+      "expected_wet_cells": 1421.767822265625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b1b80bb01dde45c0a5984c0a184683eb",
+      "date": "2025-07-19",
+      "expected_wet_cells": 1091.32275390625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "1529893f26c44e26a6e6c9c7ac3c8fbd",
+      "date": "2025-07-19",
+      "expected_wet_cells": 795.1712036132812,
+      "observed_wet_cells": 16
+    },
+    {
+      "uuid": "4587b164728349049b7646776273051e",
+      "date": "2025-07-19",
+      "expected_wet_cells": 960.5947265625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7cc5eb60ed444d808a7a2a34bb623732",
+      "date": "2025-07-19",
+      "expected_wet_cells": 153.4199676513672,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "e1e4cb159f224a9fa14876b7281f423b",
+      "date": "2025-07-19",
+      "expected_wet_cells": 393.80255126953125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f0e2c8db418b4c598ec15c3870c9fa3a",
+      "date": "2025-07-19",
+      "expected_wet_cells": 558.550048828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d4deaaced5bb408f8c5dd76ee8660673",
+      "date": "2025-07-20",
+      "expected_wet_cells": 867.0509643554688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "05a540a71f0943d1b6fd03935b80155d",
+      "date": "2025-07-20",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b9e55e51642b474fbd53a68a84a75c8c",
+      "date": "2025-07-23",
+      "expected_wet_cells": 555.8275146484375,
+      "observed_wet_cells": 157
+    },
+    {
+      "uuid": "900a46057290471080abf905d7b58180",
+      "date": "2025-07-23",
+      "expected_wet_cells": 281.22369384765625,
+      "observed_wet_cells": 17
+    },
+    {
+      "uuid": "d6ead0d64fc54ed38d96e341552fcd77",
+      "date": "2025-07-24",
+      "expected_wet_cells": 15.478056907653809,
+      "observed_wet_cells": 15
+    },
+    {
+      "uuid": "f371827c49bb436ea205ce6b99cec79d",
+      "date": "2025-07-26",
+      "expected_wet_cells": 11.880189895629883,
+      "observed_wet_cells": 31
+    },
+    {
+      "uuid": "b09938fc38ee40a08452e31205973239",
+      "date": "2025-08-03",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "16b94c2f32e143ef837909228eeae8de",
+      "date": "2025-08-05",
+      "expected_wet_cells": 402.03704833984375,
+      "observed_wet_cells": 206
+    },
+    {
+      "uuid": "ba27b795ee2d47a7bde646e3b05945f2",
+      "date": "2025-08-06",
+      "expected_wet_cells": 570.988037109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "015f54159cb74b6db2aadde6643b91c1",
+      "date": "2025-08-06",
+      "expected_wet_cells": 309.73052978515625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4e38a852a1174b03acb36fe2db392ba0",
+      "date": "2025-08-06",
+      "expected_wet_cells": 263.13916015625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0c4d02dd22364c878820bacd44d1b9c1",
+      "date": "2025-08-08",
+      "expected_wet_cells": 774.6031494140625,
+      "observed_wet_cells": 457
+    },
+    {
+      "uuid": "771709551c2440e79d921bfac3f4a66a",
+      "date": "2025-08-08",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "707128e6c18f4af99cc0d27beb729032",
+      "date": "2025-08-10",
+      "expected_wet_cells": 682.5244140625,
+      "observed_wet_cells": 2228
+    },
+    {
+      "uuid": "4d9c9c55e4e5426792614bcffc692701",
+      "date": "2025-08-10",
+      "expected_wet_cells": 411.70343017578125,
+      "observed_wet_cells": 262
+    },
+    {
+      "uuid": "b80cdec0b44947ffbc6a7c3daa972dd7",
+      "date": "2025-08-11",
+      "expected_wet_cells": 211.21383666992188,
+      "observed_wet_cells": 43
+    },
+    {
+      "uuid": "c65c33d5843a4fbe823edaebbee8dad5",
+      "date": "2025-08-11",
+      "expected_wet_cells": 8.033333778381348,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "12f1cd135afa442f93a454d746478e3f",
+      "date": "2025-08-12",
+      "expected_wet_cells": 141.07757568359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "11f69d17ba764b5e8dfcb79fa882a2a8",
+      "date": "2025-08-12",
+      "expected_wet_cells": 684.8742065429688,
+      "observed_wet_cells": 64
+    },
+    {
+      "uuid": "6ad050c9ca154c9abfab6369161c0800",
+      "date": "2025-08-12",
+      "expected_wet_cells": 372.8762512207031,
+      "observed_wet_cells": 51
+    },
+    {
+      "uuid": "910c7daa70d44dd99bd2e5f2ef61dd6b",
+      "date": "2025-08-13",
+      "expected_wet_cells": 374.66595458984375,
+      "observed_wet_cells": 618
+    },
+    {
+      "uuid": "7603c7659e194d099c5e7f2b2264aca7",
+      "date": "2025-08-13",
+      "expected_wet_cells": 526.640380859375,
+      "observed_wet_cells": 852
+    },
+    {
+      "uuid": "c705d30aa14841138edc2d5fdef1fd6e",
+      "date": "2025-08-14",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b2f3e3dbf00840fda5f457be6ca3d09e",
+      "date": "2025-08-14",
+      "expected_wet_cells": 7.872527599334717,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "b616158b591e40319b48b7d3853957bd",
+      "date": "2025-08-14",
+      "expected_wet_cells": 893.506591796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "63ffca28b0764530a01ce47530ca8d89",
+      "date": "2025-08-15",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "286b242d86984a328bf71ed2527682a9",
+      "date": "2025-08-16",
+      "expected_wet_cells": 11.860527038574219,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "dc7e4e0206344acbbd394f5cf8e19f78",
+      "date": "2025-08-16",
+      "expected_wet_cells": 11.68589973449707,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2a5fb93857654a748de353a033852c76",
+      "date": "2025-08-17",
+      "expected_wet_cells": 834.0582885742188,
+      "observed_wet_cells": 331
+    },
+    {
+      "uuid": "ed10abfc59aa4a6d988b1d8f1607eddc",
+      "date": "2025-08-21",
+      "expected_wet_cells": 489.0379638671875,
+      "observed_wet_cells": 63
+    },
+    {
+      "uuid": "b16ab5c5fca04403bf9900956f815c5f",
+      "date": "2025-08-21",
+      "expected_wet_cells": 612.9310302734375,
+      "observed_wet_cells": 52
+    },
+    {
+      "uuid": "ea7246644a8943bd9f3be4c8ae307b75",
+      "date": "2025-08-25",
+      "expected_wet_cells": 2.389789342880249,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "c359cb3f958846c4bce4aaa76558421b",
+      "date": "2025-08-26",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "24bae8462d9f4b7ea652902c76ddea44",
+      "date": "2025-08-27",
+      "expected_wet_cells": 102.66067504882812,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "b2c9e3fa7cfa450bbc966195ae410e7a",
+      "date": "2025-08-28",
+      "expected_wet_cells": 851.7307739257812,
+      "observed_wet_cells": 1114
+    },
+    {
+      "uuid": "23cbad68563540da902cddd1482037d3",
+      "date": "2025-08-30",
+      "expected_wet_cells": 272.89276123046875,
+      "observed_wet_cells": 200
+    },
+    {
+      "uuid": "0c79d855287e4503bae54993bc928a99",
+      "date": "2025-08-30",
+      "expected_wet_cells": 341.1219482421875,
+      "observed_wet_cells": 183
+    },
+    {
+      "uuid": "9b2150992bf242c3a6f651e083fabe10",
+      "date": "2025-08-30",
+      "expected_wet_cells": 851.7307739257812,
+      "observed_wet_cells": 1114
+    },
+    {
+      "uuid": "e9b300b288674d1db4df3d8aef6278ae",
+      "date": "2025-09-02",
+      "expected_wet_cells": 714.08154296875,
+      "observed_wet_cells": 354
+    },
+    {
+      "uuid": "6dac815df5db407ab1869cec19e8431b",
+      "date": "2025-09-03",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9c1930dc959f48c2b24a80ff21923b28",
+      "date": "2025-09-05",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "feb6560b693a432ca027a2e928e43013",
+      "date": "2025-09-08",
+      "expected_wet_cells": 103.66737365722656,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "527b75704f6a49fca8910fbb8508be3b",
+      "date": "2025-09-08",
+      "expected_wet_cells": 309.73052978515625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7e8f3212989b49218a3a28f33129f4fd",
+      "date": "2025-09-11",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "654968133acf41fab39cd18fcc285643",
+      "date": "2025-09-12",
+      "expected_wet_cells": 10.1865234375,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "3e6c7e6f29634d35a7254fdac4b2afba",
+      "date": "2025-09-12",
+      "expected_wet_cells": 39.33515548706055,
+      "observed_wet_cells": 19
+    },
+    {
+      "uuid": "b73fa202c4be479ea03dd06dbbd12e4a",
+      "date": "2025-09-12",
+      "expected_wet_cells": 664.5303955078125,
+      "observed_wet_cells": 986
+    },
+    {
+      "uuid": "165bd039456f4beeba7116db897be46e",
+      "date": "2025-09-13",
+      "expected_wet_cells": 309.73052978515625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7fc66690958c4d64b5ec968a41d9ea07",
+      "date": "2025-09-13",
+      "expected_wet_cells": 881.7174682617188,
+      "observed_wet_cells": 381
+    },
+    {
+      "uuid": "ced485d746dd4619948b74e1a92b639a",
+      "date": "2025-09-14",
+      "expected_wet_cells": 805.9708251953125,
+      "observed_wet_cells": 11
+    },
+    {
+      "uuid": "9acb578f8a764b30a0026fc75e66fca9",
+      "date": "2025-09-14",
+      "expected_wet_cells": 1348.44677734375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "9938f317d32c4299b284729c8a223013",
+      "date": "2025-09-14",
+      "expected_wet_cells": 514.002685546875,
+      "observed_wet_cells": 175
+    },
+    {
+      "uuid": "7f6fa811e81442109cc769e5c898f74d",
+      "date": "2025-09-14",
+      "expected_wet_cells": 383.61492919921875,
+      "observed_wet_cells": 24
+    },
+    {
+      "uuid": "ba53c5e8e30f4030b7e6e7c00afbd3d8",
+      "date": "2025-09-15",
+      "expected_wet_cells": 523.7459716796875,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "bacf774a3ad34ca2958ad9f9bff65e84",
+      "date": "2025-09-15",
+      "expected_wet_cells": 177.79986572265625,
+      "observed_wet_cells": 13
+    },
+    {
+      "uuid": "acec6522d83e4fb7b8831989eca9ec6e",
+      "date": "2025-09-15",
+      "expected_wet_cells": 889.4130249023438,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2b089afbe3164ca88e0c45a9e962cc1e",
+      "date": "2025-09-15",
+      "expected_wet_cells": 324.1771240234375,
+      "observed_wet_cells": 158
+    },
+    {
+      "uuid": "0517f3a58cd74af09df2aa409216438a",
+      "date": "2025-09-15",
+      "expected_wet_cells": 893.506591796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0b00c99b08ec421bbe9bc20682465828",
+      "date": "2025-09-15",
+      "expected_wet_cells": 610.779541015625,
+      "observed_wet_cells": 540
+    },
+    {
+      "uuid": "4ec36eff29ff424a822c65e4b798f793",
+      "date": "2025-09-15",
+      "expected_wet_cells": 720.3648071289062,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "5c96c38550bd4ecbb16065cc20266a2f",
+      "date": "2025-09-15",
+      "expected_wet_cells": 822.0308227539062,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "dd4666c2f05c4b5ea053731e56a94197",
+      "date": "2025-09-15",
+      "expected_wet_cells": 554.3387451171875,
+      "observed_wet_cells": 52
+    },
+    {
+      "uuid": "d0d13130861d44a697b1b9b9f66bd98a",
+      "date": "2025-09-15",
+      "expected_wet_cells": 229.830810546875,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "cc802bb77f0e41b3a3cfbf93f8e257fe",
+      "date": "2025-09-15",
+      "expected_wet_cells": 829.2080078125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ec9f9ee33c344ebeac76aec9a7e8b710",
+      "date": "2025-09-16",
+      "expected_wet_cells": 544.7057495117188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f7e0cc34c0e04efb854a27052c940b6f",
+      "date": "2025-09-16",
+      "expected_wet_cells": 575.2024536132812,
+      "observed_wet_cells": 289
+    },
+    {
+      "uuid": "f2abc8990254475ebe55c86fd9261cf7",
+      "date": "2025-09-16",
+      "expected_wet_cells": 804.9066162109375,
+      "observed_wet_cells": 1303
+    },
+    {
+      "uuid": "74d1cdcf249f451ea2daad3370d9197f",
+      "date": "2025-09-16",
+      "expected_wet_cells": 1008.7054443359375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "80af72e856814d85adb2ca4f5c686387",
+      "date": "2025-09-16",
+      "expected_wet_cells": 27.917577743530273,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4197839f7085462c99c5dc5709cfe806",
+      "date": "2025-09-16",
+      "expected_wet_cells": 451.16912841796875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "1be52326c57d4b0db212a77ef3d83fa5",
+      "date": "2025-09-16",
+      "expected_wet_cells": 785.1599731445312,
+      "observed_wet_cells": 669
+    },
+    {
+      "uuid": "c3e0161f8c83426b9c8bd3d1b92f2a83",
+      "date": "2025-09-16",
+      "expected_wet_cells": 367.140380859375,
+      "observed_wet_cells": 159
+    },
+    {
+      "uuid": "ebc74a7e1f2041c496734e878a236712",
+      "date": "2025-09-17",
+      "expected_wet_cells": 734.2503662109375,
+      "observed_wet_cells": 140
+    },
+    {
+      "uuid": "267b5ce00f5e4590bf5c88f97ef4632b",
+      "date": "2025-09-19",
+      "expected_wet_cells": 100.88667297363281,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "6dbcb14ee1b74e9dba432cba1444bf9b",
+      "date": "2025-09-23",
+      "expected_wet_cells": 467.6793212890625,
+      "observed_wet_cells": 156
+    },
+    {
+      "uuid": "eafd7d6f385d4594883e81f26cccc0db",
+      "date": "2025-10-04",
+      "expected_wet_cells": 419.28485107421875,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "40bea800c87a4e939f6cc11fa59089a1",
+      "date": "2025-10-05",
+      "expected_wet_cells": 43.60176086425781,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4f6ad7c936a142f097f61ea6f8a5b60c",
+      "date": "2025-10-05",
+      "expected_wet_cells": 104.69462585449219,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "cac4d34ea0be4cf6a96c951f83590b5a",
+      "date": "2025-10-07",
+      "expected_wet_cells": 434.4406433105469,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "547fed9a447445b1991bce21becd605b",
+      "date": "2025-10-07",
+      "expected_wet_cells": 17.093143463134766,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d2d0309a02fe4d8b93f8f5acaf8e7b93",
+      "date": "2025-10-07",
+      "expected_wet_cells": 1033.010498046875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ff7193d0e33c416caffdf554c407f77a",
+      "date": "2025-10-07",
+      "expected_wet_cells": 867.0509643554688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3720379e090d48e995ebd932f03fec6d",
+      "date": "2025-10-08",
+      "expected_wet_cells": 895.680419921875,
+      "observed_wet_cells": 251
+    },
+    {
+      "uuid": "25b8eacb7688440caa0195f732b321b3",
+      "date": "2025-10-08",
+      "expected_wet_cells": 538.1099243164062,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "b811fbdb59fa4e3495ba2a3cf3d16ef4",
+      "date": "2025-10-08",
+      "expected_wet_cells": 369.6776123046875,
+      "observed_wet_cells": 796
+    },
+    {
+      "uuid": "06b281ea8fc54b998660f873f0684536",
+      "date": "2025-10-10",
+      "expected_wet_cells": 598.6785278320312,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "91a7db7bee504fbaa134e778926b06bb",
+      "date": "2025-10-14",
+      "expected_wet_cells": 402.2638854980469,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "6748b75796a34e97b5aa85d44d8d4f1f",
+      "date": "2025-10-14",
+      "expected_wet_cells": 1033.010498046875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "f3df6f028c594430a9f0d593fe76ec70",
+      "date": "2023-04-02",
+      "expected_wet_cells": 639.123046875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ac5e0c755fa749be94bce0cfce4504ab",
+      "date": "2023-05-24",
+      "expected_wet_cells": 643.4956665039062,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "55e0afda1c38484088c199259bf2a341",
+      "date": "2023-06-11",
+      "expected_wet_cells": 418.05706787109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "04e011d560ad4757a517d0179a96b7ba",
+      "date": "2023-06-12",
+      "expected_wet_cells": 39.570926666259766,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "e9a4509dbbc440e9871d42327bc424d2",
+      "date": "2023-06-13",
+      "expected_wet_cells": 189.57440185546875,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "db55689101ad4a36a356de476b94d4d1",
+      "date": "2023-06-13",
+      "expected_wet_cells": 507.87420654296875,
+      "observed_wet_cells": 543
+    },
+    {
+      "uuid": "8fde9be5e74f449a8b8570ebdff4c1a1",
+      "date": "2023-06-13",
+      "expected_wet_cells": 68.7437744140625,
+      "observed_wet_cells": 60
+    },
+    {
+      "uuid": "59de033ec73b49ec9887934807569800",
+      "date": "2023-06-13",
+      "expected_wet_cells": 755.277587890625,
+      "observed_wet_cells": 762
+    },
+    {
+      "uuid": "559d8d51ad0545418d5de51b870ef81e",
+      "date": "2023-06-13",
+      "expected_wet_cells": 466.40496826171875,
+      "observed_wet_cells": 871
+    },
+    {
+      "uuid": "6df3d55cf4f34dbaba256af3ba4c132f",
+      "date": "2023-06-13",
+      "expected_wet_cells": 267.7871398925781,
+      "observed_wet_cells": 107
+    },
+    {
+      "uuid": "c2f4a2b0986544c28ef5f3f3520f0604",
+      "date": "2023-06-13",
+      "expected_wet_cells": 444.0328063964844,
+      "observed_wet_cells": 1098
+    },
+    {
+      "uuid": "a33ac020e3314c21b781dc81945c88c0",
+      "date": "2023-06-14",
+      "expected_wet_cells": 475.2803649902344,
+      "observed_wet_cells": 882
+    },
+    {
+      "uuid": "a101d0dbdc604173bb81e6d215fb9d6f",
+      "date": "2023-06-14",
+      "expected_wet_cells": 98.12246704101562,
+      "observed_wet_cells": 336
+    },
+    {
+      "uuid": "a83b1ca380ef41c7b18620d2d3b946cd",
+      "date": "2023-06-14",
+      "expected_wet_cells": 558.7490234375,
+      "observed_wet_cells": 1116
+    },
+    {
+      "uuid": "ae44cc7ef86844e7a52393e87954c879",
+      "date": "2023-06-14",
+      "expected_wet_cells": 433.5147705078125,
+      "observed_wet_cells": 1614
+    },
+    {
+      "uuid": "aee4089295594148b0832e8e7ffd814d",
+      "date": "2023-06-14",
+      "expected_wet_cells": 604.7969360351562,
+      "observed_wet_cells": 1901
+    },
+    {
+      "uuid": "b89f88c0b72f4d1dad9216253393d35d",
+      "date": "2023-06-14",
+      "expected_wet_cells": 429.365234375,
+      "observed_wet_cells": 489
+    },
+    {
+      "uuid": "1b0316a00d2843a381864054165eb603",
+      "date": "2023-06-14",
+      "expected_wet_cells": 489.1184387207031,
+      "observed_wet_cells": 230
+    },
+    {
+      "uuid": "1ae2e341900d4fe3a450e5e88e3721d9",
+      "date": "2023-06-14",
+      "expected_wet_cells": 487.35052490234375,
+      "observed_wet_cells": 61
+    },
+    {
+      "uuid": "0328a966df7640f7be434b64799816aa",
+      "date": "2023-06-14",
+      "expected_wet_cells": 863.8782958984375,
+      "observed_wet_cells": 1081
+    },
+    {
+      "uuid": "0c63ef6bf4d14b458a1245158c232c65",
+      "date": "2023-06-14",
+      "expected_wet_cells": 313.93719482421875,
+      "observed_wet_cells": 441
+    },
+    {
+      "uuid": "2884e76c7c0e435881a6f6634cf2486f",
+      "date": "2023-06-14",
+      "expected_wet_cells": 460.24017333984375,
+      "observed_wet_cells": 1911
+    },
+    {
+      "uuid": "1fd51fb39dc0492785fac5e6ce2f1b38",
+      "date": "2023-06-14",
+      "expected_wet_cells": 664.9996337890625,
+      "observed_wet_cells": 1921
+    },
+    {
+      "uuid": "3112bff2fa074c0e9420df05228b270b",
+      "date": "2023-06-14",
+      "expected_wet_cells": 443.68048095703125,
+      "observed_wet_cells": 1072
+    },
+    {
+      "uuid": "4f06a348666a40f6b159882ff9ced746",
+      "date": "2023-06-14",
+      "expected_wet_cells": 418.0114440917969,
+      "observed_wet_cells": 1238
+    },
+    {
+      "uuid": "98e74060736440dda71ad90a07692d99",
+      "date": "2023-06-14",
+      "expected_wet_cells": 214.1126251220703,
+      "observed_wet_cells": 10
+    },
+    {
+      "uuid": "99f968dbcae442cfbaffcf5d987835de",
+      "date": "2023-06-14",
+      "expected_wet_cells": 264.7799072265625,
+      "observed_wet_cells": 391
+    },
+    {
+      "uuid": "7df939026ba84b04986d4b8572b9b224",
+      "date": "2023-06-14",
+      "expected_wet_cells": 397.2536926269531,
+      "observed_wet_cells": 1215
+    },
+    {
+      "uuid": "76d906f910204e13822d23509edf727d",
+      "date": "2023-06-14",
+      "expected_wet_cells": 358.8271484375,
+      "observed_wet_cells": 1004
+    },
+    {
+      "uuid": "f9985ec216134024b17a7abb47220b22",
+      "date": "2023-06-14",
+      "expected_wet_cells": 619.615478515625,
+      "observed_wet_cells": 2355
+    },
+    {
+      "uuid": "feac35d4a85c45e385d498ce76d70e81",
+      "date": "2023-06-14",
+      "expected_wet_cells": 436.0487976074219,
+      "observed_wet_cells": 405
+    },
+    {
+      "uuid": "f2dfe8a8152b464d9db207f4951b5700",
+      "date": "2023-06-14",
+      "expected_wet_cells": 471.14862060546875,
+      "observed_wet_cells": 321
+    },
+    {
+      "uuid": "f314516705d5479ca1c9432b0f973143",
+      "date": "2023-06-15",
+      "expected_wet_cells": 356.7962951660156,
+      "observed_wet_cells": 110
+    },
+    {
+      "uuid": "a33f4ddfc8c44657aa64befd647b63a3",
+      "date": "2023-06-16",
+      "expected_wet_cells": 97.60513305664062,
+      "observed_wet_cells": 96
+    },
+    {
+      "uuid": "186accccb3f647718f572303d02d4bb2",
+      "date": "2023-06-16",
+      "expected_wet_cells": 138.48260498046875,
+      "observed_wet_cells": 8
+    },
+    {
+      "uuid": "d44f251b76c94718b79d5c1217b3a2c8",
+      "date": "2023-06-16",
+      "expected_wet_cells": 813.7142944335938,
+      "observed_wet_cells": 978
+    },
+    {
+      "uuid": "cb2c9ef6ad7641dfa52b211b236e4d4b",
+      "date": "2023-06-17",
+      "expected_wet_cells": 177.29637145996094,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d8c6a48f430148f4b582058aa0edcf16",
+      "date": "2023-06-19",
+      "expected_wet_cells": 175.59800720214844,
+      "observed_wet_cells": 23
+    },
+    {
+      "uuid": "cb5fe8e98fc2464cae60520b8164e886",
+      "date": "2023-06-26",
+      "expected_wet_cells": 229.19024658203125,
+      "observed_wet_cells": 68
+    },
+    {
+      "uuid": "79f75c7015d242bfa5a80ccd406d0ccc",
+      "date": "2023-06-26",
+      "expected_wet_cells": 478.8179016113281,
+      "observed_wet_cells": 200
+    },
+    {
+      "uuid": "e733835112dc4f23a13a61a9e6342079",
+      "date": "2023-06-26",
+      "expected_wet_cells": 441.9612731933594,
+      "observed_wet_cells": 230
+    },
+    {
+      "uuid": "04abe618e40a441681b819c337db557c",
+      "date": "2023-07-06",
+      "expected_wet_cells": 297.95147705078125,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "f7d4da7b1e6847adbce4976a015fda0f",
+      "date": "2023-07-07",
+      "expected_wet_cells": 654.3111572265625,
+      "observed_wet_cells": 700
+    },
+    {
+      "uuid": "d817cde58c39458fbf36a514bd183034",
+      "date": "2023-07-07",
+      "expected_wet_cells": 811.155029296875,
+      "observed_wet_cells": 965
+    },
+    {
+      "uuid": "d00ad86fdd014817b171ddfca4a73a05",
+      "date": "2023-07-07",
+      "expected_wet_cells": 494.94891357421875,
+      "observed_wet_cells": 66
+    },
+    {
+      "uuid": "e266122a62a5439ba20859bc11c125f1",
+      "date": "2023-07-07",
+      "expected_wet_cells": 412.9795837402344,
+      "observed_wet_cells": 179
+    },
+    {
+      "uuid": "e7003afe79ab4e05b909623847a7026c",
+      "date": "2023-07-07",
+      "expected_wet_cells": 503.4100036621094,
+      "observed_wet_cells": 57
+    },
+    {
+      "uuid": "e6432a1d728b4e25998c726511328590",
+      "date": "2023-07-07",
+      "expected_wet_cells": 908.0653076171875,
+      "observed_wet_cells": 1140
+    },
+    {
+      "uuid": "f988ebe8ff504ec3bdc1e7e3b9f2d50d",
+      "date": "2023-07-07",
+      "expected_wet_cells": 691.0733032226562,
+      "observed_wet_cells": 138
+    },
+    {
+      "uuid": "8daf385d02904541929fccbfe64f9cd0",
+      "date": "2023-07-07",
+      "expected_wet_cells": 517.575927734375,
+      "observed_wet_cells": 213
+    },
+    {
+      "uuid": "8bf2273a8dc94d37bb6e3a446b86608e",
+      "date": "2023-07-07",
+      "expected_wet_cells": 453.5723876953125,
+      "observed_wet_cells": 151
+    },
+    {
+      "uuid": "76032145739f4c899e893db5f2d7da78",
+      "date": "2023-07-07",
+      "expected_wet_cells": 832.3153076171875,
+      "observed_wet_cells": 901
+    },
+    {
+      "uuid": "411481084cbe44189be186e71948ae01",
+      "date": "2023-07-07",
+      "expected_wet_cells": 574.3150024414062,
+      "observed_wet_cells": 211
+    },
+    {
+      "uuid": "4699ad5ec8a445f8ad5617a5e8ad1d87",
+      "date": "2023-07-07",
+      "expected_wet_cells": 521.030029296875,
+      "observed_wet_cells": 174
+    },
+    {
+      "uuid": "4463e9f877ec43c0b126fde1c64790ca",
+      "date": "2023-07-07",
+      "expected_wet_cells": 828.3827514648438,
+      "observed_wet_cells": 958
+    },
+    {
+      "uuid": "22b53cbc413f416aaf0a897f27cb877f",
+      "date": "2023-07-07",
+      "expected_wet_cells": 964.5546875,
+      "observed_wet_cells": 1249
+    },
+    {
+      "uuid": "1909cea588464f6bb836158efbb98d54",
+      "date": "2023-07-07",
+      "expected_wet_cells": 649.2220458984375,
+      "observed_wet_cells": 241
+    },
+    {
+      "uuid": "ac5648b727b74dfb8c5a74b16b6680ae",
+      "date": "2023-07-07",
+      "expected_wet_cells": 1091.08154296875,
+      "observed_wet_cells": 1461
+    },
+    {
+      "uuid": "93a6b3c1effa4706b9be6019cf0a6f06",
+      "date": "2023-07-08",
+      "expected_wet_cells": 789.9044799804688,
+      "observed_wet_cells": 781
+    },
+    {
+      "uuid": "3d83c048cc364c70b2695d9765376024",
+      "date": "2023-07-13",
+      "expected_wet_cells": 65.57926177978516,
+      "observed_wet_cells": 20
+    },
+    {
+      "uuid": "b9cd421aca5d4b4292dda25164d73dc5",
+      "date": "2023-07-13",
+      "expected_wet_cells": 521.7556762695312,
+      "observed_wet_cells": 130
+    },
+    {
+      "uuid": "d26ee57b5ebc4f1fb8967fbdc76c9b05",
+      "date": "2023-07-19",
+      "expected_wet_cells": 362.0672607421875,
+      "observed_wet_cells": 1375
+    },
+    {
+      "uuid": "493000237b634cebb721737491cdb431",
+      "date": "2023-07-23",
+      "expected_wet_cells": 0.43628910183906555,
+      "observed_wet_cells": 59
+    },
+    {
+      "uuid": "a818e8aeae824990b468dc8d600da311",
+      "date": "2023-08-03",
+      "expected_wet_cells": 275.7047424316406,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "00f26a404b514ea083ee4429d94cf027",
+      "date": "2023-08-03",
+      "expected_wet_cells": 237.75677490234375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "c4b885d8872b4990b3f0780b48082975",
+      "date": "2023-08-11",
+      "expected_wet_cells": 367.3747863769531,
+      "observed_wet_cells": 165
+    },
+    {
+      "uuid": "a69568bed2ed471f9ddcdd3a96f4698b",
+      "date": "2023-08-11",
+      "expected_wet_cells": 97.3097152709961,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "dcf1e0ace0ac47279b8a142408a4d259",
+      "date": "2023-08-11",
+      "expected_wet_cells": 258.45269775390625,
+      "observed_wet_cells": 150
+    },
+    {
+      "uuid": "493ec3d766704d3791844925c1ec5004",
+      "date": "2023-08-12",
+      "expected_wet_cells": 244.19618225097656,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "193607280e5c4600a1e1f75e336b30cc",
+      "date": "2023-08-12",
+      "expected_wet_cells": 417.0005187988281,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "0130f4e6ecd04a92ab078741392bd0df",
+      "date": "2023-08-13",
+      "expected_wet_cells": 894.21728515625,
+      "observed_wet_cells": 991
+    },
+    {
+      "uuid": "9e3cd2874ed14787a9b7958407483036",
+      "date": "2023-08-23",
+      "expected_wet_cells": 841.777587890625,
+      "observed_wet_cells": 228
+    },
+    {
+      "uuid": "047de81b8cee4d2b9a752a6316d3970c",
+      "date": "2023-08-23",
+      "expected_wet_cells": 727.135498046875,
+      "observed_wet_cells": 170
+    },
+    {
+      "uuid": "5d55b2442dd54718accdddb13fca0afd",
+      "date": "2023-08-25",
+      "expected_wet_cells": 102.0244140625,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "73939808a532445eb82ecb9d5a0eb0d9",
+      "date": "2023-08-25",
+      "expected_wet_cells": 478.5755615234375,
+      "observed_wet_cells": 494
+    },
+    {
+      "uuid": "8d6de1e4c5ce4af58b774ea899c7d6ca",
+      "date": "2023-08-26",
+      "expected_wet_cells": 259.18017578125,
+      "observed_wet_cells": 30
+    },
+    {
+      "uuid": "12de278bd82f4c589f06abd95dd51b51",
+      "date": "2023-09-05",
+      "expected_wet_cells": 525.567626953125,
+      "observed_wet_cells": 30
+    },
+    {
+      "uuid": "5462996f5ca14d7eb7a8e207b848824c",
+      "date": "2023-09-06",
+      "expected_wet_cells": 451.6261291503906,
+      "observed_wet_cells": 144
+    },
+    {
+      "uuid": "2b443ce89a584e0abbd4d8c8c1e9b905",
+      "date": "2024-05-01",
+      "expected_wet_cells": 850.594970703125,
+      "observed_wet_cells": 127
+    },
+    {
+      "uuid": "18577c6936b94cbe9347f850b44e1d38",
+      "date": "2024-05-30",
+      "expected_wet_cells": 0.675944447517395,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "c2deb26b80614be7bfb1e9b5d8a6bd9c",
+      "date": "2024-06-10",
+      "expected_wet_cells": 342.53350830078125,
+      "observed_wet_cells": 169
+    },
+    {
+      "uuid": "679fd92fddc641e693141f607fc39bae",
+      "date": "2024-06-10",
+      "expected_wet_cells": 111.97689056396484,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "4534d2a76f0f431da83f3e59f5844389",
+      "date": "2024-06-18",
+      "expected_wet_cells": 0.17161855101585388,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "3dea131beabd4d3fb1ce3298ba9b5015",
+      "date": "2024-06-18",
+      "expected_wet_cells": 885.4224243164062,
+      "observed_wet_cells": 164
+    },
+    {
+      "uuid": "b8f10d3b22284a1e967207ed5866c605",
+      "date": "2024-06-19",
+      "expected_wet_cells": 500.1531677246094,
+      "observed_wet_cells": 190
+    },
+    {
+      "uuid": "9ded1f48ec2e4de8a0aa5487e1c00604",
+      "date": "2024-06-20",
+      "expected_wet_cells": 646.5139770507812,
+      "observed_wet_cells": 332
+    },
+    {
+      "uuid": "26c1558d2627441699c77355cc8b486b",
+      "date": "2024-06-20",
+      "expected_wet_cells": 484.8759460449219,
+      "observed_wet_cells": 88
+    },
+    {
+      "uuid": "c4cdf4c92cf74f80bf5731aa30bbb954",
+      "date": "2024-06-22",
+      "expected_wet_cells": 157.38504028320312,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "696b7efdc1f240d69ec99c26a6ffea33",
+      "date": "2024-06-25",
+      "expected_wet_cells": 40.25782012939453,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "5307b499e31f404b8bd28074edb49369",
+      "date": "2024-06-26",
+      "expected_wet_cells": 841.1610107421875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "490918c849884ec38de03a22c5cb1b4e",
+      "date": "2024-06-26",
+      "expected_wet_cells": 364.3067321777344,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "72adfb28116045bbb6e448812e30d674",
+      "date": "2024-06-27",
+      "expected_wet_cells": 1306.0382080078125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "56f9bfe750934c5198068f363e4097c3",
+      "date": "2024-06-27",
+      "expected_wet_cells": 1456.212646484375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b3c3c55ec27e4ae1911bc11c5ad75bd6",
+      "date": "2024-06-27",
+      "expected_wet_cells": 548.8995361328125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "bd84c3e089104a239f93f15402e0d24d",
+      "date": "2024-06-27",
+      "expected_wet_cells": 513.0910034179688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "d1a9b9a9ec034bf695afdcc630bf53ca",
+      "date": "2024-06-28",
+      "expected_wet_cells": 428.53631591796875,
+      "observed_wet_cells": 122
+    },
+    {
+      "uuid": "df4efafacfae46ca87d2715592210252",
+      "date": "2024-06-29",
+      "expected_wet_cells": 970.27392578125,
+      "observed_wet_cells": 1067
+    },
+    {
+      "uuid": "922a687ac85944ceb3d208974cb63e21",
+      "date": "2024-06-29",
+      "expected_wet_cells": 1217.287109375,
+      "observed_wet_cells": 1576
+    },
+    {
+      "uuid": "5d01f61ea074457580e5c35dbfb2683b",
+      "date": "2024-06-29",
+      "expected_wet_cells": 484.7395935058594,
+      "observed_wet_cells": 32
+    },
+    {
+      "uuid": "003da68598c94db587da235f32175476",
+      "date": "2024-06-29",
+      "expected_wet_cells": 1.5328352451324463,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "cb3b382b11e4410bb4d1e45fd0e51939",
+      "date": "2024-06-30",
+      "expected_wet_cells": 262.39654541015625,
+      "observed_wet_cells": 118
+    },
+    {
+      "uuid": "c129cfbed8714011bfd12b090f652cfd",
+      "date": "2024-06-30",
+      "expected_wet_cells": 794.0401611328125,
+      "observed_wet_cells": 1092
+    },
+    {
+      "uuid": "a8ba07bf4012429d9b724daf10825b5a",
+      "date": "2024-06-30",
+      "expected_wet_cells": 455.06939697265625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b895895e4ff948d6b8b8d8a152626d3d",
+      "date": "2024-06-30",
+      "expected_wet_cells": 93.01476287841797,
+      "observed_wet_cells": 57
+    },
+    {
+      "uuid": "ac434d2eafb44177a146d1060aee3d78",
+      "date": "2024-06-30",
+      "expected_wet_cells": 1184.045654296875,
+      "observed_wet_cells": 1626
+    },
+    {
+      "uuid": "274f0793cf4d40a3b18affd53e8f4edd",
+      "date": "2024-06-30",
+      "expected_wet_cells": 738.9839477539062,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "17b34440a351470188aeee819b5523df",
+      "date": "2024-06-30",
+      "expected_wet_cells": 1.6839663982391357,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "092890ee9b214b82935bd8a3904ef1ff",
+      "date": "2024-06-30",
+      "expected_wet_cells": 648.0391845703125,
+      "observed_wet_cells": 441
+    },
+    {
+      "uuid": "51fc5f67093e495895851dff726efe6b",
+      "date": "2024-06-30",
+      "expected_wet_cells": 379.40472412109375,
+      "observed_wet_cells": 372
+    },
+    {
+      "uuid": "64add746ea864f69a1cae206be07494e",
+      "date": "2024-06-30",
+      "expected_wet_cells": 1315.3115234375,
+      "observed_wet_cells": 2567
+    },
+    {
+      "uuid": "978fe68ff755443b91a001ff89946fb4",
+      "date": "2024-06-30",
+      "expected_wet_cells": 1146.6474609375,
+      "observed_wet_cells": 2535
+    },
+    {
+      "uuid": "949e0cdd475240df8ce94fb15597e194",
+      "date": "2024-06-30",
+      "expected_wet_cells": 868.8074951171875,
+      "observed_wet_cells": 184
+    },
+    {
+      "uuid": "8f8bb536599e4c7485abc7b3767ad0e7",
+      "date": "2024-06-30",
+      "expected_wet_cells": 874.0374145507812,
+      "observed_wet_cells": 854
+    },
+    {
+      "uuid": "fa499aa2b05945f78c1d3561116a2b22",
+      "date": "2024-06-30",
+      "expected_wet_cells": 603.0501708984375,
+      "observed_wet_cells": 144
+    },
+    {
+      "uuid": "e54a053d20774e28a9bb2a079a9fbbd8",
+      "date": "2024-06-30",
+      "expected_wet_cells": 519.578125,
+      "observed_wet_cells": 69
+    },
+    {
+      "uuid": "f155ae15b1d8459893ad622f8fc78420",
+      "date": "2024-07-01",
+      "expected_wet_cells": 468.81060791015625,
+      "observed_wet_cells": 1010
+    },
+    {
+      "uuid": "f8c12f5ca8644c00b2cf6efd269c5e35",
+      "date": "2024-07-01",
+      "expected_wet_cells": 536.0069580078125,
+      "observed_wet_cells": 2373
+    },
+    {
+      "uuid": "f5fcc3883efd43c68b0b62d62814013a",
+      "date": "2024-07-01",
+      "expected_wet_cells": 281.7457580566406,
+      "observed_wet_cells": 501
+    },
+    {
+      "uuid": "f45040cc2b8b4496b473ad7aa52c25fb",
+      "date": "2024-07-01",
+      "expected_wet_cells": 1041.13916015625,
+      "observed_wet_cells": 4329
+    },
+    {
+      "uuid": "e876ad73163f4c40acd993b4b8dcac19",
+      "date": "2024-07-01",
+      "expected_wet_cells": 337.721435546875,
+      "observed_wet_cells": 1078
+    },
+    {
+      "uuid": "dbbf01e499754d38b09e77cd3bf15929",
+      "date": "2024-07-01",
+      "expected_wet_cells": 824.5608520507812,
+      "observed_wet_cells": 2173
+    },
+    {
+      "uuid": "f92f536869dd4da2bd89422e1732ff95",
+      "date": "2024-07-01",
+      "expected_wet_cells": 818.858642578125,
+      "observed_wet_cells": 2820
+    },
+    {
+      "uuid": "8a4ee4da8ade4f26abb44c15cad19147",
+      "date": "2024-07-01",
+      "expected_wet_cells": 637.1564331054688,
+      "observed_wet_cells": 1473
+    },
+    {
+      "uuid": "850a491a67964e24b8bbbf983f2d5b19",
+      "date": "2024-07-01",
+      "expected_wet_cells": 411.43560791015625,
+      "observed_wet_cells": 656
+    },
+    {
+      "uuid": "904bf31ad1fc401694769f5ab727c40c",
+      "date": "2024-07-01",
+      "expected_wet_cells": 448.5261535644531,
+      "observed_wet_cells": 1123
+    },
+    {
+      "uuid": "787de1b9f52d4fa5b24aceb015d1da19",
+      "date": "2024-07-01",
+      "expected_wet_cells": 51.11647415161133,
+      "observed_wet_cells": 236
+    },
+    {
+      "uuid": "572641348a6e4fea8f5528f3f2fb7e95",
+      "date": "2024-07-01",
+      "expected_wet_cells": 373.92120361328125,
+      "observed_wet_cells": 1204
+    },
+    {
+      "uuid": "4bc96687ca99465ea3a070df14704d18",
+      "date": "2024-07-01",
+      "expected_wet_cells": 4.538943290710449,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "4a60c5e5fc9144949e3574fd4c1f1ce9",
+      "date": "2024-07-01",
+      "expected_wet_cells": 1408.5631103515625,
+      "observed_wet_cells": 5111
+    },
+    {
+      "uuid": "6e57b9db578345828a0c1813097913a8",
+      "date": "2024-07-01",
+      "expected_wet_cells": 477.16033935546875,
+      "observed_wet_cells": 1044
+    },
+    {
+      "uuid": "193c573eb0a24ef7aeca438bd5d7deb7",
+      "date": "2024-07-01",
+      "expected_wet_cells": 1099.590087890625,
+      "observed_wet_cells": 2834
+    },
+    {
+      "uuid": "9c84ace9ebdf491aa2b57368573fc98a",
+      "date": "2024-07-01",
+      "expected_wet_cells": 325.96826171875,
+      "observed_wet_cells": 418
+    },
+    {
+      "uuid": "9fc016ccfa9e4c58ab9fb83007c2b119",
+      "date": "2024-07-02",
+      "expected_wet_cells": 1364.626708984375,
+      "observed_wet_cells": 3607
+    },
+    {
+      "uuid": "a7cf304f114b44a0af9ccace1ab61440",
+      "date": "2024-07-02",
+      "expected_wet_cells": 304.5738220214844,
+      "observed_wet_cells": 314
+    },
+    {
+      "uuid": "b3fcdf7e4f6d49d2a6ab61a8f4588ad3",
+      "date": "2024-07-02",
+      "expected_wet_cells": 419.9747619628906,
+      "observed_wet_cells": 1343
+    },
+    {
+      "uuid": "46a77338d1f54fb48784f64fb63397af",
+      "date": "2024-07-02",
+      "expected_wet_cells": 122.98856353759766,
+      "observed_wet_cells": 509
+    },
+    {
+      "uuid": "960ce2b891604074a91d6dda049a4f45",
+      "date": "2024-07-02",
+      "expected_wet_cells": 231.0760955810547,
+      "observed_wet_cells": 625
+    },
+    {
+      "uuid": "af1d87871c764087bb15d7984230e0d2",
+      "date": "2024-07-04",
+      "expected_wet_cells": 229.79794311523438,
+      "observed_wet_cells": 616
+    },
+    {
+      "uuid": "918afed9970f43109e2baff50add3a3f",
+      "date": "2024-07-05",
+      "expected_wet_cells": 75.17262268066406,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "0e6dc6d7d263472f924f43d0053e0769",
+      "date": "2024-07-05",
+      "expected_wet_cells": 662.3406982421875,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "289859eb03ca4ed085e01d5f13b4fb74",
+      "date": "2024-07-05",
+      "expected_wet_cells": 92.69915008544922,
+      "observed_wet_cells": 308
+    },
+    {
+      "uuid": "ae5dd2407c524b94a69884aef2414760",
+      "date": "2024-07-06",
+      "expected_wet_cells": 153.91574096679688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2c8c96b59a09498ca623fa05de00b077",
+      "date": "2024-07-06",
+      "expected_wet_cells": 224.14674377441406,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "52d75f9070e04472aa865ed551d004f6",
+      "date": "2024-07-06",
+      "expected_wet_cells": 146.4465789794922,
+      "observed_wet_cells": 355
+    },
+    {
+      "uuid": "98cb2c5600924c7db61925b4c8d4594b",
+      "date": "2024-07-07",
+      "expected_wet_cells": 132.46226501464844,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "35e9f825dbd24ec0b0689b6e750f6f0b",
+      "date": "2024-07-07",
+      "expected_wet_cells": 417.9410400390625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "2451205cf5df466da5390824327a7200",
+      "date": "2024-07-07",
+      "expected_wet_cells": 937.28173828125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8536e675f7954826af5d51bcc0afab9f",
+      "date": "2024-07-10",
+      "expected_wet_cells": 421.7418518066406,
+      "observed_wet_cells": 187
+    },
+    {
+      "uuid": "ef2d45a2eb904272a834bdb5328bbfb6",
+      "date": "2024-07-11",
+      "expected_wet_cells": 365.73101806640625,
+      "observed_wet_cells": 1122
+    },
+    {
+      "uuid": "891a85321b93490886a44c6a40798c1b",
+      "date": "2024-07-11",
+      "expected_wet_cells": 991.9847412109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "582fa0b14d2c47c2b68d90b592b2ff7b",
+      "date": "2024-07-11",
+      "expected_wet_cells": 759.83984375,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "0779868b9c75466a84255d9d1b471e6c",
+      "date": "2024-07-11",
+      "expected_wet_cells": 264.3780822753906,
+      "observed_wet_cells": 398
+    },
+    {
+      "uuid": "9eda0ccec34942558ac4fa0f4c8103a1",
+      "date": "2024-07-12",
+      "expected_wet_cells": 660.1966552734375,
+      "observed_wet_cells": 3167
+    },
+    {
+      "uuid": "35c07292fd7c475f9578f431ba40ccea",
+      "date": "2024-07-12",
+      "expected_wet_cells": 267.58782958984375,
+      "observed_wet_cells": 370
+    },
+    {
+      "uuid": "46c2c805f06647b4b1a35b3ef112eda9",
+      "date": "2024-07-12",
+      "expected_wet_cells": 1085.77783203125,
+      "observed_wet_cells": 2718
+    },
+    {
+      "uuid": "5e551c0e90f1474ab578c4d47a7d64c1",
+      "date": "2024-07-12",
+      "expected_wet_cells": 99.07001495361328,
+      "observed_wet_cells": 82
+    },
+    {
+      "uuid": "7f8a0e2fbf4b4f369c656b6649135e67",
+      "date": "2024-07-12",
+      "expected_wet_cells": 484.57806396484375,
+      "observed_wet_cells": 2107
+    },
+    {
+      "uuid": "d2d447ffa0934facb59fbb575861c281",
+      "date": "2024-07-12",
+      "expected_wet_cells": 421.7418518066406,
+      "observed_wet_cells": 187
+    },
+    {
+      "uuid": "41d76fd075de4f6586b38d55d717dc7a",
+      "date": "2024-07-14",
+      "expected_wet_cells": 32.71196746826172,
+      "observed_wet_cells": 41
+    },
+    {
+      "uuid": "943b3d5e049f4c7bbda6732190efaea9",
+      "date": "2024-07-14",
+      "expected_wet_cells": 105.51953887939453,
+      "observed_wet_cells": 67
+    },
+    {
+      "uuid": "e165c7b38d8a4436852e50e6242dbd67",
+      "date": "2024-07-14",
+      "expected_wet_cells": 461.3648681640625,
+      "observed_wet_cells": 653
+    },
+    {
+      "uuid": "11322ba8af3f4d9e9fdae479b4cbba42",
+      "date": "2024-07-18",
+      "expected_wet_cells": 82.36909484863281,
+      "observed_wet_cells": 23
+    },
+    {
+      "uuid": "05bafd931de84f8b884a2c6c6f47738d",
+      "date": "2024-07-22",
+      "expected_wet_cells": 19.207149505615234,
+      "observed_wet_cells": 13
+    },
+    {
+      "uuid": "2e9ac6fa0cfe4b7281c0a91fbd1b6f49",
+      "date": "2024-07-24",
+      "expected_wet_cells": 625.9066162109375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ebf0622d10b64253849029253f6f0644",
+      "date": "2024-07-24",
+      "expected_wet_cells": 373.0020446777344,
+      "observed_wet_cells": 21
+    },
+    {
+      "uuid": "b2c60fa81def4ec5b49da6e590487ff1",
+      "date": "2024-07-25",
+      "expected_wet_cells": 823.4962158203125,
+      "observed_wet_cells": 495
+    },
+    {
+      "uuid": "45ed4bdbb7124dc68e5d0b9b108c8c5a",
+      "date": "2024-08-06",
+      "expected_wet_cells": 141.56260681152344,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "ade40f62b34c4fc0b5463a9b407981a8",
+      "date": "2024-08-07",
+      "expected_wet_cells": 299.9969787597656,
+      "observed_wet_cells": 838
+    },
+    {
+      "uuid": "e5e395988f534469bd5b47ae46f29d25",
+      "date": "2024-08-07",
+      "expected_wet_cells": 440.98052978515625,
+      "observed_wet_cells": 624
+    },
+    {
+      "uuid": "1f1583562cb34fa5a2636fa5297d4020",
+      "date": "2024-08-08",
+      "expected_wet_cells": 215.36441040039062,
+      "observed_wet_cells": 566
+    },
+    {
+      "uuid": "abfa581440364140998c2c31c20b9d0e",
+      "date": "2024-08-17",
+      "expected_wet_cells": 395.0926513671875,
+      "observed_wet_cells": 1386
+    },
+    {
+      "uuid": "80d30901404447f8b4258520d26d80c1",
+      "date": "2024-08-17",
+      "expected_wet_cells": 391.17620849609375,
+      "observed_wet_cells": 468
+    },
+    {
+      "uuid": "e948b0227ba0490496a8308635b5345f",
+      "date": "2024-08-17",
+      "expected_wet_cells": 456.7032165527344,
+      "observed_wet_cells": 625
+    },
+    {
+      "uuid": "da8da2f2f57e425aa31c6457ffdb6e07",
+      "date": "2024-08-18",
+      "expected_wet_cells": 516.6219482421875,
+      "observed_wet_cells": 4
+    },
+    {
+      "uuid": "dff03ea93b994150afb69bcaab01755c",
+      "date": "2024-08-18",
+      "expected_wet_cells": 223.9099884033203,
+      "observed_wet_cells": 438
+    },
+    {
+      "uuid": "5d30ce5a75184ae286322d30b749a81e",
+      "date": "2024-08-18",
+      "expected_wet_cells": 232.35537719726562,
+      "observed_wet_cells": 606
+    },
+    {
+      "uuid": "58c7375229644b56a8d888086673ab49",
+      "date": "2024-08-18",
+      "expected_wet_cells": 460.88623046875,
+      "observed_wet_cells": 620
+    },
+    {
+      "uuid": "0f623aec18b045f992281d4b6f1f3b25",
+      "date": "2024-08-18",
+      "expected_wet_cells": 513.7564086914062,
+      "observed_wet_cells": 685
+    },
+    {
+      "uuid": "6f776ba2fd124f468037bd1fa9168e9c",
+      "date": "2024-08-19",
+      "expected_wet_cells": 607.7608642578125,
+      "observed_wet_cells": 802
+    },
+    {
+      "uuid": "940308a537364672a5a00c3bfbe664d3",
+      "date": "2024-08-19",
+      "expected_wet_cells": 580.6275634765625,
+      "observed_wet_cells": 97
+    },
+    {
+      "uuid": "a80c18957402434ab82d0a322f7849d4",
+      "date": "2025-01-09",
+      "expected_wet_cells": 143.67477416992188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c30a00fd498c48d899299d1eb9e24c36",
+      "date": "2025-01-11",
+      "expected_wet_cells": 143.67477416992188,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c2e67fdefe8d4219b825350030e0369c",
+      "date": "2025-05-24",
+      "expected_wet_cells": 5.781444072723389,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "a33abaacba8a4ee8998cac71e9ddf62d",
+      "date": "2025-06-01",
+      "expected_wet_cells": 277.1224365234375,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "9d6e6a5aa69c43db97ae86eb2f18a258",
+      "date": "2025-06-01",
+      "expected_wet_cells": 241.75674438476562,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "3ceaf524b4884743a0a22e596fe4c2ef",
+      "date": "2025-06-01",
+      "expected_wet_cells": 580.512451171875,
+      "observed_wet_cells": 5
+    },
+    {
+      "uuid": "ed83e10a1562427d81ee641dbf50f108",
+      "date": "2025-06-01",
+      "expected_wet_cells": 1044.6005859375,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "d7014997d4ee40878d4548fcbc4aba1a",
+      "date": "2025-06-02",
+      "expected_wet_cells": 177.87924194335938,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "dfeb7c523feb456bbd313996e97179ce",
+      "date": "2025-06-02",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "8537af95b015493db3ed1850357ec759",
+      "date": "2025-06-02",
+      "expected_wet_cells": 180.4666290283203,
+      "observed_wet_cells": 2
+    },
+    {
+      "uuid": "6c7762ae0ad547d48c8c491f7d30d714",
+      "date": "2025-06-02",
+      "expected_wet_cells": 1028.4462890625,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "c1cb80f7817a45f491646d1236e3259c",
+      "date": "2025-06-03",
+      "expected_wet_cells": 696.0927124023438,
+      "observed_wet_cells": 250
+    },
+    {
+      "uuid": "b2482a58dcc64da8819b26ca2fa802c5",
+      "date": "2025-06-03",
+      "expected_wet_cells": 1231.62646484375,
+      "observed_wet_cells": 1555
+    },
+    {
+      "uuid": "354b0e1ae90c40ce9590926b8a1f8073",
+      "date": "2025-06-03",
+      "expected_wet_cells": 577.1322631835938,
+      "observed_wet_cells": 9
+    },
+    {
+      "uuid": "73762428d5d1405ba99d7ac2d42cdd51",
+      "date": "2025-06-06",
+      "expected_wet_cells": 212.08203125,
+      "observed_wet_cells": 46
+    },
+    {
+      "uuid": "a2978df5afc74b4a944c51ee8246771b",
+      "date": "2025-06-06",
+      "expected_wet_cells": 427.7672119140625,
+      "observed_wet_cells": 7
+    },
+    {
+      "uuid": "1ad45e0c4d284bfaa73237f35d751ba7",
+      "date": "2025-06-08",
+      "expected_wet_cells": 6.746566295623779,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "ca84e0cbd4634aaa97edf8cb39548191",
+      "date": "2025-06-11",
+      "expected_wet_cells": 643.7275390625,
+      "observed_wet_cells": 156
+    },
+    {
+      "uuid": "7dce3fccb8ce43fe9558b03ce80fa421",
+      "date": "2025-06-12",
+      "expected_wet_cells": 528.3406982421875,
+      "observed_wet_cells": 123
+    },
+    {
+      "uuid": "fa8848f5a3a04d08b0571f163eacb319",
+      "date": "2025-06-13",
+      "expected_wet_cells": 692.2977905273438,
+      "observed_wet_cells": 393
+    },
+    {
+      "uuid": "bd2910c46eb246bb8196693a0d11a25a",
+      "date": "2025-06-15",
+      "expected_wet_cells": 628.4974975585938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "cc45cd984e1548f3987a69329aa5d6c9",
+      "date": "2025-06-15",
+      "expected_wet_cells": 569.2318115234375,
+      "observed_wet_cells": 121
+    },
+    {
+      "uuid": "b252adb0469a4408a682e6994862a212",
+      "date": "2025-06-23",
+      "expected_wet_cells": 630.2882080078125,
+      "observed_wet_cells": 84
+    },
+    {
+      "uuid": "217a007c932843fb8b85dec16e4d73aa",
+      "date": "2025-06-23",
+      "expected_wet_cells": 589.5081176757812,
+      "observed_wet_cells": 54
+    },
+    {
+      "uuid": "2f3433d5eef04640aa925f8adbbd8752",
+      "date": "2025-06-23",
+      "expected_wet_cells": 587.31884765625,
+      "observed_wet_cells": 45
+    },
+    {
+      "uuid": "ef9fce1b6a774a70b37cee6f5ab0e569",
+      "date": "2025-06-24",
+      "expected_wet_cells": 448.5439758300781,
+      "observed_wet_cells": 139
+    },
+    {
+      "uuid": "e576b3e284254fe8ac85afd9963d94e0",
+      "date": "2025-06-24",
+      "expected_wet_cells": 515.1732788085938,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "a79e3d1f51b94eca8e95a8a7ae2d152a",
+      "date": "2025-06-24",
+      "expected_wet_cells": 68.70450592041016,
+      "observed_wet_cells": 55
+    },
+    {
+      "uuid": "a80ba571904c4e02ad4e711e94672c91",
+      "date": "2025-06-25",
+      "expected_wet_cells": 745.9306640625,
+      "observed_wet_cells": 48
+    },
+    {
+      "uuid": "af1bd37cc8554e5282f631a9eb7cf74b",
+      "date": "2025-06-25",
+      "expected_wet_cells": 566.454833984375,
+      "observed_wet_cells": 339
+    },
+    {
+      "uuid": "11ecb2931da240b590a8001c9efa6df7",
+      "date": "2025-06-25",
+      "expected_wet_cells": 876.8433227539062,
+      "observed_wet_cells": 12
+    },
+    {
+      "uuid": "036c0cd162ff47829e84f2a45614c6d5",
+      "date": "2025-06-25",
+      "expected_wet_cells": 99.38966369628906,
+      "observed_wet_cells": 40
+    },
+    {
+      "uuid": "6dffa80d28cb46ada05414a9e4effb51",
+      "date": "2025-06-25",
+      "expected_wet_cells": 537.1928100585938,
+      "observed_wet_cells": 38
+    },
+    {
+      "uuid": "4fd3fe6a833d407db25f9f90733718dd",
+      "date": "2025-06-25",
+      "expected_wet_cells": 944.2135009765625,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "5ce4dde4fe444e8795da9a51417e3761",
+      "date": "2025-06-25",
+      "expected_wet_cells": 565.133544921875,
+      "observed_wet_cells": 45
+    },
+    {
+      "uuid": "cd253c191151435993a964af85f324ad",
+      "date": "2025-06-25",
+      "expected_wet_cells": 925.2645263671875,
+      "observed_wet_cells": 351
+    },
+    {
+      "uuid": "ea131d70981d4e47ae1ae1b8987a3fbd",
+      "date": "2025-06-25",
+      "expected_wet_cells": 703.372802734375,
+      "observed_wet_cells": 91
+    },
+    {
+      "uuid": "ef86eb07a7fe413eb8984baeed817d44",
+      "date": "2025-06-26",
+      "expected_wet_cells": 338.2452697753906,
+      "observed_wet_cells": 429
+    },
+    {
+      "uuid": "ea0be9c0258a4bf4b8dff3225dcf6198",
+      "date": "2025-06-26",
+      "expected_wet_cells": 280.01776123046875,
+      "observed_wet_cells": 18
+    },
+    {
+      "uuid": "d960db921f504d1e91f5204a42359f84",
+      "date": "2025-06-26",
+      "expected_wet_cells": 313.7864074707031,
+      "observed_wet_cells": 108
+    },
+    {
+      "uuid": "cecd009c967942c9a0a1ab49b08a3c23",
+      "date": "2025-06-26",
+      "expected_wet_cells": 958.529052734375,
+      "observed_wet_cells": 1079
+    },
+    {
+      "uuid": "75636d2214e84082a3740176c2136207",
+      "date": "2025-06-26",
+      "expected_wet_cells": 64.5622329711914,
+      "observed_wet_cells": 158
+    },
+    {
+      "uuid": "4dd65f63926f488a8e3bd9f3ac974f13",
+      "date": "2025-06-26",
+      "expected_wet_cells": 278.9869384765625,
+      "observed_wet_cells": 9
+    },
+    {
+      "uuid": "5318578530054be19d301163f496c644",
+      "date": "2025-06-26",
+      "expected_wet_cells": 484.4653625488281,
+      "observed_wet_cells": 158
+    },
+    {
+      "uuid": "72cb516e8baf49809ec397b4f3bfce5b",
+      "date": "2025-06-26",
+      "expected_wet_cells": 160.65176391601562,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "139c39d14a9942caa181516bca9afba9",
+      "date": "2025-06-26",
+      "expected_wet_cells": 223.66188049316406,
+      "observed_wet_cells": 13
+    },
+    {
+      "uuid": "ac09ee1e35b24181b6f6f680eb2b7509",
+      "date": "2025-06-26",
+      "expected_wet_cells": 16.16996955871582,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "a52cc1dde62747ebac21c40c1e7d3f65",
+      "date": "2025-06-26",
+      "expected_wet_cells": 552.5220336914062,
+      "observed_wet_cells": 14
+    },
+    {
+      "uuid": "bb4742c2b5784c49b6a7349682c7fdfe",
+      "date": "2025-06-26",
+      "expected_wet_cells": 58.280006408691406,
+      "observed_wet_cells": 1
+    },
+    {
+      "uuid": "c38a1936bf1b48f8a23899bdefdd2dd3",
+      "date": "2025-06-27",
+      "expected_wet_cells": 667.8972778320312,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "b5ddd9aa83ce404b84c9cc2e1d9704e2",
+      "date": "2025-06-27",
+      "expected_wet_cells": 693.7238159179688,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "36bcd9d57342432ab18dd946be116531",
+      "date": "2025-06-27",
+      "expected_wet_cells": 632.9126586914062,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "6c79431813d541f18fdc136eb5ef0918",
+      "date": "2025-06-27",
+      "expected_wet_cells": 773.5079345703125,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "7ecf6e36a1404d28bd960cfccf5ce198",
+      "date": "2025-06-27",
+      "expected_wet_cells": 566.83349609375,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "e7a23a2c8110459caa892ea804cf95bd",
+      "date": "2025-06-27",
+      "expected_wet_cells": 407.8619079589844,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "6d1799a154eb48b5911319b47814807d",
+      "date": "2025-06-30",
+      "expected_wet_cells": 251.5799102783203,
+      "observed_wet_cells": 72
+    },
+    {
+      "uuid": "310ceb20bb8d48b8bcc19afda708c688",
+      "date": "2025-07-02",
+      "expected_wet_cells": 174.80902099609375,
+      "observed_wet_cells": 284
+    },
+    {
+      "uuid": "f831e02403614e68ac9feb5e89828714",
+      "date": "2025-07-07",
+      "expected_wet_cells": 179.2628173828125,
+      "observed_wet_cells": 6
+    },
+    {
+      "uuid": "ab00a1650c7e4c1083a07dd446d819ab",
+      "date": "2025-07-16",
+      "expected_wet_cells": 23.467937469482422,
+      "observed_wet_cells": 0
+    },
+    {
+      "uuid": "aa1e68c297044e3ea5948a57e060e21e",
+      "date": "2025-08-13",
+      "expected_wet_cells": 543.737060546875,
+      "observed_wet_cells": 171
+    },
+    {
+      "uuid": "31813a3e6003492e89892338f7146837",
+      "date": "2025-08-14",
+      "expected_wet_cells": 834.0582885742188,
+      "observed_wet_cells": 331
+    },
+    {
+      "uuid": "eb4a42fb46284ebfb719732d3f22b5b1",
+      "date": "2025-09-18",
+      "expected_wet_cells": 539.6907958984375,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "1769ae4f0ff043fc81f2a1f3865ded31",
+      "date": "2025-09-18",
+      "expected_wet_cells": 563.3704833984375,
+      "observed_wet_cells": 69
+    },
+    {
+      "uuid": "bfe0681937bc4583b311e86935355fac",
+      "date": "2025-10-01",
+      "expected_wet_cells": 104.69462585449219,
+      "observed_wet_cells": 3
+    },
+    {
+      "uuid": "981256fd877a47d2bbd99ea79c62496c",
+      "date": "2025-10-01",
+      "expected_wet_cells": 666.8636474609375,
+      "observed_wet_cells": 23
+    }
+  ]
+}

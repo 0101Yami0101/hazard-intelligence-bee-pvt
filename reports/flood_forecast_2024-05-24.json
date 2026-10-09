@@ -1,0 +1,78 @@
+{
+  "date": "2024-05-24",
+  "means": "per 100 m patch: chance a reported, satellite-confirmed flood puts water on it today. A floor - unreported floods are not in the record",
+  "expected_flooded_km2_in_state": 0.10245033353567123,
+  "normal_expected_flooded_km2_in_state": 0.3036993164482364,
+  "most_unusual_areas": [
+    {
+      "lat": 27.65,
+      "lon": 93.25,
+      "chance_of_flood_in_area_pct": 0.006,
+      "times_normal": 8.7,
+      "floodable_km2": 0.0
+    },
+    {
+      "lat": 27.65,
+      "lon": 91.65,
+      "chance_of_flood_in_area_pct": 0.006,
+      "times_normal": 8.3,
+      "floodable_km2": 0.0
+    },
+    {
+      "lat": 27.65,
+      "lon": 92.95,
+      "chance_of_flood_in_area_pct": 0.006,
+      "times_normal": 8.0,
+      "floodable_km2": 0.0
+    },
+    {
+      "lat": 27.65,
+      "lon": 92.75,
+      "chance_of_flood_in_area_pct": 0.01,
+      "times_normal": 4.6,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.75,
+      "lon": 93.15,
+      "chance_of_flood_in_area_pct": 0.01,
+      "times_normal": 4.3,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.75,
+      "lon": 93.05,
+      "chance_of_flood_in_area_pct": 0.01,
+      "times_normal": 4.2,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.75,
+      "lon": 92.85,
+      "chance_of_flood_in_area_pct": 0.01,
+      "times_normal": 4.2,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.75,
+      "lon": 92.65,
+      "chance_of_flood_in_area_pct": 0.006,
+      "times_normal": 2.8,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.75,
+      "lon": 92.75,
+      "chance_of_flood_in_area_pct": 0.006,
+      "times_normal": 2.8,
+      "floodable_km2": 0.1
+    },
+    {
+      "lat": 27.65,
+      "lon": 92.55,
+      "chance_of_flood_in_area_pct": 0.002,
+      "times_normal": 2.7,
+      "floodable_km2": 0.0
+    }
+  ]
+}

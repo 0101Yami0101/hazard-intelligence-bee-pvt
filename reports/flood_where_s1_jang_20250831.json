@@ -1,0 +1,15 @@
+{
+  "flood_date": "2025-08-31",
+  "baseline_date": "2025-02-26",
+  "window_shape": [
+    3000,
+    3000
+  ],
+  "water_threshold_db": -17.0,
+  "pct_nodata_excluded": 0.88,
+  "pct_water_flood_day": 16.02,
+  "pct_water_baseline_day": 22.06,
+  "pct_new_water_flood_only": 7.24,
+  "mean_db_flood": -10.6,
+  "mean_db_baseline": -13.2
+}

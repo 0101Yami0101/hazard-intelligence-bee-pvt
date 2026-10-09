@@ -24,7 +24,7 @@ IMERG is NOT abandoned. It remains the basis of the hindcast and everything
 already validated (P7/P8, the 0.768 trigger). It is simply not on the live path.
 
 ════════════════════════════════════════════════════════════════════════════
-WHY A ~0.3 DEG GRID AND NOT THE 892 IMERG CELLS
+WHY A ~0.2 DEG GRID AND NOT THE 892 IMERG CELLS
 ════════════════════════════════════════════════════════════════════════════
 Open-Meteo weights requests by locations x days. Measured:
 
@@ -34,15 +34,29 @@ Open-Meteo weights requests by locations x days. Measured:
    ~40 locs x 6 yr, repeated -> 429 (HOURLY limit)
 
 892 cells x 7,900 days is ~7 M location-days — it does not fit, and it never
-would have. But the binding constraint is the LIVE app, not this fetch: 892
-points would need ~23 calls per refresh, a two-minute wait for the first
-visitor. A ~0.3 deg grid needs 3.
+would have. The binding constraint is the LIVE app, not this fetch: 892
+points would need ~30 calls per refresh, a slow wait for the first visitor
+after each hourly cache expiry — tried once (see the abandoned batches in
+logs/om_fetch.log, 2026-08-02) and dropped for exactly that reason.
 
-⚠️ The cost is real and must be stated in the app: rainfall input is sampled at
-~33 km, against the 11 km IMERG used for the hindcast. The live forecast is
-therefore expected to be somewhat weaker than the 0.768 hindcast figure.
+2026-09-22: moved from 0.3° (~33 km, 97 points) to 0.2° (~22 km, ~219
+points) — roughly doubling density while keeping the live refresh to ~8
+batches, still well inside the per-minute limit above and still hourly-
+cached (`core/rainfall.py`'s `load_forecast`), so no visitor pays for it
+directly. This is a genuine middle ground, not a step toward 892: going
+denser again would need the live app itself to change (a background
+refresh job instead of first-visitor-pays), a separate piece of work.
 
-Restartable — each batch is cached to disk, so a rate-limit stall costs nothing.
+⚠️ The cost is still real and must be stated in the app: rainfall input is
+sampled at ~22 km, against the 11 km IMERG used for the hindcast. The live
+forecast is expected to be somewhat weaker than the satellite-fitted
+hindcast figures for that reason alone.
+
+Restartable — each batch is cached to disk, so a rate-limit stall costs
+nothing. Regenerating this changes points.json and clim_quantiles.npz,
+which BOTH SlopeSense and FloodSense's live paths read — rerun
+`scripts/run/export_webapp_bundle.py` and `flood_forecast_live.py build`
+afterwards, and check both products, not just flood.
 """
 from __future__ import annotations
 
@@ -71,7 +85,7 @@ SRC = INTERIM / "rainfall"
 OUT = INTERIM / "rainfall_om"
 CACHE = OUT / "_batches"
 
-GRID_DEG = 0.3             # query-grid spacing -> ~120 in-state points
+GRID_DEG = 0.2             # query-grid spacing -> ~219 in-state points (~22 km)
 START_YEAR = 2010
 BATCH = 25                 # locations per call (50 works; 25 is the safe size)
 YEAR_CHUNK = 4             # years per call
@@ -179,7 +193,7 @@ def main() -> None:
         "grid_deg": GRID_DEG, "n_points": int(len(pts)),
         "source": "Open-Meteo archive (ERA5) — same chain as the forecast API",
         "start": str(full.index[0].date()), "end": str(full.index[-1].date()),
-        "caveat": "~33 km sampling vs 11 km IMERG in the hindcast",
+        "caveat": "~22 km sampling vs 11 km IMERG in the hindcast",
     }, indent=2))
     v = full.to_numpy()
     print(f"\n  wrote {v.shape[0]:,} days x {v.shape[1]} points "

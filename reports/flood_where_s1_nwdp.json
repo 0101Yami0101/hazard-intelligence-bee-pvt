@@ -1,0 +1,138 @@
+{
+  "n_checked": 12,
+  "n_targeted": 12,
+  "results": [
+    {
+      "station_code": "Aalo_1",
+      "station_name": "Aalo",
+      "district": "West Siang",
+      "flood_date": "2026-06-04",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.84,
+      "pct_water_baseline_day": 2.43,
+      "pct_new_water_flood_only": 2.77
+    },
+    {
+      "station_code": "Basar_1",
+      "station_name": "Basar",
+      "district": "Lepa-Rada",
+      "flood_date": "2024-07-01",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.45,
+      "pct_water_baseline_day": 2.32,
+      "pct_new_water_flood_only": 0.68
+    },
+    {
+      "station_code": "Changlang",
+      "station_name": "Changlang",
+      "district": "Changlang",
+      "flood_date": "2024-08-13",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.19,
+      "pct_water_baseline_day": 2.15,
+      "pct_new_water_flood_only": 1.09
+    },
+    {
+      "station_code": "Changlang_1",
+      "station_name": "Changlang (2nd station)",
+      "district": "Changlang",
+      "flood_date": "2026-04-22",
+      "orbit": 4,
+      "pct_nodata_excluded": 43.19,
+      "pct_water_flood_day": 0.87,
+      "pct_water_baseline_day": 1.88,
+      "pct_new_water_flood_only": 0.83
+    },
+    {
+      "station_code": "Darak(Kamba)",
+      "station_name": "Darak (Kamba)",
+      "district": "West Siang",
+      "flood_date": "2025-07-27",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 4.72,
+      "pct_water_baseline_day": 1.27,
+      "pct_new_water_flood_only": 4.64
+    },
+    {
+      "station_code": "Kamlang_1",
+      "station_name": "Kamlang",
+      "district": "Lohit",
+      "flood_date": "2024-05-02",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.85,
+      "pct_water_baseline_day": 6.86,
+      "pct_new_water_flood_only": 2.37
+    },
+    {
+      "station_code": "Kanubari_1",
+      "station_name": "Kanubari",
+      "district": "Longding",
+      "flood_date": "2026-06-11 (retry, first date scored exact 0.0%)",
+      "orbit": 106,
+      "pct_nodata_excluded": 10.13,
+      "pct_water_flood_day": 0.0,
+      "pct_water_baseline_day": 0.27,
+      "pct_new_water_flood_only": 0.0
+    },
+    {
+      "station_code": "Tenga_1",
+      "station_name": "Tenga",
+      "district": "West Kameng",
+      "flood_date": "2024-06-29",
+      "orbit": 41,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 10.84,
+      "pct_water_baseline_day": 13.72,
+      "pct_new_water_flood_only": 2.36
+    },
+    {
+      "station_code": "Tengapani Bridge_1",
+      "station_name": "Tengapani Bridge",
+      "district": "Lohit",
+      "flood_date": "2026-04-22",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 3.33,
+      "pct_water_baseline_day": 2.79,
+      "pct_new_water_flood_only": 1.42
+    },
+    {
+      "station_code": "Tissa Camp_1",
+      "station_name": "Tissa Camp",
+      "district": "Tirap",
+      "flood_date": "2025-07-27",
+      "orbit": 106,
+      "pct_nodata_excluded": 15.88,
+      "pct_water_flood_day": 0.07,
+      "pct_water_baseline_day": 3.46,
+      "pct_new_water_flood_only": 0.06
+    },
+    {
+      "station_code": "Ziro",
+      "station_name": "Ziro",
+      "district": "Lower Subansiri",
+      "flood_date": "2023-07-24",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.73,
+      "pct_water_baseline_day": 2.91,
+      "pct_new_water_flood_only": 1.36
+    },
+    {
+      "station_code": "Sagalee_1",
+      "station_name": "Sagalee",
+      "district": "Papum Pare",
+      "flood_date": "2024-10-05 (nearest scene to 2024-10-04 flood day, 1 day off)",
+      "orbit": 77,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.86,
+      "pct_water_baseline_day": 2.51,
+      "pct_new_water_flood_only": 0.96
+    }
+  ]
+}

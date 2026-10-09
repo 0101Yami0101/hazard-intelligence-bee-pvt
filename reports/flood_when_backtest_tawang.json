@@ -1,0 +1,94 @@
+{
+  "method": "self-derived label (top 2% of daily-max level), no CWC threshold used or waited for",
+  "station_location": "approximated to Jang town centre, both gauges documented as ~10 km from Jang; within IMERG's own ~11 km cell size",
+  "stations": {
+    "002Neid3": {
+      "station_code": "002Neid3",
+      "station_name": "Murga Bridge",
+      "n_daily_readings": 2730,
+      "date_range": [
+        "2018-11-14",
+        "2026-08-24"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 2135.02,
+        "n_annual_maxima": 9,
+        "gumbel_cross_check": {
+          "2yr_return_level": 2134.99,
+          "5yr_return_level": 2135.5
+        },
+        "n_flood_days": 56
+      },
+      "backtest": {
+        "n_days_scored": 2705,
+        "auc_tie_corrected": 0.931,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 98.2
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.1,
+            "pct_flood_days_caught": 71.4
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 42.9
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 14.3
+          }
+        ]
+      }
+    },
+    "001NEID3": {
+      "station_code": "001NEID3",
+      "station_name": "Rho Basti",
+      "n_daily_readings": 4451,
+      "date_range": [
+        "2005-06-01",
+        "2026-08-24"
+      ],
+      "flood_day_label": {
+        "percentile_threshold": 2232.17,
+        "n_annual_maxima": 14,
+        "gumbel_cross_check": {
+          "2yr_return_level": 2232.1,
+          "5yr_return_level": 2232.72
+        },
+        "n_flood_days": 91
+      },
+      "backtest": {
+        "n_days_scored": 4426,
+        "auc_tie_corrected": 0.794,
+        "operating_points": [
+          {
+            "trigger_pctile": 0.75,
+            "pct_monsoon_days_flagged": 25.0,
+            "pct_flood_days_caught": 68.1
+          },
+          {
+            "trigger_pctile": 0.9,
+            "pct_monsoon_days_flagged": 10.0,
+            "pct_flood_days_caught": 50.5
+          },
+          {
+            "trigger_pctile": 0.95,
+            "pct_monsoon_days_flagged": 5.0,
+            "pct_flood_days_caught": 27.5
+          },
+          {
+            "trigger_pctile": 0.99,
+            "pct_monsoon_days_flagged": 1.0,
+            "pct_flood_days_caught": 11.0
+          }
+        ]
+      }
+    }
+  }
+}

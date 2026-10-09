@@ -1,0 +1,70 @@
+{
+  "what": "three day models fitted the same way (tree 2015-20, calibration 2021-22), graded inside Arunachal on 2023-01-01..2025-10-31: satellite rain throughout; the satellite-fitted model fed live-service rain; and a model fitted on the live service's own archive",
+  "n_days": 1035,
+  "n_floods": 44,
+  "results": {
+    "satellite": {
+      "fair_timing_auc": 0.8346894803074417,
+      "median_times_normal_on_flood_days": 4.309579372406006,
+      "warning_levels": [
+        {
+          "times_normal": 2,
+          "floods_caught_pct": 75.0,
+          "time_under_warning_pct": 18.99354805508919
+        },
+        {
+          "times_normal": 5,
+          "floods_caught_pct": 34.090909090909086,
+          "time_under_warning_pct": 2.589011752446014
+        },
+        {
+          "times_normal": 10,
+          "floods_caught_pct": 4.545454545454546,
+          "time_under_warning_pct": 0.4973722637127952
+        }
+      ]
+    },
+    "satellite-fitted, live rain": {
+      "fair_timing_auc": 0.8449876492034587,
+      "median_times_normal_on_flood_days": 2.6815896034240723,
+      "warning_levels": [
+        {
+          "times_normal": 2,
+          "floods_caught_pct": 68.18181818181817,
+          "time_under_warning_pct": 16.553645059405493
+        },
+        {
+          "times_normal": 5,
+          "floods_caught_pct": 22.727272727272727,
+          "time_under_warning_pct": 1.454678785773558
+        },
+        {
+          "times_normal": 10,
+          "floods_caught_pct": 0.0,
+          "time_under_warning_pct": 0.1165595630946178
+        }
+      ]
+    },
+    "live-fitted, live rain": {
+      "fair_timing_auc": 0.7533003540144504,
+      "median_times_normal_on_flood_days": 1.909233570098877,
+      "warning_levels": [
+        {
+          "times_normal": 2,
+          "floods_caught_pct": 50.0,
+          "time_under_warning_pct": 2.566754793930154
+        },
+        {
+          "times_normal": 5,
+          "floods_caught_pct": 25.0,
+          "time_under_warning_pct": 1.1156782904597413
+        },
+        {
+          "times_normal": 10,
+          "floods_caught_pct": 11.363636363636363,
+          "time_under_warning_pct": 0.8052387476922879
+        }
+      ]
+    }
+  }
+}

@@ -14,7 +14,8 @@ hazard-agnostic core. Three modules ship behind a single Streamlit app:
 Measured, not claimed — the fuller accounting is in
 [PLATFORM_ARCHITECTURE.md](docs/design/PLATFORM_ARCHITECTURE.md).
 
-- **24 external sources**, 11 groups, 10,572 files, 8.06 GB, every fetch
+- **29 external sources**, 14 groups, 10,853 files, 308 GB (300 GB of it radar
+  scenes from flood dates; 8 GB the rest), every fetch
   recording source, licence, URL, fetch date and checksum
 - **One canonical grid**: EPSG:32646, 100 m, 8,202,343 in-state cells
 - **34 features per cell** — terrain, soil, geology, land cover, hydrology,
@@ -22,8 +23,12 @@ Measured, not claimed — the fuller accounting is in
 - **LightGBM susceptibility** at spatial-CV AUC 0.859, plus a percentile
   trigger over 9,555 days of rainfall history
 
-Planned but not built: own sensors, partner intake, a public API, the forecast
-archive and outcome log. It is a strong pipeline, not yet a loop.
+- **Flood forecast loop closed** (since 2026-09-21/22): a daily 08:30 run on
+  live rain, river gauges and (flat ground) soil wetness; every forecast logged
+  to `records/flood_forecast/` and graded automatically against the gauges
+
+Planned but not built: own sensors, partner intake, a public API, and the same
+forecast archive and outcome log for landslides.
 
 ## Layout
 
@@ -38,7 +43,7 @@ data/       gitignored — 4+ GB, regenerable via scripts/fetch/
 
 ## Running it
 
-The app is self-contained: it reads a 4.60 MB bundle in `webapp/assets/` and
+The app is self-contained: it reads a 5.33 MB bundle in `webapp/assets/` and
 calls a free weather service. No database, no API key.
 
 ```bash

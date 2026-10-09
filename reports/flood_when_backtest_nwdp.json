@@ -1,0 +1,174 @@
+{
+  "n_stations": 14,
+  "n_stations_scored": 12,
+  "stations": {
+    "Aalo_1": {
+      "station_code": "Aalo_1",
+      "station_name": "Aalo",
+      "district": "West Siang",
+      "n_daily_readings": 344,
+      "auc": 0.873,
+      "flood_day_label": {
+        "percentile_threshold": 138.56,
+        "n_annual_maxima": 3,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 7
+      }
+    },
+    "Basar_1": {
+      "station_code": "Basar_1",
+      "station_name": "Basar",
+      "district": "Lepa-Rada",
+      "n_daily_readings": 700,
+      "auc": 0.876,
+      "flood_day_label": {
+        "percentile_threshold": 61.53,
+        "n_annual_maxima": 3,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 14
+      }
+    },
+    "Changlang": {
+      "station_code": "Changlang",
+      "station_name": "Changlang",
+      "district": "Changlang",
+      "n_daily_readings": 814,
+      "auc": 0.797,
+      "flood_day_label": {
+        "percentile_threshold": 223.99,
+        "n_annual_maxima": 4,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 17
+      }
+    },
+    "Changlang_1": {
+      "station_code": "Changlang_1",
+      "station_name": "Changlang (2nd station)",
+      "district": "Changlang",
+      "n_daily_readings": 483,
+      "auc": 0.789,
+      "flood_day_label": {
+        "percentile_threshold": 593.71,
+        "n_annual_maxima": 3,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 10
+      }
+    },
+    "Darak(Kamba)": {
+      "station_code": "Darak(Kamba)",
+      "station_name": "Darak (Kamba)",
+      "district": "West Siang",
+      "n_daily_readings": 379,
+      "auc": 0.904,
+      "flood_day_label": {
+        "percentile_threshold": 413.15,
+        "n_annual_maxima": 2,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 8
+      }
+    },
+    "Kamlang_1": {
+      "station_code": "Kamlang_1",
+      "station_name": "Kamlang",
+      "district": "Lohit",
+      "n_daily_readings": 404,
+      "auc": 0.957,
+      "flood_day_label": {
+        "percentile_threshold": 640.67,
+        "n_annual_maxima": 3,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 9
+      }
+    },
+    "Kanubari_1": {
+      "station_code": "Kanubari_1",
+      "station_name": "Kanubari",
+      "district": "Longding",
+      "n_daily_readings": 559,
+      "auc": 0.884,
+      "flood_day_label": {
+        "percentile_threshold": 54.18,
+        "n_annual_maxima": 4,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 12
+      }
+    },
+    "Sagalee_1": {
+      "station_code": "Sagalee_1",
+      "station_name": "Sagalee",
+      "district": "Papum Pare",
+      "n_daily_readings": 537,
+      "auc": 0.943,
+      "flood_day_label": {
+        "percentile_threshold": 46.41,
+        "n_annual_maxima": 4,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 11
+      }
+    },
+    "Tenga_1": {
+      "station_code": "Tenga_1",
+      "station_name": "Tenga",
+      "district": "West Kameng",
+      "n_daily_readings": 670,
+      "auc": 0.947,
+      "flood_day_label": {
+        "percentile_threshold": 174.97,
+        "n_annual_maxima": 4,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 14
+      }
+    },
+    "Tengapani Bridge_1": {
+      "station_code": "Tengapani Bridge_1",
+      "station_name": "Tengapani Bridge",
+      "district": "Lohit",
+      "n_daily_readings": 412,
+      "auc": 0.862,
+      "flood_day_label": {
+        "percentile_threshold": 133.0,
+        "n_annual_maxima": 2,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 9
+      }
+    },
+    "Tissa Camp_1": {
+      "station_code": "Tissa Camp_1",
+      "station_name": "Tissa Camp",
+      "district": "Tirap",
+      "n_daily_readings": 339,
+      "auc": 0.659,
+      "flood_day_label": {
+        "percentile_threshold": 256.04,
+        "n_annual_maxima": 2,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 7
+      }
+    },
+    "Ziro": {
+      "station_code": "Ziro",
+      "station_name": "Ziro",
+      "district": "Lower Subansiri",
+      "n_daily_readings": 950,
+      "auc": 0.875,
+      "flood_day_label": {
+        "percentile_threshold": 2372.4,
+        "n_annual_maxima": 4,
+        "gumbel_cross_check": {},
+        "label_source": "self-derived (top 2% of own history) \u2014 no NWDP station publishes a danger threshold",
+        "n_flood_days": 19
+      }
+    }
+  }
+}

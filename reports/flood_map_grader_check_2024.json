@@ -1,0 +1,41 @@
+{
+  "year": 2024,
+  "grader": "new-water share on low ground minus the cell's median over the season's passes",
+  "a_known_floods": {
+    "n_reported_cell_passes": 200,
+    "auc_excess": 0.736,
+    "auc_raw_new_water": 0.608,
+    "top_1pct": {
+      "excess_at_least": 0.1412,
+      "reported_floods_inside_pct": 8.0,
+      "cell_passes": 485,
+      "of_which_reported_pct": 3.3
+    },
+    "top_2pct": {
+      "excess_at_least": 0.0816,
+      "reported_floods_inside_pct": 19.0,
+      "cell_passes": 970,
+      "of_which_reported_pct": 3.92
+    },
+    "top_5pct": {
+      "excess_at_least": 0.0363,
+      "reported_floods_inside_pct": 31.5,
+      "cell_passes": 2423,
+      "of_which_reported_pct": 2.6
+    }
+  },
+  "b_forecast_vs_grader": {
+    "n_cell_passes": 48456,
+    "spearman_forecast_vs_excess": -0.001,
+    "auc_forecast_for_wettest_1pct": 0.663,
+    "auc_forecast_for_wettest_2pct": 0.646,
+    "auc_forecast_for_wettest_5pct": 0.584,
+    "auc_forecast_for_reported_floods": 0.817
+  },
+  "end_june_2024": {
+    "cell_passes": 1233,
+    "median_excess": -0.0014,
+    "median_excess_whole_season": 0.0,
+    "share_in_season_top5pct": 8.9
+  }
+}

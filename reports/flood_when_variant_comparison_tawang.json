@@ -1,0 +1,29 @@
+{
+  "note": "D is the actual shipped WHEN score: an equal-weight blend of the rule, B, and C \u2014 real ML weight in production today, not gated behind solo-beats-baseline. A is excluded from the blend (strictly dominated by B, adds no offsetting signal) but stays on record, not deleted. Variant C alone is still a diagnostic label, not a standalone panel candidate \u2014 its role is as an input to D. See FLOOD_WHEN_PILOT_PLAN.md \u00a75. A/B/D are scored by 5-fold year-grouped cross-validation, not a single holdout.",
+  "results": {
+    "002Neid3": {
+      "name": "Murga Bridge",
+      "baseline_rule": 0.922,
+      "A_per_station": 0.866,
+      "B_pooled_size_aware": 0.914,
+      "C_bigriver_naive_diagnostic": 0.931,
+      "D_blend_shipped": 0.921
+    },
+    "001NEID3": {
+      "name": "Rho Basti",
+      "baseline_rule": 0.786,
+      "A_per_station": 0.624,
+      "B_pooled_size_aware": 0.639,
+      "C_bigriver_naive_diagnostic": 0.795,
+      "D_blend_shipped": 0.782
+    },
+    "005-UBDDIB": {
+      "name": "Passighat",
+      "baseline_rule": 0.954,
+      "A_per_station": 0.926,
+      "B_pooled_size_aware": 0.946,
+      "C_bigriver_naive_diagnostic": 0.926,
+      "D_blend_shipped": 0.953
+    }
+  }
+}

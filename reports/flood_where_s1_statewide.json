@@ -1,0 +1,87 @@
+{
+  "note": "One flood date per station, proving the signal exists at each new location \u2014 not a repeated multi-date sweep the way Jang valley got (see flood_where_s1_jang_multi_date.json). Reuses the same calibration/warp pipeline debugged there.",
+  "n_stations_checked": 8,
+  "n_stations_targeted": 9,
+  "results": [
+    {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "flood_date": "2023-08-29",
+      "orbit": 143,
+      "pct_nodata_excluded": 10.33,
+      "pct_water_flood_day": 0.0,
+      "pct_water_baseline_day": 0.03,
+      "pct_new_water_flood_only": 0.0
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2021-08-29",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 3.58,
+      "pct_water_baseline_day": 4.76,
+      "pct_new_water_flood_only": 2.11
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2022-09-05",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 7.01,
+      "pct_water_baseline_day": 7.69,
+      "pct_new_water_flood_only": 1.89
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2026-04-22",
+      "orbit": 4,
+      "pct_nodata_excluded": 3.81,
+      "pct_water_flood_day": 0.07,
+      "pct_water_baseline_day": 0.11,
+      "pct_new_water_flood_only": 0.06
+    },
+    {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "flood_date": "2019-07-22",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.42,
+      "pct_water_baseline_day": 7.59,
+      "pct_new_water_flood_only": 5.75
+    },
+    {
+      "station_code": "058-UBDDIB",
+      "station_name": "Doimukh",
+      "flood_date": "2024-11-17",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.69,
+      "pct_water_baseline_day": 5.85,
+      "pct_new_water_flood_only": 2.45
+    },
+    {
+      "station_code": "059-UBDDIB",
+      "station_name": "Pagoda",
+      "flood_date": "2024-07-01",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.67,
+      "pct_water_baseline_day": 3.23,
+      "pct_new_water_flood_only": 3.19
+    },
+    {
+      "station_code": "078-UBDDIB",
+      "station_name": "Pare HEP",
+      "flood_date": "2026-07-29",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 7.02,
+      "pct_water_baseline_day": 6.42,
+      "pct_new_water_flood_only": 4.55
+    }
+  ]
+}

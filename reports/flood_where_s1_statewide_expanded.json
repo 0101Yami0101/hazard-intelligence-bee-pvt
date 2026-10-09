@@ -1,0 +1,356 @@
+{
+  "note": "Every remaining exact-match satellite date at the 9 statewide CWC stations that already had one date checked \u2014 grows the WHERE evidence base without any new data source.",
+  "n_targeted_total": 35,
+  "results": [
+    {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "flood_date": "2020-07-10",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.19,
+      "pct_water_baseline_day": 6.54,
+      "pct_new_water_flood_only": 1.98
+    },
+    {
+      "station_code": "003-UBDDIB",
+      "station_name": "Yinkiang",
+      "flood_date": "2021-08-27",
+      "orbit": 143,
+      "pct_nodata_excluded": 10.33,
+      "pct_water_flood_day": 0.0,
+      "pct_water_baseline_day": 0.03,
+      "pct_new_water_flood_only": 0.0
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2016-07-26",
+      "orbit": 4,
+      "pct_nodata_excluded": 21.58,
+      "pct_water_flood_day": 0.04,
+      "pct_water_baseline_day": 5.49,
+      "pct_new_water_flood_only": 0.04
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2017-07-09",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 3.56,
+      "pct_water_baseline_day": 4.72,
+      "pct_new_water_flood_only": 2.32
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2020-07-23",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.66,
+      "pct_water_baseline_day": 4.72,
+      "pct_new_water_flood_only": 5.41
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2020-07-12",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.71,
+      "pct_water_baseline_day": 1.8,
+      "pct_new_water_flood_only": 0.93
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2024-07-01",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.71,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.04
+    },
+    {
+      "station_code": "059-UBDDIB",
+      "station_name": "Pagoda",
+      "flood_date": "2022-06-30",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.21,
+      "pct_water_baseline_day": 3.23,
+      "pct_new_water_flood_only": 2.55
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2018-09-14",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 3.47,
+      "pct_water_baseline_day": 4.72,
+      "pct_new_water_flood_only": 2.36
+    },
+    {
+      "station_code": "005-UBDDIB",
+      "station_name": "Passighat",
+      "flood_date": "2020-07-10",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.25,
+      "pct_water_baseline_day": 7.04,
+      "pct_new_water_flood_only": 3.46
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2019-07-09",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.71,
+      "pct_water_baseline_day": 1.12,
+      "pct_new_water_flood_only": 0.47
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2019-07-22",
+      "orbit": 77,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 3.01,
+      "pct_water_baseline_day": 2.73,
+      "pct_new_water_flood_only": 2.4
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2020-05-04",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.99,
+      "pct_water_baseline_day": 1.12,
+      "pct_new_water_flood_only": 0.55
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2020-07-22",
+      "orbit": 77,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.13,
+      "pct_water_baseline_day": 2.73,
+      "pct_new_water_flood_only": 0.85
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2020-07-29",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.84,
+      "pct_water_baseline_day": 7.78,
+      "pct_new_water_flood_only": 1.95
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2020-08-10",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.98,
+      "pct_water_baseline_day": 7.78,
+      "pct_new_water_flood_only": 1.96
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2020-10-07",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.06,
+      "pct_water_baseline_day": 1.12,
+      "pct_new_water_flood_only": 0.61
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2021-06-16",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.95,
+      "pct_water_baseline_day": 1.12,
+      "pct_new_water_flood_only": 0.51
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2022-06-18",
+      "orbit": 77,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.24,
+      "pct_water_baseline_day": 2.73,
+      "pct_new_water_flood_only": 1.04
+    },
+    {
+      "station_code": "007NEID3",
+      "station_name": "Jollang",
+      "flood_date": "2022-07-31",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 7.05,
+      "pct_water_baseline_day": 7.78,
+      "pct_new_water_flood_only": 2.13
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2016-04-14",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.86,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.78
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2016-04-16",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.22,
+      "pct_water_baseline_day": 1.8,
+      "pct_new_water_flood_only": 2.09
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2016-05-20",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.55,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.48
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2016-07-19",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.77,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.68
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2016-07-21",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.81,
+      "pct_water_baseline_day": 1.8,
+      "pct_new_water_flood_only": 1.72
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2017-08-09",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 2.06,
+      "pct_water_baseline_day": 1.8,
+      "pct_new_water_flood_only": 1.97
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2018-06-15",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.42,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.34
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2019-05-05",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.64,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.56
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2020-06-06",
+      "orbit": 106,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.69,
+      "pct_water_baseline_day": 1.8,
+      "pct_new_water_flood_only": 0.89
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2020-07-10",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.68,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 1.19
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2020-07-17",
+      "orbit": 4,
+      "pct_nodata_excluded": 4.61,
+      "pct_water_flood_day": 0.08,
+      "pct_water_baseline_day": 0.09,
+      "pct_new_water_flood_only": 0.08
+    },
+    {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "flood_date": "2019-07-09",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.93,
+      "pct_water_baseline_day": 7.17,
+      "pct_new_water_flood_only": 5.23
+    },
+    {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "flood_date": "2019-07-16",
+      "orbit": 70,
+      "pct_nodata_excluded": 1.04,
+      "pct_water_flood_day": 0.01,
+      "pct_water_baseline_day": 0.01,
+      "pct_new_water_flood_only": 0.01
+    },
+    {
+      "station_code": "020-UBDDIB",
+      "station_name": "Daporizo",
+      "flood_date": "2019-07-21",
+      "orbit": 143,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.0,
+      "pct_water_baseline_day": 7.17,
+      "pct_new_water_flood_only": 5.29
+    },
+    {
+      "station_code": "008-ubddib",
+      "station_name": "Miao",
+      "flood_date": "2015-08-30",
+      "orbit": 70,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.84,
+      "pct_water_baseline_day": 1.45,
+      "pct_new_water_flood_only": 0.79
+    }
+  ]
+}

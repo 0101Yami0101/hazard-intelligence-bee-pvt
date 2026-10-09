@@ -1,0 +1,115 @@
+{
+  "note": "Proof batch, not the full rollout. 9 real Himalayan-region flood dates picked from DFO's Global Flood Records archive (real news-sourced dates, but a specific well-known real river town chosen by hand as the check point, not the crude DFO polygon itself). Checked with the same debugged Sentinel-1 pipeline used for Arunachal throughout this project.",
+  "n_checked": 9,
+  "n_targeted": 9,
+  "results": [
+    {
+      "name": "Phuentsholing, Bhutan (Wangchu)",
+      "lat": 26.8516,
+      "lon": 89.3857,
+      "flood_date": "2023-06-16",
+      "orbit": 114,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.93,
+      "pct_water_baseline_day": 1.01,
+      "pct_new_water_flood_only": 0.39,
+      "dfo_event_window": "2023-06-14/22"
+    },
+    {
+      "name": "Thimphu, Bhutan (Wangchu)",
+      "lat": 27.4728,
+      "lon": 89.639,
+      "flood_date": "2021-06-14",
+      "orbit": 114,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.21,
+      "pct_water_baseline_day": 6.87,
+      "pct_new_water_flood_only": 1.9,
+      "dfo_event_window": "2021-05-15/06-21"
+    },
+    {
+      "name": "Punakha, Bhutan (Mo/Pho Chhu)",
+      "lat": 27.5921,
+      "lon": 89.8797,
+      "flood_date": "2021-06-14",
+      "orbit": 114,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.69,
+      "pct_water_baseline_day": 6.21,
+      "pct_new_water_flood_only": 2.27,
+      "dfo_event_window": "2021-05-15/06-21"
+    },
+    {
+      "name": "Pokhara, Nepal (Seti)",
+      "lat": 28.2096,
+      "lon": 83.9856,
+      "flood_date": "2021-07-02",
+      "orbit": 19,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 6.09,
+      "pct_water_baseline_day": 7.13,
+      "pct_new_water_flood_only": 4.51,
+      "dfo_event_window": "2021-07-01/04"
+    },
+    {
+      "name": "Biratnagar, Nepal (Koshi)",
+      "lat": 26.4525,
+      "lon": 87.2718,
+      "flood_date": "2021-06-19",
+      "orbit": 12,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.02,
+      "pct_water_baseline_day": 0.16,
+      "pct_new_water_flood_only": 0.02,
+      "dfo_event_window": "2021-06-15/21"
+    },
+    {
+      "name": "Rangpo, Sikkim (Teesta)",
+      "lat": 27.1667,
+      "lon": 88.5333,
+      "flood_date": "2023-10-07",
+      "orbit": 12,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 5.01,
+      "pct_water_baseline_day": 5.02,
+      "pct_new_water_flood_only": 2.02,
+      "dfo_event_window": "2023-10-04 GLOF, +3d nearest pass"
+    },
+    {
+      "name": "Gangtok, Sikkim (Teesta basin)",
+      "lat": 27.3389,
+      "lon": 88.6065,
+      "flood_date": "2023-10-07",
+      "orbit": 12,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 7.03,
+      "pct_water_baseline_day": 8.01,
+      "pct_new_water_flood_only": 1.97,
+      "dfo_event_window": "2023-10-04 GLOF, +3d nearest pass"
+    },
+    {
+      "name": "Along/Aalo, Arunachal (sanity check)",
+      "lat": 28.1667,
+      "lon": 94.8,
+      "flood_date": "2021-06-30",
+      "orbit": 4,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 1.53,
+      "pct_water_baseline_day": 1.85,
+      "pct_new_water_flood_only": 1.0,
+      "dfo_event_window": "2021-06-30/07-04"
+    },
+    {
+      "name": "Kathmandu, Nepal (Bagmati)",
+      "lat": 27.7172,
+      "lon": 85.324,
+      "flood_date": "2021-07-02",
+      "orbit": 19,
+      "pct_nodata_excluded": 0.0,
+      "pct_water_flood_day": 0.81,
+      "pct_water_baseline_day": 0.12,
+      "pct_new_water_flood_only": 0.81,
+      "dfo_event_window": "2021-07-01/04"
+    }
+  ]
+}

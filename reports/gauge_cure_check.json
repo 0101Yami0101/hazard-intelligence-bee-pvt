@@ -1,0 +1,2339 @@
+{
+  "protocol": "docs/design/FLOOD_WHEN_PILOT_PLAN.md \u00a713j",
+  "versions": {
+    "A": "stepped curve, five inputs, history as it was (the models of 2026-09-22)",
+    "C": "S-curve, five inputs, cleaned history (\u00a713i)",
+    "D": "S-curve, five inputs + habit, cleaned history (the cure)"
+  },
+  "tolerance": {
+    "leads 1-3": 0.005,
+    "leads 4-9": 0.01
+  },
+  "K3": {
+    "under": 0.05,
+    "may_flood_less_than": 0.1,
+    "min_days_per_lead": 20
+  },
+  "gauges": 32,
+  "line_unchanged": 27,
+  "leads": {
+    "1": {
+      "gauge_days": 81664,
+      "flood_days": 979,
+      "river_above_days": 978,
+      "river_above_flood_days": 602,
+      "all days": {
+        "A": {
+          "auc": 0.9746,
+          "brier_skill": 0.4063
+        },
+        "C": {
+          "auc": 0.9752,
+          "brier_skill": 0.4109
+        },
+        "D": {
+          "auc": 0.9749,
+          "brier_skill": 0.4198
+        },
+        "K1": {
+          "auc_change": 0.0004,
+          "brier_skill_change": 0.0135,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0003,
+          "brier_skill_change": 0.0089,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9439,
+          "brier_skill": 0.0948
+        },
+        "C": {
+          "auc": 0.9432,
+          "brier_skill": 0.0966
+        },
+        "D": {
+          "auc": 0.942,
+          "brier_skill": 0.0833
+        },
+        "K1": {
+          "auc_change": -0.0019,
+          "brier_skill_change": -0.0116,
+          "pass": false
+        },
+        "K2": {
+          "auc_change": -0.0013,
+          "brier_skill_change": -0.0134,
+          "pass": false
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.6263,
+          "C": 0.6344,
+          "D": 0.6742
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 1,
+            "flooded": 1
+          },
+          "C": {
+            "days": 6,
+            "flooded": 3
+          },
+          "D": {
+            "days": 0,
+            "flooded": 0
+          }
+        },
+        "pass": null
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 1,
+          "C": 0,
+          "D": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 2.66,
+          "D": 8.29
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 14,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 19.3,
+          "C": 19.0,
+          "D": 16.2
+        },
+        "rows": {
+          "Deomali": {
+            "days": 15,
+            "stayed_pct": 20.0,
+            "said_pct": {
+              "A": 65.5,
+              "C": 65.6,
+              "D": 50.8
+            },
+            "habit_all_years_pct": 21.8
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 30.0,
+            "said_pct": {
+              "A": 53.6,
+              "C": 53.9,
+              "D": 50.7
+            },
+            "habit_all_years_pct": 30.3
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 41.2,
+            "said_pct": {
+              "A": 64.4,
+              "C": 64.8,
+              "D": 60.8
+            },
+            "habit_all_years_pct": 44.1
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 42.1,
+            "said_pct": {
+              "A": 61.9,
+              "C": 57.7,
+              "D": 57.0
+            },
+            "habit_all_years_pct": 39.9
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 46.7,
+            "said_pct": {
+              "A": 71.1,
+              "C": 67.8,
+              "D": 64.3
+            },
+            "habit_all_years_pct": 49.1
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 55.6,
+            "said_pct": {
+              "A": 55.7,
+              "C": 53.0,
+              "D": 55.2
+            },
+            "habit_all_years_pct": 54.8
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 57.9,
+            "said_pct": {
+              "A": 45.9,
+              "C": 44.3,
+              "D": 51.9
+            },
+            "habit_all_years_pct": 56.7
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 61.1,
+            "said_pct": {
+              "A": 52.2,
+              "C": 54.9,
+              "D": 59.5
+            },
+            "habit_all_years_pct": 60.0
+          },
+          "Miao": {
+            "days": 177,
+            "stayed_pct": 62.1,
+            "said_pct": {
+              "A": 54.7,
+              "C": 57.5,
+              "D": 60.3
+            },
+            "habit_all_years_pct": 61.6
+          },
+          "Lemeking": {
+            "days": 120,
+            "stayed_pct": 70.0,
+            "said_pct": {
+              "A": 61.8,
+              "C": 59.7,
+              "D": 61.4
+            },
+            "habit_all_years_pct": 68.6
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 76.8,
+            "said_pct": {
+              "A": 54.3,
+              "C": 52.9,
+              "D": 63.1
+            },
+            "habit_all_years_pct": 75.7
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 76.9,
+            "said_pct": {
+              "A": 51.8,
+              "C": 50.1,
+              "D": 57.3
+            },
+            "habit_all_years_pct": 71.8
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 77.4,
+            "said_pct": {
+              "A": 57.0,
+              "C": 56.8,
+              "D": 65.2
+            },
+            "habit_all_years_pct": 76.6
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 88.2,
+            "said_pct": {
+              "A": 58.9,
+              "C": 60.7,
+              "D": 29.0
+            },
+            "habit_all_years_pct": 32.0
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10222,
+        "n_flood_days": 210,
+        "auc": 0.962,
+        "brier_skill": 0.363,
+        "top1pct_said": 72.8,
+        "top1pct_happened": 70.6,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 56.2,
+            "warnings_right_pct": 53.6,
+            "n_warnings": 220
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 41.0,
+            "warnings_right_pct": 64.2,
+            "n_warnings": 134
+          }
+        ]
+      }
+    },
+    "2": {
+      "gauge_days": 81416,
+      "flood_days": 978,
+      "river_above_days": 974,
+      "river_above_flood_days": 421,
+      "all days": {
+        "A": {
+          "auc": 0.938,
+          "brier_skill": 0.228
+        },
+        "C": {
+          "auc": 0.9613,
+          "brier_skill": 0.2386
+        },
+        "D": {
+          "auc": 0.9623,
+          "brier_skill": 0.2607
+        },
+        "K1": {
+          "auc_change": 0.0243,
+          "brier_skill_change": 0.0327,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.001,
+          "brier_skill_change": 0.0221,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9417,
+          "brier_skill": 0.103
+        },
+        "C": {
+          "auc": 0.9426,
+          "brier_skill": 0.1075
+        },
+        "D": {
+          "auc": 0.9428,
+          "brier_skill": 0.1119
+        },
+        "K1": {
+          "auc_change": 0.0011,
+          "brier_skill_change": 0.009,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0002,
+          "brier_skill_change": 0.0044,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.5859,
+          "C": 0.6073,
+          "D": 0.6699
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 61,
+            "flooded": 25
+          },
+          "C": {
+            "days": 41,
+            "flooded": 17
+          },
+          "D": {
+            "days": 12,
+            "flooded": 9
+          }
+        },
+        "pass": null
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 25,
+          "C": 2,
+          "D": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.25,
+          "D": 2.73
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 14,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 21.7,
+          "C": 20.0,
+          "D": 15.7
+        },
+        "rows": {
+          "Deomali": {
+            "days": 15,
+            "stayed_pct": 6.7,
+            "said_pct": {
+              "A": 50.2,
+              "C": 48.5,
+              "D": 32.1
+            },
+            "habit_all_years_pct": 14.9
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 10.0,
+            "said_pct": {
+              "A": 36.6,
+              "C": 38.5,
+              "D": 21.8
+            },
+            "habit_all_years_pct": 10.8
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 15.8,
+            "said_pct": {
+              "A": 28.2,
+              "C": 30.3,
+              "D": 20.5
+            },
+            "habit_all_years_pct": 13.8
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 23.5,
+            "said_pct": {
+              "A": 53.7,
+              "C": 47.7,
+              "D": 49.4
+            },
+            "habit_all_years_pct": 27.4
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 26.7,
+            "said_pct": {
+              "A": 54.6,
+              "C": 50.0,
+              "D": 51.5
+            },
+            "habit_all_years_pct": 28.2
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 31.5,
+            "said_pct": {
+              "A": 37.3,
+              "C": 37.3,
+              "D": 39.5
+            },
+            "habit_all_years_pct": 30.4
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 39.5,
+            "said_pct": {
+              "A": 28.3,
+              "C": 30.6,
+              "D": 35.7
+            },
+            "habit_all_years_pct": 36.5
+          },
+          "Miao": {
+            "days": 176,
+            "stayed_pct": 40.9,
+            "said_pct": {
+              "A": 38.7,
+              "C": 38.7,
+              "D": 43.5
+            },
+            "habit_all_years_pct": 40.1
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 42.6,
+            "said_pct": {
+              "A": 34.3,
+              "C": 35.4,
+              "D": 40.6
+            },
+            "habit_all_years_pct": 41.6
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 53.6,
+            "said_pct": {
+              "A": 33.4,
+              "C": 37.4,
+              "D": 46.7
+            },
+            "habit_all_years_pct": 52.0
+          },
+          "Lemeking": {
+            "days": 119,
+            "stayed_pct": 56.3,
+            "said_pct": {
+              "A": 40.6,
+              "C": 42.4,
+              "D": 46.6
+            },
+            "habit_all_years_pct": 54.6
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 62.3,
+            "said_pct": {
+              "A": 37.6,
+              "C": 38.3,
+              "D": 47.0
+            },
+            "habit_all_years_pct": 61.2
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 62.6,
+            "said_pct": {
+              "A": 32.5,
+              "C": 33.8,
+              "D": 42.5
+            },
+            "habit_all_years_pct": 54.4
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 82.4,
+            "said_pct": {
+              "A": 38.1,
+              "C": 41.4,
+              "D": 22.9
+            },
+            "habit_all_years_pct": 21.8
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10206,
+        "n_flood_days": 209,
+        "auc": 0.948,
+        "brier_skill": 0.273,
+        "top1pct_said": 59.4,
+        "top1pct_happened": 59.8,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 38.3,
+            "warnings_right_pct": 44.9,
+            "n_warnings": 178
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 23.0,
+            "warnings_right_pct": 60.8,
+            "n_warnings": 79
+          }
+        ]
+      }
+    },
+    "3": {
+      "gauge_days": 81240,
+      "flood_days": 976,
+      "river_above_days": 974,
+      "river_above_flood_days": 323,
+      "all days": {
+        "A": {
+          "auc": 0.9417,
+          "brier_skill": 0.1867
+        },
+        "C": {
+          "auc": 0.9564,
+          "brier_skill": 0.1895
+        },
+        "D": {
+          "auc": 0.9572,
+          "brier_skill": 0.1976
+        },
+        "K1": {
+          "auc_change": 0.0155,
+          "brier_skill_change": 0.0109,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0008,
+          "brier_skill_change": 0.0081,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9444,
+          "brier_skill": 0.1157
+        },
+        "C": {
+          "auc": 0.945,
+          "brier_skill": 0.119
+        },
+        "D": {
+          "auc": 0.945,
+          "brier_skill": 0.1137
+        },
+        "K1": {
+          "auc_change": 0.0006,
+          "brier_skill_change": -0.002,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0,
+          "brier_skill_change": -0.0053,
+          "pass": false
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.6409,
+          "C": 0.6341,
+          "D": 0.6786
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 118,
+            "flooded": 21
+          },
+          "C": {
+            "days": 55,
+            "flooded": 9
+          },
+          "D": {
+            "days": 39,
+            "flooded": 6
+          }
+        },
+        "pass": false
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 16,
+          "C": 2,
+          "D": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.22,
+          "D": 0.68
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 14,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 17.5,
+          "C": 17.1,
+          "D": 13.4
+        },
+        "rows": {
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 40.1,
+              "C": 40.2,
+              "D": 32.9
+            },
+            "habit_all_years_pct": 3.5
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 5.3,
+            "said_pct": {
+              "A": 18.3,
+              "C": 19.3,
+              "D": 15.4
+            },
+            "habit_all_years_pct": 5.6
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 10.0,
+            "said_pct": {
+              "A": 26.7,
+              "C": 26.7,
+              "D": 20.6
+            },
+            "habit_all_years_pct": 10.7
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 16.7,
+            "said_pct": {
+              "A": 27.6,
+              "C": 27.4,
+              "D": 23.2
+            },
+            "habit_all_years_pct": 16.4
+          },
+          "Deomali": {
+            "days": 15,
+            "stayed_pct": 20.0,
+            "said_pct": {
+              "A": 37.3,
+              "C": 37.6,
+              "D": 30.8
+            },
+            "habit_all_years_pct": 13.8
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 23.5,
+            "said_pct": {
+              "A": 37.9,
+              "C": 36.5,
+              "D": 31.8
+            },
+            "habit_all_years_pct": 26.2
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 25.9,
+            "said_pct": {
+              "A": 23.0,
+              "C": 23.9,
+              "D": 25.4
+            },
+            "habit_all_years_pct": 25.0
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 28.9,
+            "said_pct": {
+              "A": 19.2,
+              "C": 18.7,
+              "D": 21.2
+            },
+            "habit_all_years_pct": 27.5
+          },
+          "Miao": {
+            "days": 177,
+            "stayed_pct": 29.9,
+            "said_pct": {
+              "A": 28.4,
+              "C": 28.1,
+              "D": 30.4
+            },
+            "habit_all_years_pct": 29.2
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 35.7,
+            "said_pct": {
+              "A": 26.6,
+              "C": 26.8,
+              "D": 31.7
+            },
+            "habit_all_years_pct": 34.2
+          },
+          "Lemeking": {
+            "days": 119,
+            "stayed_pct": 45.4,
+            "said_pct": {
+              "A": 34.8,
+              "C": 34.5,
+              "D": 37.6
+            },
+            "habit_all_years_pct": 43.6
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 50.7,
+            "said_pct": {
+              "A": 30.0,
+              "C": 29.7,
+              "D": 36.9
+            },
+            "habit_all_years_pct": 49.5
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 57.1,
+            "said_pct": {
+              "A": 25.5,
+              "C": 27.5,
+              "D": 34.8
+            },
+            "habit_all_years_pct": 47.3
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 76.5,
+            "said_pct": {
+              "A": 30.7,
+              "C": 34.4,
+              "D": 24.4
+            },
+            "habit_all_years_pct": 16.3
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10192,
+        "n_flood_days": 209,
+        "auc": 0.944,
+        "brier_skill": 0.234,
+        "top1pct_said": 51.8,
+        "top1pct_happened": 51.0,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 37.8,
+            "warnings_right_pct": 41.8,
+            "n_warnings": 189
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 19.6,
+            "warnings_right_pct": 66.1,
+            "n_warnings": 62
+          }
+        ]
+      }
+    },
+    "4": {
+      "gauge_days": 81099,
+      "flood_days": 974,
+      "river_above_days": 973,
+      "river_above_flood_days": 257,
+      "all days": {
+        "A": {
+          "auc": 0.9336,
+          "brier_skill": 0.1465
+        },
+        "C": {
+          "auc": 0.9456,
+          "brier_skill": 0.1563
+        },
+        "D": {
+          "auc": 0.9474,
+          "brier_skill": 0.1588
+        },
+        "K1": {
+          "auc_change": 0.0138,
+          "brier_skill_change": 0.0122,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0018,
+          "brier_skill_change": 0.0025,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9381,
+          "brier_skill": 0.1021
+        },
+        "C": {
+          "auc": 0.9369,
+          "brier_skill": 0.1073
+        },
+        "D": {
+          "auc": 0.9379,
+          "brier_skill": 0.1066
+        },
+        "K1": {
+          "auc_change": -0.0003,
+          "brier_skill_change": 0.0045,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.001,
+          "brier_skill_change": -0.0006,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.6577,
+          "C": 0.6626,
+          "D": 0.6814
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 193,
+            "flooded": 21
+          },
+          "C": {
+            "days": 148,
+            "flooded": 23
+          },
+          "D": {
+            "days": 101,
+            "flooded": 14
+          }
+        },
+        "pass": false
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 16,
+          "C": 6,
+          "D": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.12,
+          "D": 0.3
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 13,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 13.0,
+          "C": 12.9,
+          "D": 11.2
+        },
+        "rows": {
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 10.1,
+              "C": 12.4,
+              "D": 10.3
+            },
+            "habit_all_years_pct": 1.3
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 6.7,
+            "said_pct": {
+              "A": 36.3,
+              "C": 34.2,
+              "D": 29.2
+            },
+            "habit_all_years_pct": 10.3
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 7.4,
+            "said_pct": {
+              "A": 23.4,
+              "C": 22.1,
+              "D": 19.6
+            },
+            "habit_all_years_pct": 7.5
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 13.0,
+            "said_pct": {
+              "A": 11.1,
+              "C": 13.9,
+              "D": 13.2
+            },
+            "habit_all_years_pct": 12.3
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 14.0,
+            "said_pct": {
+              "A": 17.5,
+              "C": 18.7,
+              "D": 18.1
+            },
+            "habit_all_years_pct": 14.2
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 15.8,
+            "said_pct": {
+              "A": 13.5,
+              "C": 13.7,
+              "D": 14.7
+            },
+            "habit_all_years_pct": 14.9
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 17.6,
+            "said_pct": {
+              "A": 29.6,
+              "C": 27.7,
+              "D": 27.3
+            },
+            "habit_all_years_pct": 21.7
+          },
+          "Miao": {
+            "days": 178,
+            "stayed_pct": 23.0,
+            "said_pct": {
+              "A": 21.6,
+              "C": 22.0,
+              "D": 22.6
+            },
+            "habit_all_years_pct": 22.3
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 23.2,
+            "said_pct": {
+              "A": 24.0,
+              "C": 22.8,
+              "D": 23.3
+            },
+            "habit_all_years_pct": 22.7
+          },
+          "Lemeking": {
+            "days": 119,
+            "stayed_pct": 34.5,
+            "said_pct": {
+              "A": 28.3,
+              "C": 28.0,
+              "D": 28.7
+            },
+            "habit_all_years_pct": 32.7
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 41.8,
+            "said_pct": {
+              "A": 24.0,
+              "C": 24.0,
+              "D": 29.5
+            },
+            "habit_all_years_pct": 40.4
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 52.7,
+            "said_pct": {
+              "A": 24.8,
+              "C": 22.5,
+              "D": 27.3
+            },
+            "habit_all_years_pct": 43.8
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 70.6,
+            "said_pct": {
+              "A": 30.5,
+              "C": 31.2,
+              "D": 29.0
+            },
+            "habit_all_years_pct": 12.6
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10180,
+        "n_flood_days": 207,
+        "auc": 0.938,
+        "brier_skill": 0.217,
+        "top1pct_said": 44.7,
+        "top1pct_happened": 43.1,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 32.9,
+            "warnings_right_pct": 38.9,
+            "n_warnings": 175
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 8.2,
+            "warnings_right_pct": 81.0,
+            "n_warnings": 21
+          }
+        ]
+      }
+    },
+    "5": {
+      "gauge_days": 80966,
+      "flood_days": 972,
+      "river_above_days": 969,
+      "river_above_flood_days": 205,
+      "all days": {
+        "A": {
+          "auc": 0.9349,
+          "brier_skill": 0.1337
+        },
+        "C": {
+          "auc": 0.9435,
+          "brier_skill": 0.1366
+        },
+        "D": {
+          "auc": 0.9448,
+          "brier_skill": 0.1422
+        },
+        "K1": {
+          "auc_change": 0.0099,
+          "brier_skill_change": 0.0086,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0013,
+          "brier_skill_change": 0.0056,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9374,
+          "brier_skill": 0.1035
+        },
+        "C": {
+          "auc": 0.9385,
+          "brier_skill": 0.1047
+        },
+        "D": {
+          "auc": 0.9388,
+          "brier_skill": 0.1076
+        },
+        "K1": {
+          "auc_change": 0.0014,
+          "brier_skill_change": 0.0041,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0003,
+          "brier_skill_change": 0.0029,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.6864,
+          "C": 0.693,
+          "D": 0.7226
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 205,
+            "flooded": 15
+          },
+          "C": {
+            "days": 214,
+            "flooded": 16
+          },
+          "D": {
+            "days": 189,
+            "flooded": 13
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 12,
+          "C": 6,
+          "D": 3
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.04,
+          "D": 0.05
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 13,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 12.2,
+          "C": 12.8,
+          "D": 10.8
+        },
+        "rows": {
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 5.4,
+              "C": 7.3,
+              "D": 6.4
+            },
+            "habit_all_years_pct": 1.0
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 5.3,
+            "said_pct": {
+              "A": 7.4,
+              "C": 7.9,
+              "D": 7.7
+            },
+            "habit_all_years_pct": 4.2
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 18.0,
+              "C": 18.0,
+              "D": 15.1
+            },
+            "habit_all_years_pct": 6.5
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 5.9,
+            "said_pct": {
+              "A": 22.5,
+              "C": 21.6,
+              "D": 17.9
+            },
+            "habit_all_years_pct": 8.5
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 6.0,
+            "said_pct": {
+              "A": 13.2,
+              "C": 15.1,
+              "D": 14.6
+            },
+            "habit_all_years_pct": 6.3
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 6.7,
+            "said_pct": {
+              "A": 31.1,
+              "C": 29.1,
+              "D": 23.3
+            },
+            "habit_all_years_pct": 9.8
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 7.4,
+            "said_pct": {
+              "A": 7.3,
+              "C": 7.6,
+              "D": 7.4
+            },
+            "habit_all_years_pct": 6.9
+          },
+          "Miao": {
+            "days": 177,
+            "stayed_pct": 17.5,
+            "said_pct": {
+              "A": 15.9,
+              "C": 16.6,
+              "D": 17.0
+            },
+            "habit_all_years_pct": 17.0
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 19.6,
+            "said_pct": {
+              "A": 17.8,
+              "C": 19.0,
+              "D": 20.7
+            },
+            "habit_all_years_pct": 17.9
+          },
+          "Lemeking": {
+            "days": 119,
+            "stayed_pct": 28.6,
+            "said_pct": {
+              "A": 23.1,
+              "C": 22.3,
+              "D": 22.5
+            },
+            "habit_all_years_pct": 26.8
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 34.2,
+            "said_pct": {
+              "A": 20.5,
+              "C": 20.4,
+              "D": 25.2
+            },
+            "habit_all_years_pct": 32.8
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 48.4,
+            "said_pct": {
+              "A": 20.2,
+              "C": 19.9,
+              "D": 24.9
+            },
+            "habit_all_years_pct": 39.8
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 64.7,
+            "said_pct": {
+              "A": 25.3,
+              "C": 18.9,
+              "D": 20.7
+            },
+            "habit_all_years_pct": 9.5
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10168,
+        "n_flood_days": 207,
+        "auc": 0.932,
+        "brier_skill": 0.195,
+        "top1pct_said": 45.4,
+        "top1pct_happened": 50.0,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 30.0,
+            "warnings_right_pct": 43.1,
+            "n_warnings": 144
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 6.3,
+            "warnings_right_pct": 54.2,
+            "n_warnings": 24
+          }
+        ]
+      }
+    },
+    "6": {
+      "gauge_days": 80844,
+      "flood_days": 968,
+      "river_above_days": 962,
+      "river_above_flood_days": 175,
+      "all days": {
+        "A": {
+          "auc": 0.9296,
+          "brier_skill": 0.1229
+        },
+        "C": {
+          "auc": 0.9388,
+          "brier_skill": 0.1232
+        },
+        "D": {
+          "auc": 0.9389,
+          "brier_skill": 0.122
+        },
+        "K1": {
+          "auc_change": 0.0093,
+          "brier_skill_change": -0.0009,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0,
+          "brier_skill_change": -0.0012,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9368,
+          "brier_skill": 0.1036
+        },
+        "C": {
+          "auc": 0.9351,
+          "brier_skill": 0.0987
+        },
+        "D": {
+          "auc": 0.9344,
+          "brier_skill": 0.1012
+        },
+        "K1": {
+          "auc_change": -0.0024,
+          "brier_skill_change": -0.0024,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0008,
+          "brier_skill_change": 0.0025,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.6869,
+          "C": 0.697,
+          "D": 0.6959
+        },
+        "pass": false
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 294,
+            "flooded": 22
+          },
+          "C": {
+            "days": 267,
+            "flooded": 26
+          },
+          "D": {
+            "days": 237,
+            "flooded": 12
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 13,
+          "C": 5,
+          "D": 2
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.08,
+          "D": 0.1
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 12,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 9.9,
+          "C": 11.3,
+          "D": 11.0
+        },
+        "rows": {
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 4.1,
+              "C": 5.9,
+              "D": 5.8
+            },
+            "habit_all_years_pct": 0.4
+          },
+          "Changlang": {
+            "days": 16,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 18.0,
+              "C": 18.5,
+              "D": 17.0
+            },
+            "habit_all_years_pct": 2.3
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 4.3,
+              "C": 5.0,
+              "D": 4.0
+            },
+            "habit_all_years_pct": 0.8
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 3.7,
+            "said_pct": {
+              "A": 19.1,
+              "C": 14.2,
+              "D": 12.7
+            },
+            "habit_all_years_pct": 4.4
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 4.0,
+            "said_pct": {
+              "A": 11.0,
+              "C": 13.6,
+              "D": 10.3
+            },
+            "habit_all_years_pct": 4.3
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 6.2,
+              "C": 6.4,
+              "D": 5.8
+            },
+            "habit_all_years_pct": 5.2
+          },
+          "Miao": {
+            "days": 177,
+            "stayed_pct": 16.4,
+            "said_pct": {
+              "A": 14.3,
+              "C": 13.9,
+              "D": 16.4
+            },
+            "habit_all_years_pct": 15.9
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 19.6,
+            "said_pct": {
+              "A": 18.1,
+              "C": 14.9,
+              "D": 14.1
+            },
+            "habit_all_years_pct": 16.7
+          },
+          "Lemeking": {
+            "days": 118,
+            "stayed_pct": 24.6,
+            "said_pct": {
+              "A": 20.4,
+              "C": 19.6,
+              "D": 20.7
+            },
+            "habit_all_years_pct": 22.9
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 28.1,
+            "said_pct": {
+              "A": 17.4,
+              "C": 16.3,
+              "D": 18.2
+            },
+            "habit_all_years_pct": 26.7
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 44.0,
+            "said_pct": {
+              "A": 18.9,
+              "C": 16.0,
+              "D": 19.1
+            },
+            "habit_all_years_pct": 35.8
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 58.8,
+            "said_pct": {
+              "A": 33.0,
+              "C": 25.7,
+              "D": 14.0
+            },
+            "habit_all_years_pct": 8.2
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10158,
+        "n_flood_days": 207,
+        "auc": 0.931,
+        "brier_skill": 0.2,
+        "top1pct_said": 41.0,
+        "top1pct_happened": 50.0,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 30.0,
+            "warnings_right_pct": 42.8,
+            "n_warnings": 145
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 6.8,
+            "warnings_right_pct": 73.7,
+            "n_warnings": 19
+          }
+        ]
+      }
+    },
+    "7": {
+      "gauge_days": 80746,
+      "flood_days": 967,
+      "river_above_days": 960,
+      "river_above_flood_days": 155,
+      "all days": {
+        "A": {
+          "auc": 0.9329,
+          "brier_skill": 0.1238
+        },
+        "C": {
+          "auc": 0.939,
+          "brier_skill": 0.1308
+        },
+        "D": {
+          "auc": 0.9387,
+          "brier_skill": 0.1268
+        },
+        "K1": {
+          "auc_change": 0.0058,
+          "brier_skill_change": 0.003,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0003,
+          "brier_skill_change": -0.004,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9363,
+          "brier_skill": 0.103
+        },
+        "C": {
+          "auc": 0.936,
+          "brier_skill": 0.1089
+        },
+        "D": {
+          "auc": 0.9354,
+          "brier_skill": 0.1079
+        },
+        "K1": {
+          "auc_change": -0.0009,
+          "brier_skill_change": 0.0049,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0006,
+          "brier_skill_change": -0.001,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.7358,
+          "C": 0.7425,
+          "D": 0.7296
+        },
+        "pass": false
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 367,
+            "flooded": 28
+          },
+          "C": {
+            "days": 305,
+            "flooded": 20
+          },
+          "D": {
+            "days": 285,
+            "flooded": 19
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 8,
+          "C": 4,
+          "D": 3
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.02,
+          "D": 0.06
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 13,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 8.8,
+          "C": 9.6,
+          "D": 9.8
+        },
+        "rows": {
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 3.2,
+              "C": 3.9,
+              "D": 3.9
+            },
+            "habit_all_years_pct": 0.3
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 4.2,
+              "C": 5.7,
+              "D": 4.3
+            },
+            "habit_all_years_pct": 0.7
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 18.5,
+              "C": 18.8,
+              "D": 15.6
+            },
+            "habit_all_years_pct": 1.8
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 3.7,
+            "said_pct": {
+              "A": 5.8,
+              "C": 5.6,
+              "D": 5.7
+            },
+            "habit_all_years_pct": 3.5
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 4.0,
+            "said_pct": {
+              "A": 8.7,
+              "C": 8.9,
+              "D": 8.8
+            },
+            "habit_all_years_pct": 4.3
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 15.9,
+              "C": 13.5,
+              "D": 12.9
+            },
+            "habit_all_years_pct": 5.8
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 5.9,
+            "said_pct": {
+              "A": 18.7,
+              "C": 16.2,
+              "D": 15.6
+            },
+            "habit_all_years_pct": 6.7
+          },
+          "Miao": {
+            "days": 178,
+            "stayed_pct": 14.0,
+            "said_pct": {
+              "A": 11.9,
+              "C": 13.1,
+              "D": 14.8
+            },
+            "habit_all_years_pct": 13.6
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 21.2,
+            "said_pct": {
+              "A": 16.3,
+              "C": 15.7,
+              "D": 17.0
+            },
+            "habit_all_years_pct": 20.0
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 21.4,
+            "said_pct": {
+              "A": 16.8,
+              "C": 16.0,
+              "D": 16.6
+            },
+            "habit_all_years_pct": 16.6
+          },
+          "Lemeking": {
+            "days": 117,
+            "stayed_pct": 23.1,
+            "said_pct": {
+              "A": 19.1,
+              "C": 18.3,
+              "D": 17.6
+            },
+            "habit_all_years_pct": 21.6
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 39.6,
+            "said_pct": {
+              "A": 18.1,
+              "C": 15.3,
+              "D": 16.1
+            },
+            "habit_all_years_pct": 31.8
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 52.9,
+            "said_pct": {
+              "A": 31.2,
+              "C": 22.2,
+              "D": 11.8
+            },
+            "habit_all_years_pct": 7.1
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10147,
+        "n_flood_days": 207,
+        "auc": 0.922,
+        "brier_skill": 0.202,
+        "top1pct_said": 43.2,
+        "top1pct_happened": 49.5,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 32.4,
+            "warnings_right_pct": 39.9,
+            "n_warnings": 168
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 5.3,
+            "warnings_right_pct": 57.9,
+            "n_warnings": 19
+          }
+        ]
+      }
+    },
+    "8": {
+      "gauge_days": 80609,
+      "flood_days": 959,
+      "river_above_days": 958,
+      "river_above_flood_days": 141,
+      "all days": {
+        "A": {
+          "auc": 0.9362,
+          "brier_skill": 0.1285
+        },
+        "C": {
+          "auc": 0.9389,
+          "brier_skill": 0.1343
+        },
+        "D": {
+          "auc": 0.9388,
+          "brier_skill": 0.1324
+        },
+        "K1": {
+          "auc_change": 0.0026,
+          "brier_skill_change": 0.004,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0001,
+          "brier_skill_change": -0.0019,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9373,
+          "brier_skill": 0.113
+        },
+        "C": {
+          "auc": 0.9357,
+          "brier_skill": 0.1154
+        },
+        "D": {
+          "auc": 0.9354,
+          "brier_skill": 0.1155
+        },
+        "K1": {
+          "auc_change": -0.0019,
+          "brier_skill_change": 0.0025,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": -0.0003,
+          "brier_skill_change": 0.0001,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.755,
+          "C": 0.7743,
+          "D": 0.7785
+        },
+        "pass": true
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 399,
+            "flooded": 26
+          },
+          "C": {
+            "days": 307,
+            "flooded": 12
+          },
+          "D": {
+            "days": 308,
+            "flooded": 10
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 6,
+          "C": 2,
+          "D": 2
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.07,
+          "D": 0.06
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 13,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 8.6,
+          "C": 8.9,
+          "D": 7.8
+        },
+        "rows": {
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 4.1,
+              "C": 4.2,
+              "D": 3.5
+            },
+            "habit_all_years_pct": 0.3
+          },
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 13.4,
+              "C": 13.5,
+              "D": 11.0
+            },
+            "habit_all_years_pct": 1.6
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 7.8,
+              "C": 7.6,
+              "D": 6.1
+            },
+            "habit_all_years_pct": 0.7
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 10.8,
+              "C": 11.5,
+              "D": 11.3
+            },
+            "habit_all_years_pct": 1.7
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 2.0,
+            "said_pct": {
+              "A": 9.4,
+              "C": 9.0,
+              "D": 6.9
+            },
+            "habit_all_years_pct": 1.9
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 16.0,
+              "C": 14.7,
+              "D": 13.0
+            },
+            "habit_all_years_pct": 5.1
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 7.4,
+            "said_pct": {
+              "A": 6.5,
+              "C": 6.9,
+              "D": 6.5
+            },
+            "habit_all_years_pct": 7.2
+          },
+          "Miao": {
+            "days": 178,
+            "stayed_pct": 12.9,
+            "said_pct": {
+              "A": 10.7,
+              "C": 11.1,
+              "D": 12.0
+            },
+            "habit_all_years_pct": 12.4
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 18.5,
+            "said_pct": {
+              "A": 15.0,
+              "C": 14.5,
+              "D": 15.4
+            },
+            "habit_all_years_pct": 17.3
+          },
+          "Lemeking": {
+            "days": 116,
+            "stayed_pct": 19.8,
+            "said_pct": {
+              "A": 17.8,
+              "C": 17.4,
+              "D": 20.1
+            },
+            "habit_all_years_pct": 18.6
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 21.4,
+            "said_pct": {
+              "A": 16.6,
+              "C": 16.4,
+              "D": 15.7
+            },
+            "habit_all_years_pct": 15.4
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 35.2,
+            "said_pct": {
+              "A": 16.1,
+              "C": 15.9,
+              "D": 17.3
+            },
+            "habit_all_years_pct": 27.8
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 47.1,
+            "said_pct": {
+              "A": 22.3,
+              "C": 17.8,
+              "D": 18.5
+            },
+            "habit_all_years_pct": 6.6
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10136,
+        "n_flood_days": 207,
+        "auc": 0.935,
+        "brier_skill": 0.209,
+        "top1pct_said": 41.3,
+        "top1pct_happened": 46.5,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 32.9,
+            "warnings_right_pct": 43.9,
+            "n_warnings": 155
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 5.3,
+            "warnings_right_pct": 55.0,
+            "n_warnings": 20
+          }
+        ]
+      }
+    },
+    "9": {
+      "gauge_days": 80458,
+      "flood_days": 957,
+      "river_above_days": 956,
+      "river_above_flood_days": 138,
+      "all days": {
+        "A": {
+          "auc": 0.9342,
+          "brier_skill": 0.1214
+        },
+        "C": {
+          "auc": 0.9366,
+          "brier_skill": 0.1238
+        },
+        "D": {
+          "auc": 0.9367,
+          "brier_skill": 0.1186
+        },
+        "K1": {
+          "auc_change": 0.0025,
+          "brier_skill_change": -0.0028,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0,
+          "brier_skill_change": -0.0052,
+          "pass": true
+        }
+      },
+      "onset only": {
+        "A": {
+          "auc": 0.9324,
+          "brier_skill": 0.1066
+        },
+        "C": {
+          "auc": 0.9333,
+          "brier_skill": 0.1074
+        },
+        "D": {
+          "auc": 0.9333,
+          "brier_skill": 0.1041
+        },
+        "K1": {
+          "auc_change": 0.0009,
+          "brier_skill_change": -0.0025,
+          "pass": true
+        },
+        "K2": {
+          "auc_change": 0.0001,
+          "brier_skill_change": -0.0033,
+          "pass": true
+        }
+      },
+      "K4": {
+        "auc_within_river_above": {
+          "A": 0.7391,
+          "C": 0.7545,
+          "D": 0.7485
+        },
+        "pass": false
+      },
+      "K3": {
+        "river_above_days_under_5pct": {
+          "A": {
+            "days": 345,
+            "flooded": 21
+          },
+          "C": {
+            "days": 280,
+            "flooded": 13
+          },
+          "D": {
+            "days": 265,
+            "flooded": 12
+          }
+        },
+        "pass": true
+      },
+      "reported": {
+        "river_above_flood_days_under_1pct": {
+          "A": 2,
+          "C": 0,
+          "D": 0
+        },
+        "lowest_chance_given_pct": {
+          "A": 0.0,
+          "C": 0.31,
+          "D": 0.37
+        }
+      },
+      "per_gauge": {
+        "gauges_with_15_days": 13,
+        "mean_gap_said_vs_stayed_pts": {
+          "A": 7.5,
+          "C": 7.7,
+          "D": 6.6
+        },
+        "rows": {
+          "Miao (NWDP)": {
+            "days": 15,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 11.5,
+              "C": 11.2,
+              "D": 10.7
+            },
+            "habit_all_years_pct": 1.5
+          },
+          "Bhalukpong": {
+            "days": 19,
+            "stayed_pct": 0.0,
+            "said_pct": {
+              "A": 7.5,
+              "C": 9.3,
+              "D": 8.5
+            },
+            "habit_all_years_pct": 0.7
+          },
+          "Kibithu": {
+            "days": 38,
+            "stayed_pct": 2.6,
+            "said_pct": {
+              "A": 5.7,
+              "C": 5.4,
+              "D": 5.3
+            },
+            "habit_all_years_pct": 2.2
+          },
+          "Passighat": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 9.1,
+              "C": 10.1,
+              "D": 8.4
+            },
+            "habit_all_years_pct": 5.4
+          },
+          "Namsai": {
+            "days": 54,
+            "stayed_pct": 5.6,
+            "said_pct": {
+              "A": 16.5,
+              "C": 14.7,
+              "D": 11.8
+            },
+            "habit_all_years_pct": 4.5
+          },
+          "Seppa": {
+            "days": 50,
+            "stayed_pct": 6.0,
+            "said_pct": {
+              "A": 12.5,
+              "C": 11.9,
+              "D": 9.7
+            },
+            "habit_all_years_pct": 5.1
+          },
+          "Changlang": {
+            "days": 17,
+            "stayed_pct": 11.8,
+            "said_pct": {
+              "A": 10.5,
+              "C": 9.9,
+              "D": 10.3
+            },
+            "habit_all_years_pct": 12.2
+          },
+          "Miao": {
+            "days": 178,
+            "stayed_pct": 14.6,
+            "said_pct": {
+              "A": 12.0,
+              "C": 11.8,
+              "D": 13.1
+            },
+            "habit_all_years_pct": 14.1
+          },
+          "Tuting": {
+            "days": 146,
+            "stayed_pct": 17.8,
+            "said_pct": {
+              "A": 13.5,
+              "C": 12.9,
+              "D": 15.0
+            },
+            "habit_all_years_pct": 16.7
+          },
+          "Lemeking": {
+            "days": 115,
+            "stayed_pct": 18.3,
+            "said_pct": {
+              "A": 16.0,
+              "C": 15.8,
+              "D": 18.3
+            },
+            "habit_all_years_pct": 17.3
+          },
+          "Murga Bridge": {
+            "days": 56,
+            "stayed_pct": 19.6,
+            "said_pct": {
+              "A": 16.9,
+              "C": 15.2,
+              "D": 13.1
+            },
+            "habit_all_years_pct": 13.2
+          },
+          "Rho Basti": {
+            "days": 91,
+            "stayed_pct": 30.8,
+            "said_pct": {
+              "A": 16.8,
+              "C": 14.7,
+              "D": 15.9
+            },
+            "habit_all_years_pct": 23.9
+          },
+          "Daporizo": {
+            "days": 17,
+            "stayed_pct": 41.2,
+            "said_pct": {
+              "A": 14.0,
+              "C": 16.8,
+              "D": 17.4
+            },
+            "habit_all_years_pct": 6.9
+          }
+        }
+      },
+      "line_moved_D_only": {
+        "n_days": 10126,
+        "n_flood_days": 206,
+        "auc": 0.928,
+        "brier_skill": 0.178,
+        "top1pct_said": 38.3,
+        "top1pct_happened": 42.6,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 31.6,
+            "warnings_right_pct": 37.1,
+            "n_warnings": 175
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 2.4,
+            "warnings_right_pct": 50.0,
+            "n_warnings": 10
+          }
+        ]
+      }
+    }
+  },
+  "K3_small_leads_together": {
+    "A": {
+      "days": 1,
+      "flooded": 1
+    },
+    "C": {
+      "days": 6,
+      "flooded": 3
+    },
+    "D": {
+      "days": 12,
+      "flooded": 9
+    }
+  },
+  "gates": {
+    "K1": false,
+    "K2": false,
+    "K3": false,
+    "K4": false
+  },
+  "pass": false
+}

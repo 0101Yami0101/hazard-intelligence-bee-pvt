@@ -1,0 +1,125 @@
+{
+  "note": "Physical checks on the shipped statewide map. These catch out-of-distribution failure, which fold metrics structurally cannot - every fold comes from the same floodplain-heavy population as training.",
+  "top_0.1pct": {
+    "n": 8202,
+    "median_hand_m": 0.0,
+    "median_slope_deg": 0.3996697962284088,
+    "median_elev_m": 136.18838500976562
+  },
+  "limits": {
+    "max_median_hand_m": 25.0,
+    "max_median_slope_deg": 15.0
+  },
+  "by_hand_band": [
+    {
+      "hand_lo": 0,
+      "hand_hi": 2,
+      "n": 463335,
+      "mean_prob": 0.04108240827918053
+    },
+    {
+      "hand_lo": 2,
+      "hand_hi": 5,
+      "n": 127335,
+      "mean_prob": 0.043492477387189865
+    },
+    {
+      "hand_lo": 5,
+      "hand_hi": 10,
+      "n": 126614,
+      "mean_prob": 0.018694961443543434
+    },
+    {
+      "hand_lo": 10,
+      "hand_hi": 25,
+      "n": 187057,
+      "mean_prob": 0.0023809282574802637
+    },
+    {
+      "hand_lo": 25,
+      "hand_hi": 50,
+      "n": 247049,
+      "mean_prob": 3.049447583336473e-09
+    },
+    {
+      "hand_lo": 50,
+      "hand_hi": 200,
+      "n": 1366947,
+      "mean_prob": 0.0
+    },
+    {
+      "hand_lo": 200,
+      "hand_hi": null,
+      "n": 5684006,
+      "mean_prob": 0.0
+    }
+  ],
+  "by_landcover": [
+    {
+      "class": 10,
+      "name": "tree cover",
+      "n": 6943695,
+      "mean_prob": 0.0013496922329068184
+    },
+    {
+      "class": 20,
+      "name": "shrubland",
+      "n": 390,
+      "mean_prob": 0.08899664878845215
+    },
+    {
+      "class": 30,
+      "name": "grassland",
+      "n": 530837,
+      "mean_prob": 0.007180888205766678
+    },
+    {
+      "class": 40,
+      "name": "cropland",
+      "n": 90521,
+      "mean_prob": 0.061298348009586334
+    },
+    {
+      "class": 50,
+      "name": "built-up",
+      "n": 6126,
+      "mean_prob": 0.008803697302937508
+    },
+    {
+      "class": 60,
+      "name": "bare/sparse",
+      "n": 118024,
+      "mean_prob": 0.030031396076083183
+    },
+    {
+      "class": 70,
+      "name": "snow and ice",
+      "n": 159551,
+      "mean_prob": 3.1803949241293594e-05
+    },
+    {
+      "class": 80,
+      "name": "permanent water",
+      "n": 49898,
+      "mean_prob": 0.10036009550094604
+    },
+    {
+      "class": 100,
+      "name": "moss and lichen",
+      "n": 303281,
+      "mean_prob": 1.1710320904967375e-05
+    }
+  ],
+  "checks": {
+    "top_cells_near_a_channel": true,
+    "top_cells_on_flat_ground": true,
+    "score_falls_with_height_above_channel": true,
+    "snow_and_tundra_score_low": true
+  },
+  "verdict": "PASS",
+  "_pre_landcover_drop": {
+    "median_hand_m_of_top_cells": 360.0,
+    "median_slope_deg_of_top_cells": 31.2,
+    "note": "the model WITH ESA WorldCover as a feature - half its top-scoring cells were class 80 at 3,000 m, i.e. glacial lakes read as river channel. Its held-out AUC was the best of any variant tried (0.947 in Arunachal), which is the whole reason this check exists"
+  }
+}

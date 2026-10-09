@@ -1,0 +1,381 @@
+{
+  "method": "isotonic regression, year-grouped CV of the calibrator itself",
+  "caveat_autocorrelation": "Flood days come in multi-day runs, so these rows are not independent samples. The calibration MAPPING is unaffected, but confidence in it is narrower than the raw day count suggests - roughly 310 distinct flood episodes underlie the flood days.",
+  "caveat_two_label_types": "'Official CWC danger level' rows carry an externally-defined event. 'Self-derived top-2%' rows have a ~2% base rate by construction. Never quote the pooled number as if it were all the official kind.",
+  "groups": [
+    {
+      "group": "ALL stations pooled",
+      "n_days": 81673,
+      "n_flood_days": 1091,
+      "base_rate_pct": 1.34,
+      "auc_raw": 0.899,
+      "auc_calibrated": 0.894,
+      "ece_raw_pct": 10.56,
+      "ece_isotonic_pct": 0.06,
+      "ece_platt_pct": 0.19,
+      "brier_raw": 0.03042,
+      "brier_isotonic": 0.01205,
+      "brier_skill_raw": -1.308,
+      "brier_skill_isotonic": 0.086,
+      "reliability_isotonic": [
+        {
+          "band": "0.00-0.01",
+          "n_days": 49735,
+          "predicted_pct": 0.1,
+          "observed_pct": 0.1,
+          "n_floods": 51
+        },
+        {
+          "band": "0.01-0.01",
+          "n_days": 12141,
+          "predicted_pct": 0.7,
+          "observed_pct": 0.9,
+          "n_floods": 106
+        },
+        {
+          "band": "0.01-0.02",
+          "n_days": 8653,
+          "predicted_pct": 1.5,
+          "observed_pct": 1.3,
+          "n_floods": 114
+        },
+        {
+          "band": "0.02-0.05",
+          "n_days": 5811,
+          "predicted_pct": 3.5,
+          "observed_pct": 3.6,
+          "n_floods": 212
+        },
+        {
+          "band": "0.05-0.10",
+          "n_days": 3411,
+          "predicted_pct": 7.2,
+          "observed_pct": 6.9,
+          "n_floods": 235
+        },
+        {
+          "band": "0.10-0.25",
+          "n_days": 1515,
+          "predicted_pct": 15.9,
+          "observed_pct": 16.2,
+          "n_floods": 246
+        },
+        {
+          "band": "0.25-0.50",
+          "n_days": 406,
+          "predicted_pct": 33.8,
+          "observed_pct": 31.3,
+          "n_floods": 127
+        },
+        {
+          "band": "0.50-1.00",
+          "n_days": 1,
+          "predicted_pct": 79.2,
+          "observed_pct": 0.0,
+          "n_floods": 0
+        }
+      ],
+      "sharpness_pct": {
+        "p50": 0.18,
+        "p90": 3.6,
+        "p99": 16.67,
+        "p99.9": 43.93,
+        "p100": 79.18
+      },
+      "operational_lift": [
+        {
+          "top_pct": 0.1,
+          "n_days": 81,
+          "predicted_pct": 45.5,
+          "observed_pct": 32.1,
+          "lift_vs_base_rate": 24.0,
+          "n_floods_caught": 26,
+          "pct_of_all_floods": 2.4
+        },
+        {
+          "top_pct": 1.0,
+          "n_days": 816,
+          "predicted_pct": 27.3,
+          "observed_pct": 25.1,
+          "lift_vs_base_rate": 18.8,
+          "n_floods_caught": 205,
+          "pct_of_all_floods": 18.8
+        },
+        {
+          "top_pct": 5.0,
+          "n_days": 4083,
+          "predicted_pct": 13.5,
+          "observed_pct": 13.2,
+          "lift_vs_base_rate": 9.9,
+          "n_floods_caught": 540,
+          "pct_of_all_floods": 49.5
+        },
+        {
+          "top_pct": 10.0,
+          "n_days": 8167,
+          "predicted_pct": 9.2,
+          "observed_pct": 9.0,
+          "lift_vs_base_rate": 6.8,
+          "n_floods_caught": 739,
+          "pct_of_all_floods": 67.7
+        },
+        {
+          "top_pct": 25.0,
+          "n_days": 20418,
+          "predicted_pct": 4.7,
+          "observed_pct": 4.6,
+          "lift_vs_base_rate": 3.4,
+          "n_floods_caught": 936,
+          "pct_of_all_floods": 85.8
+        }
+      ]
+    },
+    {
+      "group": "Official CWC danger level only (the number to quote)",
+      "n_days": 45699,
+      "n_flood_days": 353,
+      "base_rate_pct": 0.77,
+      "auc_raw": 0.916,
+      "auc_calibrated": 0.909,
+      "ece_raw_pct": 10.95,
+      "ece_isotonic_pct": 0.04,
+      "ece_platt_pct": 0.23,
+      "brier_raw": 0.0277,
+      "brier_isotonic": 0.00703,
+      "brier_skill_raw": -2.614,
+      "brier_skill_isotonic": 0.083,
+      "reliability_isotonic": [
+        {
+          "band": "0.00-0.01",
+          "n_days": 37057,
+          "predicted_pct": 0.1,
+          "observed_pct": 0.1,
+          "n_floods": 48
+        },
+        {
+          "band": "0.01-0.01",
+          "n_days": 2452,
+          "predicted_pct": 0.7,
+          "observed_pct": 0.8,
+          "n_floods": 20
+        },
+        {
+          "band": "0.01-0.02",
+          "n_days": 2310,
+          "predicted_pct": 1.5,
+          "observed_pct": 2.0,
+          "n_floods": 46
+        },
+        {
+          "band": "0.02-0.05",
+          "n_days": 2185,
+          "predicted_pct": 3.2,
+          "observed_pct": 2.5,
+          "n_floods": 55
+        },
+        {
+          "band": "0.05-0.10",
+          "n_days": 862,
+          "predicted_pct": 6.4,
+          "observed_pct": 6.1,
+          "n_floods": 53
+        },
+        {
+          "band": "0.10-0.25",
+          "n_days": 765,
+          "predicted_pct": 12.5,
+          "observed_pct": 13.1,
+          "n_floods": 100
+        },
+        {
+          "band": "0.25-0.50",
+          "n_days": 26,
+          "predicted_pct": 35.1,
+          "observed_pct": 38.5,
+          "n_floods": 10
+        },
+        {
+          "band": "0.50-1.00",
+          "n_days": 42,
+          "predicted_pct": 62.2,
+          "observed_pct": 50.0,
+          "n_floods": 21
+        }
+      ],
+      "sharpness_pct": {
+        "p50": 0.08,
+        "p90": 1.49,
+        "p99": 12.16,
+        "p99.9": 37.5,
+        "p100": 100.0
+      },
+      "operational_lift": [
+        {
+          "top_pct": 0.1,
+          "n_days": 45,
+          "predicted_pct": 60.6,
+          "observed_pct": 46.7,
+          "lift_vs_base_rate": 60.4,
+          "n_floods_caught": 21,
+          "pct_of_all_floods": 5.9
+        },
+        {
+          "top_pct": 1.0,
+          "n_days": 456,
+          "predicted_pct": 19.5,
+          "observed_pct": 16.7,
+          "lift_vs_base_rate": 21.6,
+          "n_floods_caught": 76,
+          "pct_of_all_floods": 21.5
+        },
+        {
+          "top_pct": 5.0,
+          "n_days": 2284,
+          "predicted_pct": 9.3,
+          "observed_pct": 8.9,
+          "lift_vs_base_rate": 11.6,
+          "n_floods_caught": 204,
+          "pct_of_all_floods": 57.8
+        },
+        {
+          "top_pct": 10.0,
+          "n_days": 4569,
+          "predicted_pct": 5.9,
+          "observed_pct": 5.5,
+          "lift_vs_base_rate": 7.2,
+          "n_floods_caught": 253,
+          "pct_of_all_floods": 71.7
+        },
+        {
+          "top_pct": 25.0,
+          "n_days": 11424,
+          "predicted_pct": 2.8,
+          "observed_pct": 2.8,
+          "lift_vs_base_rate": 3.6,
+          "n_floods_caught": 316,
+          "pct_of_all_floods": 89.5
+        }
+      ]
+    },
+    {
+      "group": "Self-derived top-2% label only",
+      "n_days": 35974,
+      "n_flood_days": 738,
+      "base_rate_pct": 2.05,
+      "auc_raw": 0.891,
+      "auc_calibrated": 0.885,
+      "ece_raw_pct": 10.06,
+      "ece_isotonic_pct": 0.15,
+      "ece_platt_pct": 0.42,
+      "brier_raw": 0.03387,
+      "brier_isotonic": 0.01812,
+      "brier_skill_raw": -0.686,
+      "brier_skill_isotonic": 0.098,
+      "reliability_isotonic": [
+        {
+          "band": "0.00-0.01",
+          "n_days": 21019,
+          "predicted_pct": 0.1,
+          "observed_pct": 0.2,
+          "n_floods": 37
+        },
+        {
+          "band": "0.01-0.01",
+          "n_days": 1272,
+          "predicted_pct": 0.6,
+          "observed_pct": 0.5,
+          "n_floods": 6
+        },
+        {
+          "band": "0.01-0.02",
+          "n_days": 5332,
+          "predicted_pct": 1.3,
+          "observed_pct": 1.5,
+          "n_floods": 78
+        },
+        {
+          "band": "0.02-0.05",
+          "n_days": 4090,
+          "predicted_pct": 2.9,
+          "observed_pct": 2.8,
+          "n_floods": 115
+        },
+        {
+          "band": "0.05-0.10",
+          "n_days": 2378,
+          "predicted_pct": 7.4,
+          "observed_pct": 7.3,
+          "n_floods": 173
+        },
+        {
+          "band": "0.10-0.25",
+          "n_days": 1401,
+          "predicted_pct": 13.0,
+          "observed_pct": 12.5,
+          "n_floods": 175
+        },
+        {
+          "band": "0.25-0.50",
+          "n_days": 482,
+          "predicted_pct": 32.0,
+          "observed_pct": 32.0,
+          "n_floods": 154
+        }
+      ],
+      "sharpness_pct": {
+        "p50": 0.27,
+        "p90": 6.24,
+        "p99": 30.0,
+        "p99.9": 36.52,
+        "p100": 38.1
+      },
+      "operational_lift": [
+        {
+          "top_pct": 0.1,
+          "n_days": 35,
+          "predicted_pct": 37.4,
+          "observed_pct": 17.1,
+          "lift_vs_base_rate": 8.4,
+          "n_floods_caught": 6,
+          "pct_of_all_floods": 0.8
+        },
+        {
+          "top_pct": 1.0,
+          "n_days": 359,
+          "predicted_pct": 33.1,
+          "observed_pct": 30.4,
+          "lift_vs_base_rate": 14.8,
+          "n_floods_caught": 109,
+          "pct_of_all_floods": 14.8
+        },
+        {
+          "top_pct": 5.0,
+          "n_days": 1798,
+          "predicted_pct": 18.2,
+          "observed_pct": 17.4,
+          "lift_vs_base_rate": 8.5,
+          "n_floods_caught": 312,
+          "pct_of_all_floods": 42.3
+        },
+        {
+          "top_pct": 10.0,
+          "n_days": 3597,
+          "predicted_pct": 13.2,
+          "observed_pct": 13.0,
+          "lift_vs_base_rate": 6.3,
+          "n_floods_caught": 468,
+          "pct_of_all_floods": 63.4
+        },
+        {
+          "top_pct": 25.0,
+          "n_days": 8993,
+          "predicted_pct": 7.1,
+          "observed_pct": 6.9,
+          "lift_vs_base_rate": 3.4,
+          "n_floods_caught": 621,
+          "pct_of_all_floods": 84.1
+        }
+      ]
+    }
+  ]
+}

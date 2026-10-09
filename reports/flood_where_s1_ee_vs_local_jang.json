@@ -1,0 +1,116 @@
+{
+  "aoi": "Jang valley, Tawang",
+  "water_threshold_db": -17.0,
+  "buffer_deg": 0.15,
+  "n_dates_checked": 12,
+  "results": [
+    {
+      "flood_date": "2019-07-09",
+      "orbit": 150,
+      "pct_water_flood_day": 3.09,
+      "pct_water_baseline_day": 8.37,
+      "pct_new_water_flood_only": 1.21,
+      "local_pct_new_water": 1.29,
+      "diff": -0.08
+    },
+    {
+      "flood_date": "2019-07-14",
+      "orbit": 41,
+      "pct_water_flood_day": 7.23,
+      "pct_water_baseline_day": 14.01,
+      "pct_new_water_flood_only": 1.66,
+      "local_pct_new_water": 8.1,
+      "diff": -6.44
+    },
+    {
+      "flood_date": "2019-08-02",
+      "orbit": 150,
+      "pct_water_flood_day": 3.44,
+      "pct_water_baseline_day": 8.37,
+      "pct_new_water_flood_only": 1.43,
+      "local_pct_new_water": 1.42,
+      "diff": 0.01
+    },
+    {
+      "flood_date": "2020-05-21",
+      "orbit": 41,
+      "pct_water_flood_day": 9.75,
+      "pct_water_baseline_day": 14.01,
+      "pct_new_water_flood_only": 3.4,
+      "local_pct_new_water": 4.03,
+      "diff": -0.63
+    },
+    {
+      "flood_date": "2020-05-23",
+      "orbit": 77,
+      "pct_water_flood_day": 11.74,
+      "pct_water_baseline_day": 15.15,
+      "pct_new_water_flood_only": 3.59,
+      "local_pct_new_water": 4.11,
+      "diff": -0.52
+    },
+    {
+      "flood_date": "2020-06-21",
+      "orbit": 150,
+      "pct_water_flood_day": 3.56,
+      "pct_water_baseline_day": 8.37,
+      "pct_new_water_flood_only": 1.47,
+      "local_pct_new_water": 0.79,
+      "diff": 0.68
+    },
+    {
+      "flood_date": "2020-06-26",
+      "orbit": 41,
+      "pct_water_flood_day": 6.86,
+      "pct_water_baseline_day": 14.01,
+      "pct_new_water_flood_only": 1.58,
+      "local_pct_new_water": 2.03,
+      "diff": -0.45
+    },
+    {
+      "flood_date": "2020-07-21",
+      "orbit": 77,
+      "pct_water_flood_day": 9.05,
+      "pct_water_baseline_day": 15.15,
+      "pct_new_water_flood_only": 1.85,
+      "local_pct_new_water": 2.64,
+      "diff": -0.79
+    },
+    {
+      "flood_date": "2020-07-22",
+      "orbit": 77,
+      "pct_water_flood_day": 9.05,
+      "pct_water_baseline_day": 15.15,
+      "pct_new_water_flood_only": 1.85,
+      "local_pct_new_water": 2.64,
+      "diff": -0.79
+    },
+    {
+      "flood_date": "2021-08-27",
+      "orbit": 150,
+      "pct_water_flood_day": 3.17,
+      "pct_water_baseline_day": 8.37,
+      "pct_new_water_flood_only": 1.22,
+      "local_pct_new_water": 0.61,
+      "diff": 0.61
+    },
+    {
+      "flood_date": "2023-08-24",
+      "orbit": 77,
+      "pct_water_flood_day": 8.95,
+      "pct_water_baseline_day": 15.15,
+      "pct_new_water_flood_only": 1.9,
+      "local_pct_new_water": 2.04,
+      "diff": -0.14
+    },
+    {
+      "flood_date": "2025-08-31",
+      "orbit": 77,
+      "pct_water_flood_day": 11.37,
+      "pct_water_baseline_day": 15.15,
+      "pct_new_water_flood_only": 2.79,
+      "local_pct_new_water": 8.77,
+      "diff": -5.98
+    }
+  ]
+}

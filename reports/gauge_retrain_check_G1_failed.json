@@ -1,0 +1,416 @@
+{
+  "protocol": "docs/design/FLOOD_WHEN_PILOT_PLAN.md \u00a713g",
+  "tolerance": 0.005,
+  "gauges": 32,
+  "line_unchanged": 27,
+  "line_moved": {
+    "Yinkiang": {
+      "before": 271.9988,
+      "after": 271.978,
+      "official_before": false,
+      "official_after": false
+    },
+    "Pangin": {
+      "before": 204.8986,
+      "after": 204.754,
+      "official_before": false,
+      "official_after": false
+    },
+    "Jollang": {
+      "before": 166.1032,
+      "after": 166.09,
+      "official_before": false,
+      "official_after": false
+    },
+    "Doimukh": {
+      "before": 123.5,
+      "after": 120.45,
+      "official_before": true,
+      "official_after": false
+    },
+    "Tamen": {
+      "before": 283.0,
+      "after": 277.286,
+      "official_before": true,
+      "official_after": false
+    }
+  },
+  "leads": {
+    "1": {
+      "gauge_days": 81664,
+      "flood_days": 979,
+      "label_changed_days": 5,
+      "all days": {
+        "before": {
+          "n_days": 81664,
+          "n_flood_days": 979,
+          "auc": 0.975,
+          "brier_skill": 0.406,
+          "top1pct_said": 65.2,
+          "top1pct_happened": 62.1,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 64.2,
+              "warnings_right_pct": 59.7,
+              "n_warnings": 1053
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 48.2,
+              "warnings_right_pct": 64.2,
+              "n_warnings": 735
+            }
+          ]
+        },
+        "after": {
+          "n_days": 81664,
+          "n_flood_days": 979,
+          "auc": 0.974,
+          "brier_skill": 0.407,
+          "top1pct_said": 65.2,
+          "top1pct_happened": 63.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 63.6,
+              "warnings_right_pct": 56.0,
+              "n_warnings": 1112
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 44.5,
+              "warnings_right_pct": 65.1,
+              "n_warnings": 670
+            }
+          ]
+        },
+        "auc_change": -0.001,
+        "brier_skill_change": 0.001,
+        "G1": true
+      },
+      "onset only": {
+        "before": {
+          "n_days": 80686,
+          "n_flood_days": 377,
+          "auc": 0.944,
+          "brier_skill": 0.095,
+          "top1pct_said": 19.4,
+          "top1pct_happened": 16.7,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 13.3,
+              "warnings_right_pct": 35.2,
+              "n_warnings": 142
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 2.9,
+              "warnings_right_pct": 50.0,
+              "n_warnings": 22
+            }
+          ]
+        },
+        "after": {
+          "n_days": 80686,
+          "n_flood_days": 377,
+          "auc": 0.943,
+          "brier_skill": 0.097,
+          "top1pct_said": 19.5,
+          "top1pct_happened": 16.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 18.6,
+              "warnings_right_pct": 28.9,
+              "n_warnings": 242
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 2.1,
+              "warnings_right_pct": 66.7,
+              "n_warnings": 12
+            }
+          ]
+        },
+        "auc_change": -0.001,
+        "brier_skill_change": 0.002,
+        "G1": true
+      },
+      "line_moved_after_only": {
+        "n_days": 10222,
+        "n_flood_days": 210,
+        "auc": 0.958,
+        "brier_skill": 0.346,
+        "top1pct_said": 74.1,
+        "top1pct_happened": 70.6,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 59.0,
+            "warnings_right_pct": 54.6,
+            "n_warnings": 227
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 42.4,
+            "warnings_right_pct": 58.2,
+            "n_warnings": 153
+          }
+        ]
+      }
+    },
+    "2": {
+      "gauge_days": 81416,
+      "flood_days": 978,
+      "label_changed_days": 5,
+      "all days": {
+        "before": {
+          "n_days": 81416,
+          "n_flood_days": 978,
+          "auc": 0.938,
+          "brier_skill": 0.228,
+          "top1pct_said": 48.7,
+          "top1pct_happened": 43.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 43.1,
+              "warnings_right_pct": 41.3,
+              "n_warnings": 1022
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 18.3,
+              "warnings_right_pct": 59.7,
+              "n_warnings": 300
+            }
+          ]
+        },
+        "after": {
+          "n_days": 81416,
+          "n_flood_days": 978,
+          "auc": 0.927,
+          "brier_skill": 0.232,
+          "top1pct_said": 48.9,
+          "top1pct_happened": 43.6,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 45.6,
+              "warnings_right_pct": 41.9,
+              "n_warnings": 1065
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 18.9,
+              "warnings_right_pct": 57.1,
+              "n_warnings": 324
+            }
+          ]
+        },
+        "auc_change": -0.011,
+        "brier_skill_change": 0.004,
+        "G1": false
+      },
+      "onset only": {
+        "before": {
+          "n_days": 80442,
+          "n_flood_days": 557,
+          "auc": 0.942,
+          "brier_skill": 0.103,
+          "top1pct_said": 25.2,
+          "top1pct_happened": 20.8,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 19.0,
+              "warnings_right_pct": 31.9,
+              "n_warnings": 332
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 3.1,
+              "warnings_right_pct": 45.9,
+              "n_warnings": 37
+            }
+          ]
+        },
+        "after": {
+          "n_days": 80442,
+          "n_flood_days": 557,
+          "auc": 0.943,
+          "brier_skill": 0.108,
+          "top1pct_said": 26.1,
+          "top1pct_happened": 22.3,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 19.7,
+              "warnings_right_pct": 32.2,
+              "n_warnings": 342
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 3.8,
+              "warnings_right_pct": 38.9,
+              "n_warnings": 54
+            }
+          ]
+        },
+        "auc_change": 0.001,
+        "brier_skill_change": 0.005,
+        "G1": true
+      },
+      "line_moved_after_only": {
+        "n_days": 10206,
+        "n_flood_days": 209,
+        "auc": 0.943,
+        "brier_skill": 0.231,
+        "top1pct_said": 58.0,
+        "top1pct_happened": 50.0,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 42.6,
+            "warnings_right_pct": 39.6,
+            "n_warnings": 225
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 23.4,
+            "warnings_right_pct": 54.4,
+            "n_warnings": 90
+          }
+        ]
+      }
+    },
+    "3": {
+      "gauge_days": 81240,
+      "flood_days": 976,
+      "label_changed_days": 5,
+      "all days": {
+        "before": {
+          "n_days": 81240,
+          "n_flood_days": 976,
+          "auc": 0.942,
+          "brier_skill": 0.187,
+          "top1pct_said": 43.0,
+          "top1pct_happened": 36.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 36.0,
+              "warnings_right_pct": 33.7,
+              "n_warnings": 1041
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 12.4,
+              "warnings_right_pct": 58.2,
+              "n_warnings": 208
+            }
+          ]
+        },
+        "after": {
+          "n_days": 81240,
+          "n_flood_days": 976,
+          "auc": 0.944,
+          "brier_skill": 0.183,
+          "top1pct_said": 42.7,
+          "top1pct_happened": 36.8,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 35.5,
+              "warnings_right_pct": 34.4,
+              "n_warnings": 1006
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 11.2,
+              "warnings_right_pct": 58.3,
+              "n_warnings": 187
+            }
+          ]
+        },
+        "auc_change": 0.002,
+        "brier_skill_change": -0.004,
+        "G1": true
+      },
+      "onset only": {
+        "before": {
+          "n_days": 80266,
+          "n_flood_days": 653,
+          "auc": 0.944,
+          "brier_skill": 0.116,
+          "top1pct_said": 28.7,
+          "top1pct_happened": 24.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 19.3,
+              "warnings_right_pct": 30.1,
+              "n_warnings": 419
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 4.4,
+              "warnings_right_pct": 50.0,
+              "n_warnings": 58
+            }
+          ]
+        },
+        "after": {
+          "n_days": 80266,
+          "n_flood_days": 653,
+          "auc": 0.945,
+          "brier_skill": 0.119,
+          "top1pct_said": 28.3,
+          "top1pct_happened": 25.2,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 19.0,
+              "warnings_right_pct": 29.0,
+              "n_warnings": 427
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 3.8,
+              "warnings_right_pct": 56.8,
+              "n_warnings": 44
+            }
+          ]
+        },
+        "auc_change": 0.001,
+        "brier_skill_change": 0.003,
+        "G1": true
+      },
+      "line_moved_after_only": {
+        "n_days": 10192,
+        "n_flood_days": 209,
+        "auc": 0.942,
+        "brier_skill": 0.196,
+        "top1pct_said": 52.3,
+        "top1pct_happened": 46.1,
+        "warnings": [
+          {
+            "at_pct": 25,
+            "floods_caught_pct": 34.0,
+            "warnings_right_pct": 33.2,
+            "n_warnings": 214
+          },
+          {
+            "at_pct": 50,
+            "floods_caught_pct": 11.5,
+            "warnings_right_pct": 45.3,
+            "n_warnings": 53
+          }
+        ]
+      }
+    }
+  },
+  "G1_pass": false
+}

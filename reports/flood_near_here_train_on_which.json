@@ -1,0 +1,27 @@
+{
+  "what": "weekly near-here chance, 2023-01-01..2025-10-31, graded against the VERIFIED record; the test day model trained on each record",
+  "trained on the reported record": {
+    "Arunachal": {
+      "floods": 127,
+      "ranking_auc": 0.871,
+      "timing_auc": 0.7263
+    },
+    "whole region": {
+      "floods": 747,
+      "ranking_auc": 0.9574,
+      "timing_auc": 0.7146
+    }
+  },
+  "trained on the verified record": {
+    "Arunachal": {
+      "floods": 127,
+      "ranking_auc": 0.8764,
+      "timing_auc": 0.7466
+    },
+    "whole region": {
+      "floods": 747,
+      "ranking_auc": 0.958,
+      "timing_auc": 0.7579
+    }
+  }
+}
