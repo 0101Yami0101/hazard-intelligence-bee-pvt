@@ -2,6 +2,10 @@
 
 > **Status: idea, not started.** Logged 2026-08-20 so it isn't lost. Nothing built yet.
 
+> **2026-08-28:** the flood WHEN side of this pilot now has a concrete,
+> step-by-step build plan — see [FLOOD_WHEN_PILOT_PLAN.md](FLOOD_WHEN_PILOT_PLAN.md).
+> Read that before starting any implementation here.
+
 ## Why Tawang/Jang specifically
 
 - Small enough to fully instrument on a modest budget — unlike a statewide rollout.
@@ -33,7 +37,11 @@
 
 ## Ask, specific to this one small district
 
-1. CWC: history + danger/warning thresholds for Murga Bridge and Rho Basti.
+1. ~~CWC: history + danger/warning thresholds for Murga Bridge and Rho Basti.~~
+   → **Downgraded to nice-to-have, 2026-08-28.** History is archived and a
+   flood-day threshold is now self-derived from it (no CWC input needed) —
+   see [FLOOD_WHEN_PILOT_PLAN.md](FLOOD_WHEN_PILOT_PLAN.md) §1/§4. A real CWC
+   threshold, if it ever arrives, becomes a cross-check, not a requirement.
 2. BRO: road-block logs for this corridor — plausibly the best-kept landslide
    date records in the state, given military road maintenance.
 3. Tawang DDMA: local incident records — a small office, more tractable than a

@@ -96,6 +96,11 @@ would alert the wet south permanently and the dry north never.
 
 ---
 
+> **2026-09-28 — soil wetness and 15/30-day rain tested, neither helps.** Tested as
+> additions to the r3+r7 trigger on Arunachal's 72 events and on 583 Himalayan-arc
+> events, including with fitted weights. The monsoon keeps the ground near-saturated,
+> so antecedent wetness barely varies. See [SOIL_WETNESS_TEST.md](SOIL_WETNESS_TEST.md) §6a.
+
 ## 5. Hazard = susceptibility × trigger
 
 Both terms are necessary, neither sufficient: a cliff in dry weather does not

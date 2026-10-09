@@ -3,6 +3,20 @@
 **Status:** ⏸️ **paused 2026-08-02 by decision, not by failure.** Untested, unrefuted.
 **Resume cost:** ~3 h fetch (unattended) + ~1 day of work.
 
+> **Update 2026-08-20:** the pool below (NASA GLC, 812 events) is no longer the only
+> one. GSI's own field-investigation report archive adds an estimated **~200–280 more
+> day-precision events** across the same 11-state arc — a different, independent
+> source, not yet checked for overlap with the GLC set. See
+> `docs/data_research/DATA_VERIFICATION.md` §D and `reports/px2_gsi_report_archive.json`.
+> Resuming this plan should now pull from both sources, not GLC alone.
+
+> **Update 2026-08-28:** the governance rules for how a pooled/fine-tuned model like
+> this one earns a place in the panel — keep it even if it underperforms alone, judge
+> it by whether it improves the *whole ensemble* on held-out data, and keep it running
+> **alongside** a later local-only model rather than replacing it — are now written up
+> generally in [ENSEMBLE_STRATEGY.md](ENSEMBLE_STRATEGY.md) §3 and §5. This plan is the
+> first concrete case that policy was designed for.
+
 > This is the one remaining route to a genuine machine-learning trigger that needs
 > **no new data, no department's permission and no fieldwork.** It was stopped
 > mid-fetch to keep focus on the MVP. Nothing here has been disproved — it simply

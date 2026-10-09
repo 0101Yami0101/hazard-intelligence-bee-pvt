@@ -48,12 +48,14 @@ Two things distinguish this from the first sketch, and both matter:
 | **Partner intake** | *planned* | no write path, no quarantine |
 | **Public API** | *planned* | no service boundary at all — the app reads files off disk |
 | **Other apps** | *planned* | no external consumers |
-| **Forecast archive** | *planned* | **nothing is being recorded** |
-| **Outcome log** | *planned* | nothing |
-| **Scheduling** | *planned* | pipeline is run by hand, one stage at a time |
+| **Forecast archive** | **built for FloodSense** (2026-09-21) · *planned* for SlopeSense | every daily flood issue logged to `records/flood_forecast/` (committable): each river's chance per day ahead, the area outlook, the near-here chances; 1,792 forecasts over 8 issue days by 2026-09-28 (`forecast_log.py`). SlopeSense records nothing yet |
+| **Outcome log** | **built for FloodSense** · *planned* for SlopeSense | river forecasts graded every day against the gauges' real readings (`gauge_verified.csv`, scorecard in `reports/flood_forecast_scorecard.json`); near-here chances graded for ranking against new flood records from gauge crossings and people's reports (`flood_intake.py`). The area outlook is logged, not graded |
+| **Scheduling** | **built for FloodSense** (2026-09-22) · by hand elsewhere | Windows task "FloodSense daily forecast", 08:30 (`scripts/run_daily_flood_forecast.ps1`, 3 attempts, log in `logs/flood_forecast_daily/`). It fetches live rain, the gauges and — since 2026-09-28 — soil wetness. Everything else, including SlopeSense and the web bundle push, is run by hand |
 
-The honest summary: **a strong pipeline, not yet a loop.** The flywheel is
-drawn but not attached.
+The honest summary *(updated 2026-09-28)*: **for floods, the loop is closed —
+forecast, record, grade, every day.** It is not yet closed for landslides, and
+nothing is published automatically (the public site shows the last snapshot
+pushed by hand).
 
 ## The plan, in the order it should happen
 

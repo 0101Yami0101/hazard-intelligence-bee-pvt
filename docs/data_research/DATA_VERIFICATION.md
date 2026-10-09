@@ -292,7 +292,7 @@ Recorded from a real sample: resolution · AOI coverage · date range · units �
 | **SMAP L3 Enhanced** (soil moisture) | ✅ | 9 km EASE-Grid 2.0. **93.9% valid over Arunachal** vs 11.9% globally — far better than expected. Range 0.027–0.695 m³/m³. Caveat: 668 MB per global granule, so subsetting is essential before any time series |
 | **Sentinel-1** (flood extent + InSAR) | ✅ | **2,962 scenes in 12 months.** IW mode, both ascending (237) and descending (278). **Revisit: median 1 day, max gap 3 days.** Relative orbits 106/172/77/70/143 give usable InSAR stacks. Download proven with a 0.92 GB GRD scene |
 | **Sentinel-2** (scars, glacial lakes) | ⚠️ | Reachable, but **cloud makes it seasonal**. See below |
-| ERA5-Land | ⬜ | In progress |
+| ERA5-Land | ✅ | *(updated 2026-09-28)* Used through **Earth Engine** (`ECMWF/ERA5_LAND/DAILY_AGGR`), not the CDS: daily, 0.1°, 2000-06-01 onward, **about 9 days behind** (last day 2026-09-19 on 2026-09-28). Bilinear onto the IMERG lattice, one call per month; 9,607 days with no gaps and no missing cells (`fetch_39_era5land_soil.py`). **Live since 2026-09-28**: top-metre soil water feeds the flood day model on flat ground ([SOIL_WETNESS_TEST.md](../design/SOIL_WETNESS_TEST.md)) |
 
 ### The Sentinel-2 cloud problem
 

@@ -1,5 +1,11 @@
 # Rainfall resolution — the limit, what it costs, and how to lift it
 
+> **Update 2026-09-22:** the shared spine moved to the 0.2° row of the table
+> below — **219 points, ~22 km apart** (both SlopeSense and FloodSense).
+> Measured effect on flood timing: none beyond noise
+> ([PARKED_HIMALAYAN_FLOOD_WHERE.md §0u](PARKED_HIMALAYAN_FLOOD_WHERE.md)).
+> The "97 points / ~33 km" statements below describe the state on 2026-08-02.
+
 **Date:** 2026-08-02
 **Short version:** the free web app samples rain at ~33 km. The hindcast used
 11 km. This is a **hosting/budget limit, not a science limit** — the full-detail
