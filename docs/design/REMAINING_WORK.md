@@ -90,4 +90,27 @@ ran late in the first three weeks.
 
 ## 7. What is deployed, and what is backed up
 
-*(filled in at the push of 2026-10-11)*
+**Public app** — `hazard-intelligence-bee`, branch `v2`, commit `84d56f1`
+(2026-10-11). App files only (`webapp`, `requirements.txt`, `runtime.txt`,
+`.streamlit`): 18 files changed. It carries SlopeSense's new look and
+measured figures, the one-page report, the corrected district figures, the
+phone fixes, the "unsure" rule, Pare HEP's note, and the flood forecast
+issued 11 October from the re-taught models. Models, logs, training scripts
+and internal docs are not on it. The old app (`SlopeSense2`, `main`) was not
+touched.
+
+**The hosted flood forecast is frozen at that issue** until someone pushes a
+newer snapshot: the daily 08:30 run on this PC does not push (item 2).
+
+**Checked before the push, on the host's package versions** (Streamlit 1.65,
+pandas 3.0, in a clean environment): all 34 screens open; phone and tablet
+survey 56 of 56 with no fault; desktop 18 of 18; the report downloads 5 of
+5; the flood full-screen panel 22 of 22. (Two of those needed a second run:
+the test server had not finished starting.)
+
+**Private backup** — `hazard-intelligence-bee-pvt`, `main`, tip `d8caa82`
+plus the commit that adds this note: the whole working tree as it stands
+(689 files: code, app, docs, models, records, reports), everything
+`.gitignore` excludes left out (`data/`, `logs/`, `misc/`, `docs/investor`,
+`docs/temp`, `.env`). Its `v2` is the same commit as the public one. It does
+not update itself.
