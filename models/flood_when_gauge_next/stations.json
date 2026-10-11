@@ -279,10 +279,10 @@
     "lon": 95.734,
     "cell": 1556,
     "record_ends": "2026-08-25",
-    "threshold": 593.7088000000011,
-    "base": 62.39,
+    "threshold": 691.26,
+    "base": 79.32,
     "official": false,
-    "base_rate": 0.020703933747412008,
+    "base_rate": 0.022792022792022793,
     "means": "reaches this river's own top 2% of days"
   },
   "Darak(Kamba)": {
