@@ -1,0 +1,188 @@
+{
+  "what": "SlopeSense out-of-fold score vs GSI's published 3-class map, same cells",
+  "method": "docs/design/GSI_MAP_COMPARISON.md \u00a71 (fixed before the run)",
+  "test_cells": 544794,
+  "cells_where_gsi_has_a_class": {
+    "all": 0.9327,
+    "landslide_cells": 0.9865,
+    "other_cells": 0.922
+  },
+  "landslide_cells_by_who_mapped_them": {
+    "in_gsi_inventory": 63261,
+    "bhuvan_only": 27538
+  },
+  "all_cells": {
+    "what": "every test cell where GSI has a class",
+    "landslide_cells": 89569,
+    "other_cells": 418569,
+    "ranking_auc": {
+      "slopesense": 0.854,
+      "gsi_three_classes": 0.5955
+    },
+    "like_for_like": [
+      {
+        "gsi_classes": "High",
+        "share_of_land": 0.1382,
+        "gsi_holds_share_of_landslides": 0.2466,
+        "slopesense_same_land_holds": 0.6666,
+        "slopesense_land_actually_taken": 0.1382
+      },
+      {
+        "gsi_classes": "High + Moderate",
+        "share_of_land": 0.5299,
+        "gsi_holds_share_of_landslides": 0.6849,
+        "slopesense_same_land_holds": 0.9359,
+        "slopesense_land_actually_taken": 0.5299
+      }
+    ],
+    "gsi_class_mix": {
+      "landslide_cells": {
+        "Low": 0.3151,
+        "Moderate": 0.4383,
+        "High": 0.2466
+      },
+      "other_cells": {
+        "Low": 0.4701,
+        "Moderate": 0.3917,
+        "High": 0.1382
+      }
+    }
+  },
+  "by_region": [
+    {
+      "region": 0,
+      "landslide_cells": 15377,
+      "slopesense": 0.8699,
+      "gsi": 0.5901
+    },
+    {
+      "region": 1,
+      "landslide_cells": 21639,
+      "slopesense": 0.8278,
+      "gsi": 0.5571
+    },
+    {
+      "region": 2,
+      "landslide_cells": 14284,
+      "slopesense": 0.8614,
+      "gsi": 0.6624
+    },
+    {
+      "region": 3,
+      "landslide_cells": 22722,
+      "slopesense": 0.8707,
+      "gsi": 0.6183
+    },
+    {
+      "region": 4,
+      "landslide_cells": 15547,
+      "slopesense": 0.8422,
+      "gsi": 0.5611
+    }
+  ],
+  "bhuvan_only_landslides": {
+    "what": "landslides only Bhuvan/APSAC mapped, against the same other cells",
+    "landslide_cells": 26430,
+    "other_cells": 418569,
+    "ranking_auc": {
+      "slopesense": 0.8644,
+      "gsi_three_classes": 0.5816
+    },
+    "like_for_like": [
+      {
+        "gsi_classes": "High",
+        "share_of_land": 0.1382,
+        "gsi_holds_share_of_landslides": 0.2172,
+        "slopesense_same_land_holds": 0.6945,
+        "slopesense_land_actually_taken": 0.1382
+      },
+      {
+        "gsi_classes": "High + Moderate",
+        "share_of_land": 0.5299,
+        "gsi_holds_share_of_landslides": 0.6708,
+        "slopesense_same_land_holds": 0.9433,
+        "slopesense_land_actually_taken": 0.5299
+      }
+    ],
+    "gsi_class_mix": {
+      "landslide_cells": {
+        "Low": 0.3292,
+        "Moderate": 0.4536,
+        "High": 0.2172
+      },
+      "other_cells": {
+        "Low": 0.4701,
+        "Moderate": 0.3917,
+        "High": 0.1382
+      }
+    }
+  },
+  "gsi_inventory_landslides": {
+    "what": "landslides in GSI's own inventory, against the same other cells",
+    "landslide_cells": 63139,
+    "other_cells": 418569,
+    "ranking_auc": {
+      "slopesense": 0.8497,
+      "gsi_three_classes": 0.6013
+    },
+    "like_for_like": [
+      {
+        "gsi_classes": "High",
+        "share_of_land": 0.1382,
+        "gsi_holds_share_of_landslides": 0.2589,
+        "slopesense_same_land_holds": 0.6549,
+        "slopesense_land_actually_taken": 0.1382
+      },
+      {
+        "gsi_classes": "High + Moderate",
+        "share_of_land": 0.5299,
+        "gsi_holds_share_of_landslides": 0.6908,
+        "slopesense_same_land_holds": 0.9328,
+        "slopesense_land_actually_taken": 0.5299
+      }
+    ],
+    "gsi_class_mix": {
+      "landslide_cells": {
+        "Low": 0.3092,
+        "Moderate": 0.4319,
+        "High": 0.2589
+      },
+      "other_cells": {
+        "Low": 0.4701,
+        "Moderate": 0.3917,
+        "High": 0.1382
+      }
+    }
+  },
+  "where_they_disagree": {
+    "share_of_test_cells_that_are_landslides": 0.1763,
+    "gsi_high_but_slopesense_bottom_half": {
+      "cells": 26232,
+      "share_that_are_landslides": 0.0434
+    },
+    "gsi_low_but_slopesense_top_tenth": {
+      "cells": 30152,
+      "share_that_are_landslides": 0.484
+    }
+  },
+  "nasa_catalogue_points": {
+    "points_in_the_state": 96,
+    "points_where_both_maps_have_a_value": 55,
+    "note": "located to about a kilometre; SlopeSense's shipped map, not out-of-fold",
+    "like_for_like": [
+      {
+        "gsi_classes": "High",
+        "share_of_land": 0.1478,
+        "points_on_gsi_classes": 0.1636,
+        "points_on_slopesense_same_land": 0.3818
+      },
+      {
+        "gsi_classes": "High + Moderate",
+        "share_of_land": 0.54,
+        "points_on_gsi_classes": 0.5091,
+        "points_on_slopesense_same_land": 0.8
+      }
+    ],
+    "gsi_has_a_class_on_share_of_scored_land": 0.9355
+  }
+}

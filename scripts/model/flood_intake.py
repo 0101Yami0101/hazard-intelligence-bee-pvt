@@ -122,10 +122,48 @@ def report_candidates(reports: pd.DataFrame) -> list[dict]:
     return out
 
 
+WITHDRAWN = "withdrawn: the reading was corrected"
+
+
+def withdraw_corrected(cur: pd.DataFrame, observed: pd.DataFrame, stations: dict,
+                       still: set[str]) -> list[str]:
+    """Gauge records whose crossing is gone from the readings as they stand
+    now. The track record re-reads every gauge each day, cleaned, so a wrong
+    reading the feed has since corrected (or the cleaning now removes) leaves
+    its day below the line — as at Murga Bridge, 2026-09-28: 2,231.30 m on
+    the day, 2,134.39 m ever since. Such a record is withdrawn: it stays in
+    candidates.csv, marked, and leaves the records file. Only where the day
+    is still in the readings and reads below the line; a day no longer held
+    is left alone. A crossing that comes back is a record again."""
+    out = []
+    if cur.empty or observed.empty:
+        return out
+    obs = observed.copy()
+    obs["daily_max"] = pd.to_numeric(obs["daily_max"], errors="coerce")
+    high = {(c, str(d)[:10]): v for c, d, v in zip(obs["station_code"], obs["date"], obs["daily_max"])}
+    for i, c in cur.iterrows():
+        if c["source"] != "gauge":
+            continue
+        code = c["id"].split(":")[1]
+        if c["id"] in still:
+            if c["status"] == WITHDRAWN:
+                cur.loc[i, "status"], cur.loc[i, "tries"] = "pending", "0"
+            continue
+        v, st = high.get((code, c["date"])), stations.get(code)
+        if c["status"] == WITHDRAWN or st is None or v is None or pd.isna(v) or v >= st["threshold"]:
+            continue
+        cur.loc[i, "status"] = WITHDRAWN
+        cur.loc[i, "detail"] = (f"{c['detail']} [withdrawn: the day now reads {v:.2f}, below the "
+                                f"line]")[:300]
+        out.append(c["id"])
+    return out
+
+
 def write_records(cur: pd.DataFrame, path: Path = RECORDS) -> int:
     """Every gathered candidate is a record (see the module note): gauge
     crossings as measured, reports as reported — each with its radar verdict
-    from the validated test ("radar" column)."""
+    from the validated test ("radar" column). Withdrawn ones are left out."""
+    cur = cur[cur["status"] != WITHDRAWN]
     rec = cur.reindex(columns=COLS)[["id", "source", "place", "lat", "lon", "date", "detail",
                                      "status", "scene_date", "pct_new_water"]]
     rec = rec.rename(columns={"status": "radar", "scene_date": "radar_scene_date",
@@ -149,14 +187,17 @@ def gather(today: date | None = None, candidates: Path = CANDIDATES,
     add = [dict(c, added_on=str(today), status="pending", tries="0") for c in new
            if c["id"] not in have]
     if add:
-        candidates.parent.mkdir(parents=True, exist_ok=True)
         cur = pd.concat([cur, pd.DataFrame(add).astype(str)], ignore_index=True)
+    before = cur["status"].copy()
+    gone = withdraw_corrected(cur, obs, stations, {c["id"] for c in new})
+    if add or not cur["status"].equals(before):
+        candidates.parent.mkdir(parents=True, exist_ok=True)
         cur.reindex(columns=COLS).to_csv(candidates, index=False)
-    if len(cur):
-        write_records(cur, records)
+    n = write_records(cur, records) if len(cur) else 0
     print(f"  flood intake: {len(add)} new record(s) "
           f"({sum(c['source'] == 'gauge' for c in add)} gauge crossings, "
-          f"{sum(c['source'] == 'report' for c in add)} reports); {len(cur)} on record")
+          f"{sum(c['source'] == 'report' for c in add)} reports); {n} on record"
+          + (f"; withdrew {len(gone)} whose reading was corrected: {', '.join(gone)}" if gone else ""))
     return len(add)
 
 
@@ -247,6 +288,29 @@ def test() -> None:
           and got == ["2024-07-02", "2024-07-04", "2024-07-10", "2024-07-20"]
           and sorted(r["source"]) == ["gauge", "gauge", "gauge", "report"])
     print(f"  records {got} from {sorted(r['source'])}; second gather added {n2}")
+    # a reading corrected afterwards: 2 July now reads below the line, and
+    # 20 July is no longer held at all (left alone); then the 2 July
+    # crossing comes back
+    o = pd.read_csv(OBSERVED, dtype=str)
+    o.loc[o["date"] == "2024-07-01", "daily_max"] = str(th - 0.4)
+    o.loc[o["date"] == "2024-07-02", "daily_max"] = str(th - 0.3)
+    o[o["date"] != "2024-07-20"].to_csv(OBSERVED, index=False)
+    gather(date(2024, 8, 1), cand, rec)
+    r3, c3 = pd.read_csv(rec, dtype=str), pd.read_csv(cand, dtype=str)
+    gather(date(2024, 8, 2), cand, rec)
+    c4 = pd.read_csv(cand, dtype=str)
+    o.loc[o["date"] == "2024-07-02", "daily_max"] = str(th + 0.5)
+    o.to_csv(OBSERVED, index=False)
+    gather(date(2024, 8, 3), cand, rec)
+    r5 = pd.read_csv(rec, dtype=str)
+    ok2 = (sorted(r3["date"]) == ["2024-07-04", "2024-07-10", "2024-07-20"]
+           and len(c3) == 4 and (c3["status"] == WITHDRAWN).sum() == 1
+           and c3.loc[c3["status"] == WITHDRAWN, "date"].item() == "2024-07-02"
+           and c4.equals(c3)
+           and sorted(r5["date"]) == ["2024-07-02", "2024-07-04", "2024-07-10", "2024-07-20"])
+    print(f"  corrected reading: records {sorted(r3['date'])}, withdrawn kept in candidates "
+          f"{(c3['status'] == WITHDRAWN).sum()}; crossing back: {sorted(r5['date'])}")
+    ok = ok and ok2
     print(f"  test: {'PASS' if ok else 'FAIL'} (scratch: {tmp}; nothing written to records/)")
     if not ok:
         raise SystemExit(1)

@@ -1,6 +1,6 @@
 # Presenting the Data Backbone — the script
 
-**As of 7 October 2026 · 13 slides · about 9 minutes with the screens in the slides, about 12 with a live demo.**
+**As of 10 October 2026 · 13 slides · about 9 minutes with the screens in the slides, about 12 with a live demo.**
 
 **Visual version:** [PRESENTATION_SCRIPT.html](PRESENTATION_SCRIPT.html) — the same script with a picture of each slide beside its words. **The slides:** [PRESENTATION.html](PRESENTATION.html). The fuller background is in [BRIEFING.md](BRIEFING.md).
 
@@ -89,7 +89,7 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 >
 > The line underneath matters most. Every forecast is written down before the day and checked after it. What really happened comes back in as new data.
 >
-> Today that is more than 24 sources, 8.2 million squares, and 26 years of daily rain for every place in the state.
+> Today that is 29 sources, 8.2 million squares, and 26 years of daily rain for every place in the state.
 
 **Do:** Walk the five boxes with your hand. Pause on the dashed bar: it is the part most systems do not have.
 
@@ -143,7 +143,7 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 >
 > WITH THE APP: Let me show you. (Switch to the app and follow the live demo steps below. Come back to slide 11.)
 >
-> WITHOUT THE APP: These next screens are from the app, taken on 6 October. First the backbone itself: every source it draws from, on record, and every layer on one map. Then the two products.
+> WITHOUT THE APP: These next screens are from the app, taken on 10 October. First the backbone itself: every source it draws from, on record, and every layer on one map. Then the two products.
 
 **Do:** Decide before the meeting which of the two routes you are taking. Do not decide on this slide.
 
@@ -157,7 +157,7 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 >
 > Now look at the box at the bottom. Ground shape, soil, rock types, land cover, rain. Everything it reads was already in the backbone.
 
-**Do:** Point at the row of seven day-buttons in the picture, then the coloured map, then the "Reads from the backbone" box.
+**Do:** Point at the level card on the left of the picture (the level today, with a bar for each of seven days), then the coloured map, then the "Reads from the backbone" box.
 
 **If asked:** "How accurate is it?" Keep it short: "Today is about the backbone. We would rather take you through the testing properly in its own session than quote one number."
 
@@ -223,7 +223,7 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 |---|---|---|---|
 | 1 | **Landing page** | 20 s | "Two products on top. One backbone underneath. And an empty slot for the next one." |
 | 2 | **Data Backbone → Pipeline** | 50 s | "This is the idea in one picture, inside the app. Sources in, one shared map, two shelves, products out, and what happened comes back. This page was last rebuilt in August, so it still marks the daily run and the forecast log as planned. For floods both are live now." |
-| 3 | **Data catalogue** | 30 s | "Every source, with where it came from and when we fetched it. River gauges and flood records came in after this list was built." |
+| 3 | **Data catalogue** | 30 s | "Every source, with where it came from and when we fetched it. River gauges, the flood record and both forecast logs are on the list." |
 | 4 | **Layer explorer** | 25 s | "One layer of the shared map: ground height for the whole state. Every product reads these same layers." |
 | 5 | **SlopeSense → Forecast, search a town** | 45 s | "A product is a question asked of the backbone. This one asks: weak ground, times unusual rain. Seven days, for any place. "High" means look here first." |
 | 6 | **FloodSense → Live forecast, search Pasighat, scroll to the track record** | 60 s | "Second product, same backbone. It runs by itself every morning. And here is the loop: every forecast written down, then graded against the gauge." |
@@ -231,16 +231,15 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 **Watch out for**
 
 - Never press **Run now** in front of people.
-- On the Data Backbone pages, the rain tile says "27 yr". It counts part-years; it is 26 years of data.
-- On SlopeSense, the small bar chart "Next 7 days here" lists days out of order. Use the day buttons above the map.
-- The line under the SlopeSense map says rainfall is about 33 km. It is about 22 km now; the label is old.
+- SlopeSense now looks like FloodSense: tiles on top, then place, map and day buttons. A level is a rank ("look here first"), never a chance.
+- Either forecast page has a one-page report button: a printable page with both forecasts for the place on screen. Good to hand over at the end.
 - After the demo, go back to the deck, type **11** and press **Enter**. That skips the two screenshot slides you have just shown live.
 
 ## 5. If something goes wrong
 
 | If | Then |
 |---|---|
-| The app will not start, or is slow | Stay in the deck. Slides 8 to 10 are the same screens. Say "these were taken on 6 October" and carry on. |
+| The app will not start, or is slow | Stay in the deck. Slides 8 to 10 are the same screens. Say "these were taken on 10 October" and carry on. |
 | No internet in the room | The deck still works. The app's maps will be blank, so take the route without the app. |
 | The flood forecast is a day old | Say so: "this is yesterday's issue". Do not press Run now. |
 | The slides look washed out | Press T for the light version. |
@@ -251,7 +250,7 @@ With the live demo, slides 9 and 10 are replaced by about four minutes in the ap
 
 **What exactly is the Data Backbone?** A standing system that collects every useful source, keeps the originals, lines everything up on one map of the state, keeps it fresh, hands it to products, and records what they said and what really happened.
 
-**The data is public. What is yours?** The assembly, the upkeep and the checked history. Twenty-plus sources made to fit one map, kept current, with every forecast graded. Anyone can download the same files. Few will do the rest.
+**The data is public. What is yours?** The assembly, the upkeep and the checked history. Twenty-nine sources made to fit one map, kept current, with every forecast graded. Anyone can download the same files. Few will do the rest.
 
 **Is it a product, or plumbing?** Today it is the engine under our two products. Later it is a product in its own right, through an open feed others build on.
 

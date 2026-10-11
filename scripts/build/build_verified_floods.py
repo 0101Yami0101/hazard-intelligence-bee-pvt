@@ -23,7 +23,11 @@ An event is VERIFIED here if at least one of these confirms it:
     gfd        Google's Global Flood Database has flooding there and then
     gauge-xc   a river gauge near the report crossed its line in the window
     gauge      a flood we found FROM a gauge crossing its line, checked with
-               our own full-quality radar processing and showing new water
+               our own full-quality radar processing and showing new water.
+               Not counted when the crossing rests on a reading the cleaning
+               removes (false_gauge_days, FLOOD_WHEN_PILOT_PLAN.md §15): the
+               radar step counts any new-water pixel, so this route is only
+               as good as the gauge reading
 
 Each event keeps the list of routes that confirm it. The braided-channel-
 shift suspects (§0n) stay excluded, as in every model. Events from different
@@ -46,20 +50,57 @@ R = ROOT / "reports"
 OUT = INTERIM / "flood_events" / "verified_events.parquet"
 REPORT = R / "flood_verified_record.json"
 JANG = (27.5834, 91.9802)          # Jang town centre (FLOOD_WHEN_PILOT_PLAN.md)
+DROPPED: list[str] = []            # gauge floods left out as resting on false readings
 GAUGE_FIRST = ["flood_where_s1_statewide.json", "flood_where_s1_statewide_expanded.json",
                "flood_where_s1_nwdp.json", "flood_where_s1_loose_ends.json"]
 
 
-def _day(text: str) -> str:
+def _day(text: str, note: str = "") -> str:
     """A gauge event's flood day. Some are annotated, e.g. "2024-10-05 (nearest
-    scene to 2024-10-04 flood day, 1 day off)" — the flood day is the date."""
+    scene to 2024-10-04 flood day, 1 day off)" — the flood day is the date.
+
+    ⚠️ Two records keep that annotation in a separate `note` and only the
+    SCENE's date in `flood_date` (flood_where_s1_loose_ends.json: Seppa,
+    Tamen). Read without the note they were filed two days off their river:
+    Seppa's real crossing (2026-07-13, 340.88 m against a danger level of
+    340.00) sat under 2026-07-15, and Tamen's "flood" of 2022-07-09 — one
+    keying slip, 284.19 for 274.19 — sat under 2022-07-07, where the
+    false-reading test below could not see it (found 2026-10-10)."""
     import re
-    m = re.search(r"to (\d{4}-\d{2}-\d{2}) flood day", text)
+    m = (re.search(r"to (\d{4}-\d{2}-\d{2}) flood day", text)
+         or re.search(r"to (\d{4}-\d{2}-\d{2}) flood day", note or ""))
     return m.group(1) if m else text[:10]
 
 
 def _j(name: str):
     return json.loads((R / name).read_text(encoding="utf-8"))
+
+
+def false_gauge_days(stations: dict) -> set[tuple[str, str]]:
+    """(station, day) pairs where a level gauge was at its line only through
+    readings the cleaning removes: the cleaning lowers that day's high, and
+    the cleaned high is below the line. Four of the 48 gauge-found floods at
+    level gauges on 2026-10-09 — Pangin 2019-08-09, Jollang 2020-05-04 and
+    2022-09-05, Doimukh 2024-11-17 (FLOOD_WHEN_PILOT_PLAN.md §13g, §15). A
+    day below today's line on true readings is NOT one of these."""
+    import contextlib
+    import io
+    sys.path.insert(0, str(ROOT / "scripts" / "model"))
+    from backtest_flood_when import clean_readings
+    out = set()
+    for code, st in stations.items():
+        f = ROOT / "data" / "raw" / "11_gauges" / "cwc" / f"{code}_hhs.csv"
+        if not f.exists():                      # NWDP flow gauges: no such cleaning
+            continue
+        d = (pd.read_csv(f, parse_dates=["datetime"])[["datetime", "level"]].dropna()
+             .sort_values("datetime").reset_index(drop=True))
+        with contextlib.redirect_stdout(io.StringIO()):
+            c = clean_readings(d.copy())
+        raw = d.groupby(d["datetime"].dt.normalize())["level"].max()
+        cln = c.groupby(c["datetime"].dt.normalize())["level"].max().reindex(raw.index)
+        bad = (raw - cln.fillna(-np.inf) > 1e-6) & ~(cln >= st["threshold"])
+        out |= {(code, str(t.date())) for t in raw.index[bad]}
+    return out
 
 
 def build() -> pd.DataFrame:
@@ -93,11 +134,15 @@ def build() -> pd.DataFrame:
                              "lon": r["lon"], "route": "gauge-xc"})
     # 4. floods found from gauges, checked with our own radar processing
     st = json.loads((ROOT / "models" / "flood_when_gauge" / "stations.json").read_text())
+    false_days = false_gauge_days(st)
     for n in GAUGE_FIRST:
         for r in _j(n)["results"]:
             if (r.get("pct_new_water_flood_only") or 0) > 0 and r["station_code"] in st:
                 s = st[r["station_code"]]
-                day = _day(r["flood_date"])
+                day = _day(r["flood_date"], r.get("note", ""))
+                if (r["station_code"], day) in false_days:
+                    DROPPED.append(f"gauge:{r['station_code']}:{day}")
+                    continue
                 rows.append({"uuid": f"gauge:{r['station_code']}:{day}",
                              "date": day, "lat": s["lat"], "lon": s["lon"],
                              "route": "gauge"})
@@ -149,6 +194,7 @@ def main() -> None:
                "verified": int(ev["reported_record"].sum()),
                "share": round(float(ev["reported_record"].sum()) / max(len(train - sus), 1), 3)},
            "verified_but_not_in_the_old_training_record": int((~ev["reported_record"]).sum()),
+           "gauge_floods_left_out_as_false_readings": sorted(set(DROPPED)),
            "by_year": ev.groupby(ev["date"].dt.year).size().to_dict()}
     REPORT.write_text(json.dumps(out, indent=2, default=str))
     print(json.dumps(out, indent=2, default=str))

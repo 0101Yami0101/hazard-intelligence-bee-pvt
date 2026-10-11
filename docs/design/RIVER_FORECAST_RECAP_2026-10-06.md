@@ -405,6 +405,16 @@ next test); the line beyond 2 days; Google's open model alongside (Step 2).
 its "own wettest 2%" line may be out of date. For rivers that sit on their
 line for weeks, the flood label itself is fragile.
 
+**Update 2026-10-10 — the gauge loose ends were checked**
+(FLOOD_WHEN_PILOT_PLAN.md §19). Changlang's second station changed scale:
+its record now starts February 2025. Rho Basti's line is left as it is:
+its levels have eased 2–3 cm a year with no break to cut at, and only
+CWC's real danger level settles it. Seppa 2026 is a real flood filed two
+days late; Tamen 2022 is a keying slip. All take effect at the next
+re-teach; nothing live changed.
+
+**Update 2026-10-11 — re-taught, live** (§19e–f, §20). The gauge models and the day model were re-taught with those fixes; every pre-written rule passed. Pare HEP, a dam gauge, no longer gets a level line.
+
 
 ---
 
@@ -456,3 +466,11 @@ flood list; the display note for a river that is high now.
 
 **Nothing is committed or pushed.** The public site still shows the old
 screens and the old forecast.
+
+
+**Update, 9 October.** The four false floods are out of the verified
+list and the day model was re-fitted on the corrected list; all five rules
+written beforehand passed (timing inside Arunachal 0.879 → 0.895). The false
+Murga Bridge record now withdraws itself from the track record. Full
+record: FLOOD_WHEN_PILOT_PLAN.md §15. Still waiting for an answer: the
+display note for a river that is high now.

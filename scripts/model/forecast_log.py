@@ -37,6 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np
 import pandas as pd
 
+from gauge_records import NO_LEVEL_LINE
 from common import ROOT
 
 # Not under data/: that tree is git-ignored and treated as regenerable, and a
@@ -208,6 +209,10 @@ def verify(today: date | None = None) -> dict | None:
         v.to_csv(VERIFIED, index=False)
     card = scorecard(v, fc, today)
     try:
+        card["level_line"] = grade_level(v)
+    except Exception as e:                                          # noqa: BLE001
+        card["level_line"] = {"error": f"{type(e).__name__}: {e}"}
+    try:
         card["near_here"] = verify_area(today)
     except Exception as e:                                          # noqa: BLE001
         # the river track record must never be lost to the newer grader
@@ -229,6 +234,83 @@ def _grade(d: pd.DataFrame) -> dict:
             "brier_skill_vs_long_run_rate": round(1 - bs / bc, 3) if bc > 0 else None,
             "warnings_25pct": {"issued": int(warn.sum()), "right": int((warn & (y == 1)).sum()),
                                "floods_missed": int((~warn & (y == 1)).sum())}}
+
+
+LEVEL_UNIT = {"CWC": "m", "NWDP": "m3/s"}
+LEVEL_MIN_N = 100           # below this the figures are shown as "too few to judge"
+
+
+def _level_stats(d: pd.DataFrame) -> dict:
+    miss, stay = d["miss"].to_numpy(float), d["stay"].to_numpy(float)
+    return {"n": int(len(d)),
+            "typical_miss": round(float(np.median(miss)), 3),
+            "mean_miss": round(float(miss.mean()), 3),
+            "largest_miss": round(float(miss.max()), 3),
+            "mean_miss_if_river_stayed_put": round(float(stay.mean()), 3),
+            "range_held_pct": round(100 * float(d["inside"].mean()), 1),
+            "above_range": int((d["obs"] > d["hi"]).sum()),
+            "below_range": int((d["obs"] < d["lo"]).sum())}
+
+
+def grade_level(v: pd.DataFrame) -> dict | None:
+    """Grade the level line (flood_gauge_live._level: low / middle / high of
+    the target day's HIGH) against the day's high as the gauge then read it.
+
+    Per kind of gauge, since the units differ (metres at CWC, flow at NWDP):
+        typical / mean miss   |middle line - what the river did|
+        if the river stayed put   the same miss for "tomorrow = the last full
+                              day's high" — the yardstick the line was tested
+                              against (FLOOD_WHEN_PILOT_PLAN.md §14)
+        range held            share of days the high fell inside low..high;
+                              built to hold 80% (level.json)
+    by how many days after the last full day of readings the target is (the
+    model's own lead: 1 or 2 while the line is drawn to 2).
+
+    A forecast issued late in the day is graded like any other: the level
+    model reads only complete days, so the target day's own readings never
+    reach it. Rows with no level forecast are not part of this."""
+    if "level_mid" not in v.columns:
+        return None
+    d = v[(v["status"] == "checked")].copy()
+    for c in ("level_low", "level_mid", "level_high", "last_day_max"):
+        d[c] = pd.to_numeric(d[c], errors="coerce")
+    d = d[d["level_mid"].notna() & d["last_day_max"].notna()]
+    if d.empty:
+        return None
+    d["days_after"] = (pd.to_datetime(d["target_date"])
+                       - pd.to_datetime(d["last_complete_day"])).dt.days
+    d["obs"], d["lo"], d["hi"] = d["daily_max"], d["level_low"], d["level_high"]
+    d["miss"] = (d["level_mid"] - d["obs"]).abs()
+    d["stay"] = (d["last_day_max"] - d["obs"]).abs()
+    d["inside"] = (d["obs"] >= d["lo"]) & (d["obs"] <= d["hi"])
+    # Gauges whose level line was stopped (a dam gauge, gauge_records.NO_LEVEL_LINE):
+    # the days already issued for them are shown on their own, not in the
+    # figures for the line that is still drawn. Nothing is deleted from the log.
+    stopped = d["station_code"].isin(NO_LEVEL_LINE)
+    gone, d = d[stopped], d[~stopped]
+    out = {"what": ("the level line's middle against the day's highest reading; the range is "
+                    "built to hold 80% of days"),
+           "range_should_hold_pct": 80.0, "by_network": {}}
+    if len(gone):
+        out["no_longer_drawn"] = {
+            n: {**_level_stats(x), "why": NO_LEVEL_LINE[x["station_code"].iloc[0]]}
+            for n, x in gone.groupby("station_name")}
+    if d.empty:
+        return out if len(gone) else None
+    out["first_target"], out["last_target"] = d["target_date"].min(), d["target_date"].max()
+    for net, g in d.groupby("network"):
+        s = _level_stats(g)
+        s["unit"] = LEVEL_UNIT.get(net, "")
+        s["gauges"] = int(g["station_code"].nunique())
+        s["too_few_to_judge"] = bool(len(g) < LEVEL_MIN_N)
+        s["by_days_after_last_reading"] = {str(int(k)): _level_stats(x)
+                                           for k, x in g.groupby("days_after")}
+        s["by_gauge"] = {n: {"n": int(len(x)), "typical_miss": round(float(x["miss"].median()), 3),
+                             "largest_miss": round(float(x["miss"].max()), 3),
+                             "range_held_pct": round(100 * float(x["inside"].mean()), 1)}
+                         for n, x in g.groupby("station_name")}
+        out["by_network"][net] = s
+    return out
 
 
 def scorecard(v: pd.DataFrame, fc: pd.DataFrame, today: date) -> dict:
@@ -267,6 +349,12 @@ def print_card(card: dict) -> None:
         w = a["warnings_25pct"]
         print(f"  warnings at 25%+: {w['issued']} issued, {w['right']} right, "
               f"{w['floods_missed']} crossings missed")
+    for net, x in ((card.get("level_line") or {}).get("by_network") or {}).items():
+        print(f"  level line ({net}, {x['gauges']} gauges): {x['n']} days checked; typical miss "
+              f"{x['typical_miss']} {x['unit']} (mean {x['mean_miss']}; "
+              f"{x['mean_miss_if_river_stayed_put']} had the river stayed put); range held "
+              f"{x['range_held_pct']}% of days, built for 80%"
+              + ("  [too few to judge]" if x["too_few_to_judge"] else ""))
     if card.get("note"):
         print(f"  note: {card['note']}")
     print(f"  wrote {SCORECARD}")

@@ -5,40 +5,40 @@
     "1": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91886,
-          "n_flood_days": 1189,
+          "n_days": 91765,
+          "n_flood_days": 1187,
           "auc": 0.98,
-          "brier_skill": 0.538,
-          "top1pct_said": 79.0,
-          "top1pct_happened": 78.1,
+          "brier_skill": 0.533,
+          "top1pct_said": 78.9,
+          "top1pct_happened": 78.0,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 65.1,
-              "warnings_right_pct": 69.2,
-              "n_warnings": 1118
+              "floods_caught_pct": 63.9,
+              "warnings_right_pct": 70.7,
+              "n_warnings": 1074
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 55.5,
-              "warnings_right_pct": 84.3,
-              "n_warnings": 783
+              "floods_caught_pct": 53.7,
+              "warnings_right_pct": 84.7,
+              "n_warnings": 752
             }
           ]
         },
         "rain only": {
-          "n_days": 91886,
-          "n_flood_days": 1189,
-          "auc": 0.881,
-          "brier_skill": 0.077,
-          "top1pct_said": 25.0,
+          "n_days": 91765,
+          "n_flood_days": 1187,
+          "auc": 0.887,
+          "brier_skill": 0.078,
+          "top1pct_said": 25.5,
           "top1pct_happened": 23.9,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 12.5,
-              "warnings_right_pct": 31.6,
-              "n_warnings": 472
+              "floods_caught_pct": 9.4,
+              "warnings_right_pct": 34.0,
+              "n_warnings": 329
             },
             {
               "at_pct": 50,
@@ -51,40 +51,40 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 90698,
-          "n_flood_days": 473,
-          "auc": 0.954,
-          "brier_skill": 0.122,
-          "top1pct_said": 23.5,
-          "top1pct_happened": 22.4,
+          "n_days": 90579,
+          "n_flood_days": 472,
+          "auc": 0.956,
+          "brier_skill": 0.118,
+          "top1pct_said": 23.3,
+          "top1pct_happened": 21.9,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 21.8,
-              "warnings_right_pct": 37.6,
-              "n_warnings": 274
+              "floods_caught_pct": 20.6,
+              "warnings_right_pct": 40.4,
+              "n_warnings": 240
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 7.0,
-              "warnings_right_pct": 46.5,
-              "n_warnings": 71
+              "floods_caught_pct": 4.7,
+              "warnings_right_pct": 39.3,
+              "n_warnings": 56
             }
           ]
         },
         "rain only": {
-          "n_days": 90698,
-          "n_flood_days": 473,
-          "auc": 0.878,
-          "brier_skill": -0.043,
-          "top1pct_said": 22.0,
-          "top1pct_happened": 8.6,
+          "n_days": 90579,
+          "n_flood_days": 472,
+          "auc": 0.882,
+          "brier_skill": -0.046,
+          "top1pct_said": 22.6,
+          "top1pct_happened": 8.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.9,
+              "floods_caught_pct": 6.6,
               "warnings_right_pct": 13.7,
-              "n_warnings": 344
+              "n_warnings": 226
             },
             {
               "at_pct": 50,
@@ -99,38 +99,38 @@
         "rain + gauge": {
           "n_days": 51949,
           "n_flood_days": 361,
-          "auc": 0.981,
-          "brier_skill": 0.498,
-          "top1pct_said": 49.4,
-          "top1pct_happened": 46.8,
+          "auc": 0.983,
+          "brier_skill": 0.493,
+          "top1pct_said": 49.9,
+          "top1pct_happened": 47.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 61.8,
-              "warnings_right_pct": 64.6,
-              "n_warnings": 345
+              "floods_caught_pct": 61.2,
+              "warnings_right_pct": 68.2,
+              "n_warnings": 324
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 52.6,
-              "warnings_right_pct": 84.4,
-              "n_warnings": 225
+              "floods_caught_pct": 51.5,
+              "warnings_right_pct": 84.2,
+              "n_warnings": 221
             }
           ]
         },
         "rain only": {
           "n_days": 51949,
           "n_flood_days": 361,
-          "auc": 0.914,
-          "brier_skill": 0.036,
-          "top1pct_said": 23.2,
-          "top1pct_happened": 16.0,
+          "auc": 0.915,
+          "brier_skill": 0.037,
+          "top1pct_said": 23.8,
+          "top1pct_happened": 15.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 13.0,
-              "warnings_right_pct": 21.0,
-              "n_warnings": 224
+              "floods_caught_pct": 10.2,
+              "warnings_right_pct": 24.5,
+              "n_warnings": 151
             },
             {
               "at_pct": 50,
@@ -145,38 +145,38 @@
         "rain + gauge": {
           "n_days": 51587,
           "n_flood_days": 153,
-          "auc": 0.959,
-          "brier_skill": 0.083,
-          "top1pct_said": 15.2,
-          "top1pct_happened": 13.0,
+          "auc": 0.962,
+          "brier_skill": 0.077,
+          "top1pct_said": 15.6,
+          "top1pct_happened": 14.3,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 17.6,
-              "warnings_right_pct": 30.0,
-              "n_warnings": 90
+              "floods_caught_pct": 17.0,
+              "warnings_right_pct": 34.2,
+              "n_warnings": 76
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 3.9,
-              "warnings_right_pct": 42.9,
-              "n_warnings": 14
+              "floods_caught_pct": 0.7,
+              "warnings_right_pct": 12.5,
+              "n_warnings": 8
             }
           ]
         },
         "rain only": {
           "n_days": 51587,
           "n_flood_days": 153,
-          "auc": 0.893,
-          "brier_skill": -0.189,
-          "top1pct_said": 21.4,
-          "top1pct_happened": 5.6,
+          "auc": 0.894,
+          "brier_skill": -0.193,
+          "top1pct_said": 22.2,
+          "top1pct_happened": 5.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 7.8,
-              "warnings_right_pct": 6.6,
-              "n_warnings": 183
+              "floods_caught_pct": 5.9,
+              "warnings_right_pct": 7.7,
+              "n_warnings": 117
             },
             {
               "at_pct": 50,
@@ -194,141 +194,141 @@
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 83383,
+          "n": 83253,
           "said_avg_pct": 0.07,
           "happened_pct": 0.08
         },
         {
           "said": "1-2%",
-          "n": 2702,
-          "said_avg_pct": 1.51,
-          "happened_pct": 1.44
+          "n": 1932,
+          "said_avg_pct": 1.44,
+          "happened_pct": 1.71
         },
         {
           "said": "2-5%",
-          "n": 2369,
-          "said_avg_pct": 3.46,
-          "happened_pct": 3.55
+          "n": 3426,
+          "said_avg_pct": 3.1,
+          "happened_pct": 2.95
         },
         {
           "said": "5-10%",
-          "n": 1485,
-          "said_avg_pct": 6.27,
-          "happened_pct": 6.26
+          "n": 1156,
+          "said_avg_pct": 6.63,
+          "happened_pct": 7.61
         },
         {
           "said": "10-25%",
-          "n": 829,
-          "said_avg_pct": 15.62,
-          "happened_pct": 15.68
+          "n": 924,
+          "said_avg_pct": 15.9,
+          "happened_pct": 15.37
         },
         {
           "said": "25-50%",
-          "n": 335,
-          "said_avg_pct": 35.14,
-          "happened_pct": 34.03
+          "n": 322,
+          "said_avg_pct": 36.65,
+          "happened_pct": 37.89
         },
         {
           "said": "50-75%",
-          "n": 160,
-          "said_avg_pct": 60.99,
-          "happened_pct": 53.12
+          "n": 97,
+          "said_avg_pct": 60.2,
+          "happened_pct": 44.33
         },
         {
           "said": "75-100%",
-          "n": 623,
-          "said_avg_pct": 91.48,
-          "happened_pct": 92.3
+          "n": 655,
+          "said_avg_pct": 90.97,
+          "happened_pct": 90.69
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 83379,
+          "n": 83253,
           "said_avg_pct": 0.07,
           "happened_pct": 0.08
         },
         {
           "said": "1-2%",
-          "n": 2695,
-          "said_avg_pct": 1.51,
-          "happened_pct": 1.45
+          "n": 1928,
+          "said_avg_pct": 1.44,
+          "happened_pct": 1.71
         },
         {
           "said": "2-5%",
-          "n": 2309,
-          "said_avg_pct": 3.45,
-          "happened_pct": 3.46
+          "n": 3391,
+          "said_avg_pct": 3.09,
+          "happened_pct": 2.89
         },
         {
           "said": "5-10%",
-          "n": 1388,
-          "said_avg_pct": 6.18,
-          "happened_pct": 5.98
+          "n": 1033,
+          "said_avg_pct": 6.54,
+          "happened_pct": 7.36
         },
         {
           "said": "10-25%",
-          "n": 653,
-          "said_avg_pct": 15.45,
-          "happened_pct": 15.31
+          "n": 734,
+          "said_avg_pct": 15.64,
+          "happened_pct": 14.17
         },
         {
           "said": "25-50%",
-          "n": 203,
-          "said_avg_pct": 34.5,
-          "happened_pct": 34.48
+          "n": 184,
+          "said_avg_pct": 36.83,
+          "happened_pct": 40.76
         },
         {
           "said": "50-75%",
-          "n": 60,
-          "said_avg_pct": 55.97,
-          "happened_pct": 45.0
+          "n": 45,
+          "said_avg_pct": 57.74,
+          "happened_pct": 37.78
         },
         {
           "said": "75-100%",
           "n": 11,
-          "said_avg_pct": 98.7,
-          "happened_pct": 54.55
+          "said_avg_pct": 92.96,
+          "happened_pct": 45.45
         }
       ]
     },
     "2": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91622,
-          "n_flood_days": 1187,
-          "auc": 0.966,
-          "brier_skill": 0.304,
-          "top1pct_said": 58.8,
-          "top1pct_happened": 56.9,
+          "n_days": 91502,
+          "n_flood_days": 1185,
+          "auc": 0.965,
+          "brier_skill": 0.32,
+          "top1pct_said": 58.4,
+          "top1pct_happened": 57.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 48.9,
-              "warnings_right_pct": 51.3,
-              "n_warnings": 1130
+              "floods_caught_pct": 48.8,
+              "warnings_right_pct": 50.1,
+              "n_warnings": 1154
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 31.3,
-              "warnings_right_pct": 63.9,
-              "n_warnings": 582
+              "floods_caught_pct": 32.7,
+              "warnings_right_pct": 66.6,
+              "n_warnings": 581
             }
           ]
         },
         "rain only": {
-          "n_days": 91622,
-          "n_flood_days": 1187,
-          "auc": 0.886,
-          "brier_skill": 0.076,
-          "top1pct_said": 25.0,
-          "top1pct_happened": 24.3,
+          "n_days": 91502,
+          "n_flood_days": 1185,
+          "auc": 0.883,
+          "brier_skill": 0.072,
+          "top1pct_said": 24.8,
+          "top1pct_happened": 22.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 12.4,
-              "warnings_right_pct": 31.3,
-              "n_warnings": 470
+              "floods_caught_pct": 10.6,
+              "warnings_right_pct": 26.4,
+              "n_warnings": 477
             },
             {
               "at_pct": 50,
@@ -341,40 +341,40 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 90439,
-          "n_flood_days": 685,
-          "auc": 0.948,
-          "brier_skill": 0.123,
-          "top1pct_said": 30.3,
-          "top1pct_happened": 26.7,
+          "n_days": 90321,
+          "n_flood_days": 683,
+          "auc": 0.947,
+          "brier_skill": 0.133,
+          "top1pct_said": 28.9,
+          "top1pct_happened": 27.9,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 22.0,
-              "warnings_right_pct": 37.6,
-              "n_warnings": 402
+              "floods_caught_pct": 20.4,
+              "warnings_right_pct": 34.5,
+              "n_warnings": 403
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 7.4,
-              "warnings_right_pct": 46.4,
-              "n_warnings": 110
+              "floods_caught_pct": 6.1,
+              "warnings_right_pct": 47.7,
+              "n_warnings": 88
             }
           ]
         },
         "rain only": {
-          "n_days": 90439,
-          "n_flood_days": 685,
-          "auc": 0.895,
-          "brier_skill": 0.03,
-          "top1pct_said": 23.4,
-          "top1pct_happened": 15.2,
+          "n_days": 90321,
+          "n_flood_days": 683,
+          "auc": 0.894,
+          "brier_skill": 0.025,
+          "top1pct_said": 23.1,
+          "top1pct_happened": 13.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.5,
-              "warnings_right_pct": 20.7,
-              "n_warnings": 382
+              "floods_caught_pct": 10.0,
+              "warnings_right_pct": 17.3,
+              "n_warnings": 393
             },
             {
               "at_pct": 50,
@@ -389,38 +389,38 @@
         "rain + gauge": {
           "n_days": 51888,
           "n_flood_days": 360,
-          "auc": 0.971,
-          "brier_skill": 0.258,
-          "top1pct_said": 38.0,
-          "top1pct_happened": 36.4,
+          "auc": 0.969,
+          "brier_skill": 0.268,
+          "top1pct_said": 38.7,
+          "top1pct_happened": 37.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 41.1,
-              "warnings_right_pct": 46.5,
-              "n_warnings": 318
+              "floods_caught_pct": 44.7,
+              "warnings_right_pct": 46.9,
+              "n_warnings": 343
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 28.3,
-              "warnings_right_pct": 56.4,
-              "n_warnings": 181
+              "floods_caught_pct": 28.1,
+              "warnings_right_pct": 54.9,
+              "n_warnings": 184
             }
           ]
         },
         "rain only": {
           "n_days": 51888,
           "n_flood_days": 360,
-          "auc": 0.918,
-          "brier_skill": 0.035,
-          "top1pct_said": 23.6,
-          "top1pct_happened": 16.0,
+          "auc": 0.917,
+          "brier_skill": 0.031,
+          "top1pct_said": 23.7,
+          "top1pct_happened": 15.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 13.1,
-              "warnings_right_pct": 20.6,
-              "n_warnings": 228
+              "floods_caught_pct": 11.1,
+              "warnings_right_pct": 17.1,
+              "n_warnings": 234
             },
             {
               "at_pct": 50,
@@ -435,38 +435,38 @@
         "rain + gauge": {
           "n_days": 51527,
           "n_flood_days": 225,
-          "auc": 0.957,
-          "brier_skill": 0.103,
-          "top1pct_said": 20.0,
-          "top1pct_happened": 17.5,
+          "auc": 0.954,
+          "brier_skill": 0.113,
+          "top1pct_said": 20.2,
+          "top1pct_happened": 18.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 16.4,
-              "warnings_right_pct": 35.9,
-              "n_warnings": 103
+              "floods_caught_pct": 19.6,
+              "warnings_right_pct": 35.8,
+              "n_warnings": 123
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 7.1,
-              "warnings_right_pct": 34.0,
-              "n_warnings": 47
+              "warnings_right_pct": 32.7,
+              "n_warnings": 49
             }
           ]
         },
         "rain only": {
           "n_days": 51527,
           "n_flood_days": 225,
-          "auc": 0.91,
-          "brier_skill": -0.071,
-          "top1pct_said": 22.5,
-          "top1pct_happened": 8.0,
+          "auc": 0.908,
+          "brier_skill": -0.075,
+          "top1pct_said": 22.6,
+          "top1pct_happened": 7.4,
           "warnings": [
             {
               "at_pct": 25,
               "floods_caught_pct": 8.4,
-              "warnings_right_pct": 9.7,
-              "n_warnings": 196
+              "warnings_right_pct": 9.3,
+              "n_warnings": 205
             },
             {
               "at_pct": 50,
@@ -478,147 +478,147 @@
         }
       },
       "persistence (last reading above threshold)": {
-        "floods_caught_pct": 42.3,
-        "warnings_right_pct": 42.4
+        "floods_caught_pct": 42.4,
+        "warnings_right_pct": 42.5
       },
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 79848,
-          "said_avg_pct": 0.09,
+          "n": 80113,
+          "said_avg_pct": 0.1,
           "happened_pct": 0.1
         },
         {
           "said": "1-2%",
-          "n": 4518,
-          "said_avg_pct": 1.48,
-          "happened_pct": 1.37
+          "n": 3355,
+          "said_avg_pct": 1.37,
+          "happened_pct": 1.73
         },
         {
           "said": "2-5%",
-          "n": 3184,
-          "said_avg_pct": 3.42,
-          "happened_pct": 3.74
+          "n": 3840,
+          "said_avg_pct": 2.97,
+          "happened_pct": 2.73
         },
         {
           "said": "5-10%",
-          "n": 1120,
-          "said_avg_pct": 6.76,
-          "happened_pct": 7.77
+          "n": 1385,
+          "said_avg_pct": 6.68,
+          "happened_pct": 7.0
         },
         {
           "said": "10-25%",
-          "n": 1822,
-          "said_avg_pct": 14.92,
-          "happened_pct": 14.27
+          "n": 1655,
+          "said_avg_pct": 14.87,
+          "happened_pct": 15.95
         },
         {
           "said": "25-50%",
-          "n": 548,
-          "said_avg_pct": 35.31,
-          "happened_pct": 37.96
+          "n": 573,
+          "said_avg_pct": 35.63,
+          "happened_pct": 33.33
         },
         {
           "said": "50-75%",
-          "n": 378,
-          "said_avg_pct": 61.42,
-          "happened_pct": 58.2
+          "n": 393,
+          "said_avg_pct": 61.52,
+          "happened_pct": 60.81
         },
         {
           "said": "75-100%",
-          "n": 204,
-          "said_avg_pct": 84.77,
-          "happened_pct": 74.51
+          "n": 188,
+          "said_avg_pct": 82.12,
+          "happened_pct": 78.72
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 79848,
-          "said_avg_pct": 0.09,
+          "n": 80113,
+          "said_avg_pct": 0.1,
           "happened_pct": 0.1
         },
         {
           "said": "1-2%",
-          "n": 4518,
-          "said_avg_pct": 1.48,
-          "happened_pct": 1.37
+          "n": 3352,
+          "said_avg_pct": 1.37,
+          "happened_pct": 1.73
         },
         {
           "said": "2-5%",
-          "n": 3160,
-          "said_avg_pct": 3.42,
-          "happened_pct": 3.61
+          "n": 3774,
+          "said_avg_pct": 2.96,
+          "happened_pct": 2.68
         },
         {
           "said": "5-10%",
-          "n": 1029,
-          "said_avg_pct": 6.69,
-          "happened_pct": 7.68
+          "n": 1249,
+          "said_avg_pct": 6.57,
+          "happened_pct": 6.81
         },
         {
           "said": "10-25%",
-          "n": 1482,
-          "said_avg_pct": 14.55,
-          "happened_pct": 13.5
+          "n": 1430,
+          "said_avg_pct": 14.61,
+          "happened_pct": 15.17
         },
         {
           "said": "25-50%",
-          "n": 292,
-          "said_avg_pct": 34.0,
-          "happened_pct": 34.25
+          "n": 315,
+          "said_avg_pct": 33.3,
+          "happened_pct": 30.79
         },
         {
           "said": "50-75%",
-          "n": 74,
-          "said_avg_pct": 54.03,
-          "happened_pct": 45.95
+          "n": 65,
+          "said_avg_pct": 55.05,
+          "happened_pct": 46.15
         },
         {
           "said": "75-100%",
-          "n": 36,
-          "said_avg_pct": 100.0,
-          "happened_pct": 47.22
+          "n": 23,
+          "said_avg_pct": 90.87,
+          "happened_pct": 52.17
         }
       ]
     },
     "3": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91432,
-          "n_flood_days": 1185,
-          "auc": 0.96,
+          "n_days": 91314,
+          "n_flood_days": 1183,
+          "auc": 0.958,
           "brier_skill": 0.234,
-          "top1pct_said": 47.9,
-          "top1pct_happened": 45.3,
+          "top1pct_said": 48.2,
+          "top1pct_happened": 44.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 39.6,
-              "warnings_right_pct": 42.9,
-              "n_warnings": 1094
+              "floods_caught_pct": 38.9,
+              "warnings_right_pct": 43.0,
+              "n_warnings": 1070
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 19.0,
-              "warnings_right_pct": 61.6,
-              "n_warnings": 365
+              "floods_caught_pct": 19.4,
+              "warnings_right_pct": 60.7,
+              "n_warnings": 379
             }
           ]
         },
         "rain only": {
-          "n_days": 91432,
-          "n_flood_days": 1185,
+          "n_days": 91314,
+          "n_flood_days": 1183,
           "auc": 0.884,
-          "brier_skill": 0.072,
-          "top1pct_said": 26.0,
-          "top1pct_happened": 24.3,
+          "brier_skill": 0.075,
+          "top1pct_said": 26.5,
+          "top1pct_happened": 24.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 5.2,
-              "warnings_right_pct": 25.2,
-              "n_warnings": 246
+              "floods_caught_pct": 9.3,
+              "warnings_right_pct": 28.4,
+              "n_warnings": 387
             },
             {
               "at_pct": 50,
@@ -631,44 +631,44 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 90249,
-          "n_flood_days": 801,
-          "auc": 0.949,
-          "brier_skill": 0.145,
-          "top1pct_said": 31.2,
-          "top1pct_happened": 29.5,
+          "n_days": 90133,
+          "n_flood_days": 799,
+          "auc": 0.947,
+          "brier_skill": 0.143,
+          "top1pct_said": 31.1,
+          "top1pct_happened": 29.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 23.5,
-              "warnings_right_pct": 37.2,
-              "n_warnings": 506
+              "floods_caught_pct": 22.0,
+              "warnings_right_pct": 36.9,
+              "n_warnings": 477
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.6,
-              "warnings_right_pct": 60.8,
-              "n_warnings": 74
+              "floods_caught_pct": 6.3,
+              "warnings_right_pct": 56.8,
+              "n_warnings": 88
             }
           ]
         },
         "rain only": {
-          "n_days": 90249,
-          "n_flood_days": 801,
-          "auc": 0.899,
-          "brier_skill": 0.049,
-          "top1pct_said": 25.2,
-          "top1pct_happened": 18.8,
+          "n_days": 90133,
+          "n_flood_days": 799,
+          "auc": 0.898,
+          "brier_skill": 0.053,
+          "top1pct_said": 25.5,
+          "top1pct_happened": 19.3,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 5.4,
-              "warnings_right_pct": 19.5,
-              "n_warnings": 221
+              "floods_caught_pct": 10.6,
+              "warnings_right_pct": 24.6,
+              "n_warnings": 345
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 0.2,
+              "floods_caught_pct": 0.3,
               "warnings_right_pct": 11.8,
               "n_warnings": 17
             }
@@ -680,37 +680,37 @@
           "n_days": 51841,
           "n_flood_days": 359,
           "auc": 0.964,
-          "brier_skill": 0.203,
-          "top1pct_said": 32.6,
-          "top1pct_happened": 31.5,
+          "brier_skill": 0.197,
+          "top1pct_said": 33.0,
+          "top1pct_happened": 31.9,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 34.0,
-              "warnings_right_pct": 40.8,
-              "n_warnings": 299
+              "floods_caught_pct": 31.8,
+              "warnings_right_pct": 40.9,
+              "n_warnings": 279
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 14.8,
-              "warnings_right_pct": 64.6,
-              "n_warnings": 82
+              "floods_caught_pct": 13.4,
+              "warnings_right_pct": 62.3,
+              "n_warnings": 77
             }
           ]
         },
         "rain only": {
           "n_days": 51841,
           "n_flood_days": 359,
-          "auc": 0.916,
+          "auc": 0.917,
           "brier_skill": 0.032,
-          "top1pct_said": 24.7,
-          "top1pct_happened": 15.8,
+          "top1pct_said": 25.0,
+          "top1pct_happened": 16.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 5.3,
-              "warnings_right_pct": 16.7,
-              "n_warnings": 114
+              "floods_caught_pct": 8.1,
+              "warnings_right_pct": 16.4,
+              "n_warnings": 177
             },
             {
               "at_pct": 50,
@@ -726,37 +726,37 @@
           "n_days": 51479,
           "n_flood_days": 261,
           "auc": 0.955,
-          "brier_skill": 0.116,
-          "top1pct_said": 21.3,
-          "top1pct_happened": 19.6,
+          "brier_skill": 0.11,
+          "top1pct_said": 21.6,
+          "top1pct_happened": 20.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 18.0,
-              "warnings_right_pct": 33.8,
-              "n_warnings": 139
+              "floods_caught_pct": 15.3,
+              "warnings_right_pct": 33.9,
+              "n_warnings": 118
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 1.5,
-              "warnings_right_pct": 80.0,
-              "n_warnings": 5
+              "warnings_right_pct": 57.1,
+              "n_warnings": 7
             }
           ]
         },
         "rain only": {
           "n_days": 51479,
           "n_flood_days": 261,
-          "auc": 0.907,
+          "auc": 0.908,
           "brier_skill": -0.036,
           "top1pct_said": 24.1,
-          "top1pct_happened": 10.9,
+          "top1pct_happened": 11.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 3.4,
-              "warnings_right_pct": 8.9,
-              "n_warnings": 101
+              "floods_caught_pct": 6.5,
+              "warnings_right_pct": 10.6,
+              "n_warnings": 160
             },
             {
               "at_pct": 50,
@@ -768,192 +768,146 @@
         }
       },
       "persistence (last reading above threshold)": {
-        "floods_caught_pct": 32.4,
+        "floods_caught_pct": 32.5,
         "warnings_right_pct": 32.5
       },
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 79359,
-          "said_avg_pct": 0.1,
-          "happened_pct": 0.11
+          "n": 79000,
+          "said_avg_pct": 0.11,
+          "happened_pct": 0.12
         },
         {
           "said": "1-2%",
-          "n": 3252,
-          "said_avg_pct": 1.55,
-          "happened_pct": 2.12
+          "n": 4637,
+          "said_avg_pct": 1.48,
+          "happened_pct": 1.88
         },
         {
           "said": "2-5%",
-          "n": 4175,
-          "said_avg_pct": 3.02,
-          "happened_pct": 3.16
+          "n": 3150,
+          "said_avg_pct": 3.13,
+          "happened_pct": 2.98
         },
         {
           "said": "5-10%",
-          "n": 1490,
-          "said_avg_pct": 6.63,
-          "happened_pct": 6.17
+          "n": 1439,
+          "said_avg_pct": 7.39,
+          "happened_pct": 7.92
         },
         {
           "said": "10-25%",
-          "n": 2062,
-          "said_avg_pct": 15.91,
-          "happened_pct": 16.25
+          "n": 2018,
+          "said_avg_pct": 16.48,
+          "happened_pct": 16.55
         },
         {
           "said": "25-50%",
-          "n": 729,
-          "said_avg_pct": 35.47,
-          "happened_pct": 33.47
+          "n": 691,
+          "said_avg_pct": 35.41,
+          "happened_pct": 33.29
         },
         {
           "said": "50-75%",
-          "n": 332,
-          "said_avg_pct": 60.54,
-          "happened_pct": 60.54
+          "n": 330,
+          "said_avg_pct": 59.84,
+          "happened_pct": 58.18
         },
         {
           "said": "75-100%",
-          "n": 33,
-          "said_avg_pct": 86.07,
-          "happened_pct": 72.73
+          "n": 49,
+          "said_avg_pct": 84.29,
+          "happened_pct": 77.55
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 79354,
-          "said_avg_pct": 0.1,
-          "happened_pct": 0.11
+          "n": 78992,
+          "said_avg_pct": 0.11,
+          "happened_pct": 0.12
         },
         {
           "said": "1-2%",
-          "n": 3241,
-          "said_avg_pct": 1.55,
-          "happened_pct": 2.1
+          "n": 4620,
+          "said_avg_pct": 1.48,
+          "happened_pct": 1.86
         },
         {
           "said": "2-5%",
-          "n": 4109,
-          "said_avg_pct": 3.01,
-          "happened_pct": 3.02
+          "n": 3087,
+          "said_avg_pct": 3.12,
+          "happened_pct": 2.79
         },
         {
           "said": "5-10%",
-          "n": 1381,
-          "said_avg_pct": 6.56,
-          "happened_pct": 5.94
+          "n": 1330,
+          "said_avg_pct": 7.36,
+          "happened_pct": 7.82
         },
         {
           "said": "10-25%",
-          "n": 1658,
-          "said_avg_pct": 15.62,
-          "happened_pct": 15.14
+          "n": 1627,
+          "said_avg_pct": 16.3,
+          "happened_pct": 15.61
         },
         {
           "said": "25-50%",
-          "n": 432,
-          "said_avg_pct": 34.76,
-          "happened_pct": 33.1
+          "n": 389,
+          "said_avg_pct": 34.84,
+          "happened_pct": 32.39
         },
         {
           "said": "50-75%",
-          "n": 59,
-          "said_avg_pct": 58.63,
-          "happened_pct": 57.63
+          "n": 76,
+          "said_avg_pct": 56.02,
+          "happened_pct": 55.26
         },
         {
           "said": "75-100%",
-          "n": 15,
-          "said_avg_pct": 94.88,
-          "happened_pct": 73.33
+          "n": 12,
+          "said_avg_pct": 97.46,
+          "happened_pct": 66.67
         }
       ]
     },
     "4": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91279,
-          "n_flood_days": 1181,
-          "auc": 0.949,
-          "brier_skill": 0.195,
-          "top1pct_said": 44.1,
-          "top1pct_happened": 41.2,
+          "n_days": 91163,
+          "n_flood_days": 1179,
+          "auc": 0.95,
+          "brier_skill": 0.194,
+          "top1pct_said": 43.9,
+          "top1pct_happened": 40.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 35.5,
-              "warnings_right_pct": 39.1,
-              "n_warnings": 1072
+              "floods_caught_pct": 35.4,
+              "warnings_right_pct": 38.2,
+              "n_warnings": 1093
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 12.1,
-              "warnings_right_pct": 55.6,
-              "n_warnings": 257
+              "floods_caught_pct": 13.1,
+              "warnings_right_pct": 52.6,
+              "n_warnings": 293
             }
           ]
         },
         "rain only": {
-          "n_days": 91279,
-          "n_flood_days": 1181,
+          "n_days": 91163,
+          "n_flood_days": 1179,
           "auc": 0.882,
-          "brier_skill": 0.077,
-          "top1pct_said": 25.3,
-          "top1pct_happened": 23.8,
+          "brier_skill": 0.078,
+          "top1pct_said": 25.2,
+          "top1pct_happened": 24.1,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.8,
-              "warnings_right_pct": 32.7,
-              "n_warnings": 391
-            },
-            {
-              "at_pct": 50,
-              "floods_caught_pct": 0.0,
-              "warnings_right_pct": null,
-              "n_warnings": 0
-            }
-          ]
-        }
-      },
-      "onset only": {
-        "rain + gauge": {
-          "n_days": 90097,
-          "n_flood_days": 876,
-          "auc": 0.94,
-          "brier_skill": 0.136,
-          "top1pct_said": 32.6,
-          "top1pct_happened": 30.4,
-          "warnings": [
-            {
-              "at_pct": 25,
-              "floods_caught_pct": 25.1,
-              "warnings_right_pct": 35.1,
-              "n_warnings": 626
-            },
-            {
-              "at_pct": 50,
-              "floods_caught_pct": 3.9,
-              "warnings_right_pct": 43.6,
-              "n_warnings": 78
-            }
-          ]
-        },
-        "rain only": {
-          "n_days": 90097,
-          "n_flood_days": 876,
-          "auc": 0.894,
-          "brier_skill": 0.067,
-          "top1pct_said": 24.5,
-          "top1pct_happened": 20.9,
-          "warnings": [
-            {
-              "at_pct": 25,
-              "floods_caught_pct": 11.6,
-              "warnings_right_pct": 28.9,
+              "floods_caught_pct": 10.2,
+              "warnings_right_pct": 34.0,
               "n_warnings": 353
             },
             {
@@ -965,42 +919,88 @@
           ]
         }
       },
+      "onset only": {
+        "rain + gauge": {
+          "n_days": 89983,
+          "n_flood_days": 874,
+          "auc": 0.941,
+          "brier_skill": 0.138,
+          "top1pct_said": 32.9,
+          "top1pct_happened": 31.3,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 25.1,
+              "warnings_right_pct": 34.3,
+              "n_warnings": 638
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 6.3,
+              "warnings_right_pct": 43.3,
+              "n_warnings": 127
+            }
+          ]
+        },
+        "rain only": {
+          "n_days": 89983,
+          "n_flood_days": 874,
+          "auc": 0.894,
+          "brier_skill": 0.069,
+          "top1pct_said": 24.5,
+          "top1pct_happened": 21.3,
+          "warnings": [
+            {
+              "at_pct": 25,
+              "floods_caught_pct": 11.2,
+              "warnings_right_pct": 30.4,
+              "n_warnings": 322
+            },
+            {
+              "at_pct": 50,
+              "floods_caught_pct": 0.0,
+              "warnings_right_pct": null,
+              "n_warnings": 0
+            }
+          ]
+        }
+      },
       "official danger level": {
         "rain + gauge": {
           "n_days": 51797,
           "n_flood_days": 358,
-          "auc": 0.956,
-          "brier_skill": 0.163,
+          "auc": 0.955,
+          "brier_skill": 0.161,
           "top1pct_said": 30.8,
-          "top1pct_happened": 28.2,
+          "top1pct_happened": 28.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 28.5,
-              "warnings_right_pct": 38.1,
-              "n_warnings": 268
+              "floods_caught_pct": 31.6,
+              "warnings_right_pct": 36.5,
+              "n_warnings": 310
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 9.5,
-              "warnings_right_pct": 54.0,
-              "n_warnings": 63
+              "floods_caught_pct": 11.2,
+              "warnings_right_pct": 54.8,
+              "n_warnings": 73
             }
           ]
         },
         "rain only": {
           "n_days": 51797,
           "n_flood_days": 358,
-          "auc": 0.913,
-          "brier_skill": 0.037,
-          "top1pct_said": 23.4,
-          "top1pct_happened": 14.7,
+          "auc": 0.914,
+          "brier_skill": 0.039,
+          "top1pct_said": 23.7,
+          "top1pct_happened": 16.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.9,
-              "warnings_right_pct": 21.5,
-              "n_warnings": 181
+              "floods_caught_pct": 11.2,
+              "warnings_right_pct": 24.8,
+              "n_warnings": 161
             },
             {
               "at_pct": 50,
@@ -1015,38 +1015,38 @@
         "rain + gauge": {
           "n_days": 51434,
           "n_flood_days": 285,
-          "auc": 0.949,
-          "brier_skill": 0.1,
-          "top1pct_said": 23.1,
-          "top1pct_happened": 22.0,
+          "auc": 0.948,
+          "brier_skill": 0.101,
+          "top1pct_said": 22.9,
+          "top1pct_happened": 21.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 17.2,
-              "warnings_right_pct": 31.6,
-              "n_warnings": 155
+              "floods_caught_pct": 21.1,
+              "warnings_right_pct": 30.9,
+              "n_warnings": 194
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 1.4,
-              "warnings_right_pct": 25.0,
-              "n_warnings": 16
+              "floods_caught_pct": 4.6,
+              "warnings_right_pct": 41.9,
+              "n_warnings": 31
             }
           ]
         },
         "rain only": {
           "n_days": 51434,
           "n_flood_days": 285,
-          "auc": 0.905,
+          "auc": 0.906,
           "brier_skill": -0.001,
-          "top1pct_said": 22.8,
-          "top1pct_happened": 12.3,
+          "top1pct_said": 23.1,
+          "top1pct_happened": 13.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.2,
-              "warnings_right_pct": 17.4,
-              "n_warnings": 167
+              "floods_caught_pct": 9.8,
+              "warnings_right_pct": 19.2,
+              "n_warnings": 146
             },
             {
               "at_pct": 50,
@@ -1058,199 +1058,199 @@
         }
       },
       "persistence (last reading above threshold)": {
-        "floods_caught_pct": 25.8,
+        "floods_caught_pct": 25.9,
         "warnings_right_pct": 25.8
       },
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 75717,
-          "said_avg_pct": 0.09,
-          "happened_pct": 0.12
+          "n": 75915,
+          "said_avg_pct": 0.1,
+          "happened_pct": 0.13
         },
         {
           "said": "1-2%",
-          "n": 5343,
-          "said_avg_pct": 1.25,
-          "happened_pct": 1.22
+          "n": 5836,
+          "said_avg_pct": 1.47,
+          "happened_pct": 1.59
         },
         {
           "said": "2-5%",
-          "n": 5451,
-          "said_avg_pct": 2.96,
-          "happened_pct": 3.12
+          "n": 4397,
+          "said_avg_pct": 2.97,
+          "happened_pct": 3.0
         },
         {
           "said": "5-10%",
-          "n": 1614,
-          "said_avg_pct": 7.17,
-          "happened_pct": 7.37
+          "n": 1752,
+          "said_avg_pct": 6.95,
+          "happened_pct": 7.08
         },
         {
           "said": "10-25%",
-          "n": 2082,
-          "said_avg_pct": 15.19,
-          "happened_pct": 15.27
+          "n": 2170,
+          "said_avg_pct": 14.46,
+          "happened_pct": 14.65
         },
         {
           "said": "25-50%",
-          "n": 815,
-          "said_avg_pct": 34.92,
-          "happened_pct": 33.87
+          "n": 800,
+          "said_avg_pct": 34.31,
+          "happened_pct": 32.88
         },
         {
           "said": "50-75%",
-          "n": 236,
-          "said_avg_pct": 59.88,
-          "happened_pct": 53.81
+          "n": 279,
+          "said_avg_pct": 57.38,
+          "happened_pct": 51.97
         },
         {
           "said": "75-100%",
-          "n": 21,
-          "said_avg_pct": 84.06,
-          "happened_pct": 76.19
+          "n": 14,
+          "said_avg_pct": 83.15,
+          "happened_pct": 64.29
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 75694,
-          "said_avg_pct": 0.09,
-          "happened_pct": 0.11
+          "n": 75902,
+          "said_avg_pct": 0.1,
+          "happened_pct": 0.13
         },
         {
           "said": "1-2%",
-          "n": 5312,
-          "said_avg_pct": 1.25,
-          "happened_pct": 1.19
+          "n": 5808,
+          "said_avg_pct": 1.47,
+          "happened_pct": 1.53
         },
         {
           "said": "2-5%",
-          "n": 5353,
+          "n": 4304,
           "said_avg_pct": 2.95,
-          "happened_pct": 3.01
+          "happened_pct": 2.81
         },
         {
           "said": "5-10%",
-          "n": 1449,
-          "said_avg_pct": 7.13,
-          "happened_pct": 7.32
+          "n": 1577,
+          "said_avg_pct": 6.89,
+          "happened_pct": 7.04
         },
         {
           "said": "10-25%",
-          "n": 1663,
-          "said_avg_pct": 14.71,
-          "happened_pct": 14.37
+          "n": 1754,
+          "said_avg_pct": 13.89,
+          "happened_pct": 13.63
         },
         {
           "said": "25-50%",
-          "n": 548,
-          "said_avg_pct": 34.5,
-          "happened_pct": 33.94
+          "n": 511,
+          "said_avg_pct": 32.83,
+          "happened_pct": 32.09
         },
         {
           "said": "50-75%",
-          "n": 75,
-          "said_avg_pct": 59.14,
-          "happened_pct": 45.33
+          "n": 120,
+          "said_avg_pct": 54.65,
+          "happened_pct": 44.17
         },
         {
           "said": "75-100%",
-          "n": 3,
-          "said_avg_pct": 100.0,
-          "happened_pct": 0.0
+          "n": 7,
+          "said_avg_pct": 85.71,
+          "happened_pct": 28.57
         }
       ]
     },
     "5": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91134,
-          "n_flood_days": 1179,
+          "n_days": 91020,
+          "n_flood_days": 1178,
           "auc": 0.942,
-          "brier_skill": 0.172,
-          "top1pct_said": 40.7,
-          "top1pct_happened": 38.6,
+          "brier_skill": 0.178,
+          "top1pct_said": 41.3,
+          "top1pct_happened": 39.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 31.6,
-              "warnings_right_pct": 38.0,
-              "n_warnings": 981
+              "floods_caught_pct": 32.0,
+              "warnings_right_pct": 38.9,
+              "n_warnings": 970
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 10.3,
-              "warnings_right_pct": 59.8,
-              "n_warnings": 204
+              "floods_caught_pct": 10.9,
+              "warnings_right_pct": 59.3,
+              "n_warnings": 216
             }
           ]
         },
         "rain only": {
-          "n_days": 91134,
-          "n_flood_days": 1179,
-          "auc": 0.883,
-          "brier_skill": 0.074,
-          "top1pct_said": 24.8,
-          "top1pct_happened": 24.1,
+          "n_days": 91020,
+          "n_flood_days": 1178,
+          "auc": 0.889,
+          "brier_skill": 0.078,
+          "top1pct_said": 25.2,
+          "top1pct_happened": 23.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.6,
-              "warnings_right_pct": 31.4,
-              "n_warnings": 398
+              "floods_caught_pct": 11.5,
+              "warnings_right_pct": 33.7,
+              "n_warnings": 403
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 0.1,
-              "warnings_right_pct": 12.5,
-              "n_warnings": 8
+              "floods_caught_pct": 0.0,
+              "warnings_right_pct": null,
+              "n_warnings": 0
             }
           ]
         }
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 89956,
-          "n_flood_days": 938,
+          "n_days": 89844,
+          "n_flood_days": 937,
           "auc": 0.937,
-          "brier_skill": 0.133,
-          "top1pct_said": 33.2,
-          "top1pct_happened": 30.1,
+          "brier_skill": 0.138,
+          "top1pct_said": 33.4,
+          "top1pct_happened": 31.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 24.1,
-              "warnings_right_pct": 35.1,
-              "n_warnings": 643
+              "floods_caught_pct": 23.9,
+              "warnings_right_pct": 35.4,
+              "n_warnings": 633
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.9,
-              "warnings_right_pct": 53.4,
-              "n_warnings": 103
+              "floods_caught_pct": 6.3,
+              "warnings_right_pct": 55.1,
+              "n_warnings": 107
             }
           ]
         },
         "rain only": {
-          "n_days": 89956,
-          "n_flood_days": 938,
-          "auc": 0.895,
-          "brier_skill": 0.069,
-          "top1pct_said": 24.4,
-          "top1pct_happened": 21.2,
+          "n_days": 89844,
+          "n_flood_days": 937,
+          "auc": 0.899,
+          "brier_skill": 0.072,
+          "top1pct_said": 24.7,
+          "top1pct_happened": 21.0,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.5,
-              "warnings_right_pct": 28.8,
-              "n_warnings": 375
+              "floods_caught_pct": 12.7,
+              "warnings_right_pct": 31.0,
+              "n_warnings": 384
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 0.1,
-              "warnings_right_pct": 12.5,
-              "n_warnings": 8
+              "floods_caught_pct": 0.0,
+              "warnings_right_pct": null,
+              "n_warnings": 0
             }
           ]
         }
@@ -1259,44 +1259,44 @@
         "rain + gauge": {
           "n_days": 51749,
           "n_flood_days": 357,
-          "auc": 0.952,
-          "brier_skill": 0.142,
-          "top1pct_said": 30.2,
-          "top1pct_happened": 25.7,
+          "auc": 0.953,
+          "brier_skill": 0.149,
+          "top1pct_said": 29.5,
+          "top1pct_happened": 26.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 21.6,
-              "warnings_right_pct": 41.0,
-              "n_warnings": 188
+              "floods_caught_pct": 21.0,
+              "warnings_right_pct": 44.9,
+              "n_warnings": 167
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 9.8,
-              "warnings_right_pct": 61.4,
-              "n_warnings": 57
+              "floods_caught_pct": 11.2,
+              "warnings_right_pct": 63.5,
+              "n_warnings": 63
             }
           ]
         },
         "rain only": {
           "n_days": 51749,
           "n_flood_days": 357,
-          "auc": 0.918,
-          "brier_skill": 0.033,
-          "top1pct_said": 23.5,
-          "top1pct_happened": 15.5,
+          "auc": 0.919,
+          "brier_skill": 0.037,
+          "top1pct_said": 23.8,
+          "top1pct_happened": 16.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 12.3,
-              "warnings_right_pct": 22.9,
-              "n_warnings": 192
+              "floods_caught_pct": 14.8,
+              "warnings_right_pct": 26.2,
+              "n_warnings": 202
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 0.0,
-              "warnings_right_pct": 0.0,
-              "n_warnings": 3
+              "warnings_right_pct": null,
+              "n_warnings": 0
             }
           ]
         }
@@ -1306,189 +1306,189 @@
           "n_days": 51387,
           "n_flood_days": 306,
           "auc": 0.948,
-          "brier_skill": 0.11,
-          "top1pct_said": 25.0,
-          "top1pct_happened": 23.7,
+          "brier_skill": 0.116,
+          "top1pct_said": 24.7,
+          "top1pct_happened": 22.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 15.4,
-              "warnings_right_pct": 38.8,
-              "n_warnings": 121
+              "floods_caught_pct": 14.4,
+              "warnings_right_pct": 44.4,
+              "n_warnings": 99
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.6,
-              "warnings_right_pct": 63.0,
-              "n_warnings": 27
+              "floods_caught_pct": 6.5,
+              "warnings_right_pct": 64.5,
+              "n_warnings": 31
             }
           ]
         },
         "rain only": {
           "n_days": 51387,
           "n_flood_days": 306,
-          "auc": 0.914,
-          "brier_skill": 0.008,
-          "top1pct_said": 23.1,
-          "top1pct_happened": 13.4,
+          "auc": 0.915,
+          "brier_skill": 0.009,
+          "top1pct_said": 23.3,
+          "top1pct_happened": 13.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.8,
-              "warnings_right_pct": 19.9,
-              "n_warnings": 181
+              "floods_caught_pct": 13.7,
+              "warnings_right_pct": 22.0,
+              "n_warnings": 191
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 0.0,
-              "warnings_right_pct": 0.0,
-              "n_warnings": 3
+              "warnings_right_pct": null,
+              "n_warnings": 0
             }
           ]
         }
       },
       "persistence (last reading above threshold)": {
-        "floods_caught_pct": 20.4,
+        "floods_caught_pct": 20.5,
         "warnings_right_pct": 20.5
       },
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 76574,
-          "said_avg_pct": 0.12,
-          "happened_pct": 0.14
+          "n": 76276,
+          "said_avg_pct": 0.11,
+          "happened_pct": 0.13
         },
         {
           "said": "1-2%",
-          "n": 4204,
-          "said_avg_pct": 1.59,
-          "happened_pct": 1.69
+          "n": 4562,
+          "said_avg_pct": 1.49,
+          "happened_pct": 1.49
         },
         {
           "said": "2-5%",
-          "n": 4873,
-          "said_avg_pct": 3.0,
-          "happened_pct": 3.04
+          "n": 4985,
+          "said_avg_pct": 3.45,
+          "happened_pct": 3.65
         },
         {
           "said": "5-10%",
-          "n": 2530,
-          "said_avg_pct": 7.15,
-          "happened_pct": 7.43
+          "n": 2102,
+          "said_avg_pct": 7.12,
+          "happened_pct": 7.37
         },
         {
           "said": "10-25%",
-          "n": 1972,
-          "said_avg_pct": 15.48,
-          "happened_pct": 14.76
+          "n": 2125,
+          "said_avg_pct": 14.7,
+          "happened_pct": 13.98
         },
         {
           "said": "25-50%",
-          "n": 777,
-          "said_avg_pct": 33.61,
-          "happened_pct": 32.3
+          "n": 754,
+          "said_avg_pct": 34.11,
+          "happened_pct": 33.02
         },
         {
           "said": "50-75%",
-          "n": 184,
-          "said_avg_pct": 59.59,
-          "happened_pct": 60.33
+          "n": 194,
+          "said_avg_pct": 59.17,
+          "happened_pct": 59.79
         },
         {
           "said": "75-100%",
-          "n": 20,
-          "said_avg_pct": 90.13,
-          "happened_pct": 55.0
+          "n": 22,
+          "said_avg_pct": 87.14,
+          "happened_pct": 54.55
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 76515,
-          "said_avg_pct": 0.12,
-          "happened_pct": 0.13
+          "n": 76218,
+          "said_avg_pct": 0.11,
+          "happened_pct": 0.12
         },
         {
           "said": "1-2%",
-          "n": 4159,
-          "said_avg_pct": 1.59,
-          "happened_pct": 1.68
+          "n": 4511,
+          "said_avg_pct": 1.49,
+          "happened_pct": 1.49
         },
         {
           "said": "2-5%",
-          "n": 4723,
-          "said_avg_pct": 2.99,
-          "happened_pct": 2.86
+          "n": 4826,
+          "said_avg_pct": 3.46,
+          "happened_pct": 3.52
         },
         {
           "said": "5-10%",
-          "n": 2335,
-          "said_avg_pct": 7.13,
-          "happened_pct": 7.49
+          "n": 1909,
+          "said_avg_pct": 7.08,
+          "happened_pct": 7.39
         },
         {
           "said": "10-25%",
-          "n": 1581,
-          "said_avg_pct": 15.22,
-          "happened_pct": 14.61
+          "n": 1747,
+          "said_avg_pct": 14.26,
+          "happened_pct": 13.85
         },
         {
           "said": "25-50%",
-          "n": 540,
-          "said_avg_pct": 32.63,
-          "happened_pct": 31.67
+          "n": 526,
+          "said_avg_pct": 33.5,
+          "happened_pct": 31.37
         },
         {
           "said": "50-75%",
-          "n": 94,
-          "said_avg_pct": 58.25,
-          "happened_pct": 54.26
+          "n": 96,
+          "said_avg_pct": 58.53,
+          "happened_pct": 56.25
         },
         {
           "said": "75-100%",
-          "n": 9,
-          "said_avg_pct": 100.0,
-          "happened_pct": 44.44
+          "n": 11,
+          "said_avg_pct": 93.18,
+          "happened_pct": 45.45
         }
       ]
     },
     "6": {
       "all days": {
         "rain + gauge": {
-          "n_days": 91002,
-          "n_flood_days": 1175,
-          "auc": 0.941,
-          "brier_skill": 0.157,
-          "top1pct_said": 39.8,
-          "top1pct_happened": 36.9,
+          "n_days": 90890,
+          "n_flood_days": 1174,
+          "auc": 0.94,
+          "brier_skill": 0.153,
+          "top1pct_said": 39.4,
+          "top1pct_happened": 35.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 29.9,
+              "floods_caught_pct": 29.6,
               "warnings_right_pct": 35.7,
-              "n_warnings": 983
+              "n_warnings": 975
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.6,
-              "warnings_right_pct": 57.4,
-              "n_warnings": 115
+              "floods_caught_pct": 4.6,
+              "warnings_right_pct": 49.5,
+              "n_warnings": 109
             }
           ]
         },
         "rain only": {
-          "n_days": 91002,
-          "n_flood_days": 1175,
-          "auc": 0.881,
-          "brier_skill": 0.076,
-          "top1pct_said": 24.9,
+          "n_days": 90890,
+          "n_flood_days": 1174,
+          "auc": 0.88,
+          "brier_skill": 0.077,
+          "top1pct_said": 24.5,
           "top1pct_happened": 23.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 8.9,
-              "warnings_right_pct": 34.7,
-              "n_warnings": 303
+              "floods_caught_pct": 10.6,
+              "warnings_right_pct": 34.4,
+              "n_warnings": 360
             },
             {
               "at_pct": 50,
@@ -1501,40 +1501,40 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 89831,
-          "n_flood_days": 973,
-          "auc": 0.937,
-          "brier_skill": 0.129,
-          "top1pct_said": 34.5,
-          "top1pct_happened": 31.6,
+          "n_days": 89721,
+          "n_flood_days": 972,
+          "auc": 0.936,
+          "brier_skill": 0.127,
+          "top1pct_said": 33.8,
+          "top1pct_happened": 31.0,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 24.2,
-              "warnings_right_pct": 33.0,
-              "n_warnings": 712
+              "floods_caught_pct": 24.5,
+              "warnings_right_pct": 33.6,
+              "n_warnings": 708
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 2.4,
-              "warnings_right_pct": 48.9,
-              "n_warnings": 47
+              "floods_caught_pct": 1.5,
+              "warnings_right_pct": 36.6,
+              "n_warnings": 41
             }
           ]
         },
         "rain only": {
-          "n_days": 89831,
-          "n_flood_days": 973,
-          "auc": 0.892,
-          "brier_skill": 0.073,
-          "top1pct_said": 24.7,
-          "top1pct_happened": 20.8,
+          "n_days": 89721,
+          "n_flood_days": 972,
+          "auc": 0.891,
+          "brier_skill": 0.074,
+          "top1pct_said": 24.2,
+          "top1pct_happened": 21.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.1,
-              "warnings_right_pct": 33.3,
-              "n_warnings": 294
+              "floods_caught_pct": 11.7,
+              "warnings_right_pct": 32.9,
+              "n_warnings": 346
             },
             {
               "at_pct": 50,
@@ -1549,22 +1549,22 @@
         "rain + gauge": {
           "n_days": 51703,
           "n_flood_days": 356,
-          "auc": 0.948,
-          "brier_skill": 0.128,
-          "top1pct_said": 27.5,
-          "top1pct_happened": 23.4,
+          "auc": 0.949,
+          "brier_skill": 0.129,
+          "top1pct_said": 27.1,
+          "top1pct_happened": 24.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 20.8,
-              "warnings_right_pct": 43.0,
-              "n_warnings": 172
+              "floods_caught_pct": 21.9,
+              "warnings_right_pct": 44.1,
+              "n_warnings": 177
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 8.7,
-              "warnings_right_pct": 51.7,
-              "n_warnings": 60
+              "floods_caught_pct": 4.5,
+              "warnings_right_pct": 43.2,
+              "n_warnings": 37
             }
           ]
         },
@@ -1572,15 +1572,15 @@
           "n_days": 51703,
           "n_flood_days": 356,
           "auc": 0.912,
-          "brier_skill": 0.033,
-          "top1pct_said": 23.0,
-          "top1pct_happened": 14.1,
+          "brier_skill": 0.035,
+          "top1pct_said": 22.8,
+          "top1pct_happened": 15.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.0,
-              "warnings_right_pct": 24.2,
-              "n_warnings": 132
+              "floods_caught_pct": 10.4,
+              "warnings_right_pct": 22.8,
+              "n_warnings": 162
             },
             {
               "at_pct": 50,
@@ -1595,22 +1595,22 @@
         "rain + gauge": {
           "n_days": 51341,
           "n_flood_days": 312,
-          "auc": 0.944,
-          "brier_skill": 0.102,
-          "top1pct_said": 23.5,
-          "top1pct_happened": 19.5,
+          "auc": 0.945,
+          "brier_skill": 0.103,
+          "top1pct_said": 23.4,
+          "top1pct_happened": 21.1,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 15.4,
-              "warnings_right_pct": 41.7,
-              "n_warnings": 115
+              "floods_caught_pct": 17.0,
+              "warnings_right_pct": 44.2,
+              "n_warnings": 120
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.8,
-              "warnings_right_pct": 47.4,
-              "n_warnings": 38
+              "floods_caught_pct": 1.9,
+              "warnings_right_pct": 37.5,
+              "n_warnings": 16
             }
           ]
         },
@@ -1618,15 +1618,15 @@
           "n_days": 51341,
           "n_flood_days": 312,
           "auc": 0.907,
-          "brier_skill": 0.014,
-          "top1pct_said": 22.8,
-          "top1pct_happened": 12.9,
+          "brier_skill": 0.016,
+          "top1pct_said": 22.5,
+          "top1pct_happened": 14.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.3,
-              "warnings_right_pct": 22.8,
-              "n_warnings": 127
+              "floods_caught_pct": 10.6,
+              "warnings_right_pct": 21.3,
+              "n_warnings": 155
             },
             {
               "at_pct": 50,
@@ -1644,193 +1644,193 @@
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 76761,
+          "n": 77200,
           "said_avg_pct": 0.14,
           "happened_pct": 0.16
         },
         {
           "said": "1-2%",
-          "n": 3969,
-          "said_avg_pct": 1.27,
-          "happened_pct": 1.26
+          "n": 3276,
+          "said_avg_pct": 1.54,
+          "happened_pct": 1.92
         },
         {
           "said": "2-5%",
-          "n": 4423,
-          "said_avg_pct": 3.1,
-          "happened_pct": 3.62
+          "n": 4506,
+          "said_avg_pct": 2.99,
+          "happened_pct": 3.46
         },
         {
           "said": "5-10%",
-          "n": 2551,
-          "said_avg_pct": 6.96,
-          "happened_pct": 7.02
+          "n": 2603,
+          "said_avg_pct": 6.69,
+          "happened_pct": 5.84
         },
         {
           "said": "10-25%",
-          "n": 2315,
-          "said_avg_pct": 14.07,
-          "happened_pct": 13.48
+          "n": 2330,
+          "said_avg_pct": 14.05,
+          "happened_pct": 14.38
         },
         {
           "said": "25-50%",
-          "n": 868,
-          "said_avg_pct": 35.54,
-          "happened_pct": 32.83
+          "n": 866,
+          "said_avg_pct": 35.66,
+          "happened_pct": 33.95
         },
         {
           "said": "50-75%",
-          "n": 101,
-          "said_avg_pct": 58.65,
-          "happened_pct": 58.42
+          "n": 95,
+          "said_avg_pct": 57.11,
+          "happened_pct": 49.47
         },
         {
           "said": "75-100%",
           "n": 14,
-          "said_avg_pct": 91.95,
+          "said_avg_pct": 85.47,
           "happened_pct": 50.0
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 76670,
+          "n": 77122,
           "said_avg_pct": 0.14,
           "happened_pct": 0.15
         },
         {
           "said": "1-2%",
-          "n": 3910,
-          "said_avg_pct": 1.27,
-          "happened_pct": 1.2
+          "n": 3210,
+          "said_avg_pct": 1.54,
+          "happened_pct": 1.84
         },
         {
           "said": "2-5%",
-          "n": 4241,
-          "said_avg_pct": 3.09,
-          "happened_pct": 3.54
+          "n": 4330,
+          "said_avg_pct": 2.97,
+          "happened_pct": 3.35
         },
         {
           "said": "5-10%",
-          "n": 2330,
-          "said_avg_pct": 6.94,
-          "happened_pct": 6.78
+          "n": 2384,
+          "said_avg_pct": 6.64,
+          "happened_pct": 5.62
         },
         {
           "said": "10-25%",
-          "n": 1968,
-          "said_avg_pct": 13.73,
-          "happened_pct": 13.47
+          "n": 1967,
+          "said_avg_pct": 13.78,
+          "happened_pct": 14.23
         },
         {
           "said": "25-50%",
-          "n": 665,
-          "said_avg_pct": 35.59,
-          "happened_pct": 31.88
+          "n": 667,
+          "said_avg_pct": 35.82,
+          "happened_pct": 33.43
         },
         {
           "said": "50-75%",
-          "n": 39,
-          "said_avg_pct": 58.17,
-          "happened_pct": 53.85
+          "n": 36,
+          "said_avg_pct": 53.62,
+          "happened_pct": 41.67
         },
         {
           "said": "75-100%",
-          "n": 8,
-          "said_avg_pct": 96.65,
-          "happened_pct": 25.0
+          "n": 5,
+          "said_avg_pct": 90.0,
+          "happened_pct": 0.0
         }
       ]
     },
     "7": {
       "all days": {
         "rain + gauge": {
-          "n_days": 90893,
-          "n_flood_days": 1174,
-          "auc": 0.938,
-          "brier_skill": 0.156,
-          "top1pct_said": 40.3,
-          "top1pct_happened": 38.7,
+          "n_days": 90782,
+          "n_flood_days": 1173,
+          "auc": 0.94,
+          "brier_skill": 0.159,
+          "top1pct_said": 39.9,
+          "top1pct_happened": 37.1,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 29.0,
-              "warnings_right_pct": 38.7,
-              "n_warnings": 878
+              "floods_caught_pct": 28.7,
+              "warnings_right_pct": 37.0,
+              "n_warnings": 910
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.2,
-              "warnings_right_pct": 49.6,
-              "n_warnings": 123
+              "floods_caught_pct": 9.6,
+              "warnings_right_pct": 48.7,
+              "n_warnings": 232
             }
           ]
         },
         "rain only": {
-          "n_days": 90893,
-          "n_flood_days": 1174,
+          "n_days": 90782,
+          "n_flood_days": 1173,
           "auc": 0.882,
-          "brier_skill": 0.075,
-          "top1pct_said": 25.5,
-          "top1pct_happened": 23.7,
+          "brier_skill": 0.071,
+          "top1pct_said": 25.6,
+          "top1pct_happened": 23.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.9,
-              "warnings_right_pct": 31.4,
+              "floods_caught_pct": 9.5,
+              "warnings_right_pct": 30.3,
               "n_warnings": 370
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 0.0,
-              "warnings_right_pct": null,
-              "n_warnings": 0
+              "floods_caught_pct": 0.2,
+              "warnings_right_pct": 12.5,
+              "n_warnings": 16
             }
           ]
         }
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 89723,
-          "n_flood_days": 993,
-          "auc": 0.934,
-          "brier_skill": 0.134,
-          "top1pct_said": 34.5,
-          "top1pct_happened": 33.1,
+          "n_days": 89614,
+          "n_flood_days": 992,
+          "auc": 0.937,
+          "brier_skill": 0.138,
+          "top1pct_said": 34.7,
+          "top1pct_happened": 32.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 24.2,
-              "warnings_right_pct": 37.2,
-              "n_warnings": 645
+              "floods_caught_pct": 23.5,
+              "warnings_right_pct": 35.2,
+              "n_warnings": 662
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 2.4,
-              "warnings_right_pct": 41.4,
-              "n_warnings": 58
+              "floods_caught_pct": 7.8,
+              "warnings_right_pct": 47.0,
+              "n_warnings": 164
             }
           ]
         },
         "rain only": {
-          "n_days": 89723,
-          "n_flood_days": 993,
-          "auc": 0.891,
-          "brier_skill": 0.074,
-          "top1pct_said": 25.4,
-          "top1pct_happened": 22.1,
+          "n_days": 89614,
+          "n_flood_days": 992,
+          "auc": 0.892,
+          "brier_skill": 0.069,
+          "top1pct_said": 25.5,
+          "top1pct_happened": 22.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.4,
-              "warnings_right_pct": 31.0,
-              "n_warnings": 365
+              "floods_caught_pct": 10.9,
+              "warnings_right_pct": 29.8,
+              "n_warnings": 363
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 0.0,
-              "warnings_right_pct": null,
-              "n_warnings": 0
+              "floods_caught_pct": 0.2,
+              "warnings_right_pct": 12.5,
+              "n_warnings": 16
             }
           ]
         }
@@ -1839,44 +1839,44 @@
         "rain + gauge": {
           "n_days": 51660,
           "n_flood_days": 354,
-          "auc": 0.948,
-          "brier_skill": 0.143,
-          "top1pct_said": 27.7,
-          "top1pct_happened": 25.3,
+          "auc": 0.943,
+          "brier_skill": 0.144,
+          "top1pct_said": 28.0,
+          "top1pct_happened": 26.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 25.4,
-              "warnings_right_pct": 43.5,
-              "n_warnings": 207
+              "floods_caught_pct": 24.6,
+              "warnings_right_pct": 41.2,
+              "n_warnings": 211
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 10.2,
-              "warnings_right_pct": 48.0,
-              "n_warnings": 75
+              "floods_caught_pct": 12.1,
+              "warnings_right_pct": 43.9,
+              "n_warnings": 98
             }
           ]
         },
         "rain only": {
           "n_days": 51660,
           "n_flood_days": 354,
-          "auc": 0.915,
-          "brier_skill": 0.03,
-          "top1pct_said": 23.9,
-          "top1pct_happened": 14.3,
+          "auc": 0.914,
+          "brier_skill": 0.021,
+          "top1pct_said": 24.0,
+          "top1pct_happened": 14.1,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.5,
-              "warnings_right_pct": 21.9,
-              "n_warnings": 169
+              "floods_caught_pct": 9.3,
+              "warnings_right_pct": 18.9,
+              "n_warnings": 175
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 0.0,
-              "warnings_right_pct": null,
-              "n_warnings": 0
+              "warnings_right_pct": 0.0,
+              "n_warnings": 5
             }
           ]
         }
@@ -1885,44 +1885,44 @@
         "rain + gauge": {
           "n_days": 51297,
           "n_flood_days": 316,
-          "auc": 0.944,
-          "brier_skill": 0.123,
-          "top1pct_said": 23.2,
-          "top1pct_happened": 20.7,
+          "auc": 0.939,
+          "brier_skill": 0.12,
+          "top1pct_said": 23.4,
+          "top1pct_happened": 22.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 20.9,
-              "warnings_right_pct": 42.3,
-              "n_warnings": 156
+              "floods_caught_pct": 19.9,
+              "warnings_right_pct": 39.6,
+              "n_warnings": 159
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 7.6,
-              "warnings_right_pct": 45.3,
-              "n_warnings": 53
+              "floods_caught_pct": 9.5,
+              "warnings_right_pct": 40.0,
+              "n_warnings": 75
             }
           ]
         },
         "rain only": {
           "n_days": 51297,
           "n_flood_days": 316,
-          "auc": 0.912,
-          "brier_skill": 0.016,
+          "auc": 0.911,
+          "brier_skill": 0.006,
           "top1pct_said": 23.8,
-          "top1pct_happened": 13.6,
+          "top1pct_happened": 13.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.8,
-              "warnings_right_pct": 20.6,
-              "n_warnings": 165
+              "floods_caught_pct": 9.5,
+              "warnings_right_pct": 17.5,
+              "n_warnings": 171
             },
             {
               "at_pct": 50,
               "floods_caught_pct": 0.0,
-              "warnings_right_pct": null,
-              "n_warnings": 0
+              "warnings_right_pct": 0.0,
+              "n_warnings": 5
             }
           ]
         }
@@ -1934,141 +1934,141 @@
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 76608,
+          "n": 75945,
           "said_avg_pct": 0.14,
           "happened_pct": 0.16
         },
         {
           "said": "1-2%",
-          "n": 3391,
-          "said_avg_pct": 1.58,
-          "happened_pct": 2.09
+          "n": 3879,
+          "said_avg_pct": 1.39,
+          "happened_pct": 1.55
         },
         {
           "said": "2-5%",
-          "n": 4898,
-          "said_avg_pct": 3.02,
-          "happened_pct": 3.21
+          "n": 5264,
+          "said_avg_pct": 2.8,
+          "happened_pct": 2.7
         },
         {
           "said": "5-10%",
-          "n": 2941,
-          "said_avg_pct": 6.41,
-          "happened_pct": 5.88
+          "n": 2715,
+          "said_avg_pct": 7.6,
+          "happened_pct": 7.73
         },
         {
           "said": "10-25%",
-          "n": 2177,
-          "said_avg_pct": 14.74,
-          "happened_pct": 14.38
+          "n": 2069,
+          "said_avg_pct": 14.65,
+          "happened_pct": 14.55
         },
         {
           "said": "25-50%",
-          "n": 755,
-          "said_avg_pct": 37.4,
-          "happened_pct": 36.95
+          "n": 678,
+          "said_avg_pct": 34.14,
+          "happened_pct": 33.04
         },
         {
           "said": "50-75%",
-          "n": 104,
-          "said_avg_pct": 58.21,
-          "happened_pct": 47.12
+          "n": 217,
+          "said_avg_pct": 54.36,
+          "happened_pct": 47.93
         },
         {
           "said": "75-100%",
-          "n": 19,
-          "said_avg_pct": 85.17,
-          "happened_pct": 63.16
+          "n": 15,
+          "said_avg_pct": 91.65,
+          "happened_pct": 60.0
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 76474,
+          "n": 75803,
           "said_avg_pct": 0.14,
-          "happened_pct": 0.15
+          "happened_pct": 0.16
         },
         {
           "said": "1-2%",
-          "n": 3316,
-          "said_avg_pct": 1.58,
-          "happened_pct": 2.02
+          "n": 3808,
+          "said_avg_pct": 1.39,
+          "happened_pct": 1.42
         },
         {
           "said": "2-5%",
-          "n": 4725,
-          "said_avg_pct": 3.0,
-          "happened_pct": 3.26
+          "n": 5089,
+          "said_avg_pct": 2.78,
+          "happened_pct": 2.69
         },
         {
           "said": "5-10%",
-          "n": 2699,
-          "said_avg_pct": 6.32,
-          "happened_pct": 5.59
+          "n": 2472,
+          "said_avg_pct": 7.61,
+          "happened_pct": 7.48
         },
         {
           "said": "10-25%",
-          "n": 1864,
-          "said_avg_pct": 14.52,
-          "happened_pct": 14.22
+          "n": 1780,
+          "said_avg_pct": 14.42,
+          "happened_pct": 14.78
         },
         {
           "said": "25-50%",
-          "n": 587,
-          "said_avg_pct": 37.67,
-          "happened_pct": 36.8
+          "n": 498,
+          "said_avg_pct": 33.59,
+          "happened_pct": 31.33
         },
         {
           "said": "50-75%",
-          "n": 54,
-          "said_avg_pct": 56.5,
-          "happened_pct": 38.89
+          "n": 156,
+          "said_avg_pct": 52.54,
+          "happened_pct": 46.79
         },
         {
           "said": "75-100%",
-          "n": 4,
-          "said_avg_pct": 95.48,
-          "happened_pct": 75.0
+          "n": 8,
+          "said_avg_pct": 99.25,
+          "happened_pct": 50.0
         }
       ]
     },
     "8": {
       "all days": {
         "rain + gauge": {
-          "n_days": 90745,
-          "n_flood_days": 1166,
+          "n_days": 90631,
+          "n_flood_days": 1165,
           "auc": 0.94,
-          "brier_skill": 0.154,
+          "brier_skill": 0.153,
           "top1pct_said": 38.9,
-          "top1pct_happened": 36.9,
+          "top1pct_happened": 37.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 28.1,
-              "warnings_right_pct": 38.7,
-              "n_warnings": 847
+              "floods_caught_pct": 28.0,
+              "warnings_right_pct": 38.1,
+              "n_warnings": 855
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 5.6,
-              "warnings_right_pct": 46.4,
-              "n_warnings": 140
+              "floods_caught_pct": 6.0,
+              "warnings_right_pct": 41.9,
+              "n_warnings": 167
             }
           ]
         },
         "rain only": {
-          "n_days": 90745,
-          "n_flood_days": 1166,
-          "auc": 0.893,
-          "brier_skill": 0.08,
-          "top1pct_said": 25.0,
-          "top1pct_happened": 24.6,
+          "n_days": 90631,
+          "n_flood_days": 1165,
+          "auc": 0.894,
+          "brier_skill": 0.079,
+          "top1pct_said": 24.6,
+          "top1pct_happened": 23.8,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.2,
-              "warnings_right_pct": 35.4,
-              "n_warnings": 336
+              "floods_caught_pct": 9.1,
+              "warnings_right_pct": 32.2,
+              "n_warnings": 329
             },
             {
               "at_pct": 50,
@@ -2081,40 +2081,40 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 89577,
-          "n_flood_days": 1002,
+          "n_days": 89465,
+          "n_flood_days": 1001,
           "auc": 0.937,
-          "brier_skill": 0.137,
-          "top1pct_said": 34.7,
-          "top1pct_happened": 31.8,
+          "brier_skill": 0.136,
+          "top1pct_said": 34.5,
+          "top1pct_happened": 32.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 23.5,
-              "warnings_right_pct": 37.2,
-              "n_warnings": 632
+              "floods_caught_pct": 23.8,
+              "warnings_right_pct": 36.8,
+              "n_warnings": 646
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 4.2,
-              "warnings_right_pct": 47.2,
-              "n_warnings": 89
+              "floods_caught_pct": 4.6,
+              "warnings_right_pct": 41.1,
+              "n_warnings": 112
             }
           ]
         },
         "rain only": {
-          "n_days": 89577,
-          "n_flood_days": 1002,
-          "auc": 0.9,
+          "n_days": 89465,
+          "n_flood_days": 1001,
+          "auc": 0.901,
           "brier_skill": 0.08,
-          "top1pct_said": 24.9,
-          "top1pct_happened": 23.4,
+          "top1pct_said": 24.6,
+          "top1pct_happened": 22.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.8,
-              "warnings_right_pct": 35.4,
-              "n_warnings": 333
+              "floods_caught_pct": 10.4,
+              "warnings_right_pct": 32.0,
+              "n_warnings": 325
             },
             {
               "at_pct": 50,
@@ -2129,38 +2129,38 @@
         "rain + gauge": {
           "n_days": 51615,
           "n_flood_days": 352,
-          "auc": 0.947,
-          "brier_skill": 0.136,
-          "top1pct_said": 26.8,
-          "top1pct_happened": 25.2,
+          "auc": 0.946,
+          "brier_skill": 0.143,
+          "top1pct_said": 27.2,
+          "top1pct_happened": 26.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 25.6,
-              "warnings_right_pct": 38.6,
-              "n_warnings": 233
+              "floods_caught_pct": 23.9,
+              "warnings_right_pct": 44.2,
+              "n_warnings": 190
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 11.9,
-              "warnings_right_pct": 49.4,
-              "n_warnings": 85
+              "floods_caught_pct": 12.5,
+              "warnings_right_pct": 46.3,
+              "n_warnings": 95
             }
           ]
         },
         "rain only": {
           "n_days": 51615,
           "n_flood_days": 352,
-          "auc": 0.916,
-          "brier_skill": 0.035,
-          "top1pct_said": 22.9,
-          "top1pct_happened": 15.7,
+          "auc": 0.918,
+          "brier_skill": 0.037,
+          "top1pct_said": 22.7,
+          "top1pct_happened": 15.5,
           "warnings": [
             {
               "at_pct": 25,
               "floods_caught_pct": 9.4,
-              "warnings_right_pct": 23.2,
-              "n_warnings": 142
+              "warnings_right_pct": 23.1,
+              "n_warnings": 143
             },
             {
               "at_pct": 50,
@@ -2175,37 +2175,37 @@
         "rain + gauge": {
           "n_days": 51252,
           "n_flood_days": 316,
-          "auc": 0.945,
-          "brier_skill": 0.126,
-          "top1pct_said": 23.0,
-          "top1pct_happened": 21.2,
+          "auc": 0.944,
+          "brier_skill": 0.131,
+          "top1pct_said": 23.8,
+          "top1pct_happened": 22.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 22.8,
-              "warnings_right_pct": 37.7,
-              "n_warnings": 191
+              "floods_caught_pct": 20.9,
+              "warnings_right_pct": 44.3,
+              "n_warnings": 149
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 11.4,
-              "warnings_right_pct": 51.4,
-              "n_warnings": 70
+              "floods_caught_pct": 11.7,
+              "warnings_right_pct": 48.7,
+              "n_warnings": 76
             }
           ]
         },
         "rain only": {
           "n_days": 51252,
           "n_flood_days": 316,
-          "auc": 0.917,
-          "brier_skill": 0.025,
-          "top1pct_said": 22.8,
-          "top1pct_happened": 14.4,
+          "auc": 0.919,
+          "brier_skill": 0.026,
+          "top1pct_said": 22.6,
+          "top1pct_happened": 14.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.4,
-              "warnings_right_pct": 23.4,
+              "floods_caught_pct": 10.1,
+              "warnings_right_pct": 22.7,
               "n_warnings": 141
             },
             {
@@ -2219,105 +2219,105 @@
       },
       "persistence (last reading above threshold)": {
         "floods_caught_pct": 14.1,
-        "warnings_right_pct": 14.0
+        "warnings_right_pct": 14.1
       },
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 75989,
-          "said_avg_pct": 0.14,
-          "happened_pct": 0.18
+          "n": 75212,
+          "said_avg_pct": 0.13,
+          "happened_pct": 0.16
         },
         {
           "said": "1-2%",
-          "n": 4704,
-          "said_avg_pct": 1.34,
-          "happened_pct": 1.4
+          "n": 6190,
+          "said_avg_pct": 1.39,
+          "happened_pct": 1.52
         },
         {
           "said": "2-5%",
-          "n": 3906,
-          "said_avg_pct": 2.77,
-          "happened_pct": 2.43
+          "n": 3273,
+          "said_avg_pct": 3.15,
+          "happened_pct": 2.66
         },
         {
           "said": "5-10%",
-          "n": 3054,
-          "said_avg_pct": 7.04,
-          "happened_pct": 6.71
+          "n": 2987,
+          "said_avg_pct": 7.32,
+          "happened_pct": 7.1
         },
         {
           "said": "10-25%",
-          "n": 2245,
-          "said_avg_pct": 14.89,
-          "happened_pct": 15.06
+          "n": 2114,
+          "said_avg_pct": 15.07,
+          "happened_pct": 15.42
         },
         {
           "said": "25-50%",
-          "n": 707,
-          "said_avg_pct": 35.73,
-          "happened_pct": 37.2
+          "n": 688,
+          "said_avg_pct": 34.95,
+          "happened_pct": 37.21
         },
         {
           "said": "50-75%",
-          "n": 128,
-          "said_avg_pct": 59.27,
-          "happened_pct": 48.44
+          "n": 159,
+          "said_avg_pct": 57.85,
+          "happened_pct": 42.77
         },
         {
           "said": "75-100%",
-          "n": 12,
-          "said_avg_pct": 82.69,
+          "n": 8,
+          "said_avg_pct": 91.67,
           "happened_pct": 25.0
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 75914,
-          "said_avg_pct": 0.14,
-          "happened_pct": 0.17
+          "n": 75133,
+          "said_avg_pct": 0.13,
+          "happened_pct": 0.15
         },
         {
           "said": "1-2%",
-          "n": 4643,
-          "said_avg_pct": 1.34,
-          "happened_pct": 1.4
+          "n": 6119,
+          "said_avg_pct": 1.39,
+          "happened_pct": 1.52
         },
         {
           "said": "2-5%",
-          "n": 3653,
-          "said_avg_pct": 2.72,
-          "happened_pct": 2.41
+          "n": 3030,
+          "said_avg_pct": 3.11,
+          "happened_pct": 2.67
         },
         {
           "said": "5-10%",
-          "n": 2783,
-          "said_avg_pct": 7.02,
-          "happened_pct": 6.72
+          "n": 2726,
+          "said_avg_pct": 7.32,
+          "happened_pct": 7.23
         },
         {
           "said": "10-25%",
-          "n": 1952,
-          "said_avg_pct": 14.79,
-          "happened_pct": 15.16
+          "n": 1811,
+          "said_avg_pct": 14.97,
+          "happened_pct": 15.24
         },
         {
           "said": "25-50%",
-          "n": 543,
-          "said_avg_pct": 35.8,
-          "happened_pct": 35.54
+          "n": 534,
+          "said_avg_pct": 34.64,
+          "happened_pct": 35.96
         },
         {
           "said": "50-75%",
-          "n": 77,
-          "said_avg_pct": 58.67,
-          "happened_pct": 50.65
+          "n": 104,
+          "said_avg_pct": 57.31,
+          "happened_pct": 42.31
         },
         {
           "said": "75-100%",
-          "n": 12,
-          "said_avg_pct": 82.69,
+          "n": 8,
+          "said_avg_pct": 91.67,
           "happened_pct": 25.0
         }
       ]
@@ -2325,40 +2325,40 @@
     "9": {
       "all days": {
         "rain + gauge": {
-          "n_days": 90584,
-          "n_flood_days": 1163,
-          "auc": 0.936,
-          "brier_skill": 0.138,
-          "top1pct_said": 37.1,
-          "top1pct_happened": 32.9,
+          "n_days": 90478,
+          "n_flood_days": 1162,
+          "auc": 0.937,
+          "brier_skill": 0.14,
+          "top1pct_said": 37.5,
+          "top1pct_happened": 35.6,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 24.1,
-              "warnings_right_pct": 34.4,
-              "n_warnings": 813
+              "floods_caught_pct": 25.3,
+              "warnings_right_pct": 37.3,
+              "n_warnings": 788
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 4.6,
-              "warnings_right_pct": 41.2,
-              "n_warnings": 131
+              "floods_caught_pct": 3.6,
+              "warnings_right_pct": 36.2,
+              "n_warnings": 116
             }
           ]
         },
         "rain only": {
-          "n_days": 90584,
-          "n_flood_days": 1163,
-          "auc": 0.894,
-          "brier_skill": 0.079,
-          "top1pct_said": 24.0,
-          "top1pct_happened": 22.1,
+          "n_days": 90478,
+          "n_flood_days": 1162,
+          "auc": 0.896,
+          "brier_skill": 0.08,
+          "top1pct_said": 25.3,
+          "top1pct_happened": 23.4,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.6,
-              "warnings_right_pct": 29.2,
-              "n_warnings": 383
+              "floods_caught_pct": 8.6,
+              "warnings_right_pct": 28.2,
+              "n_warnings": 355
             },
             {
               "at_pct": 50,
@@ -2371,40 +2371,40 @@
       },
       "onset only": {
         "rain + gauge": {
-          "n_days": 89418,
-          "n_flood_days": 1006,
+          "n_days": 89314,
+          "n_flood_days": 1005,
           "auc": 0.934,
-          "brier_skill": 0.126,
-          "top1pct_said": 33.5,
-          "top1pct_happened": 30.5,
+          "brier_skill": 0.128,
+          "top1pct_said": 34.0,
+          "top1pct_happened": 32.3,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 21.4,
-              "warnings_right_pct": 33.8,
-              "n_warnings": 636
+              "floods_caught_pct": 22.6,
+              "warnings_right_pct": 37.2,
+              "n_warnings": 611
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 4.0,
-              "warnings_right_pct": 42.1,
-              "n_warnings": 95
+              "floods_caught_pct": 3.1,
+              "warnings_right_pct": 36.5,
+              "n_warnings": 85
             }
           ]
         },
         "rain only": {
-          "n_days": 89418,
-          "n_flood_days": 1006,
-          "auc": 0.9,
-          "brier_skill": 0.081,
-          "top1pct_said": 24.0,
-          "top1pct_happened": 21.3,
+          "n_days": 89314,
+          "n_flood_days": 1005,
+          "auc": 0.902,
+          "brier_skill": 0.082,
+          "top1pct_said": 25.2,
+          "top1pct_happened": 23.2,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 11.0,
-              "warnings_right_pct": 29.4,
-              "n_warnings": 378
+              "floods_caught_pct": 9.9,
+              "warnings_right_pct": 28.4,
+              "n_warnings": 349
             },
             {
               "at_pct": 50,
@@ -2419,38 +2419,38 @@
         "rain + gauge": {
           "n_days": 51571,
           "n_flood_days": 350,
-          "auc": 0.949,
-          "brier_skill": 0.12,
-          "top1pct_said": 25.8,
-          "top1pct_happened": 21.9,
+          "auc": 0.948,
+          "brier_skill": 0.127,
+          "top1pct_said": 25.7,
+          "top1pct_happened": 22.9,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 17.7,
-              "warnings_right_pct": 39.0,
-              "n_warnings": 159
+              "floods_caught_pct": 18.6,
+              "warnings_right_pct": 46.1,
+              "n_warnings": 141
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 10.0,
-              "warnings_right_pct": 48.6,
-              "n_warnings": 72
+              "floods_caught_pct": 9.1,
+              "warnings_right_pct": 43.2,
+              "n_warnings": 74
             }
           ]
         },
         "rain only": {
           "n_days": 51571,
           "n_flood_days": 350,
-          "auc": 0.917,
-          "brier_skill": 0.032,
-          "top1pct_said": 22.3,
-          "top1pct_happened": 14.3,
+          "auc": 0.92,
+          "brier_skill": 0.027,
+          "top1pct_said": 23.6,
+          "top1pct_happened": 15.3,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 9.4,
-              "warnings_right_pct": 18.3,
-              "n_warnings": 180
+              "floods_caught_pct": 8.6,
+              "warnings_right_pct": 17.6,
+              "n_warnings": 170
             },
             {
               "at_pct": 50,
@@ -2465,38 +2465,38 @@
         "rain + gauge": {
           "n_days": 51208,
           "n_flood_days": 310,
-          "auc": 0.947,
-          "brier_skill": 0.111,
-          "top1pct_said": 23.2,
-          "top1pct_happened": 19.9,
+          "auc": 0.946,
+          "brier_skill": 0.117,
+          "top1pct_said": 22.7,
+          "top1pct_happened": 19.7,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 15.8,
-              "warnings_right_pct": 40.2,
-              "n_warnings": 122
+              "floods_caught_pct": 16.5,
+              "warnings_right_pct": 48.6,
+              "n_warnings": 105
             },
             {
               "at_pct": 50,
-              "floods_caught_pct": 10.0,
-              "warnings_right_pct": 50.0,
-              "n_warnings": 62
+              "floods_caught_pct": 9.4,
+              "warnings_right_pct": 44.6,
+              "n_warnings": 65
             }
           ]
         },
         "rain only": {
           "n_days": 51208,
           "n_flood_days": 310,
-          "auc": 0.921,
-          "brier_skill": 0.022,
-          "top1pct_said": 22.3,
-          "top1pct_happened": 13.1,
+          "auc": 0.924,
+          "brier_skill": 0.017,
+          "top1pct_said": 23.6,
+          "top1pct_happened": 14.5,
           "warnings": [
             {
               "at_pct": 25,
-              "floods_caught_pct": 10.6,
-              "warnings_right_pct": 18.4,
-              "n_warnings": 179
+              "floods_caught_pct": 9.7,
+              "warnings_right_pct": 17.9,
+              "n_warnings": 168
             },
             {
               "at_pct": 50,
@@ -2514,101 +2514,101 @@
       "reliability, rain + gauge": [
         {
           "said": "0-1%",
-          "n": 74054,
-          "said_avg_pct": 0.12,
+          "n": 75741,
+          "said_avg_pct": 0.14,
           "happened_pct": 0.15
         },
         {
           "said": "1-2%",
-          "n": 6959,
-          "said_avg_pct": 1.34,
-          "happened_pct": 1.25
+          "n": 3886,
+          "said_avg_pct": 1.47,
+          "happened_pct": 1.93
         },
         {
           "said": "2-5%",
-          "n": 3159,
-          "said_avg_pct": 3.41,
-          "happened_pct": 4.12
+          "n": 4365,
+          "said_avg_pct": 2.89,
+          "happened_pct": 2.31
         },
         {
           "said": "5-10%",
-          "n": 3019,
-          "said_avg_pct": 6.79,
-          "happened_pct": 6.26
+          "n": 3603,
+          "said_avg_pct": 7.15,
+          "happened_pct": 7.83
         },
         {
           "said": "10-25%",
-          "n": 2580,
-          "said_avg_pct": 14.23,
-          "happened_pct": 14.26
+          "n": 2095,
+          "said_avg_pct": 15.21,
+          "happened_pct": 14.03
         },
         {
           "said": "25-50%",
-          "n": 682,
-          "said_avg_pct": 34.09,
-          "happened_pct": 33.14
+          "n": 672,
+          "said_avg_pct": 35.49,
+          "happened_pct": 37.5
         },
         {
           "said": "50-75%",
-          "n": 105,
-          "said_avg_pct": 56.73,
-          "happened_pct": 40.0
+          "n": 93,
+          "said_avg_pct": 57.37,
+          "happened_pct": 33.33
         },
         {
           "said": "75-100%",
-          "n": 26,
-          "said_avg_pct": 85.22,
-          "happened_pct": 46.15
+          "n": 23,
+          "said_avg_pct": 87.44,
+          "happened_pct": 47.83
         }
       ],
       "reliability, rain + gauge, onset only": [
         {
           "said": "0-1%",
-          "n": 74028,
-          "said_avg_pct": 0.12,
+          "n": 75707,
+          "said_avg_pct": 0.14,
           "happened_pct": 0.15
         },
         {
           "said": "1-2%",
-          "n": 6904,
-          "said_avg_pct": 1.33,
-          "happened_pct": 1.22
+          "n": 3833,
+          "said_avg_pct": 1.47,
+          "happened_pct": 1.88
         },
         {
           "said": "2-5%",
-          "n": 2912,
-          "said_avg_pct": 3.4,
-          "happened_pct": 4.16
+          "n": 4104,
+          "said_avg_pct": 2.85,
+          "happened_pct": 2.24
         },
         {
           "said": "5-10%",
-          "n": 2706,
-          "said_avg_pct": 6.73,
-          "happened_pct": 6.13
+          "n": 3315,
+          "said_avg_pct": 7.14,
+          "happened_pct": 7.99
         },
         {
           "said": "10-25%",
-          "n": 2232,
-          "said_avg_pct": 13.95,
-          "happened_pct": 13.93
+          "n": 1744,
+          "said_avg_pct": 15.02,
+          "happened_pct": 13.36
         },
         {
           "said": "25-50%",
-          "n": 541,
-          "said_avg_pct": 34.0,
-          "happened_pct": 32.35
+          "n": 526,
+          "said_avg_pct": 35.53,
+          "happened_pct": 37.26
         },
         {
           "said": "50-75%",
-          "n": 69,
-          "said_avg_pct": 57.05,
-          "happened_pct": 40.58
+          "n": 62,
+          "said_avg_pct": 56.8,
+          "happened_pct": 32.26
         },
         {
           "said": "75-100%",
-          "n": 26,
-          "said_avg_pct": 85.22,
-          "happened_pct": 46.15
+          "n": 23,
+          "said_avg_pct": 87.44,
+          "happened_pct": 47.83
         }
       ]
     }
@@ -2617,16 +2617,16 @@
     "official danger level": {
       "n_days": 52070,
       "n_flood_days": 363,
-      "auc": 0.911,
-      "brier_skill": 0.056,
-      "top1pct_said": 18.2,
-      "top1pct_happened": 15.9,
+      "auc": 0.913,
+      "brier_skill": 0.057,
+      "top1pct_said": 17.4,
+      "top1pct_happened": 16.1,
       "warnings": [
         {
           "at_pct": 25,
-          "floods_caught_pct": 5.8,
-          "warnings_right_pct": 18.3,
-          "n_warnings": 115
+          "floods_caught_pct": 1.9,
+          "warnings_right_pct": 13.7,
+          "n_warnings": 51
         },
         {
           "at_pct": 50,
@@ -2638,104 +2638,104 @@
       "reliability": [
         {
           "said": "0-1%",
-          "n": 45407,
+          "n": 45467,
           "said_avg_pct": 0.15,
           "happened_pct": 0.17
         },
         {
           "said": "1-2%",
-          "n": 1742,
-          "said_avg_pct": 1.45,
-          "happened_pct": 2.24
+          "n": 1414,
+          "said_avg_pct": 1.35,
+          "happened_pct": 1.13
         },
         {
           "said": "2-5%",
-          "n": 3170,
-          "said_avg_pct": 2.92,
-          "happened_pct": 2.71
+          "n": 3974,
+          "said_avg_pct": 3.06,
+          "happened_pct": 3.35
         },
         {
           "said": "5-10%",
-          "n": 1263,
-          "said_avg_pct": 7.15,
-          "happened_pct": 6.65
+          "n": 657,
+          "said_avg_pct": 8.52,
+          "happened_pct": 7.15
         },
         {
           "said": "10-25%",
-          "n": 373,
-          "said_avg_pct": 15.96,
-          "happened_pct": 15.55
+          "n": 507,
+          "said_avg_pct": 15.66,
+          "happened_pct": 16.17
         },
         {
           "said": "25-50%",
-          "n": 115,
-          "said_avg_pct": 28.0,
-          "happened_pct": 18.26
+          "n": 51,
+          "said_avg_pct": 29.64,
+          "happened_pct": 13.73
         }
       ]
     },
     "own top 2%": {
-      "n_days": 40320,
-      "n_flood_days": 831,
-      "auc": 0.865,
-      "brier_skill": 0.091,
+      "n_days": 40188,
+      "n_flood_days": 829,
+      "auc": 0.869,
+      "brier_skill": 0.092,
       "top1pct_said": 33.8,
-      "top1pct_happened": 32.0,
+      "top1pct_happened": 32.6,
       "warnings": [
         {
           "at_pct": 25,
-          "floods_caught_pct": 13.5,
-          "warnings_right_pct": 36.8,
-          "n_warnings": 304
+          "floods_caught_pct": 10.6,
+          "warnings_right_pct": 35.9,
+          "n_warnings": 245
         },
         {
           "at_pct": 50,
-          "floods_caught_pct": 0.2,
+          "floods_caught_pct": 0.4,
           "warnings_right_pct": 10.0,
-          "n_warnings": 20
+          "n_warnings": 30
         }
       ],
       "reliability": [
         {
           "said": "0-1%",
-          "n": 26853,
-          "said_avg_pct": 0.24,
-          "happened_pct": 0.51
+          "n": 26781,
+          "said_avg_pct": 0.23,
+          "happened_pct": 0.5
         },
         {
           "said": "1-2%",
-          "n": 2777,
-          "said_avg_pct": 1.42,
-          "happened_pct": 1.44
+          "n": 3493,
+          "said_avg_pct": 1.61,
+          "happened_pct": 1.4
         },
         {
           "said": "2-5%",
-          "n": 5901,
-          "said_avg_pct": 2.72,
-          "happened_pct": 1.68
+          "n": 5481,
+          "said_avg_pct": 2.83,
+          "happened_pct": 1.82
         },
         {
           "said": "5-10%",
-          "n": 2651,
-          "said_avg_pct": 7.24,
-          "happened_pct": 7.39
+          "n": 2238,
+          "said_avg_pct": 7.48,
+          "happened_pct": 6.75
         },
         {
           "said": "10-25%",
-          "n": 1834,
-          "said_avg_pct": 14.52,
-          "happened_pct": 13.47
+          "n": 1950,
+          "said_avg_pct": 15.14,
+          "happened_pct": 15.69
         },
         {
           "said": "25-50%",
-          "n": 284,
-          "said_avg_pct": 36.51,
-          "happened_pct": 38.73
+          "n": 215,
+          "said_avg_pct": 38.14,
+          "happened_pct": 39.53
         },
         {
           "said": "50-75%",
-          "n": 20,
-          "said_avg_pct": 56.25,
+          "n": 30,
+          "said_avg_pct": 57.77,
           "happened_pct": 10.0
         }
       ]

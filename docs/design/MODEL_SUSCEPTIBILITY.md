@@ -211,7 +211,7 @@ This carries into P9 (daily run) unchanged.
 |---|---|---|
 | 1 | Elevation under-warning at 2,000–4,000 m (§7) | operational use |
 | 2 | Independent validation rests on 56 NASA points | confidence in §1 |
-| 3 | No comparison yet against GSI's 50 m benchmark map | roadmap exit check |
+| 3 | ~~No comparison yet against GSI's 50 m benchmark map~~ **Done 2026-10-10:** ranking 85 vs 60 in 100; top 14% of land holds 67% of landslides vs 25% ([GSI_MAP_COMPARISON.md](GSI_MAP_COMPARISON.md)) | closed |
 | 4 | Lithology unknown 6.11%, kept as explicit category `0` | resolved deliberately |
 | 5 | GSI/Bhuvan publication permission | production only — **deferred, not MVP** |
 

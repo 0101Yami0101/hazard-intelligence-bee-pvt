@@ -1,0 +1,96 @@
+{
+  "what": "day chance of a flood within 10 km, inside Arunachal, by how many days ahead the rain was forecast (0 = the screen's today, 6 = its seventh day)",
+  "method": "docs/design/LEAD_DAY_TEST.md \u00a71 (fixed before the data was fetched)",
+  "window": [
+    "2024-01-25",
+    "2025-10-31"
+  ],
+  "days": 646,
+  "places": 751,
+  "place_days_with_a_flood": 117,
+  "days_with_a_flood": 33,
+  "by_year": {
+    "2024": 55,
+    "2025": 62
+  },
+  "replay_reproduces_live_features": {
+    "largest_difference": 0.0,
+    "same_gaps": true
+  },
+  "rain_that_fell": {
+    "ranking_auc": 0.8923,
+    "said": 76.73,
+    "happened": 117,
+    "said_over_happened": 0.656
+  },
+  "by_lead": {
+    "0": {
+      "ranking_auc": 0.8923,
+      "said": 76.73,
+      "happened": 117,
+      "said_over_happened": 0.656
+    },
+    "1": {
+      "ranking_auc": 0.8879,
+      "said": 79.06,
+      "happened": 117,
+      "said_over_happened": 0.676
+    },
+    "2": {
+      "ranking_auc": 0.8931,
+      "said": 78.47,
+      "happened": 117,
+      "said_over_happened": 0.671
+    },
+    "3": {
+      "ranking_auc": 0.886,
+      "said": 76.58,
+      "happened": 117,
+      "said_over_happened": 0.654
+    },
+    "4": {
+      "ranking_auc": 0.8857,
+      "said": 72.79,
+      "happened": 117,
+      "said_over_happened": 0.622
+    },
+    "5": {
+      "ranking_auc": 0.8485,
+      "said": 69.18,
+      "happened": 117,
+      "said_over_happened": 0.591
+    },
+    "6": {
+      "ranking_auc": 0.8539,
+      "said": 66.59,
+      "happened": 117,
+      "said_over_happened": 0.569
+    }
+  },
+  "reading": {
+    "days_1_3_ranking": 0.8911,
+    "days_4_7_ranking": 0.8685,
+    "ranking_difference": -0.0226,
+    "ranking_difference_90pct_range": [
+      -0.05,
+      -0.002
+    ],
+    "days_1_3_forecast_over_recorded": 0.668,
+    "days_4_7_forecast_over_recorded": 0.609,
+    "level_ratio_far_over_near": 0.912,
+    "level_ratio_90pct_range": [
+      0.88,
+      0.944
+    ],
+    "enough_floods_to_say": true,
+    "days_4_7_measurably_worse": true,
+    "days_4_7_over_promise": false,
+    "days_4_7_under_promise": false,
+    "rules": {
+      "worse_if_ranking_lower_by_more_than": 0.02,
+      "over_promise_if_ratio_above": 1.5,
+      "under_promise_if_ratio_below": 0.667,
+      "need_at_least_flood_place_days": 20
+    }
+  }
+}

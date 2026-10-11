@@ -1,0 +1,1447 @@
+{
+  "protocol": "docs/design/FLOOD_WHEN_PILOT_PLAN.md \u00a717",
+  "gauges": 32,
+  "upstream_pairs": {
+    "Yinkiang": [
+      "Tuting"
+    ],
+    "Pangin": [
+      "Yinkiang",
+      "Tuting"
+    ],
+    "Passighat": [
+      "Pangin",
+      "Yinkiang"
+    ],
+    "Daporizo": [
+      "Lemeking"
+    ],
+    "Namsai": [
+      "Miao"
+    ],
+    "Bhalukpong": [
+      "Seppa"
+    ],
+    "Doimukh": [
+      "Pare HEP",
+      "Sagalee"
+    ],
+    "Pare HEP": [
+      "Sagalee"
+    ],
+    "Rho Basti": [
+      "Murga Bridge"
+    ],
+    "Tengapani Bridge": [
+      "Pagoda"
+    ]
+  },
+  "Y": {
+    "U": {
+      "pair_years": 89,
+      "moving_together": 89,
+      "share": 1.0,
+      "median_r": 0.925,
+      "by_gauge": {
+        "Bhalukpong": "27 of 27",
+        "Daporizo": "19 of 19",
+        "Doimukh": "2 of 2",
+        "Namsai": "8 of 8",
+        "Pangin": "9 of 9",
+        "Passighat": "9 of 9",
+        "Rho Basti": "8 of 8",
+        "Tengapani Bridge": "1 of 1",
+        "Yinkiang": "6 of 6"
+      },
+      "pass": true
+    },
+    "M": {
+      "gauges_where_melt_matters": [
+        "Kibithu",
+        "Rho Basti",
+        "Tuting",
+        "Murga Bridge",
+        "Yinkiang",
+        "Pangin",
+        "Lemeking",
+        "Passighat",
+        "Daporizo",
+        "Seppa",
+        "Bhalukpong",
+        "Pagoda",
+        "Tamen",
+        "Tengapani Bridge"
+      ],
+      "gauge_years": 213,
+      "moving_together": 77,
+      "share": 0.362,
+      "median_r": -0.306,
+      "by_gauge": {
+        "Bhalukpong": "1 of 27",
+        "Daporizo": "14 of 27",
+        "Kibithu": "20 of 20",
+        "Lemeking": "12 of 18",
+        "Murga Bridge": "5 of 8",
+        "Pagoda": "5 of 5",
+        "Pangin": "0 of 9",
+        "Passighat": "1 of 26",
+        "Rho Basti": "9 of 13",
+        "Seppa": "1 of 27",
+        "Tamen": "3 of 5",
+        "Tengapani Bridge": "1 of 2",
+        "Tuting": "4 of 20",
+        "Yinkiang": "1 of 6"
+      },
+      "pass": false
+    }
+  },
+  "K": {
+    "chance": {
+      "U": {
+        "no_harm": true,
+        "harm_at_leads": [],
+        "better_among_river_above_at_leads": [
+          3
+        ],
+        "kept": false
+      },
+      "LV": {
+        "no_harm": true,
+        "harm_at_leads": [],
+        "better_among_river_above_at_leads": [
+          2,
+          3,
+          4
+        ],
+        "kept": true
+      }
+    },
+    "level": {
+      "U": {
+        "kept": false,
+        "miss": {
+          "1/all": [
+            0.0375,
+            0.0373
+          ],
+          "1/above": [
+            0.161,
+            0.1568
+          ],
+          "2/all": [
+            0.0566,
+            0.0565
+          ],
+          "2/above": [
+            0.2018,
+            0.2035
+          ]
+        }
+      }
+    },
+    "kept_in_chance_model": [],
+    "kept_in_level_model": []
+  },
+  "lv_fitted_numbers_a_c_b_by_group": {
+    "1": {
+      "1": [
+        0.792,
+        0.545,
+        0.25
+      ],
+      "3": [
+        0.547,
+        2.272,
+        -0.316
+      ]
+    },
+    "2": {
+      "1": [
+        0.506,
+        1.401,
+        0.171
+      ],
+      "3": [
+        0.0,
+        4.754,
+        -0.155
+      ]
+    },
+    "3": {
+      "1": [
+        0.344,
+        1.701,
+        0.034
+      ],
+      "3": [
+        0.517,
+        1.85,
+        -0.451
+      ]
+    },
+    "4": {
+      "1": [
+        0.384,
+        1.187,
+        -0.067
+      ],
+      "3": [
+        0.538,
+        2.068,
+        -0.503
+      ]
+    },
+    "5": {
+      "1": [
+        0.417,
+        1.403,
+        -0.118
+      ],
+      "3": [
+        0.619,
+        1.699,
+        -0.721
+      ]
+    },
+    "6": {
+      "1": [
+        0.509,
+        0.743,
+        -0.169
+      ],
+      "3": [
+        0.577,
+        2.05,
+        -0.561
+      ]
+    },
+    "7": {
+      "1": [
+        0.555,
+        0.343,
+        -0.222
+      ],
+      "3": [
+        0.925,
+        0.915,
+        -0.594
+      ]
+    }
+  },
+  "final": "X",
+  "final_inputs_chance": [
+    "r3",
+    "r7",
+    "trigger_lag1",
+    "g_frac",
+    "g_rise",
+    "rise3",
+    "mean7",
+    "max7",
+    "above7",
+    "end",
+    "day_rise"
+  ],
+  "final_inputs_level": [
+    "r3",
+    "r7",
+    "trigger_lag1",
+    "g_frac",
+    "g_rise",
+    "rise3",
+    "mean7",
+    "max7",
+    "above7",
+    "end",
+    "day_rise"
+  ],
+  "by_lead": {
+    "1": {
+      "W": {
+        "auc_all": 0.9798,
+        "skill_all": 0.5378,
+        "auc_onset": 0.9543,
+        "skill_onset": 0.1216,
+        "skill_above": 0.5459,
+        "auc_above": 0.9092,
+        "low_days": 71,
+        "low_flooded": 5,
+        "above_floods_under_1pct": 1
+      },
+      "U": {
+        "auc_all": 0.9805,
+        "skill_all": 0.5395,
+        "auc_onset": 0.956,
+        "skill_onset": 0.1274,
+        "skill_above": 0.5435,
+        "auc_above": 0.9081,
+        "low_days": 69,
+        "low_flooded": 3,
+        "above_floods_under_1pct": 0
+      },
+      "F": {
+        "auc_all": 0.9798,
+        "skill_all": 0.5378,
+        "auc_onset": 0.9543,
+        "skill_onset": 0.1216,
+        "skill_above": 0.5459,
+        "auc_above": 0.9092,
+        "low_days": 71,
+        "low_flooded": 5,
+        "above_floods_under_1pct": 1
+      },
+      "X": {
+        "auc_all": 0.9798,
+        "skill_all": 0.5372,
+        "auc_onset": 0.9543,
+        "skill_onset": 0.1216,
+        "skill_above": 0.5436,
+        "auc_above": 0.9113,
+        "low_days": 86,
+        "low_flooded": 6,
+        "above_floods_under_1pct": 1
+      }
+    },
+    "2": {
+      "W": {
+        "auc_all": 0.9655,
+        "skill_all": 0.3044,
+        "auc_onset": 0.9479,
+        "skill_onset": 0.1234,
+        "skill_above": 0.2419,
+        "auc_above": 0.7891,
+        "low_days": 24,
+        "low_flooded": 5,
+        "above_floods_under_1pct": 0
+      },
+      "U": {
+        "auc_all": 0.9651,
+        "skill_all": 0.3058,
+        "auc_onset": 0.9471,
+        "skill_onset": 0.1267,
+        "skill_above": 0.24,
+        "auc_above": 0.7888,
+        "low_days": 22,
+        "low_flooded": 5,
+        "above_floods_under_1pct": 0
+      },
+      "F": {
+        "auc_all": 0.9655,
+        "skill_all": 0.3044,
+        "auc_onset": 0.9479,
+        "skill_onset": 0.1234,
+        "skill_above": 0.2419,
+        "auc_above": 0.7891,
+        "low_days": 24,
+        "low_flooded": 5,
+        "above_floods_under_1pct": 0
+      },
+      "X": {
+        "auc_all": 0.9657,
+        "skill_all": 0.3098,
+        "auc_onset": 0.9479,
+        "skill_onset": 0.1234,
+        "skill_above": 0.2639,
+        "auc_above": 0.8056,
+        "low_days": 66,
+        "low_flooded": 7,
+        "above_floods_under_1pct": 0
+      }
+    },
+    "3": {
+      "W": {
+        "auc_all": 0.9599,
+        "skill_all": 0.2337,
+        "auc_onset": 0.9491,
+        "skill_onset": 0.1454,
+        "skill_above": 0.1598,
+        "auc_above": 0.7441,
+        "low_days": 82,
+        "low_flooded": 9,
+        "above_floods_under_1pct": 0
+      },
+      "U": {
+        "auc_all": 0.9601,
+        "skill_all": 0.2322,
+        "auc_onset": 0.9495,
+        "skill_onset": 0.1424,
+        "skill_above": 0.1622,
+        "auc_above": 0.7449,
+        "low_days": 88,
+        "low_flooded": 9,
+        "above_floods_under_1pct": 0
+      },
+      "F": {
+        "auc_all": 0.9599,
+        "skill_all": 0.2337,
+        "auc_onset": 0.9491,
+        "skill_onset": 0.1454,
+        "skill_above": 0.1598,
+        "auc_above": 0.7441,
+        "low_days": 82,
+        "low_flooded": 9,
+        "above_floods_under_1pct": 0
+      },
+      "X": {
+        "auc_all": 0.96,
+        "skill_all": 0.2347,
+        "auc_onset": 0.9491,
+        "skill_onset": 0.1454,
+        "skill_above": 0.1646,
+        "auc_above": 0.7534,
+        "low_days": 93,
+        "low_flooded": 10,
+        "above_floods_under_1pct": 0
+      }
+    },
+    "4": {
+      "W": {
+        "auc_all": 0.949,
+        "skill_all": 0.1953,
+        "auc_onset": 0.9402,
+        "skill_onset": 0.1358,
+        "skill_above": 0.1676,
+        "auc_above": 0.7491,
+        "low_days": 152,
+        "low_flooded": 14,
+        "above_floods_under_1pct": 3
+      },
+      "U": {
+        "auc_all": 0.9519,
+        "skill_all": 0.193,
+        "auc_onset": 0.9441,
+        "skill_onset": 0.1344,
+        "skill_above": 0.1612,
+        "auc_above": 0.7458,
+        "low_days": 139,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 1
+      },
+      "F": {
+        "auc_all": 0.949,
+        "skill_all": 0.1953,
+        "auc_onset": 0.9402,
+        "skill_onset": 0.1358,
+        "skill_above": 0.1676,
+        "auc_above": 0.7491,
+        "low_days": 152,
+        "low_flooded": 14,
+        "above_floods_under_1pct": 3
+      },
+      "X": {
+        "auc_all": 0.949,
+        "skill_all": 0.1954,
+        "auc_onset": 0.9402,
+        "skill_onset": 0.1358,
+        "skill_above": 0.1679,
+        "auc_above": 0.7554,
+        "low_days": 174,
+        "low_flooded": 13,
+        "above_floods_under_1pct": 4
+      }
+    },
+    "5": {
+      "W": {
+        "auc_all": 0.9425,
+        "skill_all": 0.1724,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1334,
+        "skill_above": 0.1717,
+        "auc_above": 0.762,
+        "low_days": 254,
+        "low_flooded": 21,
+        "above_floods_under_1pct": 7
+      },
+      "U": {
+        "auc_all": 0.9451,
+        "skill_all": 0.1713,
+        "auc_onset": 0.9404,
+        "skill_onset": 0.1313,
+        "skill_above": 0.1753,
+        "auc_above": 0.7674,
+        "low_days": 266,
+        "low_flooded": 15,
+        "above_floods_under_1pct": 7
+      },
+      "F": {
+        "auc_all": 0.9425,
+        "skill_all": 0.1724,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1334,
+        "skill_above": 0.1717,
+        "auc_above": 0.762,
+        "low_days": 254,
+        "low_flooded": 21,
+        "above_floods_under_1pct": 7
+      },
+      "X": {
+        "auc_all": 0.9427,
+        "skill_all": 0.1711,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1334,
+        "skill_above": 0.1644,
+        "auc_above": 0.7672,
+        "low_days": 280,
+        "low_flooded": 20,
+        "above_floods_under_1pct": 6
+      }
+    },
+    "6": {
+      "W": {
+        "auc_all": 0.9406,
+        "skill_all": 0.157,
+        "auc_onset": 0.9372,
+        "skill_onset": 0.1291,
+        "skill_above": 0.1651,
+        "auc_above": 0.7599,
+        "low_days": 332,
+        "low_flooded": 18,
+        "above_floods_under_1pct": 5
+      },
+      "U": {
+        "auc_all": 0.9438,
+        "skill_all": 0.1544,
+        "auc_onset": 0.9411,
+        "skill_onset": 0.1267,
+        "skill_above": 0.161,
+        "auc_above": 0.7574,
+        "low_days": 318,
+        "low_flooded": 19,
+        "above_floods_under_1pct": 4
+      },
+      "F": {
+        "auc_all": 0.9406,
+        "skill_all": 0.157,
+        "auc_onset": 0.9372,
+        "skill_onset": 0.1291,
+        "skill_above": 0.1651,
+        "auc_above": 0.7599,
+        "low_days": 332,
+        "low_flooded": 18,
+        "above_floods_under_1pct": 5
+      },
+      "X": {
+        "auc_all": 0.9405,
+        "skill_all": 0.1572,
+        "auc_onset": 0.9372,
+        "skill_onset": 0.1291,
+        "skill_above": 0.1668,
+        "auc_above": 0.7612,
+        "low_days": 360,
+        "low_flooded": 25,
+        "above_floods_under_1pct": 5
+      }
+    },
+    "7": {
+      "W": {
+        "auc_all": 0.9376,
+        "skill_all": 0.1563,
+        "auc_onset": 0.9341,
+        "skill_onset": 0.1344,
+        "skill_above": 0.1652,
+        "auc_above": 0.7961,
+        "low_days": 382,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 4
+      },
+      "U": {
+        "auc_all": 0.9395,
+        "skill_all": 0.1604,
+        "auc_onset": 0.9361,
+        "skill_onset": 0.1374,
+        "skill_above": 0.1771,
+        "auc_above": 0.7974,
+        "low_days": 396,
+        "low_flooded": 13,
+        "above_floods_under_1pct": 4
+      },
+      "F": {
+        "auc_all": 0.9376,
+        "skill_all": 0.1563,
+        "auc_onset": 0.9341,
+        "skill_onset": 0.1344,
+        "skill_above": 0.1652,
+        "auc_above": 0.7961,
+        "low_days": 382,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 4
+      },
+      "X": {
+        "auc_all": 0.9376,
+        "skill_all": 0.1548,
+        "auc_onset": 0.9341,
+        "skill_onset": 0.1344,
+        "skill_above": 0.1539,
+        "auc_above": 0.7938,
+        "low_days": 384,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 5
+      }
+    },
+    "8": {
+      "W": {
+        "auc_all": 0.9402,
+        "skill_all": 0.1536,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1373,
+        "skill_above": 0.1524,
+        "auc_above": 0.7987,
+        "low_days": 389,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 3
+      },
+      "U": {
+        "auc_all": 0.9426,
+        "skill_all": 0.1556,
+        "auc_onset": 0.9403,
+        "skill_onset": 0.1387,
+        "skill_above": 0.159,
+        "auc_above": 0.7968,
+        "low_days": 399,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 3
+      },
+      "F": {
+        "auc_all": 0.9402,
+        "skill_all": 0.1536,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1373,
+        "skill_above": 0.1524,
+        "auc_above": 0.7987,
+        "low_days": 389,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 3
+      },
+      "X": {
+        "auc_all": 0.9402,
+        "skill_all": 0.1536,
+        "auc_onset": 0.9374,
+        "skill_onset": 0.1373,
+        "skill_above": 0.1524,
+        "auc_above": 0.7987,
+        "low_days": 389,
+        "low_flooded": 11,
+        "above_floods_under_1pct": 3
+      }
+    },
+    "9": {
+      "W": {
+        "auc_all": 0.9362,
+        "skill_all": 0.1375,
+        "auc_onset": 0.9336,
+        "skill_onset": 0.1261,
+        "skill_above": 0.1104,
+        "auc_above": 0.7613,
+        "low_days": 328,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 0
+      },
+      "U": {
+        "auc_all": 0.938,
+        "skill_all": 0.1377,
+        "auc_onset": 0.9358,
+        "skill_onset": 0.1274,
+        "skill_above": 0.1021,
+        "auc_above": 0.7538,
+        "low_days": 315,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 0
+      },
+      "F": {
+        "auc_all": 0.9362,
+        "skill_all": 0.1375,
+        "auc_onset": 0.9336,
+        "skill_onset": 0.1261,
+        "skill_above": 0.1104,
+        "auc_above": 0.7613,
+        "low_days": 328,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 0
+      },
+      "X": {
+        "auc_all": 0.9362,
+        "skill_all": 0.1375,
+        "auc_onset": 0.9336,
+        "skill_onset": 0.1261,
+        "skill_above": 0.1104,
+        "auc_above": 0.7613,
+        "low_days": 328,
+        "low_flooded": 12,
+        "above_floods_under_1pct": 0
+      }
+    }
+  },
+  "N": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true
+  },
+  "C": {
+    "W": {
+      "per_lead": {
+        "1": {
+          "days": 71,
+          "flooded": 5,
+          "pct": 7.0,
+          "pass": true
+        },
+        "2": {
+          "days": 24,
+          "flooded": 5,
+          "pct": 20.8,
+          "pass": false
+        },
+        "3": {
+          "days": 82,
+          "flooded": 9,
+          "pct": 11.0,
+          "pass": false
+        },
+        "4": {
+          "days": 152,
+          "flooded": 14,
+          "pct": 9.2,
+          "pass": true
+        },
+        "5": {
+          "days": 254,
+          "flooded": 21,
+          "pct": 8.3,
+          "pass": true
+        },
+        "6": {
+          "days": 332,
+          "flooded": 18,
+          "pct": 5.4,
+          "pass": true
+        },
+        "7": {
+          "days": 382,
+          "flooded": 11,
+          "pct": 2.9,
+          "pass": true
+        },
+        "8": {
+          "days": 389,
+          "flooded": 11,
+          "pct": 2.8,
+          "pass": true
+        },
+        "9": {
+          "days": 328,
+          "flooded": 12,
+          "pct": 3.7,
+          "pass": true
+        }
+      },
+      "pass": false
+    },
+    "F": {
+      "per_lead": {
+        "1": {
+          "days": 71,
+          "flooded": 5,
+          "pct": 7.0,
+          "pass": true
+        },
+        "2": {
+          "days": 24,
+          "flooded": 5,
+          "pct": 20.8,
+          "pass": false
+        },
+        "3": {
+          "days": 82,
+          "flooded": 9,
+          "pct": 11.0,
+          "pass": false
+        },
+        "4": {
+          "days": 152,
+          "flooded": 14,
+          "pct": 9.2,
+          "pass": true
+        },
+        "5": {
+          "days": 254,
+          "flooded": 21,
+          "pct": 8.3,
+          "pass": true
+        },
+        "6": {
+          "days": 332,
+          "flooded": 18,
+          "pct": 5.4,
+          "pass": true
+        },
+        "7": {
+          "days": 382,
+          "flooded": 11,
+          "pct": 2.9,
+          "pass": true
+        },
+        "8": {
+          "days": 389,
+          "flooded": 11,
+          "pct": 2.8,
+          "pass": true
+        },
+        "9": {
+          "days": 328,
+          "flooded": 12,
+          "pct": 3.7,
+          "pass": true
+        }
+      },
+      "pass": false
+    },
+    "X": {
+      "per_lead": {
+        "1": {
+          "days": 86,
+          "flooded": 6,
+          "pct": 7.0,
+          "pass": true
+        },
+        "2": {
+          "days": 66,
+          "flooded": 7,
+          "pct": 10.6,
+          "pass": false
+        },
+        "3": {
+          "days": 93,
+          "flooded": 10,
+          "pct": 10.8,
+          "pass": false
+        },
+        "4": {
+          "days": 174,
+          "flooded": 13,
+          "pct": 7.5,
+          "pass": true
+        },
+        "5": {
+          "days": 280,
+          "flooded": 20,
+          "pct": 7.1,
+          "pass": true
+        },
+        "6": {
+          "days": 360,
+          "flooded": 25,
+          "pct": 6.9,
+          "pass": true
+        },
+        "7": {
+          "days": 384,
+          "flooded": 11,
+          "pct": 2.9,
+          "pass": true
+        },
+        "8": {
+          "days": 389,
+          "flooded": 11,
+          "pct": 2.8,
+          "pass": true
+        },
+        "9": {
+          "days": 328,
+          "flooded": 12,
+          "pct": 3.7,
+          "pass": true
+        }
+      },
+      "pass": false
+    }
+  },
+  "level": {
+    "1": {
+      "miss_all": 0.0375,
+      "miss_above": 0.161,
+      "cwc_miss_m_all": 0.134,
+      "cwc_miss_m_above": 0.331,
+      "holds_all": 80.0,
+      "holds_above": 80.2,
+      "range_wholly_above": {
+        "days": 350,
+        "crossed_pct": 93.4,
+        "chance_avg_pct": 90.6
+      },
+      "range_wholly_below": {
+        "days": 89736,
+        "crossed_pct": 0.29,
+        "chance_avg_pct": 0.31
+      },
+      "L1": true,
+      "L2": true,
+      "L3": true
+    },
+    "2": {
+      "miss_all": 0.0566,
+      "miss_above": 0.2018,
+      "cwc_miss_m_all": 0.215,
+      "cwc_miss_m_above": 0.568,
+      "holds_all": 80.0,
+      "holds_above": 80.6,
+      "range_wholly_above": {
+        "days": 76,
+        "crossed_pct": 80.3,
+        "chance_avg_pct": 84.4
+      },
+      "range_wholly_below": {
+        "days": 89154,
+        "crossed_pct": 0.43,
+        "chance_avg_pct": 0.45
+      },
+      "L1": true,
+      "L2": true,
+      "L3": true
+    },
+    "3": {
+      "miss_all": 0.0675,
+      "miss_above": 0.1971,
+      "cwc_miss_m_all": 0.265,
+      "cwc_miss_m_above": 0.643,
+      "holds_all": 79.9,
+      "holds_above": 79.0,
+      "range_wholly_above": {
+        "days": 38,
+        "crossed_pct": 65.8,
+        "chance_avg_pct": 71.9
+      },
+      "range_wholly_below": {
+        "days": 88740,
+        "crossed_pct": 0.49,
+        "chance_avg_pct": 0.51
+      },
+      "L1": true,
+      "L2": true,
+      "L3": false
+    },
+    "4": {
+      "miss_all": 0.0759,
+      "miss_above": 0.1988,
+      "cwc_miss_m_all": 0.301,
+      "cwc_miss_m_above": 0.64,
+      "holds_all": 80.0,
+      "holds_above": 78.8,
+      "range_wholly_above": {
+        "days": 23,
+        "crossed_pct": 52.2,
+        "chance_avg_pct": 66.7
+      },
+      "range_wholly_below": {
+        "days": 88558,
+        "crossed_pct": 0.56,
+        "chance_avg_pct": 0.59
+      },
+      "L1": true,
+      "L2": true,
+      "L3": false
+    },
+    "5": {
+      "miss_all": 0.0823,
+      "miss_above": 0.2094,
+      "cwc_miss_m_all": 0.331,
+      "cwc_miss_m_above": 0.666,
+      "holds_all": 80.0,
+      "holds_above": 80.1,
+      "range_wholly_above": {
+        "days": 14,
+        "crossed_pct": 57.1,
+        "chance_avg_pct": 67.5
+      },
+      "range_wholly_below": {
+        "days": 88340,
+        "crossed_pct": 0.6,
+        "chance_avg_pct": 0.64
+      },
+      "L1": true,
+      "L2": true,
+      "L3": false
+    },
+    "6": {
+      "miss_all": 0.0871,
+      "miss_above": 0.215,
+      "cwc_miss_m_all": 0.354,
+      "cwc_miss_m_above": 0.695,
+      "holds_all": 80.0,
+      "holds_above": 79.2,
+      "range_wholly_above": {
+        "days": 10,
+        "crossed_pct": 30.0,
+        "chance_avg_pct": 45.9
+      },
+      "range_wholly_below": {
+        "days": 88247,
+        "crossed_pct": 0.65,
+        "chance_avg_pct": 0.66
+      },
+      "L1": true,
+      "L2": true,
+      "L3": false
+    },
+    "7": {
+      "miss_all": 0.0912,
+      "miss_above": 0.2103,
+      "cwc_miss_m_all": 0.373,
+      "cwc_miss_m_above": 0.712,
+      "holds_all": 80.0,
+      "holds_above": 79.7,
+      "range_wholly_above": {
+        "days": 9,
+        "crossed_pct": 11.1,
+        "chance_avg_pct": 32.0
+      },
+      "range_wholly_below": {
+        "days": 88138,
+        "crossed_pct": 0.65,
+        "chance_avg_pct": 0.68
+      },
+      "L1": true,
+      "L2": true,
+      "L3": false
+    }
+  },
+  "line_and_chance_agree_to_lead": 2,
+  "gates": {
+    "N": true,
+    "C": false,
+    "L": true
+  },
+  "rho_basti_june_2016": {
+    "2": [
+      {
+        "day": "2016-06-01",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.4,
+        "final_pct": 0.4
+      },
+      {
+        "day": "2016-06-02",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.2,
+        "final_pct": 0.2
+      },
+      {
+        "day": "2016-06-03",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 7.3,
+        "final_pct": 7.2
+      },
+      {
+        "day": "2016-06-04",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 7.8,
+        "final_pct": 7.9
+      },
+      {
+        "day": "2016-06-05",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.0,
+        "final_pct": 3.0
+      },
+      {
+        "day": "2016-06-06",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.2,
+        "final_pct": 3.3
+      },
+      {
+        "day": "2016-06-07",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.4,
+        "final_pct": 3.6
+      },
+      {
+        "day": "2016-06-08",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 4.4,
+        "final_pct": 4.6
+      },
+      {
+        "day": "2016-06-09",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 7.2,
+        "final_pct": 7.5
+      },
+      {
+        "day": "2016-06-10",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 12.9,
+        "final_pct": 13.5
+      },
+      {
+        "day": "2016-06-11",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 36.9,
+        "final_pct": 37.8
+      },
+      {
+        "day": "2016-06-12",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 47.0,
+        "final_pct": 47.1
+      },
+      {
+        "day": "2016-06-13",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 82.2,
+        "final_pct": 81.8
+      },
+      {
+        "day": "2016-06-14",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 82.4,
+        "final_pct": 82.4
+      },
+      {
+        "day": "2016-06-15",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 85.7,
+        "final_pct": 85.4
+      },
+      {
+        "day": "2016-06-16",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 56.7,
+        "final_pct": 57.0
+      },
+      {
+        "day": "2016-06-17",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 45.2,
+        "final_pct": 45.3
+      },
+      {
+        "day": "2016-06-18",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 50.5,
+        "final_pct": 50.4
+      },
+      {
+        "day": "2016-06-19",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 55.3,
+        "final_pct": 55.4
+      },
+      {
+        "day": "2016-06-20",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 42.4,
+        "final_pct": 42.8
+      }
+    ],
+    "3": [
+      {
+        "day": "2016-06-01",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.2,
+        "final_pct": 0.2
+      },
+      {
+        "day": "2016-06-02",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.2,
+        "final_pct": 0.2
+      },
+      {
+        "day": "2016-06-03",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.1,
+        "final_pct": 0.1
+      },
+      {
+        "day": "2016-06-04",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 4.9,
+        "final_pct": 4.2
+      },
+      {
+        "day": "2016-06-05",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 4.4,
+        "final_pct": 4.5
+      },
+      {
+        "day": "2016-06-06",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.1,
+        "final_pct": 3.2
+      },
+      {
+        "day": "2016-06-07",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.1,
+        "final_pct": 3.2
+      },
+      {
+        "day": "2016-06-08",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.5,
+        "final_pct": 3.9
+      },
+      {
+        "day": "2016-06-09",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.6,
+        "final_pct": 4.2
+      },
+      {
+        "day": "2016-06-10",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 10.2,
+        "final_pct": 11.3
+      },
+      {
+        "day": "2016-06-11",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 15.4,
+        "final_pct": 17.6
+      },
+      {
+        "day": "2016-06-12",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 22.3,
+        "final_pct": 26.3
+      },
+      {
+        "day": "2016-06-13",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 32.0,
+        "final_pct": 36.1
+      },
+      {
+        "day": "2016-06-14",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 29.8,
+        "final_pct": 32.2
+      },
+      {
+        "day": "2016-06-15",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 42.2,
+        "final_pct": 47.1
+      },
+      {
+        "day": "2016-06-16",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 29.2,
+        "final_pct": 32.8
+      },
+      {
+        "day": "2016-06-17",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 27.2,
+        "final_pct": 31.5
+      },
+      {
+        "day": "2016-06-18",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 23.3,
+        "final_pct": 25.6
+      },
+      {
+        "day": "2016-06-19",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 24.2,
+        "final_pct": 24.9
+      },
+      {
+        "day": "2016-06-20",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 16.9,
+        "final_pct": 18.1
+      }
+    ],
+    "4": [
+      {
+        "day": "2016-06-01",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.2,
+        "final_pct": 0.2
+      },
+      {
+        "day": "2016-06-02",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.1,
+        "final_pct": 0.1
+      },
+      {
+        "day": "2016-06-03",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.0,
+        "final_pct": 0.0
+      },
+      {
+        "day": "2016-06-04",
+        "river_above_at_reading": 0,
+        "flooded": 1,
+        "W_pct": 0.0,
+        "final_pct": 0.0
+      },
+      {
+        "day": "2016-06-05",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 2.0,
+        "final_pct": 1.6
+      },
+      {
+        "day": "2016-06-06",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 0.9,
+        "final_pct": 0.9
+      },
+      {
+        "day": "2016-06-07",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 0.8,
+        "final_pct": 0.8
+      },
+      {
+        "day": "2016-06-08",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 1.3,
+        "final_pct": 0.8
+      },
+      {
+        "day": "2016-06-09",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 1.7,
+        "final_pct": 1.4
+      },
+      {
+        "day": "2016-06-10",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 3.1,
+        "final_pct": 3.2
+      },
+      {
+        "day": "2016-06-11",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 7.1,
+        "final_pct": 7.4
+      },
+      {
+        "day": "2016-06-12",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 12.2,
+        "final_pct": 12.9
+      },
+      {
+        "day": "2016-06-13",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 32.3,
+        "final_pct": 35.0
+      },
+      {
+        "day": "2016-06-14",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 28.8,
+        "final_pct": 30.2
+      },
+      {
+        "day": "2016-06-15",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 24.5,
+        "final_pct": 24.9
+      },
+      {
+        "day": "2016-06-16",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 21.7,
+        "final_pct": 25.5
+      },
+      {
+        "day": "2016-06-17",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 24.5,
+        "final_pct": 27.9
+      },
+      {
+        "day": "2016-06-18",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 19.9,
+        "final_pct": 22.0
+      },
+      {
+        "day": "2016-06-19",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 13.9,
+        "final_pct": 14.0
+      },
+      {
+        "day": "2016-06-20",
+        "river_above_at_reading": 1,
+        "flooded": 1,
+        "W_pct": 10.3,
+        "final_pct": 9.5
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 # Briefing — the Data Backbone: the idea, the logic, and what stands on it
 
-**As of 6 October 2026 · the idea in about 7 minutes, all of it in about 14
+**As of 10 October 2026 · the idea in about 7 minutes, all of it in about 14
 · plain words.**
 
 **Visual version:** [BRIEFING.html](BRIEFING.html) — the same brief with
@@ -208,12 +208,12 @@ backbone.
 
 | Part of the backbone | State |
 |---|---|
-| Collecting outside sources | **Built.** 24 sources catalogued (about 8 GB), plus river gauges and flood records added since |
+| Collecting outside sources | **Built.** 29 sources catalogued, about 308 GB of raw files, river gauges and flood records included |
 | Raw store, with a record for every file | **Built** |
 | One shared map | **Built.** 8.2 million squares, 34 facts each, 26 years of daily rain |
 | Two shelves | **Built** as files. No outside access yet |
 | Products on top | **Two live:** SlopeSense and FloodSense |
-| The loop: write down, grade | **Built for floods**, daily since late September. Not yet for landslides |
+| The loop: write down, grade | **Built for floods**, daily since late September. **Landslide forecasts are written down daily since 10 October**, not graded yet: nothing feeds dated landslides in |
 | Automatic daily run | **Built for floods** (08:30, on one PC). The rest is run by hand |
 | Checking sources as a standing gate | By hand today |
 | A second state | **Designed** (Assam). Everything is wired to Arunachal today |
@@ -226,7 +226,10 @@ backbone.
 learned from about 37,000 mapped landslides inside Arunachal. WHEN: is the
 rain unusual for this exact place. It gives a 7-day outlook for any place
 and for roads. WHERE picks the right spot about 6 times in 7. It gives a
-rank, not a percentage, and its forecasts are not logged yet.
+rank, not a percentage. Its forecasts are written down every day since
+10 October; they are not graded yet, because nothing feeds dated
+landslides in. Since 10 October it has the same dashboard look as
+FloodSense.
 
 **FloodSense — flood forecast (live, the furthest along).** WHERE: how
 easily does water reach this spot. WHEN: rain here and upstream, plus the
@@ -238,20 +241,20 @@ monsoon ended.
 ## 11. Honest limits
 
 - **Wired to one state.** Moving it to a second is designed, not built.
-- **The loop runs for floods only**, and there is no live catch yet.
+- **The loop is closed for floods only.** Landslide forecasts are written
+  down but not graded. There is no live catch yet.
 - **No outside users yet.** No open feed, no partner intake, no sensors.
 - **It runs on one PC.** Two days have been missed so far.
 - **Sharing data outward** depends on each source's terms of use.
-- The Data Backbone page in the app was last rebuilt on 17 August, so it
-  understates what is built.
 
 ## 12. What is next
 
 1. **Prove it moves.** The Assam soil-erosion module: a new hazard and a
    new state at once. It is our entry for the NESFIC 2026 challenge.
    **Applications close 25 October; the build has not started.**
-2. **Close the loop for landslides** and run the whole pipeline by itself,
-   off the PC.
+2. **Grade the landslide forecasts** (they are written down now; grading
+   needs dated landslides, such as road-block logs) and run the whole
+   pipeline by itself, off the PC.
 3. **Stamp every answer with its inputs,** so any past forecast can be
    rebuilt.
 4. **Open the feed.** Read-only first, the two shelves separately. Only
@@ -287,15 +290,13 @@ monsoon ended.
 
 **Watch out for**
 
-- The Pipeline and catalogue pages were last rebuilt on 17 August. They
-  mark the forecast log and scheduling as planned, and they do not list the
-  river gauges. For floods all three are live. Say so.
-- The rain tile says "27 yr" because it counts the part-years at each end.
-  It is 26 years of data.
+- The Data Backbone pages were rebuilt on 9 October and now list the river
+  gauges, the flood record and both forecast logs.
+- Either forecast page has a **one-page report** button. It downloads a
+  printable page with both forecasts for the place on screen: useful to
+  hand over at the end of a demo.
 - **A SlopeSense class is a rank, not a chance.** "High" means "look here
-  first".
-- The SlopeSense bar chart "Next 7 days here" lists days out of order. Use
-  the Day-by-day table beside it.
+  first". Each level now carries a measured figure: places and days at High have had about 3 times the usual landslides, Very High about 10 times (from 84 dated landslides, so rough).
 - It is October: flood screens are quiet. Say it first.
 
 ## 14. Questions you will get
@@ -314,7 +315,7 @@ part. The data underneath is most of the work, and it is the same data
 every hazard needs. Built once, it makes each next product cheap.
 
 **The data is public. What is yours?** The assembly, the upkeep and the
-checked history. Twenty-plus sources made to fit one map, kept current,
+checked history. Twenty-nine sources made to fit one map, kept current,
 with every forecast graded. Anyone can download the same files. Few will
 do the rest.
 
@@ -348,14 +349,14 @@ ladder — a free statewide layer, then paid tiers.
 
 | Number | What it is |
 |---|---|
-| 24+ | sources lined up; about 8 GB of raw files |
+| 29 | sources lined up; about 308 GB of raw files |
 | 8.2 million | squares of 100 m on the shared map, 34 facts each |
 | 26 years | of daily rain for every place, no gaps |
 | 1.9 million | river gauge readings, some back to 1971 |
 | 2 | products live on one backbone |
 | 2 files | what the first flood module added of its own |
 | 4 of 5 | erosion ingredients already in the backbone |
-| 3,136 | flood forecasts written down since 21 Sep; 1,564 graded |
+| 4,032 | flood forecasts written down since 21 Sep; 1,938 graded |
 | about 5 MB | the app itself, which is why it runs on free hosting |
 | 25 Oct | NESFIC application closes |
 

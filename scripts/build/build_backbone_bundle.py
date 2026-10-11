@@ -546,6 +546,20 @@ def build_status(layers: dict, lab: dict, tl: dict) -> dict:
             f"{tr.get('first_issue', '')} to {s.get('issued_on', '')}", s.get("issued_on", ""),
             "daily", f"{chk.get('n_forecasts', 0):,} graded against the gauges so far.")
 
+    # SlopeSense's forecasts, written down since 2026-10-10
+    # (landslide_forecast_log.py). Logged, not graded: nothing feeds dated
+    # landslides in yet, and the row says so.
+    ls = ROOT / "records" / "landslide_forecast" / "state.csv"
+    if ls.exists():
+        lf = pd.read_csv(ls, dtype=str)
+        if len(lf):
+            row("Landslide forecast log",
+                f"{lf['issued_on'].nunique():,} daily issues · 7 days each",
+                f"{lf['issued_on'].min()} to {lf['issued_on'].max()}", lf["issued_on"].max(),
+                "daily", "Every rain point's trigger and each district's outlook, written "
+                         "down before the day. Not graded yet: that needs dated landslide "
+                         "records.")
+
     # ── the daily run: how many mornings it has run, and which it missed ───
     runs = {}
     logs = sorted((ROOT / "logs" / "flood_forecast_daily").glob("20??-??-??.log"))

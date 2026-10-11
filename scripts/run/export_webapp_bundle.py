@@ -30,7 +30,7 @@ TWO CHOICES WORTH KNOWING ABOUT
    answers the same question to 1% resolution.
 
 2. NEAREST-NEIGHBOUR for the rainfall lookup, not smooth interpolation. Rainfall
-   input is genuinely ~33 km. Interpolating it smoothly would paint detail the
+   input is genuinely ~22 km (~33 km until 2026-09-22). Interpolating it smoothly would paint detail the
    data does not have. The fine texture on the map comes from 100 m
    susceptibility, which is real; the rainfall term is deliberately blocky
    because that is what it is.
@@ -356,8 +356,10 @@ def main() -> None:
         "caveats": [
             "Relative susceptibility index, not probability of failure "
             "(presence-only data — there is no denominator).",
-            "Rainfall is ~33 km sampled Open-Meteo; terrain is 100 m. "
-            "The map's fine texture is terrain, not weather.",
+            # ~22 km since 2026-09-22 (219 points). It read "~33 km" (the 97
+            # points before that) until 2026-10-11: typed, so it went stale.
+            "Rainfall is ~22 km sampled Open-Meteo (219 points); terrain is "
+            "100 m. The map's fine texture is terrain, not weather.",
             "Hindcast AUC 0.768 used 11 km IMERG; the live forecast uses a "
             "coarser source and is expected to be somewhat weaker.",
             "Out-of-domain cells (ice, water, slope <=10 deg) are NOT scored.",

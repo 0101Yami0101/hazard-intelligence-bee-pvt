@@ -5,28 +5,28 @@
     "High": {
       "places": 56,
       "place_weeks": 8232,
-      "weeks_with_a_flood": 60,
-      "said": 33.03,
-      "said_over_happened": 0.551,
-      "auc": 0.8187,
+      "weeks_with_a_flood": 58,
+      "said": 31.16,
+      "said_over_happened": 0.537,
+      "auc": 0.8416,
       "measurable": true
     },
     "Medium": {
-      "places": 108,
-      "place_weeks": 15876,
+      "places": 104,
+      "place_weeks": 15288,
       "weeks_with_a_flood": 24,
-      "said": 10.32,
-      "said_over_happened": 0.43,
-      "auc": 0.8392,
+      "said": 9.33,
+      "said_over_happened": 0.389,
+      "auc": 0.8454,
       "measurable": true
     },
     "Low": {
-      "places": 587,
-      "place_weeks": 86289,
+      "places": 591,
+      "place_weeks": 86877,
       "weeks_with_a_flood": 43,
-      "said": 16.68,
-      "said_over_happened": 0.388,
-      "auc": 0.8414,
+      "said": 15.75,
+      "said_over_happened": 0.366,
+      "auc": 0.8588,
       "measurable": true
     }
   },
@@ -34,18 +34,18 @@
   "production_like_two_levels": {
     "design": "post-hoc, for the label text: curves re-fitted yearly on the latest two years; evidence counted from records before each graded year",
     "on_record": {
-      "place_weeks": 24790,
-      "weeks_with_a_flood": 87,
-      "said": 57.72,
-      "happened_over_said": 1.507,
-      "auc": 0.8525
+      "place_weeks": 24202,
+      "weeks_with_a_flood": 85,
+      "said": 55.78,
+      "happened_over_said": 1.524,
+      "auc": 0.8706
     },
     "none_on_record": {
-      "place_weeks": 85607,
+      "place_weeks": 86195,
       "weeks_with_a_flood": 40,
-      "said": 19.57,
-      "happened_over_said": 2.044,
-      "auc": 0.8658
+      "said": 19.33,
+      "happened_over_said": 2.069,
+      "auc": 0.8507
     }
   }
 }

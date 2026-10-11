@@ -1,0 +1,531 @@
+{
+  "what": "flood chance within 10 km (day, week) and anywhere in Arunachal (day, week), graded 2023-01-01..2025-10-31 on models that never saw those years; pass marks pre-registered in docs/design/FLOOD_SCREEN_PLAN.md Phase 2",
+  "truth": "reported flood confirmed by Sentinel-1, channel-shift suspects removed",
+  "truth_end": "2025-10-31",
+  "radius_km": 10.0,
+  "design": {
+    "floodable_area": "WHERE retrained on floods to 2022 (clean)",
+    "day_model": "tree 2015-20, calibration 2021-22, satellite rain",
+    "rain_fed": "Open-Meteo archive, scored as the live path scores live rain",
+    "near_here_curves": "fitted 2021-22, region-wide",
+    "weekly_grading": "non-overlapping weeks from 2023-01-01",
+    "seasonal_baseline": "the forecast's own mean by place and calendar month, live-archive 2010-14 and 2021-22"
+  },
+  "fit": {
+    "from": "2021-01-01",
+    "to": "2022-12-31",
+    "n_days": 730,
+    "near_here_place_days_with_a_flood": 1077,
+    "arunachal_days_with_a_flood": 48
+  },
+  "gate": {
+    "day_in_arunachal": {
+      "A1_pass": false,
+      "A2_pass": false,
+      "A3_pass": true
+    },
+    "week_in_arunachal": {
+      "A1_pass": false,
+      "A2_pass": false,
+      "A3_pass": true
+    },
+    "state_day": {
+      "A1_pass": false,
+      "A2_pass": false,
+      "A3_pass": true
+    },
+    "state_week": {
+      "A1_pass": true,
+      "A2_pass": true,
+      "A3_pass": false
+    }
+  },
+  "A4_consistency_violations": {
+    "near_day_below_own_cell": 0,
+    "week_below_likeliest_day": 0,
+    "week_above_sum_of_days": 0,
+    "state_day_below_a_cell": 0,
+    "state_week_out_of_bounds": 0
+  },
+  "A4_how_often_the_rules_bind": {
+    "week_clipped_share": 0.60564,
+    "day_raised_to_own_cell_share": 0.09559
+  },
+  "GATE_A_PASS": false,
+  "results": {
+    "day_in_arunachal": {
+      "n": 777285,
+      "n_with_flood": 441,
+      "said_total": 257.67,
+      "happened_total": 441,
+      "A1_said_over_happened": 0.584,
+      "A1_pass": false,
+      "A2_ranges_judged": 8,
+      "A2_pass": false,
+      "A3_brier_skill_vs_own_season": 0.0031,
+      "auc": 0.8398,
+      "timing_auc_vs_own_season": 0.6083,
+      "reliability": [
+        {
+          "range": "0-0.05%",
+          "n": 732717,
+          "n_with_flood": 203,
+          "said_pct": 0.0125,
+          "happened_pct": 0.0277
+        },
+        {
+          "range": "0.05-0.1%",
+          "n": 16921,
+          "n_with_flood": 52,
+          "said_pct": 0.0861,
+          "happened_pct": 0.3073
+        },
+        {
+          "range": "0.1-0.2%",
+          "n": 12386,
+          "n_with_flood": 39,
+          "said_pct": 0.1518,
+          "happened_pct": 0.3149
+        },
+        {
+          "range": "0.2-0.5%",
+          "n": 3579,
+          "n_with_flood": 28,
+          "said_pct": 0.2997,
+          "happened_pct": 0.7823
+        },
+        {
+          "range": "0.5-1%",
+          "n": 8860,
+          "n_with_flood": 69,
+          "said_pct": 0.6319,
+          "happened_pct": 0.7788
+        },
+        {
+          "range": "1-2%",
+          "n": 1470,
+          "n_with_flood": 11,
+          "said_pct": 1.455,
+          "happened_pct": 0.7483
+        },
+        {
+          "range": "2-5%",
+          "n": 1006,
+          "n_with_flood": 19,
+          "said_pct": 2.6137,
+          "happened_pct": 1.8887
+        },
+        {
+          "range": "5-10%",
+          "n": 346,
+          "n_with_flood": 20,
+          "said_pct": 5.2055,
+          "happened_pct": 5.7803
+        }
+      ],
+      "A3_pass": true,
+      "info_brier_skill_vs_record_place_month": -0.0059
+    },
+    "week_in_arunachal": {
+      "n": 110397,
+      "n_with_flood": 389,
+      "said_total": 213.51,
+      "happened_total": 389,
+      "A1_said_over_happened": 0.549,
+      "A1_pass": false,
+      "A2_ranges_judged": 8,
+      "A2_pass": false,
+      "A3_brier_skill_vs_own_season": 0.0157,
+      "auc": 0.8577,
+      "timing_auc_vs_own_season": 0.6238,
+      "reliability": [
+        {
+          "range": "0-0.2%",
+          "n": 99502,
+          "n_with_flood": 148,
+          "said_pct": 0.0651,
+          "happened_pct": 0.1487
+        },
+        {
+          "range": "0.2-0.5%",
+          "n": 4758,
+          "n_with_flood": 49,
+          "said_pct": 0.2624,
+          "happened_pct": 1.0298
+        },
+        {
+          "range": "0.5-1%",
+          "n": 3592,
+          "n_with_flood": 72,
+          "said_pct": 0.6795,
+          "happened_pct": 2.0045
+        },
+        {
+          "range": "1-2%",
+          "n": 583,
+          "n_with_flood": 11,
+          "said_pct": 1.4071,
+          "happened_pct": 1.8868
+        },
+        {
+          "range": "2-5%",
+          "n": 1230,
+          "n_with_flood": 52,
+          "said_pct": 3.1056,
+          "happened_pct": 4.2276
+        },
+        {
+          "range": "5-10%",
+          "n": 530,
+          "n_with_flood": 35,
+          "said_pct": 6.5435,
+          "happened_pct": 6.6038
+        },
+        {
+          "range": "10-25%",
+          "n": 190,
+          "n_with_flood": 12,
+          "said_pct": 14.2104,
+          "happened_pct": 6.3158
+        },
+        {
+          "range": "25-50%",
+          "n": 12,
+          "n_with_flood": 10,
+          "said_pct": 31.4687,
+          "happened_pct": 83.3333
+        }
+      ],
+      "A3_pass": true,
+      "info_brier_skill_vs_record_place_month": -0.0337
+    },
+    "day_region_wide": {
+      "n": 1896120,
+      "n_with_flood": 2605,
+      "said_total": 1407.98,
+      "happened_total": 2605,
+      "A1_said_over_happened": 0.54,
+      "A1_pass": false,
+      "A2_ranges_judged": 9,
+      "A2_pass": false,
+      "A3_brier_skill_vs_own_season": 0.0092,
+      "auc": 0.9379,
+      "timing_auc_vs_own_season": 0.6615,
+      "reliability": [
+        {
+          "range": "0-0.05%",
+          "n": 1692320,
+          "n_with_flood": 303,
+          "said_pct": 0.0129,
+          "happened_pct": 0.0179
+        },
+        {
+          "range": "0.05-0.1%",
+          "n": 53001,
+          "n_with_flood": 115,
+          "said_pct": 0.087,
+          "happened_pct": 0.217
+        },
+        {
+          "range": "0.1-0.2%",
+          "n": 53436,
+          "n_with_flood": 210,
+          "said_pct": 0.1543,
+          "happened_pct": 0.393
+        },
+        {
+          "range": "0.2-0.5%",
+          "n": 15505,
+          "n_with_flood": 124,
+          "said_pct": 0.2938,
+          "happened_pct": 0.7997
+        },
+        {
+          "range": "0.5-1%",
+          "n": 53945,
+          "n_with_flood": 766,
+          "said_pct": 0.6567,
+          "happened_pct": 1.42
+        },
+        {
+          "range": "1-2%",
+          "n": 16602,
+          "n_with_flood": 426,
+          "said_pct": 1.4971,
+          "happened_pct": 2.566
+        },
+        {
+          "range": "2-5%",
+          "n": 7842,
+          "n_with_flood": 350,
+          "said_pct": 2.6841,
+          "happened_pct": 4.4631
+        },
+        {
+          "range": "5-10%",
+          "n": 3195,
+          "n_with_flood": 279,
+          "said_pct": 5.2922,
+          "happened_pct": 8.7324
+        },
+        {
+          "range": "10-25%",
+          "n": 274,
+          "n_with_flood": 32,
+          "said_pct": 11.8881,
+          "happened_pct": 11.6788
+        }
+      ],
+      "A3_pass": true
+    },
+    "week_region_wide": {
+      "n": 269304,
+      "n_with_flood": 2058,
+      "said_total": 1183.52,
+      "happened_total": 2058,
+      "A1_said_over_happened": 0.575,
+      "A1_pass": false,
+      "A2_ranges_judged": 9,
+      "A2_pass": false,
+      "A3_brier_skill_vs_own_season": 0.0342,
+      "auc": 0.9412,
+      "timing_auc_vs_own_season": 0.6473,
+      "reliability": [
+        {
+          "range": "0-0.2%",
+          "n": 224488,
+          "n_with_flood": 172,
+          "said_pct": 0.0655,
+          "happened_pct": 0.0766
+        },
+        {
+          "range": "0.2-0.5%",
+          "n": 15112,
+          "n_with_flood": 103,
+          "said_pct": 0.2642,
+          "happened_pct": 0.6816
+        },
+        {
+          "range": "0.5-1%",
+          "n": 13202,
+          "n_with_flood": 228,
+          "said_pct": 0.6957,
+          "happened_pct": 1.727
+        },
+        {
+          "range": "1-2%",
+          "n": 2820,
+          "n_with_flood": 76,
+          "said_pct": 1.4291,
+          "happened_pct": 2.695
+        },
+        {
+          "range": "2-5%",
+          "n": 7222,
+          "n_with_flood": 473,
+          "said_pct": 3.2364,
+          "happened_pct": 6.5494
+        },
+        {
+          "range": "5-10%",
+          "n": 4425,
+          "n_with_flood": 513,
+          "said_pct": 6.625,
+          "happened_pct": 11.5932
+        },
+        {
+          "range": "10-25%",
+          "n": 1814,
+          "n_with_flood": 369,
+          "said_pct": 14.2785,
+          "happened_pct": 20.3418
+        },
+        {
+          "range": "25-50%",
+          "n": 188,
+          "n_with_flood": 103,
+          "said_pct": 31.8079,
+          "happened_pct": 54.7872
+        },
+        {
+          "range": "50-100%",
+          "n": 33,
+          "n_with_flood": 21,
+          "said_pct": 56.9093,
+          "happened_pct": 63.6364
+        }
+      ],
+      "A3_pass": true
+    },
+    "state_day": {
+      "n": 1035,
+      "n_with_flood": 89,
+      "said_total": 58.55,
+      "happened_total": 89,
+      "A1_said_over_happened": 0.658,
+      "A1_pass": false,
+      "A2_ranges_judged": 3,
+      "A2_pass": false,
+      "A3_brier_skill_vs_own_season": 0.0417,
+      "auc": 0.7891,
+      "timing_auc_vs_own_season": 0.6143,
+      "reliability": [
+        {
+          "range": "0-2%",
+          "n": 463,
+          "n_with_flood": 4,
+          "said_pct": 0.6043,
+          "happened_pct": 0.8639
+        },
+        {
+          "range": "2-5%",
+          "n": 377,
+          "n_with_flood": 38,
+          "said_pct": 4.3328,
+          "happened_pct": 10.0796
+        },
+        {
+          "range": "5-10%",
+          "n": 2,
+          "n_with_flood": 0,
+          "said_pct": 7.4789,
+          "happened_pct": 0.0
+        },
+        {
+          "range": "10-25%",
+          "n": 148,
+          "n_with_flood": 30,
+          "said_pct": 15.0218,
+          "happened_pct": 20.2703
+        },
+        {
+          "range": "25-50%",
+          "n": 37,
+          "n_with_flood": 10,
+          "said_pct": 33.0767,
+          "happened_pct": 27.027
+        },
+        {
+          "range": "50-75%",
+          "n": 8,
+          "n_with_flood": 7,
+          "said_pct": 60.0,
+          "happened_pct": 87.5
+        }
+      ],
+      "A3_pass": true
+    },
+    "state_week": {
+      "n": 147,
+      "n_with_flood": 41,
+      "said_total": 35.73,
+      "happened_total": 41,
+      "A1_said_over_happened": 0.871,
+      "A1_pass": true,
+      "A2_ranges_judged": 2,
+      "A2_pass": true,
+      "A3_brier_skill_vs_own_season": -0.1907,
+      "auc": 0.8072,
+      "timing_auc_vs_own_season": 0.5624,
+      "reliability": [
+        {
+          "range": "0-2%",
+          "n": 3,
+          "n_with_flood": 0,
+          "said_pct": 1.41,
+          "happened_pct": 0.0
+        },
+        {
+          "range": "2-5%",
+          "n": 54,
+          "n_with_flood": 3,
+          "said_pct": 4.1274,
+          "happened_pct": 5.5556
+        },
+        {
+          "range": "5-10%",
+          "n": 20,
+          "n_with_flood": 3,
+          "said_pct": 5.5,
+          "happened_pct": 15.0
+        },
+        {
+          "range": "10-25%",
+          "n": 9,
+          "n_with_flood": 3,
+          "said_pct": 14.2761,
+          "happened_pct": 33.3333
+        },
+        {
+          "range": "25-50%",
+          "n": 27,
+          "n_with_flood": 13,
+          "said_pct": 28.0387,
+          "happened_pct": 48.1481
+        },
+        {
+          "range": "50-75%",
+          "n": 28,
+          "n_with_flood": 15,
+          "said_pct": 64.9808,
+          "happened_pct": 53.5714
+        },
+        {
+          "range": "75-100%",
+          "n": 6,
+          "n_with_flood": 4,
+          "said_pct": 88.4393,
+          "happened_pct": 66.6667
+        }
+      ],
+      "A3_pass": false
+    },
+    "week_in_arunachal_A1_all_phases": [
+      0.549,
+      0.538,
+      0.557,
+      0.559,
+      0.559,
+      0.569,
+      0.562
+    ],
+    "day_in_arunachal_A1_by_year": {
+      "2023": {
+        "said": 90.3,
+        "happened": 98
+      },
+      "2024": {
+        "said": 93.2,
+        "happened": 194
+      },
+      "2025": {
+        "said": 74.1,
+        "happened": 149
+      }
+    },
+    "what_people_see_week_in_arunachal": {
+      "all_weeks": {
+        "median_pct": 0.054,
+        "p90_pct": 0.137,
+        "p99_pct": 3.688,
+        "share_at_or_above": {
+          "2%": 0.0178,
+          "5%": 0.0066,
+          "10%": 0.0018,
+          "25%": 0.0001
+        }
+      },
+      "jun_to_sep_weeks": {
+        "median_pct": 0.13,
+        "p90_pct": 0.38,
+        "p99_pct": 5.239,
+        "share_at_or_above": {
+          "2%": 0.0307,
+          "5%": 0.0124,
+          "10%": 0.0041,
+          "25%": 0.0003
+        }
+      }
+    }
+  }
+}

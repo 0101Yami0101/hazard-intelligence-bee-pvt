@@ -36,8 +36,12 @@ from common import AOI_BBOX, AOI_NAME, CONTEXT, LABELS, UA, record
 GSI_PROXY = "https://bhusanket.gsi.gov.in/DotNet/proxy.ashx"
 GSI_SUSE = ("https://bhusanket.gsi.gov.in/gisserver/rest/services/GSI/"
             "Susceptibility/ImageServer/exportImage")
-GSI_MAX_H = 4100          # server-declared ceiling; exceed it and the export fails
 GSI_NATIVE_M = 50
+# The service's own grid: EPSG:32644 (UTM 44N — one zone for all India), with
+# this origin. Tiles are snapped to it so no cell is resampled.
+GSI_CRS = "EPSG:32644"
+GSI_X0, GSI_Y1 = -361125.7603, 3859539.6613
+GSI_TILE = 2000           # px; 2,000 and 4,000 px tiles agree cell for cell
 
 BHUVAN_MC = "https://bhuvan-ras2.nrsc.gov.in/mapcache"
 FLOOD_LAYER = "agg_ar"
@@ -54,43 +58,73 @@ def _deg_to_px(west: float, south: float, east: float, north: float,
 
 
 def fetch_susceptibility() -> Path | None:
-    """Export the susceptibility raster, stacking horizontal strips if needed."""
+    """The susceptibility raster, cell for cell as GSI serves it.
+
+    ⚠️ Fetched on the service's OWN grid (EPSG:32644, 50 m, snapped to its
+    origin) in tiles, with nearest-neighbour. The first version asked for the
+    whole state in one image, in EPSG:4326, and took the server's default
+    (bilinear) resampling. What came back had the right classes in the right
+    proportions and the right outline — and matched a fresh native export on
+    only 41% of cells, about what chance gives for three classes. It scored
+    as noise against terrain and against landslides, which is how it was
+    caught (2026-10-10, docs/design/GSI_MAP_COMPARISON.md §3). On the native
+    grid a 500, a 2,000 and a 4,000 px request agree cell for cell.
+    """
+    from pyproj import Transformer
+    from rasterio.transform import from_origin
+
     w, s, e, n = AOI_BBOX
-    px_w, px_h = _deg_to_px(w, s, e, n, GSI_NATIVE_M)
-    strips = math.ceil(px_h / GSI_MAX_H)
-    strip_h_deg = (n - s) / strips
-    strip_px_h = math.ceil(px_h / strips)
-    print(f"  GSI susceptibility: {px_w}x{px_h} px at {GSI_NATIVE_M} m "
-          f"-> {strips} strip(s)")
+    tr = Transformer.from_crs("EPSG:4326", GSI_CRS, always_xy=True)
+    xs, ys = tr.transform([w, w, e, e, (w + e) / 2, (w + e) / 2],
+                          [s, n, s, n, s, n])
+    c0 = int((min(xs) - GSI_X0) // GSI_NATIVE_M)
+    c1 = int((max(xs) - GSI_X0) // GSI_NATIVE_M) + 1
+    r0 = int((GSI_Y1 - max(ys)) // GSI_NATIVE_M)
+    r1 = int((GSI_Y1 - min(ys)) // GSI_NATIVE_M) + 1
+    H, W = r1 - r0, c1 - c0
+    arr = np.zeros((H, W), dtype="uint8")
+    tiles = [(r, c) for r in range(0, H, GSI_TILE) for c in range(0, W, GSI_TILE)]
+    print(f"  GSI susceptibility: {W}x{H} px at {GSI_NATIVE_M} m on its own grid "
+          f"-> {len(tiles)} tile(s)")
+    for i, (r, c) in enumerate(tiles):
+        h, wd = min(GSI_TILE, H - r), min(GSI_TILE, W - c)
+        xmin = GSI_X0 + (c0 + c) * GSI_NATIVE_M
+        ymax = GSI_Y1 - (r0 + r) * GSI_NATIVE_M
+        target = (f"{GSI_SUSE}?bbox={xmin},{ymax - h * GSI_NATIVE_M},"
+                  f"{xmin + wd * GSI_NATIVE_M},{ymax}&bboxSR=32644&imageSR=32644"
+                  f"&size={wd},{h}&format=tiff"
+                  f"&interpolation=RSP_NearestNeighbor&f=image")
+        for attempt in range(3):
+            try:
+                resp = requests.get(f"{GSI_PROXY}?{target}", timeout=600, headers=UA)
+                resp.raise_for_status()
+                if "image" not in resp.headers.get("Content-Type", ""):
+                    raise RuntimeError(resp.text[:160])
+                with rasterio.open(io.BytesIO(resp.content)) as src:
+                    t = src.read(1)
+                if t.shape != (h, wd):
+                    raise RuntimeError(f"asked {wd}x{h}, got {t.shape[1]}x{t.shape[0]}")
+                break
+            except Exception as ex:  # noqa: BLE001
+                if attempt == 2:
+                    print(f"    ! tile {i + 1}: {type(ex).__name__}: {ex}")
+                    return None
+        arr[r:r + h, c:c + wd] = np.clip(t, 0, 3).astype("uint8")
+        print(f"    tile {i + 1}/{len(tiles)} ok", flush=True)
 
-    rows = []
-    for i in range(strips):
-        # Strips run north to south so the stacked array matches raster order.
-        s_i = n - (i + 1) * strip_h_deg
-        n_i = n - i * strip_h_deg
-        target = (f"{GSI_SUSE}?bbox={w},{s_i},{e},{n_i}&bboxSR=4326&imageSR=4326"
-                  f"&size={px_w},{strip_px_h}&format=tiff&f=image")
-        r = requests.get(f"{GSI_PROXY}?{target}", timeout=600, headers=UA)
-        r.raise_for_status()
-        if "image" not in r.headers.get("Content-Type", ""):
-            print(f"    ! strip {i + 1}: server returned {r.text[:160]}")
-            return None
-        with rasterio.open(io.BytesIO(r.content)) as src:
-            rows.append(src.read(1))
-        print(f"    strip {i + 1}/{strips} ok ({rows[-1].shape})")
-
-    arr = np.vstack(rows)
     dest = CONTEXT / f"gsi_landslide-susceptibility_50m_{AOI_NAME}.tif"
     with rasterio.open(
-        dest, "w", driver="GTiff", height=arr.shape[0], width=arr.shape[1],
-        count=1, dtype="uint8", crs="EPSG:4326",
-        transform=from_bounds(w, s, e, n, arr.shape[1], arr.shape[0]),
-        nodata=0, compress="deflate",
+        dest, "w", driver="GTiff", height=H, width=W,
+        count=1, dtype="uint8", crs=GSI_CRS,
+        transform=from_origin(GSI_X0 + c0 * GSI_NATIVE_M, GSI_Y1 - r0 * GSI_NATIVE_M,
+                              GSI_NATIVE_M, GSI_NATIVE_M),
+        nodata=0, compress="deflate", tiled=True,
     ) as dst:
-        dst.write(arr.astype("uint8"), 1)
+        dst.write(arr, 1)
         dst.update_tags(
             classes="1=Low, 2=Moderate, 3=High susceptibility; 0=no data",
             source="Geological Survey of India, National Landslide Susceptibility Mapping",
+            grid="GSI's own: EPSG:32644, 50 m, nearest-neighbour, cell for cell",
         )
 
     vals, counts = np.unique(arr, return_counts=True)

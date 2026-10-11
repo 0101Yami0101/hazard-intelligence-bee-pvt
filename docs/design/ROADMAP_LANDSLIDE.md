@@ -11,6 +11,45 @@ This document is *when and in what order*.
 > `hazard` argument; never hardcode `"landslide"`) or you'll rewrite them in the flood
 > roadmap. This is the single most expensive mistake available in this plan.
 
+> **2026-10-10 — SlopeSense's forecasts are written down every day.** Until
+> now the app worked the forecast out on each visit and kept nothing.
+> - `scripts/model/landslide_forecast_log.py`, called by the daily 08:30 run
+>   with the rain it has already fetched (one fetch for both forecasts). A
+>   failure there never stops the flood forecast.
+> - **Per issue** (`records/landslide_forecast/issues/<date>.npz`): 7 days of
+>   rain and trigger at all 219 rain points, the time of issue, and checksums
+>   of the static files. Hazard = susceptibility × trigger, so this rebuilds
+>   the hazard and class at any place, road or district.
+> - **Two readable tables:** `state.csv` (share of assessed land in each
+>   class, per day) and `districts.csv` (the screen's district outlook).
+> - **Checked:** the offline test passes; the log's whole-state figures and
+>   all 18 district rows equal what the app showed for the same day; `check`
+>   rebuilds each issue exactly from its own file; the flood forecast's
+>   numbers are unchanged (golden check, 0 changes); screens pass.
+> - **Not done:** grading. That needs dated, located landslides and nothing
+>   feeds them in yet. The class stays a rank, not a chance.
+>
+> **2026-10-10 — SlopeSense's screens rebuilt in the FloodSense look, and
+> district figures corrected.** Full note: [SLOPESENSE_SCREEN.md](SLOPESENSE_SCREEN.md).
+> - Forecast, Roads and Susceptibility are dashboards built from the shared
+>   pieces (header + search, tiles, place | map | side panel, badges for the
+>   kinds of number). The maths is unchanged: 43 of 43 numbers equal the old
+>   screen's on the same rain.
+> - **District figures now use each district's real outline**, not the box
+>   around it (14 of 18 read differently on 10 Oct), and the log above was
+>   switched with it: `districts.csv` was rewritten from the issue file
+>   (`rebuild`), the first version kept in
+>   `records/landslide_forecast/_box_figures_until_2026-10-10/`.
+> - Fixed on the way: every district picked after the first was drawn through
+>   the first one's outline; "Clear route" crashed; a town on flat ground was
+>   "not assessed" in one panel and given a level in another.
+>
+> **2026-10-11 — each level now has a measured meaning.** On 84 dated
+> landslides: Very Low 0.2×, Low 1×, Moderate 2×, High 3×, Very High 10× the
+> landslides of an average place and day; by rain alone, 0.2× (score under
+> 50) to 9× (95 and up) a usual day at the place. The place card shows these
+> in place of "4 of 5". [LANDSLIDE_TIMES_USUAL.md](LANDSLIDE_TIMES_USUAL.md).
+
 ---
 
 ## The whole thing at a glance
@@ -271,7 +310,7 @@ Artefacts: `data/processed/susceptibility.tif`, `susceptibility_class.tif`,
 `models/susceptibility_{fold0-4,full}.txt`, `reports/susceptibility_{map,shap}.png`.
 
 ✓ **Exit check:** AUC ≥ 0.80 under spatial block CV — **met (0.860)**.
-⬜ Still open: comparison against GSI's 50 m benchmark map.
+✓ **Compared with GSI's 50 m national map (2026-10-10):** on the same cells SlopeSense ranks a landslide above other ground 85 times in 100, GSI's three classes 60; SlopeSense's top 14% of land holds 67% of mapped landslides, GSI's High class (the same area) 25%. The gap holds on the landslides GSI's map-makers did not have, and in all five regions. [GSI_MAP_COMPARISON.md](GSI_MAP_COMPARISON.md). The first copy of GSI's map turned out to be garbled by the download and was re-fetched.
 
 **Three findings that change how we present this:**
 

@@ -2297,3 +2297,673 @@ restore `flood_when_gauge.json` and `gauge_levels.json` from
 - Google's open model alongside (RIVER_FORECAST_RECAP §7, Step 2).
 - The gauge models learned from the whole record, including Rho Basti's
   drift (§14d): its line may be out of date.
+
+
+## 15. The four false floods leave the verified record — rules first (2026-10-09)
+
+The user's instruction: remove them, *"before removing confirm that they are
+actually false"*. This closes the "not yet fixed" item of §13g.
+
+### 15a. Confirmed false, from the raw readings (checked again 2026-10-09)
+
+| Flood in the record | Line | What the gauge holds that day | Independent check |
+|---|---|---|---|
+| Pangin 2019-08-09 | 204.75 m | Hourly 201.3–201.7 all day, with four readings of 210.50–210.57 in between (09:00, 13:00, 14:00, 16:00): up 9 m and back within the hour, four times | Pasighat, 50 km down the same river, read 152.56–152.64 m all day, 1.3 m under its own danger level. Swapped digits (210.5 for 201.5) |
+| Jollang 2020-05-04 | 166.09 m | 164.39 every hour from midnight to 08:00, except 04:00: 326.39 | 158 m above anything else this gauge has recorded (its range is 163.07–167.75) |
+| Jollang 2022-09-05 | 166.09 m | 164.28 at 23:00, 264.27 at 00:00, 164.27 at 01:00 | Exactly 100 m too high |
+| Doimukh 2024-11-17 | 120.45 m | Three readings: 118.25, 118.50, 188.63; next morning 118.20 | Pangin read 188.50–188.53 that afternoon: Pangin's level logged under Doimukh |
+
+With the false readings out, the highest reading on those four days is
+201.66, 164.39, 164.94 and 118.50 m — each below its line. No other
+verified flood sits in the same 10 km cell on the same day, or within about
+15 km and 6 days, so nothing else vouches for them.
+
+The false record in the live track record (Murga Bridge 2026-09-28, §13f)
+was checked the same day: CWC's server now holds 2,134.30 m for that hour.
+It is handled in the intake, not here (FLOOD_SCREEN_PLAN.md status,
+2026-10-09).
+
+### 15b. The rule that removes them
+
+`build_verified_floods.py`, route 4 (floods found from a gauge): a
+gauge-found flood is not counted when the cleaning lowers that day's highest
+reading **and** the cleaned high is below the gauge's line. Tried on all 48
+gauge-found floods at level gauges before it was written in: it picks these
+four and no others.
+
+Left in on purpose: Seppa 2026-07-15 and Tamen 2022-07-07. Their readings
+are not false; they are below *today's* line (§13g). That is a separate
+question, not answered here.
+
+### 15c. Rules for re-fitting the day model, fixed before it is run
+
+The day model, the near-here curves and the live "ordinary day" level are
+re-fitted on the corrected record by the same steps as OLDER_FLOODS_TEST.md
+§5c, nothing else changed. Four cell-days of flood labels change: three of
+1,449 in the tree years, one of 207 in the calibration years.
+
+- **F1 — the record.** The rebuilt record differs from the old one by
+  exactly these four events. Every other event is identical.
+- **F2 — timing.** Live timing inside Arunachal (satellite-fitted model on
+  live rain, 2023–25, `flood_forecast_live_check.json`) is not more than
+  0.005 below the figure on record (0.879). The truth it is graded on
+  loses one flood of 44 (Doimukh 2024); that is the correction itself.
+- **F3 — ranking.** The near-here weekly ranking inside Arunachal
+  (`flood_near_here_diagnosis.json`) is not more than 0.005 below the
+  figure on record (0.890).
+- **F4 — nothing else moves.** The golden check shows changes only in
+  day-model outputs (chances, area outlook, near-here, times-normal, the
+  raster, the re-measured figures) and in floods-on-record counts near
+  Pangin, Jollang and Doimukh. **Zero** changes in river forecasts.
+- **F5 — screens.** All 21 screen checks pass.
+
+If any rule fails, the old model files are put back
+(`models/flood_forecast_pre_false_floods/`) and the cause is found first.
+The four events stay out of the record either way: they are not floods.
+
+### 15d. Result (2026-10-09) — all five rules pass; live
+
+| Rule | Result |
+|---|---|
+| F1 the record | **Pass.** 2,185 → 2,181 events; the four gone, none added, every other event identical. Gauge-found floods 71 → 67 |
+| F2 timing | **Pass.** 0.879 → **0.895** (43 floods, 2023–25, satellite-fitted model on live rain). On satellite rain 0.874 → 0.870 |
+| F3 ranking | **Pass.** Near-here weekly ranking inside Arunachal 0.890 → **0.902**; daily 0.893 → 0.903 |
+| F4 nothing else moves | **Pass.** 27,297 changed values, all day-model fields, near-here fields and the re-measured figures. River rows identical, whole (`export_args.rivers`, `snapshot.rivers`). Floods on record changed at 8 places, all down by 1 or 2 |
+| F5 screens | **Pass.** No screen raises an error |
+
+**A control run, to be sure the change comes from the four events only.**
+The production fit was repeated on the *old* list into a scratch folder: it
+reproduces the model that was live exactly (ordinary-day level, valley
+factors, every file: largest gap 0.0). So the pipeline is repeatable and
+every difference above is the four events.
+
+**Why four labels move so much.** On the recorded quiet day (6 October)
+the typical cell's chance fell to about 0.43 of what it was, the total
+over all cells fell 9%, and the state's 7-day figure went from 9.6% to
+8.1%. The four false floods were "floods" on days with no unusual rain. They
+taught the model that a flood can come out of an ordinary day. Without
+them, ordinary days score lower and the wet days stand out more — which is
+what the better timing score measures. Valley factors: flat 1.048 → 0.982,
+hilly 0.160 → 0.161, steep 0.020 → 0.024.
+
+**One recorded figure flipped, with no effect on screen.** Gate C′ (keep
+"High" evidence apart from "Medium" only if it ranks better *and* sits
+closer to 1) now reads "keep apart": High 0.846 against Medium 0.843, where
+it was 0.819 against 0.839. A margin of 0.003 is noise, not a finding. The
+snapshot's `level` field therefore holds three levels where it held two.
+No screen reads that field — the screens use the count of floods on record
+and the two-level figures, which are still measured the same way (on
+record ×1.52, none on record ×1.98). Left as the rule gives it; flagged.
+
+**Live.** New baseline recorded for 2026-10-09 and replayed: 0 changes.
+The web snapshot was refreshed without writing to the track record;
+today's logged forecast (the scheduled run) is the old model's, and **the
+first logged forecast from this model is 10 October**. The Data Backbone
+page was rebuilt (2,181 floods).
+
+**To go back:** `models/flood_forecast_pre_false_floods/` →
+`models/flood_forecast/`; `reports/_pre_false_floods_backup/*` → `reports/`;
+`data/interim/flood_forecast/golden_live_pre_false_floods/` is the old
+baseline. The old list is kept at
+`data/interim/flood_events/_pre_false_floods/` for reference only: the four
+events are not floods and should not go back.
+
+**Still open, not touched here:** Seppa 2026-07-15 and Tamen 2022-07-07 —
+true readings, below today's line.
+*Answered 2026-10-10, §19c: both were filed under the satellite scene's
+date. Seppa is a real flood two days earlier; Tamen is a keying slip.*
+
+
+## 16. The level line is graded every day (2026-10-10)
+
+The first item of §14e's "not done yet". The level forecasts have been in
+the log since 7 October; now each is checked against the gauge.
+
+**What is graded** (`forecast_log.grade_level`, run inside `verify`, so
+every daily run and every `forecast_log.py verify`): the middle of the line
+against the day's highest reading, as the track record re-reads it
+(cleaned).
+- **Miss:** typical (median), mean and largest, in the gauge's units.
+- **The yardstick:** the same miss had the river simply stayed at the last
+  full day's high — what the line was tested against in §14.
+- **Range held:** the share of days the high fell inside low–high. It is
+  built to hold 80%.
+- Split by how many days after the last full day of readings the target is
+  (the model's own lead, 1 or 2), and by gauge. CWC (metres) and NWDP (flow)
+  are kept apart; no NWDP gauge carries a line yet.
+- Under 100 checked days it is marked "too few to judge".
+- A forecast issued late in the day is graded like any other: the level
+  model reads only complete days, so the target day's readings never reach
+  it.
+
+**Where it shows.** `reports/flood_forecast_scorecard.json` (`level_line`),
+the daily log, the web snapshot (`track_record.level_line`), and one line on
+the forecast page's Track record card with the detail behind its ⓘ.
+
+**First reading — 85 gauge-days, targets 7–9 October, 17 CWC gauges.**
+
+| Days after the last full day | Days | Typical miss | Mean miss | If the river stayed put | Range held |
+|---|---|---|---|---|---|
+| 1 | 51 | 0.02 m | 0.06 m | 0.14 m | 88% |
+| 2 | 34 | 0.06 m | 0.16 m | 0.28 m | 79% |
+| Both | 85 | 0.04 m | 0.10 m | 0.20 m | 85% |
+
+- In line with the test of §14 (0.13 m and 0.22 m mean, range 80%), and
+  better than "stays put" by about half. **But these are quiet, falling
+  autumn rivers, and 85 days is too few to judge.** A river in flood is the
+  real test.
+- **Pare HEP stands out:** typical miss 0.73 m, range held on 1 day of 5.
+  It is a hydropower dam gauge; its level follows releases, which nothing
+  we read can see. Every other gauge's typical miss is under 0.09 m. Not
+  acted on — worth a note on that gauge's graph, or leaving the line off
+  it, once more days are in.
+- One row checked by hand: Pasighat, issued 7 Oct for 8 Oct, middle
+  149.929 m, river 149.76 m, miss 0.169 m.
+
+**Checks.** Golden check: 0 changed, 1 added (`track_record.level_line`).
+Screens pass. The Track record card still ends level with its two
+neighbours, and the new line fits on one row at 1,366, 1,440 and 1,920 px.
+
+
+## 17. Curing the high-river fault — three ingredients, rules first (2026-10-10)
+
+The user's instruction: no wording on screen in place of the number; fix the
+fault itself, with all three ingredients ("DO all the fixes"). This is the
+fifth design on this history (§14c: none without the user's say — given).
+**Nothing here goes live in this step.**
+
+The fault, as it stands in the live models (W, §14d): of the days a river
+already above its line is given under 5%, 24%, 11% and 10.4% end above the
+line 2, 3 and 4 days ahead. The rule is fewer than 1 in 10.
+
+### 17a. The three ingredients, fixed before any of it is run
+
+**U — the gauge upstream.** Read on the same day as the gauge's own reading.
+- *Which gauge:* the nearest gauge upstream on the same flow path whose
+  river is at least a quarter the size of this gauge's (traced on the
+  100 m flow raster from each gauge's placed spot). If it has no reading
+  that day, the next one up.
+- *The pairs this gives* (10 of 32 gauges): Yinkiang ← Tuting; Pangin ←
+  Yinkiang, then Tuting; Passighat ← Pangin, then Yinkiang; Daporizo ←
+  Lemeking; Namsai ← Miao; Bhalukpong ← Seppa; Doimukh ← Pare HEP, then
+  Sagalee; Pare HEP ← Sagalee; Rho Basti ← Murga Bridge; Tengapani Bridge ←
+  Pagoda. Every other gauge has none; its inputs are left empty.
+- *Inputs:* `up_frac` (the upstream river's high, in its own units: 0 its
+  ordinary level, 1 its line), `up_rise1`, `up_rise3` (its change over 1
+  and 3 days), `up_share` (the upstream river's size as a share of this
+  one's). Rule on direction: more `up_frac` may never lower the chance;
+  the others are free.
+
+**M — melt water.** ERA5-Land, the source the soil input already uses, on
+the same grid (`fetch_40_era5land_melt.py`).
+- Averaged over the area draining to the gauge that lies inside the map
+  (the upstream weights of its rain cell).
+- Read **16 days before the target day** — the lag the soil input uses,
+  because the live run can always get it.
+- *Inputs:* `melt7` (melt water over the 7 days ending then, mm), `swe`
+  (snow still lying, mm), `temp7` (mean air temperature of those 7 days).
+  All free.
+
+**LV — the level line sets the chance when the river is already high.**
+- For river-above days only, at 1–7 days ahead (where a level model
+  exists). The S-curve that turns the score into a chance (§13i) gets a
+  second input: where the line sits in the level model's range,
+  `z = (level now + middle of the forecast change − 1) ÷ (high − low)`.
+  Chance = S-curve of (a × score + c × z + b); a and c may not be
+  negative (an input whose fitted number is negative is dropped).
+- Fitted year-grouped like every curve here: a row's `z` comes from level
+  models that never saw its year, and the curve from other years.
+- River-below days are not touched.
+
+U and M also go into the level model, by the same keep rule.
+
+### 17b. Rules, fixed before it is run
+
+Same rows, same cleaned truth, same year-grouped scoring as §14.
+
+**Y — does the pattern hold from one year to the next** (checked first; an
+ingredient that fails is dropped before any model is fitted):
+- U: at each pair, in each year with 30 or more days of both, the upstream
+  level one day earlier and the gauge's own level move together
+  (correlation above 0). Must hold in at least 9 pair-years in 10.
+- M: at gauges where melt matters (an average April–July `melt7` of 5 mm or
+  more), in each year with 30 or more April–July days, `melt7` and the
+  river's level move together. Must hold in at least 2 gauge-years in 3.
+
+**K — is an ingredient kept.** Added alone to the live inputs, it is kept
+if (1) it does no harm — AUC and Brier skill no more than 0.005 lower at
+1–3 days and 0.010 at 4–9, on all days and on onset days — and (2) among
+river-above days its Brier skill is better than without it at 3 or more of
+leads 1–4. For the level model: kept if the middle line's average miss at
+1 and 2 days is not larger, on all days and on river-above days. LV is
+judged the same way against the model with the kept inputs.
+
+**The final model** = live inputs + the kept ingredients. Against the live
+models:
+- **N, no harm:** as K(1), at every lead.
+- **C, the fault itself** (W3 of §14c, unchanged): at every lead, of the
+  river-above days given under 5%, fewer than 1 in 10 flood. Leads with
+  fewer than 20 such days are judged together.
+- **L, the level line** (only if the level model changes): L1–L3 of §14c at
+  1 and 2 days, with the final chance model.
+
+**Decisions.**
+- N, C and L all pass: the fault is cured; ready to go live on the user's
+  word.
+- N passes, C fails but is smaller: reported as an improvement, not a
+  cure; the user decides.
+- N fails: not adopted.
+- Reported either way: Rho Basti, June 2016, day by day.
+
+### 17c. Result (2026-10-10) — not cured; one small improvement, two ingredients dropped
+
+One run (`scripts/model/check_gauge_fix.py`, `reports/gauge_fix_check.json`;
+inputs in `scripts/model/gauge_extra.py`; melt data from
+`scripts/fetch/fetch_40_era5land_melt.py`, 9,619 days, no gaps). Mechanics
+checked first: no input reads past its own day, and the lags are as written.
+All 32 gauges, the cleaned history. **Nothing live was changed.**
+
+| Ingredient | Year-to-year check (Y) | Keep rule (K) | Outcome |
+|---|---|---|---|
+| U, the gauge upstream | **Holds:** 89 of 89 pair-years move together, typical correlation 0.93 | No harm, but better among river-above days at only 1 of leads 1–4 (needs 3). In the level model: better at 1 day, slightly worse at 2 | **Not kept** |
+| M, melt water (16 days old) | **Fails:** 77 of 213 gauge-years (36%); typical correlation −0.31 | — | **Dropped before any model** |
+| LV, the level line in the chance | — | No harm; better among river-above days at leads 2, 3, 4 | **Kept** |
+
+**Why U adds nothing.** The pattern is real — the two gauges move together
+almost perfectly. That is exactly why it is not new: the river's own week
+(§14) already carries what the gauge upstream would say a day earlier.
+
+**Why M fails.** Read 16 days late and averaged over each catchment, melt
+peaks in April–May while the big rivers peak in the monsoon, so at most
+gauges more melt goes with a *lower* river. It does hold at the high
+headwaters (Kibithu 20 of 20 years, Pagoda 5 of 5, Rho Basti 9 of 13), but
+the rule was written for all gauges where melt matters, and it failed.
+
+**The final model = live + LV. N passes, L passes, C fails.**
+
+River-above days given under 5%, and how many of them flooded:
+
+| Days ahead | Live (W) | With LV | Rule (under 10%) |
+|---|---|---|---|
+| 1 | 71 days, 5 (7.0%) | 86, 6 (7.0%) | ok |
+| 2 | 24, 5 (20.8%) | 66, 7 (**10.6%**) | **fail** |
+| 3 | 82, 9 (11.0%) | 93, 10 (**10.8%**) | **fail** |
+| 4 | 152, 14 (9.2%) | 174, 13 (7.5%) | ok |
+| 5 | 254, 21 (8.3%) | 280, 20 (7.1%) | ok |
+| 6 | 332, 18 (5.4%) | 360, 25 (6.9%) | ok |
+| 7–9 | 2.8–3.7% | unchanged | ok |
+
+- LV halves the rate at 2 days (20.8% → 10.6%) — but mostly by putting
+  more quiet days under 5%, not by lifting flood days out: the flood days
+  given under 5% went from 5 to 7. Brier skill among river-above days, 2
+  days ahead: 0.242 → 0.264; elsewhere the change is small either way.
+- **Rho Basti, June 2016 is untouched:** the same 4, 6 and 6 flood days
+  under 5% at 2, 3 and 4 days ahead, with or without LV. The level model
+  itself puts that river just under its line on those days (§14d), so its
+  position cannot lift the chance.
+- The level line is unchanged (no input was kept in it): L1–L3 hold at 1
+  and 2 days, with the LV chance as with the live one.
+- On all 32 gauges the live model's own figures are 20.8%, 11.0% and 9.2%
+  at 2, 3 and 4 days (§14d's 24%, 11%, 10.4% were on the 27 gauges whose
+  line the cleaning did not move).
+
+**By the rules: an improvement, not a cure. The user decides whether LV is
+adopted.** Recommended: no. It is small, it misses the rule it was built
+for, and it adds a second moving part to every river-above forecast.
+
+**What this run rules out, and what is left.**
+- More inputs of the kind we can read today do not cure it: the river's own
+  week already holds the information.
+- The days still wrong are rivers sitting within centimetres of their line
+  (Rho Basti: 37 of its 91 line days are within 10 cm, §14d). No chance
+  model can call those; the level line shows them honestly.
+- Not tested, each would be a sixth design: melt read fresh (a few days
+  old, from the weather forecast's own temperature) and only at the high
+  headwaters where Y held; and judging a river at its line by a margin
+  ("within 10 cm of its line") in place of a yes/no crossing.
+
+
+## 18. Two more tests on the high-river fault — rules first (2026-10-10)
+
+The user's instruction after §17c: run both untested ideas. This is the
+sixth and seventh design on this history, each on the user's say.
+**Nothing here goes live in this step.** The chance model is the live one
+(W) throughout; neither test changes how the level line is drawn.
+
+### 18a. Test A — a river at its line is called "at its line"
+
+**The idea.** For a river hovering within centimetres of its line, "above
+or not" is close to a coin toss (Rho Basti, June 2016: 0–21 cm above its
+line for two weeks). The level line already shows such days honestly. So
+on those days the screen would say "at its line" with the level range, and
+show a percentage only on the other days.
+
+**The flag, fixed before it is run.** A river-above day is flagged "at its
+line" when the level model's low–high range for the target day touches the
+band *line ± margin*. Margin: **10 cm** at level gauges (CWC); at flow
+gauges (NWDP) 10% of the way from the ordinary level to the line. Level
+models exist for 1–7 days ahead; at 8–9 nothing is flagged.
+
+**Rules.**
+- **A1, the fault itself:** at every lead, of the river-above days *not*
+  flagged and given under 5%, fewer than 1 in 10 end at or above the line.
+  Leads with fewer than 20 such days are judged together. (Rule C of §17b,
+  on the days that would still show a percentage.)
+- **A2, the flag means what it says:** at 1 and 2 days ahead (where the
+  level line is drawn), between 2 and 8 in 10 of flagged days end at or
+  above the line — a real toss-up, not a disguised yes or no.
+- **A3, the flag is not a blanket:** at 1 and 2 days ahead, no more than
+  half of river-above days are flagged.
+- Reported: how many flagged days end inside the band; Rho Basti, June
+  2016, day by day; the same counts at 3–7 days.
+
+**Decision.** A1–A3 all pass: the fault is closed by the display rule, and
+it can be built on the user's word. Otherwise reported as failed.
+
+### 18b. Test B — fresh melt at the high gauges only
+
+**The idea.** In §17 melt was read 16 days late at every gauge and failed
+the year-to-year check. Read fresh, and only where a river is melt-fed, it
+may still carry what the model lacks.
+
+**Fixed before it is run.**
+- *Which gauges:* level gauges that stand above **1,000 m** (their own
+  ordinary reading, which is a height above sea level): Rho Basti, Murga
+  Bridge, Kibithu, Lemeking. A physical rule, set before looking at which
+  gauges gain. Every other gauge's melt inputs are left empty.
+- *Inputs:* the three of §17a (`melt7`, `swe`, `temp7`), read on **the day
+  of the gauge's own reading**, not 16 days before the target.
+- *What this measures:* the most that fresh melt information could be
+  worth, from the archive. ERA5-Land itself arrives about 9 days late, so
+  going live would need a fresher feed (the weather forecast's own
+  temperature and snow). That is built only if this passes.
+
+**Rules** (as §17b):
+- **Y:** at these gauges, in each year with 30 or more April–July days,
+  fresh `melt7` and the river's level move together in at least 2
+  gauge-years in 3.
+- **K:** no harm against W at every lead (all days and onset days), and
+  better Brier skill among river-above days at 3 or more of leads 1–4.
+  Also reported for the four gauges alone.
+- **C:** the fault test of §17b on the result.
+
+**Decision.** Y, K and C pass: cured; a live feed is the next step. Y and K
+pass, C fails: an improvement, the user decides whether a live feed is
+worth building. Otherwise not adopted.
+
+### 18c. Result (2026-10-10) — both fail
+
+One run (`scripts/model/check_gauge_fix2.py`,
+`reports/gauge_fix2_check.json`). **Nothing live was changed.**
+
+**Test A, "at its line": A1 and A2 pass, A3 fails. Not adopted.**
+
+| Days ahead | River-above days | Flagged "at its line" | Of flagged: ended at/above the line | Ended inside the band | Under 5% and not flagged: days, flooded |
+|---|---|---|---|---|---|
+| 1 | 1,188 | **79%** | 52% | 24% | 6, 0 |
+| 2 | 1,183 | **91%** | 43% | 17% | 10, 1 |
+| 3 | 1,183 | 90% | 34% | 15% | 50, 3 (6.0%) |
+| 4 | 1,182 | 85% | 29% | 13% | 97, 5 (5.2%) |
+| 5–7 | | 66–83% | 22–23% | 10% | 2.4–4.9% |
+
+- The days left showing a percentage are honest (A1), and the flagged days
+  are real toss-ups (A2). But **the flag covers 8 to 9 river-above days in
+  10** (A3 allows half). It is not a mark for the few rivers hovering at
+  their line: it is nearly every high river.
+- Only 17–24% of flagged days end inside the 10 cm band. So "at its line"
+  would be the wrong words for most of them.
+- Of Rho Basti's wrongly-low June 2016 days, the flag takes 4 of 4 at 2
+  days ahead, 4 of 6 at 3 days and 2 of 6 at 4 days.
+- **What this says about the fault.** It is not a handful of odd rivers.
+  One or two days after a river is above its line, whether it is still
+  above is close to even odds on most such days (52% and 43% of the
+  flagged days), and the level model's range, built to hold 8 days in 10,
+  is wider than the river's distance from its line.
+
+**Test B, fresh melt at the gauges above 1,000 m: fails Y. Dropped before
+any model.**
+- 23 of 59 gauge-years move together (39%; the rule is 2 in 3); typical
+  correlation −0.14. Kibithu 15 of 20, Murga Bridge 3 of 8, Rho Basti 3 of
+  13, Lemeking 2 of 18.
+- Read fresh, melt and the river's level do not rise together at these
+  gauges in most years. (Read 16 days earlier, Rho Basti held in 9 of 13
+  years, §17c: at that gauge the river follows the melt by weeks, which a
+  same-day reading cannot show.)
+
+**Where seven designs leave it.** The floor, the S-curve, the per-river
+habit, the river's week, upstream gauges and melt, the level line in the
+chance, and the "at its line" flag: the river's week is the only one that
+moved the fault much, and it is live. The remaining error is not a missing
+input we can fetch. Whether a high river is still above its line a day or
+two later is, on this record, close to even odds on most such days.
+**No eighth design on this history** — with this many tries on the same few
+hundred days, a pass would more likely be luck than a cure. What changes the
+picture is new information: more monsoons logged, gauges further upstream,
+dam release schedules.
+
+### 18d. What is on screen instead (2026-10-10, the user: "apply current fix until more data accumulated")
+
+With no model cure, the screen stops showing a small number it cannot stand
+behind. **Screen only: the forecast, its log and its grading are untouched**
+(golden check: 0 changed).
+
+- **The rule** (`live._unsure`): the river was at or above its line on its
+  last full day of readings (the state the model itself reads), the target
+  day is 1–4 days after that reading, and the chance is under 5%. Then the
+  day shows "unsure" (a "?" in the small day cells), not the percentage.
+  These are exactly the days the tests found wrong; from 5 days on the
+  small numbers held, and a chance of 5% or more is shown as it is.
+- **A figure that sums up a week** (the highest day) shows "unsure" when
+  that highest chance is itself under 5% and any of its days is unsure.
+- **Where:** the place tile "River reaches its line", the Rivers list, the
+  gauge's label and tooltip on the map, its stretch's tooltip, the gauge
+  popup's day cells, the gauge graph's bars (grey, tooltip says why), the
+  river board, the "Highest chance" tile, a Note column in the table, and
+  the method page's "what it does not count".
+- **Checked** on a made-up snapshot (Passighat above its line with small
+  chances all week; Seppa above its line with 41% tomorrow): Passighat reads
+  "unsure" everywhere, Seppa keeps its 41%; no errors; cards still level;
+  the real snapshot was put back byte for byte. On today's real snapshot no
+  river is above its line, so nothing looks different. Screens pass.
+- **To take it out again** when a cure exists: `_unsure` returning False
+  removes it everywhere.
+
+## 19. Gauge housekeeping before the next re-teach (2026-10-10)
+
+Three flags had been left open. Each was checked against the readings.
+**Nothing live changed:** the daily run reads the trained `stations.json`
+and the verified list on disk, and neither was rewritten (golden check: 0
+changed).
+
+### 19a. Changlang (2nd station): 2024 is on another scale — record now starts Feb 2025
+
+| | 2024 | 2025 | 2026 |
+|---|---|---|---|
+| Mean 7-day rain, Apr–Aug (model input) | 0.6 | 0.5 | 0.6 |
+| Median flow, Apr–Aug, m³/s | 24 | 109 | 104 |
+| Against the first Changlang station, same days | 0.15× | 1.3× | 3.1× |
+
+The same rain gave about a quarter of the flow in 2024. The gauge sent
+nothing from October 2024 to January 2025 and came back on the new scale.
+`gauge_records.RECORD_STARTS["Changlang_1"] = "2025-02-01"`. Its own top-2%
+line moves 594 → 691 m³/s (10 days at it → 8). **Takes effect at the next
+re-teach of the gauge models**, not before.
+
+(The first Changlang station is a different question: its coordinates are
+wrong and it is not linked to places. Not touched.)
+
+### 19b. Rho Basti: the line is old, but there is no break to cut at — left whole
+
+- 71 of the 91 days at its line (2,232.17 m, its own top 2%) are 2016–17.
+  Since 2021 there has been one.
+- Allowing for rain, the monsoon level has eased about 2–3 cm a year since
+  2016: 2016–17 sat about 20–26 cm higher than the rain explains, 2022–26
+  about 6–8 cm lower. There is no step and no change in the lowest readings
+  that would date a re-levelling.
+- A line from recent years alone would be lower (2018 on: 2,231.97 m;
+  2021 on: 2,231.82 m) and would relabel 12 or 45 ordinary days since 2021
+  as floods, with nothing to confirm any of them.
+- **Decision: leave it.** The cause cannot be told from the readings (two
+  wet melt years, or a channel that has cut down). What settles it is
+  CWC's real danger level for Rho Basti, already on the ask list. Noted in
+  `gauge_records.py`.
+
+### 19c. Seppa 2026 and Tamen 2022: both were filed two days off their river
+
+Both come from `flood_where_s1_loose_ends.json`, where `flood_date` holds
+the **satellite scene's** date and the real flood day sits in a separate
+`note`. The list builder read only `flood_date`.
+
+| Record | Filed under | Real flood day | That day's readings | Verdict |
+|---|---|---|---|---|
+| Seppa | 2026-07-15 | 2026-07-13 | rose 337.25 → 340.88 m over 8 hours, 6 hourly readings at or above the danger level (340.00), then fell | **Real flood, wrong day** |
+| Tamen | 2022-07-07 | 2022-07-09 | 23 readings 274.10–274.30 m and one of 284.19 between two of 274.19 | **Not a flood: a keying slip** |
+
+Tamen is the same kind as the four removed in §15. The false-reading rule
+(§15b) could not see it because it looked at the 7th, not the 9th. The
+radar agrees: less water on the "flood" day (6.68%) than on the ordinary
+day (7.37%).
+
+**Fixed in `build_verified_floods._day`:** it reads the note as well. A
+dry run of the builder (nothing written) gives exactly this and no other
+difference: 2,181 → 2,180 events; `gauge:070-UBDDIB:2022-07-07` gone
+(dropped by the §15b rule as `…:2022-07-09`); `gauge:027-UBDDIB:2026-07-15`
+replaced by `…:2026-07-13`; every other event identical.
+
+### 19d. The re-teach — rules, fixed before it is run (2026-10-10, the user's go-ahead)
+
+The user's word: *"Re-teach with the gauge fixes from item 20."* Two
+re-teaches, one after the other, each with its own check.
+
+**A correction to what was written here first.** The earlier draft said the
+gauge re-teach should move "Changlang's rows only". That was wrong: the
+gauge models are one pooled model per lead over all 32 gauges, so taking
+132 days out of one gauge can move every river's number a little. The rule
+below says so.
+
+**Part 1 — the gauge models** (Changlang's second station from Feb 2025).
+Trained into `models/flood_when_gauge_next/` first; switched in only if
+K1–K2 pass.
+
+- **K1 — no worse.** Against the live models' own report
+  (`reports/flood_when_gauge.json`), ranking (AUC) and Brier skill of
+  "rain + gauge", on all days and on onset days: not more than **0.005**
+  lower at 1–3 days ahead, not more than **0.010** lower at 4–9 (the
+  tolerances of §13h). The rows are not quite the same rows — one gauge
+  lost 132 days and its line moved — so this is report against report.
+- **K2 — only the intended gauge changes.** In `stations.json`, the line,
+  ordinary level and base rate differ at `Changlang_1` and nowhere else.
+- **K3 — the level line is no worse.** Its checked miss at CWC gauges one
+  and two days ahead (`level.json`) is not more than 0.01 m larger.
+- **K4 — after the switch, nothing else moves.** Golden check: changes only
+  in river rows and the method page's gauge figures; every day-model field
+  identical. No gauge other than Changlang's second station moves by more
+  than 1 percentage point on the recorded day.
+
+**Part 2 — the day model** (Tamen 2022 out, Seppa 2026 to its real day).
+The steps of §15c.
+
+- **F1** the rebuilt record differs from the old by exactly: Tamen
+  2022-07-07 gone, Seppa 2026-07-15 → 2026-07-13. 2,181 → 2,180.
+- **F2** live timing inside Arunachal not more than 0.005 below 0.895.
+- **F3** near-here weekly ranking not more than 0.005 below 0.902.
+- **F4** golden check: day-model fields, floods-on-record near Tamen and
+  Seppa, and the re-measured figures only. River rows identical to Part 1's.
+- **F5** all screens pass.
+
+If a part fails, its old files go back
+(`models/flood_when_gauge_pre_housekeeping/`,
+`models/flood_forecast_pre_housekeeping/`) and it is reported as failed.
+Tamen stays out of the record either way: it is not a flood.
+
+### 19e. Result, Part 1 — the gauge models: all four rules pass; live (2026-10-11)
+
+| Rule | Result |
+|---|---|
+| K1 no worse | **Pass.** Judged unrounded, old and new scored the same way in one run (the old figures reproduce the live report). Largest drops at 1–3 days: Brier skill −0.0043 and onset skill −0.0041 at 1 day (limit −0.005); 2 days: skill **+0.016**, onset +0.010; 3 days: all within −0.003. 4–9 days: all within ±0.006 on the rounded reports (limit −0.010) |
+| K2 only the intended gauge | **Pass.** `stations.json` differs at `Changlang_1` only: line 593.7 → 691.3 m³/s, ordinary level 62.4 → 79.3, base rate 2.07% → 2.28%. 121 fewer gauge-days and 2 fewer flood days in the 1-day table |
+| K3 level line no worse | **Pass.** CWC gauges, out of fold: 1 day 0.1339 m → 0.1339 m; 2 days 0.2148 m → 0.2148 m; range holds 80.4% → 80.6% and 80.2% → 80.2% |
+| K4 nothing else moves | **Pass.** 615 changed values on the recorded day, every one a river row or a gauge figure on the method page. The day model's output and the raster are identical. Largest move at any gauge: 0.47 percentage points (Pare HEP, 0.69% → 0.22%); limit 1 |
+
+The live gauge models are the re-taught ones from 2026-10-11. The old set
+is in `models/flood_when_gauge_pre_housekeeping/`, its report in
+`reports/_pre_housekeeping_backup/`.
+
+### 19f. Result, Part 2 — the day model: all five rules pass; live (2026-10-11)
+
+| Rule | Result |
+|---|---|
+| F1 the record | **Pass.** 2,181 → 2,180. Gone: `gauge:070-UBDDIB:2022-07-07` (Tamen). `gauge:027-UBDDIB:2026-07-15` → `…:2026-07-13` (Seppa). No other event changed. Gauge-found floods 67 → 66 |
+| F2 timing | **Pass.** 0.8952 → **0.8956** (43 floods, 2023–25, satellite-fitted model on live rain) |
+| F3 ranking | **Pass.** Near-here weekly ranking inside Arunachal 0.9024 → 0.8989: 0.0035 lower, inside the 0.005 allowed. Daily 0.9033 → 0.8988 |
+| F4 nothing else moves | **Pass.** 11,557 changed values: 615 are Part 1's river rows and gauge figures, the same count as after Part 1; the rest are day-model fields (near-here chances, times-normal, the area outlook, the raster, the re-measured figures). Floods on record changed at 2 places, both next to Tamen, both 1 → 0 |
+| F5 screens | **Pass.** All 34 screen cases open |
+
+**What moved, on the recorded day (9 October).** The state's 7-day figure
+2.04% → 2.19%; a typical place ×1.10 (middle 90% of places ×0.28 to
+×2.32); places keep their order (rank correlation 0.95). Valley factors:
+flat 0.982 → 1.001, hilly 0.161 → 0.162, steep 0.024 → 0.021. One flood
+label in the tree years changed (1,446 → 1,445).
+
+**Gate C′ flipped back.** The snapshot's `level` field holds two levels
+again (it went to three on 9 October on a margin of 0.003, §15d). The same
+remark applies: the margin is noise, and no screen reads that field.
+
+**Live.** New baseline recorded for 2026-10-11 and replayed: 0 changes. The
+web snapshot was refreshed without writing to the track record (the five
+log files are byte-identical). **The first logged forecast from these
+models is the 08:30 run of 11 October.** The Data Backbone pages were
+rebuilt (2,180 floods).
+
+**To go back:** `models/flood_forecast_pre_housekeeping/` →
+`models/flood_forecast/`; `models/flood_when_gauge_pre_housekeeping/` →
+`models/flood_when_gauge/`; `reports/_pre_housekeeping_backup/*` →
+`reports/`; `data/interim/flood_events/_pre_housekeeping/` holds the old
+list (for reference: Tamen is not a flood and should not go back);
+`data/interim/flood_forecast/golden_live_pre_housekeeping/` is the old
+baseline.
+
+## 20. Pare HEP: no level line for a dam gauge (2026-10-11)
+
+§16 flagged Pare HEP: in its first five graded days the level line's range
+held on one, with a typical miss of 0.73 m against 0.04 m for the rest. The
+user's instruction: *"Do what's best."* Five days is too few to judge a
+line on, so the gauge's own record was looked at instead.
+
+**Pare HEP sits at a hydro-power dam, and its level behaves like one.** On
+its whole record (62 days from 2026-06-18), beside the 17 other CWC level
+gauges:
+
+| | Pare HEP | The other 17 |
+|---|---|---|
+| Typical day-to-day move in the daily high | 0.36 m | 0.01–0.22 m |
+| Day-to-day move on one day in ten, as a share of the gap between its usual level and its line | 1.24 | 0.06–0.27 |
+| Days whose high stands more than 0.5 m above both the first and the last reading (a rise and fall inside the day) | 57% | 0–8% |
+
+The level model learned how rivers rise and fall on rain. This one rises
+when the gates open. No amount of grading will fix that; what would
+forecast it is the dam's release schedule, which is on the ask list.
+
+**Done**
+- `gauge_records.NO_LEVEL_LINE` names the gauge and the reason.
+- The daily run issues no level line for it (`flood_gauge_live.forecast`).
+- The snapshot carries the reason (`rivers[].no_level_line`) and the gauge's
+  graph says it in a line under the tiles and in the ⓘ.
+- **Grading:** the five days already issued stay in the log. They are
+  reported on their own (`level_line.no_longer_drawn`), not in the figures
+  for the line that is still drawn. With them: 85 checked, typical miss
+  0.04 m, mean 0.10 m, range held 85%. Without: **80 checked, 0.04 m,
+  mean 0.07 m, range held 89%**, 16 gauges. Both are written here so the
+  change is not mistaken for an improvement in the model.
+- Golden check: the only values that changed are Pare HEP's level fields
+  (its two drawn days), plus the two new fields.
+- The track-record line on screen ("Level line: N checked …") is read from
+  the scorecard the daily run writes; it shows the new figures from the
+  08:30 run of 11 October on.
+
+**Not changed, and worth knowing:** Pare HEP still gets a *chance* of
+reaching its line. That line is its own top 2% of 62 days — one or two
+days — and its level is set by releases. The chance is the weakest of the
+32 for the same reason. Left as it is for now; taking a gauge out of the
+chance forecast changes the logged record and is a separate decision.
+

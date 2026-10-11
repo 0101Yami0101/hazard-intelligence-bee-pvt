@@ -39,6 +39,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import gauge_week
 from backtest_flood_when import clean_readings
 from backtest_flood_when_nwdp import DISCH_COL, SENTINEL_ABS, daily_max_discharge
+from gauge_records import NO_LEVEL_LINE
 from common import ROOT, UA
 
 GMODELS = ROOT / "models" / "flood_when_gauge"
@@ -283,7 +284,9 @@ def forecast(days: list[str], idx: list[int], r3p: np.ndarray, r7p: np.ndarray,
             else:
                 p, basis = _prob(models["rain"], X, 2 * int(st["official"])), "rain only"
             lvl = (_level(levels[lead], X, group, g_frac, st)
-                   if lead is not None and lead <= draw_to and lead in levels else [None, None, None])
+                   if lead is not None and lead <= draw_to and lead in levels
+                   and code not in NO_LEVEL_LINE      # a dam gauge: gauge_records.py
+                   else [None, None, None])
             rows.append({
                 "issued_on": str(issued), "target_date": days[i],
                 "lead_days": int((target.date() - issued).days),

@@ -74,6 +74,7 @@ import forecast_log
 import grid as G
 import near_here
 import when_grid
+from gauge_records import NO_LEVEL_LINE
 from common import INTERIM, PROCESSED, ROOT
 from core.rainfall import fetch_rain, forecast_days, rolling_totals
 from flood_forecast import (CELL_KM2, MODELS, SOIL_LAG, TREE_FROM, TRUTH_END, FlatSoilDayModel,
@@ -442,6 +443,16 @@ def run(log: bool = True) -> None:
         if near is not None:
             forecast_log.log_near_here(today, [str(days[i]) for i in idx], near)
             print("  logged the near-here chances for every place")
+        # SlopeSense's forecast for the same days, from the same rain: written
+        # down here because the app keeps nothing (landslide_forecast_log.py).
+        # Never allowed to stop the flood forecast.
+        try:
+            import landslide_forecast_log
+            ls = landslide_forecast_log.log(days, rain)
+            print(f"  logged the landslide forecast ({ls['days'][0]} .. {ls['days'][-1]}, "
+                  f"{ls['districts']} districts)")
+        except Exception as e:                                      # noqa: BLE001
+            print(f"  [warn] landslide forecast not logged: {type(e).__name__}: {e}")
         # new flood records: gauge crossings and people's reports, each
         # checked by satellite (flood_intake.py) — before grading, so today's
         # grade sees them. Never allowed to stop the forecast.
@@ -640,6 +651,8 @@ def export_web(today: str, outlook: list[dict], times: np.ndarray, E: np.ndarray
     reg = json.loads((ROOT / "models" / "flood_when_gauge" / "stations.json").read_text())
     for code, g in riv.items():
         g["lat"], g["lon"] = reg[code]["lat"], reg[code]["lon"]
+        if code in NO_LEVEL_LINE:                # a dam gauge: the screen says why
+            g["no_level_line"] = NO_LEVEL_LINE[code]
         if hist is not None:
             g["history"] = hist.get(code, [])
         if hist_part and hist_part.get(code):
@@ -661,6 +674,7 @@ def export_web(today: str, outlook: list[dict], times: np.ndarray, E: np.ndarray
             "outcomes": card["outcomes"],
             "checked": card.get("all"),
             "near_here": card.get("near_here"),
+            "level_line": card.get("level_line"),
         },
     }
     snap["method"] = method_facts()

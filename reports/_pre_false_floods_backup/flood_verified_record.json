@@ -1,0 +1,42 @@
+{
+  "what": "flood events confirmed by at least one independent route (PARKED \u00a70x)",
+  "events": 2185,
+  "by_route": {
+    "gfd": 1016,
+    "radar": 1153,
+    "gauge-xc": 59,
+    "gauge": 71
+  },
+  "with_pixel_masks": 1302,
+  "of_the_reported_training_record": {
+    "records": 3331,
+    "verified": 1302,
+    "share": 0.391
+  },
+  "verified_but_not_in_the_old_training_record": 883,
+  "by_year": {
+    "2003": 1,
+    "2004": 2,
+    "2006": 4,
+    "2007": 12,
+    "2008": 22,
+    "2009": 13,
+    "2010": 23,
+    "2011": 21,
+    "2012": 87,
+    "2013": 1,
+    "2014": 140,
+    "2015": 186,
+    "2016": 224,
+    "2017": 226,
+    "2018": 181,
+    "2019": 105,
+    "2020": 237,
+    "2021": 63,
+    "2022": 186,
+    "2023": 163,
+    "2024": 178,
+    "2025": 104,
+    "2026": 6
+  }
+}

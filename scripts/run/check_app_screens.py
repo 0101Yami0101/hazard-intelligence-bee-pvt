@@ -21,6 +21,15 @@ APP = str(ROOT / "webapp" / "app.py")
 
 CASES = [
     ("landslide", "view", ["Forecast", "Roads", "Susceptibility"], None, {}),
+    # SlopeSense with a town, a district, a valley-floor point that snaps to
+    # the nearest slope, a point outside the state, and a later day
+    ("landslide", "view", ["Forecast", "Susceptibility"], "Tawang", {}),
+    ("landslide", "view", ["Forecast", "Susceptibility"], "Upper Siang district", {}),
+    ("landslide", "view", ["Forecast", "Susceptibility"], "28.0660, 95.3260", {}),
+    ("landslide", "view", ["Forecast", "Susceptibility"], "26.2000, 91.7000", {}),
+    ("landslide", "view", ["Forecast", "Roads"], None, {"day_i": "last"}),
+    ("landslide", "view", ["Roads"], None, {"rd_from": "Itanagar", "rd_to": "Ziro"}),
+    ("landslide", "view", ["Evidence", "Model & Validation"], None, {}),
     ("flood", "fl_view", ["Live forecast", "Flood-prone ground", "Catchments"], None, {}),
     ("flood", "fl_view", ["Live forecast"], "Pasighat", {}),
     ("flood", "fl_view", ["Live forecast"], "28.0660, 95.3260", {}),
@@ -50,8 +59,15 @@ def main() -> int:
             if place:
                 at.session_state["search"] = place
             for k, val in extra.items():
-                at.session_state[k] = val
+                if val != "last":
+                    at.session_state[k] = val
             at.run()
+            if "last" in extra.values():
+                # the last forecast day: its index depends on today's rain
+                # window, so it is read from the day buttons and clicked
+                btn = [x for x in at.button if str(x.key).startswith(("sl_d", "flc_d"))]
+                if btn:
+                    btn[-1].click().run()
             where = (f"{module} / {v}" + (f" / {place}" if place else "")
                      + (f" / {extra}" if extra else ""))
             if at.exception:

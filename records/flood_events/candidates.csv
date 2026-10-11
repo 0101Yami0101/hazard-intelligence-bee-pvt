@@ -1,2 +1,2 @@
 id,source,place,lat,lon,date,detail,added_on,status,tries,scene_date,pct_new_water,checked_on
-gauge:002Neid3:2026-09-28,gauge,Murga Bridge,27.613889,92.026389,2026-09-28,reaches this river's own top 2% of days: 2231.30 vs line 2135.02; 1 day(s),2026-09-29,radar did not show it,1,2026-09-30,0.194,2026-10-04
+gauge:002Neid3:2026-09-28,gauge,Murga Bridge,27.613889,92.026389,2026-09-28,"reaches this river's own top 2% of days: 2231.30 vs line 2135.02; 1 day(s) [withdrawn: the day now reads 2134.39, below the line]",2026-09-29,withdrawn: the reading was corrected,1,2026-09-30,0.194,2026-10-04

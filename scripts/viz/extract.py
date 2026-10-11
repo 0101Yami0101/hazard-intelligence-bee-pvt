@@ -794,9 +794,15 @@ def do_susceptibility():
     f = CONTEXT / f"gsi_landslide-susceptibility_50m_{AOI_NAME}.tif"
     if not f.exists():
         return
-    with rasterio.open(f) as src:
-        a = src.read(1, out_shape=(src.height // 4, src.width // 4),
-                     resampling=Resampling.mode).astype("float32")
+    # The file is on GSI's own grid (EPSG:32644) since 2026-10-10 — see
+    # fetch_18_hazard_products.fetch_susceptibility — so it is turned to
+    # longitude/latitude here, for a picture drawn on (W, E, S, N).
+    from rasterio.transform import from_bounds as _tf
+    from rasterio.vrt import WarpedVRT
+    with rasterio.open(f) as src, WarpedVRT(
+            src, crs="EPSG:4326", resampling=Resampling.nearest,
+            transform=_tf(W, S, E, N, 3000, 1700), width=3000, height=1700) as v:
+        a = v.read(1).astype("float32")
     a[a == 0] = np.nan
 
     cmap = ListedColormap(["#f2e9a0", "#eda100", "#c62f2f"])

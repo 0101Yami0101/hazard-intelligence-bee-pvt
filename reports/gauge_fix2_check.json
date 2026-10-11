@@ -1,0 +1,516 @@
+{
+  "protocol": "docs/design/FLOOD_WHEN_PILOT_PLAN.md \u00a718",
+  "gauges": 32,
+  "A": {
+    "by_lead": {
+      "1": {
+        "river_above_days": 1188,
+        "flagged": 938,
+        "flagged_share_pct": 79.0,
+        "flagged_ended_at_or_above_pct": 51.9,
+        "flagged_ended_inside_band_pct": 23.5,
+        "under_5pct_before": {
+          "days": 71,
+          "flooded": 5
+        },
+        "under_5pct_not_flagged": {
+          "days": 6,
+          "flooded": 0
+        },
+        "flood_days_under_5pct_now_flagged": 5,
+        "A1": null,
+        "A2": true,
+        "A3": false
+      },
+      "2": {
+        "river_above_days": 1183,
+        "flagged": 1081,
+        "flagged_share_pct": 91.4,
+        "flagged_ended_at_or_above_pct": 42.6,
+        "flagged_ended_inside_band_pct": 17.0,
+        "under_5pct_before": {
+          "days": 24,
+          "flooded": 5
+        },
+        "under_5pct_not_flagged": {
+          "days": 10,
+          "flooded": 1
+        },
+        "flood_days_under_5pct_now_flagged": 4,
+        "A1": null,
+        "A2": true,
+        "A3": false
+      },
+      "3": {
+        "river_above_days": 1183,
+        "flagged": 1060,
+        "flagged_share_pct": 89.6,
+        "flagged_ended_at_or_above_pct": 34.2,
+        "flagged_ended_inside_band_pct": 14.6,
+        "under_5pct_before": {
+          "days": 82,
+          "flooded": 9
+        },
+        "under_5pct_not_flagged": {
+          "days": 50,
+          "flooded": 3
+        },
+        "flood_days_under_5pct_now_flagged": 6,
+        "A1": true
+      },
+      "4": {
+        "river_above_days": 1182,
+        "flagged": 1000,
+        "flagged_share_pct": 84.6,
+        "flagged_ended_at_or_above_pct": 28.9,
+        "flagged_ended_inside_band_pct": 12.9,
+        "under_5pct_before": {
+          "days": 152,
+          "flooded": 14
+        },
+        "under_5pct_not_flagged": {
+          "days": 97,
+          "flooded": 5
+        },
+        "flood_days_under_5pct_now_flagged": 9,
+        "A1": true
+      },
+      "5": {
+        "river_above_days": 1178,
+        "flagged": 972,
+        "flagged_share_pct": 82.5,
+        "flagged_ended_at_or_above_pct": 23.4,
+        "flagged_ended_inside_band_pct": 10.2,
+        "under_5pct_before": {
+          "days": 254,
+          "flooded": 21
+        },
+        "under_5pct_not_flagged": {
+          "days": 143,
+          "flooded": 7
+        },
+        "flood_days_under_5pct_now_flagged": 14,
+        "A1": true
+      },
+      "6": {
+        "river_above_days": 1171,
+        "flagged": 835,
+        "flagged_share_pct": 71.3,
+        "flagged_ended_at_or_above_pct": 22.2,
+        "flagged_ended_inside_band_pct": 10.2,
+        "under_5pct_before": {
+          "days": 332,
+          "flooded": 18
+        },
+        "under_5pct_not_flagged": {
+          "days": 239,
+          "flooded": 7
+        },
+        "flood_days_under_5pct_now_flagged": 11,
+        "A1": true
+      },
+      "7": {
+        "river_above_days": 1170,
+        "flagged": 774,
+        "flagged_share_pct": 66.2,
+        "flagged_ended_at_or_above_pct": 22.1,
+        "flagged_ended_inside_band_pct": 10.2,
+        "under_5pct_before": {
+          "days": 382,
+          "flooded": 11
+        },
+        "under_5pct_not_flagged": {
+          "days": 294,
+          "flooded": 7
+        },
+        "flood_days_under_5pct_now_flagged": 4,
+        "A1": true
+      },
+      "8": {
+        "river_above_days": 1168,
+        "flagged": 0,
+        "flagged_share_pct": 0.0,
+        "flagged_ended_at_or_above_pct": null,
+        "flagged_ended_inside_band_pct": null,
+        "under_5pct_before": {
+          "days": 389,
+          "flooded": 11
+        },
+        "under_5pct_not_flagged": {
+          "days": 389,
+          "flooded": 11
+        },
+        "flood_days_under_5pct_now_flagged": 0,
+        "A1": true
+      },
+      "9": {
+        "river_above_days": 1166,
+        "flagged": 0,
+        "flagged_share_pct": 0.0,
+        "flagged_ended_at_or_above_pct": null,
+        "flagged_ended_inside_band_pct": null,
+        "under_5pct_before": {
+          "days": 328,
+          "flooded": 12
+        },
+        "under_5pct_not_flagged": {
+          "days": 328,
+          "flooded": 12
+        },
+        "flood_days_under_5pct_now_flagged": 0,
+        "A1": true
+      }
+    },
+    "rho_basti_june_2016": {
+      "2": [
+        {
+          "day": "2016-06-03",
+          "flooded": 1,
+          "W_pct": 7.3,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-04",
+          "flooded": 1,
+          "W_pct": 7.8,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-05",
+          "flooded": 1,
+          "W_pct": 3.0,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-06",
+          "flooded": 1,
+          "W_pct": 3.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-07",
+          "flooded": 1,
+          "W_pct": 3.4,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-08",
+          "flooded": 1,
+          "W_pct": 4.4,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-09",
+          "flooded": 1,
+          "W_pct": 7.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-10",
+          "flooded": 1,
+          "W_pct": 12.9,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-11",
+          "flooded": 1,
+          "W_pct": 36.9,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-12",
+          "flooded": 1,
+          "W_pct": 47.0,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-13",
+          "flooded": 1,
+          "W_pct": 82.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-14",
+          "flooded": 1,
+          "W_pct": 82.4,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-15",
+          "flooded": 1,
+          "W_pct": 85.7,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-16",
+          "flooded": 1,
+          "W_pct": 56.7,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-17",
+          "flooded": 1,
+          "W_pct": 45.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-18",
+          "flooded": 1,
+          "W_pct": 50.5,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-19",
+          "flooded": 1,
+          "W_pct": 55.3,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-20",
+          "flooded": 1,
+          "W_pct": 42.4,
+          "flagged": true
+        }
+      ],
+      "3": [
+        {
+          "day": "2016-06-04",
+          "flooded": 1,
+          "W_pct": 4.9,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-05",
+          "flooded": 1,
+          "W_pct": 4.4,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-06",
+          "flooded": 1,
+          "W_pct": 3.1,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-07",
+          "flooded": 1,
+          "W_pct": 3.1,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-08",
+          "flooded": 1,
+          "W_pct": 3.5,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-09",
+          "flooded": 1,
+          "W_pct": 3.6,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-10",
+          "flooded": 1,
+          "W_pct": 10.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-11",
+          "flooded": 1,
+          "W_pct": 15.4,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-12",
+          "flooded": 1,
+          "W_pct": 22.3,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-13",
+          "flooded": 1,
+          "W_pct": 32.0,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-14",
+          "flooded": 1,
+          "W_pct": 29.8,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-15",
+          "flooded": 1,
+          "W_pct": 42.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-16",
+          "flooded": 1,
+          "W_pct": 29.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-17",
+          "flooded": 1,
+          "W_pct": 27.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-18",
+          "flooded": 1,
+          "W_pct": 23.3,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-19",
+          "flooded": 1,
+          "W_pct": 24.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-20",
+          "flooded": 1,
+          "W_pct": 16.9,
+          "flagged": true
+        }
+      ],
+      "4": [
+        {
+          "day": "2016-06-05",
+          "flooded": 1,
+          "W_pct": 2.0,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-06",
+          "flooded": 1,
+          "W_pct": 0.9,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-07",
+          "flooded": 1,
+          "W_pct": 0.8,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-08",
+          "flooded": 1,
+          "W_pct": 1.3,
+          "flagged": false
+        },
+        {
+          "day": "2016-06-09",
+          "flooded": 1,
+          "W_pct": 1.7,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-10",
+          "flooded": 1,
+          "W_pct": 3.1,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-11",
+          "flooded": 1,
+          "W_pct": 7.1,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-12",
+          "flooded": 1,
+          "W_pct": 12.2,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-13",
+          "flooded": 1,
+          "W_pct": 32.3,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-14",
+          "flooded": 1,
+          "W_pct": 28.8,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-15",
+          "flooded": 1,
+          "W_pct": 24.5,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-16",
+          "flooded": 1,
+          "W_pct": 21.7,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-17",
+          "flooded": 1,
+          "W_pct": 24.5,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-18",
+          "flooded": 1,
+          "W_pct": 19.9,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-19",
+          "flooded": 1,
+          "W_pct": 13.9,
+          "flagged": true
+        },
+        {
+          "day": "2016-06-20",
+          "flooded": 1,
+          "W_pct": 10.3,
+          "flagged": true
+        }
+      ]
+    },
+    "A1_small_leads_together": {
+      "days": 16,
+      "flooded": 1,
+      "pass": true
+    },
+    "gates": {
+      "A1": true,
+      "A2": true,
+      "A3": false
+    }
+  },
+  "B": {
+    "high_gauges": [
+      "Kibithu",
+      "Rho Basti",
+      "Murga Bridge",
+      "Lemeking"
+    ],
+    "above_m": 1000.0,
+    "Y": {
+      "gauge_years": 59,
+      "moving_together": 23,
+      "share": 0.39,
+      "median_r": -0.144,
+      "by_gauge": {
+        "Kibithu": "15 of 20",
+        "Lemeking": "2 of 18",
+        "Murga Bridge": "3 of 8",
+        "Rho Basti": "3 of 13"
+      },
+      "pass": false
+    },
+    "gates": {
+      "Y": false,
+      "K": null,
+      "C": null
+    }
+  }
+}

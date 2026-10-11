@@ -93,6 +93,8 @@
 >   - **Open flag:** Changlang (2nd station) jumps ~10x between 2024 and 2025
 >     (monsoon quarter median 8 -> 87 m3/s). It is not in
 >     `gauge_records.RECORD_STARTS`; check it before its next retrain.
+>     *Checked 2026-10-10: a real change of scale; its record now starts
+>     February 2025 (FLOOD_WHEN_PILOT_PLAN.md §19a).*
 > - **2026-09-28 — the forecast screen made over as a dashboard**, after the
 >   user's mock-up (FLOOD_HUB_AND_MOCKUP_COMPARISON.md §2). The brief: keep the
 >   mock-up's shape but miss nothing we have; minimum text, maximum visuals;
@@ -260,6 +262,135 @@
 >     filter was later built for; the gauge's cleaned high that day is
 >     2,134.39 m. The forecast page's track record counts it as one new
 >     flood record. Left in place, for the user to decide.
+> - **2026-10-09 — the false Murga Bridge record withdraws itself** (the
+>   user: remove it, after confirming it is false).
+>   - **Confirmed:** CWC's server now holds 2,134.30 m for 11:00 on 28 Sep,
+>     where it held 2,231.30 m; the track record's own re-read of that day
+>     is 2,134.39 m against a line of 2,135.02 m.
+>   - **Why it stayed:** the intake wrote the record on 29 Sep from the day's
+>     reading as it then stood, and never looked at it again. The grading
+>     re-reads the gauges every day; the intake did not.
+>   - **Now** (`flood_intake.withdraw_corrected`, run inside `gather`): each
+>     day, a gauge record whose day now reads below the line is withdrawn.
+>     It stays in `candidates.csv`, marked, with the corrected reading, and
+>     leaves `new_records.csv`. A day the readings no longer hold is left
+>     alone; a crossing that comes back is a record again. Reports are not
+>     touched.
+>   - **Checked:** `flood_intake.py test` (a corrected reading, a day no
+>     longer held, a crossing that returns) passes; on the real files the
+>     record count went 1 → 0, and a second run changes nothing. The count
+>     on screen follows at the next forecast run.
+> - **2026-10-10 — three small screen fixes** (UI only; no number changed).
+>   - **A gauge feed down at its source is named as that.** The government
+>     small-river table (NWDP) has received no rows for any station since
+>     29 Sep, 16:45; from 8 Oct all its gauges read "offline", with nothing
+>     saying the feed itself was down. `live._feed_outages`: at least half a
+>     network's gauges (and five or more) offline, last readings within
+>     three days of each other and within the last 60 days. Needs attention
+>     then shows "Small-river feed down · 29 Sep" (the detail and the gauge
+>     names behind its ⓘ) apart from the single gauges long offline, and the
+>     Gauges reporting tile says so. It clears by itself when readings
+>     return.
+>   - **SlopeSense "Next 7 days here" charts** listed days A–Z ("Fri 16"
+>     before "Mon 12"; across a month end "01 Nov" before "29 Oct"). Both
+>     charts now keep date order.
+>   - **Data Backbone "Span" tile** read 27 yr by counting calendar years
+>     touched; it is 26 whole years of rain (9,555 days) and now says 26.
+>   - Checked on screen at 1,366 and 1,920 px (cards still end level, no
+>     text cut off); screens pass.
+>
+> - **2026-10-10 — a river already above its line shows "unsure", not a small
+>   percentage** (the user: "apply current fix until more data
+>   accumulated"). Seven model designs failed to cure the fault
+>   (FLOOD_WHEN_PILOT_PLAN.md §13h–§18); the rule, where it shows and how it
+>   was checked are in §18d there. Screen only.
+> - **2026-10-10 — the full-screen box on the other two pages.** Flood-prone
+>   ground and Catchments now carry their place box on the map while it is
+>   full screen, as the forecast page has since 2026-10-07.
+>   - **What rides along:** the place (or "All of Arunachal"), then exactly
+>     what the box beside the map shows — Flood-prone ground: how the top
+>     colours held up and the most exposed places, or the place's estimate
+>     and its four tiles; Catchments: the share very wet with its day bars
+>     and the state's last and next three days, or the place's upstream rain,
+>     its bars and four tiles — and the map's colour key. Hide / Show as on
+>     the forecast page.
+>   - **How:** `view._Panel` keeps each block's HTML as the page draws it
+>     (`show`), so the panel can never say something the page does not.
+>     What the page draws as widgets (the ✕ title, the list of place
+>     buttons) is kept as plain rows. Not in it: the rain chart (a chart
+>     cannot live inside the map), the search box and the day picker.
+>   - **Checked:** 22 of 22 on the two pages (hidden at normal size, shown in
+>     full screen, colour key present, nothing wider than the panel, Hide, a
+>     click on the full-screen map picks a place and stays full screen, the
+>     numbers equal the box beside the map, no errors); the forecast page's
+>     own 13 checks still pass; screens pass.
+>
+> - **2026-10-10 — phones and tablets: every page checked, four faults
+>   fixed** (UI only; no number changed). Until now the layout had been
+>   measured at laptop and desktop widths only.
+>   - **How it was checked:** every page of all three modules, with and
+>     without a place — 14 pages — at four screens: phone 390 px, small
+>     phone 360 px, tablet 768 px, tablet on its side 1,024 px. For each:
+>     errors on screen, the page scrolling sideways, anything past the
+>     screen's edge, whether the menu opens, text under 9.5 px. Then the
+>     phone screenshots were read end to end, since counts do not show how
+>     a page reads.
+>   - **Before: 4 of 56 with a fault** — the forecast page scrolled sideways
+>     on both phones, with and without a place. The screenshots showed
+>     three more things the counts could not.
+>   - **Fixed:**
+>     1. *The gauge graph ran 34–52 px past a phone's screen* and took the
+>        whole page sideways with it. It was one joined chart (level above,
+>        chance bars below); a joined chart does not size itself to its
+>        box. Now two charts sharing the time scale and one y-axis width
+>        (`live.Y_AXIS`), so they line up as before and each fits
+>        (`live._gauge_chart` returns a list; `.st-key-fs_gchart`).
+>     2. *Day buttons stacked seven or eight rows deep* between the search
+>        box and the map. Four to a row on a phone now: FloodSense
+>        (`ui.py`, the 760 px block, `fs_r_a`) and SlopeSense
+>        (`mapping.day_strip` is keyed `daystrip_*`; rule in `theme.py`).
+>        ⚠️ **Correction, same day:** on the FloodSense pages this did not do
+>        what is written here. The rule set the two ROWS of buttons side by
+>        side, so a phone showed two columns that read downwards (Today, Sun,
+>        Mon, Tue beside Wed, Thu, Fri) — it was reported as four to a row
+>        without the screenshot being read closely enough. Found while
+>        rebuilding SlopeSense, which uses the same rule, and fixed: each row
+>        keeps the full width and its four buttons stay side by side
+>        (`ui.py`, the 760 px block). Measured at 390 and 360 px on both
+>        forecast pages: 4 in the first row, date order, none cut off,
+>        narrowest button 77 px.
+>     3. *Data Backbone's diagram cut a box's name off* ("Hosted
+>        scheduling"): boxes had a fixed height. They grow on a phone, and
+>        the return-path row may wrap (`theme.py`).
+>     4. *The river list's "chance" heading ran past the panel's edge.* It
+>        now ends at its column's edge (`ui.py`, `.fs-rhead`).
+>   - **After: 56 of 56 with no fault.** Desktop unchanged: the three
+>     panels end level in all 18 combinations measured before; the two
+>     halves of the gauge graph start at the same x; screens pass.
+>   - **Left as it is:** the page-head buttons (My location, Recentre, Run
+>     now) are one per row on a phone; wide tables scroll sideways inside
+>     their own box; a full-length phone page is long (the forecast page
+>     about 5,700 px).
+>   - **Not yet done:** the same survey on the host's newer package versions
+>     (Streamlit 1.65) — to run before these changes are pushed.
+>   - **To run it again:** `python scripts/run/check_app_mobile.py TAG`
+>     (about 25 minutes; `--shots` keeps a screenshot of every page).
+> - **2026-10-10 — the look is now shared with SlopeSense** (FloodSense
+>   numbers and layout unchanged). SlopeSense's pages were rebuilt from the
+>   same pieces: [SLOPESENSE_SCREEN.md](SLOPESENSE_SCREEN.md). What moved here:
+>   - `ui.py` gained `SLOPE_TIERS` (SlopeSense's badges; `badge()` looks in
+>     both), `Panel` (was `_Panel` in `view.py`; the two flood pages use it
+>     from here), `page_head(..., warn=)` and `map_title(..., right=, ratio=)`.
+>     The day-button rules also cover SlopeSense's `sl_d*` keys.
+>   - **The header wraps when its own box is narrow** (`.st-key-fs_head`, a
+>     container query at 640 px): on a 768 px tablet with the menu open the
+>     page is 470 px wide and the search row ran off the right edge — on
+>     FloodSense too. Title, then the search box, then its buttons two to a
+>     row. This also puts the page-head buttons two to a row on a phone
+>     (they were one per row, listed above as "left as it is").
+>   - Checked: all 34 screen cases open; the full-screen panel check on
+>     Flood-prone ground and Catchments still passes; phone and tablet
+>     survey of the FloodSense and SlopeSense pages: 56 of 56 page-and-screen combinations with no fault.
 >
 > Until each phase ships, the rules in [FLOOD_MODULE.md](FLOOD_MODULE.md)
 > ("What can honestly be quoted") still describe the live forecast screen.
@@ -533,6 +664,11 @@ services — confirm coverage for our points). If available, grade by lead
 day and, if days 4–7 over-promise, fit per-lead curves. If not available,
 days 4–7 are drawn lighter on screen with "rain forecasts are less reliable
 this far ahead", and the week number says it includes them.
+
+*Done 2026-10-11 ([LEAD_DAY_TEST.md](LEAD_DAY_TEST.md)): the archive exists
+from 2024-01-25. On two monsoons, days 4–7 rank 2.3 in 100 lower than days
+1–3 (89.1 → 86.9), almost all of it at days 6–7, and do not over-promise.
+The dashes stay; no per-lead curves were needed.*
 
 ### Phase 3 — Make "If a flood comes" honest inside Arunachal (M) — **Gate B**
 

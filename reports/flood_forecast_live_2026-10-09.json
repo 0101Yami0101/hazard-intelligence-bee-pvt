@@ -6,95 +6,89 @@
     {
       "date": "2026-10-09",
       "is_today": true,
-      "expected_flooded_km2": 0.073,
+      "expected_flooded_km2": 0.06,
       "times_an_ordinary_day": 0.3,
       "areas_most_ground_at_risk": [
         {
           "lat": 27.85,
           "lon": 95.45,
-          "expected_flooded_km2": 0.0093,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0067,
+          "times_normal": 0.5
         },
         {
           "lat": 28.05,
           "lon": 95.65,
-          "expected_flooded_km2": 0.0066,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0047,
+          "times_normal": 0.7
         },
         {
           "lat": 28.15,
           "lon": 95.65,
-          "expected_flooded_km2": 0.0064,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0046,
+          "times_normal": 0.6
         },
         {
           "lat": 28.05,
           "lon": 95.75,
-          "expected_flooded_km2": 0.0058,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0042,
+          "times_normal": 0.7
         },
         {
-          "lat": 28.15,
-          "lon": 95.75,
-          "expected_flooded_km2": 0.0049,
-          "times_normal": 1.8
+          "lat": 27.95,
+          "lon": 95.45,
+          "expected_flooded_km2": 0.0035,
+          "times_normal": 0.2
         }
       ]
     },
     {
       "date": "2026-10-10",
       "is_today": false,
-      "expected_flooded_km2": 0.074,
+      "expected_flooded_km2": 0.06,
       "times_an_ordinary_day": 0.3,
       "areas_most_ground_at_risk": [
         {
           "lat": 27.85,
           "lon": 95.45,
-          "expected_flooded_km2": 0.0093,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0067,
+          "times_normal": 0.5
         },
         {
           "lat": 28.05,
           "lon": 95.65,
-          "expected_flooded_km2": 0.0066,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0047,
+          "times_normal": 0.7
         },
         {
           "lat": 28.15,
           "lon": 95.65,
-          "expected_flooded_km2": 0.0064,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0046,
+          "times_normal": 0.6
         },
         {
           "lat": 28.05,
           "lon": 95.75,
-          "expected_flooded_km2": 0.0058,
-          "times_normal": 0.8
+          "expected_flooded_km2": 0.0042,
+          "times_normal": 0.7
         },
         {
-          "lat": 28.15,
-          "lon": 95.75,
-          "expected_flooded_km2": 0.0049,
-          "times_normal": 1.8
+          "lat": 27.95,
+          "lon": 95.45,
+          "expected_flooded_km2": 0.0035,
+          "times_normal": 0.2
         }
       ]
     },
     {
       "date": "2026-10-11",
       "is_today": false,
-      "expected_flooded_km2": 0.034,
+      "expected_flooded_km2": 0.029,
       "times_an_ordinary_day": 0.1,
       "areas_most_ground_at_risk": [
         {
           "lat": 27.85,
-          "lon": 95.45,
-          "expected_flooded_km2": 0.0026,
-          "times_normal": 0.2
-        },
-        {
-          "lat": 27.85,
           "lon": 96.05,
-          "expected_flooded_km2": 0.0022,
+          "expected_flooded_km2": 0.0023,
           "times_normal": 0.2
         },
         {
@@ -104,14 +98,20 @@
           "times_normal": 0.2
         },
         {
-          "lat": 27.95,
+          "lat": 28.05,
           "lon": 95.35,
-          "expected_flooded_km2": 0.0019,
+          "expected_flooded_km2": 0.0018,
           "times_normal": 0.2
         },
         {
-          "lat": 28.05,
-          "lon": 95.35,
+          "lat": 27.85,
+          "lon": 96.15,
+          "expected_flooded_km2": 0.0017,
+          "times_normal": 0.2
+        },
+        {
+          "lat": 27.85,
+          "lon": 96.25,
           "expected_flooded_km2": 0.0017,
           "times_normal": 0.2
         }
@@ -120,7 +120,7 @@
     {
       "date": "2026-10-12",
       "is_today": false,
-      "expected_flooded_km2": 0.006,
+      "expected_flooded_km2": 0.007,
       "times_an_ordinary_day": 0.0,
       "areas_most_ground_at_risk": [
         {
@@ -158,114 +158,114 @@
     {
       "date": "2026-10-13",
       "is_today": false,
-      "expected_flooded_km2": 0.001,
+      "expected_flooded_km2": 0.0,
       "times_an_ordinary_day": 0.0,
       "areas_most_ground_at_risk": [
         {
-          "lat": 27.95,
-          "lon": 95.45,
-          "expected_flooded_km2": 0.0001,
-          "times_normal": 0.0
-        },
-        {
-          "lat": 27.75,
+          "lat": 29.15,
           "lon": 95.85,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.3
         },
         {
           "lat": 27.85,
-          "lon": 95.45,
+          "lon": 91.65,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.5
         },
         {
-          "lat": 27.55,
-          "lon": 95.95,
+          "lat": 28.15,
+          "lon": 97.15,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.9
         },
         {
-          "lat": 27.85,
-          "lon": 96.05,
+          "lat": 28.05,
+          "lon": 97.25,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.9
+        },
+        {
+          "lat": 29.05,
+          "lon": 94.75,
+          "expected_flooded_km2": 0.0,
+          "times_normal": 1.0
         }
       ]
     },
     {
       "date": "2026-10-14",
       "is_today": false,
-      "expected_flooded_km2": 0.001,
+      "expected_flooded_km2": 0.0,
       "times_an_ordinary_day": 0.0,
       "areas_most_ground_at_risk": [
         {
-          "lat": 27.95,
-          "lon": 95.45,
-          "expected_flooded_km2": 0.0001,
-          "times_normal": 0.0
-        },
-        {
-          "lat": 27.75,
-          "lon": 95.85,
-          "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
-        },
-        {
-          "lat": 27.85,
+          "lat": 27.15,
           "lon": 95.45,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.1
         },
         {
-          "lat": 27.55,
+          "lat": 27.35,
           "lon": 95.95,
           "expected_flooded_km2": 0.0,
           "times_normal": 0.0
         },
         {
-          "lat": 27.85,
-          "lon": 96.05,
+          "lat": 27.05,
+          "lon": 95.35,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.1
+        },
+        {
+          "lat": 27.15,
+          "lon": 95.35,
+          "expected_flooded_km2": 0.0,
+          "times_normal": 0.1
+        },
+        {
+          "lat": 26.55,
+          "lon": 97.45,
+          "expected_flooded_km2": 0.0,
+          "times_normal": NaN
         }
       ]
     },
     {
       "date": "2026-10-15",
       "is_today": false,
-      "expected_flooded_km2": 0.001,
+      "expected_flooded_km2": 0.0,
       "times_an_ordinary_day": 0.0,
       "areas_most_ground_at_risk": [
         {
-          "lat": 27.95,
-          "lon": 95.45,
-          "expected_flooded_km2": 0.0001,
-          "times_normal": 0.0
-        },
-        {
-          "lat": 27.75,
-          "lon": 95.85,
-          "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
-        },
-        {
-          "lat": 27.85,
+          "lat": 27.15,
           "lon": 95.45,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.1
         },
         {
-          "lat": 27.55,
+          "lat": 27.35,
           "lon": 95.95,
           "expected_flooded_km2": 0.0,
           "times_normal": 0.0
         },
         {
-          "lat": 27.85,
-          "lon": 96.05,
+          "lat": 27.05,
+          "lon": 95.35,
           "expected_flooded_km2": 0.0,
-          "times_normal": 0.0
+          "times_normal": 0.1
+        },
+        {
+          "lat": 27.15,
+          "lon": 95.35,
+          "expected_flooded_km2": 0.0,
+          "times_normal": 0.1
+        },
+        {
+          "lat": 26.55,
+          "lon": 97.45,
+          "expected_flooded_km2": 0.0,
+          "times_normal": NaN
         }
       ]
     }
@@ -301,7 +301,7 @@
       "above_threshold_now": false,
       "level_low": 1225.557,
       "level_mid": 1225.638,
-      "level_high": 1225.848
+      "level_high": 1225.867
     },
     {
       "issued_on": "2026-10-09",
@@ -324,8 +324,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 1225.508,
-      "level_mid": 1225.684,
-      "level_high": 1226.106
+      "level_mid": 1225.679,
+      "level_high": 1226.1
     },
     {
       "issued_on": "2026-10-09",
@@ -491,9 +491,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 2231.136,
-      "level_mid": 2231.191,
-      "level_high": 2231.311
+      "level_low": 2231.134,
+      "level_mid": 2231.186,
+      "level_high": 2231.31
     },
     {
       "issued_on": "2026-10-09",
@@ -506,7 +506,7 @@
       "official": false,
       "threshold": 2232.17,
       "base_rate": 0.02044484385531341,
-      "probability": 0.0014,
+      "probability": 0.0008,
       "band": "NORMAL",
       "basis": "rain + river reading (3 day old)",
       "last_complete_day": "2026-10-08",
@@ -635,9 +635,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 422.549,
-      "level_mid": 422.612,
-      "level_high": 423.206
+      "level_low": 422.548,
+      "level_mid": 422.609,
+      "level_high": 423.189
     },
     {
       "issued_on": "2026-10-09",
@@ -659,9 +659,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 422.055,
-      "level_mid": 422.486,
-      "level_high": 423.721
+      "level_low": 422.011,
+      "level_mid": 422.474,
+      "level_high": 423.607
     },
     {
       "issued_on": "2026-10-09",
@@ -674,7 +674,7 @@
       "official": false,
       "threshold": 430.26,
       "base_rate": 0.020328599275967696,
-      "probability": 0.0008,
+      "probability": 0.0007,
       "band": "NORMAL",
       "basis": "rain + river reading (3 day old)",
       "last_complete_day": "2026-10-08",
@@ -698,7 +698,7 @@
       "official": false,
       "threshold": 430.26,
       "base_rate": 0.020328599275967696,
-      "probability": 0.0009,
+      "probability": 0.0007,
       "band": "NORMAL",
       "basis": "rain + river reading (4 day old)",
       "last_complete_day": "2026-10-08",
@@ -827,9 +827,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 2134.281,
+      "level_low": 2134.28,
       "level_mid": 2134.316,
-      "level_high": 2134.419
+      "level_high": 2134.414
     },
     {
       "issued_on": "2026-10-09",
@@ -842,7 +842,7 @@
       "official": false,
       "threshold": 2135.02,
       "base_rate": 0.020512820512820513,
-      "probability": 0.0014,
+      "probability": 0.0008,
       "band": "NORMAL",
       "basis": "rain + river reading (3 day old)",
       "last_complete_day": "2026-10-08",
@@ -986,7 +986,7 @@
       "official": false,
       "threshold": 271.978,
       "base_rate": 0.02059025394646534,
-      "probability": 0.0029,
+      "probability": 0.0026,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -1010,7 +1010,7 @@
       "official": false,
       "threshold": 271.978,
       "base_rate": 0.02059025394646534,
-      "probability": 0.0026,
+      "probability": 0.001,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -1034,7 +1034,7 @@
       "official": false,
       "threshold": 271.978,
       "base_rate": 0.02059025394646534,
-      "probability": 0.0011,
+      "probability": 0.001,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -1139,9 +1139,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 192.725,
-      "level_mid": 192.955,
-      "level_high": 193.827
+      "level_low": 192.726,
+      "level_mid": 192.957,
+      "level_high": 193.898
     },
     {
       "issued_on": "2026-10-09",
@@ -1322,7 +1322,7 @@
       "official": false,
       "threshold": 1105.98,
       "base_rate": 0.02023411371237458,
-      "probability": 0.0043,
+      "probability": 0.0063,
       "band": "NORMAL",
       "basis": "rain + river reading (2 day old)",
       "last_complete_day": "2026-10-08",
@@ -1332,8 +1332,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 1103.909,
-      "level_mid": 1104.028,
-      "level_high": 1104.329
+      "level_mid": 1104.044,
+      "level_high": 1104.345
     },
     {
       "issued_on": "2026-10-09",
@@ -1346,7 +1346,7 @@
       "official": false,
       "threshold": 1105.98,
       "base_rate": 0.02023411371237458,
-      "probability": 0.0008,
+      "probability": 0.0014,
       "band": "NORMAL",
       "basis": "rain + river reading (3 day old)",
       "last_complete_day": "2026-10-08",
@@ -1476,8 +1476,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 149.576,
-      "level_mid": 149.658,
-      "level_high": 149.823
+      "level_mid": 149.659,
+      "level_high": 149.83
     },
     {
       "issued_on": "2026-10-09",
@@ -1499,7 +1499,7 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 149.482,
+      "level_low": 149.483,
       "level_mid": 149.629,
       "level_high": 149.875
     },
@@ -1644,8 +1644,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 163.268,
-      "level_mid": 163.279,
-      "level_high": 163.303
+      "level_mid": 163.28,
+      "level_high": 163.31
     },
     {
       "issued_on": "2026-10-09",
@@ -1667,9 +1667,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 163.251,
-      "level_mid": 163.274,
-      "level_high": 163.327
+      "level_low": 163.249,
+      "level_mid": 163.275,
+      "level_high": 163.339
     },
     {
       "issued_on": "2026-10-09",
@@ -1837,7 +1837,7 @@
       "above_threshold_now": false,
       "level_low": 238.39,
       "level_mid": 238.436,
-      "level_high": 238.524
+      "level_high": 238.528
     },
     {
       "issued_on": "2026-10-09",
@@ -1981,7 +1981,7 @@
       "above_threshold_now": false,
       "level_low": 142.553,
       "level_mid": 142.577,
-      "level_high": 142.627
+      "level_high": 142.629
     },
     {
       "issued_on": "2026-10-09",
@@ -2003,9 +2003,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 142.508,
+      "level_low": 142.509,
       "level_mid": 142.569,
-      "level_high": 142.627
+      "level_high": 142.63
     },
     {
       "issued_on": "2026-10-09",
@@ -2149,7 +2149,7 @@
       "above_threshold_now": false,
       "level_low": 203.704,
       "level_mid": 203.76,
-      "level_high": 203.866
+      "level_high": 203.862
     },
     {
       "issued_on": "2026-10-09",
@@ -2507,9 +2507,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 135.441,
-      "level_mid": 135.659,
-      "level_high": 136.167
+      "level_low": 135.419,
+      "level_mid": 135.616,
+      "level_high": 136.101
     },
     {
       "issued_on": "2026-10-09",
@@ -2546,7 +2546,7 @@
       "official": true,
       "threshold": 140.0,
       "base_rate": 0.0021698047175754184,
-      "probability": 0.0005,
+      "probability": 0.0,
       "band": "NORMAL",
       "basis": "rain + river reading (4 day old)",
       "last_complete_day": "2026-10-08",
@@ -2652,8 +2652,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 118.646,
-      "level_mid": 118.659,
-      "level_high": 118.687
+      "level_mid": 118.66,
+      "level_high": 118.688
     },
     {
       "issued_on": "2026-10-09",
@@ -2676,8 +2676,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 118.633,
-      "level_mid": 118.654,
-      "level_high": 118.692
+      "level_mid": 118.656,
+      "level_high": 118.7
     },
     {
       "issued_on": "2026-10-09",
@@ -2820,8 +2820,8 @@
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 145.165,
-      "level_mid": 145.173,
-      "level_high": 145.2
+      "level_mid": 145.174,
+      "level_high": 145.206
     },
     {
       "issued_on": "2026-10-09",
@@ -2843,9 +2843,9 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 145.141,
-      "level_mid": 145.16,
-      "level_high": 145.197
+      "level_low": 145.143,
+      "level_mid": 145.163,
+      "level_high": 145.212
     },
     {
       "issued_on": "2026-10-09",
@@ -3011,8 +3011,8 @@
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
-      "level_low": 272.01,
-      "level_mid": 272.295,
+      "level_low": 272.009,
+      "level_mid": 272.287,
       "level_high": 273.111
     },
     {
@@ -3146,18 +3146,18 @@
       "official": false,
       "threshold": 245.1996,
       "base_rate": 0.03225806451612903,
-      "probability": 0.001,
+      "probability": 0.0023,
       "band": "NORMAL",
       "basis": "rain + river reading (1 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 244.044,
       "level_mid": 244.508,
-      "level_high": 244.758
+      "level_high": 244.77
     },
     {
       "issued_on": "2026-10-09",
@@ -3175,13 +3175,13 @@
       "basis": "rain + river reading (2 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
       "level_low": 244.08,
-      "level_mid": 244.345,
-      "level_high": 244.714
+      "level_mid": 244.358,
+      "level_high": 244.723
     },
     {
       "issued_on": "2026-10-09",
@@ -3199,7 +3199,7 @@
       "basis": "rain + river reading (3 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
@@ -3223,7 +3223,7 @@
       "basis": "rain + river reading (4 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
@@ -3247,7 +3247,7 @@
       "basis": "rain + river reading (5 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
@@ -3271,7 +3271,7 @@
       "basis": "rain + river reading (6 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
@@ -3295,7 +3295,7 @@
       "basis": "rain + river reading (7 day old)",
       "last_complete_day": "2026-10-08",
       "last_day_max": 244.63,
-      "newest_day_max": 243.51,
+      "newest_day_max": 244.31,
       "newest_reading_day": "2026-10-09",
       "gauge_offline": false,
       "above_threshold_now": false,
@@ -4850,7 +4850,7 @@
       "official": false,
       "threshold": 46.40839999999976,
       "base_rate": 0.020484171322160148,
-      "probability": 0.0029,
+      "probability": 0.0026,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -4994,7 +4994,7 @@
       "official": false,
       "threshold": 174.9684,
       "base_rate": 0.020895522388059702,
-      "probability": 0.0029,
+      "probability": 0.0026,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -5018,7 +5018,7 @@
       "official": false,
       "threshold": 174.9684,
       "base_rate": 0.020895522388059702,
-      "probability": 0.0046,
+      "probability": 0.0026,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -5042,7 +5042,7 @@
       "official": false,
       "threshold": 174.9684,
       "base_rate": 0.020895522388059702,
-      "probability": 0.0026,
+      "probability": 0.001,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -5498,7 +5498,7 @@
       "official": false,
       "threshold": 12.55439999999997,
       "base_rate": 0.021917808219178082,
-      "probability": 0.0029,
+      "probability": 0.0026,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -5546,7 +5546,7 @@
       "official": false,
       "threshold": 12.55439999999997,
       "base_rate": 0.021917808219178082,
-      "probability": 0.0026,
+      "probability": 0.001,
       "band": "NORMAL",
       "basis": "rain only",
       "last_complete_day": null,
@@ -5661,15 +5661,15 @@
     "status": "APPROXIMATE \u2014 Gate A failed (level not stable between years); shown by the user's decision of 2026-09-27 with the measured error stated",
     "measured_error": {
       "source": "production-like test, 2023-01-01..2025-10-31, weekly, inside Arunachal (post-hoc: designed after Gate A failed)",
-      "happened_over_said_low": 1.26,
-      "happened_over_said_high": 6.3,
-      "said_over_happened_total": 0.609,
-      "ranking_auc": 0.8901,
+      "happened_over_said_low": 0.64,
+      "happened_over_said_high": 6.45,
+      "said_over_happened_total": 0.61,
+      "ranking_auc": 0.9024,
       "high_ranges_said_more": {
-        "from_pct": 5.0,
-        "floods": 19,
-        "said_pct": 10.53,
-        "happened_pct": 6.07
+        "from_pct": 10.0,
+        "floods": 10,
+        "said_pct": 18.45,
+        "happened_pct": 10.1
       }
     },
     "days": [
@@ -5681,166 +5681,166 @@
       "2026-10-14",
       "2026-10-15"
     ],
-    "arunachal_week": 0.0394,
+    "arunachal_week": 0.0204,
     "arunachal_daily": [
-      0.008,
-      0.008,
-      0.008,
-      0.0059,
-      0.0059,
-      0.0059,
-      0.0059
+      0.0068,
+      0.0068,
+      0.0068,
+      0.0001,
+      0.0,
+      0.0,
+      0.0
     ],
     "places_highest_week": [
       {
         "lat": 28.05,
-        "lon": 95.65,
-        "week": 0.0047,
+        "lon": 95.75,
+        "week": 0.0026,
         "daily": [
-          0.00217,
-          0.00217,
-          0.00038,
-          9e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00158,
+          0.00158,
+          0.00051,
+          2e-05,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "floods_on_record": 1
+      },
+      {
+        "lat": 28.05,
+        "lon": 95.65,
+        "week": 0.0026,
+        "daily": [
+          0.00158,
+          0.00158,
+          0.00035,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 0
       },
       {
-        "lat": 28.05,
-        "lon": 95.75,
-        "week": 0.0045,
+        "lat": 28.15,
+        "lon": 95.65,
+        "week": 0.0021,
         "daily": [
-          0.00208,
-          0.00208,
-          0.00027,
-          5e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00158,
+          0.00075,
+          0.00051,
+          0.0001,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "floods_on_record": 0
+      },
+      {
+        "lat": 28.15,
+        "lon": 95.75,
+        "week": 0.0014,
+        "daily": [
+          0.00075,
+          0.00075,
+          0.00035,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 1
       },
       {
         "lat": 26.95,
         "lon": 93.55,
-        "week": 0.0019,
+        "week": 0.0014,
         "daily": [
-          0.00114,
-          0.00114,
-          9e-05,
-          1e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00074,
+          0.00074,
+          8e-05,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 35
       },
       {
         "lat": 28.15,
-        "lon": 95.75,
-        "week": 0.0019,
+        "lon": 95.55,
+        "week": 0.0014,
         "daily": [
-          0.00114,
-          0.00114,
-          0.00027,
-          9e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00051,
+          0.00051,
+          0.00035,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "floods_on_record": 0
+      },
+      {
+        "lat": 27.95,
+        "lon": 95.95,
+        "week": 0.0014,
+        "daily": [
+          0.00051,
+          0.00051,
+          0.00035,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 1
       },
       {
         "lat": 28.05,
         "lon": 95.55,
-        "week": 0.0019,
+        "week": 0.0014,
         "daily": [
-          0.00114,
-          0.00114,
-          0.00027,
+          0.00075,
+          0.00075,
+          0.00018,
           2e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 2
       },
       {
         "lat": 27.95,
         "lon": 95.55,
-        "week": 0.0019,
+        "week": 0.0014,
         "daily": [
-          0.00114,
-          0.00114,
-          0.00027,
-          5e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00072,
+          0.00072,
+          0.00035,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 18
       },
       {
-        "lat": 28.15,
-        "lon": 95.65,
-        "week": 0.0019,
-        "daily": [
-          0.0014,
-          0.0014,
-          0.00038,
-          9e-05,
-          1e-05,
-          1e-05,
-          1e-05
-        ],
-        "floods_on_record": 0
-      },
-      {
         "lat": 28.25,
         "lon": 95.65,
-        "week": 0.0013,
+        "week": 0.0014,
         "daily": [
-          0.00049,
-          0.00049,
-          0.00027,
-          2e-05,
-          1e-05,
-          1e-05,
-          1e-05
+          0.00072,
+          0.00051,
+          0.00021,
+          8e-05,
+          0.0,
+          0.0,
+          0.0
         ],
         "floods_on_record": 4
-      },
-      {
-        "lat": 28.25,
-        "lon": 95.75,
-        "week": 0.0012,
-        "daily": [
-          0.00049,
-          0.00049,
-          0.00021,
-          3e-05,
-          1e-05,
-          1e-05,
-          1e-05
-        ],
-        "floods_on_record": 0
-      },
-      {
-        "lat": 27.85,
-        "lon": 95.35,
-        "week": 0.0012,
-        "daily": [
-          0.00038,
-          0.00038,
-          0.00027,
-          0.00014,
-          1e-05,
-          1e-05,
-          1e-05
-        ],
-        "floods_on_record": 9
       }
     ]
   }
