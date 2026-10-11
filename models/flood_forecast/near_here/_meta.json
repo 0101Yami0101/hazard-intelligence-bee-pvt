@@ -7,8 +7,8 @@
     "from": "2024-01-01",
     "to": "2025-10-31",
     "n_days": 670,
-    "near_here_place_days_with_a_flood": 588,
-    "arunachal_days_with_a_flood": 30
+    "near_here_place_days_with_a_flood": 585,
+    "arunachal_days_with_a_flood": 29
   },
   "radius_km": 10.0,
   "truth_end": "2025-10-31",
@@ -42,15 +42,15 @@
   "status": "APPROXIMATE \u2014 Gate A failed (level not stable between years); shown by the user's decision of 2026-09-27 with the measured error stated",
   "measured_error": {
     "source": "production-like test, 2023-01-01..2025-10-31, weekly, inside Arunachal (post-hoc: designed after Gate A failed)",
-    "happened_over_said_low": 1.26,
-    "happened_over_said_high": 6.3,
-    "said_over_happened_total": 0.609,
-    "ranking_auc": 0.8901,
+    "happened_over_said_low": 0.63,
+    "happened_over_said_high": 7.17,
+    "said_over_happened_total": 0.601,
+    "ranking_auc": 0.8989,
     "high_ranges_said_more": {
-      "from_pct": 5.0,
-      "floods": 19,
-      "said_pct": 10.53,
-      "happened_pct": 6.07
+      "from_pct": 10.0,
+      "floods": 10,
+      "said_pct": 18.41,
+      "happened_pct": 10.1
     }
   },
   "confidence": {
@@ -62,20 +62,20 @@
     "gate_c_prime_keep_three": false,
     "measured_by_level": {
       "on_record": {
-        "place_weeks": 24790,
-        "weeks_with_a_flood": 87,
-        "said": 57.72,
-        "happened_over_said": 1.507,
-        "auc": 0.8525
+        "place_weeks": 24202,
+        "weeks_with_a_flood": 85,
+        "said": 55.78,
+        "happened_over_said": 1.524,
+        "auc": 0.8706
       },
       "none_on_record": {
-        "place_weeks": 85607,
+        "place_weeks": 86195,
         "weeks_with_a_flood": 40,
-        "said": 19.57,
-        "happened_over_said": 2.044,
-        "auc": 0.8658
+        "said": 19.33,
+        "happened_over_said": 2.069,
+        "auc": 0.8507
       }
     }
   },
-  "fitted_utc": "2026-09-29T05:18:12Z"
+  "fitted_utc": "2026-10-10T19:00:47Z"
 }

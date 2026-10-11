@@ -1,19 +1,19 @@
 {
   "event": "a flood from the verified record (build_verified_floods.py: confirmed by the validated radar test, Google's Global Flood Database or a gauge crossing), centred in the ~10 km rain cell, on its date",
-  "valley_factor_mask_share": 0.756,
+  "valley_factor_mask_share": 0.76,
   "tree_years": "2003-2023",
   "tree_years_note": "2015-2023 until 2026-09-29; from the verified record's first year since (docs/design/OLDER_FLOODS_TEST.md)",
   "normal_days": "2015-01-01 on",
   "calibration_days": "2024-01-01..2025-10-31 (the flood record ends there; before 2026-09-27 this ran to 2026-07-29 and counted Feb-Jul 2026 as flood-free)",
   "n_tree_rows": 14051440,
-  "n_tree_pos": 1449,
+  "n_tree_pos": 1445,
   "n_cal_rows": 1227440,
-  "n_cal_pos": 207,
+  "n_cal_pos": 206,
   "soil_model": {
     "n_tree_rows": 14051440,
-    "n_tree_pos": 1449,
+    "n_tree_pos": 1445,
     "n_cal_rows": 1227440,
-    "n_cal_pos": 207
+    "n_cal_pos": 206
   },
   "day_features": [
     "WHEN local score",
@@ -27,12 +27,12 @@
     "lag_days": 16,
     "tested": "docs/design/SOIL_WETNESS_TEST.md \u00a76-\u00a78 (reports/soil_wetness_test.json)"
   },
-  "n_events": 1852,
+  "n_events": 1847,
   "excluded": "braided-channel-shift suspects (reports/flood_paddy_check.json)",
   "valley_factor": {
-    "flat (<5 deg)": 1.0477388239082648,
-    "hilly (5-15 deg)": 0.16032015577825243,
-    "steep (>=15 deg)": 0.020269429601616082
+    "flat (<5 deg)": 1.0008281526522294,
+    "hilly (5-15 deg)": 0.16153511168652562,
+    "steep (>=15 deg)": 0.020540388203046517
   },
   "valley_factor_days": "2021-01-01..2025-10-31",
   "replay": "reports/flood_forecast_replay.json"
