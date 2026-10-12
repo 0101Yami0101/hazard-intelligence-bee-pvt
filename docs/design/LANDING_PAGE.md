@@ -140,3 +140,25 @@ page", until the user had the script cut down to the words alone on
 - **The close is general.** "What comes next" names no module and no state:
   more on the same backbone, a loop that runs itself, an open feed. Same
   three on the page's closing block, the deck's slide 13 and in the script.
+
+## After the first deploy (2026-10-12, `df981ac`)
+
+- **The company's mark is in the page's top left corner**, not under the
+  title: the bee and "BEE Solutions", a link to the company site. It is
+  placed against the scrolling area (`stMain`), so it scrolls away with the
+  first screen. Under 1100 px it sits just below the jump bar.
+- **"SLOPESENSE" and "Hazard Intelligence Platform" are the same width**
+  (239 px each, measured at five screen sizes, on both package sets). The
+  title was enlarged to 2 rem and the line under it is stretched to the
+  title's width (`text-align-last: justify`), so they stay equal even if a
+  font loads differently.
+- Checked on the host's versions before the push: home page opens, phone
+  and tablet 4 of 4, jump bar and Open buttons 37 of 37.
+
+**Then (`9a03e0d`): the mark floats.** The user wanted it "floating type like the
+step bar": it now stays in the top left corner while the page scrolls, in
+the same pill as the jump bar. Under 1100 px there is no room beside the
+bar, so the bee rides inside the bar as its first item and the corner one is
+hidden. (The earlier note above, that it scrolls away, no longer holds.)
+Checked on the host's versions: stays put after scrolling at six widths,
+never overlaps the bar, phone and tablet 4 of 4, buttons 37 of 37.

@@ -277,7 +277,10 @@ def main() -> None:
     # slicing the state. Dimming the outside makes "inside" unmistakable and
     # the neck legible as real geography rather than a rendering fault.
     from shapely.geometry import box
-    outer = box(west - 4, south - 4, east + 4, north + 4)
+    # Far wider than the state: zoomed right out on a wide screen the map
+    # shows some 30 degrees of longitude, and a box only 4 degrees past the
+    # border left undimmed strips down both sides (2026-10-12).
+    outer = box(30.0, -15.0, 160.0, 70.0)
     gpd.GeoDataFrame(geometry=[outer.difference(outline)], crs="EPSG:4326"
                      ).to_file(BASE / "outside_mask.geojson", driver="GeoJSON")
     print(f"  outside_mask  dims everything beyond the state")

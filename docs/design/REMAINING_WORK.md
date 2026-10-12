@@ -91,24 +91,34 @@ ran late in the first three weeks.
 
 ## 7. What is deployed, and what is backed up
 
-**Public app** — `hazard-intelligence-bee`, branch `v2`, commit `24f7834`
-(2026-10-12). App files only (`webapp`, `requirements.txt`, `runtime.txt`,
-`.streamlit`): 22 files changed since `84d56f1` of 11 October. It carries
-the new names (the platform is SlopeSense, the landslide module SlideSense),
-the home page that tells the idea in five parts with the "More about" rows,
-the forecast listed last in both side menus, and the flood forecast issued
-12 October. Models, logs, training scripts and internal docs are not on it.
-The old app (`SlopeSense2`, `main`) was not touched.
+**Public app** — `hazard-intelligence-bee`, branch `v2`, commit `dc66b2a`
+(2026-10-12, the fourth push of the day after `24f7834`, `df981ac` and
+`9a03e0d`). App files only (`webapp`, `requirements.txt`, `runtime.txt`,
+`.streamlit`). This push changed 11 files, all described in sections 10 to
+12: the satellite map as the default, the map opening one step in on
+Itanagar's side, the outside shading reaching the edges, a selected district
+outlined and lit alone in both modules, and a "My location" button that
+works. Before it the branch already carried the new names (the platform is
+SlopeSense, the landslide module SlideSense), the home page that tells the
+idea in five parts, the forecast listed last in both side menus, and the
+flood forecast issued 12 October. Models, logs, training scripts and
+internal docs are not on it. The old app (`SlopeSense2`, `main`) was not
+touched.
 
-**The hosted flood forecast is frozen at that issue** until someone pushes a
-newer snapshot: the daily 08:30 run on this PC does not push (item 2).
+**The hosted flood forecast is frozen at the 12 October issue** until
+someone pushes a newer snapshot: the daily 08:30 run on this PC does not
+push (item 2).
 
-**Checked before the push, on the host's package versions** (Streamlit 1.65,
-pandas 3.0): all 35 screens open (the home page is the 35th); phone and
-tablet survey 56 of 56 with no fault; side menus 11 of 11; the report
-downloads 5 of 5; the home page's jump bar and Open buttons 36 of 37, the
-one miss being the test reading the loading cover a quarter-second too late
-(watched separately: the cover shows).
+**Checked before this push, on the host's package versions** (Streamlit
+1.65, pandas 3.0): all 35 screens open; the map as it opens on all six
+tabs, 13 of 13; a district on every map tab of both modules, 21 of 21;
+"My location" allowed inside, allowed outside and refused, 28 of 28; the
+home page's jump bar and Open buttons 37 of 37; phone and tablet survey of
+every page 56 of 56 with no fault.
+
+**To try once on the live app**, because no test here can stand in for it:
+press "My location". The host shows the app inside its own frame, and
+whether that frame lets a browser share a position can only be seen there.
 
 **Private backup** — `hazard-intelligence-bee-pvt`, `main`: the whole
 working tree as it stood after this deploy (code, app, docs, models,
@@ -149,4 +159,117 @@ OPENS on its forecast (`HOME` in each `view.py`; the code no longer treats
 "first in the list" as "the forecast"), so links, the demo steps and the
 "Open the forecast" buttons behave as before. Checked: the order, the
 opening page and every menu click in a browser (11 of 11), all 35 screens.
-Not deployed.
+Deployed 2026-10-12.
+
+## 10. The map as it opens, 2026-10-12
+
+Three changes the user asked for, all in the shared map code, so they hold
+on every tab of SlideSense and FloodSense:
+
+- **Satellite is the map a visitor gets.** `BASEMAP_DEFAULT` in
+  `core/theme.py`; the picker in the side menu still lists Dark, Light,
+  Terrain, Satellite in that order and remembers a visitor's own choice.
+- **It opens one step in, on Itanagar's side of the state** (zoom 8, centred
+  a little north of the town: `MAP_OPEN_AT`, `MAP_OPEN_ZOOM`). Nothing is
+  selected by this: no pin, and every panel still reads "All of Arunachal".
+  One step out shows the whole state as before. Picking a place flies to it
+  as it always did.
+- **The shading outside the state now reaches the edges however far out the
+  map is zoomed.** The shape that shades the outside stopped 4 degrees past
+  the border; zoomed right out on a wide or full-screen map that left bright
+  strips down both sides. It now runs from 30 to 160 E and 15 S to 70 N
+  (`webapp/assets/base/outside_mask.geojson`, and the same box in
+  `scripts/run/export_webapp_bundle.py` so the next export keeps it).
+
+One thing found on the way and fixed: with the satellite picture the map's
+credit line named two different sources, wrapped onto a second line and
+covered the foot of the map. The place names now carry the same credit as
+the picture under them, so it prints once.
+
+Left as they were, on purpose: the flood map's labels are still spaced for
+the whole-state view (zoom 7), so they do not pile up when a visitor steps
+out. The pictures of the two modules on the home page, in the deck and in
+the brief were taken on the dark map and still show it.
+
+Checked in a browser on this PC's versions and on the host's (Streamlit
+1.65): all six tabs open on satellite at the new view with no pin, 13 of 13;
+zoomed right out and full screen at 2,400 px wide the shading reaches both
+edges; all 35 screens open; phone and tablet survey of the ten map pages
+20 of 20 with no fault. Deployed 2026-10-12 (`dc66b2a`).
+
+## 11. A selected district is lit alone, 2026-10-12
+
+**Why FloodSense showed no district border.** It treated a district as one
+point, its centre: a pin, the map at town zoom, no outline. Only SlideSense
+drew the outline, in its own page code.
+
+**Now, in both modules** (the shared map code, `core/mapping.py`):
+
+- Pick a district and its outline is drawn, and **everything outside it goes
+  dark**: the rest of Arunachal as well as the land beyond the state, with
+  the overlays, rivers, roads, gauges and labels on it. Place names and hover
+  tips stay readable. It is one shape, the whole view with the district cut
+  out, drawn in its own layer above the markers (`overlay_group(focus=)`,
+  `_spotlight`). It cannot be clicked, so a click on the dark part still
+  selects the spot under it.
+- **The map frames the district to fill the view** (`focus_view`): the
+  closest whole zoom at which it fits a map 480 px wide, centred on the
+  middle of its outline. The old rule put every district at zoom 6 to 8, so
+  Papum Pare was 90 px wide on a 630 px map; they now open at 8 to 10. On a
+  phone the widest districts run a little past the sides.
+- A town or a clicked spot is unchanged: a pin, no spotlight. Clearing the
+  selection lights the whole state again.
+
+**FloodSense keeps the pin at the district's centre**, because its panel's
+numbers are still read at that one spot (the flood chance within about 10 km
+of it), not over the whole district as SlideSense's are. District-wide flood
+figures would be a separate piece of work.
+
+Two small faults met on the way, both older than this change. Fixed: in
+SlideSense, picking on a new tab the place last picked on the old tab left
+the new map where it opened (FloodSense already handled this). Not changed:
+**a chosen place is dropped when the tab or the module changes**, in both
+modules; the comments in the code expect it to carry over. Left alone until
+the user says which they want.
+
+Checked in a browser on this PC's versions and the host's: two districts on
+every map tab of both modules, a click on the dark part, clearing, a town, a
+phone, 21 of 21; all 35 screens open; the opening-view check 13 of 13; phone
+and tablet survey of seven map pages 14 of 14. Deployed 2026-10-12 (`dc66b2a`).
+
+## 12. "My location" works, 2026-10-12
+
+**Why it did nothing.** The button ran a small script that asked the browser
+for the position and then wrote the answer into the page's address. Streamlit
+runs such a script in a sandboxed frame, and a sandboxed frame may not change
+the address of the page around it. The browser refused that last step every
+time, in every browser, on this PC and on the host, so the answer never
+arrived. On top of that only one page said anything about a refusal or a
+position outside the state, far down the page.
+
+**Now** (`core/location.py`, `core/geo_component/index.html`):
+
+- The asking is done by a tiny component of our own, which hands the answer
+  back as its value. No extra package, no page reload: the tab, the map
+  settings and the session survive a press.
+- Inside Arunachal: "My location, near <town>" is selected and pinned, on
+  every map page of both modules. A second press asks again.
+- Every other outcome is said under the search row, on every page that has
+  one: outside the state (with the coordinates), refused (and how to allow
+  it), could not be found, browser cannot do it. While the browser is being
+  asked it says so. The message goes as soon as a place is picked.
+- A position in the address (`?geo=ok&lat=..&lon=..`) is still taken, and
+  `?geo=denied` still opens the whole state; the phone survey uses the latter.
+
+**Limits that are the browser's, not ours.** It only asks on a secure
+address: the live app (https) and `localhost` are fine, the app opened by an
+IP address on the office network is not. A desktop PC with no Wi-Fi often
+places itself by its internet provider, which can be a city outside
+Arunachal; the app then says so and selects nothing. Not yet tried on the
+live app itself, where the page sits inside the host's own frame.
+
+Checked in a browser with the position set by the test, on this PC's
+versions and the host's: allowed inside, allowed outside and refused, on
+every map page of both modules, a second press, a search afterwards, the
+address forms and a phone, 28 of 28; all 35 screens; phone and tablet survey
+of six pages 12 of 12. Deployed 2026-10-12 (`dc66b2a`).
