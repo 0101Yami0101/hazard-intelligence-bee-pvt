@@ -133,7 +133,7 @@ rather than a fixed "Jang and nearby villages" area.
 | Soil wetness | ✅ Soil tab: percentile for the time of year, and whether it is used here (flat ground only) |
 | "Updated 5 min ago" | ❌ once a day (08:30); hourly is possible later |
 | Generate report, watchlist, officer login | ❌ not built; login needs proper hosting |
-| 3D terrain | 🟡 SlopeSense has 3D; FloodSense does not |
+| 3D terrain | 🟡 SlideSense has 3D; FloodSense does not |
 
 **What we have that the mock-up does not show:**
 - Every figure tested on past years, with its accuracy stated.

@@ -1,4 +1,4 @@
-"""Write down SlopeSense's forecast every day — the landslide track record.
+"""Write down SlideSense's forecast every day — the landslide track record.
 
     python scripts/model/landslide_forecast_log.py          # fetch live rain and log today's issue
     python scripts/model/landslide_forecast_log.py check    # rebuild every logged issue from its own file
@@ -15,7 +15,7 @@ Writes  records/landslide_forecast/issues/<issued_on>.npz   the whole issue
 ════════════════════════════════════════════════════════════════════════════
 WHY
 ════════════════════════════════════════════════════════════════════════════
-SlopeSense works its forecast out when someone opens the page and keeps
+SlideSense works its forecast out when someone opens the page and keeps
 nothing. A forecast that was never written down cannot be checked later, and
 that day cannot be had back (PLATFORM_ARCHITECTURE.md, "do this first").
 FloodSense has logged since 2026-09-21; this is the same for landslides.

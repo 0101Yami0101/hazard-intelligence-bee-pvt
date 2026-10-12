@@ -287,7 +287,7 @@
 
 ## The shape
 
-Identical to SlopeSense, because the physics splits the same way:
+Identical to SlideSense, because the physics splits the same way:
 
 ```
 landslide hazard = susceptibility     (where, static)  x trigger        (when, daily)
@@ -363,7 +363,7 @@ catchments and carried downstream before it becomes a forecast.
 
 - Routing graph: `NEXT_DOWN`, with topological order taken from `UP_AREA`
   ascending — **verified in the build**, 0 basins ordered after their receiver
-- Same rainfall points and same climatology as SlopeSense (97 points at
+- Same rainfall points and same climatology as SlideSense (97 points at
   ~33 km until 2026-09-22, 219 at ~22 km since), in `assets/base/` because
   rainfall is spine, not hazard
 - ⚠️ Each catchment's rain point (`rain_pt` in `catchments.npz`) is a

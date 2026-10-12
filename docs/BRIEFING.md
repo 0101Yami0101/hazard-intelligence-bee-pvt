@@ -65,7 +65,7 @@ it was reusable.
 
 ```
  SOURCES         RAW STORE        LINE UP          TWO SHELVES            WHO USES IT
- satellites      originals,       one shared map   1 ready-to-use data    SlopeSense
+ satellites      originals,       one shared map   1 ready-to-use data    SlideSense
  government   →  never edited, →  of the state, →  2 answers:          →  FloodSense
  river gauges    each with its    every source       the forecasts        next products
  live weather    record           as a column                             open feed, other apps
@@ -106,7 +106,7 @@ It is a standing system, not a one-off study. Six rules make it work:
 **One file, three products.** The ground-height file arrives as 28
 satellite tiles. The backbone turns it into steepness, the direction each
 slope faces, how water drains, and how high each square sits above its
-river. SlopeSense reads the steepness and the facing direction. FloodSense
+river. SlideSense reads the steepness and the facing direction. FloodSense
 reads the height above the river. The erosion module will read the slope
 again.
 
@@ -126,7 +126,7 @@ something setting it off (rain, the river — changes daily).
 
 **The same layers, reused** (● uses it today · ○ planned · – not used):
 
-| Backbone layer | SlopeSense | FloodSense | Soil erosion (next) |
+| Backbone layer | SlideSense | FloodSense | Soil erosion (next) |
 |---|:-:|:-:|:-:|
 | Ground shape: steepness, facing, curves | ● | ● | ○ |
 | Drainage: channels, catchments, height above river | ● | ● | ○ |
@@ -212,7 +212,7 @@ backbone.
 | Raw store, with a record for every file | **Built** |
 | One shared map | **Built.** 8.2 million squares, 34 facts each, 26 years of daily rain |
 | Two shelves | **Built** as files. No outside access yet |
-| Products on top | **Two live:** SlopeSense and FloodSense |
+| Products on top | **Two live:** SlideSense and FloodSense |
 | The loop: write down, grade | **Built for floods**, daily since late September. **Landslide forecasts are written down daily since 10 October**, not graded yet: nothing feeds dated landslides in |
 | Automatic daily run | **Built for floods** (08:30, on one PC). The rest is run by hand |
 | Checking sources as a standing gate | By hand today |
@@ -222,7 +222,7 @@ backbone.
 
 ## 10. The two products, as proof
 
-**SlopeSense — landslide forecast (live).** WHERE: how weak is this ground,
+**SlideSense — landslide forecast (live).** WHERE: how weak is this ground,
 learned from about 37,000 mapped landslides inside Arunachal. WHEN: is the
 rain unusual for this exact place. It gives a 7-day outlook for any place
 and for roads. WHERE picks the right spot about 6 times in 7. It gives a
@@ -281,11 +281,11 @@ monsoon ended.
 
 | Step | Click | Say |
 |---|---|---|
-| 1 · 20 s | Landing page | "Two products on top. One backbone underneath. An empty slot for the next." |
+| 1 · 20 s | Landing page | "Two products on top. One backbone underneath. An empty slot for the next." (Scrolling down from here tells the whole idea in five parts, the same as the slides.) |
 | 2 · 60 s | **Data Backbone → Pipeline** | "This is the idea in one picture. Sources in, one shared map, two shelves, products out, and what happened comes back. Solid is built, pencil is planned." |
 | 3 · 40 s | **Data catalogue** | "Every source, with where it came from and when. And the one that moves daily: 26 years of rain." |
 | 4 · 30 s | **Layer explorer** | "One column of the shared map. Every product reads these same layers." |
-| 5 · 60 s | **SlopeSense → Forecast**, search a town | "A product is a question asked of the backbone. This one asks: weak ground, times unusual rain." |
+| 5 · 60 s | **SlideSense → Forecast**, search a town | "A product is a question asked of the backbone. This one asks: weak ground, times unusual rain." |
 | 6 · 90 s | **FloodSense → Live forecast**, search Pasighat, scroll to the track record | "Second product, same backbone. And here is the loop: every forecast written down, then graded." |
 
 **Watch out for**
@@ -295,7 +295,7 @@ monsoon ended.
 - Either forecast page has a **one-page report** button. It downloads a
   printable page with both forecasts for the place on screen: useful to
   hand over at the end of a demo.
-- **A SlopeSense class is a rank, not a chance.** "High" means "look here
+- **A SlideSense class is a rank, not a chance.** "High" means "look here
   first". Each level now carries a measured figure: places and days at High have had about 3 times the usual landslides, Very High about 10 times (from 84 dated landslides, so rough).
 - It is October: flood screens are quiet. Say it first.
 
@@ -374,9 +374,12 @@ ladder — a free statewide layer, then paid tiers.
 - Anything planned as if it is live: sensors, SMS alerts, the open feed.
   Several sit on the pitch-deck slides.
 
-**One naming point:** the pitch deck calls the whole platform "SlopeSense".
-In the app, SlopeSense is the landslide module only, and the backbone has
-its own name. Decide which you will say.
+**Names (since 2026-10-11):** the whole platform is **SlopeSense**, the
+Hazard Intelligence Platform ("SHIP"), as the pitch deck has always called
+it. Its landslide module is **SlideSense**, its flood module **FloodSense**,
+and the shared pipeline under both is the **Data Backbone**. Before that
+date the landslide module was itself called SlopeSense, and the first,
+separate landslide app still is.
 
 ## 16. Where the detail is
 
@@ -391,3 +394,93 @@ its own name. Decide which you will say.
 | The landslide product | [MODEL_SUSCEPTIBILITY.md](design/MODEL_SUSCEPTIBILITY.md), [BACKTEST.md](design/BACKTEST.md) |
 | The pilot and the asks | [CEO_PILOT_NEXT_STEPS.md](design/CEO_PILOT_NEXT_STEPS.md), [GOV_DATA_REQUEST_LIST.md](design/GOV_DATA_REQUEST_LIST.md) |
 | Competitors | [COMPETITOR_IIOTS.md](design/COMPETITOR_IIOTS.md), [COMPETITOR_ALERTIS.md](design/COMPETITOR_ALERTIS.md) |
+
+## Screen guide — what each item on the two Forecast screens means
+
+The numbered pictures are in [BRIEFING.html](BRIEFING.html), at the end of the page. The numbers below match them. Screens captured on 11 October 2026.
+
+### SlideSense → Forecast (Itanagar)
+
+**The top of the screen: the state, the place, the map**
+
+1. **Title and status.** The green dot and “Live rain · 11 Oct to 17 Oct” say the rain feed is working and which seven days the forecast covers.
+2. **Place search.** Type a town or village to see its forecast. “My location” uses your device; “Recentre” takes the map back to the whole state.
+3. **Key.** The kinds of number on this screen. Outlook is the landslide level. Ground is how weak the slope is. Input is the rain. Record is past mapped landslides. “×” means times the usual number of landslides, never a chance.
+4. **Land at High or above.** The share of all scored land in the state that is at High or Very High on the chosen day. A share of land, not a chance.
+5. **Very High.** The same, for the top level alone.
+6. **Most affected district.** The district with the largest share of its own land at High or above that day.
+7. **Road at High or above.** Kilometres of main road that cross ground at High or above. The Roads page shows where.
+8. **Unusually wet points.** Rain is read at 219 points. This counts how many have had rain in their own wettest 10% since 2010. Zero means nowhere is unusually wet.
+9. **Wettest point.** The most rain at any one of those points that day.
+10. **The place card.** The answer for the place you searched. The word is its level, Very Low to Very High. “0.2× the usual” means places at this level have had about a fifth of the usual number of landslides. The seven bars are the next seven days.
+11. **The map.** Every square of ground coloured by its level for the chosen day. The pin is your place and the bright line is the state border. Grey is ground that is not scored: flat land, water, ice, or outside the state.
+12. **2D / 3D.** Switches between the flat map and a 3D view of the terrain. The 3D view is still being worked on.
+13. **This ground.** How weak this slope is, from its shape, soil, rock and land cover. No rain in it, so it is the same every day. “0.3×” means slopes like this have had about a third of the landslides of average ground.
+14. **Rain today.** How unusual the last 3 and 7 days of rain are for this exact spot. “0.2×” means that with rain like this, landslides have been about a fifth as common as on a usual day here.
+15. **Rain that day.** Millimetres of rain on the chosen day at the nearest rain point.
+16. **Rain, 7 days.** Total rain over the week ending that day.
+17. **Map colours.** The five levels. Beside each: its “times the usual” figure, and the share of land at that level.
+
+**The week, the districts and the roads**
+
+18. **7 days.** One button per day with this place's figure for that day. Click a day and the whole screen moves to it. The last three are dashed because rain forecasts are weaker that far ahead.
+19. **Districts to watch.** Districts ranked by the share of their own land at High or above on the chosen day.
+20. **Roads.** Kilometres of main road crossing ground at High or above today. The button opens the Roads page, which shows the stretches.
+
+**The detail for this place**
+
+21. **Next 7 days here.** One bar per day for this place: weak ground multiplied by unusual rain. Taller is worse. The line underneath names the worst day in the week.
+22. **Day by day.** The same week as a table: the rain in millimetres, the trigger (how unusual that rain is, from 0 to 1) and the level it gives.
+23. **One-page forecast report.** A printable one-page summary of this place's forecast, to hand to someone.
+24. **All districts table.** Opens a table with every district's figures for the day.
+25. **How to read these levels.** Opens the plain explanation of what a level means, how it was tested and what the forecast does not cover.
+
+### FloodSense → Forecast (Pasighat)
+
+**The top of the screen: the state, the place, the map**
+
+1. **Title and issue time.** “Issued 11 Oct · 10:10” is when this forecast was made. The dot is green when it is today's.
+2. **Place search.** Type a town or village. “My location” uses your device; “Recentre” takes the map back to the whole state.
+3. **Run now.** Makes a fresh forecast on the spot. It takes one to three minutes, so never press it in front of people.
+4. **Key.** The six kinds of number. Forecast: the chance a gauged river reaches its line, checked daily. Outlook: an approximate chance of a flood within about 10 km. Estimate: if a flood comes, the chance this spot is under water. Measured: a real gauge reading. Input: rain or soil wetness. Record: floods confirmed in the past.
+5. **Flood anywhere.** The chance of at least one recorded flood somewhere in Arunachal in the next seven days.
+6. **Areas at 10%+.** The state is split into 1,832 areas about 10 km across that have ground a flood can reach. This counts those with a 10% or higher outlook.
+7. **Rivers at 10%+.** Of the 32 gauged rivers, how many have a 10% or higher chance of reaching their line this week.
+8. **Highest river.** The gauged river with the highest chance, with its name and day.
+9. **Above line now.** Rivers whose latest readings are already above their line. “None” is the quiet answer.
+10. **Gauges reporting.** How many of the 32 gauges sent readings. Amber means a whole feed is down at its source; here the small-river feed is, so 15 gauges are offline.
+11. **The place card.** The answer for the place you searched: the chance of a flood within about 10 km over the next seven days, in words and as a percentage. The bars are the seven days.
+12. **The map.** Flood outlook for the week. Rivers with a gauge are the thick bright lines, and each gauge label shows its chance. The pin is your place.
+13. **Layers.** Chooses what the map shows.
+14. **If a flood comes.** The chance water reaches this exact spot if a flood is reported nearby. It comes from the shape of the land: height above the river, the river's size, how closed-in the valley is. The same every day.
+15. **River reaches its line.** The checked forecast for the gauge on this place's own river: the chance it reaches its danger line, and the highest day. This is not the same as the flood chance near here.
+16. **River now.** The latest daily high at that gauge, shown against its danger level. “−4.4 m” means 4.4 metres below it.
+17. **Floods on record.** How many flood days are confirmed within 10 km of here since 2003, by radar, a satellite flood map or a gauge.
+18. **Map colours and symbols.** The five chance bands, from Very low (under 2%) to High (25% and over), each with the share of land in it. Below: the symbols for a gauge, a gauged river, other rivers, and the area that drains to your place.
+
+**The week and the rivers**
+
+19. **7-day outlook.** The whole week first, then one button per day, for the place you searched. Click one and the screen moves to that day. Days 4 to 7 are dashed because rain forecasts are weaker that far ahead.
+20. **Rivers / Rain / Soil.** Three views of what is behind the forecast: the gauged rivers, the rain, and how wet the soil is.
+21. **River list.** The rivers with the highest chance. Each row: the gauge, which agency runs it (CWC or NWDP), its day of highest chance, a small graph of the last 30 days against its line (dashed red), and its chance. A crossed circle means the gauge is offline.
+
+**What changed, what needs a look, and the record**
+
+22. **What changed.** Today's numbers against the previous forecast: the state, your place, how many areas moved up or down a band, the rivers rising or easing most, and rivers above their line.
+23. **Needs attention.** Anything worth a look in today's numbers: high chances, a feed that is down, gauges offline. “Nothing stands out” is the quiet answer.
+24. **Track record.** The score sheet. River forecasts written down before the day, how many have since been checked against the real gauge, and how often a river truly reached its line. Below: how the level forecast is doing.
+
+**One river in detail, and every gauge**
+
+25. **Rivers panel.** Pick any gauge from the list. It opens on the gauge for your place's own river.
+26. **Latest daily high.** The highest reading of the most recent complete day at this gauge.
+27. **Its line.** The level that counts as a flood here: the official danger level where one exists, otherwise the river's own wettest 2% of days.
+28. **Highest chance.** The highest chance this week that the river reaches its line, with the day and what it is based on (rain, the river reading, or both).
+29. **Expected high.** Our forecast of the river's level for the next day, with the likely range.
+30. **Level graph.** The last 30 days of measured daily highs (solid line), our forecast of the level (dotted, after “Now”), and the official lines across it: highest ever, danger, warning, and the river's typical level.
+31. **Chance bars.** Our chance, for each coming day, that the river reaches its line.
+32. **Every gauge × every day.** All 32 gauges down the side, the seven days across, each cell the chance in percent. A dot means well under 0.1%. Click a row to open that river's graph.
+33. **One-page forecast report.** A printable one-page summary of this place's flood forecast.
+34. **All river gauges table.** Opens the full table of every gauge with its readings and chances.
+35. **Seen a flood? Report it.** A short form to report a flood you have seen. Reports become part of the record the forecast is checked against.
+36. **How to read these numbers.** Opens the plain explanation of each kind of number and its limits.

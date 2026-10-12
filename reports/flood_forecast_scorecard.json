@@ -1,22 +1,22 @@
 {
-  "as_of": "2026-10-11",
+  "as_of": "2026-10-12",
   "logged": {
-    "forecasts": 4256,
-    "issue_days": 19,
+    "forecasts": 4480,
+    "issue_days": 20,
     "first_issue": "2026-09-21",
-    "last_issue": "2026-10-11"
+    "last_issue": "2026-10-12"
   },
   "outcomes": {
-    "checked": 2036,
-    "awaiting reading": 1324
+    "checked": 2134,
+    "awaiting reading": 1450
   },
   "note": "Too few checked forecasts to judge yet. Grading means something after a monsoon season with several threshold crossings; until then this shows the machinery works.",
   "all": {
-    "n_forecasts": 2036,
+    "n_forecasts": 2134,
     "n_times_threshold_reached": 0,
-    "said_on_average_pct": 0.26,
+    "said_on_average_pct": 0.25,
     "happened_pct": 0.0,
-    "brier_skill_vs_long_run_rate": 0.24,
+    "brier_skill_vs_long_run_rate": 0.272,
     "warnings_25pct": {
       "issued": 3,
       "right": 0,
@@ -25,11 +25,11 @@
   },
   "by_lead_days": {
     "0": {
-      "n_forecasts": 363,
+      "n_forecasts": 377,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.25,
+      "said_on_average_pct": 0.24,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": -0.975,
+      "brier_skill_vs_long_run_rate": -0.906,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -37,11 +37,11 @@
       }
     },
     "1": {
-      "n_forecasts": 335,
+      "n_forecasts": 349,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.25,
+      "said_on_average_pct": 0.24,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.078,
+      "brier_skill_vs_long_run_rate": 0.113,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -49,11 +49,11 @@
       }
     },
     "2": {
-      "n_forecasts": 309,
+      "n_forecasts": 323,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.25,
+      "said_on_average_pct": 0.24,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.262,
+      "brier_skill_vs_long_run_rate": 0.293,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -61,11 +61,11 @@
       }
     },
     "3": {
-      "n_forecasts": 296,
+      "n_forecasts": 310,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.23,
+      "said_on_average_pct": 0.22,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.653,
+      "brier_skill_vs_long_run_rate": 0.668,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -73,21 +73,9 @@
       }
     },
     "4": {
-      "n_forecasts": 270,
+      "n_forecasts": 284,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.25,
-      "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.77,
-      "warnings_25pct": {
-        "issued": 0,
-        "right": 0,
-        "floods_missed": 0
-      }
-    },
-    "5": {
-      "n_forecasts": 244,
-      "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.28,
+      "said_on_average_pct": 0.23,
       "happened_pct": 0.0,
       "brier_skill_vs_long_run_rate": 0.781,
       "warnings_25pct": {
@@ -96,12 +84,24 @@
         "floods_missed": 0
       }
     },
-    "6": {
-      "n_forecasts": 219,
+    "5": {
+      "n_forecasts": 258,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.31,
+      "said_on_average_pct": 0.27,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.787,
+      "brier_skill_vs_long_run_rate": 0.791,
+      "warnings_25pct": {
+        "issued": 0,
+        "right": 0,
+        "floods_missed": 0
+      }
+    },
+    "6": {
+      "n_forecasts": 233,
+      "n_times_threshold_reached": 0,
+      "said_on_average_pct": 0.29,
+      "happened_pct": 0.0,
+      "brier_skill_vs_long_run_rate": 0.798,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -110,11 +110,11 @@
     }
   },
   "official_danger_level_only": {
-    "n_forecasts": 772,
+    "n_forecasts": 825,
     "n_times_threshold_reached": 0,
     "said_on_average_pct": 0.07,
     "happened_pct": 0.0,
-    "brier_skill_vs_long_run_rate": 0.99,
+    "brier_skill_vs_long_run_rate": 0.991,
     "warnings_25pct": {
       "issued": 0,
       "right": 0,
@@ -124,7 +124,7 @@
   "reliability": [
     {
       "said": "0-2%",
-      "n": 2006,
+      "n": 2104,
       "happened_pct": 0.0
     },
     {
@@ -158,57 +158,57 @@
     "range_should_hold_pct": 80.0,
     "by_network": {
       "CWC": {
-        "n": 106,
-        "typical_miss": 0.042,
-        "mean_miss": 0.069,
+        "n": 132,
+        "typical_miss": 0.041,
+        "mean_miss": 0.071,
         "largest_miss": 0.911,
-        "mean_miss_if_river_stayed_put": 0.171,
-        "range_held_pct": 88.7,
-        "above_range": 4,
-        "below_range": 8,
+        "mean_miss_if_river_stayed_put": 0.151,
+        "range_held_pct": 88.6,
+        "above_range": 6,
+        "below_range": 9,
         "unit": "m",
         "gauges": 16,
         "too_few_to_judge": false,
         "by_days_after_last_reading": {
           "1": {
-            "n": 61,
+            "n": 74,
             "typical_miss": 0.018,
             "mean_miss": 0.041,
             "largest_miss": 0.236,
-            "mean_miss_if_river_stayed_put": 0.118,
-            "range_held_pct": 90.2,
-            "above_range": 3,
+            "mean_miss_if_river_stayed_put": 0.106,
+            "range_held_pct": 90.5,
+            "above_range": 4,
             "below_range": 3
           },
           "2": {
-            "n": 45,
-            "typical_miss": 0.064,
-            "mean_miss": 0.107,
+            "n": 58,
+            "typical_miss": 0.061,
+            "mean_miss": 0.108,
             "largest_miss": 0.911,
-            "mean_miss_if_river_stayed_put": 0.244,
-            "range_held_pct": 86.7,
-            "above_range": 1,
-            "below_range": 5
+            "mean_miss_if_river_stayed_put": 0.208,
+            "range_held_pct": 86.2,
+            "above_range": 2,
+            "below_range": 6
           }
         },
         "by_gauge": {
           "Bhalukpong": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.058,
-            "largest_miss": 0.149,
-            "range_held_pct": 100.0
+            "largest_miss": 0.171,
+            "range_held_pct": 88.9
           },
           "Daporizo": {
-            "n": 7,
-            "typical_miss": 0.045,
+            "n": 9,
+            "typical_miss": 0.065,
             "largest_miss": 0.191,
-            "range_held_pct": 71.4
+            "range_held_pct": 66.7
           },
           "Doimukh": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.038,
             "largest_miss": 0.114,
-            "range_held_pct": 71.4
+            "range_held_pct": 66.7
           },
           "Jollang": {
             "n": 5,
@@ -217,22 +217,22 @@
             "range_held_pct": 100.0
           },
           "Kibithu": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.082,
             "largest_miss": 0.357,
-            "range_held_pct": 71.4
+            "range_held_pct": 77.8
           },
           "Lemeking": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.046,
             "largest_miss": 0.098,
             "range_held_pct": 100.0
           },
           "Miao": {
-            "n": 7,
-            "typical_miss": 0.05,
+            "n": 9,
+            "typical_miss": 0.024,
             "largest_miss": 0.089,
-            "range_held_pct": 85.7
+            "range_held_pct": 88.9
           },
           "Murga Bridge": {
             "n": 5,
@@ -241,28 +241,28 @@
             "range_held_pct": 100.0
           },
           "Namsai": {
-            "n": 7,
-            "typical_miss": 0.033,
+            "n": 9,
+            "typical_miss": 0.009,
             "largest_miss": 0.065,
-            "range_held_pct": 71.4
+            "range_held_pct": 77.8
           },
           "Pagoda": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.007,
             "largest_miss": 0.048,
             "range_held_pct": 100.0
           },
           "Pangin": {
-            "n": 7,
-            "typical_miss": 0.041,
+            "n": 9,
+            "typical_miss": 0.085,
             "largest_miss": 0.911,
-            "range_held_pct": 85.7
+            "range_held_pct": 88.9
           },
           "Passighat": {
-            "n": 7,
-            "typical_miss": 0.017,
+            "n": 9,
+            "typical_miss": 0.052,
             "largest_miss": 0.169,
-            "range_held_pct": 85.7
+            "range_held_pct": 88.9
           },
           "Rho Basti": {
             "n": 5,
@@ -271,21 +271,21 @@
             "range_held_pct": 100.0
           },
           "Seppa": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.08,
-            "largest_miss": 0.134,
-            "range_held_pct": 85.7
+            "largest_miss": 0.181,
+            "range_held_pct": 88.9
           },
           "Tamen": {
-            "n": 7,
-            "typical_miss": 0.059,
+            "n": 9,
+            "typical_miss": 0.055,
             "largest_miss": 0.305,
             "range_held_pct": 100.0
           },
           "Tuting": {
-            "n": 7,
+            "n": 9,
             "typical_miss": 0.174,
-            "largest_miss": 0.362,
+            "largest_miss": 0.407,
             "range_held_pct": 100.0
           }
         }
@@ -293,22 +293,22 @@
     },
     "no_longer_drawn": {
       "Pare HEP": {
-        "n": 7,
-        "typical_miss": 0.577,
-        "mean_miss": 0.515,
+        "n": 8,
+        "typical_miss": 0.45,
+        "mean_miss": 0.461,
         "largest_miss": 0.926,
-        "mean_miss_if_river_stayed_put": 0.554,
-        "range_held_pct": 14.3,
+        "mean_miss_if_river_stayed_put": 0.52,
+        "range_held_pct": 25.0,
         "above_range": 4,
         "below_range": 2,
         "why": "Dam gauge: its level follows the power station's releases, not the rain, so no level line is drawn for it."
       }
     },
     "first_target": "2026-10-07",
-    "last_target": "2026-10-10"
+    "last_target": "2026-10-11"
   },
   "near_here": {
-    "issues_logged": 12,
+    "issues_logged": 13,
     "issues_graded": 0,
     "new_flood_records": 0,
     "place_weeks": 0,

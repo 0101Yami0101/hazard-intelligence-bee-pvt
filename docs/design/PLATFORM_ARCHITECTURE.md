@@ -1,5 +1,10 @@
 # Platform architecture — the data backbone, and where it is going
 
+> **Names, 2026-10-11:** the landslide module is **SlideSense**. Until that date it
+> was called SlopeSense, which is now the name of the whole platform (SlopeSense,
+> Hazard Intelligence Platform). Older notes here were updated to the new name;
+> "the earlier SlopeSense" or "SlopeSense v1" still means the first, separate app.
+
 > **Status: the left half is built, the loop is not.**
 > Written 2026-08-17. Rendered for visitors on Data Backbone → Pipeline.
 > Companion docs: [DATA_CONTRACT.md](DATA_CONTRACT.md) (grid + provenance
@@ -10,7 +15,7 @@
 ```
   SOURCES              RAW HUB           PROCESSING          PROCESSED HUB          SERVE
 ┌───────────┐      ┌─────────────┐   ┌──────────────┐   ┌──────────────────┐   ┌─────────────┐
-│ external  │─────▶│ raw store   │──▶│ align        │──▶│ analysis-ready   │──▶│ SlopeSense  │
+│ external  │─────▶│ raw store   │──▶│ align        │──▶│ analysis-ready   │──▶│ SlideSense  │
 │ archives  │      │ (immutable) │   │ feature      │   │ (grid, features) │   │ FloodSense  │
 │ own       │─────▶│ partner     │   │ model        │   │ model outputs    │   │ public API  │
 │ sensors   │      │ intake      │   │              │   │ (forecasts)      │   │ other apps  │
@@ -42,15 +47,15 @@ Two things distinguish this from the first sketch, and both matter:
 | Model | **built** | LightGBM susceptibility (spatial-CV AUC 0.859) + percentile trigger; 9,555 days of rainfall history |
 | Analysis-ready shelf | **built** | `data/interim/grid_100m/` (~966 MB parquet), `interim/terrain`, `interim/features`, `interim/rainfall` |
 | Model-output shelf | **built** | `data/processed/` surfaces, `models/`, and the web bundles in `webapp/assets/` (4.60 MB total) |
-| SlopeSense | **built** | live |
+| SlideSense | **built** | live |
 | FloodSense | **built** | live; static layer unvalidated by design, see FLOOD_MODULE.md |
 | **Own sensors** | *planned* | nothing ingested |
 | **Partner intake** | *planned* | no write path, no quarantine |
 | **Public API** | *planned* | no service boundary at all — the app reads files off disk |
 | **Other apps** | *planned* | no external consumers |
-| **Forecast archive** | **built for FloodSense** (2026-09-21) · *planned* for SlopeSense | every daily flood issue logged to `records/flood_forecast/` (committable): each river's chance per day ahead, the area outlook, the near-here chances; 1,792 forecasts over 8 issue days by 2026-09-28 (`forecast_log.py`). **SlopeSense logs since 2026-10-10** to `records/landslide_forecast/` (`landslide_forecast_log.py`, called by the same daily run from the same rain): each issue's 7 days of rain and trigger at every rain point, with checksums of the static files, plus the state and district tables the screen shows. `check` rebuilds every issue from its own file |
-| **Outcome log** | **built for FloodSense** · *planned* for SlopeSense | river forecasts graded every day against the gauges' real readings (`gauge_verified.csv`, scorecard in `reports/flood_forecast_scorecard.json`); near-here chances graded for ranking against new flood records from gauge crossings and people's reports (`flood_intake.py`). The area outlook is logged, not graded. SlopeSense: logged, **not graded** — nothing feeds dated landslides in yet |
-| **Scheduling** | **built for FloodSense** (2026-09-22) · by hand elsewhere | Windows task "FloodSense daily forecast", 08:30 (`scripts/run_daily_flood_forecast.ps1`, 3 attempts, log in `logs/flood_forecast_daily/`). It fetches live rain, the gauges and — since 2026-09-28 — soil wetness. Everything else, including SlopeSense and the web bundle push, is run by hand **Moving it off the PC is parked (2026-10-10): [PARKED_OFF_PC_DAILY_RUN.md](PARKED_OFF_PC_DAILY_RUN.md).** |
+| **Forecast archive** | **built for FloodSense** (2026-09-21) · *planned* for SlideSense | every daily flood issue logged to `records/flood_forecast/` (committable): each river's chance per day ahead, the area outlook, the near-here chances; 1,792 forecasts over 8 issue days by 2026-09-28 (`forecast_log.py`). **SlideSense logs since 2026-10-10** to `records/landslide_forecast/` (`landslide_forecast_log.py`, called by the same daily run from the same rain): each issue's 7 days of rain and trigger at every rain point, with checksums of the static files, plus the state and district tables the screen shows. `check` rebuilds every issue from its own file |
+| **Outcome log** | **built for FloodSense** · *planned* for SlideSense | river forecasts graded every day against the gauges' real readings (`gauge_verified.csv`, scorecard in `reports/flood_forecast_scorecard.json`); near-here chances graded for ranking against new flood records from gauge crossings and people's reports (`flood_intake.py`). The area outlook is logged, not graded. SlideSense: logged, **not graded** — nothing feeds dated landslides in yet |
+| **Scheduling** | **built for FloodSense** (2026-09-22) · by hand elsewhere | Windows task "FloodSense daily forecast", 08:30 (`scripts/run_daily_flood_forecast.ps1`, 3 attempts, log in `logs/flood_forecast_daily/`). It fetches live rain, the gauges and — since 2026-09-28 — soil wetness. Everything else, including SlideSense and the web bundle push, is run by hand **Moving it off the PC is parked (2026-10-10): [PARKED_OFF_PC_DAILY_RUN.md](PARKED_OFF_PC_DAILY_RUN.md).** |
 
 The honest summary *(updated 2026-09-28)*: **for floods, the loop is closed —
 forecast, record, grade, every day.** For landslides the first half is in place since 2026-10-10 (every forecast is written down); the grading half waits for dated landslide records. And
@@ -69,7 +74,7 @@ news report.
 is *time-sensitive*. An API can be built in any month. Yesterday's forecast is
 gone forever if nobody wrote it down. Every day without this destroys evidence
 permanently — and validation is exactly where both products are thinnest
-(SlopeSense's timing model rests on ~72 dated events; FloodSense's static layer
+(SlideSense's timing model rests on ~72 dated events; FloodSense's static layer
 has no local validation at all, because the only available reference put 70.5%
 of its flooded pixels on slopes over 15°).
 

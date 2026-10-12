@@ -3,7 +3,7 @@
     flood hazard = flood-prone ground (where, static, this script)
                  x catchment rain     (when, daily, computed in the app)
 
-the same two-part shape as SlopeSense, because the physics splits the same way.
+the same two-part shape as SlideSense, because the physics splits the same way.
 
 WHAT THIS BUILDS
     HAND            height above the nearest drainage, in metres

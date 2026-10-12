@@ -5,7 +5,7 @@ point, a district, or the whole state. It was in the mock-up
 ([FLOOD_HUB_AND_MOCKUP_COMPARISON.md](FLOOD_HUB_AND_MOCKUP_COMPARISON.md),
 "generate report") and had not been built.
 
-Code: `webapp/products/report.py`. Button: under the main row on SlopeSense's
+Code: `webapp/products/report.py`. Button: under the main row on SlideSense's
 Forecast page and FloodSense's Live forecast page ("📄 One-page forecast
 report · <place>").
 
@@ -72,10 +72,10 @@ Then six short "how to read" notes and a footer.
   landslide forecasts are now "written down daily, not graded" (was "not
   logged"); the level line graded, 85 so far, typically 4 cm off.
 - **Stale notes removed:** the Data Backbone pages "last rebuilt on 17
-  August", the "27 yr" tile, the SlopeSense chart "out of order", the
-  "33 km" label. Added: the one-page report button, SlopeSense's new look.
+  August", the "27 yr" tile, the SlideSense chart "out of order", the
+  "33 km" label. Added: the one-page report button, SlideSense's new look.
 - **Screens re-captured:** six in BRIEFING.html (pipeline, catalogue, rain
-  archive, SlopeSense, FloodSense, track record) and four in
+  archive, SlideSense, FloodSense, track record) and four in
   PRESENTATION.html, with the numbered pins moved to the new layout.
 - **Files:** docs/BRIEFING.md, BRIEFING.html, PRESENTATION.html,
   PRESENTATION_SCRIPT.md, PRESENTATION_SCRIPT.html. All open with no console

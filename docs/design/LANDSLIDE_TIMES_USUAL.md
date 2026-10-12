@@ -1,4 +1,9 @@
-# SlopeSense: real numbers in place of "4 of 5" (2026-10-11)
+# SlideSense: real numbers in place of "4 of 5" (2026-10-11)
+
+> **Names, 2026-10-11:** the landslide module is **SlideSense**. Until that date it
+> was called SlopeSense, which is now the name of the whole platform (SlopeSense,
+> Hazard Intelligence Platform). Older notes here were updated to the new name;
+> "the earlier SlopeSense" or "SlopeSense v1" still means the first, separate app.
 
 **Why.** The place card's headline read "4 of 5". The user's reaction:
 *"What kind of number is this? I want to show real numbers in a way people
@@ -100,7 +105,7 @@ ground.
 
 ## 3. What changed on screen
 
-The place card (a town or a point) on SlopeSense's Forecast page:
+The place card (a town or a point) on SlideSense's Forecast page:
 
 | Was | Is |
 |---|---|

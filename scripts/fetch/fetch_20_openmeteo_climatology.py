@@ -54,7 +54,7 @@ hindcast figures for that reason alone.
 
 Restartable — each batch is cached to disk, so a rate-limit stall costs
 nothing. Regenerating this changes points.json and clim_quantiles.npz,
-which BOTH SlopeSense and FloodSense's live paths read — rerun
+which BOTH SlideSense and FloodSense's live paths read — rerun
 `scripts/run/export_webapp_bundle.py` and `flood_forecast_live.py build`
 afterwards, and check both products, not just flood.
 """

@@ -411,7 +411,7 @@ Rainfall as the dominant trigger is now established **from the data**, not from 
 
 ### 8. Official hazard products retrieved
 
-- **GSI national susceptibility, 50 m, 3 classes** — via the portal's public proxy. Use as *benchmark*, never as an input: training on it would predict GSI's model rather than landslides. ⚠️ *Re-fetched 2026-10-10 on GSI's own grid (EPSG:32644): the July copy, exported as one image in longitude/latitude, matched the source on only 41% of cells. Compared with SlopeSense in [GSI_MAP_COMPARISON.md](../design/GSI_MAP_COMPARISON.md).*
+- **GSI national susceptibility, 50 m, 3 classes** — via the portal's public proxy. Use as *benchmark*, never as an input: training on it would predict GSI's model rather than landslides. ⚠️ *Re-fetched 2026-10-10 on GSI's own grid (EPSG:32644): the July copy, exported as one image in longitude/latitude, matched the source on only 41% of cells. Compared with SlideSense in [GSI_MAP_COMPARISON.md](../design/GSI_MAP_COMPARISON.md).*
 - **Bhuvan aggregated flood inundation 2003–2020** — observed flood footprint, 1.29% of the AOI box. The flood equivalent of a landslide inventory, and the only observed flood history held.
 
 ### 9. Multi-state training data available (not yet fetched)

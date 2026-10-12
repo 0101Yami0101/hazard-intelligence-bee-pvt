@@ -27,12 +27,12 @@ from press interviews, not audited figures — flagged where that matters.
 ## 2. Are they "exactly like us"? — No. Different shape of product entirely
 
 They are a **hardware/IoT company that also does ML**, not a forecasting platform.
-Our project (SlopeSense/FloodSense) is a **statewide remote-sensing + ML forecasting
+Our project (SlideSense/FloodSense) is a **statewide remote-sensing + ML forecasting
 layer** with no physical field hardware. iIoTs is the mirror image: **physical
 sensors bolted to named, already-known-dangerous slopes**, with ML riding on top of
 that sensor stream.
 
-| | iIoTs / Intiot | Us (SlopeSense/FloodSense) |
+| | iIoTs / Intiot | Us (SlideSense/FloodSense) |
 |---|---|---|
 | Core asset | Physical sensor boxes installed on specific slopes | Statewide model over satellite + government data feeds |
 | Coverage model | Point — one slope at a time, ~60 sites total | Area-wide — every pixel/slope across a state |

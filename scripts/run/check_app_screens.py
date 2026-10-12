@@ -21,7 +21,7 @@ APP = str(ROOT / "webapp" / "app.py")
 
 CASES = [
     ("landslide", "view", ["Forecast", "Roads", "Susceptibility"], None, {}),
-    # SlopeSense with a town, a district, a valley-floor point that snaps to
+    # SlideSense with a town, a district, a valley-floor point that snaps to
     # the nearest slope, a point outside the state, and a later day
     ("landslide", "view", ["Forecast", "Susceptibility"], "Tawang", {}),
     ("landslide", "view", ["Forecast", "Susceptibility"], "Upper Siang district", {}),
@@ -51,6 +51,17 @@ CASES = [
 
 def main() -> int:
     failures = 0
+    # the home page: the module tiles and the story under them (core/landing.py)
+    at = AppTest.from_file(APP, default_timeout=300)
+    at.run()
+    story = sum("lp-sec" in str(m.value) or "lp-close" in str(m.value) for m in at.markdown)
+    if at.exception or story < 5:
+        failures += 1
+        print(f"  FAIL  home page ({story} story blocks)")
+        for e in at.exception:
+            print("        " + str(e.message)[:300])
+    else:
+        print(f"  ok    home page ({story} story blocks)")
     for module, key, views, place, extra in CASES:
         for v in views:
             at = AppTest.from_file(APP, default_timeout=300)

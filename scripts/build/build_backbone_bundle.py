@@ -546,7 +546,7 @@ def build_status(layers: dict, lab: dict, tl: dict) -> dict:
             f"{tr.get('first_issue', '')} to {s.get('issued_on', '')}", s.get("issued_on", ""),
             "daily", f"{chk.get('n_forecasts', 0):,} graded against the gauges so far.")
 
-    # SlopeSense's forecasts, written down since 2026-10-10
+    # SlideSense's forecasts, written down since 2026-10-10
     # (landslide_forecast_log.py). Logged, not graded: nothing feeds dated
     # landslides in yet, and the row says so.
     ls = ROOT / "records" / "landslide_forecast" / "state.csv"

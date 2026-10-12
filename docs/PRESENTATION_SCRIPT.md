@@ -1,284 +1,171 @@
-# Presenting the Data Backbone — the script
+# The Data Backbone — the script
 
-**As of 10 October 2026 · 13 slides · about 9 minutes with the screens in the slides, about 12 with a live demo.**
+## Slide 1 · Title
 
-**Visual version:** [PRESENTATION_SCRIPT.html](PRESENTATION_SCRIPT.html) — the same script with a picture of each slide beside its words. **The slides:** [PRESENTATION.html](PRESENTATION.html). The fuller background is in [BRIEFING.md](BRIEFING.md).
+Thank you for having us. We are BEE Solutions.
 
-The words under **Say** are written to be spoken. Use your own words where they sit better; keep the order and the numbers.
+What I want to show you today is not one more app. It is the backbone we are building underneath the apps.
 
----
+Let me tell you how we got here. We set out to build one thing: a landslide map for Arunachal Pradesh. And while building it, we ran into two things that changed our plan.
 
-## 1. Before you start
+1. The data that modern AI needs for a problem like this already exists for Arunachal. But it is scattered. It comes in different shapes, sizes and formats. So every project starts from zero.
+2. Every hazard is, underneath, the same question. Where can it happen, and when? And both can be answered from much the same set of data.
 
-1. Open **docs/PRESENTATION.html** by double-clicking it. Press **F** for full screen. It needs no internet: the fonts and pictures are inside the file.
-2. Move with the **arrow keys**, the space bar, a clicker, or a click on the slide. To jump, **type the slide number and press Enter**.
-3. If the projector washes out the dark slides, press **T** for the light version. It remembers your choice.
-4. For the live demo, start the app from the project folder before the meeting: `.venv\Scripts\python -m streamlit run webapp/app.py`. Keep it open in a second browser tab.
-5. Open **FloodSense** once. The dot beside "Issued" should be green. If the forecast is a day old, press **Run now** then and wait one to three minutes. Never press it during the demo.
-6. The app's maps and live rain need internet. If the room has none, take the route without the app: slides 8 to 10 carry the screens.
-7. To hand the deck over afterwards, open it and press **Ctrl+P**, then "Save as PDF". You get 13 pages, one per slide.
+Put those two together, and you stop building an app. You start building what goes under all of them. Give us about twelve minutes, and you will see it running.
 
-**Two speakers?** A split that works:
+## Slide 2 · The problem
 
-- **Speaker one, the idea:** Slides 1 to 7, then 11 to 13.
-- **Speaker two, the products:** Slide 8, the live demo (or slides 9 and 10), and the questions about how the forecasts work.
+Take the first of those two. It may surprise you, but everything you need to see a landslide or a flood coming already exists. The height of the ground. The soil. The rock. The rain. The rivers, and the gauges on them. All of it has been measured.
 
-## 2. The talk at a glance
+So why is it so hard to use? Look at the shapes it comes in. One source gives a reading every 30 metres. Another, every 11 kilometres. One is outlines, one is lines, one is single dots on a map. It sits with a dozen agencies, each in its own format. It is a jigsaw where every piece was cut by a different hand.
 
-| Slide | What it does | Time | Clock |
-|---|---|---|---|
-| 1 | Title | 0:20 | 0:20 |
-| 2 | The problem | 1:05 | 1:25 |
-| 3 | The idea | 0:40 | 2:05 |
-| 4 | How it works | 1:00 | 3:05 |
-| 5 | Six rules | 0:50 | 3:55 |
-| 6 | A product is a question | 0:40 | 4:35 |
-| 7 | Same layers, reused | 0:45 | 5:20 |
-| 8 | Running today | 0:20 | 5:40 |
-| 9 | SlopeSense | 0:40 | 6:20 |
-| 10 | FloodSense | 0:45 | 7:05 |
-| 11 | What else | 0:45 | 7:50 |
-| 12 | Stronger with time | 0:50 | 8:40 |
-| 13 | Close | 0:45 | 9:25 |
+So every team runs into the same four walls.
 
-With the live demo, slides 9 and 10 are replaced by about four minutes in the app, so the whole talk is about 12 minutes.
+1. The data is in pieces.
+2. Every project starts from zero. Months go into lining things up, one map is published, and the work is thrown away.
+3. That map goes stale. The ground stays where it is, but rain and rivers change every single day.
+4. The one that bothers us most: nobody keeps score. A forecast is made, and no one writes it down and checks it afterwards.
 
-## 3. Slide by slide
+That is why this field is full of static maps, one-off studies, and pilots that never grow.
 
-### Slide 1 · Title · 0:20
+## Slide 3 · The idea
 
-**Say**
+That is what led us to the idea, and it fits in one line. Do the hard part once.
 
-> Thank you for having us. We are BEE Solutions.
->
-> What we want to show you today is not one app. It is what sits underneath the apps: one shared data backbone for mountain hazards. Ten minutes, and you will see it running.
+- **Collect** every useful source.
+- **Check** each one, before we trust it.
+- **Line up** all of it on one shared map.
+- **Keep current** day after day.
 
-**Do:** Have this slide up while people settle. Press F for full screen before you start.
+Here is a picture to hold on to. Imagine the whole state cut into squares, each about the size of a football field. There are 8.2 million of them. Every source we bring in becomes one more layer, laid over those same squares. So pick any square of ground, anywhere in the state, and you can read straight down through the layers and know everything about it: how steep it is, what the soil is, how much rain has fallen.
 
-### Slide 2 · The problem · 1:05
+And once that exists, anything can be built on top.
 
-**Say**
+## Slide 4 · How it works
 
-> Start with the problem. The facts you need to see a landslide or a flood coming already exist. Ground height, soil, rain, rock types, rivers, river gauges.
->
-> But look at the shapes they come in. One arrives every 30 metres. One every 11 kilometres. One is outlines, one is lines, one is single points. They sit with a dozen agencies, each in its own format.
->
-> So every team hits the same four walls. The data is in pieces. Every project starts from zero: months of lining things up, one map published, and the work is thrown away. That map goes stale, because the ground stays put but rain and rivers change every day. And nobody keeps score. Forecasts are not written down and checked afterwards.
->
-> That is why we keep seeing static maps, one-off studies, and pilots that never scale.
+How does it work? Follow it from left to right. It is five steps.
 
-**Do:** Point at the tilted cards on the left first, then go down the four walls on the right.
+1. **Collect:** We fetch every source, and the weather every single day.
+2. **Keep:** The original file is stored untouched, with a note of where it came from, so nothing is ever lost.
+3. **Line up:** Each one is fitted to the shared map.
+4. **Shelve:** There are two shelves: one for ready-to-use data, one for the forecasts.
+5. **Serve:** Products simply read from those shelves.
 
-### Slide 3 · The idea · 0:40
+Now look at the line underneath, because it matters most. Every forecast is written down before the day, and checked after it. What really happened flows back in as new data. The system keeps its own scorecard.
 
-**Say**
+Today that means:
 
-> Our idea is simple. Do the hard part once. Collect every useful source. Check it. Line it up on one shared map. Keep it current.
->
-> Picture the state cut into 8.2 million squares, each the size of a football field. Every source becomes one more layer on those same squares. So for any square of ground, you can read straight down and get every fact about it.
->
-> And then anything can be built on top.
+- **29** sources lined up.
+- **8.2 million** squares on the shared map.
+- **26 years** of daily rain, for every place in the state.
 
-**Do:** Trace the dotted line down through the four layers as you say "read straight down".
+## Slide 5 · Rules we keep in mind
 
-### Slide 4 · How it works · 1:00
+Why should anyone trust what comes out? Because of the rules we keep in mind while we build it. These are the main ones.
 
-**Say**
+- **One map for everything:** So two products can never disagree about where a place is.
+- **Keep the original:** So any number on any screen can be traced back to where it came from.
+- **Check before trusting:** Even official data can be wrong, and we have caught it.
+- **No hazard built in:** Nothing in the backbone is tied to one hazard; each product brings its own question.
+- **Two shelves:** Someone planning a road wants the base layers. An officer on duty wants a forecast.
+- **Close the loop:** Every forecast is graded.
+- **Test on ground it has never seen:** A forecast is judged only on places it was not shown while it was being built.
+- **Label every number:** Each number on screen says what it is: a forecast, a measurement or a record.
+- **Say so when unsure:** Where the data cannot support an answer, it says so instead of guessing.
 
-> This is how it works, left to right. Collect: we fetch each source, and the weather every day. Keep: the original file is stored untouched, with a record of where it came from. Line up: it is fitted to the shared map. Shelve: there are two shelves, one for ready-to-use data and one for the forecasts. Serve: products read from those shelves.
->
-> The line underneath matters most. Every forecast is written down before the day and checked after it. What really happened comes back in as new data.
->
-> Today that is 29 sources, 8.2 million squares, and 26 years of daily rain for every place in the state.
+## Slide 6 · A product is a question
 
-**Do:** Walk the five boxes with your hand. Pause on the dashed bar: it is the part most systems do not have.
+So if the backbone is the foundation, what is a product? A product is simply a question asked of the backbone.
 
-**If asked:** "Is all of this automatic?" The flood side runs by itself every morning. The rest is still run by hand; making the whole pipeline run itself is one of our next steps.
+Remember the second thing we learned? Every hazard asks a question of the same shape.
 
-### Slide 5 · Six rules · 0:50
+- **Where** can it happen? That is the ground, and the ground barely changes.
+- **When** is something setting it off? That is rain and rivers, and they change every day.
 
-**Say**
+Where, times when.
 
-> Six rules are built in, and they are why you can trust what comes out.
->
-> One map for everything, so two products can never disagree about where a place is. We keep the original, so any number can be traced back to its source. We check a source before trusting it; official data can be wrong, and we have caught it.
->
-> Nothing in the backbone names a hazard; a product brings its own question. There are two shelves, because someone planning a road wants base layers and an officer wants a forecast. And we close the loop: every forecast is graded.
+- **Landslides:** Weak ground, times rain that is unusual for that place.
+- **Floods:** Ground that water can reach, times rain upstream and the level of the river.
 
-**Do:** Do not read all six cards out. Say the first three slowly, the last three quickly.
+The backbone already holds both halves. The product only has to bring the question.
 
-**Careful:** There is a strong example for rule 3: the only official flood map of the state put most of its "flooded" ground on steep slopes, and one wrong river reading once looked like a 52% flood. Use it only if the room is right. Never aim it at an agency that is in the room.
+## Slide 7 · Same layers, reused
 
-### Slide 6 · A product is a question · 0:40
+And this is where it pays off. Down the left are the backbone's layers. A filled dot means a product uses that layer today.
 
-**Say**
+- **Landslides, first:** It needed nearly all of the layers. That was the long, hard build.
+- **Floods, second:** It reused those same layers and added just two files of its own. Two. One rain fetch now feeds both.
+- **Soil erosion, next:** The hollow dots are planned, and you can already see that most of what it needs is sitting there, waiting.
 
-> So what is a product? A product is a question asked of the backbone.
->
-> Every hazard has the same shape. Where can it happen: that is the ground, and it barely changes. Times, when is something setting it off: that is rain and rivers, and they change every day.
->
-> For landslides: weak ground, times rain that is unusual for that place. For floods: ground that water can reach, times rain upstream and the level of the river. The backbone already holds both halves. The product only brings the question.
+That is what we mean by doing the hard part once.
 
-**Do:** Point at WHERE, then WHEN, then read the SlopeSense and FloodSense rows across.
+## Slide 8 · Running today
 
-### Slide 7 · Same layers, reused · 0:45
+Everything I have said so far could be a plan on paper. It is not. It is running today, and it has a name: SlopeSense, our hazard intelligence platform.
 
-**Say**
+WITH THE APP: Let me show you.
 
-> And here is the saving. Down the left are the backbone's layers. A filled dot means a product uses that layer today.
->
-> Our landslide forecast came first and used nearly all of them. When we built the flood forecast, it reused those layers and added just two files of its own. One rain fetch now serves both.
->
-> The last column is what comes next: soil erosion. Hollow dots are planned, and you can see most of what it needs is already there. That is what we mean by doing the hard part once.
+WITHOUT THE APP: These next screens come straight from the app, taken on 10 October. First the backbone itself: every source it draws from, on record, and every layer on one map. Then the two products built on it.
 
-**Do:** Run a finger down the SlopeSense column, then the FloodSense column, then land on the big "2 files".
+## Slide 9 · SlideSense
 
-**If asked:** "What are the two files?" The flood product's own maths for its two questions. The shared map, the state boundary, the place search, the maps on screen, the rain fetch and the rain history were all already there.
+The first product on the backbone is SlideSense, our landslide forecast.
 
-### Slide 8 · Running today · 0:20
+- **What it asks:** Where is the ground weak, and is the rain unusual for that place?
+- **What it gives:** Pick any town, any stretch of road, and it gives you a seven-day outlook, on a map in five levels from very low to very high.
+- **How to read it:** "High" means something very simple: look here first.
 
-**Say**
+Now look at the box at the bottom. Ground shape, soil, rock types, land cover, rain. Every single thing it reads was already in the backbone.
 
-> This is not a plan on paper. It is running today.
->
-> WITH THE APP: Let me show you. (Switch to the app and follow the live demo steps below. Come back to slide 11.)
->
-> WITHOUT THE APP: These next screens are from the app, taken on 10 October. First the backbone itself: every source it draws from, on record, and every layer on one map. Then the two products.
+## Slide 10 · FloodSense
 
-**Do:** Decide before the meeting which of the two routes you are taking. Do not decide on this slide.
+The second product is FloodSense, our flood forecast. Same backbone. Only the question is new.
 
-### Slide 9 · SlopeSense · 0:40
+- **What it asks:** Can water reach this ground, and are the rain and the river rising?
+- **What it gives:** A seven-day flood outlook for any place, and it follows the river gauges along its own rivers.
+- **How it runs:** Nobody has to press a button: it runs by itself, every morning.
+- **Its record:** Look at the small panel: every forecast written down, then checked against what the real river did.
 
-**Say**
+Remember the line under the pipeline? This is that loop, working.
 
-> First product on the backbone: SlopeSense, the landslide forecast.
->
-> It asks the backbone one question. Where is the ground weak, and is the rain unusual for that place? Pick any town or road and it gives a seven-day outlook, on a map in five classes from very low to very high. High simply means look here first.
->
-> Now look at the box at the bottom. Ground shape, soil, rock types, land cover, rain. Everything it reads was already in the backbone.
+And once again, the box at the bottom. Nearly everything it reads was already there.
 
-**Do:** Point at the level card on the left of the picture (the level today, with a bar for each of seven days), then the coloured map, then the "Reads from the backbone" box.
+## Slide 11 · What else
 
-**If asked:** "How accurate is it?" Keep it short: "Today is about the backbone. We would rather take you through the testing properly in its own session than quote one number."
+So what else can stand on it? We see three directions.
 
-### Slide 10 · FloodSense · 0:45
+- **More hazards:** Anything that has a where and a when. Soil erosion is next; after that, forest fire, riverbank erosion, drought.
+- **More places:** The satellite inputs cover the whole world, so the same steps can run anywhere. Each new state brings its own local records and its own checking.
+- **More users:** Of the data itself: road planners, power and telecom companies, insurers, researchers, the state's own systems.
 
-**Say**
+Let me be straight about the dashed ones. That last group is planned, through an open feed. It is not there yet.
 
-> Second product: FloodSense, the flood forecast. Same backbone. Only the question is new.
->
-> Can water reach this ground, and are the rain and the river rising? It gives a seven-day flood outlook for any place, and it follows the river gauges on its own rivers. It runs by itself every morning.
->
-> It also keeps its own record. The small panel shows every forecast written down, then checked against the real river. That is the loop from the pipeline slide, working.
->
-> And again the box at the bottom: nearly everything it reads was already there.
+## Slide 12 · Stronger with time
 
-**Do:** Point at the big picture for "runs every morning", the small panel for "keeps its own record", then the box.
+There is one more thing, and it may be the most important. This gets stronger with time, in two ways.
 
-**Careful:** It is October. The numbers on the flood screen are low because the rivers are quiet. Say so before anyone wonders.
+1. **The loop:** Every forecast, once it has been graded, becomes a dated, located example that did not exist anywhere before. Code can be copied in a week. Seasons of checked local history cannot be copied at all.
+2. **The data can climb:** In three steps.
+   - **Free, today:** It runs on free, open data, and it tells you about an area, days ahead.
+   - **Ask, next:** This step costs letters, not money: records that offices already hold would make it finer and faster.
+   - **Paid, on chosen spots:** Our own sensors and surveys: one slope, one stretch of river, hours ahead.
 
-### Slide 11 · What else · 0:45
+And every step up sharpens every product at once, because they all read from the same backbone.
 
-**Say**
+## Slide 13 · Close
 
-> What else can stand on it? Three directions.
->
-> More hazards: anything with a where and a when. Soil erosion is next, then glacial-lake floods, forest fire, riverbank erosion. More places: the satellite inputs are global, so the same steps run anywhere. Each new state adds its own local records and its own checking, and Assam is the first test. And more users of the data itself: road planners, power and telecom, insurers, researchers, the state's own systems.
->
-> To be clear about the dashed ones: that last group is planned, through an open feed. It is not there yet.
+So if you keep one picture from today, keep this one. An app is a vehicle. The backbone is the road. We are building the road, and we are running the first two vehicles on it to show that it carries weight.
 
-**Do:** Touch each column once, then the bar underneath: "one backbone under all three".
+What comes next for us:
 
-### Slide 12 · Stronger with time · 0:50
+1. More hazards and more places, on the same backbone.
+2. Every forecast checked, and the whole pipeline running by itself.
+3. An open feed, for others to build on.
 
-**Say**
+And this is where you come in.
 
-> It also gets stronger with time, in two ways.
->
-> First, the loop. Each forecast, once graded, becomes a dated, located example that did not exist before. Code can be copied. Seasons of checked local history cannot.
->
-> Second, the data can climb. Today it runs on free, open data and gives you an area, days ahead. The next step costs letters, not money: records that offices already hold make it finer and faster. The top step is our own sensors and surveys on chosen spots: one slope or one river reach, hours ahead.
->
-> And each step sharpens every product at once, because they all read the same backbone.
+- **A hazard** that worries you.
+- **A place** you are responsible for.
+- **Records** sitting in a cabinet.
 
-**Do:** Go round the ring once with your hand. Then climb the three steps from the bottom up.
-
-**If asked:** "What records would you ask for?" Rain-gauge readings, road-closure logs, river cross-sections and dam release schedules. All of it already sits in offices.
-
-### Slide 13 · Close · 0:45
-
-**Say**
-
-> So here is the picture to keep. An app is a vehicle. The backbone is the road. We are building the road, and running the first two vehicles on it to show it carries weight.
->
-> Next for us: a new hazard in a new state, the loop for landslides, and then an open feed.
->
-> And where you come in. If you have a hazard you worry about, a place you are responsible for, or data sitting in a cabinet, that is where we would like to start. Thank you. We are happy to take questions.
-
-**Do:** Leave this slide up through the questions.
-
-## 4. The live demo (from slide 8)
-
-| Step | Click | Time | Say |
-|---|---|---|---|
-| 1 | **Landing page** | 20 s | "Two products on top. One backbone underneath. And an empty slot for the next one." |
-| 2 | **Data Backbone → Pipeline** | 50 s | "This is the idea in one picture, inside the app. Sources in, one shared map, two shelves, products out, and what happened comes back. This page was last rebuilt in August, so it still marks the daily run and the forecast log as planned. For floods both are live now." |
-| 3 | **Data catalogue** | 30 s | "Every source, with where it came from and when we fetched it. River gauges, the flood record and both forecast logs are on the list." |
-| 4 | **Layer explorer** | 25 s | "One layer of the shared map: ground height for the whole state. Every product reads these same layers." |
-| 5 | **SlopeSense → Forecast, search a town** | 45 s | "A product is a question asked of the backbone. This one asks: weak ground, times unusual rain. Seven days, for any place. "High" means look here first." |
-| 6 | **FloodSense → Live forecast, search Pasighat, scroll to the track record** | 60 s | "Second product, same backbone. It runs by itself every morning. And here is the loop: every forecast written down, then graded against the gauge." |
-
-**Watch out for**
-
-- Never press **Run now** in front of people.
-- SlopeSense now looks like FloodSense: tiles on top, then place, map and day buttons. A level is a rank ("look here first"), never a chance.
-- Either forecast page has a one-page report button: a printable page with both forecasts for the place on screen. Good to hand over at the end.
-- After the demo, go back to the deck, type **11** and press **Enter**. That skips the two screenshot slides you have just shown live.
-
-## 5. If something goes wrong
-
-| If | Then |
-|---|---|
-| The app will not start, or is slow | Stay in the deck. Slides 8 to 10 are the same screens. Say "these were taken on 10 October" and carry on. |
-| No internet in the room | The deck still works. The app's maps will be blank, so take the route without the app. |
-| The flood forecast is a day old | Say so: "this is yesterday's issue". Do not press Run now. |
-| The slides look washed out | Press T for the light version. |
-| You are running long | Cut slide 5 to one sentence ("six rules keep it honest, the main one is that every forecast is graded") and skip the ladder half of slide 12. |
-| You are asked something you do not know | "I do not want to guess at that. Let me come back to you with the exact answer." |
-
-## 6. Questions you will likely get
-
-**What exactly is the Data Backbone?** A standing system that collects every useful source, keeps the originals, lines everything up on one map of the state, keeps it fresh, hands it to products, and records what they said and what really happened.
-
-**The data is public. What is yours?** The assembly, the upkeep and the checked history. Twenty-nine sources made to fit one map, kept current, with every forecast graded. Anyone can download the same files. Few will do the rest.
-
-**Is it a product, or plumbing?** Today it is the engine under our two products. Later it is a product in its own right, through an open feed others build on.
-
-**How good are the forecasts?** Keep it short. Today is about the backbone, and the two forecasts are the first things built on it. Offer a separate session on how they are tested instead of quoting a number. If you are pressed, the tested figures are in BRIEFING.html.
-
-**Has it caught a real event?** Not yet. It was tested hard on past years. The next monsoon is the proof.
-
-**How do you add a new hazard or a new state?** A hazard brings its own two questions and its own record of what happened; everything else is already there. A state needs its own local records and its own checking. Assam is the first test.
-
-**What stops a big player doing this?** They could build the pipeline. The hard parts are local: getting these sources to fit, knowing which official layer cannot be used, and seasons of forecasts checked against these rivers and slopes.
-
-**Who uses it today?** Our own two products. Nobody outside yet: the open feed is planned.
-
-**Can we have the data?** The forecasts are what the app shows. Sharing the base layers depends on each source's terms of use, and that is what the planned open feed is for.
-
-**What do you need from us?** One of three things: a hazard you care about, a place you are responsible for, or records you already hold that could make the forecasts finer.
-
-**What does it cost?** We have not set a price in any of our documents. Agree your answer with the team before the meeting. The shape we do have is the ladder: a free statewide layer first, then finer paid tiers.
-
-## 7. Words to avoid
-
-| Do not say | Because |
-|---|---|
-| "We are a landslide app." | Lead with the backbone. The products are the proof. |
-| "Others already build on it" or "the feed is open." | Both are planned. |
-| "It works for any state." | It is designed to. Assam is the first test. |
-| "The loop is closed." | It is, for floods. Landslides are next. |
-| "We own unique data." | Most inputs are public. Ours is the assembly and the checked record. |
-| "It is X% accurate", "it is safe", or "we caught a real event." | Describe what each product does. Leave accuracy for its own session. |
-| A landslide class as a percentage. | "High" is a rank: look here first. |
-| Sensors, SMS alerts or the open feed as if they are live. | All planned. |
+That is exactly where we would like to begin. Thank you. We would be glad to take your questions.

@@ -1,11 +1,13 @@
-# Hazard Intelligence — Arunachal Pradesh
+# SlopeSense — Hazard Intelligence Platform · Arunachal Pradesh
 
 Landslide and flood forecasting for Arunachal Pradesh, built on one shared
-hazard-agnostic core. Three modules ship behind a single Streamlit app:
+hazard-agnostic core. Three modules ship behind a single Streamlit app. (Until 2026-10-11 the
+landslide module itself was called SlopeSense; it is now SlideSense, and
+SlopeSense is the platform.)
 
 | Module | What it is | State |
 |---|---|---|
-| **SlopeSense** | Landslide forecast | live |
+| **SlideSense** | Landslide forecast | live |
 | **FloodSense** | Flood forecast | live — static layer unvalidated by design, see [FLOOD_MODULE.md](docs/design/FLOOD_MODULE.md) |
 | **Data Backbone** | Source catalogue + pipeline view | live |
 

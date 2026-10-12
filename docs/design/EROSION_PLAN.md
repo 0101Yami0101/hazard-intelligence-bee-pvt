@@ -153,7 +153,7 @@ updated, field-ready, with the pilot's field comparison designed and agreed.
 | **E3.2** | Field comparison results (V5) → calibration. Add the ML correction layer **only if** there are enough labelled points; spatial folds, out-of-fold reporting | V5 result logged against its pre-written bar; calibration decision logged | ☐ |
 | **E3.3** | Optional PAID pilot: rain-intensity gauges + turbidity sensors at 2–3 pilot outlets | Sensor data flowing; outlook graded against measured sediment | ☐ |
 | **E3.4** | Outputs for the department's GIS; district-officer reports | Department can open our layers in their own tools | ☐ |
-| **E3.5** | Extensions decision: X1 riverbank watch, X2 gullies, X3 sand-casting, X4 SlopeSense/FloodSense for Assam | Decision logged with reasons | ☐ |
+| **E3.5** | Extensions decision: X1 riverbank watch, X2 gullies, X3 sand-casting, X4 SlideSense/FloodSense for Assam | Decision logged with reasons | ☐ |
 
 ---
 

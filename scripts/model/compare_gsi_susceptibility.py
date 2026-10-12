@@ -1,12 +1,12 @@
-"""SlopeSense's susceptibility against GSI's 50 m national map, on the same cells.
+"""SlideSense's susceptibility against GSI's 50 m national map, on the same cells.
 
     python scripts/model/compare_gsi_susceptibility.py
 
 Writes  reports/gsi_susceptibility_comparison.json
 
 The method was fixed before this was run (docs/design/GSI_MAP_COMPARISON.md
-§1). In short: both maps are marked on the cells the SlopeSense model was
-tested on — SlopeSense by its out-of-fold score (a model that never saw that
+§1). In short: both maps are marked on the cells the SlideSense model was
+tested on — SlideSense by its out-of-fold score (a model that never saw that
 cell's region), GSI by its published class read at the cell's centre.
 
 ⚠️ GSI's map was built from GSI's own landslide inventory, which is most of
@@ -69,15 +69,15 @@ def like_for_like(y: np.ndarray, ours: np.ndarray, gsi: np.ndarray, land: np.nda
         mine = ours >= cut
         rows.append({"gsi_classes": name, "share_of_land": round(share, 4),
                      "gsi_holds_share_of_landslides": round(float(sel[y == 1].mean()), 4),
-                     "slopesense_same_land_holds": round(float(mine[y == 1].mean()), 4),
-                     "slopesense_land_actually_taken": round(float(mine[land].mean()), 4)})
+                     "slidesense_same_land_holds": round(float(mine[y == 1].mean()), 4),
+                     "slidesense_land_actually_taken": round(float(mine[land].mean()), 4)})
     return rows
 
 
 def block(y, ours, gsi, label: str) -> dict:
     land = y == 0
     return {"what": label, "landslide_cells": int((y == 1).sum()), "other_cells": int(land.sum()),
-            "ranking_auc": {"slopesense": round(float(roc_auc_score(y, ours)), 4),
+            "ranking_auc": {"slidesense": round(float(roc_auc_score(y, ours)), 4),
                             "gsi_three_classes": round(float(roc_auc_score(y, gsi)), 4)},
             "like_for_like": like_for_like(y, ours, gsi, land),
             "gsi_class_mix": {
@@ -98,7 +98,7 @@ def main() -> None:
     df["bhuvan_only"] = (bits > 0) & ~df.in_gsi_inventory
 
     has = df.gsi > 0
-    out = {"what": "SlopeSense out-of-fold score vs GSI's published 3-class map, same cells",
+    out = {"what": "SlideSense out-of-fold score vs GSI's published 3-class map, same cells",
            "method": "docs/design/GSI_MAP_COMPARISON.md §1 (fixed before the run)",
            "test_cells": int(len(df)),
            "cells_where_gsi_has_a_class": {
@@ -115,7 +115,7 @@ def main() -> None:
     for f in sorted(d.fold.unique()):
         m = (d.fold == f).to_numpy()
         out["by_region"].append({"region": int(f), "landslide_cells": int((y[m] == 1).sum()),
-                                 "slopesense": round(float(roc_auc_score(y[m], ours[m])), 4),
+                                 "slidesense": round(float(roc_auc_score(y[m], ours[m])), 4),
                                  "gsi": round(float(roc_auc_score(y[m], gsi[m])), 4)})
     # the fair cut: landslides GSI's map-makers did not have, against the same other cells
     m = ((d.label == 0) | d.bhuvan_only).to_numpy()
@@ -132,9 +132,9 @@ def main() -> None:
     base = float(y.mean())
     out["where_they_disagree"] = {
         "share_of_test_cells_that_are_landslides": round(base, 4),
-        "gsi_high_but_slopesense_bottom_half": {
+        "gsi_high_but_slidesense_bottom_half": {
             "cells": int(a.sum()), "share_that_are_landslides": round(float(y[a].mean()), 4) if a.any() else None},
-        "gsi_low_but_slopesense_top_tenth": {
+        "gsi_low_but_slidesense_top_tenth": {
             "cells": int(b.sum()), "share_that_are_landslides": round(float(y[b].mean()), 4) if b.any() else None}}
 
     # an outside list: NASA's catalogue, on the shipped map
@@ -147,7 +147,7 @@ def main() -> None:
     xs, ys, rr, cc = xs[ok], ys[ok], rr[ok], cc[ok]
     sc, gk = full[rr, cc], gsi_at(xs, ys)
     both = np.isfinite(sc) & (gk > 0)
-    # the land, for this check: every cell SlopeSense scores where GSI has a class
+    # the land, for this check: every cell SlideSense scores where GSI has a class
     dom = np.isfinite(full)
     r_all, c_all = np.nonzero(dom)
     step = max(len(r_all) // 400_000, 1)                       # a 400,000-cell sample is plenty
@@ -162,10 +162,10 @@ def main() -> None:
         cut = float(np.quantile(s_s[k], 1 - share))
         rows.append({"gsi_classes": name, "share_of_land": round(share, 4),
                      "points_on_gsi_classes": round(float((gk[both] >= lo).mean()), 4),
-                     "points_on_slopesense_same_land": round(float((sc[both] >= cut).mean()), 4)})
+                     "points_on_slidesense_same_land": round(float((sc[both] >= cut).mean()), 4)})
     out["nasa_catalogue_points"] = {
         "points_in_the_state": int(ok.sum()), "points_where_both_maps_have_a_value": int(both.sum()),
-        "note": "located to about a kilometre; SlopeSense's shipped map, not out-of-fold",
+        "note": "located to about a kilometre; SlideSense's shipped map, not out-of-fold",
         "like_for_like": rows,
         "gsi_has_a_class_on_share_of_scored_land": round(float(k.mean()), 4)}
 

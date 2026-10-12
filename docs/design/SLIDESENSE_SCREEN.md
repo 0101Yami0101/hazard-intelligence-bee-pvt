@@ -1,8 +1,13 @@
-# SlopeSense screens — the FloodSense look (2026-10-10)
+# SlideSense screens — the FloodSense look (2026-10-10)
 
-SlopeSense was still the August design: a map card, a row of day buttons, a
+> **Names, 2026-10-11:** the landslide module is **SlideSense**. Until that date it
+> was called SlopeSense, which is now the name of the whole platform (SlopeSense,
+> Hazard Intelligence Platform). Older notes here were updated to the new name;
+> "the earlier SlopeSense" or "SlopeSense v1" still means the first, separate app.
+
+SlideSense was still the August design: a map card, a row of day buttons, a
 scrolling inspector, plain metric cards. FloodSense had been rebuilt as
-dashboards on 2026-09-28/29. This brings SlopeSense to the same look, built
+dashboards on 2026-09-28/29. This brings SlideSense to the same look, built
 from the same pieces, so the two modules read as one product.
 
 **The maths did not change.** Susceptibility × rain trigger, the same cuts,
@@ -30,7 +35,7 @@ Explanations sit behind an ⓘ or a badge's hover. Text on screen is kept short.
 
 ## 2. The kinds of number (badges)
 
-Same glyphs, colours and borders as FloodSense's, with SlopeSense's own words
+Same glyphs, colours and borders as FloodSense's, with SlideSense's own words
 (`ui.SLOPE_TIERS`):
 
 | Badge | What it marks |
@@ -40,7 +45,7 @@ Same glyphs, colours and borders as FloodSense's, with SlopeSense's own words
 | ☂ Input | rain, and rain vs normal |
 | ◷ Record | mapped landslides — history |
 
-Nothing on SlopeSense is shown as a probability. Shares are shares of land or
+Nothing on SlideSense is shown as a probability. Shares are shares of land or
 kilometres of road.
 
 ## 3. The pages
@@ -146,7 +151,7 @@ table as first written is kept in
 |---|---|
 | Old page vs new page, same rain, one process (`check_numbers.py`, scratch): day figures, tiles, colour keys, the day-by-day table, the worst-stretches table, route figures, susceptibility — 43 comparisons | 43 of 43 |
 | District table against the 18 outlines worked out independently | equal |
-| Every screen opens without an exception (`scripts/run/check_app_screens.py`, 34 cases, 13 new for SlopeSense: town, district, flat-ground point, point outside the state, last day, a route, Evidence, Model) | pass |
+| Every screen opens without an exception (`scripts/run/check_app_screens.py`, 34 cases, 13 new for SlideSense: town, district, flat-ground point, point outside the state, last day, a route, Evidence, Model) | pass |
 | Browser, 1920 px: the three panels end level on 9 page states; later day, map click, full-screen panel, district to watch, Clear route, Evidence, Model; no console errors | pass |
 | Browser, 1552 and 1366 px (side panel under the map) | pass, except one step at 1366 px: the test's map click landed outside the state, so the full-screen box correctly showed "outside the mapped area" and not a level. The same step passes at 1920 px. |
 | Phone and tablet survey (`scripts/run/check_app_mobile.py`) | see §6 |

@@ -1,4 +1,4 @@
-# Government Data Request List — SlopeSense / FloodSense AI
+# Government Data Request List — SlideSense / FloodSense AI
 
 ## 1. Landslide — core asks
 

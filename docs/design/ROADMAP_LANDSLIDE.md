@@ -1,5 +1,10 @@
 # Roadmap — Landslide Forecast to MVP
 
+> **Names, 2026-10-11:** the landslide module is **SlideSense**. Until that date it
+> was called SlopeSense, which is now the name of the whole platform (SlopeSense,
+> Hazard Intelligence Platform). Older notes here were updated to the new name;
+> "the earlier SlopeSense" or "SlopeSense v1" still means the first, separate app.
+
 **Scope:** from project start to a working, demonstrable Landslide Forecast for Arunachal
 Pradesh. Ends where the Flood Forecast roadmap begins.
 
@@ -11,7 +16,7 @@ This document is *when and in what order*.
 > `hazard` argument; never hardcode `"landslide"`) or you'll rewrite them in the flood
 > roadmap. This is the single most expensive mistake available in this plan.
 
-> **2026-10-10 — SlopeSense's forecasts are written down every day.** Until
+> **2026-10-10 — SlideSense's forecasts are written down every day.** Until
 > now the app worked the forecast out on each visit and kept nothing.
 > - `scripts/model/landslide_forecast_log.py`, called by the daily 08:30 run
 >   with the rain it has already fetched (one fetch for both forecasts). A
@@ -29,8 +34,8 @@ This document is *when and in what order*.
 > - **Not done:** grading. That needs dated, located landslides and nothing
 >   feeds them in yet. The class stays a rank, not a chance.
 >
-> **2026-10-10 — SlopeSense's screens rebuilt in the FloodSense look, and
-> district figures corrected.** Full note: [SLOPESENSE_SCREEN.md](SLOPESENSE_SCREEN.md).
+> **2026-10-10 — SlideSense's screens rebuilt in the FloodSense look, and
+> district figures corrected.** Full note: [SLIDESENSE_SCREEN.md](SLIDESENSE_SCREEN.md).
 > - Forecast, Roads and Susceptibility are dashboards built from the shared
 >   pieces (header + search, tiles, place | map | side panel, badges for the
 >   kinds of number). The maths is unchanged: 43 of 43 numbers equal the old
@@ -310,7 +315,7 @@ Artefacts: `data/processed/susceptibility.tif`, `susceptibility_class.tif`,
 `models/susceptibility_{fold0-4,full}.txt`, `reports/susceptibility_{map,shap}.png`.
 
 ✓ **Exit check:** AUC ≥ 0.80 under spatial block CV — **met (0.860)**.
-✓ **Compared with GSI's 50 m national map (2026-10-10):** on the same cells SlopeSense ranks a landslide above other ground 85 times in 100, GSI's three classes 60; SlopeSense's top 14% of land holds 67% of mapped landslides, GSI's High class (the same area) 25%. The gap holds on the landslides GSI's map-makers did not have, and in all five regions. [GSI_MAP_COMPARISON.md](GSI_MAP_COMPARISON.md). The first copy of GSI's map turned out to be garbled by the download and was re-fetched.
+✓ **Compared with GSI's 50 m national map (2026-10-10):** on the same cells SlideSense ranks a landslide above other ground 85 times in 100, GSI's three classes 60; SlideSense's top 14% of land holds 67% of mapped landslides, GSI's High class (the same area) 25%. The gap holds on the landslides GSI's map-makers did not have, and in all five regions. [GSI_MAP_COMPARISON.md](GSI_MAP_COMPARISON.md). The first copy of GSI's map turned out to be garbled by the download and was re-fetched.
 
 **Three findings that change how we present this:**
 

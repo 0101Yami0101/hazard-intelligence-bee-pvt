@@ -443,7 +443,7 @@ def run(log: bool = True) -> None:
         if near is not None:
             forecast_log.log_near_here(today, [str(days[i]) for i in idx], near)
             print("  logged the near-here chances for every place")
-        # SlopeSense's forecast for the same days, from the same rain: written
+        # SlideSense's forecast for the same days, from the same rain: written
         # down here because the app keeps nothing (landslide_forecast_log.py).
         # Never allowed to stop the flood forecast.
         try:

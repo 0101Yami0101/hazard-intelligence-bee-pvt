@@ -60,7 +60,7 @@ So the module is three things:
    the main reason it is high, exportable for field teams, with their checks flowing back
    in.
 
-> **Framing rule (same as SlopeSense and FloodSense).** The headline is a *living*
+> **Framing rule (same as SlideSense and FloodSense).** The headline is a *living*
 > outlook — updated each season and each week, logged and graded — not a static risk map.
 > For this department the risk map and priority list are themselves asked-for
 > deliverables, so they are shown, but as the base layer the outlook updates.
@@ -89,7 +89,7 @@ Source: `startup.assam.gov.in/nesfic26/problem-statements/nesfic-d-07`, read 202
 
 ## 2 · Why this module, and why Assam
 
-**Same drivers, different target.** SlopeSense already uses slope, soil texture, land cover,
+**Same drivers, different target.** SlideSense already uses slope, soil texture, land cover,
 flow accumulation and a 26-year rain archive. Erosion needs the same layers combined
 differently — it is a new question asked of the same backbone, not a new project.
 
@@ -102,7 +102,7 @@ is cheap" has been **shown, not claimed**. This module tests two things at once:
 
 **It makes the platform regional, not state-bound.** Assam's floods start in Arunachal's
 rivers. A region-aware backbone is also the precondition for FloodSense on Assam
-(NESFIC-D-18, "Digital Twin for Flood Management") and SlopeSense on Assam's hill
+(NESFIC-D-18, "Digital Twin for Flood Management") and SlideSense on Assam's hill
 districts. Neither is in this plan, but both get cheaper because of it.
 
 ---
@@ -207,7 +207,7 @@ no labels, so it works on day one. Every factor is explainable, and the biggest 
 the department *which kind of treatment fits*. It is also the recipe Indian soil and land-use
 survey work already uses, so officials will recognise it. Machine learning comes in only as a
 **correction layer** once field observations exist (Phase 3), trained with the same
-spatial-fold discipline as SlopeSense.
+spatial-fold discipline as SlideSense.
 
 ### 5.2 The five factors
 
@@ -364,7 +364,7 @@ and change, weekly outlook, field loop.
 | X1 | **Riverbank erosion watch** (Brahmaputra, Barak): yearly bank lines from Landsat / Sentinel water masks → retreat per km of bank → villages next in line | Assam's largest erosion loss by area. Ties directly into FloodSense's gauges | A river process and a different department (Water Resources). Must not dilute the D-07 answer |
 | X2 | Gully mapping from high-resolution imagery in pilot areas | RUSLE can't see gullies | Needs ASSAC imagery (ASK) |
 | X3 | Sand-casting (flood deposits on farmland) | Real loss in Assam's plains | Belongs with FloodSense |
-| X4 | SlopeSense and FloodSense for Assam | Fall out of the same region port | Separate problem statements (FloodSense ↔ D-18) |
+| X4 | SlideSense and FloodSense for Assam | Fall out of the same region port | Separate problem statements (FloodSense ↔ D-18) |
 
 ---
 

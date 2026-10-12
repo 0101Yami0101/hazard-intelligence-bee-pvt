@@ -57,8 +57,6 @@ ran late in the first three weeks.
 - **The shared look lives in `webapp/products/flood/ui.py`.** Moving it to
   `core/` is a tidy-up.
 - **3D view** stays parked (`WIP_3D`).
-- **The script page's slide thumbnails** (`PRESENTATION_SCRIPT.html`) were
-  not re-made when the deck's pictures were.
 - **The flood log does not record the time of issue**, so a late run is not
   visible in it (to fix with item 2).
 - **Evidence page figures** ("9,555 days", "8.2 M cells") are typed in, not
@@ -73,12 +71,12 @@ ran late in the first three weeks.
 | 1 | Private backup of the whole project | memory; this file §7 |
 | 3, 10 | Withdrawn flood record; small display fixes | FLOOD_SCREEN_PLAN.md |
 | 4, 5 | Four false floods removed; day model re-fitted | FLOOD_WHEN_PILOT_PLAN.md §15 |
-| 6 | SlopeSense forecasts written down daily | ROADMAP_LANDSLIDE.md |
+| 6 | SlideSense forecasts written down daily | ROADMAP_LANDSLIDE.md |
 | 7 | Level line graded daily | FLOOD_WHEN_PILOT_PLAN.md §16 |
 | 8 | River above its line shows "unsure" (a stopgap; seven cures tested) | §17–§18 |
 | 9 | Full-screen box on all three flood pages | FLOOD_SCREEN_PLAN.md |
 | 11 | Phone and tablet check, with fixes | FLOOD_SCREEN_PLAN.md |
-| 12 | SlopeSense in the FloodSense look; district figures on real outlines | [SLOPESENSE_SCREEN.md](SLOPESENSE_SCREEN.md) |
+| 12 | SlideSense in the FloodSense look; district figures on real outlines | [SLIDESENSE_SCREEN.md](SLIDESENSE_SCREEN.md) |
 | 13 | One-page forecast report | [FORECAST_REPORT.md](FORECAST_REPORT.md) |
 | 14 | Brief, deck and script refreshed | FORECAST_REPORT.md, end |
 | 16 | Upstream gauges for the high-river fault: tested, no gain | §17 |
@@ -87,30 +85,68 @@ ran late in the first three weeks.
 | 22 | Compared with GSI's 50 m map; GSI's map re-fetched correctly | [GSI_MAP_COMPARISON.md](GSI_MAP_COMPARISON.md) |
 | – | Pare HEP: no level line for a dam gauge | §20 |
 | – | Real numbers ("3× the usual") in place of "4 of 5" | [LANDSLIDE_TIMES_USUAL.md](LANDSLIDE_TIMES_USUAL.md) |
+| – | Renamed: platform = SlopeSense, landslide module = SlideSense | §8 below |
+| – | Presenter's script: fuller spoken words, a new opening (how the idea formed, the two things learned), then cut down by the user's instruction to the words alone, slide by slide | docs/PRESENTATION_SCRIPT.md |
+| – | Home page tells the idea in five parts, matching the script | [LANDING_PAGE.md](LANDING_PAGE.md) |
 
 ## 7. What is deployed, and what is backed up
 
-**Public app** — `hazard-intelligence-bee`, branch `v2`, commit `84d56f1`
-(2026-10-11). App files only (`webapp`, `requirements.txt`, `runtime.txt`,
-`.streamlit`): 18 files changed. It carries SlopeSense's new look and
-measured figures, the one-page report, the corrected district figures, the
-phone fixes, the "unsure" rule, Pare HEP's note, and the flood forecast
-issued 11 October from the re-taught models. Models, logs, training scripts
-and internal docs are not on it. The old app (`SlopeSense2`, `main`) was not
-touched.
+**Public app** — `hazard-intelligence-bee`, branch `v2`, commit `24f7834`
+(2026-10-12). App files only (`webapp`, `requirements.txt`, `runtime.txt`,
+`.streamlit`): 22 files changed since `84d56f1` of 11 October. It carries
+the new names (the platform is SlopeSense, the landslide module SlideSense),
+the home page that tells the idea in five parts with the "More about" rows,
+the forecast listed last in both side menus, and the flood forecast issued
+12 October. Models, logs, training scripts and internal docs are not on it.
+The old app (`SlopeSense2`, `main`) was not touched.
 
 **The hosted flood forecast is frozen at that issue** until someone pushes a
 newer snapshot: the daily 08:30 run on this PC does not push (item 2).
 
 **Checked before the push, on the host's package versions** (Streamlit 1.65,
-pandas 3.0, in a clean environment): all 34 screens open; phone and tablet
-survey 56 of 56 with no fault; desktop 18 of 18; the report downloads 5 of
-5; the flood full-screen panel 22 of 22. (Two of those needed a second run:
-the test server had not finished starting.)
+pandas 3.0): all 35 screens open (the home page is the 35th); phone and
+tablet survey 56 of 56 with no fault; side menus 11 of 11; the report
+downloads 5 of 5; the home page's jump bar and Open buttons 36 of 37, the
+one miss being the test reading the loading cover a quarter-second too late
+(watched separately: the cover shows).
 
-**Private backup** — `hazard-intelligence-bee-pvt`, `main`, tip `d8caa82`
-plus the commit that adds this note: the whole working tree as it stands
-(689 files: code, app, docs, models, records, reports), everything
-`.gitignore` excludes left out (`data/`, `logs/`, `misc/`, `docs/investor`,
-`docs/temp`, `.env`). Its `v2` is the same commit as the public one. It does
-not update itself.
+**Private backup** — `hazard-intelligence-bee-pvt`, `main`: the whole
+working tree as it stood after this deploy (code, app, docs, models,
+records, reports), everything `.gitignore` excludes left out (`data/`,
+`logs/`, `misc/`, `docs/investor`, `docs/temp`, `.env`). Its `v2` is the
+same commit as the public one. It does not update itself.
+
+## 8. The rename of 2026-10-11
+
+By the user's decision: the **platform** is **SlopeSense**, shown on the home
+page as SLOPESENSE with "Hazard Intelligence Platform" under it (the initials
+make "SHIP"). The **landslide module** is **SlideSense**. FloodSense and Data
+Backbone keep their names.
+
+| Changed | Not changed, on purpose |
+|---|---|
+| Home page title, browser tab title | The module's web address (`?m=landslide`), so old links work |
+| Module name on its tile, side menu, page footer | Folder names (`products/landslide`), session keys, CSS keys (`sl_*`) |
+| One-page report: section line and footer | Models, forecast logs, records: no number moved |
+| Download name `slidesense_DATE.csv` (was `slopesense_`) | Repo names and links (`SlopeSense`, `SlopeSense2`, `hazard-intelligence-bee`) |
+| Brief, deck, script, README, design notes (217 places in 50 files) | The first app, still called SlopeSense; "SlopeSense v1" / "the earlier SlopeSense" in code comments mean it |
+| `SLOPESENSE_SCREEN.md` → `SLIDESENSE_SCREEN.md` | `PROJECTED.md`, `WEBAPP_PLAN.md` §5: comparisons with the first app |
+| Labels inside `reports/gsi_susceptibility_comparison.json` and its script (`slidesense_*`), by text, not re-run | `docs/investor/`, `docs/temp/`, `EVENT_CRASH_COURSE.md` (stale) |
+| Pictures: the brief's landing and pipeline shots; all 13 slide thumbnails on the script page | |
+
+Checked after the change: 34 screens open with no exception; the flood
+golden check reports every number identical; phone and tablet survey of the
+home page and the SlideSense forecast, 12 of 12 with no fault; the report
+downloads 5 of 5 and carries the new names; a final search finds the old
+name only where it means the platform or the first app.
+
+## 9. Side-menu order, 2026-10-12
+
+By the user's instruction the forecast is the LAST item in both modules'
+side menus: SlideSense reads Roads, Susceptibility, Forecast; FloodSense
+reads Flood-prone ground, Catchments, Live forecast. Each module still
+OPENS on its forecast (`HOME` in each `view.py`; the code no longer treats
+"first in the list" as "the forecast"), so links, the demo steps and the
+"Open the forecast" buttons behave as before. Checked: the order, the
+opening page and every menu click in a browser (11 of 11), all 35 screens.
+Not deployed.

@@ -2183,7 +2183,7 @@ hourly-cached (`core/rainfall.py`), so no visitor pays for it directly.
 - Archive backfill: 21 min, 45 calls, a few rate-limit backoffs handled
   automatically, zero failures. `data/interim/rainfall_om/` regenerated.
 - This is genuinely shared infrastructure, not flood-only: it also feeds
-  SlopeSense's live trigger (`webapp/assets/base/points.json`,
+  SlideSense's live trigger (`webapp/assets/base/points.json`,
   `clim_quantiles.npz`, `nearest_point.npz`). Both products were re-tested
   after the change (below).
 - Found and fixed 5 **pre-existing, unrelated** bugs in
@@ -2219,7 +2219,7 @@ cache expires pays for the fetch" — a separate, bigger piece of work, not
 attempted here.
 
 Both products retested after the change (Streamlit `AppTest`, all screens):
-zero exceptions. SlopeSense's own live trigger screen correctly reports
+zero exceptions. SlideSense's own live trigger screen correctly reports
 "of 219" points now.
 
 ## 0v. "Flood chance near here" — a uniform %, built and tested: Gate A FAILED — 2026-09-27

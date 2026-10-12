@@ -2,7 +2,7 @@
 
 **Status:** planning decision, 2026-08-28. Nothing here is built yet — this is the
 agreed target architecture and the rules for growing into it. Applies to **both**
-SlopeSense and FloodSense; hazard-agnostic by design, same as the rest of the core.
+SlideSense and FloodSense; hazard-agnostic by design, same as the rest of the core.
 
 ---
 

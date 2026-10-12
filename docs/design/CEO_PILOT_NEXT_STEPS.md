@@ -23,7 +23,7 @@ doesn't have.
 Both products already work and already produce real output, statewide,
 for free:
 
-- **SlopeSense** (landslides): live, gives a susceptibility score for any
+- **SlideSense** (landslides): live, gives a susceptibility score for any
   point in Arunachal Pradesh, with a daily rain-driven trigger on top.
 - **FloodSense** (floods): both halves are built and joined into one daily
   forecast. One half answers "when will a river likely flood"; the other
@@ -55,7 +55,7 @@ needs either a government relationship or money.
   from the monsoon-rain flooding everywhere else in the state.
 - **A real, dated local landslide event already on record**: GSI's own
   written investigation into the April 2016 Tawang Town landslide — a
-  concrete, official, citable local proof point for SlopeSense.
+  concrete, official, citable local proof point for SlideSense.
 - **Easier logistics**: the valley sits on a Border Roads Organisation
   corridor, which plausibly means better physical access for installing
   or maintaining any sensors than a remote interior district would.
@@ -136,7 +136,7 @@ needs either a government relationship or money.
 
 ---
 
-## SlopeSense at Jang / Tawang
+## SlideSense at Jang / Tawang
 
 ### What we already have
 
@@ -168,7 +168,7 @@ needs either a government relationship or money.
   landslide evidence; getting cleared to use it commercially, plus access
   to their fuller dated-events table (currently only a tiny fraction is
   publicly visible), is the single biggest available upgrade to
-  SlopeSense's data foundation.
+  SlideSense's data foundation.
 - **BRO**: the same road-block logs requested for FloodSense double as
   landslide date records.
 - **PWD**: road-maintenance and blockage logs — a genuinely better source
@@ -178,7 +178,7 @@ needs either a government relationship or money.
 ### Next moves — PAID
 
 - **The same Jang-valley terrain survey (LiDAR) requested for FloodSense
-  serves SlopeSense too** — one cost, sharper answers for both hazards at
+  serves SlideSense too** — one cost, sharper answers for both hazards at
   once (exact water reach, and exact slope stability).
 - **A couple of physical ground-movement or rainfall sensors placed on
   the known-unstable 2016 Tawang slope**, or another known-risk slope
@@ -396,7 +396,7 @@ A detailed terrain survey (LiDAR) of the Jang valley. It sharpens exactly
 where floodwater goes and exactly which slope is unstable — for one cost.
 
 **"Do we need the GSI licence for this pilot to work?"**
-No — SlopeSense already runs without it, at this pilot and statewide.
+No — SlideSense already runs without it, at this pilot and statewide.
 But it's the single biggest available upgrade to landslide data quality,
 and since we're already writing government letters for the pilot, this
 is a natural moment to send that one too.

@@ -1,7 +1,7 @@
 """Export the small bundle the deployed web app reads.
 
 Output: webapp/assets/base/       shared geography, every module reads it
-        webapp/assets/landslide/  SlopeSense model output
+        webapp/assets/landslide/  SlideSense model output
         (~4 MB total, committed to git)
 
 ════════════════════════════════════════════════════════════════════════════
@@ -59,7 +59,7 @@ warnings.filterwarnings("ignore")
 # Two bundles, and the split is the platform's whole shape. `base` is shared
 # geography every module draws — one grid, one boundary, one gazetteer, so two
 # hazards can never disagree about where Arunachal is. `landslide` is
-# SlopeSense's own model output. A flood module gets assets/flood/ beside it.
+# SlideSense's own model output. A flood module gets assets/flood/ beside it.
 ASSETS = ROOT / "webapp" / "assets"
 BASE = ASSETS / "base"
 OUT = ASSETS / "landslide"

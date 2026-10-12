@@ -291,7 +291,7 @@
 >     names behind its ⓘ) apart from the single gauges long offline, and the
 >     Gauges reporting tile says so. It clears by itself when readings
 >     return.
->   - **SlopeSense "Next 7 days here" charts** listed days A–Z ("Fri 16"
+>   - **SlideSense "Next 7 days here" charts** listed days A–Z ("Fri 16"
 >     before "Mon 12"; across a month end "01 Nov" before "29 Oct"). Both
 >     charts now keep date order.
 >   - **Data Backbone "Span" tile** read 27 yr by counting calendar years
@@ -347,14 +347,14 @@
 >        (`live._gauge_chart` returns a list; `.st-key-fs_gchart`).
 >     2. *Day buttons stacked seven or eight rows deep* between the search
 >        box and the map. Four to a row on a phone now: FloodSense
->        (`ui.py`, the 760 px block, `fs_r_a`) and SlopeSense
+>        (`ui.py`, the 760 px block, `fs_r_a`) and SlideSense
 >        (`mapping.day_strip` is keyed `daystrip_*`; rule in `theme.py`).
 >        ⚠️ **Correction, same day:** on the FloodSense pages this did not do
 >        what is written here. The rule set the two ROWS of buttons side by
 >        side, so a phone showed two columns that read downwards (Today, Sun,
 >        Mon, Tue beside Wed, Thu, Fri) — it was reported as four to a row
 >        without the screenshot being read closely enough. Found while
->        rebuilding SlopeSense, which uses the same rule, and fixed: each row
+>        rebuilding SlideSense, which uses the same rule, and fixed: each row
 >        keeps the full width and its four buttons stay side by side
 >        (`ui.py`, the 760 px block). Measured at 390 and 360 px on both
 >        forecast pages: 4 in the first row, date order, none cut off,
@@ -375,13 +375,13 @@
 >     (Streamlit 1.65) — to run before these changes are pushed.
 >   - **To run it again:** `python scripts/run/check_app_mobile.py TAG`
 >     (about 25 minutes; `--shots` keeps a screenshot of every page).
-> - **2026-10-10 — the look is now shared with SlopeSense** (FloodSense
->   numbers and layout unchanged). SlopeSense's pages were rebuilt from the
->   same pieces: [SLOPESENSE_SCREEN.md](SLOPESENSE_SCREEN.md). What moved here:
->   - `ui.py` gained `SLOPE_TIERS` (SlopeSense's badges; `badge()` looks in
+> - **2026-10-10 — the look is now shared with SlideSense** (FloodSense
+>   numbers and layout unchanged). SlideSense's pages were rebuilt from the
+>   same pieces: [SLIDESENSE_SCREEN.md](SLIDESENSE_SCREEN.md). What moved here:
+>   - `ui.py` gained `SLOPE_TIERS` (SlideSense's badges; `badge()` looks in
 >     both), `Panel` (was `_Panel` in `view.py`; the two flood pages use it
 >     from here), `page_head(..., warn=)` and `map_title(..., right=, ratio=)`.
->     The day-button rules also cover SlopeSense's `sl_d*` keys.
+>     The day-button rules also cover SlideSense's `sl_d*` keys.
 >   - **The header wraps when its own box is narrow** (`.st-key-fs_head`, a
 >     container query at 640 px): on a 768 px tablet with the menu open the
 >     page is 470 px wide and the search row ran off the right edge — on
@@ -390,7 +390,7 @@
 >     (they were one per row, listed above as "left as it is").
 >   - Checked: all 34 screen cases open; the full-screen panel check on
 >     Flood-prone ground and Catchments still passes; phone and tablet
->     survey of the FloodSense and SlopeSense pages: 56 of 56 page-and-screen combinations with no fault.
+>     survey of the FloodSense and SlideSense pages: 56 of 56 page-and-screen combinations with no fault.
 >
 > Until each phase ships, the rules in [FLOOD_MODULE.md](FLOOD_MODULE.md)
 > ("What can honestly be quoted") still describe the live forecast screen.
@@ -542,7 +542,7 @@ notes written; nothing is committed unless asked.
 - After every later phase, re-run the new code on the **same frozen inputs**
   and assert every old output is identical (floats to 1e-9); new outputs
   may only be *added*.
-- Streamlit AppTest over all FloodSense and SlopeSense screens: zero
+- Streamlit AppTest over all FloodSense and SlideSense screens: zero
   exceptions (as done on 2026-09-22).
 
 ### Phase 1 — Fix what is stale or contradictory (S)
