@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import rasterio
 
-from common import INTERIM
+from common import AOI_STATE, INTERIM
 
 SRC = INTERIM / "terrain"
 STEP = 4  # downsample for display only
@@ -40,7 +40,7 @@ for ax, (name, title, cmap, lim) in zip(axes.ravel(), PANELS):
     fig.colorbar(im, ax=ax, fraction=0.03)
 
 fig.suptitle("Stage 1a — terrain derivatives on the 100 m canonical grid "
-             "(EPSG:32646, Arunachal Pradesh)", fontsize=13)
+             f"(EPSG:32646, {AOI_STATE})", fontsize=13)
 fig.tight_layout()
 out = INTERIM / "terrain" / "_check_terrain.png"
 fig.savefig(out, dpi=95, bbox_inches="tight")

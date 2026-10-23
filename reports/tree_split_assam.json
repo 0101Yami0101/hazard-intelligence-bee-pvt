@@ -1,0 +1,149 @@
+{
+  "region": "assam",
+  "rules": {
+    "fresh_min": 0.25,
+    "recent_min": 0.25,
+    "C": {
+      "T1 freshly cleared": 0.34,
+      "T2 regrowing": 0.1,
+      "T3 low canopy": 0.18,
+      "T4 tall canopy": 0.003,
+      "T0 no height data": 0.03
+    }
+  },
+  "references": {
+    "tea_cells": 101169,
+    "forest_cells": 382239,
+    "tea_claimed_by_T1_T2_pct": 2.3,
+    "forest_claimed_by_T1_T2_pct": 3.0,
+    "no_height_data_pct": 0.0,
+    "tea_outlines": 739,
+    "forest_outlines": 112,
+    "calibration_cells": {
+      "tea": 45691,
+      "forest": 95924
+    },
+    "test_cells": {
+      "tea": 53162,
+      "forest": 274967
+    }
+  },
+  "T_low": 0.41,
+  "calibration_balanced_accuracy": 0.873,
+  "P1_test_balanced_accuracy": 0.848,
+  "P1_pass": true,
+  "test_confusion_cells": {
+    "tea_as_tea": 49665,
+    "tea_as_forest": 3497,
+    "forest_as_forest": 209196,
+    "forest_as_tea": 65771
+  },
+  "test_outlines_majority_right": {
+    "tea": [
+      222,
+      223
+    ],
+    "forest": [
+      20,
+      25
+    ]
+  },
+  "share_of_tree_pct": {
+    "T1 freshly cleared": 1.33,
+    "T2 regrowing": 2.06,
+    "T3 low canopy": 53.08,
+    "T4 tall canopy": 43.52,
+    "T0 no height data": 0.0
+  },
+  "share_of_scored_tree_pct": {
+    "T1 freshly cleared": 1.39,
+    "T2 regrowing": 2.15,
+    "T3 low canopy": 50.82,
+    "T4 tall canopy": 45.64,
+    "T0 no height data": 0.0
+  },
+  "P3_mean_C_all_tree": 0.1034,
+  "P3_mean_C_scored_tree": 0.0997,
+  "median_height_m": {
+    "T1 freshly cleared": {
+      "meta": 7.0,
+      "eth": 19.8
+    },
+    "T2 regrowing": {
+      "meta": 7.2,
+      "eth": 19.5
+    },
+    "T3 low canopy": {
+      "meta": 2.2,
+      "eth": 14.5
+    },
+    "T4 tall canopy": {
+      "meta": 10.2,
+      "eth": 21.8
+    },
+    "T0 no height data": {
+      "meta": null,
+      "eth": null
+    }
+  },
+  "reference_median_low_frac": {
+    "tea": 0.856,
+    "forest": 0.068
+  },
+  "P2_eyecheck": {
+    "T1 freshly cleared": {
+      "n": 25,
+      "labels": {
+        "cleared": 5,
+        "tea_bush": 6,
+        "closed_canopy": 9,
+        "cant_tell": 5
+      },
+      "expected": "cleared",
+      "share": 0.2,
+      "bar": 0.6,
+      "share_of_readable": 0.25,
+      "pass": false
+    },
+    "T2 regrowing": {
+      "n": 25,
+      "labels": {
+        "cleared": 6,
+        "tea_bush": 4,
+        "closed_canopy": 15,
+        "cant_tell": 0
+      }
+    },
+    "T3 low canopy": {
+      "n": 25,
+      "labels": {
+        "cleared": 3,
+        "tea_bush": 6,
+        "closed_canopy": 1,
+        "cant_tell": 15
+      },
+      "expected": "tea_bush",
+      "share": 0.24,
+      "bar": 0.6,
+      "share_of_readable": 0.6,
+      "pass": false
+    },
+    "T4 tall canopy": {
+      "n": 25,
+      "labels": {
+        "cleared": 0,
+        "tea_bush": 6,
+        "closed_canopy": 11,
+        "cant_tell": 8
+      },
+      "expected": "closed_canopy",
+      "share": 0.44,
+      "bar": 0.7,
+      "share_of_readable": 0.647,
+      "pass": false
+    }
+  },
+  "P2_pass": false,
+  "labels_file": "data\\interim\\assam\\erosion\\eyecheck_tree\\labels.csv",
+  "adopted": false
+}

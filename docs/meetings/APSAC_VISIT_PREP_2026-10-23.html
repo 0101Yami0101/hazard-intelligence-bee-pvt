@@ -1,0 +1,368 @@
+<title>APSAC Visit Prep</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~880px) with a sticky section index; a survey-sheet feel: cool slate ground, topo-teal accent, ochre for cautions. */
+:root{
+  --bg:#f4f7f7; --surface:#ffffff; --ink:#15211f; --muted:#56635f; --rule:#d5dedc;
+  --accent:#0d6b66; --accent-soft:#e1efed; --caution:#9a5b12; --caution-soft:#f6ecdc;
+  --bad:#a3352b; --bad-soft:#f7e3e0;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1514; --surface:#151f1d; --ink:#e3ebe9; --muted:#9aaba7; --rule:#2a3836;
+  --accent:#5cc2b8; --accent-soft:#16302d; --caution:#e0a659; --caution-soft:#33281a;
+  --bad:#ec8a7f; --bad-soft:#3a1e1b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1514; --surface:#151f1d; --ink:#e3ebe9; --muted:#9aaba7; --rule:#2a3836;
+  --accent:#5cc2b8; --accent-soft:#16302d; --caution:#e0a659; --caution-soft:#33281a;
+  --bad:#ec8a7f; --bad-soft:#3a1e1b; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:900px;margin:0 auto;padding-block:40px 72px;display:grid;gap:44px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:2.3rem;font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.45rem;font-weight:700;display:flex;gap:.6em;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:.85rem;font-weight:500;color:var(--accent)}
+h3{font-size:1.05rem;font-weight:600;margin-top:6px}
+p{margin:0;max-width:68ch}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:22px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.lead{font-size:1.12rem;max-width:66ch}
+section{display:grid;gap:16px;scroll-margin-top:64px}
+nav.index{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule);
+  padding-block:10px;display:flex;gap:6px 14px;flex-wrap:wrap;font-family:var(--f-mono);font-size:.78rem}
+nav.index a{color:var(--muted);text-decoration:none}
+nav.index a:hover{color:var(--accent)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+.glance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.glance > div{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0}
+.glance h3{margin:0;font-size:.95rem}
+.glance ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.95rem}
+@media (max-width:720px){.glance{grid-template-columns:1fr}}
+
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:620px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.num,.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.group td{font-family:var(--f-display);font-weight:600;background:var(--accent-soft);color:var(--ink);font-size:.88rem}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;padding:1px 7px;border-radius:99px;white-space:nowrap}
+.p-high{background:var(--accent);color:var(--surface)}
+.p-med{background:var(--accent-soft);color:var(--accent)}
+.p-low{border:1px solid var(--rule);color:var(--muted)}
+.callout{border-left:3px solid var(--caution);background:var(--caution-soft);padding:12px 16px;border-radius:0 6px 6px 0;max-width:none}
+.callout.key{border-left-color:var(--accent);background:var(--accent-soft)}
+.small{font-size:.86rem;color:var(--muted)}
+.sources{font-size:.86rem;color:var(--muted);line-height:1.8}
+footer{border-top:1px solid var(--rule);padding-top:16px}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">BEE Solutions · first visit · informal</span>
+  <h1>APSAC Visit Prep</h1>
+  <div class="meta"><span>Arunachal Pradesh Space Application Centre, Itanagar</span><span>Prepared 22–23 Oct 2026</span><span>Scope: whole state</span></div>
+  <p class="lead">We build statewide landslide and flood forecasts for Arunachal on a shared data platform, and APSAC's portal already feeds that model. From this visit we want three things: statewide data at finer scale than what's openly served, landslide records with dates, and a written OK to use their layers. In return we offer a daily, self-checking forecast layer on top of their hazard maps.</p>
+</header>
+
+<nav class="index" aria-label="Sections">
+  <a href="#glance">At a glance</a><a href="#who">1 · Who APSAC is</a><a href="#use">2 · What we use</a><a href="#need">3 · What we need</a><a href="#offer">4 · What we offer</a><a href="#qa">5 · Questions</a><a href="#hard">6 · Hard questions</a><a href="#numbers">7 · Numbers</a><a href="#dont">8 · Don't claim</a>
+</nav>
+
+<section id="glance">
+  <div class="glance">
+    <div><span class="eyebrow">Already using</span><h3>From APSAC and NRSC</h3>
+      <ul><li>APSSDI lithology: the model's #2 input</li><li>APSSDI fault lines and village list</li><li>SILAAS 2023 + Bhuvan 2014/2017: 11,329 of our 37,788 training landslides</li></ul></div>
+    <div><span class="eyebrow">Need, statewide</span><h3>Top asks</h3>
+      <ul><li>SILAAS full records, with field dates</li><li>Their hazard maps (landslide, flood, earthquake) to benchmark</li><li>Soil, land use, drainage, roads at 1:50K / 1:10K</li><li>Written permission + data-sharing route</li></ul></div>
+    <div><span class="eyebrow">Can offer</span><h3>In return</h3>
+      <ul><li>A daily "when" layer on their "where" maps</li><li>An independent score of their maps</li><li>Field records in their SILAAS format</li><li>Fixes we found in APSSDI data</li></ul></div>
+  </div>
+</section>
+
+<section id="who">
+  <h2><span class="n">01</span>Who APSAC is, and who sits around it</h2>
+  <p>APSAC (formerly SRSAC) sits under the Department of Science &amp; Technology and is the state's nodal agency for remote sensing, GIS and GPS. A notification of 29 Feb 2016 (No. APSAC/18/2016-17) makes it the nodal agency for every government department and PSU. It runs <strong>APSSDI</strong>, the state spatial data portal our geology comes from. Its site gives 1995 as the founding year on one page and 1996 on another.</p>
+
+  <h3>People (Who's Who page, checked 22 Oct)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Name</th><th>Role</th><th>Why they matter to us</th></tr></thead>
+    <tbody>
+      <tr><td>Dr. Harekrishna Dutta</td><td>Director</td><td>Decision maker</td></tr>
+      <tr><td>Dr. Liagi Tajo</td><td>Joint Director</td><td>Agriculture, agro-forestry RS</td></tr>
+      <tr><td>Saumitra Deb</td><td>Scientist-C</td><td>Geology, geomorphology, RS: closest to landslide mapping</td></tr>
+      <tr><td>Dr. Swapna Acharjee</td><td>Scientist-C</td><td>RS, geoscience</td></tr>
+      <tr><td>Dr. Binita Baruah</td><td>Scientist-C</td><td>Land use / land cover</td></tr>
+      <tr><td>Er. Rinchin Khandu Thongdok</td><td>Scientist-C (Civil)</td><td>Civil works</td></tr>
+      <tr><td>Jutsam Katang</td><td>Scientist-C</td><td>GIS</td></tr>
+      <tr><td>Timothy Nima</td><td>Technical Officer</td><td>IT / APSSDI / monitoring: runs the portal we read from</td></tr>
+      <tr><td>Neelam Nwma</td><td>Technical Officer</td><td>Civil engineer, certified drone pilot</td></tr>
+      <tr><td>John Taniang</td><td>Asst. Scientific Officer</td><td>Computer science</td></tr>
+    </tbody></table></div>
+  <p class="small">About 20 staff, 10+ scientists, 4 PhDs. Minister: Smt. Dasanglu Pul. S&amp;T Secretary: Miss Sumedha Yadav. Head office: Block 1, Room 106, Civil Secretariat; branch at the S&amp;T Building, ESS Sector.</p>
+
+  <h3>What they hold that touches our work</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Product</th><th>Scale</th><th>Coverage</th><th>Listed as</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="4">Hazard</td></tr>
+      <tr><td>Landslide, flood, earthquake hazard maps + action plans</td><td class="num">1:50K</td><td>Toposheet / district-wise</td><td>Available on request</td></tr>
+      <tr><td><strong>Flood Hazard Zonation</strong></td><td class="num">1:25K</td><td>Whole state</td><td>June 2024</td></tr>
+      <tr><td><strong>Landslide Hazard Zonation</strong></td><td class="num">1:10K</td><td>Tawang, West Kameng, East Kameng, Pakke-Kessang, Papum Pare</td><td>June 2024</td></tr>
+      <tr><td>SILAAS landslide inventory (with NRSC)</td><td class="num">LISS-IV 5.8 m</td><td>All 25 districts, post-monsoon 2023</td><td>3,595 slides, field-checked (FLIM app)</td></tr>
+      <tr class="group"><td colspan="4">Ground and water</td></tr>
+      <tr><td>Soil, slope, land use/cover, geomorphology, lineament, forest type and density, wasteland</td><td class="num">1:50K</td><td>State / district / toposheet</td><td>On request</td></tr>
+      <tr><td>Drainage (to 1st-order streams), watersheds</td><td class="num">1:50K</td><td>District / toposheet</td><td>On request</td></tr>
+      <tr><td>SISDP-U land use, drainage, roads, settlements (with NRSC)</td><td class="num">1:10K</td><td>State</td><td>On Bhuvan Panchayat</td></tr>
+      <tr><td>NWIA wetlands incl. glacial and high-altitude lakes (with SAC)</td><td class="num">1:25K</td><td>State</td><td>Ready</td></tr>
+      <tr><td>Sub-basins of the Brahmaputra</td><td class="num">–</td><td>State</td><td>Ready</td></tr>
+      <tr><td>Sub-watershed prioritisation</td><td class="num">–</td><td>9 districts</td><td>June 2024</td></tr>
+      <tr><td>NRIMAP soil / slope / land-use atlas (SOLARIS-AR viewer)</td><td class="num">1:10K</td><td>Namsai, Lower Subansiri, Tawang</td><td>Live viewer</td></tr>
+      <tr class="group"><td colspan="4">Base, exposure and survey</td></tr>
+      <tr><td>Settlements, circle / district / state boundaries, roads</td><td class="num">1:50K</td><td>State</td><td>On request</td></tr>
+      <tr><td>Utility maps</td><td class="num">1:5,000</td><td>Namsai-Chowkham, Bomdila-Dirang, Aalo-Kamba</td><td>Ready</td></tr>
+      <tr><td>Optical and radar satellite data</td><td class="num">Any</td><td>Any area</td><td>On request</td></tr>
+      <tr><td>UAV survey: 10 cm orthophoto, surface/terrain model, contours</td><td class="num">10 cm</td><td>Any area; 6 drone ports</td><td>On request</td></tr>
+    </tbody></table></div>
+  <p class="callout key"><strong>The point of this table:</strong> APSAC already publishes statewide flood and multi-hazard maps, and a 1:10K landslide map for five districts. They will compare our work with these. Section 4 covers how we differ.</p>
+
+  <h3>Infrastructure</h3>
+  <p>The APSSDI data centre has 6 servers, 9 workstations and 38 TB of SSD storage. It also has a TerraSolid station for <strong>processing</strong> LiDAR and a DATUM station for photogrammetry. No LiDAR scanner is listed. Drone ports: Seppa, Naharlagun, Yachuli, Basar, Roing and Longding.</p>
+
+  <h3>Related bodies</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Body</th><th>What it is</th><th>Link to us</th></tr></thead>
+    <tbody>
+      <tr><td>Dept. of Science &amp; Technology, GoAP</td><td>APSAC's parent department</td><td>Sanction and funding route</td></tr>
+      <tr><td><strong>NESAC</strong> (Umiam)</td><td>NE space applications centre, DoS + NEC</td><td>Runs NESDR (land cover feed we found). It executes the NEC-funded flood early warning for the NE other than Assam and Manipur, which includes Arunachal; NESAC's own page shows it operational in Assam only</td></tr>
+      <tr><td><strong>NRSC</strong> (ISRO)</td><td>Runs Bhuvan; SILAAS and SISDP-U partner</td><td>Our 2014/2017/2023 landslide inventories; 2003–2020 flood layer</td></tr>
+      <tr><td><strong>SAC</strong> (ISRO)</td><td>Runs VEDAS; NWIA partner</td><td>Wetland and glacial-lake atlas</td></tr>
+      <tr><td>IIRS (Dehradun)</td><td>ISRO training institute</td><td>Listed on APSAC's site</td></tr>
+      <tr><td>NEC</td><td>Funds most NE space projects</td><td>Possible funder</td></tr>
+      <tr><td>APSDMA / DDMAs</td><td>State and district disaster authorities, a separate department</td><td>Who acts on a warning</td></tr>
+    </tbody></table></div>
+  <p class="small">APSAC's 2021–24 Plan of Action has 38 space projects (12 regional, 26 state), approved 24 July 2021 at Shillong. Among them: "Landslide hazard zonation mapping <em>and monitoring</em>", "Flood hazard zonation mapping", "Submergence study upstream of the Siang Integrated Multipurpose Project", and, run by NESAC, flood early warning and lightning nowcasting.</p>
+</section>
+
+<section id="use">
+  <h2><span class="n">02</span>What we already use from APSAC and its family</h2>
+  <p>Two APSAC-linked sources are inside the statewide landslide model today. APSSDI's rock-type and fault maps are model inputs, and the APSAC/NRSC landslide inventories are training answers. The rest was found and tested but is not in use.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Data</th><th>From</th><th>Role in our system</th><th>How much it matters</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="4">In use</td></tr>
+      <tr><td>Lithology: 562 polygons, 24 units, 32 formations</td><td>APSSDI open map service (no login), fetched 28 Jul</td><td>Rock type, a landslide input</td><td>#2 of 34 inputs by model use. Removing it costs only 0.004 of 0.859 AUC, because terrain carries the same signal</td></tr>
+      <tr><td>Lineaments: 4,777</td><td>APSSDI</td><td>Distance to nearest fault line</td><td>#18 of 34</td></tr>
+      <tr><td>Settlements: 4,648 villages</td><td>APSSDI</td><td>The app's place search</td><td>Missing Itanagar, Yingkiong, Yupia, Koloriang, Longding, Ziro town; we hand-added 18 anchors</td></tr>
+      <tr><td>Landslides 2014 (3,029), 2017 (4,708), 2023 (3,592)</td><td>NRSC Bhuvan; <strong>2023 = APSAC's SILAAS</strong></td><td>Training answers: 11,329 of 37,788 (30%)</td><td>Also the fair test vs GSI: on slides GSI never saw, 86 vs 58 in 100</td></tr>
+      <tr class="group"><td colspan="4">Held or found, not in use</td></tr>
+      <tr><td>Administrative circles (186), geomorphology, litho-geomorphology, drainage, snow cover, geology-mining</td><td>APSSDI</td><td>On disk only; circles were used by hand for a district quotation, not in the app</td><td>Terrain covers geomorphology; drainage is 1:50K, and we use HydroSHEDS plus flow paths from the 30 m elevation model</td></tr>
+      <tr><td>Flood inundation 2003–2020</td><td>NRSC Bhuvan</td><td>Tested, rejected</td><td>70.5% of its flood pixels are on slopes over 15°</td></tr>
+      <tr><td>Deep-learning land cover, 6-monthly</td><td>NESAC / NESDR</td><td>Map service open, not harvested</td><td>We use ESA WorldCover 10 m</td></tr>
+      <tr><td>SISDP-U 1:10K</td><td>NRSC + APSAC</td><td>Download needs a Bhuvan login</td><td>Not pulled</td></tr>
+      <tr><td>NWIA wetlands / glacial lakes</td><td>SAC + APSAC</td><td>Public copy is PDF only</td><td>No GIS layer to load</td></tr>
+      <tr class="group"><td colspan="4">On APSSDI now, not pulled yet (checked 22 Oct; 24 layers in all)</td></tr>
+      <tr><td>District boundaries</td><td>APSSDI</td><td>Official districts</td><td>28 districts; our app still uses GADM's 18</td></tr>
+      <tr><td>Headquarters</td><td>APSSDI</td><td>Place search</td><td>204 points; fills the gap above</td></tr>
+      <tr><td>Health facilities</td><td>APSSDI</td><td>Exposure</td><td>1,006; we hold only 48 (OpenStreetMap)</td></tr>
+    </tbody></table></div>
+  <p><strong>How much, in short:</strong> 9 of the 24 open APSSDI layers are on disk (76 MB). Three reach the product: lithology, lineaments and settlements. In the landslide model, the two geology inputs carry 13.8% of the total input weight, but removing them costs only 0.004 AUC. Their settlements are the app's place search. The flood model uses nothing from APSSDI. The state outline and districts come from GADM, not APSSDI.</p>
+  <p><strong>The portal's full catalogue</strong> (public dataset list, read 23 Oct): 113 datasets, every one marked "Free". They are the 24 layers above plus 89 "Aerial imagery" tiles covering the Itanagar capital region (the 90-cell aerial survey grid). Signed in, the dashboard counts 140 datasets (about 92 raster, 48 vector) and 171 documents. So about 27 datasets and all the documents are visible only with an account. We have not seen what they are.</p>
+  <p class="callout">The APSSDI portal publishes <strong>no licence</strong>, though its catalogue tags every dataset "Free". The app credits APSSDI on the landslide method page and in the Data Backbone. Our own code notes say to confirm attribution with APSAC before their data goes into paid work.</p>
+</section>
+
+<section id="need">
+  <h2><span class="n">03</span>What we need from them, statewide</h2>
+  <p>The biggest gap is dates. Location is learned from 37,788 mapped slides, but timing can only be tested on 72 dated events, too few to train on. After dates come finer statewide ground layers, then permission and a standing data route.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Ask (whole state)</th><th>Which gap it fixes (measured)</th><th>Do they have it?</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="4">A · Landslide records and timing</td></tr>
+      <tr><td><strong>SILAAS full records</strong>, all districts: FLIM entries (visit date, photos, new vs reactivated, size), the satellite image dates before and after each slide, and any 2024/2025 cycles</td><td>Timing: the rain rule is checked on 72 events (hindcast AUC 0.768 ± 0.098). Image dates narrow "2023 monsoon" down to a few weeks</td><td>Yes for 2023 (3,595). The report/maps/dataset links on their SILAAS page return 404</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td>Method behind the 2014 and 2017 inventories</td><td>2014's count doesn't match its rainfall rank (12 of 25 years); we can't tell if it was a baseline survey</td><td>NRSC/APSAC</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr><td>LISS-IV pre/post-monsoon scenes, statewide, recent years</td><td>Our own dating from Sentinel-2 failed: about 1% of monsoon scenes are usable through cloud</td><td>They process LISS-IV for SILAAS</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr class="group"><td colspan="4">B · Their hazard maps, as benchmarks</td></tr>
+      <tr><td><strong>Landslide hazard maps</strong>: the 1:10K zonation (5 districts) and whatever 1:50K coverage exists for the rest, with method</td><td>A second official benchmark, scored the way we scored GSI (85 vs 60 in 100). Shows where the maps disagree</td><td>Yes</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td><strong>Flood hazard zonation 1:25K</strong>, whole state, with method</td><td>Benchmark for the flood "where" layer, whose area figures run about 4× high</td><td>Yes, June 2024</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td>Earthquake hazard maps 1:50K</td><td>Earthquake-triggered slides are outside our rain model today</td><td>Yes</td><td><span class="pill p-low">Low</span></td></tr>
+      <tr class="group"><td colspan="4">C · Finer ground layers</td></tr>
+      <tr><td><strong>Soil maps 1:50K</strong> (plus 1:10K NRIMAP where done)</td><td>Our soil is SoilGrids at 250 m, a global product, and soil makes up 11 of the model's top 20 inputs</td><td>Yes</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td>Land use / forest type and density 1:50K; SISDP-U 1:10K</td><td>Land cover is ESA WorldCover 10 m, with no forest-density detail</td><td>Yes</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr><td>Drainage to 1st-order streams 1:50K, watersheds, sub-basins</td><td>Small-stream flooding: most reaches have no gauge</td><td>Yes</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr><td>Official road network 1:50K</td><td>We use OpenStreetMap roads; distance to road is the #5 input and also drives road outlooks</td><td>Yes</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr><td>Official 28 district and circle boundaries, with update cycle</td><td>App still on 18 districts</td><td>On APSSDI</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr class="group"><td colspan="4">D · Water, lakes and terrain</td></tr>
+      <tr><td><strong>NWIA glacial and high-altitude lakes as GIS</strong>, statewide; anything from their cryosphere work</td><td>Glacial-lake bursts and melt floods: we have no lake layer</td><td>Mapped 1:25K; public copy is PDF</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr><td>Siang submergence study; sub-watershed prioritisation</td><td>Big-river and catchment context for flood</td><td>In their plan / June 2024</td><td><span class="pill p-low">Low</span></td></tr>
+      <tr><td>Finer terrain: any Cartosat DEM they hold; existing LiDAR (hydro, BRO, highway surveys); UAV for high-risk hotspots</td><td>We run on a 30 m DEM, which is too coarse for flood depth or debris runout</td><td>UAV yes; LiDAR processing only</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr class="group"><td colspan="4">E · Exposure</td></tr>
+      <tr><td>Health, schools (education asset mapping), headquarters, utility maps, cadastral system</td><td>Exposure is thin: 48 health sites and 17,719 buildings from OpenStreetMap</td><td>Partly on APSSDI</td><td><span class="pill p-med">Med</span></td></tr>
+      <tr class="group"><td colspan="4">F · Access and permission</td></tr>
+      <tr><td><strong>Written permission + attribution wording</strong> for APSSDI layers</td><td>Live model inputs; no licence published</td><td>Their call</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td><strong>Data-sharing MoU or nodal-agency letter</strong>, plus a contact for updates</td><td>Opens the Bhuvan/SISDP-U login and NESDR downloads (both gated by a government form), and backs our asks to other departments</td><td>APSAC is the nodal agency</td><td><span class="pill p-high">High</span></td></tr>
+      <tr><td>Status of NESAC's flood early warning for Arunachal</td><td>Avoid duplicating; find where we plug in</td><td>Unknown</td><td><span class="pill p-med">Med</span></td></tr>
+    </tbody></table></div>
+  <p class="callout"><strong>Why the high country needs their field data most:</strong> 42% of the land we model sits at 2,000–4,000 m. There the model gives High+ to 10.5% of land, but that band holds 20.3% of known slides. The likely cause is that fewer slides get mapped where access is hard. Field-checked high-altitude slides from SILAAS go straight at that gap.</p>
+</section>
+
+<section id="offer">
+  <h2><span class="n">04</span>What we can offer APSAC</h2>
+  <p>APSAC's maps answer <strong>where</strong>. Ours adds <strong>when</strong>: a daily forecast on the same ground. That matches the "and monitoring" half of their own landslide project title.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Offer</th><th>What exactly</th><th>Basis today</th></tr></thead>
+    <tbody>
+      <tr><td>Daily time layer, statewide</td><td>7-day landslide outlook for any place or road. Flood chance at 32 gauged rivers (18 CWC, 14 NWDP) plus an area outlook</td><td>Live. The flood run moved to the cloud on 20 Oct; landslide forecasts logged daily since 10 Oct</td></tr>
+      <tr><td>A public score sheet</td><td>Every river forecast is written down before the day and checked against the gauge</td><td>6,272 logged 21 Sep–22 Oct; 3,108 checked</td></tr>
+      <tr><td>An independent score for their maps</td><td>The GSI test run on their landslide and flood maps: ranking, capture at equal area, and where the maps disagree</td><td>GSI result: 85 vs 60 in 100; our top 13.8% of land holds 67% of slides vs 25%</td></tr>
+      <tr><td>The Data Backbone as APSSDI layers</td><td>29 sources on one 100 m grid (8.2 million cells × 34 facts, 26 years of daily rain), served the way APSSDI already serves layers</td><td>Built as files; no outside feed yet</td></tr>
+      <tr><td>Field data in their format</td><td>Any field visit we run logs slides and flood marks in SILAAS/FLIM-compatible fields</td><td>Planned</td></tr>
+      <tr><td>Paid survey work for their UAV team</td><td>When a client funds detailed terrain, APSAC can fly it instead of an outside vendor</td><td>Their UAV page lists work for the Power Dept, NEC projects and others</td></tr>
+      <tr><td>Fixes we found</td><td>Settlements miss Itanagar and 5 other HQ towns; the SILAAS download links 404; many menu pages 404 (landslide, cryosphere, disaster management); the portal dropped offline for about 30 minutes at a time in Jul–Aug</td><td>Re-checked 22 Oct. The July certificate fault is already fixed</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="qa">
+  <h2><span class="n">05</span>Likely questions, with checked answers</h2>
+  <h3>Their data and ours</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>What of ours do you use?</td><td>APSSDI lithology and lineaments as model inputs; settlements for place search; SILAAS 2023 and the 2014/2017 Bhuvan inventories (11,329 slides) as training answers. Everything came from openly served map services; nothing behind a login was bypassed</td></tr>
+      <tr><td>How, without an account?</td><td>APSSDI's map server (GeoServer at apssdi.in) answers without a login, while the catalogue page needs one. Fetched 28 Jul, credited in the app</td></tr>
+      <tr><td>Did you ask permission?</td><td>Not yet; it's one of our asks today. We don't redistribute their raw files. Their data shapes the model and the place search</td></tr>
+      <tr><td>Why not use our hazard maps as an input?</td><td>A model trained on another map learns that map, not landslides. Official maps stay benchmarks, as GSI's does</td></tr>
+      <tr><td>Your map vs ours?</td><td>We haven't seen theirs. Against GSI's national map on the same cells: 85 vs 60 in 100; on slides GSI never saw, 86 vs 58. A state model beating a national 3-class map is the expected result</td></tr>
+      <tr><td>What area and resolution?</td><td>The whole state on a 100 m grid (8.2 million cells). Terrain from the 30 m Copernicus DEM, slopes worked out at 25 m. Rain at 11 km (IMERG history) and about 22 km (live forecast). 14.3% of the state (flat land, ice, water) is shown as not assessed, never as low risk</td></tr>
+      <tr><td>Which satellite data?</td><td>IMERG rain (26 years daily), Sentinel-1 radar, Copernicus DEM, ESA WorldCover, SoilGrids, ERA5-Land soil wetness, GloFAS. No Indian imagery yet: LISS-IV and Cartosat would be new</td></tr>
+      <tr><td>NESDR / Bhuvan?</td><td>Bhuvan: landslide inventories used; the 2003–2020 flood layer was tested and rejected. NESDR: land cover found, not used. NESAC says that layer was never checked on the ground (80–85% self-scored)</td></tr>
+    </tbody></table></div>
+  <h3>The model</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Method?</td><td>WHERE: gradient-boosted trees (LightGBM) on 34 ground facts, trained on 37,788 mapped slides. WHEN: how unusual the last 3 and 7 days of rain are at that exact spot. Forecast = weak ground × unusual rain</td></tr>
+      <tr><td>Why not deep learning?</td><td>What we're short of is dates, not locations. Trees on tabular facts beat deep nets at this size, train in minutes, and every score can be explained input by input</td></tr>
+      <tr><td>How accurate?</td><td>Location: AUC 0.859 ± 0.016 on held-out regions, about 6 times in 7. Timing: 0.768 on 72 dated events. Places and days at High have had about 3× the usual landslides, Very High about 10× (84 dated slides, rough)</td></tr>
+      <tr><td>Is it a probability?</td><td>Landslide: no, a rank and a "times the usual" figure. Flood at a gauged river: yes, the chance of reaching the danger line</td></tr>
+      <tr><td>Does it just find roads?</td><td>No. Terrain and drainage alone (10 inputs) give 0.839, 97.7% of the full model</td></tr>
+      <tr><td>Flood method?</td><td>WHERE trained on 2,185 verified floods (radar, Global Flood Database, gauges). WHEN: rain here and upstream, soil wetness on flat ground, river levels at 32 gauges. A 2-day level line at CWC gauges</td></tr>
+      <tr><td>Flood accuracy?</td><td>Timing: AUC 0.879 on 44 unseen Arunachal floods, 2023–25. On past years, a forecast of 20% at a gauged river came true about 20% of the time. In the live log, no river has reached its line yet, so it is unproven on a live flood</td></tr>
+    </tbody></table></div>
+  <h3>Scope, us and the arrangement</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Is this for one district?</td><td>No, it's statewide by design: every input, model and forecast covers the whole state. District and township requests are outputs drawn from it. One such request, from Jang township, is already in hand</td></tr>
+      <tr><td>What's live?</td><td>Two products on one platform: the landslide forecast (SlideSense) and the flood forecast (FloodSense). Plus the Data Backbone: 29 sources, about 308 GB raw</td></tr>
+      <tr><td>Where is it hosted?</td><td>Today it's a demo: the app runs on Streamlit Community Cloud and the daily job in Modal's ap-south region (CWC gauges don't answer from outside India). For government use it can run on a state or NIC server, or in APSSDI's data centre; the app is about 5 MB</td></tr>
+      <tr><td>Who else does this?</td><td>GSI's national landslide forecasting: our check of its live map showed no Arunachal district. Its 2025 NE plan lists Itanagar, aiming for 13 experimental NE districts by 2026 and 6 public ones by 2028. NESAC flood warning: operational in Assam. Google Flood Hub: big rivers. IIT Mandi iIoTs: sensors on single slopes</td></tr>
+      <tr><td>Other states?</td><td>Designed for Assam, not built. A soil-erosion module for Assam is in progress on the same platform</td></tr>
+      <tr><td>Price / terms?</td><td>Not settled; the CEO and COO handle these</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="hard">
+  <h2><span class="n">06</span>Hard questions and weak spots</h2>
+  <p>Our weakest points statewide are the high country, the gauge feeds, and having no live catch yet.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Hard question</th><th>Honest answer</th><th>What fixes it</th></tr></thead>
+    <tbody>
+      <tr><td>"You used our data without asking."</td><td>True for APSSDI: it was openly served, with no licence stated. It's credited, and we're asking now</td><td>Their written OK</td></tr>
+      <tr><td>"How good is it in the high mountains?"</td><td>Weaker. At 2,000–4,000 m (42% of the modelled land) it gives High+ to 10.5% of land, but that band holds 20.3% of known slides</td><td>Field-checked high-altitude slides; elevation-aware thresholds</td></tr>
+      <tr><td>"How many gauges really report?"</td><td>32 in the model. On 22 Oct only 17 reported: all 14 NWDP gauges were offline (newest reading 10 Oct) and 1 CWC gauge too. CWC feeds also stall for days, and the level line drops off when readings go stale</td><td>More feeds; own sensors where funded</td></tr>
+      <tr><td>"Does it handle a river already in flood?"</td><td>Not fully. A river already above its line can be given close to 0% for the next days. Seven fixes have been tested; the fault is smaller, not gone. The worst case is melt-fed rivers sitting centimetres above their line (Rho Basti, June 2016)</td><td>More monsoons logged, upstream gauges, dam release schedules</td></tr>
+      <tr><td>"How do you know WHEN?"</td><td>Only 72 dated events, AUC 0.768 ± 0.098: a wide band. Landslide forecasts are logged since 10 Oct but not graded, because no dated slides feed back in</td><td>SILAAS dates; PWD/BRO road-closure logs; DDMA records</td></tr>
+      <tr><td>"Your rain is 11–22 km."</td><td>True. The fine detail on the map comes from terrain, not weather, and satellite rain is least reliable high up</td><td>CWC/IMD ground gauges (7 AP stations have live 3-hourly rain)</td></tr>
+      <tr><td>"The flood area numbers look high."</td><td>They are about 4× high in absolute terms over Arunachal, though the ranking is good (0.890). The screen says so</td><td>Better flood records, finer terrain</td></tr>
+      <tr><td>"Has it caught a real disaster?"</td><td>No. It has been tested hard on past years, not on a live event</td><td>The next monsoon</td></tr>
+      <tr><td>"Your districts are out of date."</td><td>Yes: 18 from GADM, not today's 28</td><td>APSSDI district layer</td></tr>
+      <tr><td>"Flood depth from a 30 m DEM?"</td><td>We don't give depth, only the chance of water reaching a spot</td><td>UAV or LiDAR terrain where funded</td></tr>
+      <tr><td>"Does it run reliably?"</td><td>The PC run missed 1, 3, 13 and 15 Oct. Since 20 Oct it runs in the cloud, side by side with the PC run before switching over</td><td>Finish the switch</td></tr>
+      <tr><td>"Why help a private company?"</td><td>Their maps say where; we add a daily when, a score sheet, and field data back to SILAAS. Surveys can go to their UAV team</td><td>–</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="numbers">
+  <h2><span class="n">07</span>Numbers to have ready</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Number</th><th>What it is</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr class="group"><td colspan="3">State and APSAC</td></tr>
+      <tr><td class="num">83,743 km²</td><td>Area of Arunachal Pradesh</td><td>APSAC SOLARIS-AR</td></tr>
+      <tr><td class="num">3,595</td><td>SILAAS 2023 slides, all 25 districts; most in Pakke-Kessang (655)</td><td>APSAC SILAAS page</td></tr>
+      <tr><td class="num">38</td><td>Projects in APSAC's 2021–24 Plan of Action</td><td>APSAC plan page</td></tr>
+      <tr><td class="num">24</td><td>Layers on APSSDI's open map service</td><td>Checked 22 Oct</td></tr>
+      <tr><td class="num">26,451</td><td>GSI's Arunachal landslides (25,390 from imagery, 1,061 field-studied); 10 high-risk districts</td><td>GSI NE deck, 2025</td></tr>
+      <tr class="group"><td colspan="3">Landslide forecast</td></tr>
+      <tr><td class="num">37,788</td><td>Mapped slides behind WHERE (GSI 26,459 + Bhuvan/SILAAS 11,329)</td><td>Our label table</td></tr>
+      <tr><td class="num">0.859 ± 0.016</td><td>Location AUC on held-out regions</td><td>Model file</td></tr>
+      <tr><td class="num">85 vs 60</td><td>Ranking in 100, ours vs GSI's national map</td><td>Comparison, 10 Oct</td></tr>
+      <tr><td class="num">67% vs 25%</td><td>Slides on the top 13.8% of land, ours vs GSI High</td><td>Same</td></tr>
+      <tr><td class="num">72 · 0.768</td><td>Dated events for testing timing · hindcast AUC</td><td>Model file</td></tr>
+      <tr><td class="num">3× / 10×</td><td>Landslides at High / Very High vs usual (rough)</td><td>Brief</td></tr>
+      <tr><td class="num">42% · 10.5% vs 20.3%</td><td>Land at 2,000–4,000 m · High+ share vs real share of slides there</td><td>Model doc</td></tr>
+      <tr class="group"><td colspan="3">Flood forecast</td></tr>
+      <tr><td class="num">32</td><td>Gauged rivers (18 CWC, 14 NWDP); 17 reporting on 22 Oct</td><td>Forecast log</td></tr>
+      <tr><td class="num">2,185</td><td>Verified floods used in training</td><td>Flood record</td></tr>
+      <tr><td class="num">0.879</td><td>Timing AUC, 44 unseen Arunachal floods 2023–25</td><td>Older-floods test</td></tr>
+      <tr><td class="num">6,272 / 3,108</td><td>River forecasts logged / checked since 21 Sep</td><td>Forecast log</td></tr>
+      <tr class="group"><td colspan="3">Platform</td></tr>
+      <tr><td class="num">29 · 308 GB</td><td>Sources lined up · raw files</td><td>Catalogue</td></tr>
+      <tr><td class="num">8.2 million</td><td>100 m cells, 34 facts each</td><td>Brief</td></tr>
+      <tr><td class="num">26 years</td><td>Daily rain for every cell</td><td>Brief</td></tr>
+      <tr><td class="num">1.9 million</td><td>River gauge readings, some since 1971</td><td>Brief</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="dont">
+  <h2><span class="n">08</span>Things not to claim</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Don't say</th><th>Say instead, or why not</th></tr></thead>
+    <tbody>
+      <tr><td>"APSAC has LiDAR"</td><td>They process LiDAR; no scanner is listed. They fly camera drones</td></tr>
+      <tr><td>"GSI doesn't forecast Arunachal" (as settled fact)</td><td>Its live map showed none when we checked, but its 2025 plan names Itanagar</td></tr>
+      <tr><td>"NESAC's flood warning covers Arunachal"</td><td>Operational in Assam; the NE extension's status is unknown, so ask</td></tr>
+      <tr><td>"The landslide score is a probability"</td><td>It's a rank and a "times the usual" figure</td></tr>
+      <tr><td>"20% means 20%" as proven live</td><td>Proven on past years only</td></tr>
+      <tr><td>"We caught event X"</td><td>No live catch yet</td></tr>
+      <tr><td>"SILAAS gives us dates"</td><td>It gives the year. Our test showed season counts don't carry timing</td></tr>
+      <tr><td>"APSSDI is broken" / "we got past the login"</td><td>The service is openly served and we used it as served. The certificate fault is fixed</td></tr>
+      <tr><td>"Bhuvan's flood map shows real floods"</td><td>70.5% of its flood pixels are on slopes over 15°</td></tr>
+      <tr><td>"NESDR land cover is ground truth"</td><td>It was never checked on the ground</td></tr>
+      <tr><td>"Sensors will warn of every landslide"</td><td>Slides that creep first (96.6% of GSI's mapped Arunachal failures) can be watched; flows and falls (about 3%) can't</td></tr>
+      <tr><td>"Our map is more detailed than yours"</td><td>Their zonation is 1:10K in five districts; our grid is 100 m. Ours is daily and scored statewide</td></tr>
+      <tr><td>"We'll replace APSAC's maps"</td><td>We add a daily forecast on top and give field data back</td></tr>
+    </tbody></table></div>
+</section>
+
+<footer class="sources">
+  Sources, opened 22 Oct 2026:
+  <a href="https://srsac.arunachal.gov.in/" target="_blank" rel="noopener">APSAC home</a> ·
+  <a href="https://srsac.arunachal.gov.in/background.php" target="_blank" rel="noopener">Background</a> ·
+  <a href="https://srsac.arunachal.gov.in/who.php" target="_blank" rel="noopener">Who's Who</a> ·
+  <a href="https://srsac.arunachal.gov.in/geospatial.php" target="_blank" rel="noopener">Geospatial database</a> ·
+  <a href="https://srsac.arunachal.gov.in/project.php" target="_blank" rel="noopener">Plan of Action</a> ·
+  <a href="https://srsac.arunachal.gov.in/silaas.php" target="_blank" rel="noopener">SILAAS</a> ·
+  <a href="https://srsac.arunachal.gov.in/infrastructure.php" target="_blank" rel="noopener">Infrastructure</a> ·
+  <a href="https://srsac.arunachal.gov.in/uav.php" target="_blank" rel="noopener">UAV</a> ·
+  <a href="https://srsac.arunachal.gov.in/10k.php" target="_blank" rel="noopener">SISDP-U</a> ·
+  <a href="https://srsac.arunachal.gov.in/nwia.php" target="_blank" rel="noopener">NWIA</a> ·
+  <a href="https://solaris-ar.com/" target="_blank" rel="noopener">SOLARIS-AR</a> ·
+  <a href="https://apssdi.in/geoserver/ows?service=WFS&amp;request=GetCapabilities" target="_blank" rel="noopener">APSSDI map service</a> ·
+  <a href="https://nesac.gov.in/scientific-programmes/disaster-management-support/" target="_blank" rel="noopener">NESAC disaster support</a> ·
+  <a href="https://mines.gov.in/admin/storage/ckeditor/9_1751275999.pdf" target="_blank" rel="noopener">GSI NE landslide deck</a>.
+  Our own figures come from the repo's model files, label table, GSI comparison, forecast log, brief and data verification notes.
+</footer>
+</div>

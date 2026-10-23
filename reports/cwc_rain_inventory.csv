@@ -1,0 +1,431 @@
+state,file_kind,file_label,station,district,lat,lon,first,last,years_with_data,days_with_data,readings,median_readings_per_day,true_resolution,max_reading_mm
+Arunachal Pradesh,"manual daily, named 1961-1990","Arunachal Pradesh, manual daily, named 1961-1990",Hayuliang,ANJAW,28.07388889,96.49638889,1978-06-10,1980-10-08,3,398,398,1.0,daily,280.0
+Arunachal Pradesh,"manual daily, named 1961-1990","Arunachal Pradesh, manual daily, named 1961-1990",Miao,CHANGLANG,27.49361111,96.21916667,1977-07-16,1990-10-16,14,1281,1281,1.0,daily,225.5
+Arunachal Pradesh,"manual daily, named 1961-1990","Arunachal Pradesh, manual daily, named 1961-1990",Passighat,EAST SIANG,28.07777778,95.33555556,1973-05-18,1990-10-17,18,1710,1712,1.0,daily,477.7
+Arunachal Pradesh,"manual daily, named 1961-1990","Arunachal Pradesh, manual daily, named 1961-1990",Tezu,LOHIT,27.91083333,96.17055556,1970-06-21,1990-10-16,19,1505,1505,1.0,daily,232.6
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,1997-01-13,2020-12-18,24,3094,3340,1.0,daily,290.5
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",China Bridge,TAWANG,27.61444444,92.00972222,2014-04-25,2020-12-07,7,1053,1053,1.0,daily,170.0
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Daporizo,UPPER SUBANSIRI,27.99333333,94.22333333,2020-05-03,2020-05-03,1,1,1,1.0,daily,0.2
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Kabu basti (Kambang),WEST SIANG,28.19277778,94.77027778,1995-08-31,2020-12-19,19,2283,2291,1.0,daily,178.4
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Kibithu,ANJAW,28.25722222,97.02583333,2007-11-07,2020-11-28,14,1086,1114,1.0,daily,160.3
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",METEOROLOGICAL STATION JANG,TAWANG,27.58194444,92.43083333,2017-03-01,2020-12-07,4,527,540,1.0,daily,49.4
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Meteorological Station Chimpu,PAPUM PARE,27.06777778,93.60055556,2017-03-01,2020-12-18,4,587,587,1.0,daily,143.4
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Miao,CHANGLANG,27.49361111,96.21916667,1991-05-17,2020-11-23,27,3879,4021,1.0,daily,183.7
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Motipur,CHANGLANG,27.50750000,96.16000000,2017-09-03,2020-06-24,3,4,4,1.0,daily,132.0
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Namsai,Namsai,27.63555556,95.84805556,1993-05-15,2020-11-22,28,4151,4291,1.0,daily,326.6
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Pangin,EAST SIANG,28.23361111,95.00277778,2020-06-01,2020-12-27,1,106,106,1.0,daily,100.0
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Passighat,EAST SIANG,28.07777778,95.33555556,1991-04-01,2020-12-19,30,4413,4615,1.0,daily,450.3
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Seppa,EAST KAMENG,27.35861111,93.03972222,1995-08-31,2020-10-26,25,2814,3104,1.0,daily,124.0
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Tezu,LOHIT,27.91083333,96.17055556,1991-05-15,2020-11-22,23,2623,2787,1.0,daily,257.4
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Tuting,UPPER SIANG,28.99500000,94.88694444,2007-06-01,2020-12-26,14,2366,2628,1.0,daily,203.4
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Yazali,LOWER SUBANSIRI,27.39527778,93.75750000,1995-08-31,2020-11-18,17,1783,1798,1.0,daily,280.0
+Arunachal Pradesh,"manual daily, named 1991-2020","Arunachal Pradesh, manual daily, named 1991-2020",Yingkiong,UPPER SIANG,28.66166667,95.01277778,2020-06-02,2020-12-19,1,113,113,1.0,daily,53.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,2021-01-13,2025-10-31,5,553,899,1.0,daily,245.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Daporizo,UPPER SUBANSIRI,27.99333333,94.22333333,2023-05-01,2025-10-25,3,217,400,1.0,daily,85.0
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Kabu basti (Kambang),WEST SIANG,28.19277778,94.77027778,2021-01-13,2025-11-02,5,516,730,1.0,daily,106.2
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Kibithu,ANJAW,28.25722222,97.02583333,2021-01-20,2025-11-02,5,394,566,1.0,daily,92.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",MAGIGAON,WEST SIANG,27.72000000,94.64222222,2023-08-19,2023-08-19,1,1,2,2.0,daily,7.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",METEOROLOGICAL STATION JANG,TAWANG,27.58194444,92.43083333,2021-01-12,2025-11-25,5,730,731,1.0,daily,108.0
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Meteorological Station Chimpu,PAPUM PARE,27.06777778,93.60055556,2021-01-12,2025-11-24,5,594,594,1.0,daily,180.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Miao,CHANGLANG,27.49361111,96.21916667,2021-01-12,2025-11-05,5,682,1171,1.0,daily,104.6
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Namsai,Namsai,27.63555556,95.84805556,2021-01-20,2025-12-30,5,693,1138,1.0,daily,112.6
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Pangin,EAST SIANG,28.23361111,95.00277778,2021-01-13,2025-09-01,5,470,789,1.0,daily,67.0
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Passighat,EAST SIANG,28.07777778,95.33555556,2021-01-13,2025-12-30,5,693,1380,1.0,daily,235.6
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Rho Basti,TAWANG,27.61444444,92.00972222,2021-01-12,2023-11-07,3,233,233,1.0,daily,41.8
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Seppa,EAST KAMENG,27.35861111,93.03972222,2021-01-11,2025-12-31,5,611,1165,1.0,daily,74.8
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Subansiri Lower Dam,LOWER SUBANSIRI,27.55361111,94.25861111,2025-05-05,2025-10-09,1,73,73,1.0,daily,185.4
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Tezu,LOHIT,27.91083333,96.17055556,2021-01-13,2025-12-30,5,541,873,1.0,daily,86.2
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Tuting,UPPER SIANG,28.99500000,94.88694444,2021-01-12,2025-12-30,5,969,2128,1.0,daily,128.8
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Yazali,LOWER SUBANSIRI,27.39527778,93.75750000,2021-02-16,2025-10-31,5,330,531,1.0,daily,56.2
+Arunachal Pradesh,"manual daily, named 2021-2025","Arunachal Pradesh, manual daily, named 2021-2025",Yingkiong,UPPER SIANG,28.66166667,95.01277778,2021-01-12,2025-11-07,5,613,1203,1.0,daily,131.2
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,2026-02-28,2026-10-09,1,103,180,1.0,daily,38.0
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Daporizo,UPPER SUBANSIRI,27.99333333,94.22333333,2026-03-16,2026-10-10,1,77,142,1.0,daily,21.2
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Kabu basti (Kambang),WEST SIANG,28.19277778,94.77027778,2026-02-28,2026-10-04,1,82,149,1.0,daily,20.0
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Kibithu,ANJAW,28.25722222,97.02583333,2026-03-14,2026-10-06,1,61,92,1.0,daily,44.2
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",METEOROLOGICAL STATION JANG,TAWANG,27.58194444,92.43083333,2026-02-28,2026-10-04,1,83,83,1.0,daily,44.4
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Meteorological Station Chimpu,PAPUM PARE,27.06777778,93.60055556,2026-02-15,2026-10-05,1,102,102,1.0,daily,88.4
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Miao,CHANGLANG,27.49361111,96.21916667,2026-01-30,2026-10-10,1,126,253,2.0,daily,77.0
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Namsai,Namsai,27.63555556,95.84805556,2026-02-05,2026-10-09,1,123,237,2.0,daily,69.2
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Pangin,EAST SIANG,28.23361111,95.00277778,2026-10-05,2026-10-10,1,2,2,1.0,daily,1.0
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Passighat,EAST SIANG,28.07777778,95.33555556,2026-01-30,2026-10-05,1,112,231,1.0,daily,98.0
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Seppa,EAST KAMENG,27.35861111,93.03972222,2026-02-15,2026-10-17,1,145,346,2.0,daily,28.4
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Tezu,LOHIT,27.91083333,96.17055556,2026-01-30,2026-10-09,1,112,204,1.0,daily,78.2
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Tuting,UPPER SIANG,28.99500000,94.88694444,2026-01-26,2026-10-11,1,165,496,2.0,daily,90.8
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Yazali,LOWER SUBANSIRI,27.39527778,93.75750000,2026-01-30,2026-10-06,1,69,104,1.0,daily,68.4
+Arunachal Pradesh,"manual daily, named 2026-2030","Arunachal Pradesh, manual daily, named 2026-2030",Yingkiong,UPPER SIANG,28.66166667,95.01277778,2026-01-30,2026-10-10,1,127,326,2.0,daily,44.2
+Arunachal Pradesh,"manual hourly, named 1991-2020","Arunachal Pradesh, manual hourly, named 1991-2020",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,2006-05-02,2006-08-31,1,79,119,2.0,daily,159.3
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",BILLE,WEST SIANG,28.45861111,94.68416667,2019-10-31,2020-12-18,2,237,1964,8.0,sub-daily (partial),166.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,2019-06-15,2020-12-06,2,240,1354,4.0,sub-daily (partial),382.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Kibithu,ANJAW,28.25722222,97.02583333,2019-06-15,2020-11-18,2,132,746,4.0,sub-daily (partial),36.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Lemeking,UPPER SUBANSIRI,28.37277778,93.55972222,2019-06-14,2020-12-31,2,352,5291,16.0,hourly,427.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",MAGIGAON,WEST SIANG,27.72000000,94.64222222,2019-11-05,2020-11-13,2,150,790,4.0,sub-daily (partial),202.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Miao,CHANGLANG,27.49361111,96.21916667,2019-06-15,2020-12-07,2,168,656,3.0,sub-daily (partial),294.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Namsai,Namsai,27.63555556,95.84805556,2019-07-14,2020-12-07,2,205,970,4.0,sub-daily (partial),93.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Passighat,EAST SIANG,28.07777778,95.33555556,2019-06-15,2020-10-26,2,8,44,5.0,sub-daily (partial),354.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",ROING,Lower Dibang Valley,28.15833333,95.84500000,2019-12-19,2020-05-30,2,8,81,9.0,sub-daily (partial),56.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",ROUTANG,EAST SIANG,28.14250000,95.16305556,2019-10-31,2020-06-13,2,67,224,3.0,sub-daily (partial),449.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Seppa,EAST KAMENG,27.35861111,93.03972222,2019-06-15,2020-12-06,2,179,648,3.0,sub-daily (partial),478.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Tezu,LOHIT,27.91083333,96.17055556,2020-02-14,2020-12-07,1,144,1005,5.0,sub-daily (partial),65.5
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",Tuting,UPPER SIANG,28.99500000,94.88694444,2019-12-30,2020-12-19,2,10,29,1.5,daily,128.0
+Arunachal Pradesh,"telemetry hourly, named 1991-2020","Arunachal Pradesh, telemetry hourly, named 1991-2020",bamdo,UPPER SIANG,28.75361111,94.90083333,2019-10-31,2020-12-18,2,228,1941,7.5,sub-daily (partial),256.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",BILLE,WEST SIANG,28.45861111,94.68416667,2021-01-11,2023-07-29,3,311,2392,7.0,sub-daily (partial),270.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Bhalukpong,WEST KAMENG,27.01750000,92.63750000,2021-01-05,2024-03-30,4,417,2623,4.0,sub-daily (partial),355.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Kibithu,ANJAW,28.25722222,97.02583333,2021-01-12,2025-08-11,5,250,1410,4.0,sub-daily (partial),225.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Lemeking,UPPER SUBANSIRI,28.37277778,93.55972222,2021-01-01,2025-09-18,5,39,101,2.0,daily,456.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",MAGIGAON,WEST SIANG,27.72000000,94.64222222,2021-01-03,2021-04-22,1,9,23,1.0,daily,80.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Miao,CHANGLANG,27.49361111,96.21916667,2021-01-12,2025-09-07,5,448,4079,7.0,sub-daily (partial),511.5
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Namsai,Namsai,27.63555556,95.84805556,2021-01-12,2024-03-22,4,262,2210,6.0,sub-daily (partial),497.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Passighat,EAST SIANG,28.07777778,95.33555556,2022-01-25,2023-10-02,2,31,35,1.0,daily,493.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",ROING,Lower Dibang Valley,28.15833333,95.84500000,2021-01-29,2021-07-21,1,4,6,1.5,daily,256.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",ROUTANG,EAST SIANG,28.14250000,95.16305556,2022-01-25,2023-11-04,2,259,1464,4.0,sub-daily (partial),464.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Seppa,EAST KAMENG,27.35861111,93.03972222,2021-02-12,2025-09-18,5,400,1938,3.0,sub-daily (partial),160.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Tezu,LOHIT,27.91083333,96.17055556,2021-01-11,2023-08-04,3,118,181,1.0,daily,497.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",Tuting,UPPER SIANG,28.99500000,94.88694444,2021-01-12,2023-09-10,3,46,189,1.0,daily,464.0
+Arunachal Pradesh,"telemetry hourly, named 2021-2025","Arunachal Pradesh, telemetry hourly, named 2021-2025",bamdo,UPPER SIANG,28.75361111,94.90083333,2021-01-12,2023-04-09,3,232,1639,5.0,sub-daily (partial),263.0
+Arunachal Pradesh,"telemetry hourly, named 2026-2030","Arunachal Pradesh, telemetry hourly, named 2026-2030",Kibithu,ANJAW,28.25722222,97.02583333,2026-02-22,2026-04-27,1,9,18,2.0,daily,28.5
+Arunachal Pradesh,"telemetry hourly, named 2026-2030","Arunachal Pradesh, telemetry hourly, named 2026-2030",Seppa,EAST KAMENG,27.35861111,93.03972222,2026-03-18,2026-05-31,1,35,191,4.0,sub-daily (partial),23.5
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Badatighat,LAKHIMPUR,26.94888889,93.96222222,1978-05-19,1990-10-17,8,631,631,1.0,daily,140.3
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Bihubar,SIVSAGAR,26.85333333,94.80055556,1976-05-18,1977-10-15,2,141,141,1.0,daily,9.1
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,1978-05-19,1980-07-31,3,186,186,1.0,daily,126.9
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,1973-06-19,1990-10-16,16,1402,1403,1.0,daily,240.0
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,1978-05-15,1990-10-17,13,1404,1405,1.0,daily,212.5
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Dholabazar,TINSUKIA,27.76361111,95.56611111,1971-05-23,1990-12-28,20,1872,1874,1.0,daily,540.0
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,1974-05-16,1990-10-17,17,1566,1566,1.0,daily,138.2
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Golaghat,GOLAGHAT,26.50361111,93.95166667,1976-05-15,1980-06-30,5,405,405,1.0,daily,204.0
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Margherita,TINSUKIA,27.28361111,95.66277778,1971-05-20,1990-10-12,20,1908,1908,1.0,daily,593.03
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,1989-11-03,1990-10-17,2,161,161,1.0,daily,80.2
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Naharkatia,DIBRUGARH,27.29388889,95.33138889,1975-01-12,1990-10-16,16,1527,1527,1.0,daily,181.8
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Neamatighat,JORHAT,26.86055556,94.25166667,1976-06-01,1990-10-17,12,1080,1080,1.0,daily,197.2
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Numaligarh,GOLAGHAT,26.63111111,93.73055556,1977-05-15,1979-08-05,2,9,9,1.0,daily,74.7
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,1978-05-21,1990-10-16,10,860,860,1.0,daily,185.5
+Assam,"manual daily, named 1961-1990","Assam, manual daily, named 1961-1990",SONAPUR,KAMRUP,26.12055556,91.97833333,1989-05-15,1990-10-16,2,181,181,1.0,daily,132.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",AIE NH XING,BONGAIGAON,26.49660278,90.65384444,2011-05-15,2020-11-22,10,1117,1118,1.0,daily,294.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",ANIPUR,KARIMGANJ,24.54361111,92.43305556,2009-02-28,2020-11-02,12,1837,3191,2.0,daily,231.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Amraghat,CACHAR,24.60583333,92.95388889,2014-05-02,2020-11-05,7,974,1022,1.0,daily,186.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Annapurna Ghat,CACHAR,24.83277778,92.79166667,2007-05-07,2020-11-04,14,1748,2380,1.0,daily,220.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",BAHALPUR,DHUBRI,26.31948889,90.46948889,2011-05-16,2020-10-25,10,1007,1008,1.0,daily,228.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Badarpur Ghat,KARIMGANJ,24.87527778,92.57833333,2000-01-24,2020-11-04,21,2902,3821,1.0,daily,203.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Badatighat,LAKHIMPUR,26.94888889,93.96222222,1991-05-24,2020-11-18,30,3662,3818,1.0,daily,670.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Barpeta Road,BARPETA,26.00000000,90.91666667,2011-05-16,2020-11-22,9,968,968,1.0,daily,211.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Beki Road bridge,BARPETA,26.49413333,90.91789722,2011-05-15,2020-11-22,10,1091,1091,1.0,daily,216.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Bhomoraguri,SONITPUR,26.59555556,92.86083333,2010-04-01,2020-11-19,11,1110,1187,1.0,daily,131.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Bihubar,SIVSAGAR,26.85333333,94.80055556,1995-03-22,2020-11-22,26,3259,4199,1.0,daily,609.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Bogibil,DIBRUGARH,27.39250000,94.77666667,2020-06-25,2020-06-25,1,1,1,1.0,daily,107.5
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,1997-02-02,2020-11-01,24,2216,2942,1.0,daily,723.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,1991-05-16,2020-11-21,30,4299,4493,1.0,daily,303.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,1991-05-19,2020-12-18,26,3689,4375,1.0,daily,264.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",DRF,Baksa,26.77500833,91.69288611,2014-02-09,2020-10-24,7,700,972,1.0,daily,236.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",DUDHNAI,GOALPARA,25.98055556,90.79055556,2011-11-01,2014-06-27,2,48,65,1.0,daily,210.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dharamtul,MARIGAON,26.16833333,92.35861111,1997-01-17,2020-10-25,24,3008,3382,1.0,daily,160.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dholabazar,TINSUKIA,27.76361111,95.56611111,1991-01-03,2020-11-19,30,4328,4448,1.0,daily,242.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dholai,CACHAR,24.59361111,92.84527778,2000-01-23,2020-11-04,21,2808,3760,1.0,daily,189.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dhubri,DHUBRI,25.99099167,90.03248889,2011-05-16,2020-10-26,10,995,996,1.0,daily,253.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,1991-05-20,2020-11-21,30,3816,3901,1.0,daily,367.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Dillighat,DIBRUGARH,27.14000000,95.37000000,1995-08-31,2020-09-24,26,3208,3343,1.0,daily,170.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Fakirabazar,KARIMGANJ,24.86083333,92.29027778,2000-01-23,2020-11-04,21,2554,3057,1.0,daily,440.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Fulertal,CACHAR,24.79027778,93.00777778,2000-01-21,2020-11-05,21,3063,3814,1.0,daily,315.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Gelabil,GOLAGHAT,26.24444444,93.97277778,2014-05-03,2020-11-18,7,581,647,1.0,daily,143.5
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Gharmura,HAILAKANDI,24.28527778,92.51611111,2014-05-03,2020-11-05,7,701,737,1.0,daily,220.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Goalpara,GOALPARA,26.18472222,90.63388889,2007-02-04,2020-10-25,14,1691,2394,1.0,daily,368.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Golaghat,GOLAGHAT,26.50361111,93.95166667,1991-01-03,2020-11-18,25,3096,4234,1.0,daily,480.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Golokganj,DHUBRI,26.10722222,89.82361111,2020-05-07,2020-05-28,1,6,6,1.0,daily,88.5
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Gumrabazar,CACHAR,24.97694444,92.51833333,2016-09-01,2020-11-04,5,563,1326,2.0,daily,244.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Guwahati(D.C.Court),KAMRUP,26.19470000,91.74310000,2014-03-12,2020-10-25,7,779,783,1.0,daily,155.3
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Jagibhakatgaon,MARIGAON,26.17694444,92.21750000,2012-05-01,2020-10-25,9,810,895,1.0,daily,147.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Kampur,NAGAON,26.15277778,92.65333333,1997-01-21,2020-11-02,24,2282,2506,1.0,daily,124.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Karimganj,KARIMGANJ,24.87861111,92.35666667,2014-05-02,2020-11-04,7,906,942,1.0,daily,272.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Kashithal,CACHAR,24.54250000,92.95333333,2017-04-01,2017-04-29,1,17,17,1.0,daily,72.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Kheronighat,KARBI ANGLONG,25.84861111,92.88500000,1997-01-17,2020-12-04,17,1496,1548,1.0,daily,145.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Kokrajhar,KOKRAJHAR,26.39757222,90.25405833,2011-05-16,2020-10-26,7,801,802,1.0,daily,321.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Manas N H Crossing,BONGAIGAON,26.46421667,90.75003333,2011-05-16,2020-11-22,10,999,1000,1.0,daily,270.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Margherita,TINSUKIA,27.28361111,95.66277778,1991-05-23,2020-11-22,30,4294,4424,1.0,daily,154.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Mathanguri,Baksa,26.78288056,90.95656944,2011-05-15,2020-12-14,10,984,984,1.0,daily,323.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Matijuri,HAILAKANDI,24.64944444,92.60888889,2000-01-21,2020-11-05,21,2726,3545,1.0,daily,180.5
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Matunga,Baksa,26.79140556,91.53582222,2014-02-08,2020-12-06,7,741,1025,1.0,daily,208.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Monierkhal,CACHAR,24.58305556,92.95638889,2001-03-23,2020-11-04,20,2790,4282,1.0,daily,302.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,1991-04-17,2020-11-22,26,2704,2906,1.0,daily,215.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Naharkatia,DIBRUGARH,27.29388889,95.33138889,1991-05-15,2020-11-21,27,3439,3556,1.0,daily,190.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Nanglamoraghat,SIVSAGAR,26.98500000,94.77666667,2000-05-06,2020-06-24,9,631,631,1.0,daily,85.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Neamatighat,JORHAT,26.86055556,94.25166667,1991-05-15,2020-11-18,30,3757,4954,1.0,daily,457.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Numaligarh,GOLAGHAT,26.63111111,93.73055556,1997-02-02,2020-11-19,24,3131,3334,1.0,daily,119.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",PANBARI,Chirang,26.58847222,90.82913333,2011-05-15,2020-12-06,10,1135,1136,1.0,daily,312.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",PANCHARATNA,GOALPARA,26.20940000,90.55330000,1991-05-02,2020-11-22,30,3354,4543,1.0,daily,231.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Pagladiya N T Road Crossing,NALBARI,26.45040278,91.45980278,1993-05-15,2020-11-22,28,3414,4402,1.0,daily,179.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Pandu,KAMRUP,26.17527778,91.66944444,2018-05-01,2020-10-25,3,285,285,1.0,daily,106.6
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,1991-05-18,2020-10-25,30,3472,4248,1.0,daily,169.2
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Ranganadi NT Road crossing,LAKHIMPUR,27.20416667,94.05972222,2005-05-27,2020-12-18,16,1905,2041,1.0,daily,408.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",SONAPUR,KAMRUP,26.12055556,91.97833333,1991-05-17,2020-12-06,30,2974,3702,1.0,daily,192.0
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Sivasagar,SIVSAGAR,26.98166667,94.57916667,1995-03-28,2020-11-19,24,2730,3231,1.0,daily,159.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Suklai,Baksa,26.65373333,91.71483889,2019-09-29,2020-08-19,2,2,2,1.0,daily,4.4
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",TULARGRAM,CACHAR,24.71611111,92.88500000,1997-01-17,2020-11-04,15,2035,3022,1.0,daily,190.8
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Tezpur,SONITPUR,26.61583333,92.79694444,1997-02-02,2020-10-26,24,2758,2806,1.0,daily,161.3
+Assam,"manual daily, named 1991-2020","Assam, manual daily, named 1991-2020",Udaipur,TINSUKIA,27.33722222,95.85027778,2014-02-08,2020-11-23,7,900,963,1.0,daily,198.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",AIE NH XING,BONGAIGAON,26.49660278,90.65384444,2021-01-20,2025-11-01,5,580,1034,1.0,daily,269.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",ANIPUR,KARIMGANJ,24.54361111,92.43305556,2021-03-09,2025-10-30,5,586,879,1.0,daily,146.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Amraghat,CACHAR,24.60583333,92.95388889,2021-01-21,2025-10-12,5,716,1211,1.0,daily,176.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Annapurna Ghat,CACHAR,24.83277778,92.79166667,2021-01-21,2025-11-06,5,664,1269,2.0,daily,160.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",BAHALPUR,DHUBRI,26.31948889,90.46948889,2021-01-21,2025-11-01,5,513,878,1.0,daily,170.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Badarpur Ghat,KARIMGANJ,24.87527778,92.57833333,2021-01-21,2025-11-06,5,744,1563,2.0,daily,157.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Badatighat,LAKHIMPUR,26.94888889,93.96222222,2021-01-20,2025-11-02,5,602,961,1.0,daily,87.1
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Balighat,LAKHIMPUR,27.11194444,94.15500000,2023-06-04,2025-04-27,3,243,529,2.0,daily,45.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Barpeta Road,BARPETA,26.00000000,90.91666667,2021-01-20,2025-11-06,5,574,1117,1.0,daily,214.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Beki Road bridge,BARPETA,26.49413333,90.91789722,2021-01-20,2025-11-06,5,638,1258,1.0,daily,246.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Bhomoraguri,SONITPUR,26.59555556,92.86083333,2021-03-11,2025-11-03,5,428,684,1.0,daily,80.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Bihubar,SIVSAGAR,26.85333333,94.80055556,2021-01-12,2025-11-22,5,612,945,1.0,daily,145.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Bogibil,DIBRUGARH,27.39250000,94.77666667,2023-07-13,2023-07-13,1,1,1,1.0,daily,2.3
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,2021-03-10,2025-11-05,5,323,391,1.0,daily,117.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Boomthang,BARPETA,27.54027778,90.75500000,2023-05-01,2025-10-30,3,268,453,1.0,daily,29.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Borkhola,CACHAR,24.92416667,92.75333333,2021-10-02,2025-11-07,5,508,1010,1.0,daily,136.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",CHIRIPOOL,CACHAR,24.80388889,93.02055556,2021-09-17,2025-10-12,5,486,868,1.0,daily,258.7
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Chazam(Trashigang),BARPETA,27.33694444,91.52972222,2023-05-01,2025-10-30,3,205,276,1.0,daily,55.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,2021-01-20,2025-11-02,5,674,1135,1.0,daily,214.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,2021-01-12,2025-11-02,5,706,1481,1.0,daily,158.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",DRF,Baksa,26.77500833,91.69288611,2021-01-12,2025-11-23,5,547,851,1.0,daily,180.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Deothang,NALBARI,26.85416667,91.45555556,2023-05-01,2025-09-18,3,241,259,1.0,daily,245.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dharamtul,MARIGAON,26.16833333,92.35861111,2021-02-26,2025-11-01,5,541,869,1.0,daily,81.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dholabazar,TINSUKIA,27.76361111,95.56611111,2021-01-19,2025-12-30,5,654,1132,1.0,daily,156.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dholai,CACHAR,24.59361111,92.84527778,2021-01-21,2025-10-12,5,635,1117,1.0,daily,152.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dhubri,DHUBRI,25.99099167,90.03248889,2021-03-11,2025-11-03,5,540,873,1.0,daily,170.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,2021-03-04,2025-11-01,5,705,705,1.0,daily,187.7
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Dillighat,DIBRUGARH,27.14000000,95.37000000,2021-07-02,2025-11-02,5,552,969,1.0,daily,101.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Fakirabazar,KARIMGANJ,24.86083333,92.29027778,2021-01-21,2025-10-30,5,590,973,1.0,daily,280.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Fulertal,CACHAR,24.79027778,93.00777778,2021-01-21,2025-11-06,5,661,1243,2.0,daily,196.1
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Gelabil,GOLAGHAT,26.24444444,93.97277778,2021-01-21,2025-11-22,5,393,559,1.0,daily,89.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Gharmura,HAILAKANDI,24.28527778,92.51611111,2021-01-21,2025-10-30,5,646,1009,1.0,daily,137.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Goalpara,GOALPARA,26.18472222,90.63388889,2021-03-06,2025-11-01,5,531,1001,1.0,daily,321.28
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Golaghat,GOLAGHAT,26.50361111,93.95166667,2021-01-12,2025-11-02,5,575,878,1.0,daily,140.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Golokganj,DHUBRI,26.10722222,89.82361111,2021-05-19,2025-11-01,4,267,440,1.0,daily,118.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Gumrabazar,CACHAR,24.97694444,92.51833333,2021-03-06,2025-10-12,5,624,1102,1.0,daily,400.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Guwahati(D.C.Court),KAMRUP,26.19470000,91.74310000,2021-03-31,2025-12-31,5,505,869,1.0,daily,102.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Jagibhakatgaon,MARIGAON,26.17694444,92.21750000,2021-02-26,2025-10-31,5,537,832,1.0,daily,76.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Jalalpur,CACHAR,25.00250000,92.45666667,2022-05-01,2025-10-11,4,519,1317,2.0,daily,260.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Jampani,KAMRUP,26.93694444,92.11250000,2024-10-05,2024-10-05,1,1,1,1.0,daily,5.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",KALAIN,CACHAR,24.97305556,92.55638889,2021-09-15,2025-10-12,5,559,1061,1.0,daily,217.3
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",KANGKUBASTI,DHEMAJI,27.64972222,94.60805556,2022-04-07,2023-05-01,2,2,2,1.0,daily,9.06
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",KULSI,KAMRUP,25.97916667,91.38583333,2021-09-02,2022-07-21,2,2,2,1.0,daily,10.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Kampur,NAGAON,26.15277778,92.65333333,2021-01-21,2025-11-01,5,481,680,1.0,daily,101.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Karimganj,KARIMGANJ,24.87861111,92.35666667,2021-01-21,2025-10-30,5,690,1256,1.0,daily,248.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Katigorah,CACHAR,24.81583333,92.64972222,2021-09-05,2025-11-06,5,448,746,1.0,daily,260.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Kheronighat,KARBI ANGLONG,25.84861111,92.88500000,2021-03-06,2025-10-31,5,441,556,1.0,daily,81.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Kokrajhar,KOKRAJHAR,26.39757222,90.25405833,2021-01-20,2025-11-01,5,617,1109,1.0,daily,335.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Kurizampa,BARPETA,27.28333333,91.20000000,2023-05-01,2025-10-30,3,220,280,1.0,daily,43.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Lala,HAILAKANDI,24.60777778,92.61361111,2021-09-02,2025-11-06,5,510,1041,1.0,daily,217.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Manas N H Crossing,BONGAIGAON,26.46421667,90.75003333,2021-01-20,2025-11-06,5,607,1098,1.0,daily,241.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Margherita,TINSUKIA,27.28361111,95.66277778,2021-01-13,2025-11-21,5,702,1130,1.0,daily,119.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Mathanguri,Baksa,26.78277778,90.95666667,2021-01-13,2025-11-24,5,548,918,1.0,daily,404.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Matijuri,HAILAKANDI,24.64944444,92.60888889,2021-01-21,2025-10-30,5,690,1232,1.0,daily,184.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Matunga,Baksa,26.79140556,91.53582222,2021-01-12,2025-11-23,5,555,884,1.0,daily,190.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Monierkhal,CACHAR,24.58305556,92.95638889,2021-03-07,2025-11-06,5,610,979,1.0,daily,111.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",NEAIRGRAM,CACHAR,24.76222222,92.83694444,2021-09-15,2025-10-30,5,525,999,1.0,daily,337.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,2021-01-11,2025-10-31,5,466,702,1.0,daily,112.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Naharkatia,DIBRUGARH,27.29388889,95.33138889,2021-01-11,2025-12-30,5,695,1020,1.0,daily,163.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Nanglamoraghat,SIVSAGAR,26.98500000,94.77666667,2021-10-21,2022-06-13,2,3,3,1.0,daily,27.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Neamatighat,JORHAT,26.86055556,94.25166667,2021-03-05,2025-12-24,5,582,911,1.0,daily,95.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Numaligarh,GOLAGHAT,26.63111111,93.73055556,2021-01-19,2025-11-02,5,611,950,1.0,daily,96.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",PANBARI,Chirang,26.58847222,90.82913333,2021-01-13,2025-11-01,5,548,964,1.0,daily,275.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",PANCHARATNA,GOALPARA,26.20940000,90.55330000,2021-03-06,2025-10-06,5,428,706,1.0,daily,318.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Pagladiya N T Road Crossing,NALBARI,26.45040278,91.45980278,2021-01-13,2025-11-06,5,547,980,1.0,daily,260.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Pandu,KAMRUP,26.17527778,91.66944444,2021-03-31,2021-05-11,1,2,2,1.0,daily,6.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Patharkandi,KARIMGANJ,24.57805556,92.31388889,2021-09-03,2025-11-06,5,527,949,1.0,daily,115.1
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,2021-01-19,2025-11-01,5,478,747,1.0,daily,99.5
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Ranganadi NT Road crossing,LAKHIMPUR,27.20416667,94.05972222,2021-01-19,2025-11-02,5,640,985,1.0,daily,152.4
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",SIBAPUR,CACHAR,24.78444444,92.90722222,2021-09-08,2025-10-12,5,527,959,1.0,daily,256.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",SONAPUR,KAMRUP,26.12055556,91.97833333,2021-02-26,2025-11-06,5,539,875,1.0,daily,106.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Sershong,BARPETA,26.93916667,90.51833333,2023-05-01,2025-10-30,3,325,503,2.0,daily,244.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Sivasagar,SIVSAGAR,26.98166667,94.57916667,2021-01-20,2025-11-22,5,575,891,1.0,daily,108.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Sumpa,BARPETA,27.65777778,91.20972222,2023-05-01,2025-10-30,3,266,344,1.0,daily,55.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",TULARGRAM,CACHAR,24.71611111,92.88500000,2021-05-03,2025-10-12,5,642,1107,1.0,daily,211.8
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Tezpur,SONITPUR,26.61583333,92.79694444,2021-01-20,2025-11-22,5,558,561,1.0,daily,174.0
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Thrimsing,NALBARI,27.39083333,90.98944444,2023-05-01,2025-09-18,3,266,350,1.0,daily,93.6
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Tongsa(Mangdichhu),BARPETA,27.02722222,90.78388889,2023-05-01,2025-10-30,3,239,326,1.0,daily,70.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",UDHARBOND,CACHAR,24.90138889,92.90750000,2021-09-17,2025-10-12,5,603,1230,1.0,daily,215.2
+Assam,"manual daily, named 2021-2025","Assam, manual daily, named 2021-2025",Udaipur,TINSUKIA,27.33722222,95.85027778,2021-01-20,2025-12-30,5,725,1165,1.0,daily,100.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",AIE NH XING,BONGAIGAON,26.49660278,90.65384444,2026-03-02,2026-10-05,1,115,189,1.0,daily,130.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",ANIPUR,KARIMGANJ,24.54361111,92.43305556,2026-03-13,2026-10-09,1,121,204,1.0,daily,42.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Amraghat,CACHAR,24.60583333,92.95388889,2026-03-12,2026-10-08,1,142,312,2.0,daily,149.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Annapurna Ghat,CACHAR,24.83277778,92.79166667,2026-03-02,2026-10-03,1,123,227,1.0,daily,99.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",BAHALPUR,DHUBRI,26.31948889,90.46948889,2026-03-12,2026-10-08,1,127,226,1.0,daily,94.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Badarpur Ghat,KARIMGANJ,24.87527778,92.57833333,2026-03-02,2026-10-08,1,143,320,2.0,daily,200.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Badatighat,LAKHIMPUR,26.94888889,93.96222222,2026-02-26,2026-10-09,1,102,189,1.0,daily,60.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Baladoba,DHUBRI,26.01888889,89.82944444,2026-05-12,2026-10-08,1,49,81,1.0,daily,12.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Balighat,LAKHIMPUR,27.11194444,94.15500000,2026-10-04,2026-10-09,1,2,3,1.5,daily,9.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Barpeta Road,BARPETA,26.00000000,90.91666667,2026-03-02,2026-10-08,1,128,263,1.0,daily,77.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Beki Road bridge,BARPETA,26.49413333,90.91789722,2026-03-02,2026-10-08,1,134,302,2.0,daily,72.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Bhomoraguri,SONITPUR,26.59555556,92.86083333,2026-02-28,2026-10-09,1,103,144,1.0,daily,97.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Bihubar,SIVSAGAR,26.85333333,94.80055556,2026-02-22,2026-10-04,1,121,210,1.0,daily,83.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,2026-03-17,2026-10-01,1,48,71,1.0,daily,18.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Boomthang,BARPETA,27.54027778,90.75500000,2026-02-25,2026-10-11,1,83,106,1.0,daily,28.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Borkhola,CACHAR,24.92416667,92.75333333,2026-03-13,2026-10-04,1,113,209,2.0,daily,48.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",CHIRIPOOL,CACHAR,24.80388889,93.02055556,2026-03-02,2026-10-08,1,117,235,2.0,daily,81.5
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Chazam(Trashigang),BARPETA,27.33694444,91.52972222,2026-03-01,2026-09-24,1,66,86,1.0,daily,40.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,2026-02-05,2026-10-09,1,124,245,2.0,daily,100.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,2026-02-28,2026-10-09,1,140,363,2.0,daily,97.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",DRF,Baksa,26.77500833,91.69288611,2026-03-01,2026-10-09,1,112,184,1.0,daily,55.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Deothang,NALBARI,26.85416667,91.45555556,2026-03-13,2026-09-21,1,106,106,1.0,daily,97.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dharamtul,MARIGAON,26.16833333,92.35861111,2026-03-14,2026-10-08,1,118,183,1.0,daily,75.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dholabazar,TINSUKIA,27.76361111,95.56611111,2026-02-22,2026-10-10,1,102,179,1.0,daily,66.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dholai,CACHAR,24.59361111,92.84527778,2026-03-12,2026-10-09,1,139,277,2.0,daily,87.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dhubri,DHUBRI,25.99099167,90.03248889,2026-03-13,2026-10-08,1,125,220,1.0,daily,105.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,2026-02-05,2026-10-10,1,128,128,1.0,daily,53.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Dillighat,DIBRUGARH,27.14000000,95.37000000,2026-02-22,2026-10-09,1,122,196,1.0,daily,23.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Fakirabazar,KARIMGANJ,24.86083333,92.29027778,2026-03-13,2026-10-08,1,118,202,1.0,daily,82.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Fulertal,CACHAR,24.79027778,93.00777778,2026-03-02,2026-10-08,1,126,237,2.0,daily,94.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Gelabil,GOLAGHAT,26.24444444,93.97277778,2026-03-13,2026-10-09,1,80,109,1.0,daily,64.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Gharmura,HAILAKANDI,24.28527778,92.51611111,2026-03-13,2026-10-08,1,122,210,1.0,daily,85.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Goalpara,GOALPARA,26.18472222,90.63388889,2026-03-13,2026-10-08,1,126,232,1.0,daily,98.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Golaghat,GOLAGHAT,26.50361111,93.95166667,2026-02-22,2026-10-09,1,135,220,1.0,daily,47.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Golokganj,DHUBRI,26.10722222,89.82361111,2026-03-13,2026-10-09,1,85,129,1.0,daily,60.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Gumrabazar,CACHAR,24.97694444,92.51833333,2026-03-12,2026-10-08,1,124,266,2.0,daily,100.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Guwahati(D.C.Court),KAMRUP,26.19470000,91.74310000,2026-03-13,2026-10-09,1,123,197,1.0,daily,196.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Jagibhakatgaon,MARIGAON,26.17694444,92.21750000,2026-03-14,2026-09-25,1,107,156,1.0,daily,60.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Jalalpur,CACHAR,25.00250000,92.45666667,2026-03-12,2026-10-08,1,126,266,2.0,daily,90.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",KALAIN,CACHAR,24.97305556,92.55638889,2026-03-02,2026-10-08,1,119,219,2.0,daily,106.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Kampur,NAGAON,26.15277778,92.65333333,2026-02-28,2026-10-04,1,93,147,1.0,daily,58.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Karimganj,KARIMGANJ,24.87861111,92.35666667,2026-03-13,2026-10-08,1,134,292,2.0,daily,121.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Katigorah,CACHAR,24.81583333,92.64972222,2026-03-13,2026-10-08,1,115,196,2.0,daily,110.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Kheronighat,KARBI ANGLONG,25.84861111,92.88500000,2026-02-27,2026-09-28,1,73,93,1.0,daily,54.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Kokrajhar,KOKRAJHAR,26.39757222,90.25405833,2026-03-12,2026-10-08,1,129,240,1.0,daily,95.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Kurizampa,BARPETA,27.28333333,91.20000000,2026-02-26,2026-09-24,1,72,95,1.0,daily,50.3
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Lala,HAILAKANDI,24.60777778,92.61361111,2026-03-13,2026-10-09,1,122,231,2.0,daily,42.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Manas N H Crossing,BONGAIGAON,26.46421667,90.75003333,2026-03-13,2026-10-04,1,112,225,1.0,daily,106.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Margherita,TINSUKIA,27.28361111,95.66277778,2026-01-30,2026-10-09,1,148,290,1.0,daily,90.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Mathanguri,Baksa,26.78277778,90.95666667,2026-03-13,2026-10-09,1,115,232,1.0,daily,112.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Matijuri,HAILAKANDI,24.64944444,92.60888889,2026-03-13,2026-10-08,1,152,314,2.0,daily,101.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Matunga,Baksa,26.79140556,91.53582222,2026-03-01,2026-10-08,1,97,157,1.0,daily,79.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Monierkhal,CACHAR,24.58305556,92.95638889,2026-03-12,2026-10-08,1,131,239,1.0,daily,69.3
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",NEAIRGRAM,CACHAR,24.76222222,92.83694444,2026-03-02,2026-10-08,1,118,234,2.0,daily,110.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,2026-03-01,2026-10-09,1,102,169,1.0,daily,42.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Naharkatia,DIBRUGARH,27.29388889,95.33138889,2026-01-30,2026-10-09,1,126,189,1.0,daily,57.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Neamatighat,JORHAT,26.86055556,94.25166667,2026-02-26,2026-10-10,1,105,185,1.0,daily,36.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Numaligarh,GOLAGHAT,26.63111111,93.73055556,2026-02-23,2026-10-09,1,123,202,1.0,daily,52.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",PANBARI,Chirang,26.58847222,90.82913333,2026-03-02,2026-10-08,1,117,223,1.0,daily,85.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",PANCHARATNA,GOALPARA,26.20940000,90.55330000,2026-03-13,2026-10-04,1,93,165,1.0,daily,96.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Pagladiya N T Road Crossing,NALBARI,26.45040278,91.45980278,2026-03-02,2026-10-08,1,122,237,1.0,daily,102.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Patharkandi,KARIMGANJ,24.57805556,92.31388889,2026-03-13,2026-10-09,1,134,226,1.5,daily,97.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,2026-03-02,2026-10-08,1,112,199,1.0,daily,74.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Ranganadi NT Road crossing,LAKHIMPUR,27.20416667,94.05972222,2026-03-13,2026-10-09,1,115,207,1.0,daily,76.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",SIBAPUR,CACHAR,24.78444444,92.90722222,2026-03-02,2026-10-08,1,114,205,1.0,daily,80.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",SONAPUR,KAMRUP,26.12055556,91.97833333,2026-03-13,2026-10-09,1,119,202,1.0,daily,63.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Sershong,BARPETA,26.93916667,90.51833333,2026-01-03,2026-10-02,1,110,172,2.0,daily,287.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Sivasagar,SIVSAGAR,26.98166667,94.57916667,2026-01-30,2026-10-09,1,115,205,2.0,daily,40.2
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Sumpa,BARPETA,27.65777778,91.20972222,2026-02-13,2026-09-24,1,94,119,1.0,daily,30.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",TULARGRAM,CACHAR,24.71611111,92.88500000,2026-03-02,2026-10-08,1,122,247,2.0,daily,122.0
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Tezpur,SONITPUR,26.61583333,92.79694444,2026-02-28,2026-10-10,1,125,125,1.0,daily,96.6
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Thrimsing,NALBARI,27.39083333,90.98944444,2026-03-01,2026-09-18,1,77,94,1.0,daily,71.8
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Tongsa(Mangdichhu),BARPETA,27.02722222,90.78388889,2026-03-01,2026-09-24,1,74,97,1.0,daily,79.4
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",UDHARBOND,CACHAR,24.90138889,92.90750000,2026-01-03,2026-10-08,1,125,271,2.0,daily,125.3
+Assam,"manual daily, named 2026-2030","Assam, manual daily, named 2026-2030",Udaipur,TINSUKIA,27.33722222,95.85027778,2026-01-30,2026-10-10,1,145,322,2.0,daily,84.0
+Assam,"manual hourly, named 1961-1990","Assam, manual hourly, named 1961-1990",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,1986-03-12,1988-05-29,3,267,1211,3.0,sub-daily (partial),70.0
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Annapurna Ghat,CACHAR,24.83277778,92.79166667,2005-06-01,2018-12-19,14,1891,3031,1.0,daily,270.0
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Badarpur Ghat,KARIMGANJ,24.87527778,92.57833333,1991-01-03,2018-12-19,28,4027,5134,1.0,daily,575.0
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Badatighat,LAKHIMPUR,26.94888889,93.96222222,2009-05-15,2009-05-18,1,2,2,1.0,daily,5.4
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Dharamtul,MARIGAON,26.16833333,92.35861111,2005-06-03,2007-02-27,3,222,260,1.0,daily,92.4
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Dholai,CACHAR,24.59361111,92.84527778,1996-02-22,2018-12-19,23,3460,5105,1.0,daily,235.4
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Fakirabazar,KARIMGANJ,24.86083333,92.29027778,1991-01-03,2018-12-18,28,3690,4480,1.0,daily,440.0
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Fulertal,CACHAR,24.79027778,93.00777778,1993-01-10,2018-12-19,26,4030,5279,1.0,daily,315.4
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Goalpara,GOALPARA,26.18472222,90.63388889,2017-03-01,2017-03-01,1,1,3,3.0,sub-daily (partial),0.7
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Kampur,NAGAON,26.15277778,92.65333333,2005-06-01,2006-11-21,2,157,180,1.0,daily,104.2
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Matijuri,HAILAKANDI,24.64944444,92.60888889,1995-01-09,2018-12-19,22,3024,3474,1.0,daily,313.7
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Matunga,Baksa,26.79140556,91.53582222,2018-05-02,2018-06-18,1,23,31,1.0,daily,86.4
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Pagladiya N T Road Crossing,NALBARI,26.45040278,91.45980278,2004-01-14,2016-10-13,4,425,1409,2.0,daily,121.8
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",Puthimari NH Rd Xing,KAMRUP,26.36588333,91.65285278,2004-01-25,2018-06-18,5,235,532,1.0,daily,144.0
+Assam,"manual hourly, named 1991-2020","Assam, manual hourly, named 1991-2020",TULARGRAM,CACHAR,24.71611111,92.88500000,2002-01-22,2016-08-31,15,1840,2306,1.0,daily,160.8
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",AP Ghat,CACHAR,24.83194444,92.79611111,2019-02-17,2020-11-10,2,227,892,3.0,sub-daily (partial),283.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",BAHALPUR,DHUBRI,26.31948889,90.46948889,2019-06-26,2020-10-23,2,167,758,3.0,sub-daily (partial),397.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Badatighat,LAKHIMPUR,26.94888889,93.96222222,2019-06-29,2020-07-16,2,145,544,2.0,daily,285.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Basudevthan,LAKHIMPUR,27.37472222,94.55472222,2019-06-20,2020-04-21,2,29,95,1.0,daily,362.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Beki Road bridge,BARPETA,26.49413333,90.91789722,2019-04-28,2020-12-04,2,205,1035,3.0,sub-daily (partial),42.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Bihubar,SIVSAGAR,26.85333333,94.80055556,2019-02-09,2019-08-18,1,93,378,3.0,sub-daily (partial),257.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,2019-02-10,2020-11-28,2,197,676,2.0,daily,54.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,2019-02-09,2020-11-26,2,218,841,3.0,sub-daily (partial),373.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,2019-02-05,2020-11-17,2,290,1708,5.0,sub-daily (partial),288.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",DRF,Baksa,26.77500833,91.69288611,2019-02-09,2020-12-06,2,173,685,2.0,daily,149.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Desangpani,Charaideo,27.04666667,94.91222222,2019-06-13,2020-10-11,2,119,270,2.0,daily,193.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dharamtul,MARIGAON,26.16833333,92.35861111,2019-02-09,2020-10-23,2,204,677,2.0,daily,42.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dholabazar,TINSUKIA,27.76361111,95.56611111,2019-06-15,2020-11-22,2,166,775,3.5,sub-daily (partial),43.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dholai,CACHAR,24.59361111,92.84527778,2019-02-17,2020-11-14,2,245,868,3.0,sub-daily (partial),43.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dhubri,DHUBRI,25.99099167,90.03248889,2019-02-08,2020-12-31,2,498,9490,24.0,hourly,26.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,2019-02-09,2020-12-31,2,518,9704,24.0,hourly,44.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Dillighat,DIBRUGARH,27.14000000,95.37000000,2019-02-09,2020-11-25,2,189,984,3.0,sub-daily (partial),252.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Gelabil,GOLAGHAT,26.24444444,93.97277778,2019-06-18,2020-12-07,2,132,378,2.0,daily,474.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Gharmura,HAILAKANDI,24.28527778,92.51611111,2019-02-26,2020-11-04,2,223,712,2.0,daily,312.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Goalpara,GOALPARA,26.18472222,90.63388889,2019-02-09,2020-12-31,2,493,9026,24.0,hourly,208.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Golaghat,GOLAGHAT,26.50361111,93.95166667,2019-02-09,2020-12-07,2,264,964,3.0,sub-daily (partial),57.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Golokganj,DHUBRI,26.10722222,89.82361111,2019-02-05,2020-12-31,2,425,8281,24.0,hourly,29.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Guwahati(D.C.Court),KAMRUP,26.19470000,91.74310000,2019-02-08,2020-12-31,2,501,9495,24.0,hourly,38.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",KANGKUBASTI,DHEMAJI,27.64972222,94.60805556,2019-11-02,2020-12-16,2,5,5,1.0,daily,244.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Kampur,NAGAON,26.15277778,92.65333333,2019-02-09,2020-12-05,2,258,1311,3.0,sub-daily (partial),36.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Karimganj,KARIMGANJ,24.87861111,92.35666667,2019-02-17,2020-12-04,2,275,1320,4.0,sub-daily (partial),419.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Kheronighat,KARBI ANGLONG,25.84861111,92.88500000,2019-02-10,2020-12-03,2,202,678,2.0,daily,48.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Kokrajhar,KOKRAJHAR,26.39757222,90.25405833,2019-08-01,2020-11-05,2,155,841,4.0,sub-daily (partial),160.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Lakhipur,CACHAR,24.67222222,93.10305556,2019-02-17,2020-12-05,2,49,159,3.0,sub-daily (partial),78.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Manas N H Crossing,BONGAIGAON,26.46421667,90.75003333,2019-04-28,2020-12-05,2,193,967,4.0,sub-daily (partial),65.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Margherita,TINSUKIA,27.28361111,95.66277778,2019-02-16,2020-12-07,2,109,437,3.0,sub-daily (partial),192.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Mathanguri,Baksa,26.78288056,90.95656944,2019-02-09,2020-12-07,2,229,1272,4.0,sub-daily (partial),500.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Melabazar,BARPETA,26.80416667,91.52916667,2019-02-09,2020-12-31,2,499,9231,23.0,hourly,58.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",NH RD Xing(Puthimari),KAMRUP,26.34690000,91.64860000,2019-02-08,2020-12-31,2,453,9287,24.0,hourly,30.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,2019-11-14,2020-12-29,2,70,345,5.0,sub-daily (partial),166.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",NT Road Crossing(Jiabharali),SONITPUR,26.80970000,92.87890000,2019-02-09,2020-12-06,2,184,638,2.5,daily,264.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Neharkatia,DIBRUGARH,27.31888889,95.31055556,2019-02-09,2019-12-18,1,100,437,4.0,sub-daily (partial),457.0
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Nematighat,JORHAT,26.86030000,94.25220000,2019-02-09,2020-12-31,2,537,9938,24.0,hourly,45.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Numaligarh,GOLAGHAT,26.63111111,93.73055556,2019-06-14,2020-09-02,2,108,1084,8.0,sub-daily (partial),5.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Sivasagar,SIVSAGAR,26.98166667,94.57916667,2019-06-16,2020-11-18,2,168,559,2.0,daily,41.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",Tezpur,SONITPUR,26.61583333,92.79694444,2019-02-09,2020-12-31,2,526,9697,24.0,hourly,41.5
+Assam,"telemetry hourly, named 1991-2020","Assam, telemetry hourly, named 1991-2020",ghilamora,LAKHIMPUR,27.31666667,94.41638889,2019-11-10,2020-12-31,2,57,232,3.0,sub-daily (partial),448.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",AP Ghat,CACHAR,24.83194444,92.79611111,2021-01-19,2025-12-29,5,606,2833,3.0,sub-daily (partial),510.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",BAHALPUR,DHUBRI,26.31948889,90.46948889,2021-02-17,2025-07-30,5,118,457,3.0,sub-daily (partial),494.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Basudevthan,LAKHIMPUR,27.37472222,94.55472222,2022-01-17,2025-08-12,4,453,1793,3.0,sub-daily (partial),371.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Beki Road bridge,BARPETA,26.49413333,90.91789722,2021-01-19,2025-12-29,5,397,2692,5.0,sub-daily (partial),495.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Bokajan,KARBI ANGLONG,26.01944444,93.78972222,2021-02-25,2025-04-16,5,97,171,1.0,daily,482.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Chenimari (Khowang),DIBRUGARH,27.31222222,94.88166667,2021-01-17,2021-07-10,1,77,234,2.0,daily,254.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,2021-01-11,2025-12-17,5,293,1991,5.0,sub-daily (partial),304.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",DRF,Baksa,26.77500833,91.69288611,2021-01-06,2025-12-20,5,312,1094,2.0,daily,435.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Desangpani,Charaideo,27.04666667,94.91222222,2022-02-19,2024-01-03,3,77,727,6.0,sub-daily (partial),258.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dharamtul,MARIGAON,26.16833333,92.35861111,2021-02-26,2023-07-18,3,67,167,2.0,daily,238.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dholabazar,TINSUKIA,27.76361111,95.56611111,2021-01-19,2025-06-24,5,399,2012,3.0,sub-daily (partial),489.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dholai,CACHAR,24.59361111,92.84527778,2021-01-14,2021-04-20,1,13,30,2.0,daily,48.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dhubri,DHUBRI,25.99099167,90.03248889,2021-01-01,2022-08-09,2,273,4961,24.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dibrugarh,DIBRUGARH,27.48861111,94.90972222,2021-01-01,2022-05-01,2,206,4168,24.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Dillighat,DIBRUGARH,27.14000000,95.37000000,2021-01-19,2024-03-23,3,35,62,1.0,daily,357.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Gelabil,GOLAGHAT,26.24444444,93.97277778,2021-02-25,2025-11-10,4,263,1043,3.0,sub-daily (partial),286.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Gharmura,HAILAKANDI,24.28527778,92.51611111,2021-01-21,2021-05-17,1,26,57,1.5,daily,263.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Goalpara,GOALPARA,26.18472222,90.63388889,2021-01-01,2025-02-01,5,1095,21162,23.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Golaghat,GOLAGHAT,26.50361111,93.95166667,2021-01-19,2024-08-05,4,157,347,1.0,daily,511.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Golokganj,DHUBRI,26.10722222,89.82361111,2021-01-01,2025-12-29,5,743,12325,19.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Guwahati(D.C.Court),KAMRUP,26.19470000,91.74310000,2021-01-01,2022-11-26,2,392,7157,22.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",KANGKUBASTI,DHEMAJI,27.64972222,94.60805556,2022-02-28,2025-03-30,4,49,108,1.0,daily,504.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Kampur,NAGAON,26.15277778,92.65333333,2021-02-25,2025-12-20,5,142,404,2.0,daily,485.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Karimganj,KARIMGANJ,24.87861111,92.35666667,2021-01-05,2025-12-28,5,788,5362,4.0,sub-daily (partial),509.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Kheronighat,KARBI ANGLONG,25.84861111,92.88500000,2021-01-16,2021-08-04,1,30,41,1.0,daily,263.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Kokrajhar,KOKRAJHAR,26.39757222,90.25405833,2021-01-19,2023-08-14,3,472,3378,4.0,sub-daily (partial),449.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Lakhipur,CACHAR,24.67222222,93.10305556,2021-04-16,2025-12-29,5,115,149,1.0,daily,989.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Manas N H Crossing,BONGAIGAON,26.46421667,90.75003333,2021-01-21,2023-11-12,3,173,972,4.0,sub-daily (partial),433.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Margherita,TINSUKIA,27.28361111,95.66277778,2021-01-12,2025-12-25,5,250,1159,1.0,daily,497.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Mathanguri,Baksa,26.78277778,90.95666667,2021-01-12,2022-11-26,2,91,358,3.0,sub-daily (partial),47.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Melabazar,BARPETA,26.80416667,91.52916667,2021-01-01,2024-07-31,4,794,14722,23.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",NH RD Xing(Puthimari),KAMRUP,26.34690000,91.64860000,2021-01-01,2021-08-25,1,206,4095,24.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",NT Road Crossing Jia-Bharali,SONITPUR,26.81000000,92.87972222,2021-01-01,2025-05-01,5,236,1033,3.0,sub-daily (partial),501.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",NT Road Crossing(Jiabharali),SONITPUR,26.80970000,92.87890000,2021-01-11,2024-06-16,4,342,1771,2.0,daily,510.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Neharkatia,DIBRUGARH,27.31888889,95.31055556,2022-05-24,2025-12-30,4,151,186,1.0,daily,1005.0
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Nematighat,JORHAT,26.86030000,94.25220000,2021-01-01,2025-12-24,5,1299,24274,22.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Numaligarh,GOLAGHAT,26.63111111,93.73055556,2021-01-03,2025-05-17,5,357,2557,4.0,sub-daily (partial),507.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Sivasagar,SIVSAGAR,26.98166667,94.57916667,2021-01-01,2024-01-20,4,323,1629,3.0,sub-daily (partial),243.5
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",Tezpur,SONITPUR,26.61583333,92.79694444,2021-01-01,2023-08-28,3,501,9486,23.0,hourly,
+Assam,"telemetry hourly, named 2021-2025","Assam, telemetry hourly, named 2021-2025",ghilamora,LAKHIMPUR,27.31666667,94.41638889,2021-01-05,2024-01-27,4,70,492,3.0,sub-daily (partial),494.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",AP Ghat,CACHAR,24.83194444,92.79611111,2026-02-04,2026-06-02,1,29,59,2.0,daily,460.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",BAHALPUR,DHUBRI,26.31948889,90.46948889,2026-04-21,2026-05-21,1,4,4,1.0,daily,144.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Basudevthan,LAKHIMPUR,27.37472222,94.55472222,2026-02-17,2026-02-17,1,1,2,2.0,daily,3.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Beki Road bridge,BARPETA,26.49413333,90.91789722,2026-01-02,2026-05-16,1,18,21,1.0,daily,343.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Chouldhowaghat,LAKHIMPUR,27.44888889,94.25000000,2026-01-08,2026-06-03,1,27,123,2.0,daily,453.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",DRF,Baksa,26.77500833,91.69288611,2026-01-06,2026-06-02,1,37,76,1.0,daily,506.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Desangpani,Charaideo,27.04666667,94.91222222,2026-04-16,2026-09-18,1,25,72,2.0,daily,304.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Dholabazar,TINSUKIA,27.76361111,95.56611111,2026-01-02,2026-01-02,1,1,1,1.0,daily,119.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Gelabil,GOLAGHAT,26.24444444,93.97277778,2026-04-08,2026-05-14,1,4,5,1.0,daily,505.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Golokganj,DHUBRI,26.10722222,89.82361111,2026-01-01,2026-06-03,1,86,790,9.0,sub-daily (partial),
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Kampur,NAGAON,26.15277778,92.65333333,2026-01-07,2026-06-02,1,19,26,1.0,daily,480.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Karimganj,KARIMGANJ,24.87861111,92.35666667,2026-01-06,2026-05-27,1,6,7,1.0,daily,338.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Lakhipur,CACHAR,24.67222222,93.10305556,2026-01-02,2026-06-03,1,31,47,1.0,daily,820.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Margherita,TINSUKIA,27.28361111,95.66277778,2026-01-03,2026-06-02,1,11,13,1.0,daily,466.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Neharkatia,DIBRUGARH,27.31888889,95.31055556,2026-01-01,2026-05-30,1,16,20,1.0,daily,960.0
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Nematighat,JORHAT,26.86030000,94.25220000,2026-01-01,2026-06-03,1,74,576,7.0,sub-daily (partial),
+Assam,"telemetry hourly, named 2026-2030","Assam, telemetry hourly, named 2026-2030",Numaligarh,GOLAGHAT,26.63111111,93.73055556,2026-04-03,2026-04-03,1,1,2,2.0,daily,2.5

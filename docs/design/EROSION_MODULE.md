@@ -1,10 +1,16 @@
 # SoilSense — soil erosion risk, monitoring and outlook (3rd module, Assam-first)
 
-> **Status: DESIGN — nothing built yet.** Written 2026-09-29.
+> **Status: BUILD STARTED 2026-10-17.** Region switch, Assam grid, outline, mask and folds
+> are done; the erosion recipe is not built yet. Progress: [EROSION_PLAN.md, Build log](EROSION_PLAN.md#build-log).
+> Written 2026-09-29.
 > **Target:** NESFIC 2026 problem statement **NESFIC-D-07 "Soil Erosion Risk Mapping &
 > Monitoring"**, Soil Conservation Department, Government of Assam. Applications close
-> **25 Oct 2026**.
+> **10 Nov 2026**; clarification cut-off 25 Oct (corrected 2026-10-17, from the challenge
+> record).
+> **Checked 2026-10-17:** the rain factor, slope factor, cover formula, classes and prior
+> art were revised. See [EROSION_PLAN.md, Revision of 2026-10-17](EROSION_PLAN.md#revision-of-2026-10-17--what-the-check-found).
 > **Working plan (phases, tasks, status):** [EROSION_PLAN.md](EROSION_PLAN.md).
+> **Provisional choices and when to revisit them:** [EROSION_PLAN.md, Revisit register](EROSION_PLAN.md#revisit-register--provisional-choices-to-come-back-to).
 > Companion docs: [PLATFORM_ARCHITECTURE.md](PLATFORM_ARCHITECTURE.md),
 > [DATA_CONTRACT.md](DATA_CONTRACT.md), [FLOOD_MODULE.md](FLOOD_MODULE.md).
 > "SoilSense" is a working name — decision D2 in the plan.
@@ -109,7 +115,10 @@ districts. Neither is in this plan, but both get cheaper because of it.
 
 ## 3 · What we already have
 
-**Short answer: most of the code and about half of Assam's raw data. But nothing runs for
+**Update 2026-10-17:** the region switch exists and Assam has its grid, outline, mask and
+folds (DATA_CONTRACT §8). The raw downloads and the builds below are the next steps.
+
+**Short answer (2026-09-29): most of the code and about half of Assam's raw data. But nothing runs for
 Assam yet**, because every fetch and build is wired to Arunachal (§4.1).
 
 | Piece | Where it lives | Arunachal today | For Assam | Reuse |
@@ -150,14 +159,14 @@ files mention it.
   Arunachal file is rebuilt and the live 08:30 FloodSense job is untouched. This is proven
   with `check_live_unchanged.py`, not assumed.
 - Selected by a `--region` flag or `REGION` environment variable; default `arunachal`.
-- **Assam grid spec (proposed; frozen in plan task E0.2):**
+- **Assam grid spec (frozen 2026-10-17, plan task E0.2; DATA_CONTRACT §8):**
 
   | | Arunachal (frozen) | Assam (proposed) |
   |---|---|---|
   | CRS | EPSG:32646 | EPSG:32646 — same. Assam's area in it: 78,474 km² vs official 78,438 (+0.05%). The westernmost 0.3° lies outside UTM zone 46, which is immaterial |
   | Cell | 100 m | 100 m |
   | Origin (x, y bottom) | 350,000 / 2,950,000 | **160,000 / 2,660,000** |
-  | Size | 5,900 × 3,200 | **6,400 × 4,400** (28.2 M box cells, ~7.85 M in-state — same size class as Arunachal, so the same memory and run times) |
+  | Size | 5,900 × 3,200 | **6,500 × 4,500** (29.25 M box cells, 7.85 M in-state — same size class as Arunachal, so the same memory and run times). Frozen 2026-10-17; the first proposal, 6,400 × 4,400, left only 1.2 km east and 2.1 km north. See DATA_CONTRACT §8 |
   | cell_id | row × 100,000 + col | same scheme, region-local |
   | Folds | 50 km blocks, seed 42, hashed | own blocks, seed 42, frozen and hashed **before** any model |
 
@@ -179,8 +188,10 @@ files mention it.
 | New piece (proposed name) | What it does | Built on |
 |---|---|---|
 | `scripts/build/erosion_factors.py` | K, LS, long-term R, fallback C, P = 1 → soil-loss estimate and classes, per region | features, terrain, hydrology, rain stack |
-| `scripts/fetch/fetch_40_s2_cover.py` | Seasonal Sentinel-2 cover composites (pre-monsoon, post-monsoon, winter), 2019 → now, via Earth Engine → C per season, with each composite's cloud share recorded | Earth Engine plumbing from the radar work |
-| `scripts/build/erosivity.py` | R: annual normal (P0); event-based, calibrated on half-hourly IMERG (P1); next-7-day from the live forecast (P2) | IMERG archive, Open-Meteo feed |
+| `scripts/fetch/fetch_43_s2_cover.py` | Seasonal Sentinel-2 cover composites (pre-monsoon, post-monsoon, winter), 2019 → now, via Earth Engine → C per season, with each composite's cloud share recorded | Earth Engine plumbing from the radar work |
+| `scripts/fetch/fetch_42_erosivity.py` ✔ | InRESatE and IRED R maps into the raw store, with provenance (built 2026-10-17) | Zenodo, CC-BY |
+| `scripts/inspect/compare_erosivity.py` ✔ | Both R maps vs the Guwahati gauge, towns and districts → `reports/erosivity_comparison_<region>.json` (built 2026-10-17) | the two maps, GADM |
+| `scripts/build/erosivity.py` | R onto the 100 m grid: InRESatE (P0) with IRED as the sensitivity case; extended past 2018 with our own half-hourly IMERG (P1); next-7-day from the live forecast (P2) | the R maps, IMERG archive, Open-Meteo feed |
 | `scripts/model/erosion_priority.py` | Aggregate to micro-watersheds and villages, rank, name the main driver | HydroBASINS level 12 first; Watershed Atlas micro-watersheds if obtainable |
 | `scripts/model/erosion_change.py` | Season-vs-season and year-vs-year change; "new bare ground on a steep slope" flags | S2 composites |
 | `scripts/model/erosion_outlook.py` | Weekly outlook, logged every day like FloodSense | `forecast_log.py` pattern |
@@ -213,11 +224,13 @@ spatial-fold discipline as SlideSense.
 
 | Factor | Plain meaning | How we compute it | Resolution | Refresh |
 |---|---|---|---|---|
-| **R** rain erosivity | How hard the rain hits | **P0:** annual-rainfall relation widely used in Indian RUSLE work, R = 79 + 0.363 × annual rain in mm (Singh et al. 1981 — **confirm units and coefficients in E0.6**), from 26 years of IMERG. **P1:** event-based from half-hourly IMERG. Cross-checked against the global GloREDa erosivity map | ~11 km rain cell, smoothed | Yearly normal; season so far; next 7 days |
-| **K** soil erodibility | How easily this soil washes | Williams (1995) EPIC equation from SoilGrids topsoil sand, silt, clay and organic carbon | 250 m → 100 m | Static |
-| **LS** slope length × steepness | Steepness × how much water runs down onto this spot | Moore & Burch form, LS = (As/22.13)^0.4 × (sin β / 0.0896)^1.3, from flow accumulation and slope. **Computed on 25 m sub-cells, then aggregated** (same reason as `terrain.py`: coarsening first under-states steepness). Slope length capped (≈300 m, tuned in E0.6); channel cells masked | 25 m → 100 m | Static |
-| **C** cover | How bare the ground is | C = exp(−2 × NDVI / (1 − NDVI)) (van der Knijff et al.) from Sentinel-2 seasonal composites; land-cover class lookup as fallback where clouds leave gaps | 10 m → 100 m | Every season |
+| **R** rain erosivity | How hard the rain hits | **P0: InRESatE** (Das, Jain & Gupta 2022): R from 30-min IMERG, 2001–2018, 0.1°, CC-BY. Within 5% of the only gauge value we have (Guwahati, 7,924). **IRED** (Raj et al. 2022, hourly IMDAA, 1979–2018) is run alongside as a sensitivity case. ~~R = 79 + 0.363 × annual rain (Singh et al. 1981)~~ is **rejected**: −91% at Guwahati. **P1:** extend with our own half-hourly IMERG past 2018; more gauge anchors (ASK) | 0.1° (~11 km), smoothed | Yearly normal; season so far; next 7 days |
+| **K** soil erodibility | How easily this soil washes | Williams (1995) EPIC equation from SoilGrids topsoil sand, silt, clay and organic carbon, in SI (×0.1317 from US units; SoilGrids native units per `features.py`). District medians compared with ISED (Raj et al. 2023, CC-BY) | 250 m → 100 m | Static |
+| **LS** slope length × steepness | Steepness × how much water runs down onto this spot | L from flow accumulation (specific catchment area, capped ≈300 m slope length, tuned in E0.6). **S from McCool et al. (1987)**, checked against Nearing (1997) for steep slopes. ~~Moore & Burch's (sin β/0.0896)^1.3~~ over-predicts above about 14°, which is most of the hill districts. **Slope computed on 25 m sub-cells, then aggregated** (same reason as `terrain.py`: coarsening first under-states steepness); channel cells masked | 25 m → 100 m | Static |
+| **C** cover | How bare the ground is | **P0: WorldCover class lookup** with literature values. **P1:** Sentinel-2 seasonal NDVI composites, computed with both van der Knijff, exp(−2·NDVI/(1−NDVI)), and the tropical Durigon et al. (2014), (1−NDVI)/2. NDVI < 0 (water, wet paddy) is masked, never fed in | 10 m → 100 m | Every season (from P1) |
 | **P** support practice | Bunds, terraces, contour farming | **P = 1 everywhere at FREE tier, meaning "if untreated"**; department treated-area records at ASK | — | When records arrive |
+
+**As built (2026-10-17):** `scripts/build/erosion_factors.py`. The exact constants (topsoil depth, slope-length cap 300 m, treetop guard, C lookup, river-land threshold 2 m) and the reasons for each are written down in [EROSION_PLAN.md, Step 5 part 1](EROSION_PLAN.md#2026-10-17--step-5-part-1-the-recipe-written-down-before-any-erosion-number-exists-e06), before the first run. Results and the open tree-cover decision (D8) are in part 2.
 
 **Classes.** A common Indian six-class scheme is slight < 5, moderate 5–10, high 10–20, very
 high 20–40, severe 40–80, very severe > 80 t/ha/yr. **Confirm which scheme the department
@@ -282,8 +295,12 @@ team can act on in time.
 **Kinds of number, labelled as such** (the FloodSense badge approach):
 
 - *estimate* — tonnes per hectare per year. Indicative, can be off by a factor of several.
-- *class* — relative. More trustworthy than the tonnes.
-- *rank* — what to act on.
+- *class* — the tonnes cut at fixed lines (5 / 10 / 20 / 40 / 80), so it carries the same
+  uncertainty as the tonnes: a 2× change in rain moves land about one class. Always
+  labelled with the rain map it was computed on. (Corrected 2026-10-17: this line used to
+  call the class "more trustworthy than the tonnes".)
+- *rank* — what to act on, and what we lead with. Units that rank high under both rain maps
+  are marked as such.
 
 We never present a class or a rank as a probability.
 
@@ -347,7 +364,8 @@ Most of these are lessons we have already paid for once on landslides or floods.
 | Outdated district boundaries | GADM has 27 Assam districts | Official boundary from the Assam State Geoportal (E0.2) |
 | Scope creep into riverbank erosion before the core works | — | Kept as extension X1, decided in Phase 3 |
 | Licences | Open-Meteo's free tier is non-commercial (already flagged in PLATFORM_ARCHITECTURE) | Affects the weekly outlook if sold. SoilGrids / WorldCover are CC-BY; Copernicus DEM needs attribution. **Avoid FABDEM** (non-commercial) |
-| Deadline | Applications close 25 Oct 2026 | Phase 0 targets 18 Oct, one week of margin |
+| Deadline | Applications close **10 Nov 2026**; clarification cut-off 25 Oct | Submit by 7 Nov; questions out by 22 Oct |
+| A rain formula that looks standard but is wrong for the region | Singh et al. 1981 reads −91% at Guwahati (found 2026-10-17, before any number was built on it) | Every factor is checked against one independent measured value before use |
 
 ---
 
@@ -385,7 +403,12 @@ and change, weekly outlook, field loop.
 | NRSC land degradation (Bhuvan) | V2 | To check (E0.11) | Bhuvan WMS pattern |
 | SLUSI priority watersheds / Watershed Atlas | V2, planning units | To check (E0.11) | — |
 | CWC / India-WRIS sediment | V3 | To check (E0.11) | — |
-| GloREDa erosivity; global soil-erosion map (Borrelli et al.) | R cross-check, V2 | To check (E0.11) | ESDAC registration |
+| GloREDa erosivity; global soil-erosion map (Borrelli et al.) | R cross-check, V2 | To check (E0.11) | ESDAC registration; non-commercial |
+| **InRESatE** (IIT Roorkee; Zenodo 11064154) | **R, Phase 0** | Fetched once and read 2026-10-17 | Open, CC-BY 4.0, 0.9 MB |
+| **IRED** (IIT Delhi; Zenodo 6469693) | R sensitivity case | Fetched once and read 2026-10-17 | Open, CC-BY 4.0, 12 MB |
+| **ISED** (IIT Delhi; Zenodo 6505314) | K cross-check | Not fetched (2.0 GB) | Open, CC-BY 4.0 |
+| **IWED**, national RUSLE at 250 m (IIT Delhi; Zenodo 7823909) | V2 prior-art comparison | Not fetched (2.3 GB) | Open to read; **no licence stated → compare only, never redistribute** |
+| IIT Guwahati R report (Das & Sarma 2017) | The Guwahati gauge anchor, 7,924 | Read 2026-10-17 | Public PDF, marked "restricted" on its cover; cite, don't redistribute |
 | Department: soil survey, treated areas, field records; ASSAC imagery | ASK tier | Requested only after the FREE version works | Per problem statement |
 
 ---

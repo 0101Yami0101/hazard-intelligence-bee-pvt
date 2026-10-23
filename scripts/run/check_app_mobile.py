@@ -3,10 +3,16 @@ sticking out past the screen, whether the menu can be opened, tiny text.
 
     python scripts/run/check_app_mobile.py TAG [--shots] [--only phone,tablet] [--pages a,b]
                                                [--py exe] [--app dir] [--port n]
+                                               [--set ipad|tablets] [--browser webkit]
 
 14 pages x 4 screens (phone 390, small phone 360, tablet 768, tablet on its
 side 1024), about 25 minutes. Needs playwright. Screenshots and a JSON of
 every measurement go beside this script's working folder, in mobile_TAG/.
+
+`--set ipad`: the iPads on sale in 2026, upright and on their side, and two
+Split View widths (14 screens). `--set tablets`: three Android tablets and a
+Surface. `--browser webkit` runs them in WebKit, the engine of every browser
+on an iPad (`python -m playwright install webkit` once). Added 2026-10-12.
 First run 2026-10-10 (docs/design/FLOOD_SCREEN_PLAN.md): 4 of 56 with a
 fault before the fixes, 0 after."""
 import json, re, subprocess, sys, time, urllib.request
@@ -21,8 +27,22 @@ arg = lambda k, d: sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d
 py, app, PORT = arg("--py", sys.executable), arg("--app", str(Path(__file__).resolve().parents[2])), int(arg("--port", "8799"))
 SHOTS = S / f"mobile_{tag}"
 SHOTS.mkdir(exist_ok=True)
-VIEWPORTS = [("phone", 390, 844, True), ("phone-small", 360, 740, True),
-             ("tablet", 768, 1024, True), ("tablet-wide", 1024, 768, False)]
+SETS = {
+    "default": [("phone", 390, 844, True), ("phone-small", 360, 740, True),
+                ("tablet", 768, 1024, True), ("tablet-wide", 1024, 768, False)],
+    # CSS sizes of the full screen; Safari's own bars take about 75 px of the
+    # height, which is why each is tried a little shorter than the glass.
+    "ipad": [("mini", 744, 1058, True), ("ipad10", 810, 1005, True), ("air11", 820, 1105, True),
+             ("pro11", 834, 1135, True), ("air13", 1024, 1291, True), ("pro13", 1032, 1301, True),
+             ("mini-side", 1133, 669, True), ("ipad10-side", 1080, 735, True),
+             ("air11-side", 1180, 745, True), ("pro11-side", 1210, 759, True),
+             ("air13-side", 1366, 949, True), ("pro13-side", 1376, 957, True),
+             ("split-half-11", 590, 745, True), ("split-half-13", 683, 949, True)],
+    "tablets": [("tab-8in", 600, 890, True), ("tab-11in", 800, 1210, True),
+                ("tab-11in-side", 1280, 730, True), ("surface", 912, 1300, True)],
+}
+VIEWPORTS = SETS[arg("--set", "default")]
+ENGINE = arg("--browser", "chromium")
 PAGES = [("landing", "", None, None),
          ("slope-forecast", "landslide&geo=denied", None, None),
          ("slope-forecast-place", "landslide&geo=denied", None, "Tawang"),
@@ -36,7 +56,11 @@ PAGES = [("landing", "", None, None),
          ("flood-catchments-place", "flood", "Catchments", "Pasighat"),
          ("backbone-pipeline", "backbone", None, None),
          ("backbone-catalogue", "backbone", "Data catalogue", None),
-         ("backbone-layers", "backbone", "Layer explorer", None)]
+         ("backbone-layers", "backbone", "Layer explorer", None),
+         # SoilSense (Assam), added 2026-10-19
+         ("erosion-map", "erosion", None, None),
+         ("erosion-list", "erosion", "Priority list", None),
+         ("erosion-how", "erosion", "How to read this", None)]
 
 MEASURE = """() => {
   const vw = document.documentElement.clientWidth;
@@ -68,15 +92,49 @@ MEASURE = """() => {
     if (cs.visibility === 'hidden' || cs.display === 'none' || !e.getClientRects().length) continue;
     texts++; if (parseFloat(cs.fontSize) < 9.5) tiny++; }
   const iframes = [...main.querySelectorAll('iframe')].map(f => { const r = f.getBoundingClientRect(); return [Math.round(r.width), Math.round(r.height)]; }).filter(x => x[1] > 100);
-  return {vw, docW: document.documentElement.scrollWidth, mainW: main.scrollWidth, mainCW: main.clientWidth,
+  const tables = main.querySelectorAll('[data-testid="stDataFrame"]').length;
+  return {vw, tables, docW: document.documentElement.scrollWidth, mainW: main.scrollWidth, mainCW: main.clientWidth,
           sticking: out.filter(o => !o.clipped).slice(0, 8), clippedCount: out.filter(o => o.clipped).length,
           tiny, texts, maps: iframes, height: Math.round(main.scrollHeight)};
 }"""
 
-srv = subprocess.Popen([py, "-m", "streamlit", "run", "webapp/app.py", "--server.port", str(PORT),
-                        "--server.headless", "true", "--browser.gatherUsageStats", "false"],
-                       cwd=app, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+def _running() -> bool:
+    try:
+        urllib.request.urlopen(f"http://localhost:{PORT}/_stcore/health", timeout=2)
+        return True
+    except Exception:
+        return False
+
+
+class _Kept:
+    """An app someone else started on this port: use it, leave it running."""
+    def terminate(self): pass
+
+
+# ⚠️ Every fresh copy of the app fetches live rain again. A night of runs, each
+# starting its own, tripped the free weather service's limit and the landslide
+# page came up "Live rainfall is unavailable" (2026-10-13). For a long session
+# start the app once on --port and let every run use it.
+srv = _Kept() if _running() else subprocess.Popen(
+    [py, "-m", "streamlit", "run", "webapp/app.py", "--server.port", str(PORT),
+     "--server.headless", "true", "--browser.gatherUsageStats", "false"],
+    cwd=app, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 results, bad = [], 0
+
+
+def settle(pg, least: int) -> None:
+    """Wait `least` ms, then until the page has stopped working: no "running"
+    mark, no grey placeholder, no spinner (60 s at most). A fixed wait was
+    enough in Chromium and not in WebKit, which is slower here and was
+    measured mid-load (2026-10-12)."""
+    pg.wait_for_timeout(least)
+    for _ in range(120):
+        busy = pg.evaluate("""() => !!document.querySelector(
+            '[data-testid="stStatusWidget"], [data-testid="stSkeleton"], [data-testid="stSpinner"]')""")
+        if not busy:
+            break
+        pg.wait_for_timeout(500)
+    pg.wait_for_timeout(1500)
 
 
 def open_menu(pg) -> bool:
@@ -112,31 +170,33 @@ try:
         except Exception:
             time.sleep(1)
     with sync_playwright() as p:
-        b = p.chromium.launch(headless=True)
+        b = getattr(p, ENGINE).launch(headless=True)
         only, pages = arg("--only", ""), arg("--pages", "")
         for vname, vw, vh, mobile in [v for v in VIEWPORTS if not only or v[0] in only.split(",")]:
             ctx = b.new_context(viewport={"width": vw, "height": vh}, device_scale_factor=2 if mobile else 1,
-                                is_mobile=mobile and vw < 700, has_touch=mobile)
+                                is_mobile=mobile and (vw < 700 or ENGINE == "webkit"),
+                                has_touch=mobile)
             for name, q, view, place in [x for x in PAGES if not pages or x[0] in pages.split(",")]:
                 pg = ctx.new_page()
                 pg.goto(f"http://localhost:{PORT}/" + (f"?m={q}" if q else ""), timeout=90000)
-                pg.wait_for_timeout(13000 if q else 7000)
+                settle(pg, 13000 if q else 7000)
                 menu = None
                 if q:
                     menu = open_menu(pg)
                     if view and menu:
                         pg.locator("[data-testid='stSidebar'] button").filter(has_text=view).first.click()
-                        pg.wait_for_timeout(11000)
+                        settle(pg, 11000)
                         menu = open_menu(pg) if mobile else True
                     close_menu(pg, mobile)
                 if place:
                     inp = pg.locator("[data-testid='stSelectbox'] input").first
                     try:
                         inp.click(timeout=8000); pg.wait_for_timeout(400); inp.fill(place); pg.wait_for_timeout(1100)
-                        pg.keyboard.press("Enter"); pg.wait_for_timeout(11000)
+                        pg.keyboard.press("Enter"); settle(pg, 11000)
                     except Exception as e:
                         print(f"   [{vname} {name}] search box not usable: {type(e).__name__}")
                 m = pg.evaluate(MEASURE)
+                m["texts_main"] = m["texts"]
                 exc = pg.locator("[data-testid='stException']").count()
                 side = m["docW"] > m["vw"] + 2 or m["mainW"] > m["mainCW"] + 2
                 issues = []
@@ -144,6 +204,9 @@ try:
                 if side: issues.append(f"page scrolls sideways ({max(m['docW'], m['mainW'])} px on {m['vw']})")
                 if m["sticking"]: issues.append(f"{len(m['sticking'])}+ things past the edge")
                 if q and menu is False: issues.append("menu cannot be opened")
+                # A table (st.dataframe) draws its cells on a canvas, so its text is not
+                # counted here; a page of tables is not empty (SoilSense list, 2026-10-19).
+                if q and m["texts"] < 40 and not m.get("tables"): issues.append(f"page looks empty ({m['texts']} pieces of text)")
                 if m["tiny"] > 0.15 * max(m["texts"], 1): issues.append(f"small text: {m['tiny']} of {m['texts']} pieces under 9.5 px")
                 bad += bool(issues)
                 results.append({"viewport": vname, "page": name, "issues": issues, **m})

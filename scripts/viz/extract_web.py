@@ -32,7 +32,7 @@ from rasterio.warp import reproject
 
 from common import (AOI_BBOX, AOI_NAME, BOUNDARIES, CONTEXT, EXPOSURE,
                     HYDROLOGY, LABELS, LANDCOVER, RAW, ROOT, SEISMIC,
-                    SOIL_GEOLOGY, TERRAIN, WEATHER)
+                    SOIL_GEOLOGY, TERRAIN, WEATHER, outline)
 
 warnings.filterwarnings("ignore")
 
@@ -284,7 +284,7 @@ def population_map():
     import geopandas as gpd
     from rasterio.mask import mask
     f = EXPOSURE / "worldpop_population_100m_india_2020.tif"
-    st = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    st = outline("state")
     if not f.exists() or not st.exists():
         return
     g = gpd.read_file(st)
@@ -339,11 +339,11 @@ def vectors():
                               "d": d, "count": int(len(g))}
         print(f"  [vec] {name:16} {len(g):6} feat  {len(d)/1e3:6.0f} KB")
 
-    f = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    f = outline("state")
     if f.exists():
         add("state", gpd.read_file(f).boundary.to_frame("geometry"),
             "State boundary", "#0b0b0b", 1.8, 0.002)
-    f = BOUNDARIES / f"gadm_district-boundary_vector_{AOI_NAME}.gpkg"
+    f = outline("district")
     if f.exists():
         add("districts", gpd.read_file(f).boundary.to_frame("geometry"),
             "District boundaries", "#898781", 0.7, 0.003)

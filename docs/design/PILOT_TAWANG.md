@@ -1,5 +1,35 @@
 # Pilot idea — Tawang district, starting from Jang
 
+> ## ⭐ IMPORTANT — ground rain gauges are open: add them to the Jang pilot
+> **(the user's instruction, 2026-10-20)**
+>
+> Marked by the user so it is not lost: *"make sure we go back to the other modules to
+> add the newly found rain gauge data wherever applicable."* Tracked as item **#25** in
+> [REMAINING_WORK.md](REMAINING_WORK.md).
+> **Tested 2026-10-20 ([RAIN_GAUGES.md](RAIN_GAUGES.md) Part E):** Jang is where both rain sources are weakest: 3-day agreement 0.36 (IMERG) and 0.44 (Open-Meteo); totals 1.25× and 2.41× the gauge. Jang's rain is on NWDP only, 1–2 weeks late. The two Tawang river stations on the live CWC flood site carry no live rain (Rho Basti stopped in 2023; Murga Bridge has none). So Jang's gauge proves and grades; it cannot feed a live forecast.
+>
+> **What was found.** The Central Water Commission's own **rain gauges** are open on the
+> National Water Data Portal (no login, no key), and nothing on the platform used them
+> before. The forecasts run on satellite rain (IMERG, daily since 2000) and forecast rain.
+> FloodSense's 32 "gauges" are river levels, not rain.
+>
+> - **Arunachal, daily:** Pasighat 1973→2026 (54 years), Tezu 48, Miao 47, Namsai 34,
+>   Seppa 31, Bhalukpong 30, Kabu Basti 25, Yazali 23, Kibithu 20, Tuting 20, and
+>   **Meteorological Station Jang, 2017→2026**. Updated to October 2026.
+> - **Assam, daily:** from 1971, up to about 80 stations recently.
+> - **Truly hourly:** only from 2019 (telemetry), about 9 Assam stations and 1 in Arunachal.
+>   The file names say otherwise; they cannot be trusted for period or resolution.
+> - **Get it:** `scripts/fetch/fetch_47_cwc_rainfall.py`. Real spans per station:
+>   `scripts/inspect/cwc_rain_inventory.py` → `reports/cwc_rain_inventory.csv`.
+> - **Limits:** points at river stations, mostly in valleys; read daily at 08:00; quality
+>   not yet checked; little on the ridges.
+>
+> **Where it applies here:**
+>
+> - **Meteorological Station Jang has daily rain from 2017 to today.** That is the local
+>   ground record the pilot asked for, before installing anything. Use it to check and
+>   correct the satellite rain at Jang, for both forecasts.
+
 > **Status: idea, not started.** Logged 2026-08-20 so it isn't lost. Nothing built yet.
 
 > **2026-08-28:** the flood WHEN side of this pilot now has a concrete,

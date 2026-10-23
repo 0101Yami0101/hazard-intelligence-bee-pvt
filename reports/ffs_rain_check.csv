@@ -1,0 +1,12 @@
+code,ffs_name,nwdp_station,km,mps_first,mps_last,delay_h,days_partial,compared_days,agree_share,spearman,total_ratio_mps_over_nwdp,mps_wet_not_in_nwdp,passes
+001-UBDDIB,Kibithu,Kibithu,0.0,2005-01-01,2026-10-20 05:30:00,7.0,947,1303,0.904,0.939,1.038,0.035,True
+001NEID3,Rho Basti,China Bridge,1.0,2014-04-21,2023-11-29 08:30:00,25348.0,0,1053,1.0,1.0,1.0,0.0,True
+002-ubddib,Tuting,Tuting,0.0,2005-01-01,2026-10-20 05:30:00,7.0,946,3035,0.869,0.905,1.108,0.018,True
+003-UBDDIB,Yinkiang,Yingkiong,2.05,2014-04-30,2024-06-12 08:30:00,20644.0,198,212,0.533,0.583,1.382,0.434,False
+003NEID-3,Pangin,Pangin,0.0,2005-01-01,2026-10-20 05:30:00,7.0,834,473,0.715,0.723,1.292,0.069,False
+005-UBDDIB,Passighat,Passighat,0.0,1971-05-14,2026-10-20 05:30:00,7.0,989,6571,0.962,0.969,1.034,0.011,True
+008-ubddib,Miao,Miao,0.0,1977-07-01,2026-10-20 05:30:00,7.0,943,5638,0.948,0.95,1.04,0.015,True
+009-UBDDIB,Namsai,Namsai,0.0,1990-08-31,2026-10-20 05:30:00,7.0,987,4618,0.943,0.949,1.043,0.015,True
+020-UBDDIB,Daporizo,Daporizo,0.0,2003-05-01,2026-10-20 05:30:00,7.0,887,217,0.364,0.382,1.696,0.205,False
+027-UBDDIB,Seppa,Seppa,0.22,1995-08-31,2026-10-20 05:30:00,7.0,1560,3161,0.888,0.913,1.112,0.017,True
+029-UBDDIB,Bhalukpong,Bhalukpong,0.48,1991-10-01,2026-10-20 05:30:00,7.0,2920,2672,0.897,0.933,1.052,0.027,True

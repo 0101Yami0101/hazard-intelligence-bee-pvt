@@ -139,6 +139,40 @@ to AUC** in Arunachal (0.860 vs 0.862), and the two reasons the constraints stay
 
 ---
 
+## 8 · Assam region 🔒
+
+Frozen 2026-10-17 for the soil-erosion module ([EROSION_MODULE.md](EROSION_MODULE.md) §4.1).
+§1, §2, §4 and §5 apply unchanged. §3 and §6 get their own Assam values below. §7 is
+landslide-only. Selected with `REGION=assam` ([scripts/common.py](../../scripts/common.py),
+[scripts/build/grid.py](../../scripts/build/grid.py)). With no `REGION` set, every script
+sees exactly the Arunachal constants above.
+
+| | Arunachal (§3) | **Assam** |
+|---|---|---|
+| CRS, cell, cell_id | EPSG:32646, 100 m, `row * 100_000 + col` | same; ids are region-local |
+| origin (x, y bottom) | 350,000 / 2,950,000 | **160,000 / 2,660,000** |
+| size (cols × rows) | 5,900 × 3,200 | **6,500 × 4,500** (650 × 450 km, 29.25 M box cells) |
+| fetch bbox (W, S, E, N) | 91.4, 26.5, 97.5, 29.6 | 89.5, 24.0, 96.2, 28.2 (covers the whole box) |
+| in-state cells | 8,202,343 | **7,842,412** = 78,424 km² vs official 78,438 (−0.02%), Survey of India outline since 2026-10-20 (GADM gave 7,847,338) |
+| boundary | GADM 4.1 | **Survey of India OVSF/1M/9** (35 current districts with LGD codes), since 2026-10-20; was GADM 4.1 (27 outdated districts). `common.outline()` picks per region |
+| folds (§6 rules, seed 42) | `spatial_folds.meta.json` | **hash `a6bc908e791c9063`**: 55 blocks, 52 ≥ 5,000 cells, folds 17–26% of cells. Re-frozen on the Survey of India outline 2026-10-20: **the same hash**, since no 50 km block changed group |
+| folders | `data/interim/`, `data/processed/` | `data/interim/assam/`, `data/processed/assam/`; raw folders shared (file names carry the region) |
+
+**Why the box is larger than first proposed.** The 2026-09-29 proposal was 6,400 × 4,400.
+It left 1.2 km east and 2.1 km north of GADM's Assam. Those are the edges where rivers
+flow *in* from Arunachal and Nagaland, and where the state borders are disputed, so the
+official outline may sit outside GADM's. Margins are now W 9.6, S 9.2, E 11.2 and N 12.1 km.
+
+**One lattice.** Both origins are whole multiples of 10 km, so Assam's cells coincide
+exactly with Arunachal's where the boxes overlap (northings 2,950–3,110 km). A cross-border
+catchment can be stitched cell for cell. Arunachal is never renumbered.
+
+**Changing the boundary.** Swapping GADM for the official outline changes the state mask
+and the in-state count, and so the folds hash. Do it **before** any Assam model or
+validation number exists, then re-run `make_folds.py` and record the new hash here.
+
+---
+
 ## Change policy
 
 Editing §1–§5 means deleting `data/interim/` and `data/processed/` and rebuilding.

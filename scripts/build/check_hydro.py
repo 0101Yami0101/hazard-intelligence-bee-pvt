@@ -45,7 +45,12 @@ print("wrote _check_hydro.png and _check_twi.png")
 # the computed drainage and the mapped rivers can actually be compared line by
 # line. If routing were wrong (flipped axis, offset origin) they would diverge
 # visibly here.
-X0, Y0, W, H = 500_000, 3_050_000, 60_000, 40_000
+# One hilly window per region, inside the state (a window outside it would
+# show only the mask). Assam: the Dima Hasao hills round Haflong.
+ZOOM = {"arunachal": (500_000, 3_050_000, "West Kameng area"),
+        "assam": (480_000, 2_765_000, "Dima Hasao, round Haflong")}
+X0, Y0, PLACE = ZOOM[AOI_NAME]
+W, H = 60_000, 40_000
 c0 = int((X0 - G.ORIGIN_X) / G.CELL); c1 = c0 + W // G.CELL
 r1 = int((G.TOP_Y - Y0) / G.CELL);    r0 = r1 - H // G.CELL
 
@@ -59,7 +64,7 @@ for a in ax3:
     a.set_xlim(X0, X0 + W); a.set_ylim(Y0, Y0 + H)
     a.set_xticks([]); a.set_yticks([])
 riv.plot(ax=ax3[1], color="red", linewidth=1.4, alpha=0.9)
-ax3[0].set_title("Computed drainage (60 x 40 km, West Kameng area)")
+ax3[0].set_title(f"Computed drainage (60 x 40 km, {PLACE})")
 ax3[1].set_title("Same window + HydroSHEDS rivers — lines should coincide")
 fig3.tight_layout()
 fig3.savefig(INTERIM / "terrain" / "_check_hydro_zoom.png", dpi=110, bbox_inches="tight")

@@ -1,22 +1,23 @@
 {
-  "as_of": "2026-10-12",
+  "as_of": "2026-10-23",
   "logged": {
-    "forecasts": 4480,
-    "issue_days": 20,
+    "forecasts": 6496,
+    "issue_days": 29,
     "first_issue": "2026-09-21",
-    "last_issue": "2026-10-12"
+    "last_issue": "2026-10-23"
   },
   "outcomes": {
-    "checked": 2134,
-    "awaiting reading": 1450
+    "checked": 3206,
+    "awaiting reading": 1880,
+    "no reading": 514
   },
   "note": "Too few checked forecasts to judge yet. Grading means something after a monsoon season with several threshold crossings; until then this shows the machinery works.",
   "all": {
-    "n_forecasts": 2134,
+    "n_forecasts": 3206,
     "n_times_threshold_reached": 0,
-    "said_on_average_pct": 0.25,
+    "said_on_average_pct": 0.18,
     "happened_pct": 0.0,
-    "brier_skill_vs_long_run_rate": 0.272,
+    "brier_skill_vs_long_run_rate": 0.514,
     "warnings_25pct": {
       "issued": 3,
       "right": 0,
@@ -25,11 +26,11 @@
   },
   "by_lead_days": {
     "0": {
-      "n_forecasts": 377,
+      "n_forecasts": 535,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.24,
+      "said_on_average_pct": 0.18,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": -0.906,
+      "brier_skill_vs_long_run_rate": -0.355,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -37,11 +38,11 @@
       }
     },
     "1": {
-      "n_forecasts": 349,
+      "n_forecasts": 507,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.24,
+      "said_on_average_pct": 0.18,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.113,
+      "brier_skill_vs_long_run_rate": 0.386,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -49,11 +50,11 @@
       }
     },
     "2": {
-      "n_forecasts": 323,
+      "n_forecasts": 481,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.24,
+      "said_on_average_pct": 0.18,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.293,
+      "brier_skill_vs_long_run_rate": 0.524,
       "warnings_25pct": {
         "issued": 1,
         "right": 0,
@@ -61,11 +62,11 @@
       }
     },
     "3": {
-      "n_forecasts": 310,
+      "n_forecasts": 458,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.22,
+      "said_on_average_pct": 0.17,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.668,
+      "brier_skill_vs_long_run_rate": 0.774,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -73,11 +74,11 @@
       }
     },
     "4": {
-      "n_forecasts": 284,
+      "n_forecasts": 432,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.23,
+      "said_on_average_pct": 0.17,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.781,
+      "brier_skill_vs_long_run_rate": 0.856,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -85,11 +86,11 @@
       }
     },
     "5": {
-      "n_forecasts": 258,
+      "n_forecasts": 409,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.27,
+      "said_on_average_pct": 0.19,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.791,
+      "brier_skill_vs_long_run_rate": 0.868,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -97,11 +98,11 @@
       }
     },
     "6": {
-      "n_forecasts": 233,
+      "n_forecasts": 384,
       "n_times_threshold_reached": 0,
-      "said_on_average_pct": 0.29,
+      "said_on_average_pct": 0.2,
       "happened_pct": 0.0,
-      "brier_skill_vs_long_run_rate": 0.798,
+      "brier_skill_vs_long_run_rate": 0.878,
       "warnings_25pct": {
         "issued": 0,
         "right": 0,
@@ -110,11 +111,11 @@
     }
   },
   "official_danger_level_only": {
-    "n_forecasts": 825,
+    "n_forecasts": 1268,
     "n_times_threshold_reached": 0,
-    "said_on_average_pct": 0.07,
+    "said_on_average_pct": 0.04,
     "happened_pct": 0.0,
-    "brier_skill_vs_long_run_rate": 0.991,
+    "brier_skill_vs_long_run_rate": 0.994,
     "warnings_25pct": {
       "issued": 0,
       "right": 0,
@@ -124,7 +125,7 @@
   "reliability": [
     {
       "said": "0-2%",
-      "n": 2104,
+      "n": 3176,
       "happened_pct": 0.0
     },
     {
@@ -158,135 +159,135 @@
     "range_should_hold_pct": 80.0,
     "by_network": {
       "CWC": {
-        "n": 132,
-        "typical_miss": 0.041,
-        "mean_miss": 0.071,
-        "largest_miss": 0.911,
-        "mean_miss_if_river_stayed_put": 0.151,
-        "range_held_pct": 88.6,
-        "above_range": 6,
-        "below_range": 9,
+        "n": 393,
+        "typical_miss": 0.021,
+        "mean_miss": 0.081,
+        "largest_miss": 0.989,
+        "mean_miss_if_river_stayed_put": 0.133,
+        "range_held_pct": 85.5,
+        "above_range": 28,
+        "below_range": 29,
         "unit": "m",
         "gauges": 16,
         "too_few_to_judge": false,
         "by_days_after_last_reading": {
           "1": {
-            "n": 74,
-            "typical_miss": 0.018,
-            "mean_miss": 0.041,
-            "largest_miss": 0.236,
-            "mean_miss_if_river_stayed_put": 0.106,
-            "range_held_pct": 90.5,
-            "above_range": 4,
-            "below_range": 3
+            "n": 203,
+            "typical_miss": 0.011,
+            "mean_miss": 0.057,
+            "largest_miss": 0.989,
+            "mean_miss_if_river_stayed_put": 0.1,
+            "range_held_pct": 87.2,
+            "above_range": 15,
+            "below_range": 11
           },
           "2": {
-            "n": 58,
-            "typical_miss": 0.061,
-            "mean_miss": 0.108,
-            "largest_miss": 0.911,
-            "mean_miss_if_river_stayed_put": 0.208,
-            "range_held_pct": 86.2,
-            "above_range": 2,
-            "below_range": 6
+            "n": 190,
+            "typical_miss": 0.045,
+            "mean_miss": 0.107,
+            "largest_miss": 0.943,
+            "mean_miss_if_river_stayed_put": 0.169,
+            "range_held_pct": 83.7,
+            "above_range": 13,
+            "below_range": 18
           }
         },
         "by_gauge": {
           "Bhalukpong": {
-            "n": 9,
-            "typical_miss": 0.058,
-            "largest_miss": 0.171,
-            "range_held_pct": 88.9
+            "n": 27,
+            "typical_miss": 0.027,
+            "largest_miss": 0.646,
+            "range_held_pct": 85.2
           },
           "Daporizo": {
-            "n": 9,
-            "typical_miss": 0.065,
-            "largest_miss": 0.191,
+            "n": 27,
+            "typical_miss": 0.054,
+            "largest_miss": 0.348,
             "range_held_pct": 66.7
           },
           "Doimukh": {
-            "n": 9,
-            "typical_miss": 0.038,
-            "largest_miss": 0.114,
-            "range_held_pct": 66.7
+            "n": 27,
+            "typical_miss": 0.068,
+            "largest_miss": 0.989,
+            "range_held_pct": 51.9
           },
           "Jollang": {
-            "n": 5,
-            "typical_miss": 0.021,
-            "largest_miss": 0.049,
-            "range_held_pct": 100.0
+            "n": 14,
+            "typical_miss": 0.035,
+            "largest_miss": 0.321,
+            "range_held_pct": 64.3
           },
           "Kibithu": {
-            "n": 9,
-            "typical_miss": 0.082,
+            "n": 27,
+            "typical_miss": 0.026,
             "largest_miss": 0.357,
-            "range_held_pct": 77.8
+            "range_held_pct": 85.2
           },
           "Lemeking": {
-            "n": 9,
-            "typical_miss": 0.046,
-            "largest_miss": 0.098,
-            "range_held_pct": 100.0
+            "n": 27,
+            "typical_miss": 0.044,
+            "largest_miss": 0.137,
+            "range_held_pct": 88.9
           },
           "Miao": {
-            "n": 9,
-            "typical_miss": 0.024,
+            "n": 27,
+            "typical_miss": 0.007,
             "largest_miss": 0.089,
             "range_held_pct": 88.9
           },
           "Murga Bridge": {
-            "n": 5,
-            "typical_miss": 0.02,
+            "n": 14,
+            "typical_miss": 0.023,
             "largest_miss": 0.08,
             "range_held_pct": 100.0
           },
           "Namsai": {
-            "n": 9,
-            "typical_miss": 0.009,
+            "n": 27,
+            "typical_miss": 0.005,
             "largest_miss": 0.065,
-            "range_held_pct": 77.8
+            "range_held_pct": 92.6
           },
           "Pagoda": {
-            "n": 9,
-            "typical_miss": 0.007,
+            "n": 27,
+            "typical_miss": 0.004,
             "largest_miss": 0.048,
-            "range_held_pct": 100.0
+            "range_held_pct": 96.3
           },
           "Pangin": {
-            "n": 9,
-            "typical_miss": 0.085,
+            "n": 27,
+            "typical_miss": 0.044,
             "largest_miss": 0.911,
-            "range_held_pct": 88.9
+            "range_held_pct": 92.6
           },
           "Passighat": {
-            "n": 9,
-            "typical_miss": 0.052,
+            "n": 27,
+            "typical_miss": 0.008,
             "largest_miss": 0.169,
-            "range_held_pct": 88.9
+            "range_held_pct": 92.6
           },
           "Rho Basti": {
-            "n": 5,
-            "typical_miss": 0.021,
+            "n": 14,
+            "typical_miss": 0.026,
             "largest_miss": 0.089,
             "range_held_pct": 100.0
           },
           "Seppa": {
-            "n": 9,
-            "typical_miss": 0.08,
-            "largest_miss": 0.181,
+            "n": 27,
+            "typical_miss": 0.008,
+            "largest_miss": 0.572,
             "range_held_pct": 88.9
           },
           "Tamen": {
-            "n": 9,
-            "typical_miss": 0.055,
-            "largest_miss": 0.305,
-            "range_held_pct": 100.0
+            "n": 27,
+            "typical_miss": 0.024,
+            "largest_miss": 0.649,
+            "range_held_pct": 88.9
           },
           "Tuting": {
-            "n": 9,
-            "typical_miss": 0.174,
+            "n": 27,
+            "typical_miss": 0.097,
             "largest_miss": 0.407,
-            "range_held_pct": 100.0
+            "range_held_pct": 88.9
           }
         }
       }
@@ -305,10 +306,10 @@
       }
     },
     "first_target": "2026-10-07",
-    "last_target": "2026-10-11"
+    "last_target": "2026-10-22"
   },
   "near_here": {
-    "issues_logged": 13,
+    "issues_logged": 22,
     "issues_graded": 0,
     "new_flood_records": 0,
     "place_weeks": 0,

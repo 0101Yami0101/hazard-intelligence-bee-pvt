@@ -28,7 +28,11 @@ def main() -> None:
     for la, lo in tiles:
         name = tile_name(la, lo)
         url = f"{BASE}/{name}/{name}.tif"
-        size = head_size(url, timeout=30)
+        # A tile already on disk is not asked about again: on a flaky line the
+        # HEAD can time out, and the tile would then be dropped from the
+        # provenance record although the build uses it (seen 2026-10-17).
+        local = OUT / f"{name}.tif"
+        size = local.stat().st_size if local.exists() else head_size(url, timeout=30)
         if size:
             available.append((name, url, size))
             total += size

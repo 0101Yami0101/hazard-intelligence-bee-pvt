@@ -20,7 +20,7 @@ import numpy as np
 import rasterio
 from rasterio.mask import mask
 
-from common import AOI_NAME, BOUNDARIES, EXPOSURE, LOGS, ROOT
+from common import AOI_NAME, BOUNDARIES, EXPOSURE, LOGS, ROOT, outline
 
 warnings.filterwarnings("ignore")
 lines: list[str] = []
@@ -32,7 +32,7 @@ def out(s: str = "") -> None:
 
 
 def state_polygon():
-    f = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    f = outline("state")
     return gpd.read_file(f) if f.exists() else None
 
 

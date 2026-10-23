@@ -73,10 +73,58 @@ def ecmwf_key(store: str = "cds") -> tuple[str, str]:
     return url, key
 
 
+# --------------------------------------------------------------------------
+# Region — which state this run is for
+# --------------------------------------------------------------------------
+# Picked by the REGION environment variable, default "arunachal". An env var
+# rather than a flag because every script reads these names at import time,
+# before its own argument parsing runs:
+#
+#     $env:REGION = "assam"; python scripts/fetch/fetch_03_soil.py
+#
+# The "arunachal" entry is exactly the constants this file held before regions
+# existed, and Arunachal keeps its old folders. The live 08:30 flood run does
+# not set REGION, so it sees no change — proven by
+# scripts/model/check_live_unchanged.py, not assumed. Other regions get
+# region-scoped interim/processed folders; raw folders are shared, because
+# every bbox-clipped raw file already carries AOI_NAME in its name.
+# (docs/design/EROSION_MODULE.md §4.1; EROSION_PLAN.md decision D1 (a))
+#
+# bbox is (west, south, east, north) in EPSG:4326 and must cover the region's
+# whole grid box (scripts/build/grid.py), not just the state, so terrain
+# reaches the box edge. Tile ranges are the integer degrees that bbox touches.
+DEFAULT_REGION = "arunachal"
+REGIONS: dict[str, dict] = {
+    "arunachal": {"state": "Arunachal Pradesh",
+                  "bbox": (91.4, 26.5, 97.5, 29.6),
+                  "lon_tiles": range(91, 98),     # 91E .. 97E
+                  "lat_tiles": range(26, 30)},    # 26N .. 29N
+    # Grid box spans 89.54-96.15E, 24.02-28.12N (measured 2026-10-17)
+    "assam": {"state": "Assam",
+              "bbox": (89.5, 24.0, 96.2, 28.2),
+              "lon_tiles": range(89, 97),         # 89E .. 96E
+              "lat_tiles": range(24, 29),         # 24N .. 28N
+              # Survey of India, OVSF/1M/9 (2026-10-20): 35 current districts with LGD
+              # codes, replacing GADM's 27 outdated ones (EROSION_PLAN.md V-12)
+              "boundary": "soi"},
+}
+
+
+def _pick_region() -> str:
+    import os
+    name = os.environ.get("REGION", "").strip().lower() or DEFAULT_REGION
+    if name not in REGIONS:
+        raise SystemExit(f"Unknown REGION {name!r}; known: {', '.join(REGIONS)}")
+    return name
+
+
+REGION = _pick_region()
+
 DATA = ROOT / "data"
 RAW = DATA / "raw"
-INTERIM = DATA / "interim"
-PROCESSED = DATA / "processed"
+_SCOPE = () if REGION == DEFAULT_REGION else (REGION,)
+INTERIM = DATA.joinpath("interim", *_SCOPE)
+PROCESSED = DATA.joinpath("processed", *_SCOPE)
 LOGS = ROOT / "logs"
 
 BOUNDARIES = RAW / "01_boundaries"
@@ -89,18 +137,30 @@ SEISMIC = RAW / "07_seismic"
 LABELS = RAW / "08_labels"
 EXPOSURE = RAW / "09_exposure"
 CONTEXT = RAW / "10_context"
+
+
+def outline(kind: str) -> Path:
+    """The selected region's outline file: kind "state" or "district".
+
+    Arunachal stays on GADM 4.1 (unchanged); Assam uses the Survey of India
+    outline (scripts/fetch/fetch_01b_soi_boundaries.py). Both files carry the
+    district name in NAME_2, so readers need not know which one they got.
+    """
+    src = REGIONS[REGION].get("boundary", "gadm")
+    return BOUNDARIES / f"{src}_{kind}-boundary_vector_{AOI_NAME}.gpkg"
 GAUGES = RAW / "11_gauges"
 
 # --------------------------------------------------------------------------
-# Area of interest — Arunachal Pradesh, with a small buffer
+# Area of interest — the selected region, with a small buffer
 # --------------------------------------------------------------------------
-AOI_NAME = "arunachal"
+AOI_NAME = REGION
+AOI_STATE = REGIONS[REGION]["state"]       # the state's name as GADM spells it
 # (west, south, east, north) in EPSG:4326
-AOI_BBOX = (91.4, 26.5, 97.5, 29.6)
+AOI_BBOX = REGIONS[REGION]["bbox"]
 
 # Integer tile ranges covering the AOI, for tile-indexed datasets
-AOI_LON_TILES = range(91, 98)   # 91E .. 97E
-AOI_LAT_TILES = range(26, 30)   # 26N .. 29N
+AOI_LON_TILES = REGIONS[REGION]["lon_tiles"]
+AOI_LAT_TILES = REGIONS[REGION]["lat_tiles"]
 
 
 def bbox_str(sep: str = ",") -> str:
@@ -201,13 +261,23 @@ def sha256(path: Path, limit: int = 1 << 24) -> str:
 # --------------------------------------------------------------------------
 def record(folder: Path, source: str, url: str, files: list[Path],
            license_: str = "", notes: str = "") -> None:
-    """Append a provenance entry to the folder's _SOURCES.json."""
+    """Append a provenance entry to the folder's _SOURCES.json.
+
+    One entry per (source, region). Raw folders are shared between regions,
+    so without the region an Assam re-fetch of "SoilGrids" would silently
+    replace Arunachal's entry. Entries with no "region" key are the default
+    region's — every entry written before regions existed — and default-region
+    entries are still written without the key, so their format is unchanged.
+    """
     folder.mkdir(parents=True, exist_ok=True)
     manifest = folder / "_SOURCES.json"
     entries = json.loads(manifest.read_text()) if manifest.exists() else []
-    entries = [e for e in entries if e.get("source") != source]
+    entries = [e for e in entries
+               if not (e.get("source") == source
+                       and e.get("region", DEFAULT_REGION) == REGION)]
     entries.append({
         "source": source,
+        **({} if REGION == DEFAULT_REGION else {"region": REGION}),
         "url": url,
         "fetched_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "license": license_,

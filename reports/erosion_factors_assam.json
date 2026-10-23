@@ -1,0 +1,167 @@
+{
+  "region": "assam",
+  "settings": {
+    "R": "InRESatE (IRED alongside)",
+    "K": "Williams 1995, mean of 0-5 and 15-30 cm",
+    "L": "McCool 1989 m, lambda capped 300 m",
+    "S": "McCool 1987",
+    "treetop_guard": {
+      "version": 2,
+      "applies_to": "tree cells and cells next to a tree cell",
+      "reference": "cropland not next to trees",
+      "band_m": 20.0,
+      "cropland_pctl": 90,
+      "cap_deg": 1.225,
+      "share_of_state_capped_pct": 36.4
+    },
+    "C": {
+      "10": 0.03,
+      "20": 0.11,
+      "30": 0.16,
+      "40": 0.34,
+      "60": 0.45
+    },
+    "P": 1,
+    "river_land_m": 2.0,
+    "classes_tpha": [
+      5,
+      10,
+      20,
+      40,
+      80
+    ]
+  },
+  "in_state_cells": 7842412,
+  "assessed_pct_of_state": 69.53,
+  "assessed_pct_if_river_land_5m": 52.13,
+  "not_assessed_pct_of_state": {
+    "water/built/wetland/snow/moss/mangrove": 7.37,
+    "channel cells": 0.79,
+    "river land < 2 m": 21.99
+  },
+  "R_guwahati": {
+    "source_cell": 7507,
+    "on_grid": 7900
+  },
+  "factors_on_assessed_land": {
+    "R": {
+      "p1": 2610.9646,
+      "p5": 2831.4248,
+      "p25": 3593.9795,
+      "p50": 5273.6021,
+      "p75": 7114.8984,
+      "p95": 9238.2734,
+      "p99": 15681.7988
+    },
+    "R_ired": {
+      "p1": 1654.1464,
+      "p5": 2205.1094,
+      "p25": 4454.6968,
+      "p50": 6253.6226,
+      "p75": 8431.084,
+      "p95": 18072.2246,
+      "p99": 20981.2578
+    },
+    "K": {
+      "p1": 0.0156,
+      "p5": 0.0158,
+      "p25": 0.0163,
+      "p50": 0.0166,
+      "p75": 0.0172,
+      "p95": 0.0183,
+      "p99": 0.0191
+    },
+    "LS": {
+      "p1": 0.0812,
+      "p5": 0.1245,
+      "p25": 0.457,
+      "p50": 0.5067,
+      "p75": 10.4648,
+      "p95": 34.3164,
+      "p99": 51.8364
+    },
+    "C": {
+      "p1": 0.03,
+      "p5": 0.03,
+      "p25": 0.03,
+      "p50": 0.03,
+      "p75": 0.34,
+      "p95": 0.34,
+      "p99": 0.34
+    },
+    "A_tpha": {
+      "p1": 0.6287,
+      "p5": 0.8194,
+      "p25": 1.651,
+      "p50": 7.5245,
+      "p75": 26.0426,
+      "p95": 88.0072,
+      "p99": 163.7299
+    },
+    "A_ired_tpha": {
+      "p1": 0.7442,
+      "p5": 1.0549,
+      "p25": 2.0314,
+      "p50": 9.3857,
+      "p75": 28.2892,
+      "p95": 97.1311,
+      "p99": 199.0512
+    }
+  },
+  "A_mean_tpha": {
+    "main": 21.63,
+    "ired": 24.39,
+    "tree_C_0.003": 6.99
+  },
+  "class_shares_pct_of_assessed": {
+    "main (InRESatE, guard, McCool, river land < 2 m)": {
+      "slight": 44.8,
+      "moderate": 10.22,
+      "high": 13.75,
+      "very high": 14.17,
+      "severe": 11.03,
+      "very severe": 6.04
+    },
+    "IRED rain": {
+      "slight": 40.95,
+      "moderate": 10.11,
+      "high": 15.74,
+      "very high": 14.81,
+      "severe": 11.34,
+      "very severe": 7.06
+    },
+    "no treetop guard": {
+      "slight": 26.46,
+      "moderate": 18.74,
+      "high": 15.85,
+      "very high": 16.7,
+      "severe": 14.34,
+      "very severe": 7.91
+    },
+    "Nearing steepness": {
+      "slight": 44.61,
+      "moderate": 11.34,
+      "high": 14.1,
+      "very high": 11.97,
+      "severe": 10.16,
+      "very severe": 7.81
+    },
+    "tree C 0.003": {
+      "slight": 67.46,
+      "moderate": 15.4,
+      "high": 10.78,
+      "very high": 4.41,
+      "severe": 0.97,
+      "very severe": 0.97
+    },
+    "river land < 5 m": {
+      "slight": 42.0,
+      "moderate": 8.24,
+      "high": 12.34,
+      "very high": 15.48,
+      "severe": 14.06,
+      "very severe": 7.88
+    }
+  },
+  "seconds": 38
+}

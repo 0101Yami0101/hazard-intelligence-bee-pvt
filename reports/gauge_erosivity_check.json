@@ -1,0 +1,36 @@
+{
+  "rule": {
+    "years": [
+      2001,
+      2018
+    ],
+    "min_days_each_month_apr_sep": 5,
+    "min_years": 8,
+    "formula": "EI = a * P^b on every rain day (InRESatE daily model)"
+  },
+  "stations_seen": 72,
+  "dropped_bad_coordinates": [],
+  "Assam": {
+    "stations": 32,
+    "median_inresate_over_gauge": 1.8,
+    "median_ired_over_gauge": 2.02,
+    "rho_inresate": 0.36,
+    "rho_ired": 0.2
+  },
+  "Arunachal Pradesh": {
+    "stations": 8,
+    "median_inresate_over_gauge": 1.65,
+    "median_ired_over_gauge": 0.95,
+    "rho_inresate": -0.14,
+    "rho_ired": 0.71
+  },
+  "both": {
+    "stations": 40,
+    "median_inresate_over_gauge": 1.72,
+    "median_ired_over_gauge": 1.71,
+    "rho_inresate": 0.24,
+    "rho_ired": 0.16
+  },
+  "decision": "InRESatE stays",
+  "inresate_level_flag": false
+}

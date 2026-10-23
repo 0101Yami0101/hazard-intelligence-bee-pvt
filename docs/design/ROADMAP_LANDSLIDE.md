@@ -11,6 +11,39 @@ Pradesh. Ends where the Flood Forecast roadmap begins.
 **Companion docs:** [DESIGN.md](DESIGN.md) explains *why* each technique is used.
 This document is *when and in what order*.
 
+> ## ⭐ IMPORTANT — ground rain gauges are open: add them to SlideSense
+> **(the user's instruction, 2026-10-20)**
+>
+> Marked by the user so it is not lost: *"make sure we go back to the other modules to
+> add the newly found rain gauge data wherever applicable."* Tracked as item **#25** in
+> [REMAINING_WORK.md](REMAINING_WORK.md).
+> **Tested 2026-10-20 ([RAIN_GAUGES.md](RAIN_GAUGES.md) Parts A–B):** Open-Meteo, the live source, ties IMERG at the gauges and catches more heavy days. On dated landslide days the gauges called the rain unusual *less* often than either source. So there is no case for gauge input, and the trigger is unchanged. The forecast rain is now graded against live ground rain (Part D).
+>
+> **What was found.** The Central Water Commission's own **rain gauges** are open on the
+> National Water Data Portal (no login, no key), and nothing on the platform used them
+> before. The forecasts run on satellite rain (IMERG, daily since 2000) and forecast rain.
+> FloodSense's 32 "gauges" are river levels, not rain.
+>
+> - **Arunachal, daily:** Pasighat 1973→2026 (54 years), Tezu 48, Miao 47, Namsai 34,
+>   Seppa 31, Bhalukpong 30, Kabu Basti 25, Yazali 23, Kibithu 20, Tuting 20, and
+>   **Meteorological Station Jang, 2017→2026**. Updated to October 2026.
+> - **Assam, daily:** from 1971, up to about 80 stations recently.
+> - **Truly hourly:** only from 2019 (telemetry), about 9 Assam stations and 1 in Arunachal.
+>   The file names say otherwise; they cannot be trusted for period or resolution.
+> - **Get it:** `scripts/fetch/fetch_47_cwc_rainfall.py`. Real spans per station:
+>   `scripts/inspect/cwc_rain_inventory.py` → `reports/cwc_rain_inventory.csv`.
+> - **Limits:** points at river stations, mostly in valleys; read daily at 08:00; quality
+>   not yet checked; little on the ridges.
+>
+> **Where it applies here:**
+>
+> - **Measure the satellite rain's bias** by place and height: DESIGN.md flags drift above
+>   2,500 m.
+> - **Check the trigger.** Is rain that the satellite calls unusual also unusual at the
+>   gauges, above all on the dated landslide days near a station?
+> - **The IMD rain-gauge ask** on GOV_DATA_REQUEST_LIST.md is now mainly for IMD's own
+>   stations and hourly records.
+
 > **Flood is deferred, not dropped.** It ships in the same MVP. Every phase below marked
 > 🔗 **SPINE** produces something flood will reuse — build those hazard-agnostic (take a
 > `hazard` argument; never hardcode `"landslide"`) or you'll rewrite them in the flood

@@ -28,7 +28,7 @@ from rasterio.merge import merge
 
 from common import (AOI_BBOX, AOI_NAME, BOUNDARIES, CONTEXT, EXPOSURE,
                     HYDROLOGY, LABELS, LANDCOVER, RAW, ROOT, SEISMIC,
-                    SOIL_GEOLOGY, TERRAIN, WEATHER)
+                    SOIL_GEOLOGY, TERRAIN, WEATHER, outline)
 
 warnings.filterwarnings("ignore")
 
@@ -54,7 +54,7 @@ W, S, E, N = AOI_BBOX
 # ---------------------------------------------------------------- helpers
 def state_gdf():
     import geopandas as gpd
-    f = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    f = outline("state")
     return gpd.read_file(f) if f.exists() else None
 
 
@@ -563,7 +563,7 @@ def do_enso():
 def do_boundaries():
     print("boundaries")
     import geopandas as gpd
-    f = BOUNDARIES / f"gadm_district-boundary_vector_{AOI_NAME}.gpkg"
+    f = outline("district")
     st = state_gdf()
     if not f.exists() or st is None:
         return

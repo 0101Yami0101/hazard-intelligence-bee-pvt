@@ -1,0 +1,80 @@
+{
+  "stations": 43,
+  "stations_head_to_head": 21,
+  "imerg_own_overlap": {
+    "ratio": 1.31,
+    "rho_daily": 0.384,
+    "heavy_detect": 0.458,
+    "rho_3d": 0.547,
+    "rho_7d": 0.586,
+    "top10_hit_3d": 0.323,
+    "top10_hit_7d": 0.36
+  },
+  "om_own_overlap": {
+    "ratio": 1.64,
+    "rho_daily": 0.421,
+    "heavy_detect": 0.575,
+    "rho_3d": 0.534,
+    "rho_7d": 0.54,
+    "top10_hit_3d": 0.333,
+    "top10_hit_7d": 0.346
+  },
+  "head_to_head": {
+    "imerg": {
+      "ratio": 1.27,
+      "rho_daily": 0.385,
+      "heavy_detect": 0.493,
+      "rho_3d": 0.539,
+      "rho_7d": 0.56,
+      "top10_hit_3d": 0.321,
+      "top10_hit_7d": 0.324
+    },
+    "om": {
+      "ratio": 1.63,
+      "rho_daily": 0.428,
+      "heavy_detect": 0.576,
+      "rho_3d": 0.538,
+      "rho_7d": 0.542,
+      "top10_hit_3d": 0.335,
+      "top10_hit_7d": 0.346
+    }
+  },
+  "head_to_head_wins_rho_3d": {
+    "imerg": 6,
+    "om": 15
+  },
+  "imerg_ratio_vs_height_rho": -0.12,
+  "reading": "within 0.10: no change indicated",
+  "gap_rho_3d_imerg_minus_om": 0.001,
+  "jang": [
+    {
+      "station": "METEOROLOGICAL STATION JANG",
+      "state": "Arunachal Pradesh",
+      "lat": 27.58194444,
+      "lon": 92.43083333,
+      "height_m": 3524,
+      "counted_months": 63,
+      "first": "2017-03-01",
+      "last": "2026-10-04",
+      "om_point_dist_deg": 0.087,
+      "imerg_days": 1894.0,
+      "imerg_ratio": 1.25,
+      "imerg_rho_daily": 0.217,
+      "imerg_heavy_days": 2.0,
+      "imerg_heavy_detect": NaN,
+      "imerg_rho_3d": 0.355,
+      "imerg_top10_hit_3d": 0.245,
+      "imerg_rho_7d": 0.45,
+      "imerg_top10_hit_7d": 0.324,
+      "om_days": 1917.0,
+      "om_ratio": 2.41,
+      "om_rho_daily": 0.306,
+      "om_heavy_days": 2.0,
+      "om_heavy_detect": NaN,
+      "om_rho_3d": 0.444,
+      "om_top10_hit_3d": 0.247,
+      "om_rho_7d": 0.5,
+      "om_top10_hit_7d": 0.346
+    }
+  ]
+}

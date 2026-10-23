@@ -1,0 +1,125 @@
+D:\CODE\BeeDigital\LandSlideFlood\.venv\Lib\site-packages\joblib\externals\loky\backend\context.py:131: UserWarning: Could not find the number of physical cores for the following reason:
+[WinError 2] The system cannot find the file specified
+Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+  warnings.warn(
+  File "D:\CODE\BeeDigital\LandSlideFlood\.venv\Lib\site-packages\joblib\externals\loky\backend\context.py", line 247, in _count_physical_cores
+    cpu_count_physical = _count_physical_cores_win32()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CODE\BeeDigital\LandSlideFlood\.venv\Lib\site-packages\joblib\externals\loky\backend\context.py", line 299, in _count_physical_cores_win32
+    cpu_info = subprocess.run(
+               ^^^^^^^^^^^^^^^
+  File "C:\Users\Yami Main\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yami Main\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\Yami Main\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rain stations: {'001-UBDDIB': 'Kibithu', '002-ubddib': 'Tuting', '005-UBDDIB': 'Passighat', '008-ubddib': 'Miao', '009-UBDDIB': 'Namsai', '027-UBDDIB': 'Seppa', '029-UBDDIB': 'Bhalukpong'}
+  001-UBDDIB Kibithu: 5,607 rain days known, 2005-01-01 -> 2026-10-19
+  002-ubddib Tuting: 6,024 rain days known, 2005-01-01 -> 2026-10-19
+  005-UBDDIB Passighat: 14,721 rain days known, 1971-05-14 -> 2026-10-19
+  008-ubddib Miao: 12,225 rain days known, 1977-07-01 -> 2026-10-19
+  009-UBDDIB Namsai: 11,037 rain days known, 1990-08-31 -> 2026-10-19
+  027-UBDDIB Seppa: 9,139 rain days known, 1995-08-31 -> 2026-10-19
+  029-UBDDIB Bhalukpong: 10,337 rain days known, 1991-10-01 -> 2026-10-19
+  CWC  Kibithu
+    [clean] dropped 31 gross sensor-error reading(s) (0.03% of 91,403): [80.6, 80.6, 80.6, 80.6, 80.61, 80.61, 80.61, 80.61, 80.61, 80.62, 80.62, 80.62, 80.63, 80.63, 80.63, 80.64, 80.64, 80.64, 80.64, 80.65] ...
+    [clean] dropped 23 reading(s) in impossible excursions (away from a steady level and straight back): [1104.02, 1104.02, 1104.03, 1104.03, 1104.03, 1125.79, 1126.41, 1128.36, 1128.36, 1128.57, 1128.58, 1128.59, 1128.6, 1128.61, 1128.62, 1128.63, 1128.63, 1128.63, 1128.64, 1128.64] ...
+    [clean] dropped 8 keying slip(s) (one digit off, or two swapped, on a steady river): [0.0, 80.66, 80.66, 80.67, 80.67, 80.67, 124.92, 124.92]
+  CWC  Rho Basti
+    [clean] dropped 9 gross sensor-error reading(s) (0.01% of 61,318): [0.0, 0.0, 12231.09, 22131.26, 22313.26, 22313.27, 22313.27, 22313.29, 22313.29]
+  CWC  Tuting
+    [clean] dropped 1 gross sensor-error reading(s) (0.00% of 94,922): [3.88]
+    [clean] dropped 18 reading(s) in impossible excursions (away from a steady level and straight back): [418.96, 418.96, 418.96, 419.65, 419.65, 419.66, 419.68, 419.68, 419.68, 419.68, 419.68, 419.68, 419.89, 419.89, 419.9, 420.34, 420.34, 420.34]
+    [clean] dropped 1 keying slip(s) (one digit off, or two swapped, on a steady river): [409.25]
+  CWC  Murga Bridge
+    [clean] dropped 5 gross sensor-error reading(s) (0.01% of 37,155): [0.0, 20134.45, 21234.45, 21324.37, 2134040.0]
+  CWC  Yinkiang
+    [clean] dropped 27 gross sensor-error reading(s) (0.12% of 23,360): [0.32, 28.8, 1105.03, 1105.04, 1105.05, 1105.05, 1105.06, 1105.07, 1105.07, 1105.08, 1105.09, 1105.09, 1105.1, 1105.1, 1105.11, 1105.11, 1105.12, 1105.13, 1105.13, 1105.14] ...
+    [clean] dropped 1 reading(s) in impossible excursions (away from a steady level and straight back): [368.78]
+  CWC  Pangin
+    [clean] dropped 80 gross sensor-error reading(s) (0.20% of 40,464): [19.21, 27.4, 27.4, 27.4, 27.4, 27.42, 27.42, 27.44, 27.44, 27.48, 27.48, 27.54, 27.54, 27.55, 27.58, 27.58, 29.17, 29.19, 29.2, 29.2] ...
+    [clean] dropped 3 reading(s) in impossible excursions (away from a steady level and straight back): [96.34, 209.32, 210.57]
+    [clean] dropped 7 keying slip(s) (one digit off, or two swapped, on a steady river): [159.38, 198.88, 198.91, 199.65, 210.5, 210.53, 210.55]
+  CWC  Lemeking
+    [clean] dropped 8 gross sensor-error reading(s) (0.01% of 63,375): [103.09, 105.16, 114.01, 115.16, 115.24, 115.43, 110521.0, 110524.0]
+    [clean] dropped 1 reading(s) in impossible excursions (away from a steady level and straight back): [1004.17]
+  CWC  Passighat
+    [clean] dropped 2 keying slip(s) (one digit off, or two swapped, on a steady river): [50.29, 105.28]
+  CWC  Jollang
+    [clean] dropped 6 gross sensor-error reading(s) (0.02% of 37,331): [0.0, 0.0, 1164.97, 1264.87, 1636.33, 163416.0]
+    [clean] dropped 8 reading(s) in impossible excursions (away from a steady level and straight back): [63.741, 63.76, 153.55, 173.7, 193.33, 194.95, 264.27, 326.39]
+    [clean] dropped 1 keying slip(s) (one digit off, or two swapped, on a steady river): [194.11]
+  CWC  Miao
+    [clean] dropped 8 gross sensor-error reading(s) (0.01% of 112,413): [28.57, 29.6, 59.54, 59.54, 59.54, 1907.11, 1907.14, 1907.15]
+    [clean] dropped 38 reading(s) in impossible excursions (away from a steady level and straight back): [125.5, 132.15, 137.84, 138.76, 138.8, 139.06, 139.24, 176.72, 176.73, 176.74, 176.75, 176.77, 176.79, 176.8, 176.81, 176.81, 176.81, 176.81, 176.81, 176.82] ...
+    [clean] dropped 11 keying slip(s) (one digit off, or two swapped, on a steady river): [132.82, 135.9, 135.99, 135.99, 136.95, 136.96, 142.34, 176.45, 176.45, 176.45, 273.77]
+  CWC  Namsai
+    [clean] dropped 1 gross sensor-error reading(s) (0.00% of 62,810): [13.04]
+    [clean] dropped 4 reading(s) in impossible excursions (away from a steady level and straight back): [104.36, 104.4, 124.37, 134.15]
+    [clean] dropped 11 keying slip(s) (one digit off, or two swapped, on a steady river): [124.04, 124.04, 124.04, 124.25, 124.25, 124.25, 134.37, 134.37, 134.8, 134.81, 134.82]
+  CWC  Daporizo
+    [clean] dropped 25 gross sensor-error reading(s) (0.03% of 86,571): [206.64, 206.68, 206.77, 728.49, 728.61, 728.62, 728.985, 728.985, 729.015, 729.015, 2204.45, 2204.45, 2204.5, 2204.52, 2204.52, 2204.53, 2204.53, 2204.53, 2204.55, 2204.56] ...
+    [clean] dropped 1 reading(s) in impossible excursions (away from a steady level and straight back): [104.3]
+    [clean] dropped 1 keying slip(s) (one digit off, or two swapped, on a steady river): [83.79]
+  CWC  Seppa
+    [clean] dropped 16 keying slip(s) (one digit off, or two swapped, on a steady river): [134.69, 134.69, 134.69, 134.69, 134.7, 134.7, 134.7, 134.7, 134.7, 134.7, 134.71, 134.71, 134.71, 134.71, 134.71, 134.71]
+  CWC  Bhalukpong
+    [clean] dropped 1 keying slip(s) (one digit off, or two swapped, on a steady river): [13.8]
+  CWC  Doimukh
+    [clean] dropped 1 gross sensor-error reading(s) (0.00% of 23,206): [10.0]
+    [clean] dropped 1 reading(s) in impossible excursions (away from a steady level and straight back): [188.92]
+    [clean] dropped 4 keying slip(s) (one digit off, or two swapped, on a steady river): [86.85, 86.85, 86.85, 188.63]
+  CWC  Pagoda
+    [clean] dropped 2 gross sensor-error reading(s) (0.01% of 22,525): [14514.0, 14558.0]
+    [clean] dropped 24 reading(s) in impossible excursions (away from a steady level and straight back): [114.97, 114.97, 114.98, 114.98, 114.98, 114.98, 114.98, 114.98, 288.19, 288.19, 288.19, 288.2, 288.2, 288.2, 288.21, 288.21, 288.21, 288.21, 288.22, 288.22] ...
+    [clean] dropped 2 keying slip(s) (one digit off, or two swapped, on a steady river): [154.23, 187.31]
+  CWC  Tamen
+    [clean] dropped 24 gross sensor-error reading(s) (0.11% of 21,121): [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] ...
+    [clean] dropped 2 reading(s) in impossible excursions (away from a steady level and straight back): [247.47, 284.19]
+    [clean] dropped 5 keying slip(s) (one digit off, or two swapped, on a steady river): [170.75, 207.03, 207.03, 207.14, 370.8]
+  CWC  Pare HEP
+  NWDP Aalo
+  NWDP Basar
+  NWDP Changlang
+  NWDP Changlang (2nd station)
+  NWDP Darak (Kamba)
+  NWDP Deomali
+  NWDP Kamlang
+  NWDP Kanubari
+  NWDP Miao (NWDP)
+  NWDP Sagalee
+  NWDP Tenga
+  NWDP Tengapani Bridge
+  NWDP Tissa Camp
+  NWDP Ziro
+  lead 1: rain stations onset 50,970 days / 206 floods  AUC 0.961 -> A 0.9602  B 0.958   skill 0.1301 -> A 0.1655  B 0.1377
+  lead 2: rain stations onset 50,923 days / 310 floods  AUC 0.9534 -> A 0.9507  B 0.9486   skill 0.1648 -> A 0.1621  B 0.1567
+  lead 3: rain stations onset 50,888 days / 368 floods  AUC 0.9531 -> A 0.9522  B 0.9534   skill 0.1509 -> A 0.1495  B 0.1486
+  lead 4: rain stations onset 50,856 days / 408 floods  AUC 0.9477 -> A 0.9464  B 0.9448   skill 0.1344 -> A 0.1328  B 0.1276
+  lead 5: rain stations onset 50,820 days / 440 floods  AUC 0.9462 -> A 0.9449  B 0.9454   skill 0.15 -> A 0.1402  B 0.1439
+  lead 6: rain stations onset 50,785 days / 455 floods  AUC 0.9441 -> A 0.9425  B 0.9414   skill 0.1355 -> A 0.1278  B 0.1344
+  lead 7: rain stations onset 50,750 days / 467 floods  AUC 0.94 -> A 0.9423  B 0.9424   skill 0.153 -> A 0.152  B 0.1523
+  lead 8: rain stations onset 50,716 days / 470 floods  AUC 0.9431 -> A 0.942  B 0.9406   skill 0.1483 -> A 0.14  B 0.1442
+  lead 9: rain stations onset 50,682 days / 464 floods  AUC 0.9431 -> A 0.9434  B 0.9425   skill 0.1414 -> A 0.1355  B 0.1409
+{
+ "rain_stations": {
+  "001-UBDDIB": "Kibithu",
+  "002-ubddib": "Tuting",
+  "005-UBDDIB": "Passighat",
+  "008-ubddib": "Miao",
+  "009-UBDDIB": "Namsai",
+  "027-UBDDIB": "Seppa",
+  "029-UBDDIB": "Bhalukpong"
+ },
+ "G1_A": true,
+ "G2_A": false,
+ "G2_A_leads_gaining": 1,
+ "G1_B": false,
+ "G2_B": false,
+ "G2_B_leads_gaining": 0,
+ "adoptable_after_trial": false,
+ "minutes": 1.9
+}

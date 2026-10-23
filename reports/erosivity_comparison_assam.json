@@ -1,0 +1,177 @@
+{
+  "region": "assam",
+  "units": "MJ mm ha-1 h-1 yr-1",
+  "gauge": {
+    "name": "Guwahati IMD (Borjhar)",
+    "lat": 26.1,
+    "lon": 91.59,
+    "R": 7924.29,
+    "source": "Das & Sarma 2017, IIT Guwahati, Table 5.2 (15 yr half-hourly IMD)"
+  },
+  "at_gauge": {
+    "Singh 1981": {
+      "R": 693,
+      "error_pct": -91.3
+    },
+    "IRED": {
+      "R": 4258,
+      "error_pct": -46.3
+    },
+    "InRESatE": {
+      "R": 7507,
+      "error_pct": -5.3
+    }
+  },
+  "towns": {
+    "Kokrajhar": {
+      "IRED": 21083,
+      "InRESatE": 8750
+    },
+    "Haflong (Dima Hasao)": {
+      "IRED": 2071,
+      "InRESatE": 4560
+    },
+    "Diphu (Karbi Anglong)": {
+      "IRED": 3084,
+      "InRESatE": 3123
+    },
+    "Silchar": {
+      "IRED": 6872,
+      "InRESatE": 5193
+    },
+    "Dibrugarh": {
+      "IRED": 8825,
+      "InRESatE": 6817
+    }
+  },
+  "region_percentiles": {
+    "IRED": {
+      "cells": 496,
+      "p5": 2598,
+      "p25": 4986,
+      "p50": 6652,
+      "p75": 8856,
+      "p95": 17949
+    },
+    "InRESatE": {
+      "cells": 720,
+      "p5": 2791,
+      "p25": 3657,
+      "p50": 5613,
+      "p75": 7248,
+      "p95": 9364
+    }
+  },
+  "districts": {
+    "Baksa": {
+      "IRED": 13369,
+      "InRESatE": 5153
+    },
+    "Barpeta": {
+      "IRED": 11989,
+      "InRESatE": 6461
+    },
+    "Bongaigaon": {
+      "IRED": 15134,
+      "InRESatE": 7305
+    },
+    "Cachar": {
+      "IRED": 6063,
+      "InRESatE": 5579
+    },
+    "Chirang": {
+      "IRED": 14387,
+      "InRESatE": 5902
+    },
+    "Darrang": {
+      "IRED": 7007,
+      "InRESatE": 3657
+    },
+    "Dhemaji": {
+      "IRED": 8501,
+      "InRESatE": 7095
+    },
+    "Dhubri": {
+      "IRED": 17992,
+      "InRESatE": 8133
+    },
+    "Dibrugarh": {
+      "IRED": 7839,
+      "InRESatE": 6876
+    },
+    "Dima Hasao": {
+      "IRED": 2624,
+      "InRESatE": 3960
+    },
+    "Goalpara": {
+      "IRED": 10399,
+      "InRESatE": 7925
+    },
+    "Golaghat": {
+      "IRED": 5375,
+      "InRESatE": 4380
+    },
+    "Hailakandi": {
+      "IRED": 4198,
+      "InRESatE": 7388
+    },
+    "Jorhat": {
+      "IRED": 5255,
+      "InRESatE": 6386
+    },
+    "Kamrup": {
+      "IRED": 6684,
+      "InRESatE": 8301
+    },
+    "Kamrup Metropolitan": {
+      "IRED": 5154,
+      "InRESatE": 5134
+    },
+    "Karbi Anglong": {
+      "IRED": 4721,
+      "InRESatE": 3374
+    },
+    "Karimganj": {
+      "IRED": 4548,
+      "InRESatE": 7934
+    },
+    "Kokrajhar": {
+      "IRED": 19048,
+      "InRESatE": 7780
+    },
+    "Lakhimpur": {
+      "IRED": 7638,
+      "InRESatE": 10127
+    },
+    "Morigaon": {
+      "IRED": 5800,
+      "InRESatE": 3544
+    },
+    "Nagaon": {
+      "IRED": 6004,
+      "InRESatE": 3308
+    },
+    "Nalbari": {
+      "IRED": 8924,
+      "InRESatE": 5746
+    },
+    "Sivasagar": {
+      "IRED": 4880,
+      "InRESatE": 7470
+    },
+    "Sonitpur": {
+      "IRED": 6837,
+      "InRESatE": 3041
+    },
+    "Tinsukia": {
+      "IRED": 6481,
+      "InRESatE": 6361
+    },
+    "Udalguri": {
+      "IRED": 7772,
+      "InRESatE": 3049
+    }
+  },
+  "district_spearman": 0.26,
+  "n_districts": 27
+}

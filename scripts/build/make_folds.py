@@ -31,14 +31,14 @@ import rasterio
 from rasterio.features import rasterize
 
 import grid as G
-from common import AOI_NAME, BOUNDARIES, INTERIM
+from common import AOI_NAME, BOUNDARIES, INTERIM, outline
 
 warnings.filterwarnings("ignore")
 
 
 def build_mask() -> np.ndarray:
     """Rasterise the state polygon onto the canonical grid."""
-    src = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    src = outline("state")
     gdf = gpd.read_file(src).to_crs(G.CRS)
     mask = rasterize(
         [(geom, 1) for geom in gdf.geometry],

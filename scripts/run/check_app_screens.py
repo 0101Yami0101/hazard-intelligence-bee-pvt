@@ -46,6 +46,13 @@ CASES = [
     ("flood", "fl_view", ["Catchments"], None, {"flc_day": 4}),
     ("flood", "fl_view", ["How to read this forecast"], None, {}),
     ("backbone", "bb_view", ["Pipeline", "Data catalogue", "Layer explorer"], None, {}),
+    # SoilSense (Assam, 2026-10-19): every page, a district, each alternative
+    # run, and the list filtered to one district
+    ("erosion", "er_view", ["Erosion map", "Priority list", "How to read this"], None, {}),
+    ("erosion", "er_view", ["Erosion map"], None, {"er_district": "Dima Hasao"}),
+    ("erosion", "er_view", ["Erosion map"], None, {"er_run": "ired"}),
+    ("erosion", "er_view", ["Erosion map"], None, {"er_run": "treeC_alt", "er_district": "Kamrup Rural"}),
+    ("erosion", "er_view", ["Priority list"], None, {"er_list_d": "Cachar"}),
 ]
 
 

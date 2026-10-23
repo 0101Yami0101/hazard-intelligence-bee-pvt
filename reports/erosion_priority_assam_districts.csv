@@ -1,0 +1,36 @@
+district,scored_km2,not_scored_pct,meanA_main,meanA_ired,meanA_treeC_alt,meanA_ired_treeC_alt,total_t_per_yr,high_or_worse_pct,main_driver,also,rank_main,rank_ired,rank_treeC_alt,rank_ired_treeC_alt,mark,reason,dlog_R,dlog_K,dlog_LS,dlog_C
+Kamrup Metro,666.23,31.413,49.578,39.048,6.747,5.461,3303004.039,74.477,steep or long slopes,,1,4,14,27,top under both rain maps,main driver: steep or long slopes,0.087,0.036,1.432,-0.382
+Dima Hasao,4668.98,4.34,49.248,36.27,12.445,8.019,22993933.663,87.546,steep or long slopes,,2,6,4,17,top under both rain maps,main driver: steep or long slopes,-0.249,-0.022,2.27,-0.545
+Kamrup Rural,1929.01,38.322,49.205,26.281,11.419,6.968,9491772.541,51.171,heavy rain,steep or long slopes,3,8,7,21,top under both rain maps,"main driver: heavy rain, then steep or long slopes",0.489,0.039,0.174,-0.151
+Cachar,3149.32,16.69,42.909,59.087,6.374,8.54,13513505.013,63.692,steep or long slopes,,4,1,15,15,top under both rain maps,main driver: steep or long slopes,0.102,0.002,0.956,-0.301
+West Karbi Anglong,2894.11,5.727,42.531,37.036,15.494,12.414,12308817.402,83.707,steep or long slopes,,5,5,1,7,top under both rain maps,main driver: steep or long slopes,-0.274,-0.009,1.85,-0.345
+Hailakandi,1122.9,15.446,42.385,21.937,7.015,3.97,4759362.77,65.005,steep or long slopes,heavy rain,6,11,13,30,top under both rain maps,"main driver: steep or long slopes, then heavy rain",0.35,0.006,0.822,-0.336
+Sribhumi,1395.32,23.006,25.677,14.502,5.272,3.362,3582769.286,52.425,heavy rain,steep or long slopes,7,20,19,34,top under both rain maps,"main driver: heavy rain, then steep or long slopes",0.429,0.003,0.163,-0.292
+Karbi Anglong,6900.07,5.722,24.912,43.012,4.114,6.659,17189317.556,71.854,steep or long slopes,,8,3,29,23,top under both rain maps,main driver: steep or long slopes,-0.474,-0.02,1.69,-0.489
+Bongaigaon,711.77,37.528,22.412,49.274,8.074,17.377,1595204.249,38.342,heavy rain,bare or thin cover,9,2,9,3,top under both rain maps,"main driver: heavy rain, then bare or thin cover",0.371,0.008,-0.757,0.292
+Goalpara,1175.02,38.581,17.91,23.726,7.929,10.783,2104518.008,37.164,heavy rain,bare or thin cover,10,10,10,9,top under both rain maps,"main driver: heavy rain, then bare or thin cover",0.428,0.018,-0.774,0.156
+Dhemaji,1264.16,49.699,17.256,18.759,7.755,8.134,2181376.871,27.768,bare or thin cover,heavy rain,11,15,11,16,top under both rain maps,"main driver: bare or thin cover, then heavy rain",0.445,-0.043,-1.178,0.535
+Majuli,491.63,61.546,15.485,11.051,14.862,10.621,761272.966,41.004,bare or thin cover,heavy rain,12,24,2,10,depends on the rain source,"main driver: bare or thin cover, then heavy rain",0.633,-0.029,-1.529,1.001
+Lakhimpur,1793.36,38.655,15.172,11.256,11.613,7.99,2720874.195,40.344,heavy rain,bare or thin cover,13,22,6,18,depends on the rain source,"main driver: heavy rain, then bare or thin cover",0.687,-0.036,-1.134,0.525
+Hojai,1062.67,27.21,14.555,19.285,7.718,9.153,1546714.552,35.562,bare or thin cover,erodible soil,14,14,12,13,top under both rain maps,"main driver: bare or thin cover, then erodible soil",-0.392,0.02,-0.239,0.303
+Dhubri,1072.94,43.857,14.283,28.967,13.093,26.406,1532460.107,44.991,bare or thin cover,heavy rain,15,7,3,1,top under both rain maps,"main driver: bare or thin cover, then heavy rain",0.48,0.016,-1.366,0.909
+South Salmara,150.82,52.85,13.993,16.419,11.808,14.358,211041.149,44.185,bare or thin cover,,16,18,5,4,top under both rain maps,main driver: bare or thin cover,0.344,0.06,-1.26,0.873
+Marigaon,534.88,64.613,12.356,16.777,3.783,5.934,660913.724,31.059,bare or thin cover,erodible soil,17,17,32,26,top under both rain maps,"main driver: bare or thin cover, then erodible soil",-0.335,0.081,-0.519,0.094
+Jorhat,1288.66,30.924,12.16,8.586,5.069,3.812,1567072.482,32.84,heavy rain,bare or thin cover,18,30,21,32,depends on the rain source,"main driver: heavy rain, then bare or thin cover",0.165,-0.026,-0.778,0.142
+Barpeta,842.94,52.505,11.369,19.47,10.698,18.257,958335.245,38.236,bare or thin cover,,19,13,8,2,top under both rain maps,main driver: bare or thin cover,0.282,0.057,-1.393,0.829
+Charaideo,651.59,35.715,10.476,5.749,4.94,2.857,682638.217,28.489,heavy rain,,20,34,22,35,depends on the rain source,main driver: heavy rain,0.356,-0.028,-0.844,-0.09
+Kokrajhar,2329.8,25.105,10.267,25.042,5.997,14.178,2392018.925,27.778,heavy rain,bare or thin cover,21,9,16,5,,"main driver: heavy rain, then bare or thin cover",0.443,0.003,-0.957,0.096
+Tinsukia,3003.27,21.785,8.482,6.91,4.151,3.825,2547354.65,20.997,heavy rain,,22,32,28,31,,main driver: heavy rain,0.233,-0.052,-0.949,-0.062
+Sibsagar,839.72,48.429,8.319,5.094,5.641,3.446,698548.797,26.213,heavy rain,bare or thin cover,23,35,18,33,,"main driver: heavy rain, then bare or thin cover",0.424,-0.038,-1.048,0.019
+Dibrugarh,1925.02,43.322,7.987,7.334,5.194,5.346,1537542.458,26.236,heavy rain,bare or thin cover,24,31,20,28,,"main driver: heavy rain, then bare or thin cover",0.302,-0.032,-1.138,0.165
+Chirang,1358.98,28.866,7.847,18.228,4.885,11.34,1066376.94,20.975,heavy rain,bare or thin cover,25,16,23,8,,"main driver: heavy rain, then bare or thin cover",0.152,-0.004,-0.904,0.103
+Nalbari,451.62,57.057,6.505,8.692,5.667,7.379,293800.858,22.782,bare or thin cover,heavy rain,26,29,17,20,,"main driver: bare or thin cover, then heavy rain",0.139,0.082,-1.257,0.187
+Nagaon,1384.15,46.136,6.503,13.53,2.927,6.103,900092.177,13.811,bare or thin cover,erodible soil,27,21,33,25,,"main driver: bare or thin cover, then erodible soil",-0.525,0.054,-0.85,0.137
+Tamulpur,532.02,39.248,6.381,20.523,4.328,13.811,339496.269,21.452,bare or thin cover,erodible soil,28,12,27,6,,"main driver: bare or thin cover, then erodible soil",-0.222,0.05,-1.084,0.336
+Baksa,1127.36,28.066,5.708,14.862,3.877,9.915,643478.115,18.01,bare or thin cover,heavy rain,29,19,31,11,,"main driver: bare or thin cover, then heavy rain",0.051,0.039,-1.125,0.151
+Darang,675.38,57.429,5.585,11.237,4.678,9.69,377192.78,18.342,bare or thin cover,erodible soil,30,23,24,12,,"main driver: bare or thin cover, then erodible soil",-0.348,0.085,-1.302,0.578
+Bajali,203.53,59.89,5.569,10.936,4.573,9.008,113350.267,21.014,heavy rain,erodible soil,31,25,26,14,,"main driver: heavy rain, then erodible soil",0.178,0.05,-1.176,-0.011
+Golaghat,2318.59,27.897,5.345,6.098,4.618,5.19,1239196.049,23.096,bare or thin cover,erodible soil,32,33,25,29,,"main driver: bare or thin cover, then erodible soil",-0.189,0.0,-1.239,0.411
+Biswanath,1448.75,34.697,5.343,9.322,3.942,6.85,774087.153,16.351,bare or thin cover,erodible soil,33,28,30,22,,"main driver: bare or thin cover, then erodible soil",-0.235,0.007,-1.281,0.494
+Sonitpur,1910.85,36.755,4.634,10.312,2.667,6.522,885524.576,8.461,bare or thin cover,erodible soil,34,26,35,24,,"main driver: bare or thin cover, then erodible soil",-0.587,0.053,-1.099,0.364
+Udalguri,1254.68,37.632,3.866,10.095,2.909,7.495,485007.427,7.92,bare or thin cover,erodible soil,35,27,34,19,,"main driver: bare or thin cover, then erodible soil",-0.533,0.045,-1.202,0.404

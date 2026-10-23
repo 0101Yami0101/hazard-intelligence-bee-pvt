@@ -251,7 +251,7 @@ monsoon ended.
 
 1. **Prove it moves.** The Assam soil-erosion module: a new hazard and a
    new state at once. It is our entry for the NESFIC 2026 challenge.
-   **Applications close 25 October; the build has not started.**
+   **Applications close 10 November (questions to the department by 25 October); the build started on 17 October (a second-state switch and Assam's grid are done).**
 2. **Grade the landslide forecasts** (they are written down now; grading
    needs dated landslides, such as road-block logs) and run the whole
    pipeline by itself, off the PC.
@@ -358,7 +358,7 @@ ladder — a free statewide layer, then paid tiers.
 | 4 of 5 | erosion ingredients already in the backbone |
 | 4,032 | flood forecasts written down since 21 Sep; 1,938 graded |
 | about 5 MB | the app itself, which is why it runs on free hosting |
-| 25 Oct | NESFIC application closes |
+| 10 Nov | NESFIC application closes (questions by 25 Oct) |
 
 **Do not say**
 

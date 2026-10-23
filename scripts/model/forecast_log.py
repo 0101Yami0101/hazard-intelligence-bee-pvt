@@ -28,7 +28,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -65,8 +65,16 @@ def _append(path: Path, rows: list[dict], key: list[str]) -> int:
     return len(new)
 
 
+def _stamped(rows: list[dict]) -> list[dict]:
+    """The moment of issue on every row, as the landslide log has it, so a
+    late run shows in the record (the 08:30 run drifted to 13:00-19:00 on the
+    PC in October 2026). Rows from before 2026-10-20 have none."""
+    at = datetime.now().astimezone().isoformat(timespec="seconds")
+    return [{**r, "issued_at": at} for r in rows]
+
+
 def log_gauge(rows: list[dict]) -> int:
-    return _append(GAUGE_LOG, rows, ["issued_on", "target_date", "station_code"])
+    return _append(GAUGE_LOG, _stamped(rows), ["issued_on", "target_date", "station_code"])
 
 
 NEAR_DIR = LOG / "near_here"
@@ -159,7 +167,7 @@ def log_area(issued: str, outlook: list[dict]) -> int:
                      "expected_flooded_km2": o["expected_flooded_km2"],
                      "top_area_lat": a["lat"], "top_area_lon": a["lon"],
                      "top_area_times_normal": a["times_normal"]})
-    return _append(AREA_LOG, rows, ["issued_on", "target_date"])
+    return _append(AREA_LOG, _stamped(rows), ["issued_on", "target_date"])
 
 
 # ── verification ─────────────────────────────────────────────────────────

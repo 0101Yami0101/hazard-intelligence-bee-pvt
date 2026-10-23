@@ -1,0 +1,660 @@
+{
+  "rain_stations": {
+    "001-UBDDIB": "Kibithu",
+    "002-ubddib": "Tuting",
+    "005-UBDDIB": "Passighat",
+    "008-ubddib": "Miao",
+    "009-UBDDIB": "Namsai",
+    "027-UBDDIB": "Seppa",
+    "029-UBDDIB": "Bhalukpong"
+  },
+  "leads": {
+    "1": {
+      "tolerance": 0.005,
+      "all gauges, all days": {
+        "days": 91765,
+        "flood_days": 1187,
+        "base": {
+          "auc": 0.9805,
+          "brier_skill": 0.5335
+        },
+        "A": {
+          "auc": 0.9796,
+          "brier_skill": 0.5421
+        },
+        "B": {
+          "auc": 0.98,
+          "brier_skill": 0.5335
+        }
+      },
+      "all gauges, onset": {
+        "days": 90579,
+        "flood_days": 472,
+        "base": {
+          "auc": 0.956,
+          "brier_skill": 0.1175
+        },
+        "A": {
+          "auc": 0.9536,
+          "brier_skill": 0.1296
+        },
+        "B": {
+          "auc": 0.9548,
+          "brier_skill": 0.1154
+        }
+      },
+      "rain stations, all days": {
+        "days": 51508,
+        "flood_days": 537,
+        "base": {
+          "auc": 0.9835,
+          "brier_skill": 0.5643
+        },
+        "A": {
+          "auc": 0.9834,
+          "brier_skill": 0.5845
+        },
+        "B": {
+          "auc": 0.9824,
+          "brier_skill": 0.5673
+        }
+      },
+      "rain stations, onset": {
+        "days": 50970,
+        "flood_days": 206,
+        "base": {
+          "auc": 0.961,
+          "brier_skill": 0.1301
+        },
+        "A": {
+          "auc": 0.9602,
+          "brier_skill": 0.1655
+        },
+        "B": {
+          "auc": 0.958,
+          "brier_skill": 0.1377
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.801,
+        "B": 0.801
+      }
+    },
+    "2": {
+      "tolerance": 0.005,
+      "all gauges, all days": {
+        "days": 91502,
+        "flood_days": 1185,
+        "base": {
+          "auc": 0.9653,
+          "brier_skill": 0.32
+        },
+        "A": {
+          "auc": 0.9646,
+          "brier_skill": 0.3175
+        },
+        "B": {
+          "auc": 0.9641,
+          "brier_skill": 0.3135
+        }
+      },
+      "all gauges, onset": {
+        "days": 90321,
+        "flood_days": 683,
+        "base": {
+          "auc": 0.947,
+          "brier_skill": 0.1335
+        },
+        "A": {
+          "auc": 0.9457,
+          "brier_skill": 0.1322
+        },
+        "B": {
+          "auc": 0.945,
+          "brier_skill": 0.1268
+        }
+      },
+      "rain stations, all days": {
+        "days": 51460,
+        "flood_days": 536,
+        "base": {
+          "auc": 0.97,
+          "brier_skill": 0.3431
+        },
+        "A": {
+          "auc": 0.9685,
+          "brier_skill": 0.339
+        },
+        "B": {
+          "auc": 0.9671,
+          "brier_skill": 0.3315
+        }
+      },
+      "rain stations, onset": {
+        "days": 50923,
+        "flood_days": 310,
+        "base": {
+          "auc": 0.9534,
+          "brier_skill": 0.1648
+        },
+        "A": {
+          "auc": 0.9507,
+          "brier_skill": 0.1621
+        },
+        "B": {
+          "auc": 0.9486,
+          "brier_skill": 0.1567
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.801,
+        "B": 0.801
+      }
+    },
+    "3": {
+      "tolerance": 0.005,
+      "all gauges, all days": {
+        "days": 91314,
+        "flood_days": 1183,
+        "base": {
+          "auc": 0.9584,
+          "brier_skill": 0.2339
+        },
+        "A": {
+          "auc": 0.9576,
+          "brier_skill": 0.2323
+        },
+        "B": {
+          "auc": 0.9575,
+          "brier_skill": 0.2313
+        }
+      },
+      "all gauges, onset": {
+        "days": 90133,
+        "flood_days": 799,
+        "base": {
+          "auc": 0.9471,
+          "brier_skill": 0.1426
+        },
+        "A": {
+          "auc": 0.9459,
+          "brier_skill": 0.1411
+        },
+        "B": {
+          "auc": 0.9458,
+          "brier_skill": 0.1424
+        }
+      },
+      "rain stations, all days": {
+        "days": 51426,
+        "flood_days": 535,
+        "base": {
+          "auc": 0.9635,
+          "brier_skill": 0.2495
+        },
+        "A": {
+          "auc": 0.9628,
+          "brier_skill": 0.2458
+        },
+        "B": {
+          "auc": 0.9636,
+          "brier_skill": 0.2414
+        }
+      },
+      "rain stations, onset": {
+        "days": 50888,
+        "flood_days": 368,
+        "base": {
+          "auc": 0.9531,
+          "brier_skill": 0.1509
+        },
+        "A": {
+          "auc": 0.9522,
+          "brier_skill": 0.1495
+        },
+        "B": {
+          "auc": 0.9534,
+          "brier_skill": 0.1486
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.801,
+        "B": 0.801
+      }
+    },
+    "4": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 91163,
+        "flood_days": 1179,
+        "base": {
+          "auc": 0.9497,
+          "brier_skill": 0.1939
+        },
+        "A": {
+          "auc": 0.9485,
+          "brier_skill": 0.1869
+        },
+        "B": {
+          "auc": 0.9485,
+          "brier_skill": 0.1857
+        }
+      },
+      "all gauges, onset": {
+        "days": 89983,
+        "flood_days": 874,
+        "base": {
+          "auc": 0.941,
+          "brier_skill": 0.138
+        },
+        "A": {
+          "auc": 0.9396,
+          "brier_skill": 0.1299
+        },
+        "B": {
+          "auc": 0.9396,
+          "brier_skill": 0.1305
+        }
+      },
+      "rain stations, all days": {
+        "days": 51395,
+        "flood_days": 534,
+        "base": {
+          "auc": 0.9553,
+          "brier_skill": 0.1976
+        },
+        "A": {
+          "auc": 0.9541,
+          "brier_skill": 0.1918
+        },
+        "B": {
+          "auc": 0.953,
+          "brier_skill": 0.1854
+        }
+      },
+      "rain stations, onset": {
+        "days": 50856,
+        "flood_days": 408,
+        "base": {
+          "auc": 0.9477,
+          "brier_skill": 0.1344
+        },
+        "A": {
+          "auc": 0.9464,
+          "brier_skill": 0.1328
+        },
+        "B": {
+          "auc": 0.9448,
+          "brier_skill": 0.1276
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.801,
+        "B": 0.801
+      }
+    },
+    "5": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 91020,
+        "flood_days": 1178,
+        "base": {
+          "auc": 0.9421,
+          "brier_skill": 0.1777
+        },
+        "A": {
+          "auc": 0.9416,
+          "brier_skill": 0.1703
+        },
+        "B": {
+          "auc": 0.942,
+          "brier_skill": 0.1722
+        }
+      },
+      "all gauges, onset": {
+        "days": 89844,
+        "flood_days": 937,
+        "base": {
+          "auc": 0.9369,
+          "brier_skill": 0.1379
+        },
+        "A": {
+          "auc": 0.9361,
+          "brier_skill": 0.1303
+        },
+        "B": {
+          "auc": 0.9366,
+          "brier_skill": 0.1328
+        }
+      },
+      "rain stations, all days": {
+        "days": 51358,
+        "flood_days": 533,
+        "base": {
+          "auc": 0.9515,
+          "brier_skill": 0.1953
+        },
+        "A": {
+          "auc": 0.9504,
+          "brier_skill": 0.1853
+        },
+        "B": {
+          "auc": 0.9508,
+          "brier_skill": 0.1876
+        }
+      },
+      "rain stations, onset": {
+        "days": 50820,
+        "flood_days": 440,
+        "base": {
+          "auc": 0.9462,
+          "brier_skill": 0.15
+        },
+        "A": {
+          "auc": 0.9449,
+          "brier_skill": 0.1402
+        },
+        "B": {
+          "auc": 0.9454,
+          "brier_skill": 0.1439
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.802,
+        "B": 0.801
+      }
+    },
+    "6": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 90890,
+        "flood_days": 1174,
+        "base": {
+          "auc": 0.9398,
+          "brier_skill": 0.1535
+        },
+        "A": {
+          "auc": 0.9376,
+          "brier_skill": 0.1476
+        },
+        "B": {
+          "auc": 0.9384,
+          "brier_skill": 0.1471
+        }
+      },
+      "all gauges, onset": {
+        "days": 89721,
+        "flood_days": 972,
+        "base": {
+          "auc": 0.9365,
+          "brier_skill": 0.1271
+        },
+        "A": {
+          "auc": 0.9341,
+          "brier_skill": 0.1204
+        },
+        "B": {
+          "auc": 0.935,
+          "brier_skill": 0.1208
+        }
+      },
+      "rain stations, all days": {
+        "days": 51323,
+        "flood_days": 532,
+        "base": {
+          "auc": 0.9479,
+          "brier_skill": 0.1678
+        },
+        "A": {
+          "auc": 0.9464,
+          "brier_skill": 0.1593
+        },
+        "B": {
+          "auc": 0.9454,
+          "brier_skill": 0.1642
+        }
+      },
+      "rain stations, onset": {
+        "days": 50785,
+        "flood_days": 455,
+        "base": {
+          "auc": 0.9441,
+          "brier_skill": 0.1355
+        },
+        "A": {
+          "auc": 0.9425,
+          "brier_skill": 0.1278
+        },
+        "B": {
+          "auc": 0.9414,
+          "brier_skill": 0.1344
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.802,
+        "B": 0.801
+      }
+    },
+    "7": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 90782,
+        "flood_days": 1173,
+        "base": {
+          "auc": 0.9401,
+          "brier_skill": 0.1595
+        },
+        "A": {
+          "auc": 0.9397,
+          "brier_skill": 0.1553
+        },
+        "B": {
+          "auc": 0.9395,
+          "brier_skill": 0.1547
+        }
+      },
+      "all gauges, onset": {
+        "days": 89614,
+        "flood_days": 992,
+        "base": {
+          "auc": 0.9369,
+          "brier_skill": 0.1376
+        },
+        "A": {
+          "auc": 0.9363,
+          "brier_skill": 0.1346
+        },
+        "B": {
+          "auc": 0.9362,
+          "brier_skill": 0.1343
+        }
+      },
+      "rain stations, all days": {
+        "days": 51289,
+        "flood_days": 530,
+        "base": {
+          "auc": 0.9438,
+          "brier_skill": 0.1816
+        },
+        "A": {
+          "auc": 0.9456,
+          "brier_skill": 0.1779
+        },
+        "B": {
+          "auc": 0.9457,
+          "brier_skill": 0.1778
+        }
+      },
+      "rain stations, onset": {
+        "days": 50750,
+        "flood_days": 467,
+        "base": {
+          "auc": 0.94,
+          "brier_skill": 0.153
+        },
+        "A": {
+          "auc": 0.9423,
+          "brier_skill": 0.152
+        },
+        "B": {
+          "auc": 0.9424,
+          "brier_skill": 0.1523
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.802,
+        "B": 0.801
+      }
+    },
+    "8": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 90631,
+        "flood_days": 1165,
+        "base": {
+          "auc": 0.9395,
+          "brier_skill": 0.1535
+        },
+        "A": {
+          "auc": 0.9387,
+          "brier_skill": 0.1447
+        },
+        "B": {
+          "auc": 0.9387,
+          "brier_skill": 0.147
+        }
+      },
+      "all gauges, onset": {
+        "days": 89465,
+        "flood_days": 1001,
+        "base": {
+          "auc": 0.9368,
+          "brier_skill": 0.1364
+        },
+        "A": {
+          "auc": 0.9359,
+          "brier_skill": 0.1276
+        },
+        "B": {
+          "auc": 0.9358,
+          "brier_skill": 0.1301
+        }
+      },
+      "rain stations, all days": {
+        "days": 51255,
+        "flood_days": 528,
+        "base": {
+          "auc": 0.9454,
+          "brier_skill": 0.1715
+        },
+        "A": {
+          "auc": 0.9444,
+          "brier_skill": 0.1627
+        },
+        "B": {
+          "auc": 0.9431,
+          "brier_skill": 0.1664
+        }
+      },
+      "rain stations, onset": {
+        "days": 50716,
+        "flood_days": 470,
+        "base": {
+          "auc": 0.9431,
+          "brier_skill": 0.1483
+        },
+        "A": {
+          "auc": 0.942,
+          "brier_skill": 0.14
+        },
+        "B": {
+          "auc": 0.9406,
+          "brier_skill": 0.1442
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.802,
+        "B": 0.801
+      }
+    },
+    "9": {
+      "tolerance": 0.01,
+      "all gauges, all days": {
+        "days": 90478,
+        "flood_days": 1162,
+        "base": {
+          "auc": 0.9366,
+          "brier_skill": 0.1402
+        },
+        "A": {
+          "auc": 0.9367,
+          "brier_skill": 0.1341
+        },
+        "B": {
+          "auc": 0.9368,
+          "brier_skill": 0.1382
+        }
+      },
+      "all gauges, onset": {
+        "days": 89314,
+        "flood_days": 1005,
+        "base": {
+          "auc": 0.9339,
+          "brier_skill": 0.1285
+        },
+        "A": {
+          "auc": 0.9341,
+          "brier_skill": 0.1226
+        },
+        "B": {
+          "auc": 0.9341,
+          "brier_skill": 0.127
+        }
+      },
+      "rain stations, all days": {
+        "days": 51221,
+        "flood_days": 526,
+        "base": {
+          "auc": 0.9454,
+          "brier_skill": 0.1612
+        },
+        "A": {
+          "auc": 0.9456,
+          "brier_skill": 0.1545
+        },
+        "B": {
+          "auc": 0.9448,
+          "brier_skill": 0.1597
+        }
+      },
+      "rain stations, onset": {
+        "days": 50682,
+        "flood_days": 464,
+        "base": {
+          "auc": 0.9431,
+          "brier_skill": 0.1414
+        },
+        "A": {
+          "auc": 0.9434,
+          "brier_skill": 0.1355
+        },
+        "B": {
+          "auc": 0.9425,
+          "brier_skill": 0.1409
+        }
+      },
+      "rain_known_share_on_rain_stations": {
+        "A": 0.801,
+        "B": 0.801
+      }
+    }
+  },
+  "G1_A": true,
+  "G2_A": false,
+  "G2_A_leads_gaining": 1,
+  "G1_B": false,
+  "G2_B": false,
+  "G2_B_leads_gaining": 0,
+  "adoptable_after_trial": false,
+  "minutes": 1.9
+}

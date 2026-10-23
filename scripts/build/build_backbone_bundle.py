@@ -185,22 +185,34 @@ def build_catalogue() -> dict:
             for s, bname in zip(entries, base):
                 files = s.get("files", [])
                 name = bname if bname in many else s.get("source", "—")
+                # Since 2026-10-17 raw folders are shared between regions and a
+                # source fetched for Assam as well carries "region": "assam"
+                # (scripts/common.py record()). The same source for a second
+                # state is the same source, not a second "series": it is
+                # merged and tagged with the states it serves, and the files
+                # are counted once.
+                region = s.get("region", "arunachal")
                 m = merged.setdefault(name, {
                     "source": name, "url": s.get("url", ""),
                     "license": s.get("license", "—"), "fetched": "",
                     "notes": "" if bname in many else s.get("notes", ""),
-                    "n_files": 0, "bytes": 0, "n_fetches": 0, "_seen": set()})
+                    "n_files": 0, "bytes": 0, "_fetches": {}, "_seen": set(),
+                    "regions": []})
                 # a file two entries both list is one file (and one series)
                 fresh = [f for f in files if f["name"] not in m["_seen"]]
                 m["_seen"] |= {f["name"] for f in fresh}
                 m["fetched"] = max(m["fetched"], (s.get("fetched_utc") or "")[:10])
                 m["n_files"] += len(fresh)
                 m["bytes"] += int(sum(f.get("bytes", 0) for f in fresh))
-                m["n_fetches"] += bool(fresh)
+                m["_fetches"][region] = m["_fetches"].get(region, 0) + bool(fresh)
+                if region not in m["regions"]:
+                    m["regions"].append(region)
             for m in merged.values():
                 del m["_seen"]
-                if m["n_fetches"] > 1:
-                    m["source"] = f"{m['source']} ({m['n_fetches']} series)"
+                n_series = max(m.pop("_fetches").values(), default=0)
+                if n_series > 1:
+                    m["source"] = f"{m['source']} ({n_series} series)"
+                m["regions"] = sorted(m["regions"], key=lambda r: (r != "arunachal", r))
                 srcs.append(m)
         groups.append({"key": key, "title": title, "purpose": purpose,
                        "n_files": n, "bytes": b, "sources": srcs})

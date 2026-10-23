@@ -78,7 +78,10 @@ def write(name: str, arr: np.ndarray, inside: np.ndarray, dtype="float32"):
 
 def do_soil(inside):
     print("\n  --- SoilGrids (bilinear, 250 m -> 100 m) ---")
-    for f in sorted((SOIL_GEOLOGY / "soilgrids_250m").glob("soilgrids_*.tif")):
+    # Only this region's files: the raw folder is shared between regions, and
+    # a bare "soilgrids_*.tif" would pull the other region's rasters in as
+    # extra, mostly empty layers with the region name in their column name.
+    for f in sorted((SOIL_GEOLOGY / "soilgrids_250m").glob(f"soilgrids_*_250m_{AOI_NAME}.tif")):
         stem = f.stem.replace("soilgrids_", "").replace(f"_250m_{AOI_NAME}", "")
         prop, depth = stem.split("-", 1)
         unit = SOIL_UNITS.get(prop, "raw")
@@ -121,6 +124,11 @@ def do_landcover(inside):
 def do_lithology(inside):
     print("\n  --- APSSDI lithology (polygon -> categorical) ---")
     src = SOIL_GEOLOGY / f"apssdi_lithology_vector_{AOI_NAME}.geojson"
+    if not src.exists():
+        # APSSDI is Arunachal's state portal; other regions have no lithology
+        # source yet. The erosion module does not use rock type, so skip it.
+        print(f"    [skip] no lithology for {AOI_NAME} ({src.name} not on disk)")
+        return {}
     gdf = gpd.read_file(src).to_crs(G.CRS)
     legends = {}
     for field, name in (("ROCK_GR", "geol_rockgr_cat"),

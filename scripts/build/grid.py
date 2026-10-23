@@ -28,15 +28,33 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from affine import Affine
 
+from common import REGION
+
 # --------------------------------------------------------------------------
 # Frozen constants — see docs/design/DATA_CONTRACT.md before touching these
 # --------------------------------------------------------------------------
 CRS = "EPSG:32646"           # WGS 84 / UTM zone 46N
 CELL = 100                   # metres
-ORIGIN_X = 350_000           # UTM easting of the grid's left edge
-ORIGIN_Y = 2_950_000         # UTM northing of the grid's BOTTOM edge
-NCOLS = 5_900                # 590 km wide
-NROWS = 3_200                # 320 km tall
+
+# One box per region, picked by REGION (scripts/common.py). Same CRS, cell and
+# cell_id scheme everywhere; ids are region-local. Every origin is a whole
+# multiple of 10 km, so all regions sit on one 100 m lattice and a catchment
+# crossing a state border can be stitched cell for cell.
+#
+#   (ORIGIN_X, ORIGIN_Y bottom edge, NCOLS, NROWS)
+_GRIDS = {
+    # 590 x 320 km. Frozen since the start of the project.
+    "arunachal": (350_000, 2_950_000, 5_900, 3_200),
+    # 650 x 450 km. Frozen 2026-10-17 (EROSION_PLAN.md E0.2). Margin round
+    # GADM's Assam: W 9.6, S 9.2, E 11.2, N 12.1 km. The 2026-09-29 proposal
+    # (6,400 x 4,400) left only 1.2 km east and 2.1 km north — the edges where
+    # rivers flow IN from Arunachal and Nagaland and where the state borders
+    # are disputed, so the official outline may sit outside GADM's.
+    "assam": (160_000, 2_660_000, 6_500, 4_500),
+}
+ORIGIN_X, ORIGIN_Y, NCOLS, NROWS = _GRIDS[REGION]
+# ORIGIN_X: UTM easting of the grid's left edge
+# ORIGIN_Y: UTM northing of the grid's BOTTOM edge
 
 # cell_id = row * ID_STRIDE + col. 100_000 leaves room for 16x more columns
 # than we use, so a future finer grid does not need a new scheme.

@@ -6,6 +6,39 @@
 > Built 2026-08-17. Pipeline: `scripts/build/build_flood_layers.py`.
 > App: `webapp/products/flood/`. Bundle: `webapp/assets/flood/` (0.78 MB).
 
+> ## ⭐ IMPORTANT — ground rain gauges are open: add them to FloodSense
+> **(the user's instruction, 2026-10-20)**
+>
+> Marked by the user so it is not lost: *"make sure we go back to the other modules to
+> add the newly found rain gauge data wherever applicable."* Tracked as item **#25** in
+> [REMAINING_WORK.md](REMAINING_WORK.md).
+> **Tested 2026-10-20 ([RAIN_GAUGES.md](RAIN_GAUGES.md) Part C):** a station's own measured rain did not improve the gauge chance models (failed the gain gate), so it is **not adopted**. A **live** ground rain feed was found on the CWC flood site (`MPS`, 7 stations, about 7 h behind) and now grades the forecast rain (Part D). One lead-1 signal is logged as a candidate for a forward test in the 2027 monsoon.
+>
+> **What was found.** The Central Water Commission's own **rain gauges** are open on the
+> National Water Data Portal (no login, no key), and nothing on the platform used them
+> before. The forecasts run on satellite rain (IMERG, daily since 2000) and forecast rain.
+> FloodSense's 32 "gauges" are river levels, not rain.
+>
+> - **Arunachal, daily:** Pasighat 1973→2026 (54 years), Tezu 48, Miao 47, Namsai 34,
+>   Seppa 31, Bhalukpong 30, Kabu Basti 25, Yazali 23, Kibithu 20, Tuting 20, and
+>   **Meteorological Station Jang, 2017→2026**. Updated to October 2026.
+> - **Assam, daily:** from 1971, up to about 80 stations recently.
+> - **Truly hourly:** only from 2019 (telemetry), about 9 Assam stations and 1 in Arunachal.
+>   The file names say otherwise; they cannot be trusted for period or resolution.
+> - **Get it:** `scripts/fetch/fetch_47_cwc_rainfall.py`. Real spans per station:
+>   `scripts/inspect/cwc_rain_inventory.py` → `reports/cwc_rain_inventory.csv`.
+> - **Limits:** points at river stations, mostly in valleys; read daily at 08:00; quality
+>   not yet checked; little on the ridges.
+>
+> **Where it applies here:**
+>
+> - **Grade the rain behind each forecast** against what fell at the gauges.
+> - **Test gauge rain as an input** for gauged rivers with a rain station on or above them
+>   (Pasighat on the Siang, Tezu on the Lohit, Miao, Namsai, Jang on the Tawang Chu …).
+>   Pre-register the test like every other flood change, and check it with
+>   `check_live_unchanged.py`.
+> - **Check the satellite rain's bias** in the valleys the gauges sit in.
+
 > ## ⭐ IMPORTANT — the river level forecast line: LIVE to 2 days ahead since 2026-10-06, more to build
 >
 > Marked by the user on 2026-10-05 so it is not lost among the other open

@@ -1,0 +1,442 @@
+{
+  "region": "assam",
+  "bars": {
+    "S1": {
+      "main": {
+        "hills_median": 26.91,
+        "plains_median": 3.24,
+        "ratio": 8.3
+      },
+      "ired": {
+        "hills_median": 25.33,
+        "plains_median": 4.79,
+        "ratio": 5.29
+      },
+      "tree_C_0.003": {
+        "hills_median": 2.95,
+        "plains_median": 1.25,
+        "ratio": 2.36
+      },
+      "pass": true
+    },
+    "S2": {
+      "top5_LS_threshold": 0.507,
+      "edge_share_of_top5_pct": 69.0,
+      "edge_share_of_top5_unguarded_pct": 68.7,
+      "edge_share_of_all_flat_pct": 65.1,
+      "tree_share_of_top5_pct": 50.1,
+      "tree_share_of_top5_unguarded_pct": 88.8,
+      "pass_original_25pct": false,
+      "pass": false
+    },
+    "S3": {
+      "K_min": 0.0148,
+      "K_max": 0.0572,
+      "C_min": 0.029999999329447746,
+      "C_max": 0.44999998807907104,
+      "R_guwahati_grid": 7900,
+      "R_guwahati_error_pct": -0.3,
+      "pass": true,
+      "ISED": {
+        "file": "K-factor_India.tif",
+        "districts": 35,
+        "spearman": 0.94,
+        "median_ratio_ours_over_ised": 0.57
+      }
+    },
+    "S4": {
+      "largest_class_share_pct": {
+        "main (InRESatE, guard, McCool, river land < 2 m)": 44.8,
+        "IRED rain": 40.95,
+        "no treetop guard": 26.46,
+        "Nearing steepness": 44.61,
+        "tree C 0.003": 67.46,
+        "river land < 5 m": 42.0
+      },
+      "pass": true
+    },
+    "S5": {
+      "not_assessed_cells": 2364998,
+      "of_which_given_a_class": 0,
+      "pass": true
+    },
+    "S7": {
+      "units_counted": 703,
+      "top20_shared_inresate_vs_ired": 7,
+      "top20_shared_C03_vs_C003": 4,
+      "top20_in_all_four_runs": 0,
+      "spearman_all_units_vs_main": {
+        "ired_C03": 0.82,
+        "inresate_C003": 0.59,
+        "ired_C003": 0.2
+      },
+      "robust_units": [],
+      "main_top20": [
+        {
+          "hybas_id": 4120900020,
+          "district": "Kamrup Rural",
+          "scored_km2": 44.0,
+          "mean_A_main": 161.8
+        },
+        {
+          "hybas_id": 4120898850,
+          "district": "Kamrup Rural",
+          "scored_km2": 19.2,
+          "mean_A_main": 146.8
+        },
+        {
+          "hybas_id": 4120893640,
+          "district": "Kamrup Rural",
+          "scored_km2": 95.4,
+          "mean_A_main": 116.8
+        },
+        {
+          "hybas_id": 4120898660,
+          "district": "Kamrup Rural",
+          "scored_km2": 102.0,
+          "mean_A_main": 115.7
+        },
+        {
+          "hybas_id": 4120842850,
+          "district": "Dhemaji",
+          "scored_km2": 15.7,
+          "mean_A_main": 100.2
+        },
+        {
+          "hybas_id": 4120919520,
+          "district": "Dima Hasao",
+          "scored_km2": 73.8,
+          "mean_A_main": 94.1
+        },
+        {
+          "hybas_id": 4121490770,
+          "district": "Kamrup Rural",
+          "scored_km2": 102.8,
+          "mean_A_main": 93.9
+        },
+        {
+          "hybas_id": 4120898180,
+          "district": "Kamrup Rural",
+          "scored_km2": 12.9,
+          "mean_A_main": 93.5
+        },
+        {
+          "hybas_id": 4121510840,
+          "district": "Cachar",
+          "scored_km2": 20.2,
+          "mean_A_main": 93.5
+        },
+        {
+          "hybas_id": 4121502180,
+          "district": "Dima Hasao",
+          "scored_km2": 194.4,
+          "mean_A_main": 89.7
+        },
+        {
+          "hybas_id": 4121502170,
+          "district": "Cachar",
+          "scored_km2": 116.6,
+          "mean_A_main": 88.4
+        },
+        {
+          "hybas_id": 4121501900,
+          "district": "Dima Hasao",
+          "scored_km2": 163.2,
+          "mean_A_main": 88.0
+        },
+        {
+          "hybas_id": 4121508900,
+          "district": "Cachar",
+          "scored_km2": 67.7,
+          "mean_A_main": 84.5
+        },
+        {
+          "hybas_id": 4120926370,
+          "district": "Cachar",
+          "scored_km2": 93.0,
+          "mean_A_main": 84.4
+        },
+        {
+          "hybas_id": 4120926380,
+          "district": "Cachar",
+          "scored_km2": 140.4,
+          "mean_A_main": 83.6
+        },
+        {
+          "hybas_id": 4120891530,
+          "district": "Kamrup Rural",
+          "scored_km2": 95.7,
+          "mean_A_main": 83.2
+        },
+        {
+          "hybas_id": 4121492680,
+          "district": "West Karbi Anglong",
+          "scored_km2": 33.5,
+          "mean_A_main": 82.5
+        },
+        {
+          "hybas_id": 4121489850,
+          "district": "West Karbi Anglong",
+          "scored_km2": 29.1,
+          "mean_A_main": 81.0
+        },
+        {
+          "hybas_id": 4121512240,
+          "district": "Sribhumi",
+          "scored_km2": 7.8,
+          "mean_A_main": 80.1
+        },
+        {
+          "hybas_id": 4120926750,
+          "district": "Cachar",
+          "scored_km2": 117.9,
+          "mean_A_main": 79.8
+        }
+      ],
+      "pass": false
+    },
+    "S8": {
+      "file": "PSL_India.tif",
+      "districts": 35,
+      "spearman_main_vs_iwed": -0.46,
+      "spearman_ired_run_vs_iwed": 0.08,
+      "by_district": {
+        "Bajali": {
+          "ours": 5.6,
+          "ours_ired": 10.9,
+          "iwed": 159.8
+        },
+        "Baksa": {
+          "ours": 5.4,
+          "ours_ired": 14.1,
+          "iwed": 200.8
+        },
+        "Barpeta": {
+          "ours": 11.4,
+          "ours_ired": 19.5,
+          "iwed": 193.9
+        },
+        "Biswanath": {
+          "ours": 5.3,
+          "ours_ired": 9.3,
+          "iwed": 97.4
+        },
+        "Bongaigaon": {
+          "ours": 22.4,
+          "ours_ired": 49.3,
+          "iwed": 175.7
+        },
+        "Cachar": {
+          "ours": 43.1,
+          "ours_ired": 59.3,
+          "iwed": 65.1
+        },
+        "Charaideo": {
+          "ours": 10.5,
+          "ours_ired": 5.7,
+          "iwed": 34.6
+        },
+        "Chirang": {
+          "ours": 7.8,
+          "ours_ired": 18.2,
+          "iwed": 204.2
+        },
+        "Darang": {
+          "ours": 5.6,
+          "ours_ired": 11.2,
+          "iwed": 107.9
+        },
+        "Dhemaji": {
+          "ours": 17.3,
+          "ours_ired": 18.8,
+          "iwed": 91.7
+        },
+        "Dhubri": {
+          "ours": 14.3,
+          "ours_ired": 28.9,
+          "iwed": 201.6
+        },
+        "Dibrugarh": {
+          "ours": 8.0,
+          "ours_ired": 7.3,
+          "iwed": 60.1
+        },
+        "Dima Hasao": {
+          "ours": 49.2,
+          "ours_ired": 36.3,
+          "iwed": 32.0
+        },
+        "Goalpara": {
+          "ours": 17.9,
+          "ours_ired": 23.7,
+          "iwed": 120.3
+        },
+        "Golaghat": {
+          "ours": 5.3,
+          "ours_ired": 6.1,
+          "iwed": 58.4
+        },
+        "Hailakandi": {
+          "ours": 42.4,
+          "ours_ired": 21.9,
+          "iwed": 30.0
+        },
+        "Hojai": {
+          "ours": 14.6,
+          "ours_ired": 19.3,
+          "iwed": 58.0
+        },
+        "Jorhat": {
+          "ours": 12.2,
+          "ours_ired": 8.6,
+          "iwed": 41.5
+        },
+        "Kamrup Metro": {
+          "ours": 49.6,
+          "ours_ired": 39.0,
+          "iwed": 43.4
+        },
+        "Kamrup Rural": {
+          "ours": 49.2,
+          "ours_ired": 26.3,
+          "iwed": 67.1
+        },
+        "Karbi Anglong": {
+          "ours": 24.9,
+          "ours_ired": 43.0,
+          "iwed": 37.4
+        },
+        "Kokrajhar": {
+          "ours": 10.3,
+          "ours_ired": 24.6,
+          "iwed": 165.9
+        },
+        "Lakhimpur": {
+          "ours": 15.2,
+          "ours_ired": 11.3,
+          "iwed": 80.5
+        },
+        "Majuli": {
+          "ours": 15.5,
+          "ours_ired": 11.1,
+          "iwed": 80.6
+        },
+        "Marigaon": {
+          "ours": 12.4,
+          "ours_ired": 16.8,
+          "iwed": 83.8
+        },
+        "Nagaon": {
+          "ours": 6.5,
+          "ours_ired": 13.5,
+          "iwed": 83.7
+        },
+        "Nalbari": {
+          "ours": 6.5,
+          "ours_ired": 8.7,
+          "iwed": 117.4
+        },
+        "Sibsagar": {
+          "ours": 8.3,
+          "ours_ired": 5.1,
+          "iwed": 43.9
+        },
+        "Sonitpur": {
+          "ours": 4.6,
+          "ours_ired": 10.3,
+          "iwed": 90.4
+        },
+        "South Salmara": {
+          "ours": 14.1,
+          "ours_ired": 16.6,
+          "iwed": 99.9
+        },
+        "Sribhumi": {
+          "ours": 25.9,
+          "ours_ired": 14.5,
+          "iwed": 44.7
+        },
+        "Tamulpur": {
+          "ours": 5.9,
+          "ours_ired": 18.9,
+          "iwed": 186.1
+        },
+        "Tinsukia": {
+          "ours": 8.5,
+          "ours_ired": 6.9,
+          "iwed": 39.5
+        },
+        "Udalguri": {
+          "ours": 3.6,
+          "ours_ired": 9.2,
+          "iwed": 113.8
+        },
+        "West Karbi Anglong": {
+          "ours": 42.5,
+          "ours_ired": 37.0,
+          "iwed": 38.3
+        }
+      },
+      "expectation_met": true,
+      "per_factor": {
+        "R": {
+          "spearman_districts": 0.27,
+          "median_ours": 5270.0981,
+          "median_iwed": 6194.4971
+        },
+        "K": {
+          "spearman_districts": 0.89,
+          "median_ours": 0.0166,
+          "median_iwed": 0.0285
+        },
+        "LS": {
+          "spearman_districts": 0.81,
+          "median_ours": 0.5067,
+          "median_iwed": 3.3904
+        },
+        "C": {
+          "spearman_districts": 0.91,
+          "median_ours": 0.03,
+          "median_iwed": 0.1317
+        }
+      },
+      "LS_by_true_slope_median": {
+        "0-0.5 deg": {
+          "share_pct": 8.3,
+          "LS_ours": 0.11,
+          "LS_iwed": 2.67
+        },
+        "0.5-1 deg": {
+          "share_pct": 7.4,
+          "LS_ours": 0.26,
+          "LS_iwed": 2.89
+        },
+        "1-2 deg": {
+          "share_pct": 11.8,
+          "LS_ours": 0.47,
+          "LS_iwed": 2.99
+        },
+        "2-5 deg": {
+          "share_pct": 29.9,
+          "LS_ours": 0.46,
+          "LS_iwed": 3.07
+        },
+        "5-15 deg": {
+          "share_pct": 26.0,
+          "LS_ours": 7.06,
+          "LS_iwed": 3.9
+        },
+        "15-30 deg": {
+          "share_pct": 14.8,
+          "LS_ours": 26.61,
+          "LS_iwed": 5.16
+        },
+        "30-90 deg": {
+          "share_pct": 1.6,
+          "LS_ours": 53.72,
+          "LS_iwed": 5.57
+        }
+      }
+    }
+  }
+}

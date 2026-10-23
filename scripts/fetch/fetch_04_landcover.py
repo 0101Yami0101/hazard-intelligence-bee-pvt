@@ -32,7 +32,11 @@ def main() -> None:
     for t in tiles:
         name = f"ESA_WorldCover_10m_2021_v200_{t}_Map.tif"
         url = f"{BASE}/{name}"
-        size = head_size(url, timeout=30)
+        # A tile already on disk is not asked about again: on a flaky line the
+        # HEAD timed out for two tiles that exist, and they were left out of
+        # the provenance record (2026-10-17).
+        local = OUT / name
+        size = local.stat().st_size if local.exists() else head_size(url, timeout=30)
         if not size:
             print(f"  [miss] {t} — no tile at this grid position")
             continue

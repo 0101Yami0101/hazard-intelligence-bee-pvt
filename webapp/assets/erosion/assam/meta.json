@@ -1,0 +1,232 @@
+{
+ "region": "assam",
+ "state": "Assam",
+ "generated_utc": "2026-10-20T06:21:04+00:00",
+ "bounds": [
+  [
+   24.13613519748404,
+   89.69860048189341
+  ],
+  [
+   27.97141198585381,
+   96.01803258366216
+  ]
+ ],
+ "center": [
+  26.053773591668925,
+  92.85831653277779
+ ],
+ "scored_pct": 69.53,
+ "not_scored_pct": {
+  "water/built/wetland/snow/moss/mangrove": 7.37,
+  "channel cells": 0.79,
+  "river land < 2 m": 21.99
+ },
+ "mean_A": {
+  "main": 21.63,
+  "ired": 24.39,
+  "tree_C_0.003": 6.99
+ },
+ "median_A": 7.5245,
+ "shares": {
+  "main": {
+   "slight": 44.8,
+   "moderate": 10.22,
+   "high": 13.75,
+   "very high": 14.17,
+   "severe": 11.03,
+   "very severe": 6.04
+  },
+  "ired": {
+   "slight": 40.95,
+   "moderate": 10.11,
+   "high": 15.74,
+   "very high": 14.81,
+   "severe": 11.34,
+   "very severe": 7.06
+  },
+  "treeC_alt": {
+   "slight": 67.46,
+   "moderate": 15.4,
+   "high": 10.78,
+   "very high": 4.41,
+   "severe": 0.97,
+   "very severe": 0.97
+  }
+ },
+ "settings": {
+  "R": "InRESatE (IRED alongside)",
+  "K": "Williams 1995, mean of 0-5 and 15-30 cm",
+  "L": "McCool 1989 m, lambda capped 300 m",
+  "S": "McCool 1987",
+  "treetop_guard": {
+   "version": 2,
+   "applies_to": "tree cells and cells next to a tree cell",
+   "reference": "cropland not next to trees",
+   "band_m": 20.0,
+   "cropland_pctl": 90,
+   "cap_deg": 1.225,
+   "share_of_state_capped_pct": 36.4
+  },
+  "C": {
+   "10": 0.03,
+   "20": 0.11,
+   "30": 0.16,
+   "40": 0.34,
+   "60": 0.45
+  },
+  "P": 1,
+  "river_land_m": 2.0,
+  "classes_tpha": [
+   5,
+   10,
+   20,
+   40,
+   80
+  ]
+ },
+ "checks": {
+  "S1": {
+   "main": {
+    "hills_median": 26.91,
+    "plains_median": 3.24,
+    "ratio": 8.3
+   },
+   "ired": {
+    "hills_median": 25.33,
+    "plains_median": 4.79,
+    "ratio": 5.29
+   },
+   "tree_C_0.003": {
+    "hills_median": 2.95,
+    "plains_median": 1.25,
+    "ratio": 2.36
+   },
+   "pass": true
+  },
+  "S2": {
+   "top5_LS_threshold": 0.507,
+   "edge_share_of_top5_pct": 69.0,
+   "edge_share_of_top5_unguarded_pct": 68.7,
+   "edge_share_of_all_flat_pct": 65.1,
+   "tree_share_of_top5_pct": 50.1,
+   "tree_share_of_top5_unguarded_pct": 88.8,
+   "pass_original_25pct": false,
+   "pass": false
+  },
+  "S3": {
+   "K_min": 0.0148,
+   "K_max": 0.0572,
+   "C_min": 0.029999999329447746,
+   "C_max": 0.44999998807907104,
+   "R_guwahati_grid": 7900,
+   "R_guwahati_error_pct": -0.3,
+   "pass": true,
+   "ISED": {
+    "file": "K-factor_India.tif",
+    "districts": 35,
+    "spearman": 0.94,
+    "median_ratio_ours_over_ised": 0.57
+   }
+  },
+  "S4": {
+   "largest_class_share_pct": {
+    "main (InRESatE, guard, McCool, river land < 2 m)": 44.8,
+    "IRED rain": 40.95,
+    "no treetop guard": 26.46,
+    "Nearing steepness": 44.61,
+    "tree C 0.003": 67.46,
+    "river land < 5 m": 42.0
+   },
+   "pass": true
+  },
+  "S5": {
+   "not_assessed_cells": 2364998,
+   "of_which_given_a_class": 0,
+   "pass": true
+  },
+  "S7": {
+   "units_counted": 703,
+   "top20_shared_inresate_vs_ired": 7,
+   "top20_shared_C03_vs_C003": 4,
+   "top20_in_all_four_runs": 0,
+   "spearman_all_units_vs_main": {
+    "ired_C03": 0.82,
+    "inresate_C003": 0.59,
+    "ired_C003": 0.2
+   },
+   "pass": false
+  },
+  "S8": {
+   "file": "PSL_India.tif",
+   "districts": 35,
+   "spearman_main_vs_iwed": -0.46,
+   "spearman_ired_run_vs_iwed": 0.08,
+   "expectation_met": true,
+   "per_factor": {
+    "R": {
+     "spearman_districts": 0.27,
+     "median_ours": 5270.0981,
+     "median_iwed": 6194.4971
+    },
+    "K": {
+     "spearman_districts": 0.89,
+     "median_ours": 0.0166,
+     "median_iwed": 0.0285
+    },
+    "LS": {
+     "spearman_districts": 0.81,
+     "median_ours": 0.5067,
+     "median_iwed": 3.3904
+    },
+    "C": {
+     "spearman_districts": 0.91,
+     "median_ours": 0.03,
+     "median_iwed": 0.1317
+    }
+   },
+   "LS_by_true_slope_median": {
+    "0-0.5 deg": {
+     "share_pct": 8.3,
+     "LS_ours": 0.11,
+     "LS_iwed": 2.67
+    },
+    "0.5-1 deg": {
+     "share_pct": 7.4,
+     "LS_ours": 0.26,
+     "LS_iwed": 2.89
+    },
+    "1-2 deg": {
+     "share_pct": 11.8,
+     "LS_ours": 0.47,
+     "LS_iwed": 2.99
+    },
+    "2-5 deg": {
+     "share_pct": 29.9,
+     "LS_ours": 0.46,
+     "LS_iwed": 3.07
+    },
+    "5-15 deg": {
+     "share_pct": 26.0,
+     "LS_ours": 7.06,
+     "LS_iwed": 3.9
+    },
+    "15-30 deg": {
+     "share_pct": 14.8,
+     "LS_ours": 26.61,
+     "LS_iwed": 5.16
+    },
+    "30-90 deg": {
+     "share_pct": 1.6,
+     "LS_ours": 53.72,
+     "LS_iwed": 5.57
+    }
+   }
+  }
+ },
+ "n_catchments": 703,
+ "n_top_both": 7,
+ "tree_split": {
+  "adopted": false
+ }
+}

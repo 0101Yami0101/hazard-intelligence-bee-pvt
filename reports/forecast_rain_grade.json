@@ -1,0 +1,202 @@
+{
+  "issues": 9,
+  "stations": {
+    "Kibithu": 76,
+    "Tuting": 18,
+    "Passighat": 91,
+    "Miao": 169,
+    "Namsai": 167,
+    "Seppa": 178,
+    "Bhalukpong": 207
+  },
+  "pairs": 889,
+  "by_lead": {
+    "-10": {
+      "spearman_3day": null,
+      "days": 63,
+      "gauge_days_ge_10mm": 10,
+      "total_forecast_over_gauge": 1.09,
+      "mean_abs_error_mm": 5.57,
+      "caught_share": 0.8,
+      "false_alarm_share": 0.2,
+      "spearman_daily": 0.475,
+      "ready_to_read": false
+    },
+    "-9": {
+      "spearman_3day": null,
+      "days": 63,
+      "gauge_days_ge_10mm": 11,
+      "total_forecast_over_gauge": 1.28,
+      "mean_abs_error_mm": 4.49,
+      "caught_share": 0.636,
+      "false_alarm_share": 0.077,
+      "spearman_daily": 0.595,
+      "ready_to_read": false
+    },
+    "-8": {
+      "spearman_3day": 0.543,
+      "days": 63,
+      "gauge_days_ge_10mm": 12,
+      "total_forecast_over_gauge": 0.76,
+      "mean_abs_error_mm": 4.15,
+      "caught_share": 0.75,
+      "false_alarm_share": 0.111,
+      "spearman_daily": 0.582,
+      "ready_to_read": false
+    },
+    "-7": {
+      "spearman_3day": 0.607,
+      "days": 63,
+      "gauge_days_ge_10mm": 9,
+      "total_forecast_over_gauge": 0.84,
+      "mean_abs_error_mm": 3.3,
+      "caught_share": 0.667,
+      "false_alarm_share": 0.143,
+      "spearman_daily": 0.625,
+      "ready_to_read": false
+    },
+    "-6": {
+      "spearman_3day": 0.673,
+      "days": 63,
+      "gauge_days_ge_10mm": 6,
+      "total_forecast_over_gauge": 0.72,
+      "mean_abs_error_mm": 3.08,
+      "caught_share": 0.667,
+      "false_alarm_share": 0.2,
+      "spearman_daily": 0.614,
+      "ready_to_read": false
+    },
+    "-5": {
+      "spearman_3day": 0.653,
+      "days": 63,
+      "gauge_days_ge_10mm": 2,
+      "total_forecast_over_gauge": 1.54,
+      "mean_abs_error_mm": 1.36,
+      "caught_share": 0.5,
+      "false_alarm_share": 0.0,
+      "spearman_daily": 0.534,
+      "ready_to_read": false
+    },
+    "-4": {
+      "spearman_3day": 0.581,
+      "days": 63,
+      "gauge_days_ge_10mm": 2,
+      "total_forecast_over_gauge": 0.73,
+      "mean_abs_error_mm": 1.67,
+      "caught_share": 0.0,
+      "false_alarm_share": 1.0,
+      "spearman_daily": 0.364,
+      "ready_to_read": false
+    },
+    "-3": {
+      "spearman_3day": 0.561,
+      "days": 63,
+      "gauge_days_ge_10mm": 1,
+      "total_forecast_over_gauge": 1.2,
+      "mean_abs_error_mm": 0.77,
+      "caught_share": 0.0,
+      "false_alarm_share": null,
+      "spearman_daily": 0.467,
+      "ready_to_read": false
+    },
+    "-2": {
+      "spearman_3day": 0.494,
+      "days": 63,
+      "gauge_days_ge_10mm": 2,
+      "total_forecast_over_gauge": 0.85,
+      "mean_abs_error_mm": 1.53,
+      "caught_share": 0.0,
+      "false_alarm_share": 1.0,
+      "spearman_daily": 0.474,
+      "ready_to_read": false
+    },
+    "-1": {
+      "spearman_3day": 0.546,
+      "days": 63,
+      "gauge_days_ge_10mm": 2,
+      "total_forecast_over_gauge": 0.87,
+      "mean_abs_error_mm": 1.35,
+      "caught_share": 0.0,
+      "false_alarm_share": 1.0,
+      "spearman_daily": 0.465,
+      "ready_to_read": false
+    },
+    "0": {
+      "spearman_3day": 0.508,
+      "days": 56,
+      "gauge_days_ge_10mm": 2,
+      "total_forecast_over_gauge": 0.96,
+      "mean_abs_error_mm": 1.26,
+      "caught_share": 0.5,
+      "false_alarm_share": 0.667,
+      "spearman_daily": 0.453,
+      "ready_to_read": false
+    },
+    "1": {
+      "spearman_3day": 0.479,
+      "days": 49,
+      "gauge_days_ge_10mm": 0,
+      "total_forecast_over_gauge": null,
+      "mean_abs_error_mm": 0.1,
+      "caught_share": null,
+      "false_alarm_share": null,
+      "spearman_daily": null,
+      "ready_to_read": false
+    },
+    "2": {
+      "spearman_3day": 0.437,
+      "days": 42,
+      "gauge_days_ge_10mm": 1,
+      "total_forecast_over_gauge": 0.35,
+      "mean_abs_error_mm": 0.27,
+      "caught_share": 0.0,
+      "false_alarm_share": null,
+      "spearman_daily": 0.434,
+      "ready_to_read": false
+    },
+    "3": {
+      "spearman_3day": 0.351,
+      "days": 35,
+      "gauge_days_ge_10mm": 0,
+      "total_forecast_over_gauge": null,
+      "mean_abs_error_mm": 0.01,
+      "caught_share": null,
+      "false_alarm_share": null,
+      "spearman_daily": null,
+      "ready_to_read": false
+    },
+    "4": {
+      "spearman_3day": 0.218,
+      "days": 28,
+      "gauge_days_ge_10mm": 1,
+      "total_forecast_over_gauge": 0.28,
+      "mean_abs_error_mm": 0.59,
+      "caught_share": 0.0,
+      "false_alarm_share": null,
+      "spearman_daily": -0.053,
+      "ready_to_read": false
+    },
+    "5": {
+      "spearman_3day": -0.096,
+      "days": 28,
+      "gauge_days_ge_10mm": 1,
+      "total_forecast_over_gauge": 0.0,
+      "mean_abs_error_mm": 0.46,
+      "caught_share": 0.0,
+      "false_alarm_share": null,
+      "spearman_daily": null,
+      "ready_to_read": false
+    },
+    "6": {
+      "spearman_3day": -0.132,
+      "days": 21,
+      "gauge_days_ge_10mm": 1,
+      "total_forecast_over_gauge": 0.0,
+      "mean_abs_error_mm": 0.61,
+      "caught_share": 0.0,
+      "false_alarm_share": null,
+      "spearman_daily": null,
+      "ready_to_read": false
+    }
+  }
+}

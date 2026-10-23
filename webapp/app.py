@@ -56,6 +56,14 @@ st.markdown(
     '<link rel="preconnect" href="https://tile.opentopomap.org">',
     unsafe_allow_html=True)
 
+# The day's flood forecast comes from the cloud daily run; fetched at most
+# once an hour, before any page reads it (products/flood/feed.py).
+try:
+    from products.flood import feed as _feed
+    _feed.refresh()
+except Exception:                                           # noqa: BLE001
+    pass                    # never let the feed stop the app: the copy on disk stays
+
 
 # ─────────────────────────── routing ─────────────────────────────────────────
 # The active module lives in the URL, not just in session state, so a link to
@@ -260,7 +268,7 @@ with st.sidebar:
         <div class="brand brand-sm">
           <div class="brand-logo" style="color:{product.accent}">{product.icon}</div>
           <div><div class="brand-name">{product.name}</div>
-               <div class="brand-tag">ARUNACHAL PRADESH · {product.hazard.upper()}</div></div>
+               <div class="brand-tag">{product.region.upper()} · {product.hazard.upper()}</div></div>
         </div>""", unsafe_allow_html=True)
     with icol:
         with st.popover("ℹ️", width="stretch"):

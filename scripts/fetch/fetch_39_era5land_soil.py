@@ -54,6 +54,20 @@ GLC_ACCURACY = ("exact", "1km", "5km")
 THREADS = 6
 
 
+def ee_init() -> None:
+    """Sign in to Earth Engine. On this PC the saved personal login is used;
+    on the hosted daily run (scripts/cloud/modal_daily.py) there is none, and
+    the robot account's key comes from the host's secret store as the text of
+    EE_SERVICE_ACCOUNT_KEY."""
+    import os
+    key = os.environ.get("EE_SERVICE_ACCOUNT_KEY")
+    if key:
+        email = json.loads(key)["client_email"]
+        ee.Initialize(ee.ServiceAccountCredentials(email, key_data=key), project=PROJECT)
+    else:
+        ee.Initialize(project=PROJECT)
+
+
 def lattice_window() -> tuple[int, int, int, int]:
     """(row0, col0, nrows, ncols) of the IMERG lattice inside the arc grid."""
     L = when_grid.lattice()
@@ -114,7 +128,7 @@ def lattice_days(d0: str, d1: str) -> tuple[pd.DatetimeIndex, dict[str, np.ndarr
     what the daily flood run needs, in one call. The grid is the lattice
     window of the arc grid above, so values match the archive exactly.
     Days ERA5-Land does not have yet are simply absent."""
-    ee.Initialize(project=PROJECT)
+    ee_init()
     r0, c0, nr, nc = lattice_window()
     end = (pd.Timestamp(d1) + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
     col = (ee.ImageCollection(COLL).filterDate(pd.Timestamp(d0).strftime("%Y-%m-%d"), end)

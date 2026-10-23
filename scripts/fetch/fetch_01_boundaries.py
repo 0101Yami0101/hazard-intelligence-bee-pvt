@@ -1,7 +1,8 @@
 """Tier A — Administrative boundaries (GADM).
 
-Downloads the India boundary package, extracts Arunachal Pradesh at state and
-district level, and writes the AOI polygon every other script clips against.
+Downloads the India boundary package, extracts the selected region's state
+(REGION, scripts/common.py; default Arunachal Pradesh) at state and district
+level, and writes the AOI polygon every other script clips against.
 """
 import sys
 from pathlib import Path
@@ -10,10 +11,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import geopandas as gpd
 
-from common import AOI_NAME, BOUNDARIES, download, record
+from common import AOI_NAME, AOI_STATE, BOUNDARIES, REGION, DEFAULT_REGION, download, record
 
 GADM_URL = "https://geodata.ucdavis.edu/gadm/gadm4.1/gpkg/gadm41_IND.gpkg"
-STATE = "Arunachal Pradesh"
+STATE = AOI_STATE
 
 
 def main() -> None:
@@ -45,7 +46,9 @@ def main() -> None:
         url=GADM_URL,
         files=written,
         license_="Free for academic/non-commercial use; attribution required",
-        notes="State + district polygons for Arunachal Pradesh. Defines the AOI clip.",
+        notes=f"State + district polygons for {STATE}. Defines the AOI clip."
+              + ("" if REGION == DEFAULT_REGION else
+                 " Stand-in until the official Assam State Geoportal outline (EROSION_PLAN.md R11)."),
     )
 
 

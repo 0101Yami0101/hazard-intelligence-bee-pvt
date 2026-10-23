@@ -26,7 +26,7 @@ import rasterio
 from rasterio.enums import Resampling
 
 from common import (AOI_NAME, BOUNDARIES, HYDROLOGY, LABELS, LANDCOVER, LOGS,
-                    ROOT, TERRAIN)
+                    ROOT, TERRAIN, outline)
 
 warnings.filterwarnings("ignore")
 lines: list[str] = []
@@ -143,7 +143,7 @@ def q4_labels() -> None:
         out("_no label file_")
         return
     g = gpd.read_file(f)
-    state = BOUNDARIES / f"gadm_state-boundary_vector_{AOI_NAME}.gpkg"
+    state = outline("state")
     area = 81995.0
     if state.exists():
         area = float(gpd.read_file(state).to_crs(6933).area.sum() / 1e6)

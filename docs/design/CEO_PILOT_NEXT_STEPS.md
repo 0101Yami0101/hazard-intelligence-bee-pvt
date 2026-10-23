@@ -1,5 +1,13 @@
 # CEO briefing — next steps for the Jang/Tawang pilot
 
+> **⭐ Found 2026-10-20 (the user's instruction: add it wherever it applies):** a Central Water
+> Commission rain gauge at **Jang**, with daily records **from 2017 to today**, is open on the
+> National Water Data Portal. It partly answers "a real local rain gauge in Tawang/Jang" below,
+> before anything is installed. Tracked as REMAINING_WORK.md item #25.
+> *Checked 2026-10-20:* both rain sources are weakest at Jang, and Jang's rain arrives 1–2
+> weeks late. So it proves and grades the forecast's rain; it does not feed it live
+> (RAIN_GAUGES.md, Part E).
+
 **Purpose of this doc:** a plain-language reference for answering CEO
 questions about what comes next, for both products, starting at the pilot
 site. Not a technical spec — see `PILOT_TAWANG.md`, `FLOOD_WHEN_PILOT_PLAN.md`,

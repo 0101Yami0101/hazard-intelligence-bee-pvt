@@ -1,0 +1,41 @@
+{
+  "events_with_dates": 90,
+  "events_with_a_gauge": 42,
+  "gauge_vs_imerg": {
+    "events": 42,
+    "score_gauge": {
+      "median": 0.804,
+      "share_high": 0.643
+    },
+    "score_imerg": {
+      "median": 0.928,
+      "share_high": 0.81
+    }
+  },
+  "gauge_vs_om": {
+    "events": 31,
+    "score_gauge": {
+      "median": 0.795,
+      "share_high": 0.645
+    },
+    "score_om": {
+      "median": 0.913,
+      "share_high": 0.935
+    }
+  },
+  "all_three": {
+    "events": 31,
+    "score_gauge": {
+      "median": 0.795,
+      "share_high": 0.645
+    },
+    "score_imerg": {
+      "median": 0.942,
+      "share_high": 0.806
+    },
+    "score_om": {
+      "median": 0.913,
+      "share_high": 0.935
+    }
+  }
+}

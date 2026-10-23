@@ -1,0 +1,12 @@
+{
+  "lag_days_nwdp_to_mps": 0,
+  "pooled_agree_by_lag": {
+    "-1": 0.118,
+    "0": 0.92,
+    "1": 0.128
+  },
+  "stations": 11,
+  "stations_passing": 8,
+  "verdict": "MPS is rain in mm",
+  "run_at_ist": "2026-10-20 12:31:12.488249"
+}

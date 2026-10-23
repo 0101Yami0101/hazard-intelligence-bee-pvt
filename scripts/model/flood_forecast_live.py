@@ -56,6 +56,7 @@ itself is weak in mountains; the later outlook days are indicative.
 from __future__ import annotations
 
 import json
+import os
 import pickle
 import sys
 from pathlib import Path
@@ -150,7 +151,19 @@ def fetch_soil(d0: str, d1: str) -> tuple[pd.DatetimeIndex, np.ndarray] | None:
 
 def live_soil(days) -> tuple[np.ndarray | None, dict]:
     """The soil input for each of the run's days (soil on day t-16), and a
-    note of what was used, for the issue and the web page."""
+    note of what was used, for the issue and the web page.
+
+    With SOIL_REQUIRED=1 (the hosted daily run, scripts/cloud/modal_daily.py)
+    a missing soil input stops the run instead, so it is retried: there the
+    Earth Engine sign-in is a key in the host's secret store, and a broken
+    key must not quietly turn into a rain-only forecast."""
+    S, note = _live_soil(days)
+    if S is None and os.environ.get("SOIL_REQUIRED") == "1":
+        raise RuntimeError(f"SOIL_REQUIRED: {note['note']}")
+    return S, note
+
+
+def _live_soil(days) -> tuple[np.ndarray | None, dict]:
     d = pd.to_datetime([str(x) for x in days])
     want = d - pd.Timedelta(days=SOIL_LAG)
     got = fetch_soil(str(want.min().date()), str(want.max().date()))

@@ -3,7 +3,46 @@
 The working list made on 2026-10-09 ("push the application as far as it
 will go now"), with everything done since crossed off. One place to look so
 nothing is lost. The soil-erosion module for Assam is **not** on this list
-by the user's instruction (it has its own plan: EROSION_PLAN.md).
+by the user's instruction (it has its own plan: EROSION_PLAN.md). **Since 2026-10-17 it is
+being built again**; its progress is kept in EROSION_PLAN.md's Build log, not here. One
+change from that work touches shared code: `scripts/common.py` and `scripts/build/grid.py`
+now take a `REGION` (default Arunachal, proven unchanged by `check_live_unchanged.py`).
+
+> ## ⭐ IMPORTANT — ground rain gauges are open: add them to SlideSense and FloodSense
+> **(the user's instruction, 2026-10-20)**
+>
+> Marked by the user so it is not lost: *"make sure we go back to the other modules to
+> add the newly found rain gauge data wherever applicable."* Tracked as item **#25** in
+> [REMAINING_WORK.md](REMAINING_WORK.md).
+> **Tested 2026-10-20, Parts A–E: see [RAIN_GAUGES.md](RAIN_GAUGES.md) §0.** Neither forecast changes. The forecast rain is now graded against the ground, and a **live** ground rain feed was found on the CWC flood site (`MPS`, 7 stations, about 7 h behind).
+>
+> **What was found.** The Central Water Commission's own **rain gauges** are open on the
+> National Water Data Portal (no login, no key), and nothing on the platform used them
+> before. The forecasts run on satellite rain (IMERG, daily since 2000) and forecast rain.
+> FloodSense's 32 "gauges" are river levels, not rain.
+>
+> - **Arunachal, daily:** Pasighat 1973→2026 (54 years), Tezu 48, Miao 47, Namsai 34,
+>   Seppa 31, Bhalukpong 30, Kabu Basti 25, Yazali 23, Kibithu 20, Tuting 20, and
+>   **Meteorological Station Jang, 2017→2026**. Updated to October 2026.
+> - **Assam, daily:** from 1971, up to about 80 stations recently.
+> - **Truly hourly:** only from 2019 (telemetry), about 9 Assam stations and 1 in Arunachal.
+>   The file names say otherwise; they cannot be trusted for period or resolution.
+> - **Get it:** `scripts/fetch/fetch_47_cwc_rainfall.py`. Real spans per station:
+>   `scripts/inspect/cwc_rain_inventory.py` → `reports/cwc_rain_inventory.csv`.
+> - **Limits:** points at river stations, mostly in valleys; read daily at 08:00; quality
+>   not yet checked; little on the ridges.
+>
+> **Where it applies here:**
+>
+> - **SlideSense:** measure the satellite rain's bias by place and height (DESIGN.md flags
+>   drift above 2,500 m); check that "unusual rain" by satellite is unusual at the gauges too,
+>   most of all on the dated landslide days near a station.
+> - **FloodSense:** grade each forecast's rain against the gauges; test gauge rain as an input
+>   for the gauged rivers that have a rain station (Pasighat, Tezu, Miao, Namsai, Jang …).
+> - **Jang pilot:** a real local rain record at the pilot site, 2017→today, for both forecasts.
+> - **Soil erosion:** anchors the rain-strength factor (EROSION_PLAN.md, V-01). In hand now.
+>
+> **Working record (started 2026-10-20): [RAIN_GAUGES.md](RAIN_GAUGES.md)**: plan, tests written before running, results.
 
 ## 1. Open, not started
 
@@ -12,6 +51,8 @@ by the user's instruction (it has its own plan: EROSION_PLAN.md).
 | **15** | **Landslide timing learned from the whole Himalaya** | 3-hour download + about a day | The biggest gain left for the landslide forecast: its "when" half rests on 84 dated landslides in the state; the Himalayan arc has about 800 more. The download was stopped at 10% and resumes. Steps: [PARKED_HIMALAYAN_POOLED_TRIGGER.md](PARKED_HIMALAYAN_POOLED_TRIGGER.md). It would also firm up the roughest number on the place card ("High = 3×", from 8 landslides) and settle whether a weak slope should read High on a below-normal rain day ([LANDSLIDE_TIMES_USUAL.md](LANDSLIDE_TIMES_USUAL.md) §4). |
 | **16b** | **The level line beyond 2 days** | 1–2 days | May fail: beyond 2 days the line and the chance disagreed too often when it was last looked at. Rules first. FLOOD_WHEN_PILOT_PLAN.md §14. |
 | **21** | **News-feed intake for flood reports** | 2–3 days | So the flood chance *near a place* can be graded as records arrive. Today new records come only from gauge crossings and the report form. |
+| **25** ⭐ | **Ground rain gauges are open: add them to SlideSense and FloodSense** (found 2026-10-20; the user's standing instruction, see the callout at the top). **Tested 2026-10-20: A–C and E done, D running; no forecast changes. Record: [RAIN_GAUGES.md](RAIN_GAUGES.md)** | 1–2 days | Neither forecast uses ground rain gauges today: both run on satellite rain (IMERG since 2000) and forecast rain; FloodSense's 32 gauges are river levels. The Central Water Commission's **daily** rain gauges are open on NWDP (`scripts/fetch/fetch_47_cwc_rainfall.py`; real spans in `reports/cwc_rain_inventory.csv`). Arunachal: Pasighat 1973→2026 (54 years), Tezu 48, Miao 47, Namsai 34, Seppa 31, Bhalukpong 30, Kabu Basti 25, Yazali 23, Kibithu 20, Tuting 20, and **a station at Jang, 2017→2026**, the pilot site; current to October 2026. Uses: measure the satellite rain's bias by place and height; grade the forecasts' rain against real gauges; a local reading at Jang for the pilot. Limits: points in valleys at river stations, daily at 08:00, quality not yet checked. Truly hourly rain exists only from 2019 at a few stations |
+| **26** | **Last night's measured rain in tomorrow's river chance, tested forward** | half a day to write the test; the 2027 monsoon to run | From #25 Part C (RAIN_GAUGES.md): at 7 river stations with live rain on the CWC flood site, the rain day ending the issue morning sharpened the lead-1 chance (Brier skill 0.130 → 0.166) but failed the 2-of-3-leads gain gate and needs the 08:30 reading in, so it is not adopted. Write a fresh test before the 2027 monsoon, run it forward, lead 1 only, with the daily run moved to about 10:30 IST or on 7 of 8 slots. No live change before the cloud trial ends anyway |
 | **17** | **Google's open river model beside ours** | 3–5 days | As a second opinion, not a feed. A new model to install, feed and compare. |
 
 ## 2. Outside the code
@@ -273,3 +314,80 @@ versions and the host's: allowed inside, allowed outside and refused, on
 every map page of both modules, a second press, a search afterwards, the
 address forms and a phone, 28 of 28; all 35 screens; phone and tablet survey
 of six pages 12 of 12. Deployed 2026-10-12 (`dc66b2a`).
+
+## 13. iPads and other tablets, 2026-10-13
+
+Nobody here has an iPad, so the app was put through WebKit (the engine of
+every browser on an iPad) at the size of each iPad on sale, upright and on
+its side, with touch only: mini 744, iPad 810, Air 11 820, Pro 11 834,
+Air 13 1024, Pro 13 1032; on their sides 1080 to 1376; two Split View
+widths; three Android tablets and a Surface.
+
+**What was wrong, all of it on tablets only.** From 768 px the side menu
+stops floating over the page and takes 300 px out of it, and Streamlit sizes
+everything by the window, not by what is left. A phone never meets this
+(under 640 px Streamlit stacks) and a PC is wide enough.
+
+- An upright iPad with the menu open had 480 px of page laid out as a
+  desktop. FloodSense's "what changed, needs attention, track record" were
+  three columns of 110 px with words broken a letter to a line; the river
+  graph and the gauge board were squeezed side by side; the Data Backbone's
+  figures were cut to "308.4…".
+- An iPad mini (706 px of page): the header on one row broke its title in
+  two and cut the buttons to "My locati".
+- From 864 px Streamlit pads the page 80 px a side: a quarter of what the
+  menu had left.
+- A tablet on its side with the menu open: six headline tiles in a row,
+  130 px each.
+- **The button that closes the menu was invisible.** From 768 px Streamlit
+  shows it only while the pointer is over the menu, and a finger has no
+  "over". So the one way to get the page's full width back could not be seen.
+
+**What was done** (`core/theme.py`, `products/flood/ui.py`, one keyed
+container in `products/flood/live.py`):
+
+- Menu open and under 640 px of page left (a window of 768 to 988 px): the
+  phone layout, by the same rule Streamlit uses under 640 px, written weak
+  enough that every layout the app pins for a phone still wins. Figures stand
+  two to a row there, not one.
+- Side padding 24 px from 864 to 1400 px.
+- The header goes to two rows under 900 px of its own width (was 640).
+- The three FloodSense cards stand one under another under 800 px.
+- Rows of five or six tiles go three to a row in a 1100 to 1250 px window
+  with the menu open.
+- The menu's close button is always shown where there is no hover. A PC with
+  a mouse is unchanged.
+
+**"My location" did nothing about one press in ten, on any device.** Found
+here because the touch test pressed it many times. Streamlit listens to a
+component only after hearing "ready" from it; said once as the piece
+loaded, that word was sometimes spoken before Streamlit was listening, and
+the answer then had nowhere to go: the page sat at "Waiting for your
+browser". The piece now repeats "ready" until it is answered, asks the
+browser straight away, and holds the answer until Streamlit is listening
+(`core/geo_component/index.html`). 8 or 9 presses of 10 before, 30 of 30
+after.
+
+**Left as it is.** Under 768 px (the iPad mini, Split View) the menu opens
+over the page, as on a phone. On a 13-inch iPad on its side this PC's "Run
+now" button crowds the header; the hosted app does not have that button.
+
+**Checked.** By touch in WebKit on ten sizes: the home page, both modules,
+every tab, search, a tap on the map, the map's own buttons, a district, a
+day, clear, My location, an info mark, the menu closed and opened, the
+tablet turned on its side and back: 330 of 330. Every page measured at every
+size (nothing off the side, nothing empty, the menu reachable): iPads 126 of 126, Android tablets and a Surface 56 of 56, phones 56 of 56.
+Phones and the PC re-checked after it.
+
+**Two things about the tools.** `check_app_mobile.py` now takes
+`--set ipad`, `--set tablets` and `--browser webkit`, waits for a page to
+finish rather than a fixed time (WebKit is slower and was being measured
+half-loaded), and uses an app already running on its port. That last one
+matters: every fresh copy of the app fetches live rain again, and a night of
+runs each starting its own tripped the free weather service's limit, so the
+landslide page came up "Live rainfall is unavailable" for a few minutes.
+
+**What a test here cannot stand in for.** WebKit on Windows is the same
+engine as Safari, not the same build, and no test here has the iPad's own
+keyboard, its address bar that shrinks as you scroll, or a real finger's
+drag on the map. One look on a real iPad is still worth having. Not deployed.
