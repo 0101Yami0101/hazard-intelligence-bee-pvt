@@ -13,7 +13,8 @@ area inside Assam (GADM) and inside India (GADM; the national rain-strength maps
 cover India only). Station coordinates are CWC's own; a station with no reach
 within 3 km is reported, not guessed.
 
-Writes reports/sediment_station_catchments.csv
+Writes reports/sediment_station_catchments.csv and, since 2026-10-27 (for AD-02), the
+catchment polygons: data/processed/sediment_station_catchments.gpkg (EPSG:4326).
 """
 from __future__ import annotations
 
@@ -60,7 +61,7 @@ def main() -> None:
     for a, b in zip(riv.HYRIV_ID.values, riv.NEXT_DOWN.values):
         up.setdefault(int(b), []).append(int(a))
 
-    rows = []
+    rows, geoms = [], []
     for _, s in st.iterrows():
         p = gpd.GeoSeries([Point(s.lon, s.lat)], crs=4326).to_crs(UTM).iloc[0]
         near = rivu[(rivu.distance(p) < 3000) & (rivu.UPLAND_SKM >= 50)].copy()
@@ -79,6 +80,7 @@ def main() -> None:
         hb = [h for h in set(riv[riv.HYRIV_ID.isin(seen)].HYBAS_L12.astype("int64")) if h in basu.index]
         poly = basu.loc[hb].geometry.union_all()
         area = poly.area / 1e6
+        geoms.append({"Station": s.Station, "river": s.river, "lat": s.lat, "lon": s.lon, "geometry": poly})
         rows.append({**base, "snap_m": round(float(r0.dist)), "reach_upland_km2": round(float(r0.UPLAND_SKM)),
                      "catchment_km2": round(area),
                      "in_assam_pct": round(100 * poly.intersection(assam).area / 1e6 / area, 1),
@@ -87,6 +89,11 @@ def main() -> None:
     out = pd.DataFrame(rows).sort_values(["in_assam_pct"], ascending=False)
     dest = ROOT / "reports" / "sediment_station_catchments.csv"
     out.to_csv(dest, index=False)
+    g = gpd.GeoDataFrame(geoms, crs=UTM).to_crs(4326)
+    g = g.merge(out[["Station", "catchment_km2", "in_assam_pct", "in_india_pct", "years", "y0", "y1"]], on="Station")
+    gp = ROOT / "data" / "processed" / "sediment_station_catchments.gpkg"
+    g.to_file(gp, driver="GPKG")
+    print(f"  wrote {gp.relative_to(ROOT)} ({len(g)} catchments)")
     pd.set_option("display.width", 250)
     print(out.to_string(index=False))
     print(f"\n  wrote {dest.relative_to(ROOT)}")

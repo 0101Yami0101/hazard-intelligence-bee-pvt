@@ -26,6 +26,7 @@ PROPERTIES = {
     "bdod": "bulk density — compaction / mass",
     "cfvo": "coarse fragments % — proxy for regolith competence",
     "soc":  "organic carbon — topsoil strength / rooting",
+    "nitrogen": "total nitrogen — nutrients carried off with eroded soil (SoilSense, AD-29)",
 }
 DEPTHS = ["0-5cm", "15-30cm", "60-100cm"]
 
@@ -81,7 +82,7 @@ def main() -> None:
         notes=("250 m soil properties, mean prediction, depths "
                + ", ".join(DEPTHS)
                + ". Values are scaled integers — see ISRIC conversion factors "
-                 "(clay/sand/silt g/kg ÷10 = %, bdod cg/cm3 ÷100, soc dg/kg ÷10)."),
+                 "(clay/sand/silt g/kg ÷10 = %, bdod cg/cm3 ÷100, soc dg/kg ÷10, nitrogen cg/kg ÷100 = g/kg)."),
     )
 
 

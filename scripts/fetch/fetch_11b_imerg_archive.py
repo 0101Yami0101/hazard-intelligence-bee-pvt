@@ -52,9 +52,10 @@ ARCHIVE_START = dt.date(2000, 6, 1)
 LATENCY_DAYS = 4
 
 VERSIONS = ("V07B", "V07C")   # historical first — the opposite of fetch_11
-WORKERS = 6                   # GES DISC throttles; past ~8 you buy retries
+WORKERS = int(__import__("os").environ.get("IMERG_WORKERS", 6))   # GES DISC throttles; past ~8 you buy retries
 
 _version_cache: dict[int, str] = {}
+_last_probe: dict[int, str] = {}     # why the version probe failed, per year (status, content type)
 _lock = threading.Lock()
 
 
@@ -80,8 +81,12 @@ def probe_version(session: requests.Session, day: dt.date) -> str | None:
     for v in VERSIONS:
         try:
             r = session.get(url_for(day, v), timeout=180)
-        except Exception:                                     # noqa: BLE001
+        except Exception as exc:                              # noqa: BLE001
+            _last_probe[year] = f"{v}: {type(exc).__name__}"
             continue
+        if not (r.ok and _looks_like_netcdf(r.content)):
+            _last_probe[year] = (f"{v}: HTTP {r.status_code}, "
+                                 f"{r.headers.get('content-type', '?').split(';')[0]}, {len(r.content)} B")
         if r.ok and _looks_like_netcdf(r.content):
             with _lock:
                 _version_cache[year] = v
@@ -96,7 +101,7 @@ def grab(session: requests.Session, day: dt.date) -> tuple[dt.date, bool, str]:
 
     version = probe_version(session, day)
     if version is None:
-        return day, False, "no version resolved"
+        return day, False, f"no version resolved ({_last_probe.get(day.year, '?')})"
 
     for attempt in range(4):
         try:
@@ -143,6 +148,9 @@ def main() -> None:
 
     have = [x for x in days if dest_for(x).exists() and dest_for(x).stat().st_size > 1000]
     todo = [x for x in days if x not in set(have)]
+    cap = int(__import__("os").environ.get("IMERG_MAX_DAYS", 0))   # a quick access test
+    if cap:
+        todo = todo[:cap]
 
     print("GPM IMERG daily — full archive backfill")
     print(f"  range      : {start} .. {end}  ({len(days)} days)")

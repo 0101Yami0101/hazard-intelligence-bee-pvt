@@ -32,10 +32,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pandas as pd
 import requests
 
-from common import GAUGES, UA, record
+from common import AOI_NAME, GAUGES, UA, record
 
 BASE = "https://ffs.india-water.gov.in/iam/api"
-OUT = GAUGES / "cwc"
+# Arunachal (the flood module) keeps the original folder; other regions get their own, so
+# the flood scripts that scan cwc/*_hhs.csv never see another state's gauges.
+OUT = GAUGES / ("cwc" if AOI_NAME == "arunachal" else f"cwc_{AOI_NAME}")
 
 # name -> CWC station code. Add more here (or via --station) as the rollout
 # in FLOOD_WHEN_PILOT_PLAN.md §8 proceeds — nothing else in this file changes.
@@ -119,7 +121,7 @@ def main() -> None:
                     help="fetch one extra station beyond the STATIONS registry")
     args = p.parse_args()
 
-    stations = dict(STATIONS)
+    stations = dict(STATIONS) if AOI_NAME == "arunachal" else {}   # the registry is Arunachal's
     for spec in args.station:
         name, _, code = spec.partition(":")
         stations[name] = code

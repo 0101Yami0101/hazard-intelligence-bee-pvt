@@ -154,6 +154,20 @@ def tree_split():
     return rd(ras), C_SUB
 
 
+def measured_cover():
+    """The measured dry-season cover C raster once it is ADOPTED, else None.
+
+    Adoption is recorded by scripts/inspect/measured_cover_test.py only when the
+    pre-registered held-out test passes (EROSION_PLAN.md, "Phase 1, E1.5 part 3")."""
+    rep = ROOT / "reports" / f"measured_cover_{AOI_NAME}.json"
+    ras = OUT / "cover_measured_C.tif"
+    if not (rep.exists() and ras.exists()):
+        return None
+    if json.loads(rep.read_text()).get("adopted") is not True:
+        return None
+    return rd(ras)
+
+
 def k_williams(sand, silt, clay, oc):
     """Williams (1995) EPIC erodibility, all inputs in percent. Returns SI units."""
     sn1 = 1 - sand / 100
@@ -272,6 +286,13 @@ def main() -> None:
         C = C.copy()
         for k, v in c_sub.items():
             C[(lc == TREE) & (sub == k)] = v
+    measured = measured_cover()
+    if measured is not None and split is None:
+        # Phase 1 E1.5 part 3: cover measured from each square's dry-season bare
+        # share (Sentinel-2, 2019-2026), adopted only after it agreed better with
+        # NRSC's land-degradation map on the held-out half of the state. The
+        # class lookup then becomes the comparison run (written as treeC_avg).
+        C = np.where(np.isfinite(measured), measured, C).astype(np.float32)
     P = 1.0                                   # "if untreated" — V-05
 
     # ---- what is assessed ---------------------------------------------------
@@ -295,7 +316,9 @@ def main() -> None:
     A_ired = soil_loss(R_ired, LS)
     cls = classify(A, ok)
 
+    replaced = split is not None or measured is not None
     main_label = ("main (InRESatE, tree split, guard, McCool, river land < 2 m)" if split is not None
+                  else "main (InRESatE, measured cover, guard, McCool, river land < 2 m)" if measured is not None
                   else "main (InRESatE, guard, McCool, river land < 2 m)")
     sens = {
         main_label: shares(cls, ok),
@@ -313,14 +336,16 @@ def main() -> None:
     write("erosion_A_treeC_alt_tpha", a_lo)
     a_alt = (R * K * LS * C * P).astype(np.float32)
     sens["river land < 5 m"] = shares(classify(a_alt, ok_alt), ok_alt)
-    if split is not None:
-        # What the split changed: the same run with one value for all tree land.
+    if replaced:
+        # What the split (or the measured cover) changed: the same run with the
+        # class lookup, one value for all tree land.
         a_avg = (R * K * LS * C_avg * P).astype(np.float32); a_avg[~ok] = np.nan
         sens[f"tree class average {C_LOOKUP[TREE]:g} (D8)"] = shares(classify(a_avg, ok), ok)
         write("erosion_A_treeC_avg_tpha", a_avg)
 
     # ---- write --------------------------------------------------------------
-    for name, arr in (("erosion_R", R), ("erosion_K", K), ("erosion_LS", LS), ("erosion_C", C)):
+    for name, arr in (("erosion_R", R), ("erosion_K", K), ("erosion_LS", LS), ("erosion_C", C),
+                      ("erosion_LS_nearing", LS_near)):     # the second S form, for V-17's runs
         a = arr.copy(); a[~inside] = np.nan
         write(name, a)
     write("erosion_A_tpha", A)
@@ -352,10 +377,12 @@ def main() -> None:
         "A_mean_tpha": {"main": round(float(np.nanmean(A)), 2), "ired": round(float(np.nanmean(A_ired)), 2),
                         f"tree_C_{TREE_C_ALT:g}": round(float(np.nanmean(a_lo)), 2),
                         **({f"tree_class_average_{C_LOOKUP[TREE]:g}": round(float(np.nanmean(a_avg)), 2)}
-                           if split is not None else {})},
+                           if replaced else {})},
         "class_shares_pct_of_assessed": sens,
         **({"tree_split": {"adopted": True, "C": {str(k): v for k, v in split[1].items()},
                            "report": f"reports/tree_split_{AOI_NAME}.json"}} if split is not None else {}),
+        **({"measured_cover": {"adopted": True, "report": f"reports/measured_cover_{AOI_NAME}.json"}}
+           if measured is not None and split is None else {}),
         "seconds": round(time.time() - t0),
     }
     dest = ROOT / "reports" / f"erosion_factors_{AOI_NAME}.json"

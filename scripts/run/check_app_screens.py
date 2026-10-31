@@ -48,9 +48,29 @@ CASES = [
     ("backbone", "bb_view", ["Pipeline", "Data catalogue", "Layer explorer"], None, {}),
     # SoilSense (Assam, 2026-10-19): every page, a district, each alternative
     # run, and the list filtered to one district
-    ("erosion", "er_view", ["Erosion map", "Priority list", "How to read this"], None, {}),
+    ("erosion", "er_view", ["Erosion map", "This week", "Change over time", "Priority list",
+                            "How to read this"], None, {}),
+    # 2026-10-25: the weekly outlook and the change page with a district picked
+    ("erosion", "er_view", ["This week", "Change over time"], None, {"er_district": "Dima Hasao"}),
+    ("erosion", "er_view", ["Change over time"], None, {"ch_cmp": 2019}),
+    # the village card: empty, by name, and by a typed position
+    ("erosion", "er_view", ["Village card"], None, {}),
+    ("erosion", "er_view", ["Village card"], None, {"vc_q": "Haflong"}),
+    ("erosion", "er_view", ["Village card"], None, {"vc_q": "25.17, 93.02"}),
+    # the priority list re-ranked by custom weights, and with every weight at 0
+    ("erosion", "er_view", ["Priority list"], None, {"w_avg": 2, "w_barer": 3, "w_villages": 1}),
+    ("erosion", "er_view", ["Priority list"], None, {"w_avg": 0}),
+    # what if we treat it: a district, a catchment, and every measure off
+    ("erosion", "er_view", ["What if we treat it?"], None, {}),
+    ("erosion", "er_view", ["What if we treat it?"], None, {"tr_kind": "Catchment"}),
+    ("erosion", "er_view", ["What if we treat it?"], None,
+     {"tr_on_replant": False, "tr_on_terrace": False, "tr_on_contour": False}),
     ("erosion", "er_view", ["Erosion map"], None, {"er_district": "Dima Hasao"}),
     ("erosion", "er_view", ["Erosion map"], None, {"er_run": "ired"}),
+    ("erosion", "er_view", ["Erosion map"], None, {"er_run": "ai", "er_district": "Biswanath"}),
+    # soil reaching streams (AD-25): the map view, and the list ranked by it
+    ("erosion", "er_view", ["Erosion map"], None, {"er_run": "deliv", "er_district": "Dima Hasao"}),
+    ("erosion", "er_view", ["Priority list"], None, {"w_avg": 0, "w_deliv": 3}),
     ("erosion", "er_view", ["Erosion map"], None, {"er_run": "treeC_alt", "er_district": "Kamrup Rural"}),
     ("erosion", "er_view", ["Priority list"], None, {"er_list_d": "Cachar"}),
 ]

@@ -50,6 +50,18 @@ TREE = 10
 DRIVER_NAMES = {"R": "heavy rain", "K": "erodible soil", "LS": "steep or long slopes",
                 "C": "bare or thin cover"}
 RUNNER_UP_WITHIN = 0.5                # log units
+# The second reason, against units of similar steepness (EROSION_PLAN.md,
+# "V-18 part 1"): five equal groups by the slope term, then the factor that
+# stands most above the group's mean, if by more than PEER_MIN log units.
+PEER_GROUPS, PEER_MIN = 5, 0.10
+# Typical measures per cause (V-25): a reading aid, to confirm with the department.
+HINTS = {"LS": ("contour bunds or trenches", "terraces", "check dams"),
+         "C": ("revegetation", "agroforestry", "longer jhum fallows"),
+         "R": ("ground cover before the monsoon", "check dams", "gully plugs"),
+         "K": ("mulch", "cover crops", "grass strips"),
+         # cover on gentle ground (slope groups 1-3): farmland, not jhum
+         "C_gentle": ("cover crops", "crop residue left on the field", "grass strips")}
+CODE_OF = {v: k for k, v in DRIVER_NAMES.items()}
 ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export"
 
 
@@ -100,6 +112,23 @@ def table(gdf, ids, layers, inside, ok, min_cells):
         return first, second
     dr = df.apply(driver, axis=1, result_type="expand")
     df["main_driver"], df["also"] = dr[0], dr[1]
+    # second reason, against units of similar steepness
+    df["slope_group"] = pd.qcut(df["dlog_LS"].rank(method="first"), PEER_GROUPS,
+                                labels=False).astype(int) + 1
+    peer = {f: df.groupby("slope_group")[f"dlog_{f}"].transform("mean") for f in ("R", "K", "C")}
+    best = pd.concat({f: df[f"dlog_{f}"] - peer[f] for f in ("R", "K", "C")}, axis=1)
+    top_f, top_v = best.idxmax(axis=1), best.max(axis=1)
+    stands = top_v > PEER_MIN
+    df["vs_similar"] = np.where(stands, top_f.map(DRIVER_NAMES), "")
+    df["vs_similar_x"] = np.where(stands, np.exp(top_v), np.nan)
+
+    def hint(row):
+        codes = [CODE_OF[row.main_driver]] if row.main_driver in CODE_OF else []
+        if row.vs_similar and CODE_OF[row.vs_similar] not in codes:
+            codes.append(CODE_OF[row.vs_similar])
+        codes = ["C_gentle" if c == "C" and row.slope_group <= 3 else c for c in codes]
+        return ", ".join(dict.fromkeys(m for c in codes for m in HINTS[c]))
+    df["hint"] = df.apply(hint, axis=1)
     for run in layers["A"]:
         df[f"rank_{run}"] = df[f"meanA_{run}"].rank(ascending=False, method="min").astype(int)
     both = (df["rank_main"] <= TOP_N) & (df["rank_ired"] <= TOP_N)
@@ -112,6 +141,8 @@ def reason(row) -> str:
     s = f"main driver: {row.main_driver}"
     if row.also:
         s += f", then {row.also}"
+    if row.vs_similar:
+        s += f"; against similar slopes: {row.vs_similar}, {row.vs_similar_x:.1f}x their average"
     return s
 
 
@@ -171,7 +202,7 @@ def main(want_images: bool) -> None:
     # what the split changed. Decided by the recipe's own report, never by a
     # file merely being present, so a stale raster cannot slip in.
     fac = json.loads((ROOT / "reports" / f"erosion_factors_{AOI_NAME}.json").read_text())
-    if fac.get("tree_split", {}).get("adopted"):
+    if fac.get("tree_split", {}).get("adopted") or fac.get("measured_cover", {}).get("adopted"):
         runs["treeC_avg"] = rd(E / "erosion_A_treeC_avg_tpha.tif")
     layers = {"A": runs,
               **{f: rd(E / f"erosion_{f}.tif") for f in ("R", "K", "LS", "C")}}
@@ -208,7 +239,11 @@ def main(want_images: bool) -> None:
     print(f"  {'#':>3} {'district':16} {'km2':>6} {'A':>6} {'high%':>6} {'ired#':>6} {'C.003#':>7}  driver / mark")
     for _, r in top.iterrows():
         print(f"  {r.rank_main:>3} {r.district:16} {r.scored_km2:6.1f} {r.meanA_main:6.1f} {r.high_or_worse_pct:6.1f} "
-              f"{r.rank_ired:>6} {r.rank_treeC_alt:>7}  {r.main_driver}{', ' + r.also if r.also else ''} | {r.mark}")
+              f"{r.rank_ired:>6} {r.rank_treeC_alt:>7}  {r.main_driver}{', ' + r.also if r.also else ''} | {r.mark}"
+              f" | vs similar: {r.vs_similar or '-'}{f' {r.vs_similar_x:.1f}x' if r.vs_similar else ''}")
+    vs = cat.vs_similar.replace("", "nothing stands out")
+    print(f"\n  second reason, all {len(cat)} catchments: {vs.value_counts().to_dict()}; "
+          f"top {TOP_N}: {vs.head(TOP_N).value_counts().to_dict()}")
     print("\n  districts:")
     for _, r in dis.iterrows():
         print(f"  {r.rank_main:>3} {r.district:20} A {r.meanA_main:6.1f}  high {r.high_or_worse_pct:5.1f}%  "
