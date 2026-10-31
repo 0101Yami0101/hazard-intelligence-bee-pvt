@@ -126,19 +126,19 @@ something setting it off (rain, the river — changes daily).
 
 **The same layers, reused** (● uses it today · ○ planned · – not used):
 
-| Backbone layer | SlideSense | FloodSense | Soil erosion (next) |
+| Backbone layer | SlideSense | FloodSense | SoilSense (Assam) |
 |---|:-:|:-:|:-:|
-| Ground shape: steepness, facing, curves | ● | ● | ○ |
-| Drainage: channels, catchments, height above river | ● | ● | ○ |
-| Soil | ● | – | ○ |
+| Ground shape: steepness, facing, curves | ● | ● | ● |
+| Drainage: channels, catchments, height above river | ● | ● | ● |
+| Soil | ● | – | ● |
 | Rock types and fault lines | ● | – | – |
-| Land cover | ● | – | ○ |
+| Land cover | ● | – | ● |
 | Rain history, 26 years | ● | ● | ○ |
 | Live rain and 7-day forecast | ● | ● | ○ |
 | River gauges | – | ● | – |
 | Soil wetness, daily | – | ● | – |
 | Roads, places, search | ● | ● | ○ |
-| Honest testing, forecast log and grading | part | ● | ○ |
+| Honest testing, forecast log and grading | part | ● | part |
 
 Four proofs that this is real, not a slogan:
 
@@ -155,15 +155,25 @@ Four proofs that this is real, not a slogan:
 
 **More hazards.** Anything with the WHERE × WHEN shape fits.
 
-- **Soil erosion, for Assam — next.** The department names five
-  ingredients: rain, soil, slope, plant cover, land use. Four are already
-  in the backbone.
+- **Soil erosion, for Assam — first version built (SoilSense).** The
+  department names five ingredients: rain, soil, slope, plant cover, land
+  use. Four were already in the backbone. SoilSense maps all of Assam,
+  ranks 703 small catchments with their causes, measures bare ground
+  every dry season since 2019, gives a weekly erosive-rain outlook from
+  the same live rain feed as the flood and landslide forecasts, and has a
+  printable card for any village. Each catchment's rank says how firm it
+  is: re-run 1,000 times over everything still uncertain, 3 catchments stay
+  in the top 20 four times out of five. It is not on
+  the public app yet.
 - Glacial-lake floods, forest fire, earthquake-triggered slides, riverbank
   erosion, city flooding.
 
 **More places.** The satellite inputs are global, so the same steps run
 anywhere. A new state needs a switch for the region, its own local records,
-and its own checking. Assam is the first test.
+and its own checking. **Assam was the first: the switch was built and the
+state's first erosion map came out in about four weeks.** The live
+Arunachal forecasts are re-checked after every shared-code change, to
+prove they did not move.
 
 **More users of the data itself** — through an open feed, later:
 
@@ -212,11 +222,11 @@ backbone.
 | Raw store, with a record for every file | **Built** |
 | One shared map | **Built.** 8.2 million squares, 34 facts each, 26 years of daily rain |
 | Two shelves | **Built** as files. No outside access yet |
-| Products on top | **Two live:** SlideSense and FloodSense |
+| Products on top | **Two live:** SlideSense and FloodSense. **A third, first version:** SoilSense for Assam (not public yet) |
 | The loop: write down, grade | **Built for floods**, daily since late September. **Landslide forecasts are written down daily since 10 October**, not graded yet: nothing feeds dated landslides in |
-| Automatic daily run | **Built for floods** (08:30, on one PC). The rest is run by hand |
+| Automatic daily run | **Built for floods**, in the cloud (Mumbai region) since 20 October, 08:30 every morning. The rest is run by hand |
 | Checking sources as a standing gate | By hand today |
-| A second state | **Designed** (Assam). Everything is wired to Arunachal today |
+| A second state | **Built** (Assam): a region switch, Assam's grid and official outline, and SoilSense on top |
 | Open feed, other apps | Planned |
 | Partner and field intake, own sensors | Planned |
 
@@ -240,18 +250,23 @@ monsoon ended.
 
 ## 11. Honest limits
 
-- **Wired to one state.** Moving it to a second is designed, not built.
+- **Two states, one of them new.** Assam runs one product (SoilSense), as
+  a first version; the forecasts are still Arunachal only.
 - **The loop is closed for floods only.** Landslide forecasts are written
   down but not graded. There is no live catch yet.
 - **No outside users yet.** No open feed, no partner intake, no sensors.
-- **It runs on one PC.** Two days have been missed so far.
+- **Only the flood run is automatic.** It moved to the cloud on 20
+  October, after the PC missed four days.
 - **Sharing data outward** depends on each source's terms of use.
 
 ## 12. What is next
 
 1. **Prove it moves.** The Assam soil-erosion module: a new hazard and a
-   new state at once. It is our entry for the NESFIC 2026 challenge.
-   **Applications close 10 November (questions to the department by 25 October); the build started on 17 October (a second-state switch and Assam's grid are done).**
+   new state at once. It is our entry for the NESFIC 2026 challenge
+   (applications close 10 November). **Built:** the second-state switch,
+   the erosion map, the ranked work list with reasons, the field kit, bare
+   ground every dry season since 2019, and a weekly erosive-rain outlook. **Next:** submit, then the
+   department's pilot.
 2. **Grade the landslide forecasts** (they are written down now; grading
    needs dated landslides, such as road-block logs) and run the whole
    pipeline by itself, off the PC.
@@ -325,8 +340,8 @@ systems, other startups. None yet: the open feed is planned.
 
 **How do you add a new hazard, or a new state?** A hazard brings its own
 two questions and its own record; everything else is already there. A state
-needs a region switch, its own local records and its own checking. Assam is
-the first test.
+needs a region switch, its own local records and its own checking. Assam
+took about four weeks.
 
 **What stops Google or ISRO doing this?** They could build the pipeline.
 The hard parts are local: getting these sources to fit, knowing which
@@ -365,7 +380,8 @@ ladder — a free statewide layer, then paid tiers.
 - "We are a landslide app" or lead with the forecast. Lead with the
   backbone; the products are the proof.
 - "Others already build on it" or "the feed is open". Planned.
-- "It works for any state." Designed; Assam is the first test.
+- "It works for any state." It moved to one more (Assam) in about four
+  weeks; each further state needs its own records and checks.
 - "The loop is closed." It is, for floods.
 - "We own unique data." Most inputs are public. Ours is the assembly and
   the checked record.

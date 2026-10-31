@@ -1,7 +1,13 @@
 # SoilSense — soil erosion risk, monitoring and outlook (3rd module, Assam-first)
 
-> **Status: BUILD STARTED 2026-10-17.** Region switch, Assam grid, outline, mask and folds
-> are done; the erosion recipe is not built yet. Progress: [EROSION_PLAN.md, Build log](EROSION_PLAN.md#build-log).
+> **Status 2026-10-26: first version built, in the app (not public).** The erosion map, the
+> ranked list with reasons and typical measures, the field kit, bare ground every dry season
+> 2019–2026, and a weekly erosive-rain outlook. Checked against ISRO's land-degradation map
+> (failed its bars; the national map points the wrong way). Change flags held back after
+> failing two of four tests. One-list summary: [EROSION_PLAN.md, Status at a glance](EROSION_PLAN.md#status-at-a-glance);
+> progress: [Build log](EROSION_PLAN.md#build-log).
+> **Start here:** [SOILSENSE.md](SOILSENSE.md), a one-page guide to the pages, files, rebuild
+> and documents.
 > Written 2026-09-29.
 > **Target:** NESFIC 2026 problem statement **NESFIC-D-07 "Soil Erosion Risk Mapping &
 > Monitoring"**, Soil Conservation Department, Government of Assam. Applications close
@@ -284,13 +290,16 @@ team can act on in time.
 
 ## 6 · What a user sees
 
-| Screen | Contents |
-|---|---|
-| **Map** | Risk classes; each factor as its own layer; change since last season or year; "not assessed" areas shown distinctly |
-| **Priority list** | Ranked micro-watersheds and villages, main driver, trend, adjustable weights |
-| **Place card** | Search any village → class, main driver, trend, this week's rain outlook, treatment hint |
-| **Field** | Export for field teams; the field-check form |
-| **How to read this** | Method page in plain words, like FloodSense's |
+| Screen | Contents | State (2026-10-31) |
+|---|---|---|
+| **Map** | Risk classes; each factor as its own layer; change since last season or year; "not assessed" areas shown distinctly | Built: classes, three runs, districts, top 20; the AI second opinion and soil reaching streams as extra views; factor layers not shown one by one |
+| **This week** | The next 7 days' erosive rain against each place's normal; catchments where it does most harm | Built (E2.1); replayed over 44 monsoon weeks: good at *when*, weak at *where within a week* |
+| **Change over time** | Bare ground each dry season 2019–2026, or the change between two; catchments getting barer; the flag tests | Built; flags held back |
+| **Priority list** | Ranked catchments and districts, cause, second reason, typical measures, how firm each rank is, adjustable weights | Built, with adjustable weights and what the lost soil is worth |
+| **Village card** | Search a place or a position → loss around it, why, what helps, rank, bare-ground trend, this week's rain; printable | Built; Assamese wording not written |
+| **Field** | Export for field teams; the field-check form | Exports and field points built; the form's return path not |
+| **What if we treat it?** | Soil saved per measure (replanting, terraces, contour bunds), per hectare and per catchment | Built (AD-24); values provisional (V-32) |
+| **How to read this** | Method page in plain words, like FloodSense's | Built |
 
 **Kinds of number, labelled as such** (the FloodSense badge approach):
 
@@ -400,9 +409,9 @@ and change, weekly outlook, field loop.
 | GADM 4.1 | Quick boundary | On disk (outdated districts) | Non-commercial ⚠️ — replace with official |
 | Assam State Geoportal | Official boundaries | To fetch | Listed on NESFIC resources page |
 | NESDR land-cover layers (NESAC) | Seasonal land use cross-check | WMS open, not harvested | Registration for download |
-| NRSC land degradation (Bhuvan) | V2 | To check (E0.11) | Bhuvan WMS pattern |
+| NRSC land degradation (Bhuvan) | V2 | **Open, read 2026-10-25** (`ld:AS_LD50K_1516`, one class at a time in EPSG:4326); compared in E1.5: X1–X3 failed | Bhuvan WMS GetMap + CQL_FILTER (`fetch_49`) |
 | SLUSI priority watersheds / Watershed Atlas | V2, planning units | To check (E0.11) | — |
-| CWC / India-WRIS sediment | V3 | To check (E0.11) | — |
+| CWC / India-WRIS sediment | V3 | **Open on NWDP (2026-10-20)**: 33 Assam stations, but only 2 drain mostly Assam, so V3 needs a North-East region (V-22) | NWDP CKAN (`fetch_46`) |
 | GloREDa erosivity; global soil-erosion map (Borrelli et al.) | R cross-check, V2 | To check (E0.11) | ESDAC registration; non-commercial |
 | **InRESatE** (IIT Roorkee; Zenodo 11064154) | **R, Phase 0** | Fetched once and read 2026-10-17 | Open, CC-BY 4.0, 0.9 MB |
 | **IRED** (IIT Delhi; Zenodo 6469693) | R sensitivity case | Fetched once and read 2026-10-17 | Open, CC-BY 4.0, 12 MB |

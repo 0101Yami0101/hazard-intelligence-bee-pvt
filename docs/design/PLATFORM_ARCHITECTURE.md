@@ -5,6 +5,9 @@
 > Hazard Intelligence Platform). Older notes here were updated to the new name;
 > "the earlier SlopeSense" or "SlopeSense v1" still means the first, separate app.
 
+> **Second state, 2026-10-17:** the backbone now also runs for Assam, and the
+> third module, SoilSense (soil erosion), is built on it. See [SOILSENSE.md](SOILSENSE.md).
+
 > **Status: the left half is built, the loop is not.**
 > Written 2026-08-17. Rendered for visitors on Data Backbone → Pipeline.
 > Companion docs: [DATA_CONTRACT.md](DATA_CONTRACT.md) (grid + provenance
@@ -49,6 +52,8 @@ Two things distinguish this from the first sketch, and both matter:
 | Model-output shelf | **built** | `data/processed/` surfaces, `models/`, and the web bundles in `webapp/assets/` (4.60 MB total) |
 | SlideSense | **built** | live |
 | FloodSense | **built** | live; static layer unvalidated by design, see FLOOD_MODULE.md |
+| SoilSense | **built, first version** (2026-10-19) | soil-erosion risk for **Assam**, in the app with the status "building"; see [SOILSENSE.md](SOILSENSE.md) |
+| **A second state** | **built** (2026-10-17) | every fetch and build takes `REGION=assam` and writes to its own folders; Assam has its own frozen 100 m grid ([DATA_CONTRACT.md](DATA_CONTRACT.md)). With no REGION set, everything runs for Arunachal exactly as before, checked by `check_live_unchanged.py` |
 | **Own sensors** | *planned* | nothing ingested |
 | **Partner intake** | *planned* | no write path, no quarantine |
 | **Public API** | *planned* | no service boundary at all — the app reads files off disk |

@@ -13,10 +13,40 @@
 
 | Phase | Window | Goal | Tasks done |
 |---|---|---|---|
-| **0 — Application proof** | ~~29 Sep → 18 Oct~~ **17 Oct → 7 Nov 2026** (closes 10 Nov) | A working, honest first erosion map of Assam, built by the same backbone with a region switch, in the app, and the application submitted | 7 / 11 (build tasks E0.1, E0.3, E0.4, E0.6, E0.7, E0.8, E0.9), 2 in progress (E0.2, E0.5: official outline pending); E0.10/E0.11 not started; D8 decided (+ 4 admin tasks, A1–A4). Provisional choices: see the Revisit register |
-| 1 — Seasonal cover + validation | Nov → mid-Dec 2026 | Bare ground refreshed per season since 2019; first independent validation | 0 / 9 |
-| 2 — Prototype | mid-Dec 2026 → Demo Day, Feb 2027 | Weekly outlook, priority list with reasons, field kit, pilot protocol | 0 / 6 |
+| **0 — Application proof** | 17 Oct → 7 Nov 2026 (closes 10 Nov) | A working, honest first erosion map of Assam, built by the same backbone with a region switch, in the app, and the application submitted | **9 / 11 done** (E0.1–E0.9); E0.10 application drafted and Proof of Work PDF built, not submitted; E0.11 partly done |
+| 1 — Cover + validation | Nov → mid-Dec 2026, **started early** | Bare ground per season since 2019; first independent validation | **3 / 9 done** (E1.2, E1.5, E1.6), 2 in progress (E1.1 dry season done; E1.3 flags held back) |
+| 2 — Prototype | mid-Dec 2026 → Demo Day, Feb 2027, **started early** | Weekly outlook, priority list with reasons, field kit, pilot protocol | **1 / 6 done** (E2.3), **2 in progress** (E2.1 outlook built, grading blocked; E2.4 exports done, form return not) |
 | 3 — MVP | Feb → May 2027 | Department data in, field results in, calibrated; optional sensor pilot | 0 / 5 |
+
+**What to add next, AI and otherwise, in priority order:** [ROADMAP_EROSION.md](ROADMAP_EROSION.md)
+(2026-10-26), items AD-01 to AD-36. It also corrects "the soil part cannot be graded with
+open data": CWC's daily river-mud readings for Assam run to 13 Oct 2026 and can grade the
+outlook for any catchment that drains to a sediment station (AD-02).
+
+**Where SoilSense stands on 2026-10-28, in one list** (details in the Build log, numbers in
+the Results log):
+
+| | State |
+|---|---|
+| Erosion map, all Assam, 100 m, six classes | ☑ Built; sanity checks S1–S8 run (S2, S7 failed, both handled) |
+| Priority list, 703 catchments + 35 districts, cause + second reason + typical measures | ☑ Built (V-18 resolved); each rank's firmness measured over 1,000 runs (3 robust, 15 in half); re-rankable by the officer's own weights |
+| Field kit: CSV, GeoJSON, KML, GeoPackage, 100 GPS points with form columns | ☑ Built (export side); the return form is not |
+| Dry-season bare ground, every year 2019–2026 | ☑ Built and in the app ("Change over time") |
+| "New bare ground on a steep slope" flags | ✕ **Held back** after two attempts: F1, F2 pass; H1 and E3 fail (attempt 2: 62.5% of flags confirmed, 75.8% of readable; bar 70% strict) |
+| Weekly erosive-rain outlook ("This week") | ◐ Built and logged locally; **replayed over 44 monsoon weeks: good at when (G2 0.633, G3 0.765 pass), weak at where within a week (G1 0.181 fails)**; not in the 08:30 cloud run |
+| Check against ISRO's land-degradation map | ☑ Run: X1–X3 **failed**; the national map points the wrong way; gap sits on tree land |
+| Measured cover in the main map | ✕ Tested, **not adopted** (no gain on the held-out half) |
+| Tree-class split (V-02) | ✕ Attempt 1 not adopted; still the top open question |
+| Application answers, Proof of Work PDF | ◐ Drafted and built; team, pitch deck and URLs to settle; not submitted |
+| Village card: search a place (or 'lat, lon'), one card, printable | ☑ Built (2,589 places; Assamese wording not done) |
+| "What if we treat it?": soil saved per measure, per hectare, per unit | ☑ Built (AD-24; values provisional, V-32) |
+| AI erosion map learned from ISRO's eroded-land map (AD-01) | ☑ Trained and tested: AUC 0.82 vs formula 0.66 on held-out blocks; catchment ρ 0.66 vs 0.36. **Blind picture check (AD-05, 2026-10-28): ties the formula (0.63 vs 0.62); its top band no richer in visible erosion.** Shown as a second opinion that follows ISRO's map, not a better map |
+| Blind picture check of the formula (AD-05) | ☑ 300 pictures: severe classes show visible erosion 3.1× as often as mild ones (bar 2×, met but not firm: 8 eroded squares) |
+| Gully-prone ground from terrain (AD-30) | ✕ Built, **not adopted**: no better than other open sloping land (0.83×) |
+| Soil reaching streams (AD-25) | ☑ Built and **in the app** (2026-10-28): map view, list column and weight, district line; 7.8 of 116 Mt/yr; an estimate, untested |
+| What the lost soil is worth (AD-29) | ☑ Built and **in the app** (2026-10-29): farmland loses about 35 kg N/ha/yr (1.7 urea bags, ₹61 crore/yr statewide at the farmer's price); tree land given only as a range |
+| River-mud forecast, WHEN (AD-02, AD-06 ×2, river colour) | ✕ **Parked** after four tests failed; needs small-stream sensors, plots or CWC flow |
+| On the public app | ☐ Not deployed (the user's call, held back on 2026-10-26) |
 
 Status marks: ☐ to do · ◐ in progress · ☑ done · ✕ dropped (with reason in the Results log)
 
@@ -45,12 +75,24 @@ and where the change is logged. Add a row whenever a new provisional choice is m
 | V-14 | Data Backbone catalogue | ~~Will count Assam's files in Arunachal's figures~~ **Fixed in code 2026-10-19:** sources tagged by state, files counted once. The live catalogue is not rebuilt yet | — | **The next `build_backbone_bundle.py` run** | When it runs: the brief's and the deck's "29 sources / 308 GB" become about 33 / 342 GB (most of the increase is the comparison-only ISED/IWED). Update BRIEFING.md/.html and PRESENTATION in step | `build_backbone_bundle.py` |
 | V-15 | IMERG archive for Assam | Not fetched | Phase 0 R comes from the R maps | The weekly outlook (E2.1) | `fetch_11b` with `REGION=assam` (about 2 h) | E0.3 |
 | V-16 | Display of cell classes on tree land | **Shown since 2026-10-19:** a note under the map ("On tree-covered land a square's class is indicative…") | Follows from V-02 | V-02 upgraded | Drop the note | `webapp/products/erosion/view.py` `_map_page` |
-| V-18 | Reason line among hill units | Driver = the factor most above the **state** average. All top-20 units read "steep or long slopes" | True and simple for Phase 0 | Screen build (E0.9) or the first department review | Add a second reason against *similar terrain* (hill vs hill units), surfacing cover or rain | `erosion_priority.py` `table()` |
+| ~~V-18~~ | ~~Reason line among hill units~~ | **RESOLVED 2026-10-25:** a second reason against units of similar steepness (five slope groups), with a multiple, plus typical measures. See the Build log, "V-18 part 2" | — | — | — | `erosion_priority.py` `table()` |
 | V-19 | Arunachal erosion results not shown in the app | Computed (the debug run) but left out of the bundle; the state picker says so | 74% of forested Arunachal reads severe or worse with tree C 0.03 (D8): misleading without the tree-class split | V-02 upgraded (Sentinel-2 tree split), or the user asks to show it | `REGION=arunachal python scripts/run/export_erosion_bundle.py` (needs `erosion_priority.py` and `check_erosion_bars.py` for Arunachal first) | `webapp/products/erosion/view.py` `_region()` |
 | V-20 | Home page subtitle | Still "Arunachal Pradesh" under SLOPESENSE, with an Assam module beside it | The home page mirrors the presenter's script and the deck; changing one alone puts them out of step | The user decides how the platform names its states | Change `app.py` landing title, `core/landing.py`, the script and the deck together | `webapp/app.py` |
 | V-21 | Earth Engine has no asset storage | Results fetched by `computePixels` in 8 km tiles (1,417 tiles, about 2½ h for Assam) | Works, and resumes | A state-wide refresh is needed often (seasonal cover, E1.2+), or another state | Turn on asset storage for project `earthengine-507510` in the Google Cloud console (user's action); then one batch export per run | `fetch_43_tree_split_inputs.py` |
 | V-22 | V3 measured-sediment test | **Not possible on the Assam-only map** (2 qualifying stations). 12–13 CWC stations with 20–48 years drain catchments ≥ 95% inside India, from the hills around Assam | — | The user decides to extend the map | A North-East region on the backbone (about 91.7–96.9° E, 22.9–27.7° N) covering those catchments; then rank catchments by measured concentration against modelled loss. No CWC discharge for Assam, so concentration, not loads | `reports/sediment_station_catchments.csv` |
-| V-17 | Priority ranking robustness | Rank under 2 R maps × 2 tree C. **S7 failed (2026-10-17):** 7 of the top 20 are shared between rain maps (ρ 0.82 over all units), 0 in all four runs. **E0.8 (2026-10-18):** the cleared hill catchments #1, #8, #13, #16 hold under tree C 0.003; the 7 rain-robust ones are forested hills. So: mark "top under both rain maps" / "depends on the rain source" and show each unit's rank under each run | Neither lever can be settled with open data now | More R anchors (V-01) or the tree-class split (V-02) | Re-run S7; the marks shrink as the levers are pinned down | E0.8; `check_erosion_bars.py` S7 |
+| V-23 | Seasons watched | **Dry season only** (1 Feb – 30 Apr), 2019 → 2026 (2026-10-25) | It is when *jhum* ground is bare, just before the erosive monsoon rain, and the least cloudy season | The department asks for other seasons; or post-harvest bare cropland matters for the pilot | Add a post-monsoon (Oct–Dec) composite with the same rules | `fetch_48_dry_season_cover.py` |
+| V-24 | Bare-pixel and flag thresholds | NDVI < 0.30 bare; flag at ≥ 0.25 bare after ≤ 0.10; slope ≥ 10° (2026-10-25, written before measuring). **2026-10-26: F1, F2 passed; H1 47.6% and E3 57.5% failed, so flags are held back** | The bare-ground layer itself is a measurement and ships | A second attempt passes its own new blind sample | Add a drop in the square's mean NDVI against its earlier seasons (diagnosis in part 2); a burn index (NBR) beside NDVI | `cover_change.py` |
+| V-25 | Treatment hints | A fixed table, cause → typical measures (2026-10-25) | Standard practice in Indian soil conservation, and it is labelled as a hint | The department names its own works per situation, or an adviser reviews it | The department's own table; per land use (tea, *jhum*, cropland) | `erosion_priority.py` `HINTS` |
+| V-26 | NRSC land degradation as a reference **and, from 2026-10-26, as training labels for the AI map (AD-01)** | 2015–16 1:50k map read from Bhuvan's map service, one class at a time (2026-10-25). Outputs are ours; NRSC's polygons are never shared | The only independent, state-wide, expert-drawn erosion map for Assam | NRSC shares the vector data, or a newer cycle appears | Use the vectors directly; add the 2005–06 cycle as a change reference | `fetch_49_nrsc_land_degradation.py`, `train_erosion_ai.py` |
+| V-27 | Weekly outlook method | 0.2° Open-Meteo points (248), 7-day forecast; EI = a·P^b (InRESatE daily model) on both forecast and 2010–2025 history; this week's **share of a normal year** and **× normal for these days**; loss = share × the map's yearly A (2026-10-25) | Same-source comparison cancels Open-Meteo's wet bias exactly for a constant scale factor; same spacing and feed as the live products | The rain part is graded (E2.2) and disagrees; or a denser live refresh becomes affordable | Grade against IMERG (needs V-15); 0.1° points from a background refresh job | `erosion_outlook_base.py`, `products/erosion/outlook.py` |
+| V-28 | Where the outlook is logged | Locally, by hand (`erosion_outlook_log.py`), into `records/erosion_outlook/assam/` | The first issue proves the chain and rebuilds exactly | The user agrees to redeploy the 08:30 cloud run | Add it as a step after the flood forecast in `scripts/cloud/modal_daily.py`, then redeploy | `scripts/model/erosion_outlook_log.py` |
+| V-29 | Earth Engine access | Project `earthengine-507510` is in **"Restricted Mode"** (a concurrency cap seen 2026-10-25; on 2026-10-26 Earth Engine said why: **the project exceeded its noncommercial compute quota**) | Fetches still finish, with retries | Before any commercial use, or if fetches start failing | Check the project's registration and terms with Google; or build composites from Copernicus directly | `fetch_43`, `fetch_48` |
+| V-30 | App bundle size | SoilSense adds 9.4 MB (the 8 dry-season maps are 4.9 MB) to the app's ~5 MB | Within free hosting limits | Hosting gets slow or tight | Ship fewer seasons, or coarser bare-ground maps | `export_erosion_bundle.py` `change_bundle` |
+| V-31 | Places for the village card | 2,589 named places from OpenStreetMap + GeoNames + district HQs (2026-10-26) | Open, quick, and a typed position covers any spot | The department or ASSAC can share census village points; or the Assam State Geoportal opens | Census 2011 village points or boundaries; then rank by village and revenue circle | `erosion_places.py` |
+| V-32 | Treatment values (AD-24) | Replant C 0.05 (≥ 15°), terrace P 0.15 (≥ 8°), contour P 0.5–0.9 by slope (W&S Table 13, 1.7–14°) (2026-10-26) | Standard, cited ranges; shown as estimates | The department names its own values per measure; or field plots in the pilot | The department's table; add unit costs for "per rupee" | `erosion_treatment.py` |
+| V-33 | Blind picture check (AD-05) | One labeller (Claude), Esri 1 m mosaic of unknown dates, 300 squares of which 20 show erosion (2026-10-28) | Blind, pre-registered, and the only independent look at the ground before field visits | A second labeller is available; dated imagery (Earth Engine after 1 Nov, or Copernicus); or the pilot's field visits | Two labellers with an agreement figure; oversample open sloping land so more squares show erosion; replace with field results (E2.4) | `erosion_eyecheck.py` |
+| V-34 | Soil value (AD-29) | SoilGrids topsoil N and organic carbon (0–30 cm), enrichment ratio 1, urea at ₹266.5 per 45 kg bag (the farmer's price, incl. taxes, as of 2026-10-29), P = 1 (untreated) | Open, statewide, cited; the farmland figure does not depend on V-02 | The department's soil survey (V-10); measured enrichment ratios for the North East; a price change; the treated-area records (V-05) | The department's soil N and C; enrichment 1.2–3 as a range; P from treated areas; add P and K once a source exists | `erosion_soil_value.py` |
+| V-17 | Priority ranking robustness (**part 2, 2026-10-26: 1,000 runs across the unsettled inputs; 3 robust, 15 in half; shown as 'top 20 in X% of runs'**) | Rank under 2 R maps × 2 tree C. **S7 failed (2026-10-17):** 7 of the top 20 are shared between rain maps (ρ 0.82 over all units), 0 in all four runs. **E0.8 (2026-10-18):** the cleared hill catchments #1, #8, #13, #16 hold under tree C 0.003; the 7 rain-robust ones are forested hills. So: mark "top under both rain maps" / "depends on the rain source" and show each unit's rank under each run | Neither lever can be settled with open data now | More R anchors (V-01) or the tree-class split (V-02) | Re-run S7; the marks shrink as the levers are pinned down | E0.8; `check_erosion_bars.py` S7 |
 
 ## Build log
 
@@ -1088,6 +1130,1599 @@ folds and reports are kept in `data/interim/assam/_pre_soi_outline/`.
 - App: 7 of 7 SoilSense screens pass. The method page now names the Survey of India outline.
 - `check_live_unchanged.py check`: PASS, 0 changed.
 
+### 2026-10-25 · Phase 1, E1.1–E1.3 part 1: bare ground every dry season and "new bare ground on a steep slope", written before measuring
+
+**Why now.** The department's statement asks for "periodic monitoring" with "temporal
+comparison". Until today all of it was "planned". This entry fixes, before any Sentinel-2
+number exists, how SoilSense measures bare ground each dry season since 2019, how it flags
+new bare ground on steep slopes, and how the flags are tested for false alarms **before**
+any is shown (E1.2's rule).
+
+**Why the dry season, and only the dry season (for now).** In Assam's hills, *jhum* plots
+are slashed in December–February and burned in March–April. The ground then stays bare
+until the crop grows after the monsoon starts. The heavy, erosive rain of May–September
+falls on whatever the dry season left bare. So the dry-season picture is the one that
+matters most for erosion, and it is also the least cloudy part of the year. A post-monsoon
+picture is a later addition (register V-23).
+
+**What Earth Engine computes, per year Y = 2019 … 2026, per 100 m cell** (script
+`scripts/fetch/fetch_48_dry_season_cover.py`):
+
+| Piece | Rule |
+|---|---|
+| Images | Sentinel-2 L2A (`COPERNICUS/S2_SR_HARMONIZED`), **1 Feb – 30 Apr of Y** |
+| Cloud | Google Cloud Score+ (`GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED`), keep a 10 m pixel when `cs_cdf` ≥ 0.60 (Google's suggested value) |
+| Per 10 m pixel | Number of clear looks; the **median NDVI** of the clear looks |
+| A usable pixel | ≥ 3 clear looks and median NDVI ≥ 0 (below 0 is open water) |
+| **Bare pixel** | Usable, with median NDVI < **0.30**: bare soil, burnt ground, slashed and dried vegetation |
+| `valid_Y` | Share of the cell's 10 m pixels that are usable |
+| `bare_Y` | Share of the usable pixels that are bare |
+
+Plus, from Hansen Global Forest Change v1.13 at 30 m, only for testing (never as an input to
+the detector): mean tree cover in 2000, share of the cell lost in each year 2018–2025, and
+share lost at any time 2001–2025.
+
+**A cell-year is "evaluable"** when `valid_Y` ≥ 0.50. Otherwise it is shown as "too cloudy
+that season" and never counted as bare or as unchanged.
+
+**The flag, "new bare ground on a steep slope", in year Y (2020 … 2026).** All must hold:
+
+1. the cell is scored by the erosion recipe (`erosion_assessed`);
+2. its mean slope is **≥ 10°** (`terrain_slope_deg`, the unguarded slope; at 10° the canopy
+   slope trap of V-06, under 3°, cannot reach it);
+3. year Y is evaluable and `bare_Y` ≥ **0.25** (a quarter hectare or more of the square);
+4. of the two years before (Y−1, Y−2), at least one is evaluable, and **every evaluable one**
+   has `bare` ≤ **0.10** (the square was green before).
+
+So 2019 can never be flagged (no year before it), and 2020 is judged against 2019 alone.
+
+**Pass bars (written now, before any Sentinel-2 or Hansen cell is measured):**
+
+| # | Check | On which cells | Pass bar |
+|---|---|---|---|
+| **F1** | False flags on stable forest | WorldCover tree, scored, slope ≥ 10°, Hansen tree cover 2000 ≥ 75%, and **no** Hansen loss in the cell in 2001–2025. Every evaluable cell-year 2020–2026 | Flagged ≤ **1.0%** of cell-years |
+| **F2** | False flags from tea pruning | Cells inside an OSM tea outline whose 8 neighbours are also inside one (739 outlines, `fetch_45`), scored. The flag rule **without** the slope condition, so flat tea counts too | Flagged ≤ **3.0%** of cell-years |
+| **H1** | Does it catch real clearing? | Scored, slope ≥ 10°, Hansen loss in year L (2020–2025) on ≥ 50% of the cell, and none in L−1 or L−2 | Flagged in L or L+1 for ≥ **50%** of the cells that are evaluable in L or L+1 |
+| **E3** | Blind eye check on **dated** imagery | 40 random flags and 40 random unflagged evaluable cell-years on slopes ≥ 10° (the same years), shuffled, neutral ids. Each is shown as a pair of Sentinel-2 true-colour pictures (dry season Y−1 and Y, 1.5 km window, the square outlined) and labelled *new bare or burnt patch: yes / no / can't tell* before the key is opened | Flags: ≥ **70%** "yes"; unflagged: ≤ **10%** "yes". "Can't tell" counts against the flags (strict); the share among readable pictures is reported beside it |
+
+**Clarification, added the same day while the inputs downloaded, before any number or picture
+existed:** for the *unflagged* pictures, E3's share is "yes" among the readable pictures. A
+"can't tell" there is evidence neither way, and the strict reading belongs to the flags,
+which are the claims. Both shares are reported for both sets.
+
+E3 uses the same satellite as the detector, so it checks the rule against what an eye sees,
+not against an independent sensor. F1, F2 and H1 use Hansen and OSM, which the detector never
+sees. Hansen misses some clearing and calls some forest loss that is not bare ground, so F1
+and H1 are measured against an imperfect reference, said plainly.
+
+**What ships, by rule:**
+
+- **The bare-ground layer** (`bare_Y` and `valid_Y` per dry season) is a measurement, not a
+  claim. It is shown in the app whatever the bars say, labelled "measured from satellite",
+  with its cloudy gaps.
+- **The flags** are shown only if **F1, F2 and E3 pass**. If H1 fails while those pass, the
+  flags ship and the screen states the measured catch rate instead of implying they catch
+  most clearing.
+- **A failure means investigate, not tweak.** A second attempt needs a new dated entry and,
+  for E3, new pictures.
+
+**The cover refreshed each dry season (a monitoring run; it does not replace the main map).**
+On WorldCover tree, shrub and grass cells, a square that is bare in the dry season is treated
+as cleared that year, with the cleared-*jhum* value used for T1 (0.34, IWED):
+
+  C_Y = C_class + `bare_Y` × max(0, 0.34 − C_class)
+
+Cropland (0.34) and bare land (0.45) keep their class value; cells that are not evaluable
+keep C_class. Then A_Y = R × K × LS × C_Y × P, with everything else exactly as the main run.
+Per catchment and district this gives each year's loss, the change since the year before and
+since 2019, and the hectares newly bare on steep slopes. Reported, no bar: it reads the change
+in cover, not a measured change in soil loss, and the screen says so.
+
+### 2026-10-25 · V-18 part 1: a second reason, against similar slopes, and a treatment hint — written before computing
+
+**The problem (Step 7 part 2, finding 3):** against the state average, every top-20
+catchment's main cause is "steep or long slopes". That is true, but it does not say what
+sets one hill catchment apart from the next, and that is what decides the treatment.
+
+**The rule, fixed before it is computed:**
+
+| Piece | Rule |
+|---|---|
+| Peer group | The units (catchments, and separately districts) are cut into **five equal groups by their slope term** (`dlog_LS`, the unit's mean log LS minus the state's). A unit's peers are the units in its group |
+| Second reason | For rain, soil and cover (R, K, C), the unit's `dlog` minus the mean `dlog` of its peers. The largest positive one is the second reason, **if it is above 0.10** in log units (about +10%). Otherwise "nothing stands out against similar slopes" |
+| Shown as | "Against catchments of similar steepness: *bare or thin cover*, 2.1× their average", where the multiple is exp(difference) |
+| Treatment hint | From the main cause and the second reason, from a fixed table: slopes → contour bunds or trenches, terraces, check dams; cover → revegetation, agroforestry, longer *jhum* fallows; rain → ground cover before the monsoon, check dams, gully plugs; soil → mulch, cover crops, grass strips. Labelled "typical measures, to confirm with the department" |
+| What it does not change | The ranking, the score and the robustness marks. This is a reading aid |
+
+Register V-18 is resolved by this entry once it runs; the hint table becomes a new
+provisional choice (V-25).
+
+**Clarification, the same day, after the first run and before anything was shown:** the cover
+hint read "longer *jhum* fallows" on plains catchments, where *jhum* is not practised. On
+units in slope groups 1–3 the cover hint is now "cover crops, crop residue left on the field,
+grass strips". The ranking and both reasons are unchanged.
+
+### 2026-10-25 · Phase 1, E1.5 (V2) part 1: agreement with ISRO's land-degradation map — the test, written before measuring
+
+**The reference.** NRSC's **Land Degradation 1:50,000, 2015–16** for Assam (Bhuvan layer
+`ld:AS_LD50K_1516`). NRSC drew it by eye from satellite imagery. It marks water erosion in
+seven classes: sheet erosion slight / moderate / severe, rills, gullies, shallow and deep
+ravines; plus "normal" land and other kinds of degradation. It never saw our recipe, and we
+never use it to tune the recipe. It is used **for comparison only and never redistributed**.
+Fetched by `scripts/fetch/fetch_49_nrsc_land_degradation.py` onto our grid. Only the class
+areas were printed before this entry was written; no agreement was computed.
+
+**What it is not.** It is not ground truth. Each polygon carries one dominant process, so
+eroding land that NRSC labelled acidic or something else counts as "other", not as erosion.
+It is one survey (2015–16), at 1:50,000, from 23.5 m imagery.
+
+**The test, fixed now:**
+
+| # | Check | Cells or units | Pass bar |
+|---|---|---|---|
+| **X1** | Does our estimated loss separate NRSC's eroded land from its normal land? | Scored cells NRSC maps as **eroded** (sheet erosion moderate or severe, rills, gullies, ravines: codes 2–7) against those it maps **normal** (code 8). Slight sheet erosion (1) and other degradation (9) left out. AUC of our A (main run) | **≥ 0.70** |
+| **X2** | Do our catchments rank like NRSC's water-erosion share? | The 703 ranked catchments. Spearman ρ between our mean A and the share of the catchment's scored, NRSC-mapped cells in **any** water-erosion class (1–7) | **≥ 0.40** |
+| **X3** | The same for districts | The 35 districts | **≥ 0.50** |
+
+**Reported beside them, no bar:** the same three numbers for (a) the IIT Delhi national map
+(IWED), (b) our IRED run, (c) our tree C 0.003 run, and (d) **slope alone** (mean slope). The
+last says whether the recipe adds anything to steepness. If slope alone agrees with NRSC
+better than the recipe, that is reported as found.
+
+**If a bar fails:** investigate and report. The recipe is not changed to fit NRSC's map.
+
+### 2026-10-25 · Phase 1, E1.5 (V2) part 2: results — all three bars FAIL; the national map points the wrong way; the miss is on tree land
+
+`scripts/inspect/compare_nrsc_ld.py` → `reports/nrsc_ld_comparison_assam.json`. Run exactly as
+written in part 1.
+
+**The reference on our scored land:** sheet erosion slight 744 km², moderate 2,689, severe
+602, rills 11, gullies 1; normal 49,288; other degradation 948. NRSC marks only about 7% of
+scored Assam as water-eroded. 5.40 M of 5.45 M scored cells were compared.
+
+| | Ours (main) | Ours, IRED | Ours, tree C 0.003 | **Slope alone** | **IWED (national map)** | Bar |
+|---|---|---|---|---|---|---|
+| X1 AUC, eroded vs normal cells | **0.661** | 0.643 | 0.581 | 0.651 | **0.419** | ≥ 0.70 ✕ |
+| X2 ρ, 703 catchments | **0.36** | 0.32 | 0.02 | 0.44 | **−0.30** | ≥ 0.40 ✕ |
+| X3 ρ, 35 districts | **0.13** | 0.22 | −0.17 | 0.36 | **−0.36** | ≥ 0.50 ✕ |
+
+**What it says, read honestly:**
+
+1. **All three bars fail.** Our map agrees with NRSC's in the right direction, but not as
+   strongly as we required.
+2. **The national 250 m map (IWED) disagrees with NRSC in every test**: worse than chance at
+   cell level, negative at catchment and district level. That follows from its flat slope
+   factor (Step 6 part 4): it rates the plains highest, and NRSC's erosion is in the hills.
+3. **Slope alone agrees with NRSC about as well as the whole recipe, or better.** So, measured
+   against NRSC, rain strength and cover add nothing yet. Rain is the least certain factor
+   (V-01, S7), and cover is one value for all tree land (V-02).
+4. **Where the miss is (diagnosis, found after the result, not a test):**
+   - **79% of NRSC's eroded land is WorldCover "tree".** On steep tree land (≥ 15°), our median
+     loss is **54.5** t/ha/yr where NRSC marks erosion and **60.5** where it marks normal. Our map
+     cannot separate them, because every tree cell gets C = 0.03. This is V-02 again, now
+     measured against an independent map.
+   - **District disagreements fall into two groups.** Forested hills we rank high and NRSC
+     calls mostly normal: Cachar (ours 4th, NRSC 20th), Kamrup Metro (1st vs 12th), Hailakandi
+     (5th vs 10th). And the north-bank foothills NRSC marks as eroding where our gentle slopes
+     and tree cover score low: Biswanath (32nd vs 2nd), Sonitpur (34th vs 4th), Chirang
+     (25th vs 6th), Golaghat (32nd vs 8th).
+   - The tree C 0.003 run does worse (X2 0.02), so lowering cover on all tree land is not
+     the answer either. The answer has to tell *which* tree land is bare or degraded.
+
+**What follows (not done yet; needs its own written test first):** the dry-season bare share
+(E1.1–E1.3, downloading) measures exactly that. Once it exists, the question becomes "does
+each year's measured cover separate NRSC's eroded tree land from its normal tree land, and does
+a recipe using it agree better with NRSC on land it was not checked on?" That must be
+pre-registered on the frozen spatial folds (decide on half the blocks, judge on the other
+half), so NRSC is never both the tuning target and the judge.
+
+**For the application:** report the failure and the comparison together. Against ISRO's own
+map, ours points the right way where the national map points the wrong way, and the remaining
+gap sits exactly where we already said the map is weakest (cover on tree land), with the fix
+in the plan.
+
+### 2026-10-25 · Phase 1, E1.5 part 3: measured cover in the main map? — the test, written before the dry-season data exists
+
+Written while `fetch_48_dry_season_cover.py` was still downloading; no bare-ground value had
+been read. It follows from part 2: NRSC's erosion sits mostly on tree land, and one cover value
+for all tree land cannot separate it.
+
+**Candidates.** b̄ = a cell's mean dry-season bare share over its evaluable seasons, 2019–2026.
+On WorldCover tree, shrub and grass cells with at least one evaluable season (others keep their
+class value; cropland and bare land unchanged):
+
+| | Cover value | Idea |
+|---|---|---|
+| **M1** | C_class + b̄ × max(0, 0.34 − C_class) | The monitoring formula, averaged over the years |
+| **M2** | C_low + b̄ × (0.34 − C_low), C_low = 0.003 on tree, C_class on shrub and grass | The bare part is measured, so the rest of the tree land is treated as closed canopy |
+
+**Two halves, so NRSC is never both target and judge.** The frozen spatial folds (hash
+`a6bc908e791c9063`): **calibration = folds 0 and 1** (46.5% of cells), **test = folds 2, 3
+and 4** (53.5%).
+
+1. **On the calibration half:** X1 (AUC, NRSC eroded vs normal) for the main run, M1 and M2.
+   The better candidate goes forward only if it beats the main run by **≥ 0.02** there.
+2. **On the test half, judged once.** It is adopted as the main run only if **all** hold:
+   - X1 beats the main run by **≥ 0.02** on the test half;
+   - X2 (ρ over catchments with most of their cells in the test half) is **not lower** than the
+     main run's there;
+   - S1 still passes state-wide (hills ≥ 3× the plains).
+3. **Reported, no bar:** X1–X3 state-wide for every candidate; inside tree land, the AUC of b̄
+   alone; the same candidates with b̄ from 2019–2021 only (nearest to NRSC's 2015–16).
+
+**If adopted:** the main run's C becomes the measured cover; the 0.03 class average becomes a
+comparison run; S1–S8, the priority list, the field kit and the app are re-run; V-02 and V-16
+are updated. **If not:** reported, nothing changes, and V-02 stays open.
+
+### 2026-10-25 · Phase 2 brought forward, E2.1 part 1: the weekly erosive-rain outlook — method, written before building
+
+**What it answers.** "Where will this week's rain wash the most soil?" A ranked list of
+catchments and a map, refreshed from the live 7-day rain forecast. It makes SoilSense a
+forecast, like SlideSense and FloodSense, and it reuses their live rain feed (Open-Meteo,
+`core/rainfall.py`).
+
+**The trap it must avoid** (`core/rainfall.py`, measured on Arunachal): Open-Meteo's rain runs
+**1.68× wetter** than IMERG, the satellite rain InRESatE's daily erosivity model was fitted on,
+and correlates with it at only 0.32 a day. Feeding forecast millimetres straight into
+EI = a·P^b would overstate erosivity, more so for heavy days (b > 1). **Rule, as for the other
+products: compare the forecast with the same source's own history at the same place.**
+
+| Piece | Rule |
+|---|---|
+| Points | A 0.2° lattice (about 22 km) wherever a 0.2° box around the point holds in-state Assam cells. The same spacing as the live Arunachal products, so the live refresh stays small |
+| History | Open-Meteo archive, daily rain, 2010 → yesterday, at those points (`fetch_50_erosion_rain_history.py`). The archive and the forecast API are one source chain (measured: ratio 1.00) |
+| Daily erosivity | EI_day = a·P^b, with a and b from InRESatE's daily model at the point's 0.1° cell, applied to Open-Meteo rain on **both** sides (history and forecast) |
+| **Share of the year** | s = Σ EI_day over the next 7 days ÷ the point's mean yearly Σ EI_day in the history. A dimensionless number: the source's wetness cancels to first order |
+| **× normal for the season** | s ÷ the point's mean 7-day share for the same days of the year (±7 days, all history years) |
+| **This week's loss** | Each scored cell takes its nearest point's s. A_week = s × A (the main run's yearly loss). Per catchment and district: the mean over scored cells |
+| Kind of number | **Outlook**: approximate, built on a forecast. The rain part can be graded later against satellite rain (E2.2); the soil-loss part cannot be graded with open data |
+| Logged | Each issued outlook is written down with its date before the week happens (`records/erosion_outlook/`), so it can be graded later |
+
+**What it does not claim.** It does not measure soil moved this week. It ranks where this week's
+forecast rain, set against each place's normal, meets the most erodible ground.
+
+### 2026-10-26 · Phase 1, E1.1–E1.3 part 2: bare ground 2019–2026 is in; F1 and F2 pass, H1 fails narrowly
+
+**Inputs.** `fetch_48_dry_season_cover.py`: 934 tiles over about 3½ hours of fetching, across
+two sessions. Three things slowed it, none affecting the values:
+
+- Earth Engine put the project in **"Restricted Mode"** (a concurrency cap), so some requests
+  were refused and retried;
+- about 40 tiles ran out of Earth Engine memory and were fetched in quarters, one of them (far
+  west, r2100 c400) in sixteenths;
+- the internet dropped for about an hour.
+
+Every piece covers the same cells and gives the same values.
+`dry_season_cover_assam.tif` (34 bands, 142 MB). `cover_change.py` run exactly as written in
+part 1 (`logs/assam_cover_change.log`, `reports/cover_change_assam.json`).
+
+**Clouds are not a problem in the dry season:** 99.6–100% of scored land, and 99.9–100% of
+steep scored land, is evaluable in every year 2019–2026.
+
+| # | Check | Result | Bar |
+|---|---|---|---|
+| F1 | False flags on stable forest (500,420 cells, 3.50 M cell-years) | **0.05%** (1,779 cell-years) | ≤ 1.0% ✔ |
+| F2 | False flags in tea-garden interiors, no slope condition (75,526 cells) | **1.79%** (on steep tea alone: 0.29%) | ≤ 3.0% ✔ |
+| H1 | Hansen clearing caught in L or L+1 (33,109 cell-events, 2020–2025) | **47.6%** (by year 41–54%) | ≥ 50% ✕ |
+| E3 | Blind check on dated pictures | pending | flags ≥ 70%, unflagged ≤ 10% |
+
+**What the years show (steep scored land, share bare in the dry season):** 2019 1.25%, 2020
+1.51, 2021 1.86, 2022 1.03, 2023 1.43, 2024 1.61, **2025 1.94** (the highest), 2026 1.39.
+Flags (new bare ground on slopes ≥ 10°): 6,000–16,000 hectares a year. Mean loss with each
+year's cover: 23.4–24.9 t/ha/yr, against 21.6 for the class lookup.
+
+**By the rule written in part 1:** H1 failing does not hold the flags back, but if E3 passes
+the screen must state the measured catch rate ("catches about half of the clearing that
+global forest-loss maps record") instead of implying it catches most. The flags are shown
+only if E3 passes.
+
+**E3, scored 2026-10-26** (80 pictures labelled blind, `eyecheck_change/labels.csv`, key opened
+after): **FAIL.**
+
+| | n | yes | no | can't tell | Share "yes" | Bar |
+|---|---|---|---|---|---|---|
+| Flagged | 40 | 23 | 10 | 7 | **57.5%** (69.7% of readable) | ≥ 70% ✕ |
+| Unflagged | 40 | 1 | 37 | 2 | **2.6%** of readable | ≤ 10% ✔ |
+
+**So the flags are not shown.** The bare-ground layer is (it is a measurement, not a claim). A
+flagged square is about 20× as likely as an unflagged one to show fresh clearing, but not
+reliably enough for the bar.
+
+**Why (diagnosis after the key was opened, not a test):** the confirmed flags were dense green
+squares that turned bare (mean NDVI of the earlier seasons 0.5–0.8, then a drop of 0.2–0.5).
+Most misses were squares that were already sparse or brown in the dry season (earlier NDVI
+0.4–0.5) and tipped just under 0.30 in a dry year (2025 is the barest year). The rule asks
+"is it bare now?", not "did it lose its cover?".
+
+**A second attempt** would add a drop in the square's mean NDVI against its earlier seasons, and
+must be written down first and judged on a **new** blind sample that excludes all 80 of these
+pictures. Not started.
+
+### 2026-10-26 · Phase 1, E1.5 part 3, results: measured cover NOT adopted, and the diagnosis was wrong
+
+`scripts/inspect/measured_cover_test.py` → `reports/measured_cover_assam.json`, run as written.
+
+| | X1 calibration half | X1 test half | X2 test half | X3 all | S1 |
+|---|---|---|---|---|---|
+| Main (class lookup) | **0.700** | **0.629** | **0.357** | 0.130 | 8.3× |
+| M1 (bare share added to class value) | 0.697 | 0.626 | 0.345 | 0.146 | 6.1× |
+| M2 (non-bare tree land as closed canopy) | 0.619 | 0.558 | 0.092 | −0.048 | 1.2× |
+
+**Nothing goes forward:** neither candidate beats the main run on the calibration half, so the
+test half was only reported. The 2019–2021-only variants behave the same.
+
+**The finding:** inside tree land, NRSC's eroded cells are *not* barer in the dry season. Their
+mean bare share separates them from NRSC's normal tree land at **AUC 0.451**, slightly the
+wrong way. So the part 2 guess, that NRSC's tree-land erosion is ground our cover value misses
+because it is bare, is **not supported**. Whatever NRSC marked there in 2015–16 (degraded
+forest, regrowing *jhum* fallow, erosion under canopy) is not visible as bare ground in
+2019–2026 dry seasons. The cover question on tree land (V-02) stays open, and the main map
+is unchanged.
+
+### 2026-10-25 · V-18 part 2: the second reason and treatment hints — results (and the field kit)
+
+`erosion_priority.py` re-run (log `logs/assam_erosion_priority_v18.log`). **Ranks, scores, causes
+and marks are unchanged** for all 703 catchments; only three columns were added
+(`vs_similar`, `vs_similar_x`, `hint`, plus `slope_group`).
+
+- **Top 20:** against catchments of similar steepness, 17 stand out for **heavy rain**, up to
+  2.5× their group's average (the south Kamrup hills along Meghalaya), 1 for **bare or thin
+  cover** (West Karbi Anglong, 1.5×), and 2 for nothing.
+- **All 703:** heavy rain 270, bare or thin cover 173, nothing stands out 260.
+- This fits S7: the rain map is exactly what lifts the catchments marked "depends on the rain
+  source".
+- One clarification before showing: the cover hint said "longer *jhum* fallows" on plains, so
+  gentle units (slope groups 1–3) now get "cover crops, crop residue left on the field, grass
+  strips".
+
+**Field kit, first version** (`export_erosion_bundle.py`):
+
+- **Points:** in each top-20 catchment, the 5 scored squares with the highest estimated loss,
+  each at least 500 m from those already picked; 100 points in all.
+- **Files:** a CSV with empty columns for what the team finds (visit date, observer, rills,
+  gullies, bare-soil %, fresh clearing, existing works, photo ids, notes); a GPX for GPS units
+  and a KML for phones, both made in the app; and one GeoPackage holding catchments, districts
+  and points (EPSG:4326). KML and GPX were checked to parse.
+- **On screen:** single-square tonnes are the least certain number, so the field table shows
+  the class; the CSV keeps the estimate.
+- **Not built:** reading filled-in forms back (E2.4's round trip).
+
+### 2026-10-26 · Phase 2 brought forward, E2.1 part 2: the weekly outlook is built and the first issue logged
+
+**Rain history:**
+
+- `fetch_50_erosion_rain_history.py`: 248 points (0.2°), Open-Meteo archive 2010-01-01 →
+  2026-10-25, 50 calls.
+- The archive's hourly limit stopped it twice, and an hour-long internet drop hit; each batch
+  is cached, so it resumed.
+
+**Fixed inputs** (`erosion_outlook_base.py` → `webapp/assets/erosion/assam/outlook_base.npz`,
+0.5 MB):
+
+- Daily model parameters, medians: a 0.055, b 1.94. With b near 2, a constant wet bias cancels
+  exactly in the share.
+- Mean yearly EI on Open-Meteo rain, median 4,315.
+- A typical June–August week carries **4.2%** of a year's erosive rain; an average week 1.9%.
+- Every scored cell is mapped to its nearest point, giving a 703-catchment and a 35-district
+  matrix.
+
+**Before the real data**, a dry run on made-up rain checked the plumbing: shapes, all 703
+catchments filled, the map pixels.
+
+**First issue** (`erosion_outlook_log.py`, 2026-10-26, week 26 Oct – 1 Nov):
+
+- **0.11× normal** for these days; **0.10%** of a year's erosive rain; 0.021 t/ha on average
+  over scored land.
+- Most at risk: the Barak valley (Hailakandi, Sribhumi, Cachar).
+- A dry post-monsoon week, as expected.
+- `check`: the issue rebuilds exactly from its own file.
+
+**App:**
+
+- A "This week" page:
+  - the map colours scored land by × normal at its rain point;
+  - the 10 catchments with the most soil at risk are outlined;
+  - the day-by-day bars, the top 8 catchments and a district table.
+- New badges: Outlook and Input.
+- A paragraph on the method page.
+- Live rain comes through the shared, hourly-cached `core.rainfall.load_forecast` (7 calls of
+  40 points).
+
+**Checks:** all 12 SoilSense screen cases pass (`check_app_screens.py`, now with "This week"
+and "Change over time"); `check_live_unchanged.py check`: PASS.
+
+**Open:**
+
+- It is not in the 08:30 cloud run (V-28).
+- The rain part is not graded yet (E2.2 needs Assam IMERG, V-15).
+- The soil part cannot be graded with open data.
+
+### 2026-10-26 · Phase 1, E1.3 attempt 2: change flags with a greenness drop — written before measuring
+
+**Why a second attempt.** Attempt 1 (part 2) failed E3: half its misses were squares that were
+already sparse in the dry season and tipped under NDVI 0.30 in a dry year. Its rule asked "is it
+bare now?"; the question is "did it lose its cover?". The new condition below was suggested by
+looking at attempt 1's 80 pictures after their key was opened, so **those pictures can never
+judge it**: attempt 2 is judged on a new sample.
+
+**The rule (attempt 2) = attempt 1's four conditions, plus one:**
+
+5. the square's mean NDVI in Y (`ndvi_Y`) is at least **0.20 below** the highest `ndvi` of
+   its evaluable seasons among Y−1 and Y−2.
+
+Nothing else changes: the same 10° slope, 0.25 bare share, ≤ 0.10 before, the same evaluable
+rule.
+
+**Tests: the same four bars as attempt 1.**
+
+| # | Bar |
+|---|---|
+| F1 | ≤ 1.0% of stable-forest cell-years |
+| F2 | ≤ 3.0% of tea-interior cell-years |
+| H1 | ≥ 50% of Hansen clearing caught (expected to fall, since the rule is stricter: reported either way) |
+| E3 | flags ≥ 70% "yes" (strict); unflagged ≤ 10% "yes" (readable) |
+
+E3 uses a **new** blind sample: 40 attempt-2 flags and 40 unflagged evaluable steep cell-years,
+**seed 43**, excluding every cell in attempt 1's 80 pictures, labelled before the new key is
+opened.
+
+**Ship rule, unchanged:** the flags are shown only if F1, F2 and E3 pass; if H1 fails, the
+screen states the measured catch rate. If attempt 2 fails E3 too, the flags stay held back
+and no third rule is tried before the application.
+
+Outputs carry the suffix `_v2` (`cover_flags_v2.tif`, `reports/cover_change_assam_v2.json`,
+`eyecheck_change_v2/`); attempt 1's files are kept as they are.
+
+### 2026-10-26 · Phase 1, E1.3 attempt 2: results — closer, still FAILS E3; flags stay held back
+
+`cover_change.py --v2` (log `logs/assam_cover_change_v2.log`, `reports/cover_change_assam_v2.json`),
+run exactly as written in "E1.3 attempt 2". New blind sample (seed 43, attempt 1's 80 cells
+excluded), labelled before the key was opened (`eyecheck_change_v2/labels.csv`).
+
+| # | Attempt 1 | **Attempt 2** | Bar |
+|---|---|---|---|
+| F1 stable forest | 0.05% | **0.03%** | ≤ 1.0% ✔ |
+| F2 tea interiors | 1.79% | **0.90%** | ≤ 3.0% ✔ |
+| H1 Hansen clearing caught | 47.6% | **44.4%** | ≥ 50% ✕ |
+| E3 flags "yes" (strict / readable) | 57.5% / 69.7% | **62.5% / 75.8%** (25 yes, 8 no, 7 can't tell) | ≥ 70% strict ✕ |
+| E3 unflagged "yes" (readable) | 2.6% | **2.8%** | ≤ 10% ✔ |
+
+Flags per year roughly halved: 4,062–10,069 ha (attempt 1: 6,032–16,238).
+
+**By the rule written beforehand, the flags stay held back, and no third rule is tried before
+the application.** The greenness-drop condition did what the diagnosis said: fewer false
+alarms, and more of the flags confirmed. It falls short only because of the "can't tell"
+pictures (haze, already-patchy ground), which the strict reading counts against it.
+
+**What would settle it after the application:** sharper dated imagery for the pictures
+(Sentinel-2 at 10 m is near the limit for a 100 m square); or the department's field visits to
+a sample of flags; or a stricter "can't tell" protocol written down before a third sample.
+The app now shows attempt 2's tests, with a note on attempt 1.
+
+### 2026-10-26 · E2.2 part 1: replaying the weekly outlook over three monsoons — the test, written before fetching
+
+**Question.** Had the "This week" page existed in 2023–2025, would it have pointed at the right
+weeks and the right places? The rain part can be graded against what fell. The soil part
+cannot; this tests the rain part only.
+
+**The forecasts, as issued.** Open-Meteo's previous-runs service keeps what the forecast said
+1–7 days ahead for past dates (hourly `precipitation_previous_dayK`, checked back to July 2023).
+
+- **Issue days:** every Monday from **1 May to 30 September, 2023, 2024 and 2025**: about 66
+  non-overlapping weeks.
+- **The week's forecast:** day D+k is read at lead k, `precipitation` for k = 0 and
+  `precipitation_previous_day{k}` for k = 1…6. Hourly values are summed into UTC days, the
+  app's day boundary.
+- **Points:** every other point of the outlook's 0.2° lattice in a checkerboard, so 124 of
+  the 248 (about 31 km apart). This keeps the fetch inside Open-Meteo's free limits.
+
+**What the replay computes:** exactly what the app does (`products/erosion/outlook.compute`):
+the share of a normal year's erosive rain, and × normal for those days.
+
+**The truth: GPM IMERG daily rain** (NASA, satellite; `fetch_11b`, Assam, 2001–2025). It is
+independent of the forecast.
+
+- At each point: the mean of the IMERG cells within ±0.1°.
+- Observed EI = a·P^b with the same a and b.
+- Observed share = the week's EI ÷ the point's mean yearly EI on IMERG (2001–2025).
+- Observed × normal uses IMERG's own seasonal normal, built the same way as the app's.
+
+**The baseline to beat:** climatology. "Forecast" each week as its normal share, so × normal = 1
+everywhere. An outlook that cannot beat the normal is not worth showing.
+
+**Pass bars (written now):**
+
+| # | Check | Pass bar |
+|---|---|---|
+| **G1 places** | For each issue week, Spearman ρ across the 124 points between forecast share and observed share; the **median over weeks** | **≥ 0.30** and higher than climatology's median ρ |
+| **G2 weeks** | Across the issue weeks, Spearman ρ between the state's forecast share and its observed share | **≥ 0.60** and higher than climatology's ρ |
+| **G3 heavy weeks** | Over point-weeks, AUC of forecast × normal for "observed ≥ 2× normal" (average ranks, so ties count half) | **≥ 0.70** (climatology gives 0.50 by construction) |
+
+**Reported, no bar:**
+
+- the median ratio of forecast share to observed share (does the share method cancel the
+  wetness bias?);
+- the same three numbers for each year;
+- catchment-level ρ (forecast vs observed weekly loss) for each week.
+
+**What follows.** The results go into the app's method page and the application answer, pass or
+fail. If G1–G3 pass, the "This week" page says so in one line. If they fail, it says that
+too, and the outlook stays labelled "not graded" in spirit.
+
+**Two clarifications, added the same day before any IMERG or forecast value was read:**
+
+1. **IMERG history 2013–2025, not 2001–2025.** NASA's server delivered about 9 days a minute,
+   so 25 years would take some 17 hours. "Observed share" and "observed × normal" use IMERG's
+   mean year and seasonal normal over 2013–2025 (13 years). The grade is computed **once**,
+   after those 13 years are in, and not on any partial download.
+2. **125 points, not 124.** The checkerboard of the 248-point lattice gives 125.
+3. **2024 and 2025 only.** The archive holds forecasts 1–6 days ahead from May 2024 onward;
+   for 2023 only the same-day value exists (checked by counting missing values, before any
+   grading). So the replay covers the 2024 and 2025 monsoons, about 44 weeks.
+4. **IMERG from Earth Engine (added 2026-10-26, before any IMERG value was read).** From about
+   13:05 that day, NASA's OPeNDAP data server (`gpm1.gesdisc.eosdis.nasa.gov`) refused
+   connections from our address. The website and the login still answered, so it was most
+   likely a block after the day's burst of requests. The truth is therefore **GPM IMERG V07
+   Final** (half-hourly, Earth Engine `NASA/GPM_L3/IMERG_V07`), summed to UTC days: the same
+   0.1° cells, the mean over a 0.2° box round each point, 2013–2025. "Final" is the
+   gauge-adjusted run, a stronger truth than the Late run `fetch_11b` reads. The marks and
+   everything else are unchanged.
+
+### 2026-10-26 · V-17 part 2: how firm is each rank? Many runs across the unsettled inputs — ranges written before running
+
+**Why.** Today the list marks a top-20 catchment "firm" if it is also top 20 under the other
+rain map. That is a yes/no about one input. The department needs a measured answer: across
+everything we are unsure of, how often is this catchment in the top 20?
+
+**The runs:** 1,000 draws, seed 42, each recomputing every scored cell's A and every unit's
+mean. Per draw:
+
+| Input | How it varies | Why this range |
+|---|---|---|
+| Rain strength R | R = R_InRESatE^(1−w) × R_IRED^w, **w uniform 0–1** (a blend in log space) | The two national maps; neither is settled (V-01, S7) |
+| C on tree land | **log-uniform 0.003 – 0.1**, one value per draw | Closed forest (Wischmeier & Smith) to a tree class rich in tea and *jhum* (V-02; the attempt-1 split averaged 0.10) |
+| C on shrub, grass, cropland | each × **log-uniform ½ – 1½**, independently | IWED's class values, ±50% |
+| Steepness S | **McCool or Nearing**, 50/50 | Both are defensible on steep ground (V-09) |
+| K, P | not varied | A uniform scale cannot change ranks; K's pattern matches ISED (ρ 0.94); P is 1 everywhere |
+
+**Reported per catchment and district (no bar):**
+
+- the share of runs in the top 20, and in the top 50;
+- the median rank, with the 5th–95th percentile range.
+
+**The display rule, fixed now.** The priority list shows **"Top 20 in X% of runs"** beside
+each catchment. A catchment is called **"robust"** if X ≥ 80%. The old two-map mark stays in
+the data. Rank and score still come from the main run. The runs only measure how firm the
+rank is.
+
+### 2026-10-26 · V-17 part 2: results — 3 robust catchments, 15 in half the runs; districts steadier
+
+`scripts/model/erosion_rank_stability.py` (log `logs/assam_rank_stability.log`), run as written:
+1,000 draws, seed 42, 238 s. `reports/erosion_rank_stability_assam.csv` (catchments),
+`…_districts.csv`, `.json`. The columns are joined onto the priority tables and the bundle.
+
+To support it, `erosion_factors.py` now also writes `erosion_LS_nearing.tif` (the second S
+form). The main outputs were fingerprinted before and after: identical.
+
+| | Result |
+|---|---|
+| Catchments top 20 in ≥ 80% of runs ("robust") | **3**: Dima Hasao #12 (89%), Kamrup Rural #1 (87%), Dima Hasao #10 (84%) |
+| Catchments top 20 in ≥ 50% of runs | **15** |
+| Main run's top 20, median share of runs in the top 20 | **66%** |
+| The old two-map mark against the runs (median top-20 share) | "top under both rain maps" **76.5%**; "depends on the rain source" **32.8%** |
+| Districts in the top 5, share of runs | West Karbi Anglong 78%, Dima Hasao 77%, Cachar 76%, Kamrup Metro 60%, Bongaigaon 49%, Kamrup Rural 43% |
+
+**Reading it:**
+
+- The ranking is moderately firm. Only three catchments survive every plausible input
+  combination in four runs out of five. The Cachar and Dima Hasao forested hills sit around
+  75%: they drop when the tree cover value is low.
+- Some plains-edge units (Dhubri, Tamulpur) reach the top 20 in about a third of runs: when
+  tree C is low, bare cropland rises.
+- The district picture is steadier: West Karbi Anglong, Dima Hasao and Cachar are top 5 in
+  about three runs out of four.
+- The list now shows "top 20 in X% of runs" in place of the yes/no mark. That gives the
+  department a measured "survey these first" set: 3 robust, 15 more likely than not.
+
+### 2026-10-26 · V-01: a gauge-corrected rain factor — not tested, because the gauges cannot be the truth
+
+Considered as the next test (leave-one-gauge-out correction of the R map) and **dropped
+before any fitting**. The 40 gauge R values from V-01 part 2 cannot serve as a reference:
+
+- Sonapur, about 20 km from Guwahati, gives R **3,069** from its daily records, where the
+  half-hourly measurement at Guwahati is **7,924**.
+- The CWC files list rainy days only, so incomplete years look dry.
+- InRESatE's daily model (a·P^b) was fitted to satellite daily rain, not to gauge rain, whose
+  heavy days are distributed differently.
+
+A correction fitted to these values would pull the map toward a known-wrong level. **What
+would make it testable:** half-hourly or hourly rain-intensity records (IMD or ASDMA
+self-recording gauges, an ASK in the application), or the CWC telemetry stations (hourly since
+2019) once 10+ years exist. V-01 is unchanged.
+
+### 2026-10-26 · E2.3 (part): the village card is built
+
+**What it is.** A "Village card" page: type a place name, or a position as "lat, lon" (the
+nearest listed place is shown, with its distance), and get one card.
+
+| On the card | From |
+|---|---|
+| Soil loss around the place, its class, high-risk and steep shares | The main run, over a 2.1 km square round the place ("about 1 km around") |
+| Its catchment's rank and "top 20 in X% of runs" | The priority list and V-17 part 2 |
+| Why soil is lost there, and typical measures | The catchment's cause and second reason (V-18), hints (V-25) |
+| Bare ground round the place, each dry season 2019–2026 | E1.1 |
+| This week's erosive rain, × normal | The weekly outlook (E2.1), at the nearest rain point |
+| A map zoomed to the place, with the erosion classes | The main run |
+| A printable card (HTML → print to PDF) | All of the above |
+
+**Places: 2,589 named places inside Assam**, de-duplicated (the same name within 2 km is one
+place):
+
+- 1,389 from OpenStreetMap (`fetch_52_osm_places.py`), 23 of them with an Assamese name as
+  mapped;
+- 1,165 from GeoNames (`fetch_53_geonames_places.py`, CC-BY);
+- the 35 Survey of India district headquarters.
+
+Built by `scripts/build/erosion_places.py` → `webapp/assets/erosion/assam/places.csv.gz`
+(0.11 MB).
+
+**Checks:** 15 of 15 SoilSense screen cases pass, three of them on the card (empty, by name,
+by position). Screenshot looked at (Haflong).
+
+**Not done:**
+
+- **Coverage:** the open lists hold about 2,600 of Assam's roughly 26,000 census villages
+  (V-31).
+- **The Assamese card:** its wording must be written and checked by a native speaker; no
+  machine-written Assamese is shown.
+- **Ranking by revenue circle:** not built.
+
+### 2026-10-26 · E2.3 (rest): ranking by the officer's own weights — built; E2.3 done
+
+**What it is.** On the priority list, "⚖️ Rank by what matters to you": five sliders (0–5). Each
+criterion becomes a percentile across the 703 catchments; the list is re-ranked by their
+weighted mean. Ties, which come from figures rounded in the app's files, are broken by the main
+rank.
+
+| Criterion | From | Default |
+|---|---|---|
+| Average loss | The main run's mean A | 1 |
+| Share of high-risk land | Share of scored land ≥ 10 t/ha/yr | 0 |
+| Total soil lost | t/yr over the catchment (big catchments count more) | 0 |
+| Getting barer lately | Steep land bare in the dry season, 2024–26 against 2019–21, in points; known for 281 catchments with ≥ 5 km² of steep land (the rest count as middling) | 0 |
+| Villages in it | Named places listed in the catchment (an incomplete list: a rough pointer to people) | 0 |
+
+**Checked:** with the defaults, the order equals the main ranking exactly (0 of 703 differ; a
+first version without the tie-break differed in 364 places). Two new screen cases (custom
+weights; all weights 0, which falls back to the default) pass with the rest.
+
+**Example** (average loss 2, getting barer 3): Dhemaji's foothill gorge (main #5) goes to the top,
+then catchments in the Kamrup Metro and Tinsukia hills whose steep land has got 2.5–4.5 points
+barer since 2019–21.
+
+### 2026-10-26 · E2.2 part 2: the outlook replay — good at *when*, weak at *where within a week*
+
+`scripts/inspect/outlook_replay.py` → `reports/outlook_replay_assam.json`, run once, exactly as
+part 1 and its clarifications fix it: 44 Monday issues (May–Sep 2024 and 2025) at 125 points,
+against IMERG V07 Final from Earth Engine (`fetch_54_imerg_points_ee.py`, 4,748 days, none
+missing).
+
+| # | Check | Result | Climatology | Bar |
+|---|---|---|---|---|
+| G1 | Which places, within a week: median ρ across points | **0.181** | 0.115 | ≥ 0.30 and above climatology ✕ |
+| G2 | Which weeks, state-wide: ρ across weeks | **0.633** | 0.389 | ≥ 0.60 and above climatology ✔ |
+| G3 | Heavy weeks at a point (observed ≥ 2× normal): AUC | **0.765** (899 of 5500 point-weeks heavy) | 0.50 | ≥ 0.70 ✔ |
+
+**By year:** 2024 G1 0.267, G2 0.765,
+G3 0.789; 2025 G1 0.074, G2
+0.508, G3 0.729.
+
+**Forecast share ÷ observed share:** median **0.701**. The forecast
+reads a little low against IMERG Final, but it is the same order: the same-source method kept
+Open-Meteo's 1.7× wet bias out.
+
+**Reading it:**
+
+- The outlook says **when** an erosive week is coming: across weeks ρ 0.63, and at a point it
+  separates weeks that turn out ≥ 2× normal at AUC 0.77.
+- It is weak at **which places** within a week (ρ 0.18; better than climatology, below the
+  bar). That is expected from forecast rain sampled every 22–31 km for patchy storm rain.
+- So the page should lead with the week ("this week is 2× normal across the hills") and read
+  its catchment list as regional, not as a precise spot forecast. The page now says so,
+  with these numbers.
+
+**Found on the way:**
+
+- NASA's OPeNDAP server stopped accepting our connections at about 13:05 (clarification 4);
+  Earth Engine served the same data.
+- Earth Engine's warning names the reason for "Restricted Mode": **the project has exceeded
+  its noncommercial compute quota** (V-29).
+
+### 2026-10-26 · AD-01 part 1: an AI erosion map learned from ISRO's eroded-land map — the test, written before training
+
+From [ROADMAP_EROSION.md](ROADMAP_EROSION.md), AD-01 (with AD-27, the explanations). It is
+built while Earth Engine waits for its quota reset; every input is already on disk.
+
+**The labels' role changes (register V-26).** NRSC's Land Degradation map 1:50k (2015–16)
+becomes **training examples**, not only a check. Outputs are ours; NRSC's polygons are never
+shared. Checks X1–X3 can no longer judge a model trained on NRSC, so the independent judge
+becomes the blind picture check (AD-05).
+
+**Cells:**
+
+- Scored by the recipe (`erosion_assessed`), inside the state.
+- **Eroded (1)** = NRSC codes 2–7 (sheet erosion moderate or severe, rills, gullies,
+  ravines). **Normal (0)** = code 8.
+- Left out: 0 (not mapped), 1 (slight), 9 (other degradation). These are X1's definitions.
+
+**Inputs, two sets:**
+
+| Set | Inputs |
+|---|---|
+| **A, the lead** (nothing newer than about 2021) | Terrain: height, slope, steepest slope, relief, plan and profile curvature, eastness, northness, upstream area (log), height above channel, wetness index, channel size (log). Soil: the 18 SoilGrids layers. Land cover (WorldCover class, categorical). Rain strength: InRESatE and IRED. The recipe's own K, LS and C. Canopy: Meta mean height and share under 3 m, ETH height |
+| **B** | A + Hansen loss shares (2021–23, 2024–25) + mean and maximum dry-season bare share 2019–2026 + mean dry-season NDVI. These are later than NRSC's 2015–16, so B is reported, never led with |
+
+**Model:** LightGBM with SlideSense's settings (`train_susceptibility.py` PARAMS).
+
+- **Training rows:** in each training fold, every eroded cell plus three normal cells per
+  eroded cell, drawn at random (seed 42).
+- **Folds:** the frozen Assam 50 km folds (hash `a6bc908e791c9063`).
+- **Scores:** every eligible cell is scored by the model that did not see its fold
+  (out-of-fold, OOF).
+- **The app's map** uses a full model trained on all folds; no score is ever quoted from it.
+
+**Pass bars (set A, OOF):**
+
+| # | Check | Bar |
+|---|---|---|
+| **AI-1** | AUC, eroded vs normal, on all eligible cells | **≥ 0.70**, and **≥ 0.03 above** both the formula's A and slope alone, computed on the same cells |
+| **AI-2** | Spearman ρ over catchments (≥ 100 mapped cells): mean OOF score against NRSC's water-erosion share (codes 1–7) | **≥ 0.40** |
+
+**Reported, no bar:**
+
+- set B on the same tests;
+- AUC per fold;
+- the formula and slope alone, recomputed on these cells;
+- the top inputs by SHAP.
+
+**What ships:**
+
+- If AI-1 and AI-2 pass: the app shows an **"AI rank"** beside the formula's rank, with
+  agreement marked and the AI's top reasons from SHAP per catchment and village (AD-27).
+- If not: reported, nothing shown.
+- **Either way** the blind picture check (AD-05) judges both the formula and the AI on the
+  same pictures before any claim that the AI is better.
+
+### 2026-10-26 · AD-24: "What if we treat it?" — built
+
+`scripts/build/erosion_treatment.py` → `webapp/assets/erosion/assam/treatment.json` (34 kB),
+`reports/erosion_treatment_assam.csv`. The app has a new page with that name.
+
+**How:** the recipe run forwards with the works in place. One hectare takes one measure,
+in this order: replant, then terrace, then contour.
+
+| Measure | Where | Value | Source |
+|---|---|---|---|
+| Replant (trees, bamboo, agroforestry) | Open land (shrub, grass, cropland, bare) ≥ 15° | C → 0.05 | Between W&S closed forest and IWED's shrub 0.11; provisional |
+| Bench terraces | Open land ≥ 8° (not already replanted) | P 0.15 | Mid of the 0.1–0.2 reported for bench terracing in Indian hill studies; provisional |
+| Contour bunds or trenches | Open land 1.7–14° | P 0.5–0.9 by slope | Wischmeier & Smith (1978), Table 13 (contouring); above 25% slope, P 1 |
+
+**State-wide, if all eligible land were treated:**
+
+| Measure | Eligible | Saved | Per hectare |
+|---|---|---|---|
+| Replant | 14,778 ha | 3.19 Mt/yr | **216 t/ha** |
+| Terraces | 27,872 ha | 3.15 Mt/yr | **113 t/ha** |
+| Contour | 488,443 ha | 5.63 Mt/yr | **11.5 t/ha** |
+
+**Reading it:** a small area of open, steep land carries most of what works can save. Per
+hectare, replanting or terracing it saves 10–20× what bunds on gentle farmland save. The
+catchment ranking by "t saved per ha treated" is a new way to target conservation money.
+
+**Checks:** three screen cases pass (district, catchment, all measures off).
+
+**Not done:**
+
+- costs per hectare ("per rupee") wait for the department's unit costs;
+- tree land (*jhum* fallow) is not treatable here until the tree class is split (V-02, AD-08).
+
+### 2026-10-27 · AD-01 part 2: results — the AI passes both bars; a caution on what it may have learned
+
+`scripts/model/train_erosion_ai.py` (log `logs/assam_erosion_ai.log`, `reports/erosion_ai_assam.json`,
+OOF in `data/processed/assam/erosion_ai_oof.parquet`), run as written: 5,259,253 eligible cells,
+330,463 eroded. The PC slept between folds 2 and 3; the run resumed and finished unchanged.
+
+| | AI, set A (lead) | AI, set B | Formula (A) | Slope alone | Bar |
+|---|---|---|---|---|---|
+| AI-1: OOF AUC, eroded vs normal, same 5,259,253 cells | **0.8202** | 0.823 | 0.6603 | 0.6503 | ≥ 0.70 and +0.03 over both ✔ |
+| AI-2: catchment Spearman vs NRSC share (703 catchments) | **0.6586** | 0.659 | 0.3584 | — | ≥ 0.40 ✔ |
+| AUC per fold, set A | 0.7361, 0.9024, 0.7217, 0.9212, 0.8266 | | | | reported |
+
+**Top inputs (gain, set A):** soil_cfvo_60-100cm 23.1%, R_ired 13.4%, R_inresate 13.2%, dem_elev_m 8.5%, hydro_chan_log 7.3%, canopy_h_eth 4.4%, soil_cfvo_15-30cm 3.6%, soil_cfvo_0-5cm 1.9%.
+
+**Reading it:**
+
+1. **Both bars pass with room to spare**, so by the rule the app shows an AI rank beside the
+   formula's, with agreement and the AI's reasons (AD-27).
+2. **Set B adds almost nothing** (+0.003): the later satellite layers carry little that set A
+   lacks. So the time trap (NRSC 2015–16 against 2019+ layers) does not drive the result.
+3. **The caution.** The strongest inputs are smooth, state-scale fields: SoilGrids' deep coarse
+   fragments, the two rain-strength maps, elevation and channel size. A model can use such
+   fields to learn *where NRSC's mappers tended to mark erosion* (by survey sheet or team),
+   not only *why* land erodes.
+   - The 50 km blocks limit this but cannot rule it out.
+   - Fold AUC ranges 0.72–0.92.
+4. **That is why AD-05 matters.** The blind picture check judges both maps on the same squares
+   before any claim that the AI finds eroding land better than the formula. Until then the app
+   says "learned from ISRO's map", never "more accurate".
+
+### 2026-10-27 · AD-01 part 3 and AD-27: the AI map is in the app, with its reasons
+
+**Full model and map.**
+
+- `full_A.txt` was trained on all folds (set A, 1:3 sample) and scored all 5,453,010 scored
+  squares → `erosion_ai_score.tif`.
+- The prediction step was re-run from the saved model after the session ended mid-run.
+
+**Reasons (AD-27)**, from `scripts/model/erosion_ai_explain.py` →
+`reports/erosion_ai_units_assam.csv` (+ `_districts`):
+
+- **Method:** LightGBM's own TreeSHAP values on up to 300 squares per unit, summed by input
+  group (rain strength, terrain, water and drainage, soil, land cover).
+- **Per unit:** the group that pushes the AI up most, and the one that pulls it down most.
+- **Agreement:** "both high" (top 50 catchments or top 8 districts by both), "AI higher",
+  "formula higher" or "both lower".
+
+| | Both high | AI higher | Formula higher |
+|---|---|---|---|
+| Catchments (top 50) | 14 | 36 | 36 |
+| Districts (top 8) | 5 | 3 | 3 |
+
+**What the AI sees differently:**
+
+- **Same top districts as the formula:** West Karbi Anglong, Dima Hasao, Karbi Anglong,
+  Hailakandi and Kamrup Rural lead in both.
+- **AI only:** the north-bank foothills come in through land cover. Biswanath is 3rd (formula
+  32nd), Sonitpur 5th (formula 34th), Chirang 8th (formula 25th). These are exactly the
+  districts where NRSC marks sheet erosion and the formula misses it (E1.5 part 2).
+- **Its top catchments' main reason** is mostly "soil" (44 of 50): the deep-stoniness signal
+  flagged in part 2.
+
+**In the app:**
+
+- The erosion map has an **"AI map"** option: five bands by share of scored land, with its
+  own legend, top-20 outlines and tooltip (AI rank, agreement, reasons). Its top list shows
+  each catchment's formula rank beside it.
+- The priority list has AI rank, agreement and the AI's main reason.
+- The village card has a line with its catchment's AI rank and reason.
+- The method page has a paragraph with the scores and both cautions.
+
+**Checks:** all SoilSense screen cases pass, a new one included (AI map + Biswanath).
+Screenshot looked at.
+
+### 2026-10-27 · AD-02 part 1: does the outlook's erosive rain show up as river mud? — the test, written before fetching rain
+
+From [ROADMAP_EROSION.md](ROADMAP_EROSION.md) AD-02. It checks whether the outlook's number, a
+week's erosive rain against the usual for the time of year, shows up as muddier rivers.
+
+**Stations.** CWC daily suspended-sediment concentration (g/L), `fetch_46`.
+
+- Kept: catchments ≥ 95% inside India (`sediment_station_catchments.gpkg`) with ≥ 8 years of
+  readings in **2010–2026**.
+- **11 stations:** Dudhnai, Rukni at Dholai, Digaru at Sonapur, Sonai at Tulargram, Dikhow at
+  Sivasagar, Katakhal at Matijuri, Buridehing at Chenimari, Dhansiri at Golaghat, Kopili at
+  Jagibhakatgaon, Barak at Annapurna Ghat and at Badarpur Ghat. Margherita's records end in
+  2008.
+- The two Barak stations are nested; both are kept and reported, and noted as not independent.
+
+**Rain.** Open-Meteo archive daily rain, the source the outlook itself uses (its forecasts
+are compared with this history).
+
+- **Period:** 2010-01-01 → 2026-10-20.
+- **Points:** the outlook's 0.2° lattice points inside each catchment, or the nearest one to
+  its centre if none falls inside. Points already fetched for Assam are reused.
+- **EI_day = a·P^b** at each point (InRESatE's daily model, nearest valid cell); the catchment
+  value is the mean over its points.
+
+**Weeks.** Monday to Sunday.
+
+- Erosive rain = the week's summed EI.
+- Plain rain = the week's summed P.
+- River mud = the mean of the week's readings, counted if it has ≥ 2.
+
+**Departures from the usual.** Each weekly value becomes its percentile among all years' values
+for the same week of the year ± 1 week, at that station. Rank-based, so a few huge
+monsoon weeks cannot dominate.
+
+**Pass bars:**
+
+| # | Check | Bar |
+|---|---|---|
+| **M1** | Spearman ρ between the erosive-rain departure and the river-mud departure, same week, per station | ρ > 0 at **≥ 2/3 of stations**, and median ρ **≥ 0.30** |
+| **M2** | The same for plain rain (the baseline) | Erosive rain's median ρ **≥** plain rain's |
+
+**Reported, no bar:**
+
+- mud one week later;
+- monsoon weeks only (June–September);
+- each station's ρ;
+- for the two catchments mostly inside the map (Kopili 81%; Gaurang excluded at 72% inside
+  India), the soil-at-risk version (erosive-rain share × the map's loss).
+
+**Limits, stated now:**
+
+- **Concentration, not tonnes:** CWC publishes no river flow for Assam.
+- **Mud has other sources:** banks and channels add mud too.
+- **Scale:** stations sit on medium rivers, so this checks timing per catchment, not per field.
+
+**It sets AD-06's baseline:** the AI river-mud model must beat M1's numbers.
+
+### 2026-10-27 · AD-05 and AD-30 part 1: the blind picture check (independent judge) and gully-prone ground — written before any picture
+
+**Gully-prone ground (AD-30), fixed before sampling**
+(`scripts/build/erosion_gully_prone.py`, built, no picture seen). A square is flagged when all
+hold:
+
+- open land (shrub, grass, cropland, bare), scored;
+- slope ≥ 5°;
+- upstream area 0.03–5 km² (a hillslope hollow, not a river);
+- stream-power index (upstream area per metre × tan slope) in the top 10% of such squares.
+
+That flags **3,090 ha** out of 30,900 ha of candidates.
+
+**The pictures.** Esri World Imagery (about 1 m), the app's own satellite base map, via the
+export service already used for the top-20 eye check.
+
+- One 500 m × 500 m window per square, the 100 m square outlined, a neutral id.
+- The key (what each square scored) is written to a separate file, opened only after every
+  picture is labelled.
+- Esri's imagery is a mosaic of unknown dates. Erosion signs like gullies, bare slopes and
+  scars persist for years, so this is a fair but not a dated check.
+
+**Sample (seed 7), 300 squares:**
+
+| Stratum | n | For |
+|---|---|---|
+| F | 40 scored squares per formula class (slight … very severe) = 240 | The formula; the AI on the same pictures |
+| G | 30 gully-prone squares + 30 open, ≥ 5°, not-flagged squares | AD-30 against a control |
+
+**Label, one per picture:**
+
+- **"gully"**: a gully or deep channel cut at the square;
+- **"erosion"**: other visible erosion, such as bare soil on a slope, rills, slips or scars,
+  freshly cleared slopes or sediment fans;
+- **"none"**: covered or stable ground;
+- **"can't tell"**.
+
+"Yes" means gully or erosion.
+
+**Pass bars:**
+
+| # | Check | Bar |
+|---|---|---|
+| **P-F** | The formula: share "yes" in classes severe + very severe against slight + moderate (stratum F) | **≥ 2×** |
+| **P-AI** | The AI on stratum F: share "yes" in its top 10% band (score ≥ the 90th percentile of scored land) against its lower half | **≥ 2×** |
+| **P-G** | Gully-prone (AD-30): share "yes" among flagged against control squares (stratum G) | **≥ 2×** |
+| **P-cmp** | Formula vs AI: AUC of each score for "yes" on stratum F's readable pictures | **Reported.** "AI better" is claimed only if the AI's AUC is **≥ 0.05 higher** |
+
+Shares are over readable pictures ("can't tell" left out). The strict share, which counts
+"can't tell" as not "yes", is reported beside it.
+
+### 2026-10-27 · AD-25 and AD-02: results — soil reaching rivers; the river-mud check fails its strength bar
+
+**AD-25, soil reaching rivers** (`scripts/build/erosion_connectivity.py`, 103 s;
+`erosion_ic.tif`, `erosion_sdr.tif`, `erosion_delivered_tpha.tif`,
+`reports/erosion_connectivity_assam.csv` and `…_districts.csv`):
+
+- **Sediment delivery ratio on scored land:** p10 0.023, median 0.040, p90 0.077 (InVEST
+  defaults: IC0 0.5, k 2, SDR_max 0.8).
+- **State:** loss 118.0 Mt/yr, of which **7.8 Mt/yr (7%)** is estimated to reach the
+  streams.
+- **Districts by delivered t/ha:** Dima Hasao 3.76, West Karbi Anglong 3.27, Cachar 3.03,
+  Kamrup Metro 2.99, Kamrup Rural 2.98. The delivered share is fairly even (5.6–7.7%), so at
+  district level the order barely changes from the loss order.
+- **Its use is square by square:** which eroding patches are wired to a stream, which is
+  where check dams and gully plugs pay.
+- Model estimates; untested. Measured mud cannot check tonnes without river flow (none for
+  Assam).
+
+**AD-02, outlook vs river mud** (`scripts/inspect/river_mud_check.py` →
+`reports/river_mud_check_assam.json`; station-weeks in
+`data/processed/assam/river_mud_weeks.parquet` for AD-06), run as written:
+
+- **Data:** 11 stations; rain from `fetch_55` (Open-Meteo archive, 140 lattice points, 6,137
+  days, none missing).
+
+| # | Check | Result | Bar |
+|---|---|---|---|
+| M1 | Erosive-rain anomaly vs mud anomaly, same week: share of stations with ρ > 0 | **82%** | ≥ 67% ✔ |
+| M1 | … median ρ | **0.072** | ≥ 0.30 ✕ |
+| M2 | Erosive rain's median ρ vs plain rain's (0.067) | 0.072 ≥ 0.067 | ✔ |
+
+- **Reported:** mud one week later, median ρ **0.112**; monsoon weeks
+  only, 0.048.
+- **Per station:** Annapurna Ghat 0.097, Badarpur Ghat 0.072, Chenimari (Khowang) -0.013, DUDHNAI 0.225, Dholai 0.005, Golaghat 0.085, Jagibhakatgaon 0.009, Matijuri 0.057, SONAPUR 0.124, Sivasagar -0.009, TULARGRAM 0.107.
+
+**Reading it:**
+
+- **The direction is right**, at 9 of 11 stations, but the weekly link is weak. Unusual
+  erosive rain explains little of a river's unusual muddiness at this scale.
+- **Expected reasons:**
+  - mud is one manual sample a day;
+  - concentration dilutes at high flow;
+  - banks and channels add mud;
+  - the rain is ERA5-based at about 25 km;
+  - catchments run to 25,000 km².
+- **The outlook must not be presented as a river-mud forecast.** Its tested skill stays the
+  rain timing (E2.2).
+- **AD-06 now has its baseline:** an AI river-mud model must beat median ρ 0.072
+  (same week) and 0.112 (next week).
+
+### 2026-10-27 · AD-06 part 1: an AI river-mud model — the test, written before training
+
+**Question.** Can a model learn a week's river-mud anomaly from rain and ground better than the
+outlook's single erosive-rain number (AD-02: median ρ 0.072 same week, 0.112 next week)?
+
+**Rows.** AD-02's station-weeks (`river_mud_weeks.parquet`): 11 stations, 2010–2026, weeks
+with a mud anomaly (≥ 2 readings).
+
+**Target.** The same-week mud anomaly (the seasonal percentile from AD-02), so the result is
+directly comparable.
+
+**Inputs:**
+
+- this week's erosive-rain anomaly and its raw log value;
+- the erosive rain of the 1, 2 and 3 weeks before (log);
+- rain over the previous 30 and 60 days (log): how wet the ground already is;
+- the week's wettest day (log);
+- week of the year (sine, cosine);
+- fixed catchment traits: log area, and the mean of the erosion map's slope factor, loss, cover
+  factor and delivered share over the catchment's mapped part.
+
+**Model.** LightGBM regression, deliberately small: 300 trees, 15 leaves, at least 50 rows per
+leaf, learning rate 0.03, seed 42.
+
+**Held out two ways:**
+
+- **By year:** each year predicted by a model trained on the other years.
+- **By station:** each station predicted by a model that never saw it. The two Barak stations
+  are held out together, as they are nested.
+
+**Pass bar:** the median over stations of Spearman ρ (predicted vs observed anomaly) **≥ 0.20
+under both holdouts**. That is about double AD-02's best (0.11).
+
+**Reported:** each station's ρ, and the inputs' importance.
+
+**What ships if it passes:** a weekly "expected river mud against normal" line per gauged
+catchment, fed from the outlook's forecast rain, labelled as an AI outlook and graded weekly
+against CWC's 2026 file. **If it fails:** reported; nothing is shown.
+
+### 2026-10-27 · AD-06 part 2: results — the AI river-mud model FAILS; nothing ships
+
+`scripts/model/train_river_mud_ai.py` → `reports/river_mud_ai_assam.json`, run as written:
+8,780 station-weeks, 11 stations, 2010–2026.
+
+| Holdout | Median ρ over stations | Bar |
+|---|---|---|
+| By year (leave-one-year-out) | **-0.036** | ≥ 0.20 ✕ |
+| By station (leave-one-out, Barak pair together) | **0.101** | ≥ 0.20 ✕ |
+| AD-02's single erosive-rain anomaly, same rows | 0.071 | (baseline) |
+
+**Top inputs:** rain over the previous 60 and 30 days, then erosive rain the week before.
+Ground wetness and lag matter more than the week's own rain, as expected for river mud.
+
+**Reading it:** across unseen years the model does no better than chance, and across unseen
+stations only a little better than the single number. With weekly mud anomalies from one manual
+sample a day, ERA5-scale rain and no river flow, there is no transferable weekly signal to
+learn. **Not adopted; nothing is shown.**
+
+**What could change it:**
+
+- river flow or turbidity sensors (AD-19, minute-level);
+- daily, not weekly, targets on the stations with daily sampling;
+- satellite rain at 0.1° (IMERG via Earth Engine after the quota reset).
+
+### 2026-10-28 · AD-05 and AD-30 part 2: results — the formula meets its bar (weakly); the AI and gully-prone ground do not
+
+`scripts/inspect/erosion_eyecheck.py --score` → `reports/erosion_eyecheck_assam.json`, run as
+written in part 1. Labels in `data/interim/assam/erosion/eyecheck_ad05/labels.csv`.
+
+**How the labelling was done.**
+
+- All 300 pictures were labelled before `_key.csv` was opened. They were viewed at full
+  resolution (400 px over 500 m) in sheets of 12.
+- One labeller (Claude), so there is no second opinion and no agreement figure (V-33).
+- A working rule was fixed on the first sheet, before any score was known. **"Erosion"** means
+  bare or scarred ground inside the square:
+  - included: exposed soil on sloping ground, cut faces (hill cutting, hill quarries,
+    hill-road cuts) and freshly cleared hill patches (*jhum*);
+  - left out: tilled or fallow fields, paddies (valley terraces included), sand bars, water,
+    and flat built or quarried yards.
+- A final pass over 12 borderline pictures, still blind, changed one label (061, to match
+  145 and 008).
+
+**Labels:** none 274, erosion 19, gully 1, can't tell 6 (cloud or cloud shadow). Only **20 of
+300** squares show visible erosion, so every result below rests on small counts.
+
+| # | Check | Result | Bar |
+|---|---|---|---|
+| **P-F** | Formula: "yes" in severe + very severe vs slight + moderate | **7.7% (6/78) vs 2.5% (2/80), 3.08×** | ≥ 2× ✔ |
+| **P-AI** | AI: "yes" in its top 10% band vs its lower half | 3.3% (1/30) vs 3.2% (3/93), **1.03×** | ≥ 2× ✕ |
+| **P-G** | Gully-prone vs open, ≥ 5°, not-flagged control | 16.7% (5/30) vs 20.0% (6/30), **0.83×** | ≥ 2× ✕ |
+| **P-cmp** | AUC for "yes", stratum F, 234 readable | formula **0.616**, AI **0.628** | "AI better" needs +0.05 ✕ |
+
+**Reported beside the bars (not pre-registered, so read only as context):**
+
+- **P-F is not firm.** A one-sided Fisher test gives p = 0.13, and the 90% bootstrap range of
+  the ratio starts at about 1.0. The bar is met, but with 8 "yes" squares it could be chance.
+- **Per formula class**, share "yes" for slight → very severe: 2.5 / 2.5 / 2.6 / 0 / 10.5 /
+  5.0%.
+- **Open land on slopes of 5° or more** (the 60 G-stratum squares) shows visible erosion
+  **18%** of the time, against **4%** in the formula sample. All 11 "yes" squares there sit in
+  formula classes severe or very severe (0 of 17 below). The formula's cover and slope carry
+  most of what the eye can see.
+- P-G gully counts: 1 "gully" label in 300. At about 1 m per pixel, gullies narrower than a few
+  metres, or under grass, are hard to see. P-G judges "visible erosion of any kind".
+
+**Reading it:**
+
+1. **The formula** passes its pre-registered picture check, weakly. Together with the NRSC
+   result (X1 0.66), it is a fair, not a strong, map of where erosion shows.
+2. **The AI map does not see the ground better.** On ISRO's labels it scored 0.82 against
+   0.66. On pictures it ties the formula, 0.63 against 0.62, and its top band is no richer in
+   visible erosion than its lower half. This is what AD-01's caution predicted: it learned
+   where ISRO's 2015–16 mappers drew eroded land, through broad regional inputs (deep-soil
+   stoniness, rain strength), more than what the ground shows. **It stays in the app as a
+   second opinion "that agrees with ISRO's map", never as "the better map".** The map page,
+   the help line and the method page now say so, with the numbers read from the report.
+3. **Gully-prone ground (AD-30) is not adopted.** The terrain flag is no better than any open
+   sloping square. It is not exported and not shown. The useful signal is open land on slopes,
+   which the formula already carries.
+4. **What would make the check stronger:**
+   - more "yes" squares, by sampling open sloping land more heavily;
+   - a second labeller, so agreement can be measured;
+   - dated imagery, after the Earth Engine reset or from Copernicus;
+   - the pilot's field visits, which are the real judge (E2.4).
+
+### 2026-10-28 · RC part 1: our own river-mud record from satellite river colour — the test, written before fetching
+
+**Why.** The WHEN model (AD-06) failed for want of examples: one hand sample a day at a few
+stations, and no river flow. Muddy water is browner and brighter in red light. If Sentinel-2's
+red reflectance over a river tracks CWC's measured mud, we can build our own mud record. It
+would cover every 5 days since 2017, and any river wide enough, not just the stations. This is
+the "build the examples ourselves" route (the same idea as the verified flood record).
+Copernicus Data Space (openEO), no Earth Engine.
+
+**Sites.** Every Assam CWC sediment station with **≥ 1,000 readings since 2017** (about 22).
+Pixels within **300 m** of the station's point.
+
+**Satellite values per clear date** (Sentinel-2 L2A, 10 m, 2017-01-01 → 2026-10-20):
+
+- **Water pixel:** NDWI = (B3 − B8)/(B3 + B8) > 0, and the scene class is not cloud, cloud
+  shadow, cirrus, saturated, snow or no data (SCL 0, 1, 3, 8, 9, 10, 11).
+  - NDWI is used, not SCL's own water class (6), because very muddy water can be mislabelled
+    by SCL, which would drop the muddiest days. The SCL-water variant is reported beside it.
+- **Value:** the median red reflectance (B4) of the water pixels, and the count of water
+  pixels.
+- **A date counts** if it has ≥ 20 water pixels (0.2 ha).
+
+**Match.** A satellite date paired with the same day's CWC reading (sample about 08:00,
+overpass about 10:30 local).
+
+**Checks and bars:**
+
+| # | Check | Bar |
+|---|---|---|
+| **RC1** | Per station with ≥ 20 matched days: Spearman ρ (red reflectance, measured mud) | **median ρ ≥ 0.50** and **ρ > 0 at ≥ 80%** of those stations |
+| **RC2** | Within-season: the same, using each value's seasonal percentile (same month ± 1, per station), so the shared dry/wet swing is removed | **median ρ ≥ 0.30** |
+| **RC3** | Monsoon cover: clear dates (Jun–Sep) per station-year | **Reported.** The record can feed a WHEN model only if the median is **≥ 3** |
+
+**Reported:** matched days per station; ρ for SCL-water and for B4/B3; monsoon-only ρ.
+
+**What follows:**
+
+- **If RC1 and RC2 pass:** "river colour" is adopted as our own mud record. Next comes a WHEN
+  model trained on it, with a new pre-registration. The test is still against CWC's measured
+  mud.
+- **If RC1 passes and RC2 fails:** colour only tracks the season. It is not adopted for WHEN.
+- **If RC1 fails:** reported; not adopted.
+
+**Clarification, added during the fetch and before any match with river mud.** From
+2022-01-25 (processing baseline 04.00), Sentinel-2 L2A values carry a +1000 offset.
+
+- **Detection:** the median over stations of the Feb–Apr water-red value in 2022 minus 2021.
+  This uses satellite values only.
+- **Correction:** if the jump exceeds 500, 1000 is subtracted from dates from 2022-01-25 on.
+- **Reporting:** the jump and whether it was removed go in the report.
+
+Scripts: `scripts/fetch/fetch_56_river_colour.py` (fetch),
+`scripts/inspect/river_colour_check.py` (score).
+
+**Fetch status (2026-10-28, about 02:45 IST).** All 20 year-jobs are queued on Copernicus
+openEO (10 NDWI, 10 SCL-water). They run 2 at a time, about an hour each, on Copernicus's
+servers, so the PC can be off.
+
+- The 2017 job carries the first run's title (`river_colour_ndwi_2017`). The others are
+  `rc_<variant>_<year>`.
+- To collect: `$env:REGION = "assam"; python scripts/fetch/fetch_56_river_colour.py`. It
+  downloads the finished jobs and waits for any still running.
+- Then score: `python scripts/inspect/river_colour_check.py`.
+
+### 2026-10-28 · RC part 2: results — river colour tracks river mud only weakly; not adopted
+
+`scripts/inspect/river_colour_check.py` → `reports/river_colour_check_assam.json`, run as
+written.
+
+- **Data:** 25 stations; 9,420 clear station-dates (NDWI water, ≥ 20 water pixels),
+  2017 → Oct 2026.
+- **Offset check:** the 2021→2022 jump is −53 DN, well under 500. The CDSE archive is already
+  harmonised, so nothing was removed.
+- **SCL-water variant:** 7 of its 10 years were collected (2024 errored and was resubmitted;
+  2025–26 were still running).
+
+| # | Check | Result | Bar |
+|---|---|---|---|
+| **RC1** | Same-day ρ (red, measured mud), median over 25 stations | **0.328**, positive at 96% | ≥ 0.50 and ≥ 80% ✕ (strength fails) |
+| **RC2** | The same on seasonal percentiles | **0.143** | ≥ 0.30 ✕ |
+| **RC3** | Clear Jun–Sep dates per station-year, median | **6** | ≥ 3 ✔ |
+
+**Reported beside the bars:**
+
+- **Red/green ratio:** median ρ 0.36.
+- **Monsoon months only:** median ρ **0.03**.
+- **SCL-water variant (partial):** RC1 0.326, RC2 0.161, monsoon dates 2.
+- **Per station, RC1:**
+  - the wide Barak and Brahmaputra sites are the best: Pandu 0.56, Matijuri 0.54,
+    Fulertal 0.53, Badarpur Ghat 0.52, Annapurna Ghat 0.52, Pancharatna 0.51;
+  - the narrow or tributary sites are the weakest: Kalain −0.01, Khudrakhowa 0.03,
+    Sonapur 0.06.
+
+**Reading it:**
+
+- **Direction:** colour moves the right way almost everywhere.
+- **Strength:** it is too weak to stand in for measured mud.
+- **Season:** most of the link is the shared dry/wet swing (RC2 0.14), and inside the monsoon
+  it vanishes (0.03).
+- **Cover:** clouds are not the main problem. Six clear monsoon dates a year get through.
+- **Likely causes:**
+  - **Red saturates.** At the very high mud levels of the monsoon Brahmaputra, red stops
+    rising. Near-infrared keeps rising, which is why published methods switch bands
+    (Dogliotti et al. 2015).
+  - **Narrow rivers.** On narrow rivers the 300 m circle mixes in banks and sandbars.
+  - **Timing and place.** One hand sample at about 08:00 at one point, against a 10:30 image
+    over a 300 m circle.
+- **Not adopted** for WHEN, as pre-registered.
+
+**A second attempt (needs its own pre-registration):**
+
+- near-infrared or a published switching method (Nechad / Dogliotti) instead of plain red;
+- wide-river stations only;
+- a smaller footprint drawn on the channel itself.
+
+The river-height and rain inputs for the WHEN retry do not depend on this.
+
+### 2026-10-28 · Inputs for a second WHEN attempt: river heights and sharper rain (fetch only, no test yet)
+
+AD-06 failed partly because a muddy river and a diluted one look alike without flow, and
+partly on coarse rain. Two inputs are now being gathered. A second attempt will be
+pre-registered before any of them is used.
+
+**1. River heights at the mud stations (CWC FFS, the open API FloodSense already uses).**
+
+- **Matched:** 15 of the 25 mud stations, by station name and position (0–0.1 km):
+
+  | Station | CWC code |
+  |---|---|
+  | Annapurna Ghat | 01-11-01-007 |
+  | Badarpur Ghat | 01-11-01-006 |
+  | Chenimari | 013-UBDDIB |
+  | Chouldhowaghat | 021-UBDDIB |
+  | Dholai | 016-MBDGHY |
+  | Fulertal | 01-11-01-008 |
+  | Golaghat | 026-UBDDIB |
+  | Kalain | 027- MDSIL |
+  | Lala | 018-MDSIL |
+  | Matijuri | 01-11-01-002, plus the older 015-MBDGHY |
+  | Nanglamoraghat | 016-UBDDIB |
+  | Pandu | 025-MBDGHY |
+  | Patharkandi | 019-MDSIL |
+  | Sivasagar | 018-ubddib |
+  | Tulargram | 007-MDSIL |
+
+- **History:** 35,000–207,000 readings each, from 1971–2019 to today.
+- **Not matched (10):** Bhomoraguri, Dudhnai, Jagibhakatgaon, Kulsi, Katigorah, Khudrakhowa,
+  Kokrajhar, Pancharatna, Sonapur and Udharbond are not in CWC's forecast-station list, and a
+  bulk station query timed out.
+  - IIT Bombay's GUARDIAN site (indiariverflow.com) has hourly heights for them from 2020,
+    scraped from the same CWC portal. It has **no flow for any Assam station** ("no rating
+    curve").
+- **Stored apart from FloodSense:** `data/raw/11_gauges/cwc_assam/`. `fetch_21_cwc_gauges.py`
+  now writes non-Arunachal regions to `cwc_<region>/`, and skips Arunachal's pilot registry for
+  them.
+  - Two FloodSense scripts scan `cwc/*_hhs.csv`: `check_gauge_cleaning.py` would have failed on
+    them, and `build_backbone_bundle.py` would have miscounted.
+  - `check_live_unchanged.py check`: PASS before and after.
+- **Station list:** `data/interim/assam/cwc_assam_stations.json`.
+
+**2. Daily IMERG over all Assam, 0.1°, 2013–2026 (NASA GES DISC).**
+
+- The 4-worker run failed: 0 of 5,043 days, ConnectTimeout, the same block as on 26 Oct.
+- One worker works, at about 3 s a day, so about 4–5 h. It resumes: finished days are skipped.
+- Already on hand: IMERG at 125 points (2013–2025, Earth Engine), and the full grid over the
+  Arunachal box (2000–2026).
+
+### 2026-10-28 · AD-06 attempt 2 part 1: daily river mud from rain AND the river's own height — the test, written before training
+
+**What changes from attempt 1** (weekly, rain only: by year −0.04, by station 0.10):
+
+- **The river's height.** It is the stand-in for flow that attempt 1 lacked: a muddy river
+  and a diluted one differ in height. Height is also rising or falling, and rising rivers
+  carry more mud.
+- **Daily, not weekly.** Storm days are not averaged away.
+- **Satellite rain** (IMERG V07, 125 points) instead of 25 km reanalysis rain.
+
+**Stations.** The same rule as attempt 1: ≥ 95% of the catchment in India and under
+60,000 km². Kept are those with a CWC height record (`cwc_assam/`), **12 stations**:
+
+- Annapurna Ghat, Badarpur Ghat, Chenimari, Dholai, Golaghat, Kalain, Lala, Matijuri,
+  Nanglamoraghat, Patharkandi, Sivasagar, Tulargram.
+- Matijuri: the newer code (01-11-01-002), filled from the older one (015-MBDGHY) where
+  missing.
+
+**Rows.** Station-days 2013–2025 with a mud reading (the mean of the day's readings) and all
+inputs present.
+
+**Target.** The day's mud as a seasonal percentile: per station, among that station's days
+in the same month ± 1. This takes out the plain dry/wet swing.
+
+**Inputs.** All known by the morning sample (about 08:00 IST), so the model could run as an
+outlook:
+
+- **Rain, catchment mean of the IMERG points inside it** (the nearest point if none):
+  - the day before;
+  - the last 3, 7 and 30 days;
+  - the wettest day of the last 7;
+  - erosive rain (InRESatE a·P^b) over the last 3 and 7 days.
+  - IMERG days are UTC, ending 05:30 IST.
+- **River height, from the daily median of CWC readings:**
+  - the day before, as an anomaly: (level − the station's median for that month) ÷ that
+    month's interquartile range;
+  - the change over the last 1 and 3 days, in the same units;
+  - the highest anomaly of the last 7 days.
+- **Season:** day of year (sine, cosine).
+- **Catchment traits:** log area, and the mean slope factor, loss, cover factor and delivered
+  share (as in attempt 1).
+
+**Model.** LightGBM regression with attempt 1's settings: 300 trees, 15 leaves, at least 50
+rows per leaf, learning rate 0.03, seed 42.
+
+**Held out:**
+
+- **By year:** leave one year out.
+- **By station:** leave one out, with nested sites held out together:
+  - {Annapurna Ghat, Badarpur Ghat, Tulargram} on the Barak;
+  - {Matijuri, Lala}, which share a mapped catchment.
+
+**Baselines on the same rows** (median over stations of Spearman ρ with the target):
+
+- **B1:** yesterday's height anomaly alone. One number, no AI.
+- **B2:** the last 3 days' erosive rain alone.
+
+**Pass bar.** Under **both** holdouts, the median over stations of Spearman ρ (predicted vs
+observed):
+
+- must be **≥ 0.30**,
+- and must be **≥ B1 + 0.05**, so the AI must add something beyond the river's height alone.
+
+**Reported, not judged:**
+
+- a "nowcast" variant that also sees the same day's height;
+- per-station ρ;
+- input importance;
+- monsoon-only ρ.
+
+**What follows:**
+
+- **If it passes:** a daily "river mud against normal" outlook for these gauged rivers, fed
+  by forecast rain and FloodSense-style level forecasts. It is labelled AI and graded daily
+  against CWC's readings.
+- **If it fails:** reported. WHEN waits for sensors (AD-19) and river flow.
+
+Script: `scripts/model/train_river_mud_ai_v2.py` → `reports/river_mud_ai_v2_assam.json`.
+
+### 2026-10-28 · AD-06 attempt 2 part 2: results — FAILS; the river's height alone beats the AI
+
+Run as written: 34,792 station-days, 12 stations, 2013–2025.
+
+| | Median ρ over stations | Bar |
+|---|---|---|
+| **AI, held out by year** | **0.138** | ≥ 0.30 and ≥ B1 + 0.05 ✕ |
+| **AI, held out by station** | **0.204** | ✕ |
+| B1: yesterday's river-height anomaly alone | **0.242** | (baseline) |
+| B2: last 3 days' erosive rain alone | 0.059 | (baseline) |
+| Nowcast (also sees today's height), by year / by station | 0.150 / 0.209 | reported |
+| AI, monsoon only, by year | 0.130 | reported |
+
+- **Per station** (AI, by year):
+  - positive: Chenimari 0.37, Golaghat 0.33, Nanglamoraghat 0.28, Annapurna Ghat 0.28;
+  - negative: Kalain −0.26, Lala −0.27, Dholai −0.10.
+  - Kalain's height runs *against* its mud (B1 −0.33), which suggests a gauge or datum
+    problem there.
+- **Top inputs:** yesterday's height anomaly 25%, the highest height of the last week 15%,
+  30-day rain 13%.
+
+**Reading it:**
+
+1. **The AI does not pass,** and it is worse than the single number it was meant to beat.
+   Across unseen years it learns patterns that do not carry over.
+2. **The useful finding is the baseline.**
+   - A river's height above its normal for the month says more about its unusual muddiness
+     (ρ 0.24) than any catchment rain measure we have (erosive rain 0.06, attempt 1 0.07).
+   - At these stations, river mud follows the river's own state more than the hillsides'
+     rain. That fits catchments of 170–25,000 km², where banks, channels and upstream storage
+     sit between the slope and the sampler.
+   - Even height alone is weak (0.24).
+3. **WHEN on open data is closed for now.** Four tries have failed:
+   - AD-02, rain vs mud: strength fails;
+   - AD-06, weekly AI: fails;
+   - RC, river colour: fails;
+   - AD-06 attempt 2: fails.
+   - The common cause is the target: one hand sample a day on large rivers, with no flow.
+   - **It is not re-tried until** one of these exists:
+     - turbidity and rain sensors on small hill streams (AD-19);
+     - soil-loss plots (AD-31);
+     - CWC river flow for Assam (an ask).
+4. **What the outlook keeps saying:** "a heavy erosive-rain week", which is tested on
+   *when* (E2.2: weeks ρ 0.63, heavy weeks AUC 0.77). It never says "river mud".
+
+### 2026-10-28 · AD-25 in the app: "Soil reaching streams"
+
+Built from AD-25's outputs: no new model, no new numbers.
+
+- **Bundle** (`export_erosion_bundle.py`):
+  - **Map layer:** `classes.npz["deliv"]`, five bands of t/ha/yr reaching a stream: < 0.5,
+    0.5–1, 1–2, 2–5, ≥ 5. They hold 56 / 12 / 12 / 13 / 7% of scored land.
+  - **State summary:** `meta["delivered"]`: 116.4 Mt/yr lost, 7.8 Mt (6.7%) reaching a
+    stream; delivery ratio p10/p50/p90 0.023 / 0.040 / 0.077.
+  - **Unit figures:** `delivered_tpha`, `delivered_share_pct` and `rank_delivered` on every
+    catchment (703) and district (35).
+- **App** (`webapp/products/erosion/view.py`):
+  - **Map:** a fifth view, "Soil reaching streams", with a blue legend, the state-total
+    caption, a tooltip and a top-10 list with each unit's loss rank beside it.
+  - **District card:** a line on it.
+  - **Priority list:** a "Reaching streams t/ha/yr" column and a sixth weight slider. Its
+    default is 0, so the default order is unchanged.
+  - **"How to read this":** a paragraph.
+  - Everywhere it is labelled "an estimate, not yet checked against measurements".
+- **Checks:** 23/23 SoilSense screen cases pass, including two new ones (the map view and the
+  list weighted by it).
+- **What it shows:** at catchment level the order barely changes from loss. The shares are
+  6–9%; Dima Hasao is #1 for districts and #2 for loss. The value is inside a unit: which
+  eroding squares are wired to a channel.
+
+### 2026-10-29 · AD-29: what the lost soil is worth — built and in the app
+
+A calculation on the main map, not a model and not a test
+(`scripts/build/erosion_soil_value.py`).
+
+**Data.** SoilGrids **total nitrogen** was added to `fetch_03_soil.py` (Assam only, three
+depths). `features.py` will now also build `soil_nitrogen_*` for Assam when it is next run.
+The AI map's inputs are an explicit list, so they do not change.
+
+**Per scored square:**
+
+- nitrogen lost = A × topsoil N (g/kg);
+- carbon lost = A × topsoil organic carbon;
+- topsoil lost (mm) = A ÷ (bulk density × 10);
+- as urea = N ÷ 0.46 ÷ 45 kg bags × ₹266.5 a bag (V-34);
+- topsoil means the 0–5 and 15–30 cm mean, as K uses;
+- enrichment ratio 1, so these are floors.
+
+**Results** (`reports/erosion_soil_value_assam.{json,csv}`, `…_districts.csv`):
+
+- **Typical topsoil:** median 2.6 g/kg N and 20.6 g/kg organic carbon.
+- **Farmland** (cropland, 13.5 lakh ha):
+  - 47,600 t N a year: mean **35 kg/ha** (median 21), about **1.7 urea bags/ha**;
+  - **₹61 crore a year** at the farmer's price;
+  - median topsoil loss 0.78 mm a year;
+  - the same under either tree cover value.
+- **Tree land:** 33,000–331,000 t N a year, a **10× range** set by tree C 0.003 vs 0.03
+  (V-02). It is never given as one figure.
+- **State:** 112,000–410,000 t N a year.
+- **Districts by N per hectare:**
+
+  | District | N kg/ha | Urea bags/ha |
+  |---|---|---|
+  | Dima Hasao | 205 | 9.9 |
+  | Cachar | 189 | 9.1 |
+  | Kamrup Rural | 139 | 6.7 |
+  | Kamrup Metro | 129 | 6.2 |
+  | West Karbi Anglong | 128 | 6.2 |
+
+  These are hill districts, so mostly tree land, and they carry the V-02 caveat.
+
+**In the app:**
+
+- **District card:** a line on nitrogen, urea bags, rupees and mm of topsoil.
+- **Priority list:** a "Nitrogen lost kg/ha/yr" column.
+- **Village card:** a "Nitrogen washed off" tile (the place's local loss × its catchment's
+  topsoil N), for example Diphu 13 kg/ha, Tezpur 14, Haflong 251 (steep, tree-covered).
+- **"How to read this":** a paragraph that leads with the farmland figure and gives three
+  cautions:
+  - untreated land;
+  - no enrichment counted;
+  - tree land as a range.
+- **Checks:** 23/23 screen cases pass.
+
+**Why farmland leads.** On farmland the urea comparison is fair, and the figure does not hang
+on the open forest question. It still assumes untreated fields (P = 1), so bunded paddies and
+terraces lose less.
+
+### 2026-10-29 · AD-28 part 1: heavy-erosive-week warnings — the rule and its bars, written before measuring
+
+**What.** A short warning, per district, when the coming week's erosive rain is forecast to be
+heavy. It uses the outlook's own figure: the week's erosive rain against normal for these
+days.
+
+**Why districts.** E2.2 found the outlook good at *when* and weak at *where within a week*
+(G1 0.18), so warnings stay at district scale or wider.
+
+**Rule, fixed now:**
+
+- **Warn** a district when its forecast × normal ≥ **2.0**. This is the same cut that
+  defined "heavy" in E2.2's G3.
+- **And** the week's forecast erosive rain is ≥ **2% of a normal year**. That floor
+  matches the average week (1.9%), so a dry-season week that is "3× normal" but tiny never
+  warns.
+
+**Judged on E2.2's replay** (44 Mondays, May–Sep 2024–25, 125 points, against IMERG). An
+observed heavy point-week is one with observed × normal ≥ 2.0 and an observed share ≥ 2%.
+
+| # | Measure | Bar |
+|---|---|---|
+| **W1** | Hit rate: the share of observed heavy point-weeks that the rule warned | **≥ 0.50** |
+| **W2** | False alarms: the share of warned point-weeks that were not heavy | **≤ 0.50** |
+| **W3** | Better than chance: hit rate minus false-alarm rate (Peirce skill) | **> 0.20** |
+
+The judging is per point, because district aggregation is not in the replay. Districts are
+averages of points, so they should do no worse.
+
+**What follows:**
+
+- **If W1–W3 pass:** the "This week" page shows the warning text for each warned district,
+  with the replay's hit and false-alarm rates beside it.
+- **If they fail:** no warning text, only the existing "× normal" map.
+- In both cases, the channel to divisions (SMS / WhatsApp) is the department's choice.
+
+### 2026-10-29 · AD-28 part 2: results — the warning rule FAILS; no warning text
+
+`scripts/inspect/outlook_warning_check.py` → `reports/outlook_warning_check_assam.json`.
+
+- **Input:** E2.2's replay point-weeks, now saved by `outlook_replay.py` to
+  `replay_point_weeks.npz`. The replay report was rebuilt and is byte-identical.
+- **Scale:** 5,500 point-weeks; 899 heavy; 626 warned.
+
+| # | Result | Bar |
+|---|---|---|
+| W1 hit rate | **0.333** (299 of 899) | ≥ 0.50 ✕ |
+| W2 false alarms | **0.522** (327 of 626) | ≤ 0.50 ✕ |
+| W3 Peirce skill | **0.262** | > 0.20 ✔ |
+
+**Reading it:**
+
+- **Better than chance, not good enough to send.** Two in three heavy weeks would have been
+  missed.
+- **The forecast runs dry.** Its share of a year is 0.70× the observed (E2.2), so a 2×
+  cut warns too rarely. Yet half of what it does flag is still not heavy.
+- **Nothing ships:** the "This week" page keeps its "× normal" map and the replay grades
+  only.
+
+**A second attempt** needs its own pre-registration:
+
+- a lower cut, fitted on 2024 and judged on 2025 only (no fitting and judging on the same
+  weeks);
+- or wait for the IMERG grid to finish, for a longer replay.
+
 ### How to run anything for Assam
 
 ```powershell
@@ -1098,6 +2733,24 @@ $env:REGION = "assam"          # PowerShell; unset it (Remove-Item Env:REGION) t
 
 In Git Bash: `REGION=assam .venv/Scripts/python <script>`. With no REGION set, every
 script runs for Arunachal exactly as before.
+
+**The whole SoilSense chain, in order** (all with `REGION=assam`; the long fetches resume
+where they stopped):
+
+| Step | Script | What it makes | Time |
+|---|---|---|---|
+| 1 | `scripts/build/erosion_factors.py` | R, K, LS, C, the yearly loss map, classes | minutes |
+| 2 | `scripts/inspect/check_erosion_bars.py` | Sanity checks S1–S8 | minutes |
+| 3 | `scripts/model/erosion_priority.py`, then `scripts/model/erosion_rank_stability.py`; the AI map: `scripts/model/train_erosion_ai.py --full` then `scripts/model/erosion_ai_explain.py` | The ranked catchments and districts, causes, hints; then how firm each rank is (1,000 runs, joined onto the tables) | minutes |
+| 4 | `scripts/fetch/fetch_48_dry_season_cover.py` | Dry-season bare ground 2019–2026 + Hansen test bands (Earth Engine) | 2–4 h |
+| 5 | `scripts/build/cover_change.py` | Flags, tests F1/F2/H1, yearly loss; `--eyecheck` then `--score labels.csv` for E3 | 10 min |
+| 6 | `scripts/fetch/fetch_49_nrsc_land_degradation.py` → `scripts/inspect/compare_nrsc_ld.py` | ISRO's land-degradation map; checks X1–X3 | 15 min |
+| 7 | `scripts/inspect/measured_cover_test.py` | The held-out measured-cover test (E1.5 part 3) | 10 min |
+| 8 | `scripts/fetch/fetch_50_erosion_rain_history.py` → `scripts/build/erosion_outlook_base.py` | The weekly outlook's fixed inputs | 15–60 min (rate limits) |
+| 9 | `scripts/run/export_erosion_bundle.py`; `scripts/fetch/fetch_52_osm_places.py` + `fetch_53_geonames_places.py` → `scripts/build/erosion_places.py` | The app's files in `webapp/assets/erosion/assam/`; the village list | 5 min |
+| 10 | `scripts/model/erosion_outlook_log.py` (`check` to verify) | Today's outlook, written down | 1 min |
+| 11 | `scripts/run/check_app_screens.py`; `scripts/model/check_live_unchanged.py check` | Every screen opens; the live flood forecast unchanged | 10 min |
+| 12 | `scripts/run/capture_soilsense_shots.py` → `scripts/run/build_proof_of_work.py` | Screenshots and the NESFIC Proof of Work PDF in `docs/nesfic/` | 5 min |
 
 ---
 
@@ -1341,16 +2994,16 @@ region switch, on screen in the app, plus the application.
 | ID | Task | Output | Done when | Est. | Status |
 |---|---|---|---|---|---|
 | **E0.1** | **Region registry.** `common.py` and `grid.py` take a region (`--region` / `REGION`, default `arunachal`). The Arunachal entry is identical to today's constants | Region registry in one place | `check_live_unchanged.py check` passes. Existing Arunachal scripts run unchanged with no flag. Arunachal constants equal the frozen ones | 1 d | ☑ |
-| **E0.2** | **Assam grid + boundary.** Freeze the spec (design §4.1: EPSG:32646, 100 m, origin 160,000 / 2,660,000, 6,400 × 4,400). State mask. Official boundary and current districts from the Assam State Geoportal (GADM as a stand-in until then) | `DATA_CONTRACT.md` §8 "Assam region"; state mask | In-state cell count recorded; area within 1% of 78,438 km²; spec written into DATA_CONTRACT | 0.5 d | ◐ |
+| **E0.2** | **Assam grid + boundary.** Freeze the spec (design §4.1: EPSG:32646, 100 m, origin 160,000 / 2,660,000, 6,400 × 4,400). State mask. Official boundary and current districts from the Assam State Geoportal (GADM as a stand-in until then) | `DATA_CONTRACT.md` §8 "Assam region"; state mask | In-state cell count recorded; area within 1% of 78,438 km²; spec written into DATA_CONTRACT | 0.5 d | ☑ |
 | **E0.3** | **Fetch Assam raw.** DEM (~20 new tiles), SoilGrids (Assam box), WorldCover (1–2 tiles west of 90°E), HydroSHEDS clip (local), IMERG daily 2000-06 → now (~2 h) | Raw files + `_SOURCES.json` entries | Every raw folder has an Assam entry in `_SOURCES.json`; IMERG day count matches Arunachal's date range; no DEM holes inside the state | 1 d (mostly waiting) | ☑ |
 | **E0.4** | **Build Assam backbone.** Terrain, hydrology (flow accumulation, channels, height above drainage), soil and land-cover features, rain stack | `data/interim/assam/…` | `check_terrain` / `check_hydro` / `check_rainfall` pictures reviewed for Assam; most plains cells < 2°; drainage follows the Brahmaputra and Barak | 1–2 d | ☑ |
-| **E0.5** | **Freeze Assam validation folds** (50 km blocks, seed 42), hashed | `spatial_folds.meta.json` for Assam | Hash written **before any model exists**. Cheap now, impossible to do honestly later | 0.5 d | ◐ |
+| **E0.5** | **Freeze Assam validation folds** (50 km blocks, seed 42), hashed | `spatial_folds.meta.json` for Assam | Hash written **before any model exists**. Cheap now, impossible to do honestly later | 0.5 d | ☑ |
 | **E0.6** | **The recipe** — `erosion_factors.py`. Build and debug on **Arunachal first** (can start day 1), then run on Assam. Confirm the R equation's units and coefficients, the K formula, the LS slope-length cap, and provisional classes (D4) | Soil-loss estimate + class rasters, **each factor saved separately**, both regions; unit suffixes per DATA_CONTRACT §5 | Both regions produce all five factor layers and the estimate; formulas and constants written into design §5.2 with sources | 2–3 d | ☑ |
 | **E0.7** | **Pre-registered sanity checks** (bars below, written before running) | Results log entries | Every bar evaluated and logged; failures fixed or explained **before anything is shown to anyone** | 1 d | ☑ |
 | **E0.8** | **First priority ranking** — `erosion_priority.py` on HydroBASINS level 12 and on districts; top 20 with main driver | Ranked tables | Top 20 checked by eye against satellite imagery: are they visibly steep and/or bare? Any that aren't, explained | 1 d | ☑ |
 | **E0.9** | **App screen** — `webapp/products/erosion/` (status "building"), minimal region picker, map + ranking + "how to read this" note; bundle export | Running module | Runs locally; `check_app_screens.py` passes; screenshots taken for the application | 2 d | ☑ |
-| **E0.10** | **Application pack** — screenshots, one-page method, requirements table (design §1), evaluation-criteria table (below), tier story, pilot proposal (D3), grant tier (D5) | Submitted application | Submitted before 25 Oct | 2 d | ☐ |
-| **E0.11** | **Access checks** (parallel, never blocking): NRSC land degradation (Bhuvan), SLUSI priority watersheds / Watershed Atlas, CWC / India-WRIS sediment, GloREDa, global soil-erosion map, NESDR land cover for Assam, Assam State Geoportal. Use the "portals look closed but aren't" method (test the machine endpoints, not the UI) | Status column in design §12 filled in | Each source marked *open / gated / closed* with the working access route | ~1 d, spread out | ☐ |
+| **E0.10** | **Application pack** — screenshots, one-page method, requirements table (design §1), evaluation-criteria table (below), tier story, pilot proposal (D3), grant tier (D5) | Submitted application | Submitted before 25 Oct | 2 d | ◐ drafted, PDF built, not submitted |
+| **E0.11** | **Access checks** (parallel, never blocking): NRSC land degradation (Bhuvan), SLUSI priority watersheds / Watershed Atlas, CWC / India-WRIS sediment, GloREDa, global soil-erosion map, NESDR land cover for Assam, Assam State Geoportal. Use the "portals look closed but aren't" method (test the machine endpoints, not the UI) | Status column in design §12 filled in | Each source marked *open / gated / closed* with the working access route | ~1 d, spread out | ◐ NRSC land degradation (Bhuvan) and CWC sediment found open; the rest not checked |
 
 **Suggested week-by-week:**
 
@@ -1393,12 +3046,12 @@ and the ranking faces its first independent checks. The Conclave falls in this w
 
 | ID | Task | Done when | Status |
 |---|---|---|---|
-| **E1.1** | Sentinel-2 seasonal composites via Earth Engine, 2019 → now (pre-monsoon, post-monsoon, winter) → C per season; cloud share recorded per composite | Every season has a C layer or an explicit "too cloudy" gap; fallback C used only in the gaps | ☐ |
-| **E1.2** | **Specificity test first:** run the change detector on known no-change areas (core forest, long-stable farmland) | False-flag rate measured and below a bar written before running. Only then does E1.3 ship any flag | ☐ |
-| **E1.3** | Change maps: same season year on year; year vs year; "new bare ground on a steep slope" flags | Change layers in the app; flags spot-checked against imagery | ☐ |
+| **E1.1** | Sentinel-2 seasonal composites via Earth Engine, 2019 → now (pre-monsoon, post-monsoon, winter) → C per season; cloud share recorded per composite | Every season has a C layer or an explicit "too cloudy" gap; fallback C used only in the gaps | ◐ dry season 2019–2026 done; other seasons not (V-23) |
+| **E1.2** | **Specificity test first:** run the change detector on known no-change areas (core forest, long-stable farmland) | False-flag rate measured and below a bar written before running. Only then does E1.3 ship any flag | ☑ F1, F2 pass |
+| **E1.3** | Change maps: same season year on year; year vs year; "new bare ground on a steep slope" flags | Change layers in the app; flags spot-checked against imagery | ◐ change maps in the app; flags held back (H1, E3 failed) |
 | **E1.4** | R upgrade: half-hourly IMERG for a sample of monsoons → event erosivity. Compare with the annual relation and GloREDa, then choose | Choice and comparison logged; design §5.2 updated | ☐ |
-| **E1.5** | V2 cross-map agreement (whichever sources E0.11 opened) | Rank agreement per district / watershed logged against pre-written bars | ☐ |
-| **E1.6** | V3 measured-sediment ranking test (if data opened) | Catchment rank agreement logged, or "no data" logged | ☐ |
+| **E1.5** | V2 cross-map agreement (whichever sources E0.11 opened) | Rank agreement per district / watershed logged against pre-written bars | ☑ done; X1–X3 failed |
+| **E1.6** | V3 measured-sediment ranking test (if data opened) | Catchment rank agreement logged, or "no data" logged | ☑ logged: not possible on the Assam-only map (V-22) |
 | **E1.7** | V4 blind imagery sample, ~300 points stratified by class | Labels made blind; metric vs bar logged | ☐ |
 | **E1.8** | Planning units: Watershed Atlas micro-watersheds if obtained, else stay on HydroBASINS level 12 | Ranking runs on the chosen unit | ☐ |
 | **E1.9** | Conclave demo build | Demo runs offline-safe with Assam data | ☐ |
@@ -1412,10 +3065,10 @@ updated, field-ready, with the pilot's field comparison designed and agreed.
 
 | ID | Task | Done when | Status |
 |---|---|---|---|
-| **E2.1** | Weekly outlook: next-7-day erosivity from the live rain × current K·LS·C·P. Runs inside the existing 08:30 daily job; logged like FloodSense | A week of logged outlooks on disk; `check_live_unchanged.py` still passes for floods | ☐ |
-| **E2.2** | Grade the rain part daily (forecast erosive rain vs observed IMERG) | Running scorecard; method page says plainly that the soil-loss part is not gradable at FREE tier | ☐ |
-| **E2.3** | Place card, priority list with reason line and treatment hint, change view, adjustable weights | All screens in the app; kinds-of-number badges on every figure | ☐ |
-| **E2.4** | Field kit: GeoPackage / KML / CSV export; field-check form → records, quarantined before joining authoritative data | Round trip tested: export → fill in → import → appears flagged as unverified | ☐ |
+| **E2.1** | Weekly outlook: next-7-day erosivity from the live rain × current K·LS·C·P. Runs inside the existing 08:30 daily job; logged like FloodSense | A week of logged outlooks on disk; `check_live_unchanged.py` still passes for floods | ◐ built and logged locally; not yet in the 08:30 cloud run |
+| **E2.2** | Grade the rain part daily (forecast erosive rain vs observed IMERG) | Running scorecard; method page says plainly that the soil-loss part is not gradable at FREE tier | ◐ replay graded (G2, G3 pass; G1 fails); daily grading not running |
+| **E2.3** | Place card, priority list with reason line and treatment hint, change view, adjustable weights | All screens in the app; kinds-of-number badges on every figure | ☑ reason line, treatment hint, change view, village card, adjustable weights |
+| **E2.4** | Field kit: GeoPackage / KML / CSV export; field-check form → records, quarantined before joining authoritative data | Round trip tested: export → fill in → import → appears flagged as unverified | ◐ exports and field points done; form round trip not |
 | **E2.5** | Pilot agreed with the department (D3, D4); **pre-registered field protocol** (V5): blind points, metrics, pass bars | Protocol written and dated before any visit | ☐ |
 | **E2.6** | Demo Day pack | Demo + deck + results so far | ☐ |
 
@@ -1472,3 +3125,24 @@ Append-only. One row per measurement. Never edit a past row. Add a new row that 
 | 2026-10-20 | V-12 | Survey of India outline swapped in | 7,842,412 in-state cells (78,424 km², −0.02%); 35 districts; fold hash unchanged a6bc908e791c9063; S1 8.3×, S7 7/20; top 20 the same units | Resolved |
 | 2026-10-17 | — | R comparison re-run from the raw store (`compare_erosivity.py`) | Identical to the scratch run: Guwahati Singh −91% / IRED −46% / InRESatE −5%; district Spearman 0.26 (n = 27) | Reproducible ✔ |
 | 2026-10-17 | — | R at points, IRED / InRESatE | Kokrajhar 21,083 / 8,750; Haflong 2,071 / 4,560; Diphu 3,084 / 3,123; Silchar 6,872 / 5,193; Dibrugarh 8,825 / 6,817 | — |
+| 2026-10-25 | V-18 | Second reason against similar slopes (5 slope groups), treatment hints | Ranks unchanged (703 units, 0 differences). Top 20: heavy rain 17, bare or thin cover 1, nothing stands out 2. All 703: heavy rain 270, nothing 260, cover 173 | Reading aid, no bar |
+| 2026-10-25 | E2.4 (part) | Field kit, first version | 100 points (top 20 catchments × 5, ≥ 500 m apart); CSV with form columns, GPX, KML; GeoPackage with catchments, districts and points (1.46 MB); KML and GPX parse; 7/7 SoilSense screens pass | Done (export side) |
+| 2026-10-25 | E1.5 (V2) | Against NRSC Land Degradation 1:50k 2015-16 | X1 AUC 0.661 (IWED 0.419, slope alone 0.651); X2 ρ 0.36 (IWED −0.30, slope 0.44); X3 ρ 0.13 (IWED −0.36, slope 0.36). 79% of NRSC-eroded land is tree; on steep tree land median A 54.5 eroded vs 60.5 normal | X1–X3 all FAIL (bars 0.70 / 0.40 / 0.50) |
+| 2026-10-26 | E1.1–E1.3 | Dry-season bare ground 2019–2026; change flags | Evaluable 99.6–100% of scored land every year; steep land bare 1.03–1.94% (2025 highest); F1 0.05% ✔, F2 1.79% ✔, H1 47.6% ✕, E3 flags 57.5% (69.7% readable) ✕, unflagged 2.6% ✔ | Flags NOT shown; bare-ground layer shown |
+| 2026-10-26 | E1.5 part 3 | Measured cover vs NRSC, calibrate folds 0–1, judge folds 2–4 | X1 cal: main 0.700, M1 0.697, M2 0.619 → nothing goes forward. Test half: main 0.629, M1 0.626, M2 0.558. Inside tree land, mean bare share alone vs NRSC eroded: AUC 0.451 | NOT adopted |
+| 2026-10-26 | E2.1 | Weekly outlook, first live issue (week 26 Oct – 1 Nov) | 248 points; typical Jun–Aug week 4.2% of a year (average 1.9%); this week 0.11× normal, 0.10% of a year, 0.021 t/ha; issue rebuilds exactly | Built; not graded |
+| 2026-10-26 | E1.3 attempt 2 | Flags with an NDVI drop ≥ 0.20, new blind sample (seed 43) | F1 0.03% ✔, F2 0.90% ✔, H1 44.4% ✕, E3 flags 62.5% (75.8% readable) ✕, unflagged 2.8% ✔; flags 4,062–10,069 ha/yr | Flags stay held back |
+| 2026-10-26 | V-17 part 2 | Rank stability, 1,000 runs (R blend, tree C 0.003–0.1, class C ±50%, McCool/Nearing) | Robust (≥ 80% top 20): 3; ≥ 50%: 15; main top-20 median 66%; two-map mark firm 76.5% vs rain-dependent 32.8% | Reported, no bar |
+| 2026-10-26 | E2.3 | Village card | 2,589 places (OSM 1,389, GeoNames 1,165, SoI HQ 35; 23 Assamese names); figures over a 2.1 km square; 15/15 screen cases incl. 3 card cases | Built |
+| 2026-10-26 | E2.2 | Outlook replay inputs | Open-Meteo archived forecasts: 125 points, May–early Oct 2023–25; leads 1–6 missing for 2023 (archive starts May 2024). IMERG 2023–25 requests all failed (0 of 200), fetch stopped | Grading blocked |
+| 2026-10-26 | E2.3 | Adjustable ranking weights | Default weights reproduce the main ranking exactly (0/703 differ after the tie-break; 364 before); 'getting barer' known for 281 catchments | Built |
+| 2026-10-26 | E2.2 | IMERG access for the replay's truth | 2001 downloads worked until about 13:05; after that every request (2013–2025) returned no data ("no version resolved"), so it is access, not versions. Only 56 Assam days on disk (2001) | Grading blocked: check the NASA Earthdata login / GES DISC status, then re-run `fetch_11b` 2023 2025 and 2013 2022 |
+| 2026-10-26 | E2.2 | Outlook replay, 44 weeks (2024–25), 125 points, IMERG V07 Final | G1 0.181 (clim 0.115) ✕; G2 0.633 (clim 0.389) ✔; G3 AUC 0.765 ✔; forecast/observed share 0.701 | 2 of 3 pass |
+| 2026-10-27 | AD-01 | AI erosion map (LightGBM on NRSC eroded vs normal), OOF on 50 km folds | AUC set A 0.8202 (B 0.823; formula 0.6603; slope 0.6503); catchment ρ 0.6586 (formula 0.3584); folds 0.72–0.92 | AI-1 ✔, AI-2 ✔: ships beside the formula; AD-05 judges |
+| 2026-10-27 | AD-25 | Sediment connectivity / delivery (Borselli IC, InVEST SDR) | SDR median 0.040; state 7.8 of 118 Mt/yr (7%) delivered; top districts Dima Hasao 3.76, W. Karbi Anglong 3.27, Cachar 3.03 t/ha | Built, untested |
+| 2026-10-27 | AD-02 | Outlook erosive-rain anomaly vs CWC river-mud anomaly, 11 stations, 2010–26 | ρ > 0 at 82%; median ρ 0.072 (next week 0.112); plain rain 0.067 | M1 ✕ (strength), M2 ✔ |
+| 2026-10-27 | AD-06 | AI river-mud model (LightGBM, weekly mud anomaly) | by year -0.036, by station 0.101; baseline 0.071 | ✕ not adopted |
+| 2026-10-28 | AD-05 / AD-30 | Blind picture check, 300 Esri squares (seed 7), one labeller, key opened after all labels | Labels: none 274, erosion 19, gully 1, can't tell 6. P-F 7.7% vs 2.5% = 3.08× (Fisher p 0.13); P-AI 3.3% vs 3.2% = 1.03×; P-G 16.7% vs 20.0% = 0.83×; AUC formula 0.616, AI 0.628 | P-F ✔ (weak); P-AI ✕; P-G ✕; AI not better. AI kept as a second opinion; gully-prone not adopted |
+| 2026-10-28 | RC | Sentinel-2 river colour (red, NDWI water, 300 m) vs CWC same-day mud, 25 stations, 2017–2026, 9,420 clear dates | RC1 median ρ 0.328 (96% positive); RC2 seasonal 0.143; RC3 6 clear monsoon dates/yr; monsoon-only ρ 0.03; wide rivers best (Pandu 0.56) | RC1 ✕, RC2 ✕, RC3 ✔: not adopted |
+| 2026-10-29 | AD-28 | Heavy-week warning rule (forecast ×normal ≥ 2 and share ≥ 2%) on E2.2's replay, 5,500 point-weeks | hit rate 0.333, false alarms 0.522, Peirce 0.262 | W1 ✕, W2 ✕, W3 ✔: no warning text |
+| 2026-10-28 | AD-06 v2 | Daily AI river-mud model (IMERG rain + CWC river height), 12 stations, 34,792 station-days, 2013–2025 | by year 0.138, by station 0.204; height alone 0.242; erosive rain alone 0.059; nowcast 0.150 / 0.209 | ✕ not adopted; WHEN parked until sensors or flow |

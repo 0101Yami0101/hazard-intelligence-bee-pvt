@@ -551,7 +551,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
         <div class="fan-out">
           <div class="p1"><b>SlideSense</b>reads the steepness and the facing direction</div>
           <div class="p2"><b>FloodSense</b>reads the height above the river</div>
-          <div class="p3"><b>Soil erosion, next</b>will read the slope again</div>
+          <div class="p3"><b>SoilSense (Assam)</b>reads the slope again</div>
         </div>
       </div>
       <figcaption>The work on that file was done once. Every product that needs the shape of the ground gets it for nothing.</figcaption>
@@ -600,24 +600,24 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       <p class="fig-title">The same layers, reused</p>
       <div class="tblwrap">
         <table class="matrix">
-          <thead><tr><th>Backbone layer</th><th>SlideSense</th><th>FloodSense</th><th>Soil erosion, next</th></tr></thead>
+          <thead><tr><th>Backbone layer</th><th>SlideSense</th><th>FloodSense</th><th>SoilSense (Assam)</th></tr></thead>
           <tbody>
-            <tr><td>Ground shape: steepness, facing, curves</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
-            <tr><td>Drainage: channels, catchments, height above river</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
-            <tr><td>Soil</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td class="none">–</td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
+            <tr><td>Ground shape: steepness, facing, curves</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot on c-soil" aria-label="uses it today"></span></td></tr>
+            <tr><td>Drainage: channels, catchments, height above river</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot on c-soil" aria-label="uses it today"></span></td></tr>
+            <tr><td>Soil</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td class="none">–</td><td><span class="dot on c-soil" aria-label="uses it today"></span></td></tr>
             <tr><td>Rock types and fault lines</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td class="none">–</td><td class="none">–</td></tr>
-            <tr><td>Land cover</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td class="none">–</td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
+            <tr><td>Land cover</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td class="none">–</td><td><span class="dot on c-soil" aria-label="uses it today"></span></td></tr>
             <tr><td>Rain history, 26 years</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
             <tr><td>Live rain and 7-day forecast</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
             <tr><td>River gauges</td><td class="none">–</td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td class="none">–</td></tr>
             <tr><td>Soil wetness, daily</td><td class="none">–</td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td class="none">–</td></tr>
             <tr><td>Roads, places, search</td><td><span class="dot on c-slope" aria-label="uses it today"></span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
-            <tr><td>Honest testing, forecast log and grading</td><td><span class="part">in part</span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="dot c-soil" aria-label="planned"></span></td></tr>
+            <tr><td>Honest testing, forecast log and grading</td><td><span class="part">in part</span></td><td><span class="dot on c-flood" aria-label="uses it today"></span></td><td><span class="part">in part</span></td></tr>
           </tbody>
         </table>
       </div>
       <div class="legend"><span><span class="dot on c-soil"></span>uses it today</span><span><span class="dot c-soil"></span>planned</span><span>– not used</span></div>
-      <figcaption>Five of these eleven layers already serve both live products. The erosion module would reuse eight of them.</figcaption>
+      <figcaption>Five of these eleven layers already serve both live products. SoilSense, the first product in a second state, uses four of them today and is planned to use eight.</figcaption>
     </figure>
 
     <div>
@@ -639,7 +639,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       <h3>More hazards</h3>
       <p class="note">Anything with the WHERE × WHEN shape fits.</p>
       <ul class="dash">
-        <li><b>Soil erosion, for Assam. Next.</b> The department names five ingredients: rain, soil, slope, plant cover, land use. Four are already in the backbone.</li>
+        <li><b>Soil erosion, for Assam: first version built (SoilSense).</b> The department names five ingredients: rain, soil, slope, plant cover, land use. Four were already in the backbone. It maps all of Assam, ranks 703 small catchments with their causes, measures bare ground every dry season since 2019, and gives a weekly erosive-rain outlook from the same live rain feed as the flood and landslide forecasts, and has a printable card for any village. Each catchment's rank says how firm it is: re-run 1,000 times over everything still uncertain, 3 catchments stay in the top 20 four times out of five. Not on the public app yet.</li>
         <li>Glacial-lake floods</li>
         <li>Forest fire</li>
         <li>Earthquake-triggered slides</li>
@@ -651,7 +651,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       <p class="note">The satellite inputs are global, so the same steps run anywhere.</p>
       <ul class="dash">
         <li>A new state needs <b>a switch for the region</b>, its own local records, and its own checking.</li>
-        <li><b>Assam is the first test.</b> Its map is designed to line up square for square with Arunachal's, so a river crossing the border can be followed across it.</li>
+        <li><b>Assam was the first, in about four weeks.</b> Its map lines up square for square with Arunachal's, so a river crossing the border can be followed across it. The live Arunachal forecasts are re-checked after every shared-code change.</li>
         <li>Then the rest of the Himalayan belt.</li>
       </ul>
     </div>
@@ -719,11 +719,11 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       <li><span class="what">Raw store, with a record for every file</span><span class="st built">Built</span><span class="note2">Originals are never edited.</span></li>
       <li><span class="what">One shared map</span><span class="st built">Built</span><span class="note2">8.2 million squares, 34 facts each, 26 years of daily rain.</span></li>
       <li><span class="what">Two shelves</span><span class="st built">Built</span><span class="note2">As files. No outside access yet.</span></li>
-      <li><span class="what">Products on top</span><span class="st built">Two live</span><span class="note2">SlideSense and FloodSense.</span></li>
+      <li><span class="what">Products on top</span><span class="st built">Two live, one first version</span><span class="note2">SlideSense and FloodSense; SoilSense for Assam (not public yet).</span></li>
       <li><span class="what">The loop: write down, grade</span><span class="st part">Floods; landslides in part</span><span class="note2">Floods: written down and graded daily since late September. Landslides: written down daily since 10 October, not graded yet.</span></li>
-      <li><span class="what">Automatic daily run</span><span class="st part">Floods only</span><span class="note2">08:30 every morning, on one PC. The rest is run by hand.</span></li>
+      <li><span class="what">Automatic daily run</span><span class="st part">Floods only</span><span class="note2">08:30 every morning, in the cloud (Mumbai region) since 20 October. The rest is run by hand.</span></li>
       <li><span class="what">Checking sources as a standing gate</span><span class="st part">By hand</span><span class="note2">Done once per dataset today.</span></li>
-      <li><span class="what">A second state</span><span class="st plan">Designed</span><span class="note2">Assam. Everything is wired to Arunachal today.</span></li>
+      <li><span class="what">A second state</span><span class="st built">Built</span><span class="note2">Assam: a region switch, its grid and official outline, and SoilSense on top.</span></li>
       <li><span class="what">Open feed, other apps</span><span class="st plan">Planned</span><span class="note2">Read-only first, the two shelves separately.</span></li>
       <li><span class="what">Partner and field intake, own sensors</span><span class="st plan">Planned</span><span class="note2">Through a holding area, so one bad feed cannot spoil the map.</span></li>
     </ul>
@@ -754,17 +754,17 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       <div class="stack-md">
         <h3>Honest limits</h3>
         <ul class="watch">
-          <li><svg class="ic"><use href="#i-alert"/></svg><span><b>Wired to one state.</b> Moving it to a second is designed, not built.</span></li>
+          <li><svg class="ic"><use href="#i-alert"/></svg><span><b>Two states, one of them new.</b> Assam runs one product (SoilSense), as a first version; the forecasts are still Arunachal only.</span></li>
           <li><svg class="ic"><use href="#i-alert"/></svg><span><b>The loop is closed for floods only.</b> Landslide forecasts are written down but not graded. There is no live catch yet.</span></li>
           <li><svg class="ic"><use href="#i-alert"/></svg><span><b>No outside users yet.</b> No open feed, no partner intake, no sensors.</span></li>
-          <li><svg class="ic"><use href="#i-alert"/></svg><span><b>It runs on one PC.</b> Two days have been missed so far.</span></li>
+          <li><svg class="ic"><use href="#i-alert"/></svg><span><b>Only the flood run is automatic.</b> It moved to the cloud on 20 October, after the PC missed four days.</span></li>
           <li><svg class="ic"><use href="#i-alert"/></svg><span><b>Sharing data outward</b> depends on each source's terms of use.</span></li>
         </ul>
       </div>
       <div class="stack-md">
         <h3>What is next, in order</h3>
         <ol class="plan">
-          <li><span><b>Prove it moves.</b> The Assam soil-erosion module: a new hazard and a new state at once.</span></li>
+          <li><span><b>Prove it moves.</b> The Assam soil-erosion module: a new hazard and a new state at once. First version built; next, the application and the department's pilot.</span></li>
           <li><span><b>Grade the landslide forecasts</b> (they are written down now; grading needs dated landslides) and run the whole pipeline by itself, off the PC.</span></li>
           <li><span><b>Stamp every answer with its inputs,</b> so any past forecast can be rebuilt.</span></li>
           <li><span><b>Open the feed.</b> Only after the pipeline runs itself. A feed of stale data is worse than none.</span></li>
@@ -774,7 +774,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
       </div>
     </div>
 
-    <div class="deadline"><b>10 Nov</b><p><strong>NESFIC applications close</strong> (questions to the department by 25 Oct). The Assam module is our entry. Its design and plan are written. The build started on 17 October: a second-state switch and Assam's grid are done.</p></div>
+    <div class="deadline"><b>10 Nov</b><p><strong>NESFIC applications close.</strong> The Assam module is our entry. Built since 17 October: the second-state switch, the erosion map, the ranked work list with reasons, the field kit, bare ground every dry season since 2019, and a weekly erosive-rain outlook.</p></div>
   </div>
 </section>
 
@@ -966,7 +966,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
   <details open><summary>Why not just build the landslide app?</summary><p class="a">Because the app is the last small part. The data underneath is most of the work, and it is the same data every hazard needs. Built once, it makes each next product cheap.</p></details>
   <details open><summary>The data is public. What is yours?</summary><p class="a">The assembly, the upkeep and the checked history. Twenty-nine sources made to fit one map, kept current, with every forecast graded. Anyone can download the same files. Few will do the rest.</p></details>
   <details open><summary>Who else would use it?</summary><p class="a">Road and infrastructure planners, power and telecom operators, insurers, researchers and agencies, the state's own systems, other startups. None yet. The open feed is planned.</p></details>
-  <details open><summary>How do you add a new hazard, or a new state?</summary><p class="a">A hazard brings its own two questions and its own record. Everything else is already there. A state needs a region switch, its own local records and its own checking. Assam is the first test.</p></details>
+  <details open><summary>How do you add a new hazard, or a new state?</summary><p class="a">A hazard brings its own two questions and its own record. Everything else is already there. A state needs a region switch, its own local records and its own checking. Assam took about four weeks.</p></details>
   <details open><summary>What stops Google or ISRO doing this?</summary><p class="a">They could build the pipeline. The hard parts are local: getting these sources to fit, knowing which official layer is unusable, and seasons of forecasts checked against these rivers and slopes.</p></details>
   <details open><summary>Is it live?</summary><p class="a">The backbone and two products are. The loop runs for floods. The open feed, partner intake and sensors are planned.</p></details>
   <details open><summary>How good are the products?</summary><p class="a">Landslide WHERE picks the right spot 6 times in 7. At a gauged river, 20% means 20%. Never one headline number.</p></details>
@@ -993,7 +993,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
   <div class="dont">
     <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"We are a landslide app", or leading with the forecast.</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>Lead with the backbone. The products are the proof.</span></div></div>
     <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"Others already build on it", or "the feed is open".</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>Planned. Two of our own products stand on it today.</span></div></div>
-    <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"It works for any state."</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>Designed to. Assam is the first test.</span></div></div>
+    <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"It works for any state."</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>It moved to one more state (Assam) in about four weeks; each further state needs its own records and checks.</span></div></div>
     <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"The loop is closed."</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>It is, for floods. Landslides are next.</span></div></div>
     <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"We own unique data."</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>Most inputs are public. Ours is the assembly and the checked record.</span></div></div>
     <div class="dont-row"><div class="no"><svg class="ic"><use href="#i-x"/></svg><span>"It is X% accurate", "we caught a real event", "safe", or a landslide class as a percentage.</span></div><div class="yes"><svg class="ic"><use href="#i-check"/></svg><span>Name the thing and its number. Not yet. Very Low. A rank.</span></div></div>
