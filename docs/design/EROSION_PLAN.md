@@ -46,7 +46,7 @@ the Results log):
 | Soil reaching streams (AD-25) | ☑ Built and **in the app** (2026-10-28): map view, list column and weight, district line; 7.8 of 116 Mt/yr; an estimate, untested |
 | What the lost soil is worth (AD-29) | ☑ Built and **in the app** (2026-10-29): farmland loses about 35 kg N/ha/yr (1.7 urea bags, ₹61 crore/yr statewide at the farmer's price); tree land given only as a range |
 | River-mud forecast, WHEN (AD-02, AD-06 ×2, river colour) | ✕ **Parked** after four tests failed; needs small-stream sensors, plots or CWC flow |
-| On the public app | ☐ Not deployed (the user's call, held back on 2026-10-26) |
+| On the public app | ☑ **Deployed 2026-10-31** to the public `v2` app (commit 77ab140), status "building"; every screen checked first on Streamlit 1.66.1 / pandas 3.1.0 |
 
 Status marks: ☐ to do · ◐ in progress · ☑ done · ✕ dropped (with reason in the Results log)
 

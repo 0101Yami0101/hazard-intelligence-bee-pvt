@@ -1,6 +1,6 @@
 # SoilSense — soil erosion risk, monitoring and outlook (3rd module, Assam-first)
 
-> **Status 2026-10-26: first version built, in the app (not public).** The erosion map, the
+> **Status 2026-10-26: first version built, in the app (public on the `v2` app since 2026-10-31).** The erosion map, the
 > ranked list with reasons and typical measures, the field kit, bare ground every dry season
 > 2019–2026, and a weekly erosive-rain outlook. Checked against ISRO's land-degradation map
 > (failed its bars; the national map points the wrong way). Change flags held back after
