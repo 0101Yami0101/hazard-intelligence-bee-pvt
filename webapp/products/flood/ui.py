@@ -94,6 +94,12 @@ ER_TIERS = {
     "er_rank": ("#", "Rank", "#e0a458", "solid",
                 "Where to act first, by average loss over a small catchment or a district. "
                 "Firmer than any single number, and marked when it depends on the rain map."),
+    "er_outlook": ("≈", "Outlook", "#c4a7ff", "dashed",
+                   "Weekly outlook: the next 7 days' forecast rain, set against what is normal at "
+                   "that place for the time of year, applied to the erosion map. Approximate, "
+                   "built on a forecast; it does not measure soil moved."),
+    "er_input": ("☂", "Input", "#7fd4f0", "dotted",
+                 "Input: the forecast rain that feeds the outlook. Not a soil-loss number."),
 }
 
 
