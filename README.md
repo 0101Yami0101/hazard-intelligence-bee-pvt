@@ -1,7 +1,8 @@
-# SlopeSense — Hazard Intelligence Platform · Arunachal Pradesh
+# SlopeSense — Hazard Intelligence Platform · Arunachal Pradesh and Assam
 
-Landslide and flood forecasting for Arunachal Pradesh, built on one shared
-hazard-agnostic core. Three modules ship behind a single Streamlit app. (Until 2026-10-11 the
+Landslide and flood forecasting for Arunachal Pradesh, and soil-erosion risk for
+Assam, built on one shared hazard-agnostic core. Four modules ship behind a
+single Streamlit app. (Until 2026-10-11 the
 landslide module itself was called SlopeSense; it is now SlideSense, and
 SlopeSense is the platform.)
 
@@ -9,6 +10,7 @@ SlopeSense is the platform.)
 |---|---|---|
 | **SlideSense** | Landslide forecast | live |
 | **FloodSense** | Flood forecast | live — static layer unvalidated by design, see [FLOOD_MODULE.md](docs/design/FLOOD_MODULE.md) |
+| **SoilSense** | Soil-erosion risk, priority list and weekly outlook for Assam | building — first version in the app, see [SOILSENSE.md](docs/design/SOILSENSE.md) |
 | **Data Backbone** | Source catalogue + pipeline view | live |
 
 ## What's actually built
@@ -29,6 +31,11 @@ Measured, not claimed — the fuller accounting is in
   live rain, river gauges and (flat ground) soil wetness; every forecast logged
   to `records/flood_forecast/` and graded automatically against the gauges
 
+- **The backbone moved to a second state** (since 2026-10-17): every fetch and
+  build takes `REGION=assam`, and SoilSense runs the soil-loss recipe on Assam's
+  own 100 m grid, ranking 703 small catchments and 35 districts for
+  conservation work. Start at [SOILSENSE.md](docs/design/SOILSENSE.md)
+
 Planned but not built: own sensors, partner intake, a public API, and the same
 forecast archive and outcome log for landslides.
 
@@ -45,7 +52,7 @@ data/       gitignored — 4+ GB, regenerable via scripts/fetch/
 
 ## Running it
 
-The app is self-contained: it reads a 5.33 MB bundle in `webapp/assets/` and
+The app is self-contained: it reads a 15.7 MB bundle in `webapp/assets/` and
 calls a free weather service. No database, no API key.
 
 ```bash
@@ -56,6 +63,18 @@ streamlit run webapp/app.py
 The geospatial and ML stack (rasterio, geopandas, lightgbm, pysheds) is only
 needed to rebuild the bundle, not to serve it — that's what lets the app run on
 a free 1 GB host. See [webapp/DEPLOY.md](webapp/DEPLOY.md).
+
+## Codebase map
+
+An interactive map of the whole system — parts, journeys, every file, the data
+and the roadmap, in plain words: [docs/codebase-map/](docs/codebase-map/README.md),
+live at https://claude.ai/artifact/Ej7MuYSgwAVFoNotfhyFEa. Open
+`docs/codebase-map/index.html` locally, or rebuild it after a change:
+
+```bash
+node scripts/codebase-map/scan.mjs           # writes data.js, lists anything undescribed
+node scripts/codebase-map/scan.mjs --check   # fails if the map is out of date
+```
 
 ## Notes
 
