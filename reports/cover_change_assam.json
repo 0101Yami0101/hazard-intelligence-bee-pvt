@@ -1,0 +1,258 @@
+{
+  "region": "assam",
+  "rules": {
+    "valid_min": 0.5,
+    "bare_min": 0.25,
+    "base_max": 0.1,
+    "steep_deg": 10.0,
+    "bare_ndvi": 0.3,
+    "window": "1 Feb - 30 Apr",
+    "C_cleared": 0.34,
+    "refresh_lc": [
+      10,
+      20,
+      30
+    ]
+  },
+  "F1_stable_forest": {
+    "cells": 500420,
+    "cell_years": 3500594,
+    "flagged": 1779,
+    "rate": 0.0005,
+    "per_year": {
+      "2020": {
+        "cell_years": 500402,
+        "flagged": 207
+      },
+      "2021": {
+        "cell_years": 500420,
+        "flagged": 390
+      },
+      "2022": {
+        "cell_years": 500420,
+        "flagged": 58
+      },
+      "2023": {
+        "cell_years": 500420,
+        "flagged": 145
+      },
+      "2024": {
+        "cell_years": 499859,
+        "flagged": 325
+      },
+      "2025": {
+        "cell_years": 498654,
+        "flagged": 258
+      },
+      "2026": {
+        "cell_years": 500419,
+        "flagged": 396
+      }
+    },
+    "bar": 0.01,
+    "pass": true
+  },
+  "F2_tea": {
+    "cells": 75526,
+    "cell_years": 528477,
+    "flagged": 9459,
+    "rate": 0.0179,
+    "per_year": {
+      "2020": {
+        "cell_years": 75525,
+        "flagged": 1689
+      },
+      "2021": {
+        "cell_years": 75526,
+        "flagged": 1264
+      },
+      "2022": {
+        "cell_years": 75526,
+        "flagged": 1314
+      },
+      "2023": {
+        "cell_years": 75526,
+        "flagged": 1067
+      },
+      "2024": {
+        "cell_years": 75526,
+        "flagged": 1277
+      },
+      "2025": {
+        "cell_years": 75322,
+        "flagged": 703
+      },
+      "2026": {
+        "cell_years": 75526,
+        "flagged": 2145
+      }
+    },
+    "bar": 0.03,
+    "pass": true,
+    "steep_only": {
+      "cells": 1652,
+      "cell_years": 11564,
+      "flagged": 34,
+      "rate": 0.0029,
+      "per_year": {
+        "2020": {
+          "cell_years": 1652,
+          "flagged": 12
+        },
+        "2021": {
+          "cell_years": 1652,
+          "flagged": 2
+        },
+        "2022": {
+          "cell_years": 1652,
+          "flagged": 0
+        },
+        "2023": {
+          "cell_years": 1652,
+          "flagged": 4
+        },
+        "2024": {
+          "cell_years": 1652,
+          "flagged": 6
+        },
+        "2025": {
+          "cell_years": 1652,
+          "flagged": 5
+        },
+        "2026": {
+          "cell_years": 1652,
+          "flagged": 5
+        }
+      }
+    }
+  },
+  "H1_hansen_clearing": {
+    "cell_events": 33109,
+    "caught": 15744,
+    "rate": 0.4755,
+    "per_loss_year": {
+      "2020": {
+        "cells": 6776,
+        "evaluable": 6776,
+        "caught": 3502
+      },
+      "2021": {
+        "cells": 5852,
+        "evaluable": 5852,
+        "caught": 3174
+      },
+      "2022": {
+        "cells": 5717,
+        "evaluable": 5717,
+        "caught": 2079
+      },
+      "2023": {
+        "cells": 5614,
+        "evaluable": 5614,
+        "caught": 2340
+      },
+      "2024": {
+        "cells": 4604,
+        "evaluable": 4604,
+        "caught": 2529
+      },
+      "2025": {
+        "cells": 4546,
+        "evaluable": 4546,
+        "caught": 2120
+      }
+    },
+    "bar": 0.5,
+    "pass": false
+  },
+  "yearly": {
+    "2019": {
+      "evaluable_pct_of_scored": 99.92,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.25,
+      "meanA_dry_tpha": 23.83
+    },
+    "2020": {
+      "evaluable_pct_of_scored": 99.95,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.51,
+      "flags": 12859,
+      "meanA_dry_tpha": 24.22
+    },
+    "2021": {
+      "evaluable_pct_of_scored": 99.99,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.86,
+      "flags": 16238,
+      "meanA_dry_tpha": 24.56
+    },
+    "2022": {
+      "evaluable_pct_of_scored": 99.9,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.03,
+      "flags": 6032,
+      "meanA_dry_tpha": 23.36
+    },
+    "2023": {
+      "evaluable_pct_of_scored": 99.79,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.43,
+      "flags": 9052,
+      "meanA_dry_tpha": 23.98
+    },
+    "2024": {
+      "evaluable_pct_of_scored": 99.73,
+      "evaluable_pct_of_steep_scored": 99.96,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.61,
+      "flags": 12826,
+      "meanA_dry_tpha": 24.45
+    },
+    "2025": {
+      "evaluable_pct_of_scored": 99.59,
+      "evaluable_pct_of_steep_scored": 99.86,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.94,
+      "flags": 12525,
+      "meanA_dry_tpha": 24.89
+    },
+    "2026": {
+      "evaluable_pct_of_scored": 99.73,
+      "evaluable_pct_of_steep_scored": 100.0,
+      "no_data_pct_of_state": 0.0,
+      "bare_pct_of_steep_scored_evaluable": 1.39,
+      "flags": 6529,
+      "meanA_dry_tpha": 24.21
+    }
+  },
+  "meanA_main_tpha": 21.63,
+  "E3_eyecheck": {
+    "flag": {
+      "n": 40,
+      "yes": 23,
+      "no": 10,
+      "cant_tell": 7,
+      "share_yes": 0.575,
+      "share_yes_readable": 0.697,
+      "bar": 0.7,
+      "pass": false
+    },
+    "unflagged": {
+      "n": 40,
+      "yes": 1,
+      "no": 37,
+      "cant_tell": 2,
+      "share_yes": 0.026,
+      "share_yes_readable": 0.026,
+      "bar": 0.1,
+      "pass": true
+    },
+    "pass": false
+  },
+  "flags_shown": false
+}

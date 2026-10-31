@@ -1,0 +1,25 @@
+{
+  "region": "assam",
+  "rule": {
+    "x_normal": 2.0,
+    "share_of_year": 0.02
+  },
+  "bars": {
+    "W1_hit_rate": 0.5,
+    "W2_false_alarms": 0.5,
+    "W3_peirce": 0.2
+  },
+  "point_weeks": 5500,
+  "heavy": 899,
+  "warned": 626,
+  "hits": 299,
+  "misses": 600,
+  "false_alarms": 327,
+  "correct_quiet": 4274,
+  "W1_hit_rate": 0.333,
+  "W2_false_alarms": 0.522,
+  "W3_peirce": 0.262,
+  "weeks_with_any_warning": 37,
+  "weeks": 44,
+  "pass": false
+}

@@ -1,0 +1,82 @@
+{
+  "region": "assam",
+  "draws": 1000,
+  "seed": 42,
+  "ranges": {
+    "R_blend_w": [
+      0,
+      1
+    ],
+    "tree_C": [
+      0.003,
+      0.1
+    ],
+    "class_scale": 1.5,
+    "S": [
+      "McCool",
+      "Nearing"
+    ]
+  },
+  "catchments_robust_top20": 3,
+  "catchments_top20_in_half_the_runs": 15,
+  "main_top20_robust": 3,
+  "main_top20_median_top20_pct": 65.65,
+  "firm_mark_vs_runs": {
+    "": 0.0,
+    "depends on the rain source": 32.8,
+    "top under both rain maps": 76.5
+  },
+  "seconds": 238,
+  "districts_top5_pct": [
+    {
+      "district": "West Karbi Anglong",
+      "top5_pct": 77.6,
+      "rank_median": 4
+    },
+    {
+      "district": "Dima Hasao",
+      "top5_pct": 76.7,
+      "rank_median": 3
+    },
+    {
+      "district": "Cachar",
+      "top5_pct": 75.7,
+      "rank_median": 3
+    },
+    {
+      "district": "Kamrup Metro",
+      "top5_pct": 59.9,
+      "rank_median": 4
+    },
+    {
+      "district": "Bongaigaon",
+      "top5_pct": 48.6,
+      "rank_median": 6
+    },
+    {
+      "district": "Kamrup Rural",
+      "top5_pct": 42.6,
+      "rank_median": 7
+    },
+    {
+      "district": "Dhubri",
+      "top5_pct": 40.7,
+      "rank_median": 8
+    },
+    {
+      "district": "Barpeta",
+      "top5_pct": 22.2,
+      "rank_median": 12
+    },
+    {
+      "district": "Karbi Anglong",
+      "top5_pct": 16.1,
+      "rank_median": 8
+    },
+    {
+      "district": "South Salmara",
+      "top5_pct": 15.9,
+      "rank_median": 13
+    }
+  ]
+}

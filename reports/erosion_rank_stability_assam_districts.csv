@@ -1,0 +1,36 @@
+district,top20_pct,top50_pct,rank_median,rank_p05,rank_p95,robust
+Bajali,8.2,100.0,26,19,32,False
+Baksa,26.3,100.0,23,18,30,False
+Barpeta,86.0,100.0,12,3,24,True
+Biswanath,0.0,100.0,29,24,32,False
+Bongaigaon,100.0,100.0,6,2,9,True
+Cachar,100.0,100.0,3,1,14,True
+Charaideo,8.5,100.0,31,19,35,False
+Chirang,75.6,100.0,18,12,23,False
+Darang,22.0,100.0,24,17,32,False
+Dhemaji,100.0,100.0,13,10,17,True
+Dhubri,99.6,100.0,8,1,17,True
+Dibrugarh,0.6,100.0,27,23,32,False
+Dima Hasao,99.9,100.0,3,1,11,True
+Goalpara,100.0,100.0,10,9,13,True
+Golaghat,0.0,100.0,33,27,35,False
+Hailakandi,85.9,100.0,8,5,26,True
+Hojai,100.0,100.0,14,12,16,True
+Jorhat,31.8,100.0,24,14,32,False
+Kamrup Metro,96.1,100.0,4,1,20,True
+Kamrup Rural,99.8,100.0,7,3,15,True
+Karbi Anglong,91.1,100.0,8,3,23,True
+Kokrajhar,99.7,100.0,14,6,19,True
+Lakhimpur,78.4,100.0,17,8,23,False
+Majuli,75.6,100.0,15,3,27,False
+Marigaon,57.5,100.0,19,12,29,False
+Nagaon,14.0,100.0,26,18,33,False
+Nalbari,13.1,100.0,26,19,33,False
+Sibsagar,3.1,100.0,32,22,35,False
+Sonitpur,0.0,100.0,30,24,35,False
+South Salmara,95.2,100.0,13,4,20,True
+Sribhumi,69.3,100.0,17,8,31,False
+Tamulpur,60.3,100.0,19,8,27,False
+Tinsukia,2.1,100.0,31,22,34,False
+Udalguri,0.3,100.0,33,23,35,False
+West Karbi Anglong,100.0,100.0,4,1,6,True

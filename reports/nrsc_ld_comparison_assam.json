@@ -1,0 +1,225 @@
+{
+  "region": "assam",
+  "reference": "NRSC Land Degradation 1:50k 2015-16 (Bhuvan ld:AS_LD50K_1516)",
+  "cells_compared": 5401905,
+  "scored_cells": 5453010,
+  "nrsc_classes_km2_on_scored": {
+    "1": 744,
+    "2": 2689,
+    "3": 602,
+    "4": 11,
+    "5": 1,
+    "8": 49288,
+    "9": 948
+  },
+  "X1_auc_eroded_vs_normal": {
+    "ours_main": 0.661,
+    "ours_ired": 0.643,
+    "ours_treeC_0.003": 0.581,
+    "slope_alone": 0.651,
+    "IWED": 0.419,
+    "n_eroded": 329293,
+    "n_normal": 4903493,
+    "bar": 0.7,
+    "pass": false
+  },
+  "X2_catchments_spearman": {
+    "units": 702,
+    "nrsc_water_erosion_share_median_pct": 0.8,
+    "ours_main": 0.36,
+    "ours_ired": 0.322,
+    "ours_treeC_0.003": 0.015,
+    "slope_alone": 0.438,
+    "IWED": -0.3,
+    "bar": 0.4,
+    "pass": false
+  },
+  "X3_districts_spearman": {
+    "units": 35,
+    "nrsc_water_erosion_share_median_pct": 2.3,
+    "ours_main": 0.129,
+    "ours_ired": 0.22,
+    "ours_treeC_0.003": -0.165,
+    "slope_alone": 0.364,
+    "IWED": -0.355,
+    "bar": 0.5,
+    "pass": false
+  },
+  "district_table": [
+    {
+      "district": "Kamrup Metro",
+      "ours_meanA": 49.6,
+      "nrsc_water_erosion_pct": 6.5
+    },
+    {
+      "district": "Dima Hasao",
+      "ours_meanA": 49.2,
+      "nrsc_water_erosion_pct": 16.9
+    },
+    {
+      "district": "Kamrup Rural",
+      "ours_meanA": 48.9,
+      "nrsc_water_erosion_pct": 12.4
+    },
+    {
+      "district": "Cachar",
+      "ours_meanA": 43.0,
+      "nrsc_water_erosion_pct": 1.9
+    },
+    {
+      "district": "Hailakandi",
+      "ours_meanA": 42.4,
+      "nrsc_water_erosion_pct": 7.8
+    },
+    {
+      "district": "West Karbi Anglong",
+      "ours_meanA": 42.4,
+      "nrsc_water_erosion_pct": 19.8
+    },
+    {
+      "district": "Sribhumi",
+      "ours_meanA": 25.9,
+      "nrsc_water_erosion_pct": 6.3
+    },
+    {
+      "district": "Karbi Anglong",
+      "ours_meanA": 24.9,
+      "nrsc_water_erosion_pct": 9.0
+    },
+    {
+      "district": "Bongaigaon",
+      "ours_meanA": 22.4,
+      "nrsc_water_erosion_pct": 0.3
+    },
+    {
+      "district": "Goalpara",
+      "ours_meanA": 17.9,
+      "nrsc_water_erosion_pct": 1.5
+    },
+    {
+      "district": "Dhemaji",
+      "ours_meanA": 17.0,
+      "nrsc_water_erosion_pct": 0.4
+    },
+    {
+      "district": "Majuli",
+      "ours_meanA": 15.5,
+      "nrsc_water_erosion_pct": 0.1
+    },
+    {
+      "district": "Lakhimpur",
+      "ours_meanA": 14.7,
+      "nrsc_water_erosion_pct": 1.9
+    },
+    {
+      "district": "Hojai",
+      "ours_meanA": 14.6,
+      "nrsc_water_erosion_pct": 7.7
+    },
+    {
+      "district": "Dhubri",
+      "ours_meanA": 14.3,
+      "nrsc_water_erosion_pct": 0.3
+    },
+    {
+      "district": "South Salmara",
+      "ours_meanA": 14.1,
+      "nrsc_water_erosion_pct": 0.0
+    },
+    {
+      "district": "Marigaon",
+      "ours_meanA": 12.4,
+      "nrsc_water_erosion_pct": 5.3
+    },
+    {
+      "district": "Jorhat",
+      "ours_meanA": 12.0,
+      "nrsc_water_erosion_pct": 1.7
+    },
+    {
+      "district": "Barpeta",
+      "ours_meanA": 11.4,
+      "nrsc_water_erosion_pct": 0.0
+    },
+    {
+      "district": "Charaideo",
+      "ours_meanA": 10.5,
+      "nrsc_water_erosion_pct": 1.5
+    },
+    {
+      "district": "Kokrajhar",
+      "ours_meanA": 10.3,
+      "nrsc_water_erosion_pct": 9.7
+    },
+    {
+      "district": "Tinsukia",
+      "ours_meanA": 8.4,
+      "nrsc_water_erosion_pct": 1.3
+    },
+    {
+      "district": "Sibsagar",
+      "ours_meanA": 8.3,
+      "nrsc_water_erosion_pct": 3.5
+    },
+    {
+      "district": "Dibrugarh",
+      "ours_meanA": 8.0,
+      "nrsc_water_erosion_pct": 1.2
+    },
+    {
+      "district": "Chirang",
+      "ours_meanA": 7.8,
+      "nrsc_water_erosion_pct": 11.8
+    },
+    {
+      "district": "Nagaon",
+      "ours_meanA": 6.5,
+      "nrsc_water_erosion_pct": 1.9
+    },
+    {
+      "district": "Nalbari",
+      "ours_meanA": 6.5,
+      "nrsc_water_erosion_pct": 0.0
+    },
+    {
+      "district": "Tamulpur",
+      "ours_meanA": 5.9,
+      "nrsc_water_erosion_pct": 3.0
+    },
+    {
+      "district": "Bajali",
+      "ours_meanA": 5.6,
+      "nrsc_water_erosion_pct": 0.0
+    },
+    {
+      "district": "Darang",
+      "ours_meanA": 5.6,
+      "nrsc_water_erosion_pct": 0.1
+    },
+    {
+      "district": "Baksa",
+      "ours_meanA": 5.4,
+      "nrsc_water_erosion_pct": 2.3
+    },
+    {
+      "district": "Biswanath",
+      "ours_meanA": 5.3,
+      "nrsc_water_erosion_pct": 19.1
+    },
+    {
+      "district": "Golaghat",
+      "ours_meanA": 5.3,
+      "nrsc_water_erosion_pct": 9.5
+    },
+    {
+      "district": "Sonitpur",
+      "ours_meanA": 4.6,
+      "nrsc_water_erosion_pct": 14.5
+    },
+    {
+      "district": "Udalguri",
+      "ours_meanA": 3.6,
+      "nrsc_water_erosion_pct": 4.0
+    }
+  ]
+}

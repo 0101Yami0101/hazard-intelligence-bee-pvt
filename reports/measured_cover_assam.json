@@ -1,0 +1,74 @@
+{
+  "region": "assam",
+  "halves": {
+    "calibration_folds": [
+      0,
+      1
+    ],
+    "test_folds": [
+      2,
+      3,
+      4
+    ],
+    "cal_pairs": 2487990,
+    "test_pairs": 2771263,
+    "test_catchments": 377
+  },
+  "table": {
+    "main": {
+      "X1_cal": 0.7004,
+      "X1_test": 0.6287,
+      "X1_all": 0.6603,
+      "X2_test": 0.357,
+      "X2_all": 0.3564,
+      "X3_all": 0.1303,
+      "S1": 8.3
+    },
+    "M1_all": {
+      "X1_cal": 0.6969,
+      "X1_test": 0.6261,
+      "X1_all": 0.6576,
+      "X2_test": 0.3454,
+      "X2_all": 0.3469,
+      "X3_all": 0.1463,
+      "S1": 6.14
+    },
+    "M2_all": {
+      "X1_cal": 0.6186,
+      "X1_test": 0.5575,
+      "X1_all": 0.5845,
+      "X2_test": 0.0916,
+      "X2_all": 0.0821,
+      "X3_all": -0.0478,
+      "S1": 1.22
+    },
+    "M1_2019-2021": {
+      "X1_cal": 0.697,
+      "X1_test": 0.6248,
+      "X1_all": 0.6569,
+      "X2_test": 0.3436,
+      "X2_all": 0.3454,
+      "X3_all": 0.1365,
+      "S1": 6.12
+    },
+    "M2_2019-2021": {
+      "X1_cal": 0.6089,
+      "X1_test": 0.5454,
+      "X1_all": 0.5737,
+      "X2_test": 0.087,
+      "X2_all": 0.0819,
+      "X3_all": -0.0526,
+      "S1": 1.14
+    }
+  },
+  "within_tree_auc_of_bare_share": 0.4511,
+  "best_on_calibration": "M1_all",
+  "goes_forward": false,
+  "test_checks": {
+    "X1_test_gain": -0.0026,
+    "X2_test_not_lower": false,
+    "S1_passes": true
+  },
+  "adopted": false,
+  "candidate": "M1"
+}

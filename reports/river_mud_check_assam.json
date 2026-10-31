@@ -1,0 +1,54 @@
+{
+  "region": "assam",
+  "stations": 11,
+  "weeks_scored": {
+    "Annapurna Ghat": 786,
+    "Badarpur Ghat": 840,
+    "Chenimari (Khowang)": 818,
+    "DUDHNAI": 794,
+    "Dholai": 680,
+    "Golaghat": 861,
+    "Jagibhakatgaon": 791,
+    "Matijuri": 787,
+    "SONAPUR": 848,
+    "Sivasagar": 829,
+    "TULARGRAM": 840
+  },
+  "M1_rho_by_station": {
+    "Annapurna Ghat": 0.097,
+    "Badarpur Ghat": 0.072,
+    "Chenimari (Khowang)": -0.013,
+    "DUDHNAI": 0.225,
+    "Dholai": 0.005,
+    "Golaghat": 0.085,
+    "Jagibhakatgaon": 0.009,
+    "Matijuri": 0.057,
+    "SONAPUR": 0.124,
+    "Sivasagar": -0.009,
+    "TULARGRAM": 0.107
+  },
+  "M1_share_positive": 0.818,
+  "M1_median_rho": 0.072,
+  "M2_plain_rain_median_rho": 0.067,
+  "M2_rho_by_station": {
+    "Annapurna Ghat": 0.095,
+    "Badarpur Ghat": 0.054,
+    "Chenimari (Khowang)": -0.006,
+    "DUDHNAI": 0.233,
+    "Dholai": 0.019,
+    "Golaghat": 0.113,
+    "Jagibhakatgaon": 0.012,
+    "Matijuri": 0.067,
+    "SONAPUR": 0.123,
+    "Sivasagar": 0.009,
+    "TULARGRAM": 0.122
+  },
+  "next_week_median_rho": 0.112,
+  "monsoon_only_median_rho": 0.048,
+  "bars": {
+    "share_positive": 0.6666666666666666,
+    "median_rho": 0.3
+  },
+  "M1_pass": false,
+  "M2_pass": true
+}

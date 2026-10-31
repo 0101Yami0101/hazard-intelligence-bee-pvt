@@ -1,0 +1,62 @@
+{
+  "region": "assam",
+  "scored_ha": 5423113,
+  "N_t_per_yr": 410321.0,
+  "C_t_per_yr": 3019400.0,
+  "urea_bags_per_yr": 19822000.0,
+  "urea_rs_crore_per_yr": 528.3,
+  "N_kg_per_ha_median": 16.19,
+  "topsoil_mm_per_yr_median": 0.59,
+  "topsoil_mm_per_yr_mean": 1.81,
+  "soil_N_gkg_median": 2.64,
+  "soil_C_gkg_median": 20.6,
+  "prices": {
+    "urea_bag_kg": 45,
+    "urea_bag_rs": 266.5,
+    "urea_N": 0.46
+  },
+  "enrichment_ratio": 1,
+  "by_cover": {
+    "cropland": {
+      "ha": 1351703,
+      "N_t_per_yr": 47638.0,
+      "N_t_per_yr_low_treeC": 47638.0,
+      "N_kg_per_ha_mean": 35.2,
+      "N_kg_per_ha_median": 21.3,
+      "urea_bags_per_ha_mean": 1.7,
+      "urea_rs_crore_per_yr": 61.3,
+      "topsoil_mm_per_yr_median": 0.78
+    },
+    "tree": {
+      "ha": 3892703,
+      "N_t_per_yr": 331247.0,
+      "N_t_per_yr_low_treeC": 33125.0,
+      "N_kg_per_ha_mean": 85.1,
+      "N_kg_per_ha_median": 9.4,
+      "urea_bags_per_ha_mean": 4.11,
+      "urea_rs_crore_per_yr": 426.5,
+      "topsoil_mm_per_yr_median": 0.28
+    },
+    "shrub_grass": {
+      "ha": 154735,
+      "N_t_per_yr": 28369.0,
+      "N_t_per_yr_low_treeC": 28369.0,
+      "N_kg_per_ha_mean": 183.3,
+      "N_kg_per_ha_median": 18.1,
+      "urea_bags_per_ha_mean": 8.86,
+      "urea_rs_crore_per_yr": 36.5,
+      "topsoil_mm_per_yr_median": 0.62
+    },
+    "other": {
+      "ha": 23972,
+      "N_t_per_yr": 3068.0,
+      "N_t_per_yr_low_treeC": 3068.0,
+      "N_kg_per_ha_mean": 128.0,
+      "N_kg_per_ha_median": 48.2,
+      "urea_bags_per_ha_mean": 6.18,
+      "urea_rs_crore_per_yr": 3.9,
+      "topsoil_mm_per_yr_median": 1.84
+    }
+  },
+  "N_t_per_yr_low_treeC": 112199.0
+}
