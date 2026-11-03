@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 3 · SlideSense — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.eq{display:flex;align-items:stretch;justify-content:center;gap:12px;flex-wrap:wrap}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:12px 16px;flex:1;min-width:200px}
+.eq .box .k{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:26px;display:block;line-height:1.1}
+.eq .box ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent);align-self:center}
+.eq .box.res{background:var(--ink);color:#fff}.eq .box.res .k{color:#b9c2bc}
+.hbar{display:grid;grid-template-columns:160px 1fr 70px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
+.hbar .t{height:18px;background:var(--grid);border-radius:4px;overflow:hidden;display:flex}
+.hbar .t div{height:100%}
+.hbar .n{font-family:var(--mono);font-size:13px;text-align:right}
+@media(max-width:600px){.hbar{grid-template-columns:110px 1fr 56px}}
+.ctl{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;font-size:15px;margin:6px 0}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctl output{font-family:var(--mono);font-size:14px;text-align:right}
+@media(max-width:600px){.ctl{grid-template-columns:110px 1fr 56px}}
+.lvl{display:flex;gap:4px;margin-top:10px}
+.lvl div{flex:1;text-align:center;border-radius:6px;padding:6px 2px;font-size:13px;color:#fff;opacity:.35;transition:.15s}
+.lvl div.on{opacity:1;transform:scale(1.06);box-shadow:0 2px 8px rgb(0 0 0/.2)}
+.lvl div b{display:block;font-family:var(--mono);font-size:12px}
+.big-out{font-family:var(--display);font-size:40px;line-height:1}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.door{border-radius:10px;padding:12px 14px;border:2px solid}
+.door.shut{border-color:var(--accent);background:var(--accent-soft)}
+.door.open{border-color:var(--built);background:var(--built-soft)}
+.door.park{border-color:var(--partial);background:var(--partial-soft)}
+.door .s{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.door.shut .s{color:var(--accent)}.door.open .s{color:var(--built)}.door.park .s{color:var(--partial)}
+.door > b{display:block;font-size:16px;margin:2px 0}
+.door .small{font-size:13.5px}
+.limit{display:grid;grid-template-columns:30px 1fr;gap:10px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.limit .i{font-size:22px}
+.code-list label{display:grid;grid-template-columns:22px 280px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
+@media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+.out{font-family:var(--mono);font-size:12.5px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;white-space:pre;overflow-x:auto;line-height:1.5}
+.cmp{width:100%;border-collapse:collapse;font-size:14.5px}
+.cmp th,.cmp td{padding:6px 8px;border-bottom:1px solid var(--grid);text-align:right}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp th{font-family:var(--mono);font-size:12px;color:var(--ink-3);font-weight:500}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div>1 Science</div><div>2 Data</div><div class="now">3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div>6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 3 · Days 9–13 · about 25 hours</div>
+  <h1>SlideSense, the landslide forecast</h1>
+  <div class="goal">🎯 <span>Defend every SlideSense number to a <b>GSI geologist</b>, and name every dead end with the reason it closed.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · In one picture</a><a href="#s2">2 · The labels</a><a href="#s3">3 · The training set</a>
+    <a href="#s4">4 · WHERE model</a><a href="#s5">5 · vs GSI's map</a><a href="#s6">6 · WHEN</a>
+    <a href="#s7">7 · Make a level</a><a href="#s8">8 · Backtest</a><a href="#s9">9 · Dead ends</a>
+    <a href="#s10">10 · On screen</a><a href="#s11">11 · Limits</a><a href="#s12">12 · Code</a><a href="#s13">13 · Quiz</a><a href="#s14">14 · Finish</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>SlideSense in one picture</h2>
+  <p class="sub">Two very different halves, multiplied. Learn the data behind each half. That difference explains almost every decision.</p>
+  <div class="eq">
+    <div class="box" style="border-color:var(--slide)"><span class="k">WHERE · "how weak is this ground?"</span><b>Ground score</b>
+      <ul><li>machine learning (LightGBM trees)</li><li>100 m squares, the same every day</li><li>learned from <b>~37,800 mapped slides</b></li><li>tested: <b>0.86</b> on unseen ground</li></ul></div>
+    <div class="op">×</div>
+    <div class="box" style="border-color:var(--flood)"><span class="k">WHEN · "is the rain unusual here?"</span><b>Rain score</b>
+      <ul><li><b>no fitting</b>: average of 2 percentiles</li><li>219 rain points, changes daily</li><li>only <b>~90 dated slides</b> exist</li><li>tested: <b>0.77</b> on 72 events</li></ul></div>
+    <div class="op">=</div>
+    <div class="box res"><span class="k">WHAT YOU SEE</span><b>A level, 7 days</b>
+      <ul><li>Very Low … Very High</li><li>each with a measured "× the usual"</li><li><b>a rank, never a chance</b></li></ul></div>
+  </div>
+  <div class="tip" style="margin-top:12px">⚖️ <b>The whole story in one line:</b> we have <b>~37,800 answers to WHERE</b> and <b>~90 answers to WHEN</b>. That is a gap of nearly 1,000×. So WHERE gets a trained model, WHEN gets a simple fixed rule, and most of the "dead ends" are attempts to close that gap.</div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>The labels: where slides have been mapped</h2>
+  <p class="sub">Four maps of past landslides, made into one. Plus two point lists kept aside <b>only for checking</b>.</p>
+  <div class="card">
+    <div id="labelBars"></div>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="small">📐 <b>Tiny slides.</b> The median mapped slide is <b>944 m²</b>, about 30 × 30 m. <b>91.5%</b> are smaller than one 100 m square. So a square counts as "slide" if an outline <b>touches</b> it at all. Otherwise 9 in 10 would vanish.</div>
+      <div class="small">🧮 <b>Three counts, all correct.</b> 37,788 outlines from four maps. About 35,744 distinct slides once overlaps are removed. 91,610 squares touched (1.1% of the state).</div>
+      <div class="small">🚫 <b>No true "no".</b> Nobody ever certified a square as slide-free. Most of Arunachal has never been walked. Absence of a record isn't absence of a slide.</div>
+    </div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">🔑 <b>Why "no true no" matters:</b> the ground score can <b>rank</b> squares, but it can never be a <b>probability</b>. A probability needs the true count of slide-free places, and that doesn't exist. So a ground score of 0.5 does <b>not</b> mean a 50% chance.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>Building the training set</h2>
+  <p class="sub">A model learns from "yes" squares and "no" squares. Picking the "no" squares is the hard part. These are the rules, frozen with a fingerprint (<code>b58e7dcc22134c1f</code>).</p>
+  <div class="card two">
+    <svg viewBox="0 0 360 260" style="width:100%" id="sampleSvg"></svg>
+    <div>
+      <div class="hbar"><span>"yes" squares</span><div class="t"><div style="width:16.7%;background:var(--accent)"></div></div><span class="n">90,799</span></div>
+      <div class="hbar"><span>"no" squares</span><div class="t"><div style="width:83.3%;background:var(--flood)"></div></div><span class="n">453,995</span></div>
+      <ol class="small" style="padding-left:18px">
+        <li><b>Only ground where slides can happen</b>: steeper than 10°, not ice, water or moss. That's 85.7% of the state. Applied to <b>yes and no alike</b>, or the model learns nonsense.</li>
+        <li><b>"No" squares at least 500 m from any mapped slide</b>, so we don't pick unrecorded slides as "no".</li>
+        <li><b>5 "no" for every "yes"</b>, the same in every test block.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">📏 <b>Textbook vs measured.</b> Textbooks say careless "no" picking inflates scores. Here it made <b>no difference</b>: 0.860 vs 0.862. Arunachal has almost no flat land to cheat with (median slope 29°). We keep the rules anyway, for the reasons AUC <b>can't</b> see: 15.8% of a careless "no" pool sits within 500 m of a known slide.</div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>The WHERE model and how it was tested</h2>
+  <p class="sub">LightGBM gradient-boosted trees, trained 5 times, each time hiding one block of the state.</p>
+  <div class="grid g2">
+    <div class="card">
+      <b>Score on each hidden block</b> <span class="tiny">(AUC, 0.5 = coin toss)</span>
+      <div id="foldBars" style="margin-top:8px"></div>
+      <p class="small" style="margin-bottom:0"><b>Two sets of models:</b> the 5 "fold" models give <b>every reported number</b>. A 6th model trained on everything runs <b>in the app</b>, but may never quote a score: it has no hidden ground left. Quoting that one's score is how projects claim 0.99.</p>
+    </div>
+    <div class="card">
+      <b>How the map concentrates slides</b> <span class="tiny">(share of land vs share of mapped slides)</span>
+      <div id="classBars" style="margin-top:8px"></div>
+      <p class="small" style="margin-bottom:0"><b>10% of the state holds 71% of the mapped slides.</b> That's the operational claim: survey a tenth of the land and cover seven in ten failures.</p>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card">
+      <b>What it leans on</b> <span class="tiny">(average SHAP, how much each fact moved the score)</span>
+      <div id="shapBars" style="margin-top:8px"></div>
+      <p class="small" style="margin-bottom:0"><b>Facing direction</b> leads: north-facing Himalayan slopes hold moisture and snow differently. The <b>steepest 25 m patch</b> beats average steepness, which is why slope is worked out at 25 m.</p>
+    </div>
+    <div class="card">
+      <b>"Your model just detects roads."</b> <span class="tiny">Take facts out, re-test</span>
+      <div id="ablBars" style="margin-top:8px"></div>
+      <p class="small" style="margin-bottom:0">No single suspect fact carries it. <b>Ground shape + water alone</b> (10 physical facts) keeps 97.7% of the score.</p>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card">
+      <b>⚠️ Known weakness: high ground is under-warned</b>
+      <div id="elevBars" style="margin-top:8px"></div>
+      <p class="small" style="margin-bottom:0"><span style="color:var(--accent)">■</span> % of real slides <span style="color:var(--slide)">■</span> % of squares called High+. At <b>2,000–4,000 m</b> the model under-calls. Fewer slides are mapped up there because it's hard to reach, and the model learned "high = safe". More model power won't fix it; better labels would.</p>
+    </div>
+    <div class="card">
+      <b>🧪 The honest outside check</b>
+      <div class="hbar"><span>GSI points</span><div class="t"><div style="width:84.6%;background:var(--accent)"></div></div><span class="n">84.6%</span></div>
+      <div class="hbar"><span>NASA points</span><div class="t"><div style="width:1.4%;background:var(--built)"></div></div><span class="n">1.4%</span></div>
+      <p class="tiny" style="margin-top:0">share sitting right on a training outline</p>
+      <p class="small">GSI's points are the centres of the <b>same</b> slides we trained on, so scoring them is <b>not</b> an independent test. NASA's 56 points are independent: <b>28.6%</b> fall in the top 10% of ground, <b>2.9×</b> chance. That's weaker than 71%, probably because NASA's locations are rough. State that number and its caveat.</p>
+    </div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">⬜ <b>Grey means "not assessed", never "low".</b> 14.3% of the state (flat ground, ice, water, alpine moss) gets no score. The model never saw a glacier, so it has no business scoring one.</div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>Against GSI's own national map</h2>
+  <p class="sub">GSI publishes a 50 m map in three classes. Both maps were scored on the same 508,138 squares, with ours scored only by models that never saw that region.</p>
+  <div class="card">
+    <div class="hbar"><span><b>Ranking</b> (in 100 pairs)</span><div class="t"><div style="width:85%;background:var(--slide)"></div></div><span class="n">85</span></div>
+    <div class="hbar"><span>GSI</span><div class="t"><div style="width:60%;background:var(--planned)"></div></div><span class="n">60</span></div>
+    <div class="hbar" style="margin-top:14px"><span><b>Slides on top 13.8%</b> of land</span><div class="t"><div style="width:67%;background:var(--slide)"></div></div><span class="n">67%</span></div>
+    <div class="hbar"><span>GSI's "High" class</span><div class="t"><div style="width:25%;background:var(--planned)"></div></div><span class="n">25%</span></div>
+    <div class="hbar" style="margin-top:14px"><span>Slides only <b>Bhuvan</b> mapped</span><div class="t"><div style="width:86%;background:var(--slide)"></div></div><span class="n">86</span></div>
+    <div class="hbar"><span>GSI</span><div class="t"><div style="width:58%;background:var(--planned)"></div></div><span class="n">58</span></div>
+    <p class="small">The Bhuvan-only line matters: those slides aren't GSI's own, so this isn't just "GSI's map vs GSI's inventory".</p>
+  </div>
+  <div class="tip" style="margin-top:12px">🔍 <b>First run: GSI scored 50, pure chance.</b> That's not believable for a published map, so the <b>file</b> was checked before anything was said. Our download had come back scrambled (it matched a fresh copy on only 41% of squares). Re-downloaded properly, GSI scores 60. <b>Say it carefully in the room:</b> GSI's map is three broad classes made for a different job. Ours ranks finer.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>WHEN: the rain score</h2>
+  <p class="sub">You met it in Phase 1. Here's what's under it.</p>
+  <div class="grid g3">
+    <div class="card"><div class="kicker">the formula</div><b>average of two percentiles</b><div class="small">How unusual the last <b>3 days</b> and the last <b>7 days</b> of rain are, each against that point's own monsoon history. Nothing is fitted, so nothing can overfit, and it's easy to explain to APSDMA.</div></div>
+    <div class="card"><div class="kicker">the evidence</div><b>~90 dated slides</b><div class="small">All from NASA's Global Landslide Catalog, 2008–2018, with rough locations. 72 line up with the 11 km rain history, and 84 with the live rain archive from 2010.</div></div>
+    <div class="card"><div class="kicker">the score</div><b>0.768 vs 0.755</b><div class="small">The plain average beat a fitted model on 6 rain facts. With ~72 events, fitting adds noise, not signal. Soil wetness and 15/30-day rain were also tested: no gain.</div></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <b>Measured: how much more common slides are, by how unusual the rain is</b> <span class="tiny">(84 dated slides, 219 points, 2010–2026)</span>
+    <div id="rainBands" style="margin-top:8px"></div>
+    <p class="small" style="margin-bottom:0">These "× the usual" figures were measured with rules <b>written down before running</b> (at least 8 slides per band, numbers must rise). The screen rounds them, because 84 slides can't support more precision.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>Make a level yourself</h2>
+  <p class="sub">The exact sum the app runs: <code>ground × rain</code>, then four fixed cut-offs. Move the sliders.</p>
+  <div class="card two">
+    <div>
+      <div class="ctl"><span>⛰️ Ground score</span><input type="range" id="gS" min="0" max="100" value="40"><output id="gO"></output></div>
+      <div class="ctl"><span>🌧️ Rain score</span><input type="range" id="rS" min="0" max="100" value="80"><output id="rO"></output></div>
+      <div class="presets" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+        <button class="btn" data-g="80" data-r="20">Weak slope, dry week</button>
+        <button class="btn" data-g="10" data-r="99">Firm slope, record rain</button>
+        <button class="btn" data-g="70" data-r="95">Weak slope, very wet</button>
+      </div>
+      <p class="tiny">Cut-offs: 0.02 · 0.06 · 0.15 · 0.30 (<code>webapp/products/landslide/model.py</code>). They are top-heavy on purpose: Very High is ~3% of the state, so the map doesn't paint a fifth of Arunachal red.</p>
+    </div>
+    <div style="text-align:center">
+      <div class="tiny">ground × rain</div>
+      <div class="big-out" id="hOut"></div>
+      <div class="lvl" id="lvl"></div>
+      <div class="small" id="lvlTxt" style="margin-top:10px"></div>
+    </div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">✖️ <b>Why multiply, not add?</b> A cliff in dry weather doesn't fail, and a downpour on flat ground does nothing. Multiplying keeps that: if either is near 0, the result is near 0. Adding would let a stormy day push flat ground into danger.</div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>The backtest: what would it have said?</h2>
+  <p class="sub">AUC says it can rank. A disaster manager asks three different things: how often would it alert, what share of known slides would it catch, and does the warning come <b>before</b> the slope fails?</p>
+  <div class="card">
+    <b>Does the warning come early?</b> <span class="tiny">median rain score around the 84 dated slides (re-run 2 Nov 2026, 219 points)</span>
+    <svg viewBox="0 0 640 230" style="width:100%;margin-top:6px" id="leadSvg"></svg>
+    <p class="small" style="margin-bottom:0">Even <b>5 days before</b>, the rain score at the failure site is already well above an ordinary monsoon day (0.73 vs 0.50), and it climbs to the event. Slides here follow <b>wet spells</b> that build over days, not one storm. <b>Caveat:</b> wet days cluster, so this shows risk is raised across a window. It isn't a 5-day pinpoint.</p>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <b>The trade-off: pick an alert line</b>
+    <div class="ctl"><span>alert when rain score ≥</span><input type="range" id="thr" min="0" max="3" step="1" value="1"><output id="thrO"></output></div>
+    <div class="grid g3" id="thrOut" style="margin-top:8px"></div>
+    <p class="small" style="margin-bottom:0"><b>There is no free lunch.</b> Catching more means alerting more. Where to sit is a <b>policy choice for APSDMA</b>: the cost of a missed slide against the cost of an ignored warning. We suggest starting near 0.90.</p>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="tip">🗺️ <b>Alerts must be local.</b> A single statewide alarm fires if <i>anywhere</i> is wet: ~100 days a year. Arunachal is 550 km wide and the monsoon lasts months. That's why the app maps levels instead of issuing one state number.</div>
+    <div class="tip warn">🚫 <b>We never quote a false-alarm rate.</b> An alert day with no recorded slide may be a false alarm, or a slide in an empty valley that nobody wrote down. With 84 dated slides in 16 years, nobody can measure it. Saying so is more credible than a made-up number.</div>
+  </div>
+  <h3 style="margin:22px 0 8px">🖐️ Hands-on: re-run it</h3>
+  <div class="cmd"><span>.venv\Scripts\python scripts\model\backtest.py</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
+  <p class="small">Takes about 5 seconds, offline (it reads the saved rain archive). It rewrites <code>reports/backtest.json</code> and <code>.png</code>, so run <code>git checkout reports/backtest.*</code> afterwards if you don't mean to keep them.</p>
+  <div class="card">
+    <b>Your numbers won't match BACKTEST.md exactly, and that's right.</b> <span class="small">The doc was written on 3 Aug with <b>97</b> rain points. On 22 Sep the live app moved to <b>219</b> points, and the saved archive followed.</span>
+    <table class="cmp" style="margin-top:8px">
+      <tr><th></th><th>BACKTEST.md (97 pts)</th><th>re-run today (219 pts)</th></tr>
+      <tr><td>alert at ≥ 0.90: share of place-days</td><td>7.9%</td><td>7.9%</td></tr>
+      <tr><td>alert at ≥ 0.90: known slides caught</td><td>39%</td><td>38%</td></tr>
+      <tr><td>statewide alert days a year at 0.90</td><td>96</td><td>108</td></tr>
+      <tr><td>median rain score, 5 days before</td><td>0.754</td><td>0.726</td></tr>
+      <tr><td>median rain score, event day</td><td>0.863</td><td>0.827</td></tr>
+      <tr><td>ordinary monsoon day</td><td>0.499</td><td>0.498</td></tr>
+    </table>
+    <p class="small" style="margin-bottom:0"><b>The shape held</b>; the details moved a little. Statewide alarms went <i>up</i> because more points means more chances that one is wet. That's exactly the point about local alerts. Knowing <b>why</b> a number moved is the CTO skill here.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>The dead ends, and the doors still open</h2>
+  <p class="sub">Every closed door below was tested, not guessed. Experts trust a team that knows what <b>doesn't</b> work. Learn each one with its single killer number.</p>
+  <div class="doors">
+    <div class="door shut"><span class="s">closed · route 1</span><b>Bhuvan's year as the date</b><div class="small">11,329 slides <i>are</i> dated to a monsoon season (APSAC's SILAAS confirms it). But does a wetter monsoon carry more slides in the same place? <b>24–34% vs 33% chance</b>: no signal. Survey effort drowns it.</div></div>
+    <div class="door shut"><span class="s">closed · route 2</span><b>Train a model on the 72 events</b><div class="small">Fitted: <b>0.755</b>. Plain average: <b>0.768</b>. Too few events to fit.</div></div>
+    <div class="door shut"><span class="s">closed · route 3</span><b>Date slides from optical satellites</b><div class="small">The best date window was <b>55–80 days</b>, against the ≤7 days needed. <b>86%</b> of slides happen under monsoon cloud.</div></div>
+    <div class="door shut"><span class="s">closed · route 4</span><b>Date slides from radar</b><div class="small">The radar <i>can see</i> 99.4% of slide squares, but scars looked like any other hillside: <b>0.53</b> vs 0.50 chance.</div></div>
+    <div class="door shut"><span class="s">closed · the circle</span><b>Validate a dating method</b><div class="small">Testing it needs slides that are <b>both</b> precisely placed <b>and</b> dated. GSI/Bhuvan have place, no date; NASA has date, rough place. <b>The shortage blocks its own fix.</b></div></div>
+    <div class="door shut"><span class="s">closed · size</span><b>Forecast how big</b><div class="small">Which <b>survey</b> drew the outline explains <b>16.7%</b> of slide size; all ground and soil facts explain <b>0%</b>. Size measures the mapping team, not the hill.</div></div>
+    <div class="door shut"><span class="s">smaller than hoped</span><b>GSI's <code>Landslidedata_1</code> table</b><div class="small">The right fields (date, time, rain), but only ~<b>402 rows for all of India</b>. Maybe 0–20 for Arunachal. Useful, not the fix.</div></div>
+    <div class="door park"><span class="s">parked, not refuted</span><b>Pool the Himalayan arc</b><div class="small"><b>812</b> dated, located slides along the Himalaya (~10× ours), plus ~<b>200–280</b> from GSI's reports. Train on the arc, test on Arunachal's own events. Beat 0.768 and it's proven. About a day of work to resume.</div></div>
+    <div class="door open"><span class="s">open · found</span><b>GSI's written field reports</b><div class="small">48 Arunachal reports are openly downloadable. Since ~2016 they come as structured datasheets with exact date, time and location: <b>~25–40 new Arunachal events</b>.</div></div>
+    <div class="door open"><span class="s">open · the ask</span><b>Road-block logs (PWD, BRO, PMGSY)</b><div class="small">Dated, located slides at scale. The best realistic way to <b>grade</b> the landslide forecast, which is written down daily since 10 Oct but not graded.</div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>What reaches the screen</h2>
+  <p class="sub">The maths didn't change when the screens were rebuilt on 10 Oct. How it's <b>said</b> did.</p>
+  <div class="grid g3">
+    <div class="card small">✖️ <b>"3× the usual", not "4 of 5".</b> The user rejected a scale position as a headline. Every level now carries its measured figure, with the 90% range behind an ⓘ.</div>
+    <div class="card small">📍 <b>Valley towns snap uphill.</b> 12% of the state's 4,648 settlements sit on flat, unscored ground. The search moves to the nearest scored slope <b>and says so, with the distance</b>. What threatens a valley town is the slope above it.</div>
+    <div class="card small">🛣️ <b>Roads page.</b> Kilometres of main road crossing High+ ground, by stretch.</div>
+    <div class="card small">📄 <b>One-page report.</b> A printable page with both forecasts for the place on screen.</div>
+    <div class="card small">📝 <b>Written down daily</b> since 10 Oct (<code>records/landslide_forecast/</code>), each day's rain at every point with fingerprints of the fixed files. <b>Not graded</b>: no dated slides flow in.</div>
+    <div class="card small">📏 <b>Rain detail.</b> The ground is 100 m sharp; the live rain is ~22 km. Say this when showing the map.</div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>The limits card</h2>
+  <p class="sub">Say these before anyone asks. Each one is in the docs; none is a secret.</p>
+  <div class="grid g2">
+    <div class="limit"><span class="i">🎲</span><span><b>Not a probability.</b> Ranks and "× the usual" only. There are no true "no" places to build a chance from.</span></div>
+    <div class="limit"><span class="i">📅</span><span><b>WHEN rests on ~84 dated slides.</b> Every rain figure has a wide range. High's "3×" could be 1.4–4.4×.</span></div>
+    <div class="limit"><span class="i">🏔️</span><span><b>Under-warns at 2,000–4,000 m</b>, a label survey bias. Flag high corridors for manual review.</span></div>
+    <div class="limit"><span class="i">🌧️</span><span><b>Rain is coarse</b>: 11 km history, ~22 km live points. A budget limit, liftable with IMD gauges or a paid tier.</span></div>
+    <div class="limit"><span class="i">🚫</span><span><b>No false-alarm rate</b>, and we refuse to invent one.</span></div>
+    <div class="limit"><span class="i">📏</span><span><b>No size or severity.</b> Tested and closed.</span></div>
+    <div class="limit"><span class="i">⏳</span><span><b>Not graded live yet.</b> Logged daily, but grading waits for dated slides (road-block logs).</span></div>
+    <div class="limit"><span class="i">🌋</span><span><b>Rain only.</b> Earthquake-triggered slides aren't covered.</span></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Read the code and docs, in this order</h2>
+  <p class="sub">Code follows the data: labels → sample → folds → train → predict → rain → combine → test → screen.</p>
+  <div class="card code-list" id="codeList"></div>
+  <h3 style="margin:22px 0 8px">Docs</h3>
+  <div class="card code-list" id="docList"></div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Check yourself: a GSI geologist's questions</h2>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <h2><span class="n">14</span>Finish line</h2>
+  <p class="sub">Phase 3 is done when you can do all five:</p>
+  <div class="beats">
+    <div class="beat"><span class="s">explain</span><b>The 1,000× gap</b>and how it shaped both halves</div>
+    <div class="beat"><span class="s">defend</span><b>0.86</b>blocks, fold vs full model, vs random-split papers</div>
+    <div class="beat"><span class="s">defend</span><b>"just roads?"</b>the take-out test, 97.7%</div>
+    <div class="beat"><span class="s">exercise</span><b>Re-run the backtest</b>and explain every number that moved</div>
+    <div class="beat"><span class="s">explain</span><b>All the doors</b>each closed one with its killer number</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 3 like a hostile GSI geologist"</i>, and move to Phase 4, FloodSense.</div>
+</section>
+
+<footer>Phase 3 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Numbers from MODEL_SUSCEPTIBILITY.md, LABELS_AND_SAMPLING.md, MODEL_TRIGGER_AND_HAZARD.md, BACKTEST.md (plus a re-run on 2 Nov 2026), LANDSLIDE_TIMES_USUAL.md, GSI_MAP_COMPARISON.md, TEMPORAL_INVENTORY_ATTEMPTS.md and <code>webapp/products/landslide/model.py</code>.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase3";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+const bars = (rows, max, fmt = v => v) => rows.map(([l, v, c, note]) =>
+  `<div class="hbar"><span>${l}</span><div class="t"><div style="width:${Math.max(1, 100*v/max)}%;background:${c || 'var(--slide)'}"></div></div><span class="n">${fmt(v)}${note || ""}</span></div>`).join("");
+
+/* labels */
+$("labelBars").innerHTML = bars([
+  ["GSI outlines", 26459, "var(--slide)"], ["Bhuvan 2014", 3029, "var(--slide)"], ["Bhuvan 2017", 4708, "var(--slide)"], ["Bhuvan 2023", 3592, "var(--slide)"],
+  ["GSI points (check only)", 1322, "var(--planned)"], ["NASA points (check only)", 99, "var(--planned)"]
+], 26459, v => v.toLocaleString("en"));
+
+/* sample picture */
+(function(){
+  let h = `<rect x="0" y="0" width="360" height="260" fill="#f7f8f5"/>`;
+  // domain: some flat/ice areas excluded
+  h += `<path d="M0 200 Q 80 180 120 260 L0 260Z" fill="#dbe7f5"/><text x="8" y="245" font-size="11" fill="#2f6cae" font-family="Mukta,sans-serif">flat / water: left out</text>`;
+  h += `<path d="M260 0 L360 0 L360 70 Q 300 60 260 0Z" fill="#eef1ed"/><text x="290" y="20" font-size="11" fill="#737e78" font-family="Mukta,sans-serif">ice: left out</text>`;
+  const slides = [[150,90],[210,150],[110,130],[250,110]];
+  slides.forEach(([x, y]) => { h += `<circle cx="${x}" cy="${y}" r="34" fill="none" stroke="#cf1f2a" stroke-dasharray="4 4"/><rect x="${x-6}" y="${y-6}" width="12" height="12" fill="#cf1f2a"/>`; });
+  let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647; let n = 0;
+  while (n < 22) {
+    const x = 20 + rnd()*320, y = 20 + rnd()*220;
+    if (slides.some(([a, b]) => Math.hypot(a-x, b-y) < 40)) continue;
+    if ((x < 120 && y > 190) || (x > 260 && y < 65)) continue;
+    h += `<rect x="${x-5}" y="${y-5}" width="10" height="10" fill="#2f6cae" opacity=".8"/>`; n++;
+  }
+  h += `<text x="130" y="236" font-size="11" fill="#cf1f2a" font-family="Mukta,sans-serif">■ slide square</text><text x="130" y="250" font-size="11" fill="#cf1f2a" font-family="Mukta,sans-serif">ring = 500 m no-pick zone</text>`;
+  $("sampleSvg").innerHTML = h;
+})();
+
+/* WHERE model charts */
+$("foldBars").innerHTML = bars([["block 0",.878],["block 1",.838],["block 2",.854],["block 3",.879],["block 4",.849],["average",.859,"var(--ink)"]], 1, v => v.toFixed(3));
+$("classBars").innerHTML = [["Very Low",50,1.1,"0.02×"],["Low",25,7.2,"0.3×"],["Moderate",15,20.6,"1.4×"],["High",7,30.8,"4.4×"],["Very High",3,40.3,"13.4×"]].map(([l, a, s, x]) =>
+  `<div class="hbar"><span>${l} <span class="tiny">${a}% of land · ${x}</span></span><div class="t"><div style="width:${s}%;background:var(--accent)"></div></div><span class="n">${s}%</span></div>`).join("");
+$("shapBars").innerHTML = bars([["faces north/south",.701],["rock type",.519],["height",.492],["steepest 25 m patch",.409],["distance to road",.230],["faces east/west",.207]], .75, v => v.toFixed(2));
+$("ablBars").innerHTML = bars([["nothing removed",.859,"var(--ink)"],["rock + geology",.855],["height",.857],["road distance",.850],["all three",.842],["only shape + water",.839,"var(--partial)"]], 1, v => v.toFixed(3));
+$("elevBars").innerHTML = [["0–500 m",19.7,26.0],["500–1,000",28.7,34.5],["1,000–2,000",31.1,28.8],["2,000–3,000",13.9,7.9],["3,000–4,000",6.4,2.6]].map(([l, a, p]) =>
+  `<div class="hbar"><span>${l}</span><div class="t" style="flex-direction:column;height:22px"><div style="height:50%;width:${a*2.5}%;background:var(--accent)"></div><div style="height:50%;width:${p*2.5}%;background:var(--slide)"></div></div><span class="n">${Math.round(a)}/${Math.round(p)}</span></div>`).join("");
+
+/* rain bands */
+$("rainBands").innerHTML = [["rain score < 50",.2,"68% of days"],["50–75",1.3,"18%"],["75–90",2.7,"9%"],["90–95",6,"2.5%"],["95 and up",9,"2.5%"]].map(([l, x, d]) =>
+  `<div class="hbar"><span>${l} <span class="tiny">${d}</span></span><div class="t"><div style="width:${x/9*100}%;background:var(--flood)"></div></div><span class="n">${x}×</span></div>`).join("");
+
+/* level maker */
+const CUTS = [0.02, 0.06, 0.15, 0.30];
+const LV = [["Very Low","#5b8c5a","0.2×"],["Low","#9bb35b","1×"],["Moderate","#e0b13e","2×"],["High","#e07b39","3×"],["Very High","#cf1f2a","10×"]];
+$("lvl").innerHTML = LV.map(([n, c, x]) => `<div style="background:${c}">${n}<b>${x}</b></div>`).join("");
+function lvl(){
+  const g = +$("gS").value/100, r = +$("rS").value/100, h = g*r;
+  $("gO").textContent = g.toFixed(2); $("rO").textContent = r.toFixed(2);
+  const k = CUTS.filter(c => h >= c).length;
+  $("hOut").textContent = h.toFixed(3);
+  [...$("lvl").children].forEach((d, i) => d.classList.toggle("on", i === k));
+  $("lvlTxt").innerHTML = `<b>${LV[k][0]}</b>: places and days at this level have seen about <b>${LV[k][2]}</b> the usual number of landslides. A rank, not a chance.`;
+}
+["gS","rS"].forEach(i => $(i).addEventListener("input", lvl));
+document.querySelectorAll("[data-g]").forEach(b => b.addEventListener("click", () => { $("gS").value = b.dataset.g; $("rS").value = b.dataset.r; lvl(); }));
+lvl();
+
+/* lead-time chart (re-run 2 Nov 2026) */
+(function(){
+  const pts = [[-5,.726],[-4,.661],[-3,.661],[-2,.723],[-1,.806],[0,.827],[1,.821],[2,.799]];
+  const X = d => 60 + (d+5)*75, Y = v => 200 - (v-0.4)*400;
+  let h = `<rect x="40" y="10" width="590" height="190" fill="#f7f8f5"/>`;
+  h += `<line x1="40" x2="630" y1="${Y(.498)}" y2="${Y(.498)}" stroke="#737e78" stroke-dasharray="5 4"/><text x="470" y="${Y(.498)+16}" font-size="12" fill="#737e78" font-family="Mukta,sans-serif">ordinary monsoon day 0.50</text>`;
+  h += `<line x1="${X(0)}" x2="${X(0)}" y1="10" y2="200" stroke="#cf1f2a" stroke-width="2"/><text x="${X(0)+6}" y="190" font-size="12" fill="#cf1f2a" font-family="Mukta,sans-serif">slide day</text>`;
+  h += `<polyline points="${pts.map(([d, v]) => X(d)+","+Y(v)).join(" ")}" fill="none" stroke="#2f6cae" stroke-width="3"/>`;
+  pts.forEach(([d, v]) => { h += `<circle cx="${X(d)}" cy="${Y(v)}" r="5" fill="#2f6cae"/><text x="${X(d)}" y="${Y(v)-10}" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace">${v.toFixed(2)}</text><text x="${X(d)}" y="218" text-anchor="middle" font-size="12" font-family="Mukta,sans-serif">${d === 0 ? "day 0" : d > 0 ? "+"+d : d}</text>`; });
+  $("leadSvg").innerHTML = h;
+})();
+
+/* threshold trade-off (re-run) */
+const THR = [[0.75,"22.6%","62%","150"],[0.90,"7.9%","38%","108"],[0.95,"3.6%","21%","76"],[0.99,"0.6%","2%","25"]];
+function thr(){
+  const [t, a, c, s] = THR[+$("thr").value];
+  $("thrO").textContent = t.toFixed(2);
+  $("thrOut").innerHTML = `<div class="card" style="text-align:center"><div class="tiny">place-days alerting</div><div class="big-out">${a}</div></div>
+    <div class="card" style="text-align:center"><div class="tiny">known slides caught</div><div class="big-out">${c}</div></div>
+    <div class="card" style="text-align:center"><div class="tiny">statewide alarm days / year</div><div class="big-out" style="color:var(--accent)">${s}</div></div>`;
+}
+$("thr").addEventListener("input", thr); thr();
+
+/* reading lists */
+const CODE = [
+  ["scripts/build/labels.py","four maps → one 'slide' layer; touches-at-all rule"],
+  ["scripts/build/sample.py","the 'no' squares: domain, 500 m, 1:5, seed"],
+  ["scripts/build/make_folds.py","the frozen 50 km test blocks"],
+  ["scripts/model/train_susceptibility.py","5 fold models + 1 full model"],
+  ["scripts/model/predict_susceptibility.py","the ground score for every square; grey = not assessed"],
+  ["scripts/model/trigger.py","the rain score, and why it isn't fitted"],
+  ["scripts/model/hazard.py","ground × rain"],
+  ["scripts/model/backtest.py","alert frequency, capture, lead time"],
+  ["scripts/model/check_landslide_times_usual.py","the measured '× the usual' with rules set first"],
+  ["webapp/products/landslide/model.py · view.py","the live sum, the cut-offs, the town snap, the screens"]
+];
+const DOCS = [
+  ["docs/design/MODEL_SUSCEPTIBILITY.md","the WHERE model (all of it)"],
+  ["docs/design/LABELS_AND_SAMPLING.md","the labels and the 'no' squares"],
+  ["docs/design/MODEL_TRIGGER_AND_HAZARD.md","the WHEN half and the combining"],
+  ["docs/design/BACKTEST.md · LANDSLIDE_TIMES_USUAL.md","what it would have said; the real numbers on screen"],
+  ["docs/design/GSI_MAP_COMPARISON.md","ours vs GSI's"],
+  ["docs/design/TEMPORAL_INVENTORY_ATTEMPTS.md · PX0*.md · PX1_MAGNITUDE_FEASIBILITY.md","the dead ends, in full"],
+  ["docs/design/PARKED_HIMALAYAN_POOLED_TRIGGER.md","the parked door, and how to resume it"],
+  ["docs/design/ROADMAP_LANDSLIDE.md (headings + status) · PILOT_TAWANG.md · SLIDESENSE_SCREEN.md","the history, the pilot idea, the screens"]
+];
+function list(id, items, pre){
+  $(id).innerHTML = items.map(([f, w], i) => `<label><input type="checkbox" data-id="${pre}${i}" ${S[pre+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
+  $(id).addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+}
+list("codeList", CODE, "c"); list("docList", DOCS, "d");
+
+/* quiz */
+const QUIZ = [
+  ["Why trees and not deep learning?","GSI geologist","We have ~37,800 mapped slides and a table of facts per square. Trees are the best tool for tables of that size, train in minutes and explain each score with SHAP. Our shortage is dated slides, and deep learning doesn't create dates."],
+  ["Only about 90 day-dated slides exist. What does that rule out, and what did you try?","GSI geologist","It rules out training a WHEN model: a fitted one lost (0.755 vs 0.768). We tried Bhuvan's years (no signal against survey effort), optical dating (55–80 day windows, 86% under cloud), radar dating (0.53, chance), and hit the circle: validating a dating method needs slides that are both placed and dated. GSI's Landslidedata_1 holds ~402 rows nationally. Still open: Himalayan pooling (parked), GSI's field reports, and road-block logs."],
+  ["Why are Bhuvan's 11,329 season-dated slides real but still not useful as training labels?","APSAC scientist","They are real: only ~4% repeat between surveys, and APSAC's SILAAS says they occurred that season. But a season isn't a day, and when we asked whether wetter monsoons carry more slides at the same place, it scored 24–34% against 33% chance. How hard each campaign surveyed drowns the rain signal."],
+  ["Why doesn't careful 'no' sampling help here (0.860 vs 0.862)?","ML reviewer","The textbook worry is that careless 'no' squares land on flat, easy ground and inflate the score. Arunachal's median slope is 29°, so there's no easy ground to cheat with. We keep the rules for reasons AUC can't see: 15.8% of careless 'no' squares sit near known slides and are probably unrecorded slides."],
+  ["Why is a size or magnitude forecast closed?","GSI geologist","Which survey drew the outline explains 16.7% of slide size; all ground and soil facts explain 0%. GSI's median is 944 m², Bhuvan 2023's is 2,975 m², because their minimum mapping sizes differ. Size measures the survey, not the hill. And rain against size on 72 events: no link (p = 0.29)."],
+  ["Isn't your model just finding roads?","reviewer","Take road distance out and the score drops only 0.859 → 0.850. Shape and water facts alone keep 97.7%. Predicted High+ also tracks real slides across every road-distance band. Road distance carries a real mechanism (cut slopes) plus some mapping bias, and we say both."],
+  ["Your 0.86 is tested how? Papers report 0.95.","ML reviewer","Five times, each time hiding a 50 km block of the state, with blocks frozen before training. Every number comes from those 5 fold models; the full model in the app never quotes a score. Most 0.9+ papers use random splits that leak neighbouring squares. Not comparable."],
+  ["What does 'High' mean? Is it a 70% chance?","APSDMA officer","No. It's a rank: look here first. Measured on 84 dated slides, places and days at High have seen about 3× the usual number of landslides (range 1.4–4.4×). Very High about 10×. There's no probability, because there are no certified slide-free places."],
+  ["Why are your validation points not GSI's own points?","GSI geologist","84.6% of GSI's points sit right on a training outline: they're the centres of the same slides. Scoring them measures memory, not skill. NASA's 56 points are independent: 28.6% fall in our top 10% of ground, 2.9× chance."],
+  ["How does it compare with GSI's national map?","GSI geologist","On the same 508,138 squares, scored only by models that never saw each region: ranking 85 in 100 vs 60. Our top 13.8% of land holds 67% of slides; GSI's High class (13.8%) holds 25%. It holds for slides only Bhuvan mapped too (86 vs 58). GSI's map has three broad classes made for a different purpose."],
+  ["What's your false-alarm rate?","APSDMA officer","It can't be measured honestly. An alert day with no recorded slide may be a slide nobody wrote down. We report alert frequency (a real cost) and the share of known slides caught. At 0.90: 7.9% of place-days alert and about 38–39% of known slides fall on them."],
+  ["Where is it weakest?","you","High ground (2,000–4,000 m) is under-warned because of survey bias. Rain is coarse (11 km history, ~22 km live). WHEN rests on ~84 events. Not yet graded live. No earthquake triggers, no size."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

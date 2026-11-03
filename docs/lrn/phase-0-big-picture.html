@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 0 · The big picture — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="lrn.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div class="now">0 Big picture</div><div>1 Science</div><div>2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div>6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 0 · Day 1 · about 5 hours</div>
+  <h1>The big picture</h1>
+  <div class="goal">🎯 <span>By tonight: tell the <b>whole story in 3 minutes</b>, with no notes.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · One picture</a><a href="#s2">2 · Names</a><a href="#s3">3 · The problem</a>
+    <a href="#s4">4 · The pipeline</a><a href="#s5">5 · One square</a><a href="#s6">6 · Rules</a>
+    <a href="#s7">7 · WHERE × WHEN</a><a href="#s8">8 · Built or planned</a><a href="#s9">9 · Numbers</a>
+    <a href="#s10">10 · Don't say</a><a href="#s11">11 · Folders</a><a href="#s12">12 · App tour</a>
+    <a href="#s13">13 · Reading list</a><a href="#s14">14 · Old docs</a><a href="#s15">15 · Quiz</a><a href="#s16">16 · Say it</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>The whole idea in one picture</h2>
+  <p class="sub">An app is a vehicle. The backbone is the road. We build the road, then run vehicles on it.</p>
+  <div class="card road">
+<svg viewBox="0 0 1000 300" role="img" aria-label="Three vehicles on a road called the Data Backbone">
+  <!-- sources -->
+  <g font-family="Mukta,Segoe UI,sans-serif" font-size="15" fill="#45514a">
+    <text x="20" y="268">🛰 satellites</text><text x="190" y="268">🏛 gov portals</text>
+    <text x="370" y="268">🌊 river gauges</text><text x="560" y="268">🌧 live weather</text><text x="750" y="268">📡 own sensors (planned)</text>
+  </g>
+  <g stroke="#b6beb7" stroke-width="2" stroke-dasharray="4 4">
+    <line x1="70" y1="250" x2="70" y2="212"/><line x1="245" y1="250" x2="245" y2="212"/><line x1="430" y1="250" x2="430" y2="212"/><line x1="615" y1="250" x2="615" y2="212"/><line x1="840" y1="250" x2="840" y2="212"/>
+  </g>
+  <!-- road -->
+  <path d="M10 150 H990 V210 H10 Z" fill="#6b5784"/>
+  <line x1="10" y1="180" x2="990" y2="180" stroke="#fff" stroke-width="3" stroke-dasharray="26 18"/>
+  <text x="500" y="203" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" fill="#e8e3ee" letter-spacing="2">DATA BACKBONE · one shared map of the state</text>
+  <!-- vehicles -->
+  <g font-family="Mukta,Segoe UI,sans-serif" font-weight="700" font-size="17" text-anchor="middle">
+    <rect x="70" y="92" width="190" height="52" rx="10" fill="#1d8673"/><text x="165" y="124" fill="#fff">SlideSense ◭</text>
+    <circle cx="105" cy="148" r="9" fill="#17201b"/><circle cx="225" cy="148" r="9" fill="#17201b"/>
+    <rect x="320" y="92" width="190" height="52" rx="10" fill="#2f6cae"/><text x="415" y="124" fill="#fff">FloodSense ◈</text>
+    <circle cx="355" cy="148" r="9" fill="#17201b"/><circle cx="475" cy="148" r="9" fill="#17201b"/>
+    <rect x="570" y="92" width="190" height="52" rx="10" fill="#946610"/><text x="665" y="124" fill="#fff">SoilSense ◬</text>
+    <circle cx="605" cy="148" r="9" fill="#17201b"/><circle cx="725" cy="148" r="9" fill="#17201b"/>
+    <rect x="815" y="92" width="160" height="52" rx="10" fill="none" stroke="#737e78" stroke-width="2" stroke-dasharray="6 5"/><text x="895" y="124" fill="#737e78" font-weight="500">next hazard?</text>
+  </g>
+  <g font-family="IBM Plex Mono,monospace" font-size="12" text-anchor="middle" fill="#45514a">
+    <text x="165" y="80">landslides · Arunachal · live</text>
+    <text x="415" y="80">floods · Arunachal · live</text>
+    <text x="665" y="80">soil erosion · Assam · building</text>
+  </g>
+  <text x="500" y="34" text-anchor="middle" font-family="Rozha One,Georgia,serif" font-size="26" fill="#17201b">SlopeSense — the Hazard Intelligence Platform</text>
+</svg>
+  </div>
+  <div class="tip" style="margin-top:12px">💡 <b>Lead with the road, not a vehicle.</b> We are not "a landslide app". The forecasts are the proof that the road carries weight.</div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>Learn the names first</h2>
+  <p class="sub">The names changed on 11 Oct 2026. Older notes use the old names, so this trips people up.</p>
+  <div class="tree">
+    <div class="root"><b>SlopeSense</b><br><span class="small" style="color:#cfd6d1">the whole platform · "SHIP" = SlopeSense Hazard Intelligence Platform</span></div>
+    <div class="mods">
+      <div class="mod sl"><h4>◭ SlideSense</h4><span class="pill p-built">live</span> <span class="tiny">Arunachal</span><div class="q">❓ Where is the ground weak, and is the rain unusual for that place?</div></div>
+      <div class="mod fl"><h4>◈ FloodSense</h4><span class="pill p-built">live</span> <span class="tiny">Arunachal</span><div class="q">❓ Can water reach this ground, and are the rain and the river rising?</div></div>
+      <div class="mod so"><h4>◬ SoilSense</h4><span class="pill p-part">building</span> <span class="tiny">Assam</span><div class="q">❓ Where does rain wash soil off the land, and which catchments need work first?</div></div>
+    </div>
+    <div class="bone"><b>⛁ Data Backbone</b> <span class="pill p-built">live</span><div class="small">the shared pipeline under all three: collect → keep → line up → shelve → serve</div></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">⚠️ <b>Name trap:</b> before 11 Oct, "SlopeSense" meant the <i>landslide module</i>. The first, separate landslide app (the old public link) still carries that name.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>The problem: four walls</h2>
+  <p class="sub">Every hazard team hits the same four walls. The backbone knocks down all four, once.</p>
+  <div class="grid g4">
+    <div class="card wall"><div class="ico">🧩</div><b>Data in pieces</b><span class="small">Height every 30 m, soil every 250 m, rain every 11 km, rock as outlines, rivers as lines. A dozen agencies.</span></div>
+    <div class="card wall"><div class="ico">🔁</div><b>Every project starts from zero</b><span class="small">Months lining data up, one map published, the work thrown away.</span></div>
+    <div class="card wall"><div class="ico">🥀</div><b>Maps go stale</b><span class="small">Ground barely changes. Rain and rivers change every day.</span></div>
+    <div class="card wall"><div class="ico">📋</div><b>Nobody keeps score</b><span class="small">Forecasts are never written down and checked. So nothing learns.</span></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🔑 <b>How we learned this:</b> building the first landslide forecast, <i>the model was the small part</i>. Finding, checking and lining up the data was most of the work, and all of it could be reused.</div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>The pipeline: five steps and a loop</h2>
+  <p class="sub">👆 Click each step. Each one says what it does, where it lives in the code, and whether it is built.</p>
+  <div class="card">
+    <div class="pipe" id="pipe">
+      <div class="step" data-k="collect"><div class="ico">📥</div><b>Collect</b><span class="tiny">fetch every source</span></div>
+      <div class="step" data-k="keep"><div class="ico">🗄️</div><b>Keep</b><span class="tiny">original, untouched</span></div>
+      <div class="step" data-k="line"><div class="ico">📐</div><b>Line up</b><span class="tiny">fit to one map</span></div>
+      <div class="step" data-k="shelve"><div class="ico">📚</div><b>Shelve</b><span class="tiny">two shelves</span></div>
+      <div class="step" data-k="serve"><div class="ico">📱</div><b>Serve</b><span class="tiny">products read it</span></div>
+    </div>
+    <div class="loop" data-k="loop">↩ <b>The loop:</b> every forecast is written down before the day, graded after it, and what really happened comes back as new data</div>
+    <div class="detail card" id="pipeDetail" style="box-shadow:none;background:var(--sheet-2)"><span class="small">← pick a step</span></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>One square of ground</h2>
+  <p class="sub">The state is cut into <b>8.2 million squares</b> of 100 m × 100 m, each about the size of a football field. Every source becomes one more layer over the same squares. Pick a square and read straight down.</p>
+  <div class="card layers-wrap">
+    <div class="stack" id="stack"><div class="pin"></div></div>
+    <div>
+      <div class="kicker" style="color:var(--ink-3)">👆 hover or tap a layer</div>
+      <h3 id="lyrName" style="font-family:var(--display);font-weight:400;font-size:26px;margin:4px 0">Each square gets 34 facts</h3>
+      <div id="lyrText" class="small">…and every place gets <b>26 years of daily rain</b>. Together that table is "shelf one". It is the same for every product.</div>
+      <div class="uses">
+        <span class="chip sl" id="u-sl">◭ SlideSense</span><span class="chip fl" id="u-fl">◈ FloodSense</span><span class="chip so" id="u-so">◬ SoilSense</span>
+      </div>
+      <div class="tiny" style="margin-top:6px">solid = uses it today · dashed = planned · grey = not used</div>
+      <div class="tip ok" style="margin-top:14px;font-size:14px">🧱 <b>One file, three products.</b> The ground-height file comes in as 28 satellite tiles. The backbone turns it into steepness, slope facing, drainage and <i>height above the river</i>. SlideSense reads the steepness. FloodSense reads the height above the river. SoilSense reads the slope again.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>The six rules (plus three the pitch adds)</h2>
+  <p class="sub">These rules are why anyone should trust what comes out. Learn each with its "why".</p>
+  <div class="grid g2">
+    <div class="card rule"><div class="num">1</div><div><b>One map for everything</b><span class="why">a model needs a table, and two products can never disagree about where a place is</span></div></div>
+    <div class="card rule"><div class="num">2</div><div><b>Keep the original, record where it came from</b><span class="why">anyone can audit a number. If a source dies we lose freshness, not the system</span></div></div>
+    <div class="card rule"><div class="num">3</div><div><b>Check a source before trusting it</b><span class="why">official data can be wrong: the official flood map put most "flooded" ground on steep slopes</span></div></div>
+    <div class="card rule"><div class="num">4</div><div><b>The backbone doesn't know the hazard</b><span class="why">nothing in it says "landslide" or "flood", which is what makes the next product cheap</span></div></div>
+    <div class="card rule"><div class="num">5</div><div><b>Two shelves</b><span class="why">shelf 1 is ready-to-use data (a road planner wants this). Shelf 2 is the answers (an officer wants this)</span></div></div>
+    <div class="card rule"><div class="num">6</div><div><b>Close the loop</b><span class="why">more data makes a forecast fresher. Only knowing what happened makes it better</span></div></div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">🧪 <b>Test on unseen ground.</b> A model is judged only on places it never saw during building.</div>
+    <div class="card small">🏷️ <b>Label every number.</b> Each number on screen says what it is: a forecast, a measurement or a record.</div>
+    <div class="card small">🤚 <b>Say so when unsure.</b> Where data can't support an answer, the app says so and doesn't guess.</div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>Every hazard is WHERE × WHEN</h2>
+  <p class="sub">This one equation holds the whole project together. A product is just this question asked of the backbone.</p>
+  <div class="card">
+    <div class="eq">
+      <div class="box"><b>WHERE</b><span class="small">can it happen here?<br>the ground · <i>barely changes</i></span></div>
+      <div class="op">×</div>
+      <div class="box"><b>WHEN</b><span class="small">is something setting it off?<br>rain, river · <i>changes daily</i></span></div>
+      <div class="op">=</div>
+      <div class="box res"><b>FORECAST</b><span class="small" style="color:#cfd6d1">what to watch,<br>for the next 7 days</span></div>
+    </div>
+    <div class="gun">
+      <div><div class="big">🔫 ✗ ✋ ✗</div>unloaded, no trigger<br><b>nothing</b></div>
+      <div><div class="big">🔫 ✓ ✋ ✗</div>loaded, no trigger<br><b>nothing today</b></div>
+      <div><div class="big">🔫 ✗ ✋ ✓</div>unloaded, trigger<br><b>nothing</b></div>
+      <div class="yes"><div class="big">🔫 ✓ ✋ ✓</div>loaded + trigger<br><b>landslide</b></div>
+    </div>
+    <p class="small" style="margin:10px 0 0">🔫 <b>The loaded gun.</b> A weak slope is a loaded gun (WHERE). Heavy rain pulls the trigger (WHEN). You need <b>both</b>. That's why a "risk map" alone is <b>not</b> the product: it says nothing about <i>today</i>.</p>
+
+    <div class="tabs" id="hzTabs">
+      <button data-h="sl" class="on">◭ Landslides</button><button data-h="fl">◈ Floods</button><button data-h="so">◬ Soil erosion</button>
+    </div>
+    <div class="hz" id="hzBox"></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">🗣️ <b>Vocabulary:</b> scientists call WHERE <b>"susceptibility"</b> and WHEN <b>"trigger"</b>. To clients we only say <b>"Landslide Forecast"</b> and <b>"Flood Forecast"</b>. Susceptibility is an ingredient, not the meal.</div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>What's built, what's only planned</h2>
+  <p class="sub">Experts test you on this line. Never present a planned thing as live.</p>
+  <div class="legend"><span class="pill p-built">built</span><span class="pill p-part">partly</span><span class="pill p-plan">planned</span></div>
+  <div class="board">
+    <div class="row"><b>Collect outside sources</b><span class="pill p-built">built</span><span class="small">29 sources, about 308 GB raw (300 GB is radar scenes of flood dates)</span></div>
+    <div class="row"><b>Raw store + a record per file</b><span class="pill p-built">built</span><span class="small">source, terms, link, date, fingerprint</span></div>
+    <div class="row"><b>One shared map</b><span class="pill p-built">built</span><span class="small">8.2 M squares, 34 facts each, 26 years of rain</span></div>
+    <div class="row"><b>Two shelves</b><span class="pill p-part">as files</span><span class="small">built as files on disk; no outside access</span></div>
+    <div class="row"><b>SlideSense · FloodSense</b><span class="pill p-built">live</span><span class="small">Arunachal, in the app</span></div>
+    <div class="row"><b>SoilSense</b><span class="pill p-part">first version</span><span class="small">Assam, in the app, marked "building"</span></div>
+    <div class="row"><b>The loop: write down + grade</b><span class="pill p-part">floods only</span><span class="small">floods: written and graded daily. Landslides: written daily since 10 Oct, <b>not graded</b>, because no dated landslides come in</span></div>
+    <div class="row"><b>Automatic daily run</b><span class="pill p-part">cloud</span><span class="small">in the cloud (Modal, Mumbai region) since 20 Oct, 08:30 every morning. Other steps are run by hand</span></div>
+    <div class="row"><b>A second state</b><span class="pill p-built">built</span><span class="small">Assam: one region switch (<code>REGION=assam</code>), its own map, SoilSense on top</span></div>
+    <div class="row"><b>Open feed / API, other apps</b><span class="pill p-plan">planned</span><span class="small">the app reads files off disk; no service anyone else can call</span></div>
+    <div class="row"><b>Partner intake, own sensors</b><span class="pill p-plan">planned</span><span class="small">nothing comes in from partners or sensors yet</span></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>The numbers card</h2>
+  <p class="sub">👆 Tap a card to flip it. Say what it means <i>before</i> you flip.</p>
+  <div class="grid g4" id="nums"></div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Don't say → say instead</h2>
+  <p class="sub">Each wrong phrase on the left has been tempting before. Experts catch every one.</p>
+  <div class="never">
+    <div class="h">✗ don't say</div><div class="h">✓ say instead</div>
+    <div class="no">"We are a landslide app."</div><div class="yes">"We build the data backbone. The forecasts are the proof."</div>
+    <div class="no">"It is 86% accurate."</div><div class="yes">"Landslide WHERE picks the right spot about 6 times in 7, on ground it never saw."</div>
+    <div class="no">"High means a 70% chance of a landslide."</div><div class="yes">"A landslide level is a rank: High means look here first. High has seen about 3× the usual landslides."</div>
+    <div class="no">"We caught a real flood."</div><div class="yes">"Not yet. It was tested hard on past years. The next monsoon is the proof."</div>
+    <div class="no">"The loop is closed."</div><div class="yes">"Closed for floods. Landslides are written down daily but not graded yet."</div>
+    <div class="no">"We own unique data."</div><div class="yes">"Most inputs are public. Ours is the assembly, the upkeep and the checked history."</div>
+    <div class="no">"It works for any state."</div><div class="yes">"It moved to Assam in about four weeks. Each new state needs its own records and checks."</div>
+    <div class="no">"Others build on our feed. We send SMS alerts."</div><div class="yes">"Planned." (Some pitch slides show planned things. Say so.)</div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>Where things live in the code</h2>
+  <p class="sub">The pipeline from section 4, as folders. Just know what each one is for today. You'll open them in phases 2–6.</p>
+  <div class="folders">
+    <div class="fold"><div class="nm">scripts/fetch/</div><div class="what">downloads each source (one script per source)</div><div class="stage">📥 collect</div></div>
+    <div class="fold"><div class="nm">data/raw/</div><div class="what">untouched originals + their records. Not in git</div><div class="stage">🗄️ keep</div></div>
+    <div class="fold"><div class="nm">scripts/build/</div><div class="what">makes the 100 m map and the 34 facts</div><div class="stage">📐 line up</div></div>
+    <div class="fold"><div class="nm">data/interim/</div><div class="what">shelf 1: the ready-to-use map and rain</div><div class="stage">📚 shelf 1</div></div>
+    <div class="fold"><div class="nm">scripts/model/ · models/</div><div class="what">trains the models, stores them</div><div class="stage">🧠 answers</div></div>
+    <div class="fold"><div class="nm">data/processed/</div><div class="what">shelf 2: the answer layers</div><div class="stage">📚 shelf 2</div></div>
+    <div class="fold"><div class="nm">scripts/run/</div><div class="what">packs the small app bundle, checks screens</div><div class="stage">📦 pack</div></div>
+    <div class="fold"><div class="nm">webapp/</div><div class="what">the Streamlit app: shell, shared core, one folder per module</div><div class="stage">📱 serve</div></div>
+    <div class="fold"><div class="nm">scripts/cloud/</div><div class="what">the daily 08:30 run on Modal</div><div class="stage">⏰ every day</div></div>
+    <div class="fold"><div class="nm">records/</div><div class="what">the forecast logs and flood events, written down daily</div><div class="stage">↩ the loop</div></div>
+    <div class="fold"><div class="nm">reports/</div><div class="what">test results, scorecards, figures</div><div class="stage">🧪 proof</div></div>
+    <div class="fold"><div class="nm">docs/</div><div class="what">design notes, data research, briefings, this course</div><div class="stage">📖 memory</div></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">📦 <b>Why the app is tiny.</b> The heavy work (hundreds of GB) happens on this PC. The app only reads a small bundle in <code>webapp/assets/</code> plus a free weather feed. No database, no API key. That's how it runs on free hosting. <b>Adding a module = one folder + one line</b> in <code>webapp/products/__init__.py</code>.</div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Hands-on: the app tour</h2>
+  <p class="sub">Run the app and open every page. Tick it off when you can say in one line <b>what that page tells the user</b>.</p>
+  <div class="cmd"><span>.venv\Scripts\python -m streamlit run webapp/app.py</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
+  <p class="tiny">Run it from the project folder. The first load fetches live rain and takes a while.</p>
+  <div class="tour" id="tour"></div>
+  <div class="tip warn" style="margin-top:12px">🧭 <b>Start at the Landing page</b> and scroll down. It tells the story in five parts, the same as the slides and the script. Then go Data Backbone → SlideSense → FloodSense → SoilSense. That's the demo order: road first, then vehicles.</div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Reading list, in order</h2>
+  <p class="sub">Read for the idea, not the detail. Use this page as your notes.</p>
+  <div id="reads"></div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <h2><span class="n">14</span>Old docs: what has changed since</h2>
+  <p class="sub">Some docs are older than the latest work. If two docs disagree, <b>BRIEFING.md and README win</b>. Spotting these yourself is part of the skill.</p>
+  <div class="stale"><div class="old">24 sources, 8 GB raw<span class="src">PLATFORM_ARCHITECTURE.md · table</span></div><div class="ar">→</div><div class="new">29 sources, about 308 GB (radar added)</div></div>
+  <div class="stale"><div class="old">Daily run = a Windows task on the PC<span class="src">PLATFORM_ARCHITECTURE.md · Scheduling</span></div><div class="ar">→</div><div class="new">Runs in the cloud on Modal since 20 Oct</div></div>
+  <div class="stale"><div class="old">"Landslide only, the flood leg is parked"<span class="src">DESIGN.md · Part 0</span></div><div class="ar">→</div><div class="new">FloodSense is live and is the furthest along</div></div>
+  <div class="stale"><div class="old">"One neural network will date the landslides from satellite images"<span class="src">DESIGN.md · five things to remember</span></div><div class="ar">→</div><div class="new">Tried, and it failed. All five routes to more dated landslides are closed (Phase 3)</div></div>
+  <div class="stale"><div class="old">"About 37,000 mapped landslides"<span class="src">BRIEFING.md · section 10</span></div><div class="ar">→</div><div class="new">The exact count with duplicates removed is <b>35,744</b> (DATA_VERIFICATION.md). Use it if pressed</div></div>
+</section>
+
+<!-- 15 -->
+<section id="s15">
+  <h2><span class="n">15</span>Check yourself</h2>
+  <p class="sub">Answer out loud first. Then open the answer and grade yourself honestly. Your marks are saved in this browser. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<!-- 16 -->
+<section id="s16">
+  <h2><span class="n">16</span>Finish line: say it in 3 minutes</h2>
+  <p class="sub">Phase 0 is done when you can say these six beats, in this order, out loud, with a timer. Record yourself once.</p>
+  <div class="beats">
+    <div class="beat"><span class="s">0:00 · 20 s</span><b>Hook</b>The data to see a landslide or flood coming exists, but in pieces.</div>
+    <div class="beat"><span class="s">0:20 · 30 s</span><b>Four walls</b>Pieces · start from zero · stale · no score.</div>
+    <div class="beat"><span class="s">0:50 · 40 s</span><b>The backbone</b>Collect, keep, line up on 8.2 M squares, two shelves, serve, and the loop.</div>
+    <div class="beat"><span class="s">1:30 · 30 s</span><b>WHERE × WHEN</b>A product is a question. Loaded gun × trigger.</div>
+    <div class="beat"><span class="s">2:00 · 40 s</span><b>Proof</b>SlideSense, FloodSense (the second cost two files), SoilSense in a new state.</div>
+    <div class="beat"><span class="s">2:40 · 20 s</span><b>Honest close</b>What's planned, no real event caught yet, and the next monsoon is the test.</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 0 like an APSAC scientist"</i>, and move to Phase 1, the science underneath.</div>
+</section>
+
+<footer>Phase 0 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Facts from BRIEFING.md (10 Oct 2026), README.md, PLATFORM_ARCHITECTURE.md, PRESENTATION_SCRIPT.md, DESIGN.md and <code>webapp/products/</code>, checked 1 Nov 2026.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase0";
+const S = JSON.parse(localStorage.getItem(KEY) || "{}");
+const save = () => { localStorage.setItem(KEY, JSON.stringify(S)); meter(); };
+
+/* ---------- pipeline ---------- */
+const PIPE = {
+  collect:{t:"📥 Collect",s:"built",x:"A script fetches each source: satellite archives, government map servers, river gauges, and live weather every day. 29 sources in total.",w:"scripts/fetch/ (one script per source) · live rain comes from Open-Meteo, free"},
+  keep:{t:"🗄️ Keep",s:"built",x:"The file is stored untouched. Its record notes the source, terms of use, link, fetch date and a fingerprint (checksum). Raw files are never edited.",w:"data/raw/ · each record goes in _SOURCES.json"},
+  line:{t:"📐 Line up",s:"built",x:"Every source is fitted to the one shared map. A coarse layer is spread over the squares it covers. An outline becomes \"which rock am I on\". A line becomes \"how far to the nearest river, road or fault\".",w:"scripts/build/ (grid.py, features.py) · 100 m squares, 34 facts each"},
+  shelve:{t:"📚 Two shelves",s:"part",x:"Shelf 1 holds ready-to-use data: the map, the facts, the rain history. It's the same for everyone. Shelf 2 holds answers: forecasts and risk layers. Built as files, with no outside access yet.",w:"shelf 1: data/interim/ · shelf 2: data/processed/, models/, webapp/assets/"},
+  serve:{t:"📱 Serve",s:"part",x:"Products read from the shelves and show the answer on screen, place by place, for the next 7 days. Today only our own app reads it. An open feed for others is planned.",w:"webapp/ (Streamlit) · one folder per module in webapp/products/"},
+  loop:{t:"↩ The loop",s:"part",x:"Every forecast is written down before the day and graded after it against what really happened. Floods: done daily, graded against the river gauges. Landslides: written down daily since 10 Oct, not graded yet, because nothing feeds dated landslides in.",w:"records/flood_forecast/ · records/landslide_forecast/ · scorecard in reports/"}
+};
+const pill = s => s==="built" ? '<span class="pill p-built">built</span>' : s==="part" ? '<span class="pill p-part">partly built</span>' : '<span class="pill p-plan">planned</span>';
+document.querySelectorAll("#pipe .step, .loop").forEach(el => el.addEventListener("click", () => {
+  document.querySelectorAll("#pipe .step, .loop").forEach(e => e.classList.remove("on"));
+  el.classList.add("on");
+  const p = PIPE[el.dataset.k];
+  document.getElementById("pipeDetail").innerHTML = `<h4>${p.t} ${pill(p.s)}</h4><div>${p.x}</div><div class="where">📂 ${p.w}</div>`;
+}));
+
+/* ---------- layer stack ---------- */
+// uses: y = uses today, p = planned, n = not used  (from BRIEFING.md section 5)
+const LAYERS = [
+  {n:"Live rain + 7-day forecast",c:"#6fa8dc",sl:"y",fl:"y",so:"p",t:"Fetched every day from a free weather service. One fetch feeds every product."},
+  {n:"Rain history, 26 years",c:"#3d85c6",sl:"y",fl:"y",so:"p",t:"Daily rain for every place, no gaps. It tells you what is unusual for this exact spot."},
+  {n:"River gauges",c:"#2f6cae",sl:"n",fl:"y",so:"n",t:"32 gauges with real river levels. FloodSense brought these in, and now they belong to the backbone."},
+  {n:"Land cover",c:"#6aa84f",sl:"y",fl:"n",so:"y",t:"Forest, crops, bare ground, built-up. Plant cover holds soil and slopes in place."},
+  {n:"Rock types + fault lines",c:"#a64d79",sl:"y",fl:"n",so:"n",t:"Rock near a fault line is shattered and weak. Landslides care, floods don't."},
+  {n:"Soil",c:"#b45f06",sl:"y",fl:"n",so:"y",t:"Clay, sand, depth. Loose soil slides and washes away more easily."},
+  {n:"Drainage: rivers, catchments, height above river",c:"#45818e",sl:"y",fl:"y",so:"y",t:"How water flows, and how high a square sits above its river. That height is FloodSense's key fact."},
+  {n:"Ground shape: steepness, facing, curves",c:"#7f6000",sl:"y",fl:"y",so:"y",t:"Worked out from 30 m satellite ground heights. Every product uses it."}
+];
+const stack = document.getElementById("stack");
+LAYERS.forEach((L, i) => {
+  const d = document.createElement("div");
+  d.className = "lyr"; d.style.background = L.c; d.style.top = (16 + i*40) + "px";
+  d.style.backgroundImage = "linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px)";
+  d.style.backgroundSize = "12px 12px";
+  const show = () => {
+    document.querySelectorAll(".lyr").forEach(e => e.classList.remove("on")); d.classList.add("on");
+    document.getElementById("lyrName").textContent = L.n;
+    document.getElementById("lyrText").textContent = L.t;
+    for (const m of ["sl","fl","so"]) {
+      const c = document.getElementById("u-"+m);
+      c.classList.toggle("y", L[m] !== "n"); c.classList.toggle("p", L[m] === "p");
+    }
+  };
+  d.addEventListener("mouseenter", show); d.addEventListener("click", show);
+  stack.appendChild(d);
+});
+["sl","fl","so"].forEach(m => document.getElementById("u-"+m).classList.add("y"));
+
+/* ---------- WHERE x WHEN per hazard ---------- */
+const HZ = {
+  sl:{w:"How weak is this ground? Learned from <b>35,744 mapped landslides</b> in Arunachal: steepness, soil, rock, land cover.",
+      n:"Is the rain <b>unusual for this exact spot</b>? Last 3 and 7 days, compared with 26 years of its own rain.",
+      r:"A <b>level</b> from Very Low to Very High, for 7 days. It's a <b>rank, not a chance</b>. High has seen about 3× the usual landslides."},
+  fl:{w:"How easily does water reach this spot? Height above the river, river size, how closed-in the valley is.",
+      n:"Rain here and <b>upstream</b>, plus the river's own level at <b>32 gauges</b>, plus soil wetness on flat ground.",
+      r:"A <b>chance</b>: a river reaching its danger line (checked daily: at gauged rivers, 20% comes true about 20% of the time), and an approximate chance of a flood within about 10 km."},
+  so:{w:"Where can rain wash soil off? The standard soil-loss formula: rain strength × soil × slope × plant cover × land use.",
+      n:"A <b>weekly erosive-rain outlook</b> from the same live rain feed. Bare ground is measured every dry season since 2019.",
+      r:"An erosion map of Assam, <b>703 small catchments ranked</b> with their main cause and how firm each rank is, and a card for any village."}
+};
+function hz(k){
+  document.querySelectorAll("#hzTabs button").forEach(b => b.classList.toggle("on", b.dataset.h===k));
+  const h = HZ[k];
+  document.getElementById("hzBox").innerHTML =
+    `<div class="c"><span class="tiny">where</span><div>${h.w}</div></div><div class="op">×</div>
+     <div class="c"><span class="tiny">when</span><div>${h.n}</div></div><div class="op">=</div>
+     <div class="c" style="border:2px solid var(--ink)"><span class="tiny">what you get</span><div>${h.r}</div></div>`;
+}
+document.querySelectorAll("#hzTabs button").forEach(b => b.addEventListener("click", () => hz(b.dataset.h)));
+hz("sl");
+
+/* ---------- numbers ---------- */
+const NUMS = [
+  ["29","sources","Outside sources lined up on one map, about 308 GB of raw files. 300 GB of it is radar scenes of flood dates."],
+  ["8.2 M","squares","100 m squares on the shared map of Arunachal (8,202,343 exactly). Each has 34 facts."],
+  ["34","facts per square","Ground shape, soil, rock, land cover, drainage, distances to rivers, roads and faults."],
+  ["26 yrs","of daily rain","For every place in the state, with no gaps. It shows what is unusual for each spot."],
+  ["3","modules","SlideSense (landslides) and FloodSense (floods) in Arunachal, both live. SoilSense (erosion) in Assam, first version."],
+  ["2 files","what flood added","The flood module reused the backbone and added only two files of its own maths. This is the proof that the backbone pays off."],
+  ["6 in 7","landslide WHERE","Picks the right spot about 6 times in 7, tested on ground it never saw (a score called AUC, 0.859)."],
+  ["20% = 20%","flood at a gauge","At a gauged river, when it says 20%, about 20% of those days really reach the line. This is called being calibrated."],
+  ["32","river gauges","Real river levels feeding FloodSense. 1.9 million readings, some going back to 1971."],
+  ["08:30","daily run","Every morning in the cloud (Mumbai region) since 20 Oct. It runs the flood forecast and writes down the landslide forecast."],
+  ["~4 wks","to Assam","The time to move the backbone to a second state and put a new hazard (erosion) on top."],
+  ["0","real events caught","Not yet. Logging started as the monsoon ended. Next monsoon is the live test."]
+];
+const nums = document.getElementById("nums");
+NUMS.forEach(([big, lab, back]) => {
+  const d = document.createElement("div"); d.className = "flip";
+  d.innerHTML = `<div class="in"><div class="f"><div class="big">${big}</div><div class="tiny">${lab}</div></div><div class="b">${back}</div></div>`;
+  d.addEventListener("click", () => d.classList.toggle("on"));
+  nums.appendChild(d);
+});
+
+/* ---------- app tour (page names from each module's view.py VIEWS) ---------- */
+const TOUR = [
+  {m:"Start", c:"var(--ink)", p:[["🏠 Landing page","the 4 module cards + the story in five parts as you scroll"]]},
+  {m:"⛁ Data Backbone", c:"var(--bone)", p:[["⛁ Pipeline","the idea in one picture; solid = built, pencil = planned"],["📚 Data catalogue","every source, where it came from, when"],["🔬 Layer explorer","one layer of the shared map at a time"]]},
+  {m:"◭ SlideSense", c:"var(--slide)", p:[["📍 Forecast","search a town: 7-day level, weak ground × unusual rain"],["🗺️ Susceptibility","the WHERE map alone, with no rain in it"],["🛣️ Roads","km of main road crossing High ground"],["🧭 Evidence (ℹ️ menu)","past landslides behind the model"],["📊 Model & Validation (ℹ️ menu)","how it was tested"]]},
+  {m:"◈ FloodSense", c:"var(--flood)", p:[["🎯 Live forecast","search Pasighat, then scroll to the track record"],["🗺️ Flood-prone ground","the WHERE map: \"if a flood comes\""],["💧 Catchments","what drains into where"],["📋 How to read this forecast (ℹ️ menu)","the 6 kinds of number and their limits"]]},
+  {m:"◬ SoilSense · Assam", c:"var(--soil)", p:[["🗺️ Erosion map","soil loss across Assam"],["🌧️ This week","the erosive-rain outlook"],["📍 Village card","a printable card for any village"],["🛰️ Change over time","bare ground each dry season"],["📋 Priority list","703 catchments ranked, with causes"],["🛠️ What if we treat it?","the effect of conservation work"],["📖 How to read this","the plain explanation"]]}
+];
+const tour = document.getElementById("tour");
+TOUR.forEach((col, ci) => {
+  const d = document.createElement("div"); d.className = "mcol"; d.style.borderColor = col.c;
+  d.innerHTML = `<h4 style="color:${col.c}">${col.m}</h4>` + col.p.map(([n, h], pi) => {
+    const id = `t${ci}_${pi}`;
+    return `<label><input type="checkbox" data-id="${id}" ${S[id]?"checked":""}><span>${n}<span class="tiny">look for: ${h}</span></span></label>`;
+  }).join("");
+  tour.appendChild(d);
+});
+tour.addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+/* ---------- reading list ---------- */
+const READS = [
+  ["docs/BRIEFING.md","45 min","Read sections 1–12 in full. Skim 13–16 now; you'll use them in Phase 7. Also open <b>BRIEFING.html</b> in a browser for the numbered screenshots."],
+  ["README.md","10 min","The module table, \"what's actually built\", and the folder layout."],
+  ["docs/design/PLATFORM_ARCHITECTURE.md","20 min","The target diagram and the six-step plan. Notice <i>why the loop came first</i>: a forecast nobody wrote down is gone forever. Watch for its old numbers (section 14)."],
+  ["docs/PRESENTATION_SCRIPT.md","25 min","Read it <b>out loud</b>. This is how we say it, so use its words."],
+  ["docs/design/DESIGN.md","30 min","<b>Headings only</b>, plus Part 2 (the loaded gun), Part 14 (the glossary) and the closing \"things to remember\". It's the original design, so parts are out of date."]
+];
+document.getElementById("reads").innerHTML = READS.map(([f, t, h], i) => {
+  const id = "r"+i;
+  return `<div class="read"><div class="o">${i+1}</div><div><div class="f"><label><input type="checkbox" data-id="${id}" ${S[id]?"checked":""}> ${f}</label></div><div class="how">${h}</div></div><div class="t">${t}</div></div>`;
+}).join("");
+document.getElementById("reads").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+/* ---------- quiz ---------- */
+const QUIZ = [
+  ["What is the Data Backbone, in one breath?","co-founder",
+   "A standing system that collects every useful source, keeps the originals, lines everything up on one map of the state, keeps it fresh, hands it to products, and records what they said and what really happened."],
+  ["Why is the backbone the main product, not the landslide forecast?","investor",
+   "Because the data work was most of the effort, and it is the same data for every hazard. Built once, it makes each next product cheap: the flood module added only two files. The forecasts are the proof that it carries weight."],
+  ["Name the three modules and the question each one answers.","anyone",
+   "SlideSense: is the ground weak, and is the rain unusual here? FloodSense: can water reach this ground, and are the rain and the river rising? SoilSense (Assam): where does rain wash soil away, and which catchments need work first?"],
+  ["What's the difference between WHERE and WHEN? Why do we sell a forecast, not a susceptibility map?","APSAC scientist",
+   "WHERE (susceptibility) is the ground, and it barely changes. WHEN (trigger) is rain and rivers, which change daily. A susceptibility map alone says nothing about today; it was equally true last year. Rain alone says nothing about where. You need both: the loaded gun and the trigger."],
+  ["What is 'one square', and why does everything go onto it?","GIS officer",
+   "A 100 m × 100 m square. 8.2 million of them cover Arunachal. Every source, whatever its shape (a 30 m grid, an 11 km rain cell, a rock outline, a river line), becomes one more fact about each square, 34 in all. A model needs a table, and two products then can never disagree about where a place is."],
+  ["What are the two shelves?","engineer",
+   "Shelf 1: ready-to-use data (the map, the 34 facts, the rain history), the same for everyone. Shelf 2: answers (forecasts and risk layers), specific to each product. Different people want different shelves, and they are updated and shared on different terms."],
+  ["Is the loop closed? Be exact.","GSI geologist",
+   "For floods, yes: every forecast is written down daily and graded against the real river gauges. For landslides, half of it: forecasts have been written down daily since 10 Oct but are not graded, because no source gives us dated landslides yet (road-block logs would)."],
+  ["The data is all public. What's actually yours?","investor",
+   "The assembly (29 sources made to fit one map), the upkeep (kept fresh daily), knowing which official layers are unusable, and seasons of forecasts checked against these rivers and slopes. Code can be copied in a week; checked local history cannot."],
+  ["Why Assam, and what did moving there prove?","co-founder",
+   "It proved the backbone moves: a new state and a new hazard at once, in about four weeks, with one region switch. SoilSense is our entry for the NESFIC 2026 challenge. Arunachal's live forecasts are re-checked after every shared-code change to prove they didn't move."],
+  ["Has it caught a real landslide or flood?","journalist",
+   "Not yet. It was tested hard on past years, on places and times it never saw. Flood logging began as the monsoon ended. The next monsoon is the live proof."],
+  ["What's planned but NOT built?","APSAC scientist",
+   "An open feed or API for others, other apps on top, partner and field intake, our own sensors, and grading of landslide forecasts. Some pitch slides show these. Always call them planned."],
+  ["Which docs win when two disagree?","you",
+   "BRIEFING.md and README.md (the newest). PLATFORM_ARCHITECTURE.md and DESIGN.md hold older numbers and plans, such as '24 sources', 'a Windows task', and 'flood is parked'."]
+];
+const quiz = document.getElementById("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss"); d.classList.add(b.dataset.g); d.classList.remove("open"); save();
+  }));
+  quiz.appendChild(d);
+});
+
+/* ---------- progress ---------- */
+function meter(){
+  const ids = [...document.querySelectorAll("[data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  document.getElementById("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  document.getElementById("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

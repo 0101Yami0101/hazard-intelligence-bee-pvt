@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 5 · SoilSense — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="lrn.css">
+<style>
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.factor{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:6px;text-align:center}
+.factor .f{border-radius:10px;padding:8px 6px;border:2px solid var(--soil);background:var(--soil-bg)}
+.factor .f > b{font-family:var(--display);font-weight:400;font-size:26px;display:block;color:var(--soil)}
+.factor .f span{font-size:12.5px;display:block;line-height:1.25}
+.factor .f.unk{border-style:dashed;border-color:var(--accent);background:var(--accent-soft)}
+.factor .f.unk b{color:var(--accent)}
+.factor .res{background:var(--ink);color:#fff;border-radius:10px;padding:8px 12px;display:flex;flex-direction:column;justify-content:center}
+.factor .res b{font-family:var(--display);font-weight:400;font-size:24px}
+@media(max-width:760px){.factor{grid-template-columns:repeat(3,1fr)}}
+.spread{display:grid;grid-template-columns:130px 1fr 90px;gap:8px;align-items:center;font-size:14px;margin:7px 0}
+.spread .t{position:relative;height:22px;background:var(--grid);border-radius:4px}
+.spread .t div{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--soil)}
+.spread .n{font-family:var(--mono);font-size:13px;text-align:right}
+@media(max-width:600px){.spread{grid-template-columns:90px 1fr 70px}}
+.hbar{display:grid;grid-template-columns:170px 1fr 80px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
+.hbar .t{height:18px;background:var(--grid);border-radius:4px;overflow:hidden}
+.hbar .t div{height:100%}
+.hbar .n{font-family:var(--mono);font-size:13px;text-align:right}
+@media(max-width:600px){.hbar{grid-template-columns:110px 1fr 64px}}
+.classes{display:flex;height:46px;border-radius:8px;overflow:hidden;margin-top:6px}
+.classes div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-family:var(--mono);text-align:center;line-height:1.1}
+.ctl{display:grid;grid-template-columns:150px 1fr 70px;gap:10px;align-items:center;font-size:15px;margin:6px 0}
+.ctl select{font:inherit;font-size:14px;padding:4px 6px;border:2px solid var(--rule);border-radius:8px;width:100%}
+.rk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;text-align:center}
+.rk div{background:var(--sheet-2);border:1px solid var(--rule);border-radius:10px;padding:8px}
+.rk b{display:block;font-family:var(--display);font-weight:400;font-size:32px;line-height:1}
+.rangebar{position:relative;height:34px;background:var(--grid);border-radius:6px;margin:14px 0 4px}
+.rangebar .band{position:absolute;top:6px;bottom:6px;background:var(--partial);border-radius:4px;opacity:.6}
+.rangebar .pt{position:absolute;top:2px;width:4px;bottom:2px;background:var(--ink);border-radius:2px}
+.rangebar .t20{position:absolute;top:0;bottom:0;border-left:2px dashed var(--accent)}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.door{border-radius:10px;padding:12px 14px;border:2px solid}
+.door.shut{border-color:var(--accent);background:var(--accent-soft)}
+.door.park{border-color:var(--partial);background:var(--partial-soft)}
+.door.open{border-color:var(--built);background:var(--built-soft)}
+.door .s{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.door.shut .s{color:var(--accent)}.door.park .s{color:var(--partial)}.door.open .s{color:var(--built)}
+.door > b{display:block;font-size:15.5px;margin:2px 0}
+.door .small{font-size:13.5px}
+.limit{display:grid;grid-template-columns:30px 1fr;gap:10px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.limit .i{font-size:22px}
+.code-list label{display:grid;grid-template-columns:22px 300px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
+@media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+.big-out{font-family:var(--display);font-size:38px;line-height:1}
+.pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.pg{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--soil);border-radius:10px;padding:10px;font-size:14px}
+.pg b{display:block;font-size:15px}
+.pg .k{font-family:var(--mono);font-size:11px;color:var(--soil)}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div>1 Science</div><div>2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div class="now">5 SoilSense</div><div>6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 5 · Days 20–23 · about 18 hours</div>
+  <h1>SoilSense, soil erosion in Assam</h1>
+  <div class="goal">🎯 <span>Explain to a <b>soil conservation officer</b> what the map says, how firm each rank is, and what is held back and why.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · What it is</a><a href="#s2">2 · The recipe</a><a href="#s3">3 · Which factor matters</a>
+    <a href="#s4">4 · The rain trap</a><a href="#s5">5 · The tree problem</a><a href="#s6">6 · The map</a>
+    <a href="#s7">7 · The ranked list</a><a href="#s8">8 · How firm?</a><a href="#s9">9 · Checks</a>
+    <a href="#s10">10 · Held back</a><a href="#s11">11 · The pages</a><a href="#s12">12 · Limits</a><a href="#s13">13 · Code</a><a href="#s14">14 · Quiz</a>
+  </div>
+  <p class="tiny" style="margin-top:12px">✔ Numbers on this page were read from <code>reports/erosion_*_assam</code> (factors, priority list, rank stability, picture check, soil value), cross-read with SOILSENSE.md, EROSION_MODULE.md and EROSION_PLAN.md, 3 Nov 2026.</p>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>What it is, and why it exists</h2>
+  <p class="sub">The platform's third module: <b>where rain washes soil off the land in Assam, which catchments to treat first, and how that changes over time.</b></p>
+  <div class="grid g3">
+    <div class="card"><div class="kicker">the ask</div><b>NESFIC-D-07</b><div class="small">The Assam Soil Conservation Department's problem statement in the NESFIC 2026 challenge. Applications close <b>10 Nov 2026</b>.</div></div>
+    <div class="card"><div class="kicker">the real point</div><b>Proof the backbone moves</b><div class="small">A <b>new state</b> and a <b>new hazard</b> at once, with one switch (<code>REGION=assam</code>). About four weeks from start to a working map.</div></div>
+    <div class="card"><div class="kicker">state</div><b>First version, "building"</b><div class="small">On the public <code>v2</code> app since 31 Oct 2026. Some pieces are deliberately held back (section 10).</div></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🧩 <b>The department named the same five things the recipe uses:</b> "erosion risk is influenced by rainfall, soil, slope, vegetation cover and land use." Four were already in the backbone.</div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>The recipe: five numbers multiplied</h2>
+  <p class="sub">RUSLE, the standard soil-loss sum in Indian soil conservation (Phase 1 has the toy). Here is where each number comes from for Assam.</p>
+  <div class="factor">
+    <div class="f"><b>R</b><span><b>rain strength</b></span><span class="tiny">InRESatE satellite map (0.1°)</span></div>
+    <div class="f"><b>K</b><span><b>how easily soil washes</b></span><span class="tiny">from SoilGrids, top 30 cm</span></div>
+    <div class="f"><b>LS</b><span><b>slope steepness × length</b></span><span class="tiny">from the 30 m height map</span></div>
+    <div class="f"><b>C</b><span><b>ground cover</b></span><span class="tiny">ESA WorldCover class → value</span></div>
+    <div class="f unk"><b>P</b><span><b>protection</b></span><span class="tiny">unknown → 1 everywhere</span></div>
+    <div class="res"><span class="tiny" style="color:#b9c2bc">A, soil lost</span><b>t/ha/yr</b><span class="tiny" style="color:#b9c2bc">if untreated</span></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">🧱 <b>"If untreated" is the honest label on every number.</b> P is bunds and terraces. Nobody outside the department knows where they are, so P = 1 means "as if nothing has been done here". The department's treated-area records (an Ask) would fix it. Land the recipe doesn't apply to, such as rivers, water, towns and river land under 2 m above its channel, stays <b>uncoloured, never "low"</b>. That's 30% of the state; 69.5% is scored.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>Which factor actually decides the answer?</h2>
+  <p class="sub">How much each factor varies across scored land in Assam (1st to 99th percentile). A factor that barely varies can't change the ranking much.</p>
+  <div class="card">
+    <div id="spread"></div>
+    <p class="small" style="margin-bottom:0"><b>Slope (LS) swings 640-fold; soil (K) only 1.2-fold.</b> So the ranking is mostly <b>slope × cover × rain</b>. That's why the soil map's known weakness (it reads 0.57× the national ISED values) hardly touches the order of places, only the tonnes.</p>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><b>Main cause, across all 703 catchments</b><div id="drivers" style="margin-top:6px"></div><p class="tiny" style="margin-bottom:0">Each catchment's "main driver" = the factor most above the state average.</p></div>
+    <div class="card"><b>Statewide, if untreated</b>
+      <div class="big-out" style="margin-top:6px">~118 Mt</div><div class="small">of soil a year across 5.4 million scored hectares; average <b>21.6 t/ha/yr</b>. An estimate: absolute tonnes are uncertain by a factor of several. Of it, ~7.8 Mt/yr is estimated to reach streams (untested).</div></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>The rain trap: a common formula read 91% low</h2>
+  <p class="sub">R needs storm intensity, which most of India doesn't measure. People use a shortcut formula from yearly rain. It was checked against Assam's only gauge-derived value (Guwahati, R ≈ 7,924).</p>
+  <div class="card">
+    <div id="rainCmp"></div>
+    <p class="small" style="margin-bottom:0"><b>Chosen: InRESatE</b>, a satellite-based rain-strength map (2001–2018). <b>IRED</b> is the second opinion, run alongside on every screen.</p>
+  </div>
+  <div class="tip warn" style="margin-top:12px">⚖️ <b>The catch:</b> the two good maps <b>disagree on pattern</b> (district ranking agreement only 0.26). So nobody can say yet which is right, and each top catchment says <b>whether it stays on top under the other map</b>. That's the most important honesty rule in SoilSense (section 8).</div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>The tree problem: one number moves everything</h2>
+  <p class="sub">The satellite land map calls forest, tea gardens and <i>jhum</i> fallow all "tree". One cover value must stand for all three, and it's the top open question.</p>
+  <div class="card">
+    <b>Share of scored land in each class</b> <span class="tiny">slight &lt;5 · moderate 5–10 · high 10–20 · very high 20–40 · severe 40–80 · very severe 80+ t/ha/yr</span>
+    <div style="margin-top:8px"><b class="small">Main run (tree C = 0.03)</b><div class="classes" id="clMain"></div></div>
+    <div style="margin-top:10px"><b class="small">Same, but tree C = 0.003 (dense forest value)</b><div class="classes" id="clLow"></div></div>
+    <p class="small" style="margin-bottom:0">Severe or worse: <b>17%</b> of the land in the main run, <b>2%</b> with the forest value. Average loss drops from 21.6 to 7.0 t/ha/yr. <b>The map's colours on tree land are indicative</b>, and the screen says so.</p>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card small"><b>Why 0.03 for now:</b> it's a class average across forest (low), tea (higher) and <i>jhum</i> fallow (much higher). The lower value runs alongside, one click away.</div>
+    <div class="card small"><b>The fix tried:</b> split "tree" into forest / tea / <i>jhum</i> with Sentinel-2. It told tea from forest well (0.85), but the <b>blind picture check failed</b> (0.20–0.44 against bars of 0.60–0.70). Village groves and undated imagery tripped it. Not adopted; a second try needs a new sample.</div>
+  </div>
+  <div class="tip" style="margin-top:12px">🌲 <b>A second trap, the treetop guard.</b> The height map measures treetops, not ground. On flat land, forest and tea-garden edges look like steep slopes. A guard caps those slopes on low land (below 20 m above its channel), on 36% of the state. Without it, "severe" would include lots of flat paddy edges.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>The map, and what it does not cover</h2>
+  <div class="grid g2">
+    <div class="card small">✅ <b>Covers:</b> sheet and rill erosion: rain washing the top layer off sloping land. 100 m squares, all of Assam, six classes.</div>
+    <div class="card small">🚫 <b>Doesn't cover:</b> <b>gullies, riverbank cutting or landslides</b>. RUSLE doesn't model them. River land under 2 m above a big channel (22% of the state) is left unscored; the 5 m version is reported alongside.</div>
+    <div class="card small">⛰️ <b>Hills ≫ plains</b>, as it must be. A national 250 m map (IIT Delhi's) calls western Assam's plains the most erodible: its slope factor barely follows slope (2.7 on flat ground, 5.6 above 30°; ours 0.11 → 54). We disagree with it on purpose, and can show why.</div>
+    <div class="card small">🛰️ <b>ISRO's land-degradation map</b> was checked as a reference: it points the other way, and the gap sits on tree land (the same tree problem). It is also used, at arm's length, to train the AI second opinion (section 9).</div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>The ranked list: what an officer actually uses</h2>
+  <p class="sub"><b>703 small catchments</b> and <b>35 districts</b>, ranked. Each row says why and what helps.</p>
+  <div class="card">
+    <div class="grid g2">
+      <div class="small">
+        <b>Each catchment row carries:</b>
+        <ul style="padding-left:18px;margin:6px 0">
+          <li>its average loss and its <b>rank</b></li>
+          <li><b>main cause</b> (the factor most above the state average)</li>
+          <li><b>a second reason against similar slopes</b>, e.g. "heavy rain, 2.5× their average"</li>
+          <li><b>typical measures</b>: contour bunds, terraces, check dams, cover before the monsoon</li>
+          <li><b>how firm the rank is</b> (next section)</li>
+          <li>what the lost soil is worth</li>
+        </ul>
+      </div>
+      <div class="small">
+        <b>Officer controls:</b> sliders re-rank by the officer's own weights. A <b>field kit</b> exports 100 GPS points with form columns (CSV, KML, GPX, GeoPackage). The return path for filled forms isn't built yet.
+        <p><b>What the soil is worth:</b> farmland loses about <b>35 kg of nitrogen per hectare a year</b>, about <b>1.7 bags of urea</b>, roughly <b>₹61 crore a year</b> statewide at the farmer's price. On tree land only a range is given (the tree problem again).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>How firm is a rank? Pick a catchment</h2>
+  <p class="sub">The ranking was re-run <b>1,000 times</b> across everything still unsettled: which rain map, the tree value, the steepness formula, the class edges. These are the real top 20.</p>
+  <div class="card">
+    <div class="ctl"><span>Catchment (main rank)</span><select id="pick"></select><span></span></div>
+    <div class="rk" id="rk"></div>
+    <div class="small" style="margin-top:10px"><b>Rank across 1,000 runs</b> <span class="tiny">(bar = middle 90% of runs · dashed = top-20 line)</span></div>
+    <div class="rangebar" id="rbar"></div>
+    <div class="small" id="rtxt"></div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card" style="text-align:center"><div class="big-out">3</div><div class="small">catchments stay in the top 20 in nearly all runs ("robust")</div></div>
+    <div class="card" style="text-align:center"><div class="big-out">15</div><div class="small">are in the top 20 in at least half the runs</div></div>
+    <div class="card" style="text-align:center"><div class="big-out">7 / 13</div><div class="small">of the top 20 "stay on top under both rain maps" / "depend on the rain source"</div></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🗣️ <b>How to say it to an officer:</b> "This catchment is in the top 20 in 87 of 100 re-runs: survey it first. That one is top under one rain map only: check it on the ground before spending." The screen shows <b>"top 20 in X% of runs"</b>, never a chance of erosion.</div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>How it was checked</h2>
+  <p class="sub">No measured soil-loss map of Assam exists anywhere. So the <b>ranking</b> is checked against independent, imperfect references, each with its pass bar written before looking.</p>
+  <div class="grid g2">
+    <div class="card">
+      <b>👀 Blind picture check</b> <span class="tiny">300 squares, 1 m imagery, labelled without seeing our class</span>
+      <div class="hbar"><span>severe classes: visible erosion</span><div class="t"><div style="width:75%;background:var(--accent)"></div></div><span class="n">7.5%</span></div>
+      <div class="hbar"><span>mild classes: visible erosion</span><div class="t"><div style="width:25%;background:var(--built)"></div></div><span class="n">2.5%</span></div>
+      <p class="small" style="margin-bottom:0"><b>3.1×</b> as often (bar: 2×). <b>Passed, but not firm</b>: only 8 eroded squares in all, one labeller, undated imagery.</p>
+    </div>
+    <div class="card">
+      <b>🤖 The AI second opinion</b> <span class="tiny">learned from ISRO's eroded-land map</span>
+      <div class="hbar"><span>held-out blocks: AI</span><div class="t"><div style="width:82%;background:var(--flood)"></div></div><span class="n">0.82</span></div>
+      <div class="hbar"><span>held-out blocks: formula</span><div class="t"><div style="width:66%;background:var(--soil)"></div></div><span class="n">0.66</span></div>
+      <div class="hbar"><span>blind pictures: AI</span><div class="t"><div style="width:62.8%;background:var(--flood)"></div></div><span class="n">0.63</span></div>
+      <div class="hbar"><span>blind pictures: formula</span><div class="t"><div style="width:61.6%;background:var(--soil)"></div></div><span class="n">0.62</span></div>
+      <p class="small" style="margin-bottom:0">It beats the formula at <b>copying ISRO's map</b>, but <b>ties</b> it on what the pictures actually show. So it's shown as a second opinion that follows ISRO's map, not as the answer.</p>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card small"><b>Sanity checks S1–S8.</b> Factor ranges match the literature, hills ≫ plains. <b>Two failed and were handled</b>: S2 (flat edges in the top 5%, which is why the treetop guard exists) and S7 (only 7 of the top 20 shared between rain maps, which is why every rank shows its firmness).</div>
+    <div class="card small"><b>Measured river mud (CWC sediment)</b> would be the only truly measured check. On an Assam-only map just 2 stations qualify. The good stations drain from the hills <b>around</b> Assam, so it needs a North-East map.</div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Held back, and the bar each one missed</h2>
+  <div class="doors">
+    <div class="door shut"><span class="s">held back</span><b>"New bare ground on a steep slope" flags</b><div class="small">Two attempts. On the second, 62.5% of flags were confirmed in pictures, against a bar of 70%. The bare-ground <b>measurement</b> itself ships ("Change over time").</div></div>
+    <div class="door shut"><span class="s">parked</span><b>River-mud forecast (WHEN)</b><div class="small">Four tests failed: mud at CWC stations follows the <b>river</b>, not hill rain. Needs small-stream sensors, plots or CWC flow.</div></div>
+    <div class="door shut"><span class="s">not adopted</span><b>Split "tree" into forest / tea / jhum</b><div class="small">The blind picture check failed (0.20–0.44 vs 0.60–0.70).</div></div>
+    <div class="door shut"><span class="s">not adopted</span><b>Gully-prone ground flag</b><div class="small">No better than other open sloping land: 0.83×.</div></div>
+    <div class="door shut"><span class="s">not adopted</span><b>Measured cover in the main map</b><div class="small">No gain on the held-out half.</div></div>
+    <div class="door park"><span class="s">local only</span><b>Weekly outlook in the cloud run</b><div class="small">Built and logged on the PC; good at <b>when</b> (0.63, 0.77 pass), weak at <b>where within a week</b> (0.18 fails). Adding it to the 08:30 run needs a redeploy.</div></div>
+    <div class="door park"><span class="s">not done</span><b>Assamese wording; field form return</b><div class="small">Needs a native speaker; exports work, nothing comes back in yet.</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>The seven pages in the app</h2>
+  <div class="pages">
+    <div class="pg"><span class="k">estimate · class</span><b>🗺️ Erosion map</b>six classes, 100 m; switch rain map / tree value; AI view; soil reaching streams</div>
+    <div class="pg"><span class="k">× normal</span><b>🌧️ This week</b>next 7 days' erosive rain vs normal, and where it does most harm</div>
+    <div class="pg"><span class="k">estimate · rank</span><b>📍 Village card</b>2,589 places or a lat/lon; one printable card</div>
+    <div class="pg"><span class="k">measured share</span><b>🛰️ Change over time</b>bare ground every dry season 2019–2026</div>
+    <div class="pg"><span class="k">rank</span><b>📋 Priority list</b>703 catchments + 35 districts, re-rankable, field kit</div>
+    <div class="pg"><span class="k">estimate</span><b>🛠️ What if we treat it?</b>soil saved per measure (provisional values)</div>
+    <div class="pg"><span class="k">—</span><b>📖 How to read this</b>method in plain words; every check with its result</div>
+  </div>
+  <div class="tip" style="margin-top:12px">📏 <b>Rules the pages keep:</b> a class or rank is <b>never</b> a chance; both unsettled inputs (rain map, tree value) are one click away; unscored land stays uncoloured.</div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>The limits card</h2>
+  <div class="grid g2">
+    <div class="limit"><span class="i">🧱</span><span><b>If untreated</b>: protection unknown. <i>Ask</i>: treated-area records.</span></div>
+    <div class="limit"><span class="i">⚖️</span><span><b>Tonnes uncertain by a factor of several</b>; ranks are the product. <i>Paid / Ask</i>: measured sediment, field data.</span></div>
+    <div class="limit"><span class="i">🌲</span><span><b>Tree land is indicative</b>: one value for forest, tea and jhum.</span></div>
+    <div class="limit"><span class="i">🌧️</span><span><b>Rain map unsettled</b>: two good maps disagree on pattern. <i>Ask</i>: intensity gauges.</span></div>
+    <div class="limit"><span class="i">🕳️</span><span><b>No gullies, riverbanks or landslides</b>: method limit; separate detectors needed.</span></div>
+    <div class="limit"><span class="i">☁️</span><span><b>Clouds hide the monsoon ground</b>: physics; dry-season composites instead.</span></div>
+    <div class="limit"><span class="i">🧪</span><span><b>Not field-validated yet</b>: the department's pilot is the test.</span></div>
+    <div class="limit"><span class="i">🛰️</span><span><b>Earth Engine on a restricted, non-commercial quota</b>: fix before commercial use.</span></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Code, docs, and the hands-on</h2>
+  <div class="card code-list" id="codeList"></div>
+  <h3 style="margin:22px 0 8px">Docs</h3>
+  <div class="card code-list" id="docList"></div>
+  <h3 style="margin:22px 0 8px">🖐️ Hands-on</h3>
+  <ol class="small" style="padding-left:18px">
+    <li><b>Compare one catchment under both rain maps (read-only).</b> Open <code>reports/erosion_priority_assam.csv</code>. Sort by <code>rank_main</code>. For the first five rows, read <code>rank_ired</code>, <code>top20_pct</code> and <code>mark</code>. Explain out loud why row 1 is "robust" and row 3 is not.</li>
+    <li><b>Rebuild the Assam bundle</b> (the roadmap's exercise). These commands <b>rewrite</b> the Assam outputs and the app's files, so run <code>git status</code> before and after; the results should be unchanged. If anything differs, undo with <code>git checkout</code> and ask why.</li>
+  </ol>
+  <div class="cmd"><span>$env:REGION = "assam"; .venv\Scripts\python scripts\build\erosion_factors.py; .venv\Scripts\python scripts\model\erosion_priority.py; .venv\Scripts\python scripts\run\export_erosion_bundle.py; Remove-Item Env:REGION</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
+  <p class="tiny">From SOILSENSE.md. The full 12-step order with times is in EROSION_PLAN.md. After any shared-code change, run <code>check_live_unchanged.py check</code>.</p>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <h2><span class="n">14</span>Check yourself: a soil conservation officer's questions</h2>
+  <p class="sub">Answer out loud, then open and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+  <div class="beats" style="margin-top:18px">
+    <div class="beat"><span class="s">explain</span><b>The five factors</b>and why "if untreated"</div>
+    <div class="beat"><span class="s">explain</span><b>The two traps</b>the rain formula and the tree value</div>
+    <div class="beat"><span class="s">defend</span><b>A rank</b>with its "top 20 in X% of runs"</div>
+    <div class="beat"><span class="s">explain</span><b>What's held back</b>and each bar it missed</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 5 like an Assam soil conservation officer"</i>, and move to Phase 6, the app and operations.</div>
+</section>
+
+<footer>Phase 5 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Figures from reports/erosion_factors_assam.json, erosion_priority_assam.csv, erosion_rank_stability_assam.json, erosion_eyecheck_assam.json and erosion_soil_value_assam.json; method and decisions from SOILSENSE.md, EROSION_MODULE.md and EROSION_PLAN.md.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase5";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+const bars = (rows, max, fmt) => rows.map(([l, v, c, n]) =>
+  `<div class="hbar"><span>${l}</span><div class="t"><div style="width:${Math.max(1, 100*v/max)}%;background:${c || 'var(--soil)'}"></div></div><span class="n">${n || fmt(v)}</span></div>`).join("");
+
+/* factor spread, p1..p99 on scored land (reports/erosion_factors_assam.json), log scale */
+(function(){
+  const F = [["R rain", 2611, 15682], ["K soil", 0.0156, 0.0191], ["LS slope", 0.0812, 51.84], ["C cover", 0.03, 0.34]];
+  $("spread").innerHTML = F.map(([n, lo, hi]) => {
+    const ratio = hi / lo, w = Math.max(2, Math.log10(ratio) / Math.log10(700) * 100);
+    return `<div class="spread"><span>${n}</span><div class="t"><div style="left:0;width:${w}%"></div></div><span class="n">${ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1)}×</span></div>`;
+  }).join("") + `<div class="tiny">bar length = how many times bigger the 99th percentile is than the 1st (log scale)</div>`;
+})();
+$("drivers").innerHTML = bars([["bare or thin cover", 272], ["steep or long slopes", 206], ["heavy rain", 184], ["erodible soil", 37]], 272, v => v);
+
+/* rain formula vs the Guwahati gauge value (EROSION_PLAN R1, erosion_factors_assam R_guwahati) */
+$("rainCmp").innerHTML = bars([
+  ["Guwahati gauge (truth)", 7924, "var(--ink)"], ["InRESatE (chosen)", 7507, "var(--built)", "−5%"],
+  ["IRED (alongside)", 7924 * 0.54, "var(--partial)", "−46%"], ["Singh 1981 formula", 7924 * 0.09, "var(--accent)", "−91%"]
+], 7924, v => Math.round(v));
+
+/* class shares (main vs tree C 0.003) */
+(function(){
+  const COL = ["#5b8c5a", "#9bb35b", "#e0b13e", "#e07b39", "#cf1f2a", "#8b1a24"];
+  const NAMES = ["slight", "moderate", "high", "very high", "severe", "very severe"];
+  const row = v => v.map((p, i) => `<div style="width:${p}%;background:${COL[i]}" title="${NAMES[i]} ${p}%">${p >= 6 ? NAMES[i] + "<br>" + Math.round(p) + "%" : ""}</div>`).join("");
+  $("clMain").innerHTML = row([44.8, 10.22, 13.75, 14.17, 11.03, 6.04]);
+  $("clLow").innerHTML = row([67.46, 15.4, 10.78, 4.41, 0.97, 0.97]);
+})();
+
+/* top 20 catchments: [rank, district, A main, A ired, rank ired, rank tree-alt, top20 %, p05, p95, robust, driver, second, x, mark] */
+const TOP = [[1,"Kamrup Rural",162,65,35,1,86.7,1,29,true,"steep or long slopes","heavy rain",2.5,"depends on the rain source"],[2,"Kamrup Rural",147,63,37,31,61.5,1,94,false,"steep or long slopes","heavy rain",2.5,"depends on the rain source"],[3,"Kamrup Rural",117,36,112,29,28.1,5,198,false,"steep or long slopes","heavy rain",2.2,"depends on the rain source"],[4,"Kamrup Rural",116,56,52,33,43.6,4,100,false,"steep or long slopes","heavy rain",2.5,"depends on the rain source"],[5,"Dhemaji",100,114,8,140,72.1,3,102,false,"steep or long slopes","heavy rain",1.1,"top under both rain maps"],[6,"Dima Hasao",94,152,3,152,76.5,1,86,false,"steep or long slopes","heavy rain",1.4,"top under both rain maps"],[7,"Kamrup Rural",94,52,62,69,24.7,13,139,false,"steep or long slopes","heavy rain",2.3,"depends on the rain source"],[8,"Kamrup Rural",93,67,29,11,69.8,6,32,false,"steep or long slopes","heavy rain",2.2,"depends on the rain source"],[9,"Cachar",93,61,40,156,32.8,10,195,false,"steep or long slopes","heavy rain",1.2,"depends on the rain source"],[10,"Dima Hasao",90,76,21,21,83.6,7,33,true,"steep or long slopes","",null,"depends on the rain source"],[11,"Cachar",88,141,4,133,77.2,4,75,false,"steep or long slopes","heavy rain",1.3,"top under both rain maps"],[12,"Dima Hasao",88,100,12,44,88.6,7,32,true,"steep or long slopes","heavy rain",1.1,"top under both rain maps"],[13,"Cachar",85,66,32,174,30.1,14,189,false,"steep or long slopes","heavy rain",1.2,"depends on the rain source"],[14,"Cachar",84,160,1,147,78.3,1,71,false,"steep or long slopes","heavy rain",1.5,"top under both rain maps"],[15,"Cachar",84,158,2,167,75.1,2,88,false,"steep or long slopes","heavy rain",1.4,"top under both rain maps"],[16,"Kamrup Rural",83,31,136,129,5.3,20,339,false,"steep or long slopes","heavy rain",2.1,"depends on the rain source"],[17,"West Karbi Anglong",83,24,205,2,28.0,2,180,false,"steep or long slopes","bare or thin cover",1.5,"depends on the rain source"],[18,"West Karbi Anglong",81,49,69,6,44.5,3,71,false,"steep or long slopes","",null,"depends on the rain source"],[19,"Sribhumi",80,29,152,192,1.2,24,463,false,"steep or long slopes","heavy rain",1.8,"depends on the rain source"],[20,"Cachar",80,141,5,135,76.0,5,70,false,"steep or long slopes","heavy rain",1.3,"top under both rain maps"]];
+$("pick").innerHTML = TOP.map((t, i) => `<option value="${i}">#${t[0]} · ${t[1]}${t[9] ? " · robust" : ""}</option>`).join("");
+function pick(){
+  const [r, dist, a, ai, ri, rt, t20, p5, p95, rob, drv, sec, x, mark] = TOP[+$("pick").value];
+  $("rk").innerHTML = `<div><span class="tiny">main rain map</span><b>#${r}</b><span class="tiny">${a} t/ha/yr</span></div>
+    <div><span class="tiny">other rain map (IRED)</span><b style="color:${ri <= 20 ? 'var(--built)' : 'var(--accent)'}">#${ri}</b><span class="tiny">${ai} t/ha/yr</span></div>
+    <div><span class="tiny">lower tree value</span><b style="color:${rt <= 20 ? 'var(--built)' : 'var(--accent)'}">#${rt}</b><span class="tiny">C 0.003 on tree land</span></div>`;
+  const X = v => Math.min(100, Math.log10(v) / Math.log10(500) * 100);
+  $("rbar").innerHTML = `<div class="t20" style="left:${X(20)}%"></div><div class="band" style="left:${X(p5)}%;width:${Math.max(1, X(p95) - X(p5))}%"></div><div class="pt" style="left:calc(${X(r)}% - 2px)"></div>`;
+  $("rtxt").innerHTML = `Middle 90% of runs: rank <b>${p5}</b> to <b>${p95}</b>. In the top 20 in <b>${t20}%</b> of runs${rob ? " — <b style='color:var(--built)'>robust</b>" : ""}. Screen mark: <b>${mark}</b>. Main cause: ${drv}${sec ? `; against similar slopes: ${sec}, ${x}× their average` : ""}.<br><span class="tiny">rank axis is log scale (1 at the left, 500 at the right). "Robust" and "depends on the rain source" can both be true: the 1,000 runs blend the two rain maps, and pure IRED is the far end of that blend.</span>`;
+}
+$("pick").addEventListener("change", pick); pick();
+
+/* reading lists */
+const CODE = [
+  ["scripts/common.py (REGIONS) · scripts/build/grid.py","the Assam switch and grid"],
+  ["scripts/build/erosion_factors.py","R, K, LS, C, P; classes; treetop guard; what isn't scored"],
+  ["scripts/build/erosion_connectivity.py · erosion_treatment.py · erosion_soil_value.py","soil reaching streams; what-if treatments; soil value"],
+  ["scripts/build/cover_change.py","dry-season bare ground, 2019–2026"],
+  ["scripts/model/erosion_priority.py","the ranked list, causes, hints"],
+  ["scripts/model/erosion_rank_stability.py","the 1,000 re-runs"],
+  ["scripts/model/train_erosion_ai.py · erosion_ai_explain.py","the AI second opinion"],
+  ["scripts/run/export_erosion_bundle.py → webapp/products/erosion/","the app's files and pages"]
+];
+const DOCS = [
+  ["docs/design/SOILSENSE.md","the front door (all of it)"],
+  ["docs/design/EROSION_MODULE.md","the design: §0, §5, §7–§10"],
+  ["docs/design/EROSION_PLAN.md","status at a glance + the revisit register (V-01…); the build log only when a question sends you there"],
+  ["docs/design/ROADMAP_EROSION.md","what to add next (AD-01…)"],
+  ["docs/design/SOILSENSE_FULL_LIST.md","everything it can offer, by Free / Ask / Paid"],
+  ["docs/design/NESFIC_D07_FINAL_ANSWERS.md","the application answers: know them before any NESFIC call"]
+];
+function list(id, items, pre){
+  $(id).innerHTML = items.map(([f, w], i) => `<label><input type="checkbox" data-id="${pre}${i}" ${S[pre+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
+  $(id).addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+}
+list("codeList", CODE, "c"); list("docList", DOCS, "d");
+
+/* quiz */
+const QUIZ = [
+  ["Which factor is unknown, and why is every number 'if untreated'?","soil conservation officer","P, protection: bunds, terraces, contour work. Nobody outside the department knows where treatment has been done, so P = 1 everywhere. The department's treated-area records would let us show treated vs untreated."],
+  ["Why InRESatE for rain strength, not the Singh formula?","soil scientist","Against Assam's only gauge-derived value (Guwahati, about 7,924), the common Singh 1981 formula from yearly rain reads 91% low. InRESatE reads 5% low. IRED, the other good map, reads 46% low and disagrees with InRESatE on pattern, so it runs alongside and every top catchment says whether it holds under both."],
+  ["Which factor drives the ranking most?","reviewer","Slope (LS), which varies about 640-fold across scored land, then cover and rain. Soil (K) varies only about 1.2-fold, so the soil map's weakness changes tonnes, not the order of places. Across 703 catchments the most common main cause is bare or thin cover (272), then slopes (206), then heavy rain (184)."],
+  ["What's the 'tree problem'?","ASSAC scientist","The land map lumps forest, tea and jhum fallow as 'tree', so one cover value must stand for all three. At 0.03, 17% of scored land is severe or worse; at the forest value 0.003, only 2%. A Sentinel-2 split told tea from forest but failed the blind picture check, so it's not adopted, and the map says tree-land colours are indicative."],
+  ["How firm is a catchment's rank, and how do you show it?","soil conservation officer","We re-ran the ranking 1,000 times across the unsettled inputs. 3 catchments stay in the top 20 in nearly every run, and 15 in at least half. The screen shows 'top 20 in X% of runs' and whether a catchment stays on top under both rain maps. Example: the #1 catchment (Kamrup Rural) is top 20 in 87% of runs; #3 only 28%, and it drops to #112 under the other rain map."],
+  ["What's held back, and what bar did each miss?","reviewer","New-bare-ground flags: 62.5% confirmed vs a 70% bar. River-mud forecast: four tests failed; mud follows the river, not hill rain. Tree split: blind check 0.20–0.44 vs 0.60–0.70. Gully flag: 0.83×, no better than other sloping land. Measured cover: no held-out gain."],
+  ["Your map disagrees with the national 250 m map. Who's right?","IIT / national expert","We can show why. Its slope factor barely follows slope (2.7 on flat ground, 5.6 above 30°; ours goes from 0.11 to 54), so it calls western Assam's plains the most erodible and we put the hills first. Physically, hills ≫ plains is the sanity check any erosion map must pass."],
+  ["Isn't the AI map better? It scored 0.82.","investor","It's better at copying ISRO's eroded-land map (0.82 vs 0.66 on held-out blocks). On blind pictures of what's actually on the ground, it ties the formula (0.63 vs 0.62). So it's a second opinion that follows ISRO's map, not the answer."],
+  ["How do you know the map is right at all?","department head","No measured erosion map of Assam exists, so we check the ranking. Sanity checks (hills ≫ plains, factor ranges), and a blind check of 300 pictures: severe squares show visible erosion 3.1× as often as mild ones (bar 2×, but only 8 eroded squares). The real test is your field pilot: teams get points without our class shown."],
+  ["Does it cover gullies and riverbank erosion?","soil conservation officer","No. RUSLE covers sheet and rill erosion only. Gullies, riverbank cutting and landslides need separate detectors. River land under 2 m above a big channel is left unscored and uncoloured."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

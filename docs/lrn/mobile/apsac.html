@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APSAC — what we use, what we need · SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+.reftag{font-family:var(--mono);font-size:11px;border:1px solid var(--rule);border-radius:99px;padding:2px 10px;color:var(--ink-2);background:var(--sheet)}
+/* at a glance */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gl{background:var(--sheet);border:2px solid var(--rule);border-radius:12px;padding:12px 14px}
+.gl .v{font-family:var(--display);font-size:34px;line-height:1}
+.gl .t{font-size:14px}
+@media(max-width:760px){.glance{grid-template-columns:1fr 1fr}}
+/* family map */
+.fam{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:10px;align-items:center}
+.fam .core{background:var(--slide-bg);border:3px solid var(--slide);border-radius:14px;padding:14px;text-align:center}
+.fam .core > b{font-family:var(--display);font-weight:400;font-size:28px;display:block;line-height:1.1}
+.fam .core .portal{margin-top:10px;background:var(--sheet);border:2px dashed var(--slide);border-radius:10px;padding:8px;font-size:14px}
+.fam .side{display:flex;flex-direction:column;gap:8px}
+.fam .p{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:8px 12px;font-size:13.5px}
+.fam .p > b:first-child{display:block;font-size:15px}
+@media(max-width:760px){.fam{grid-template-columns:1fr}}
+/* flow: source -> where it lands */
+.flow{display:grid;grid-template-columns:1.2fr 30px 1.4fr 30px 1fr;gap:6px;align-items:center;margin-bottom:8px}
+.flow .s,.flow .u,.flow .w{border-radius:10px;padding:9px 12px;font-size:14px;background:var(--sheet);border:2px solid var(--rule)}
+.flow .s > b,.flow .u > b,.flow .w > b{display:block;font-size:15px}
+.flow .s{border-color:var(--slide)}
+.flow .u{border-color:var(--ink)}
+.flow .w{background:var(--ink);color:#fff;border-color:var(--ink)}
+.flow .w span{color:#b9c8bf;font-size:12.5px}
+.flow .ar{text-align:center;color:var(--ink-3);font-size:20px}
+@media(max-width:760px){.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg)}}
+/* inventory */
+.filt{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.filt button{font:inherit;font-size:14px;border:2px solid var(--rule);background:var(--sheet);border-radius:99px;padding:4px 12px;cursor:pointer}
+.filt button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.filt button .c{font-family:var(--mono);font-size:11px;opacity:.7;margin-left:4px}
+.inv{display:grid;grid-template-columns:1.3fr 1fr 1.6fr auto;gap:8px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-left-width:5px;border-radius:10px;padding:9px 12px;font-size:14px;margin-bottom:6px}
+.inv > div:first-child b{display:block;font-size:15px}
+.inv .from{font-size:12.5px;color:var(--ink-3)}
+.inv .st{white-space:nowrap}
+@media(max-width:760px){.inv{grid-template-columns:1fr}}
+.pill.use{background:var(--built-soft);color:var(--built)}
+.pill.disk{background:var(--partial-soft);color:var(--partial)}
+.pill.rej{background:var(--accent-soft);color:var(--accent)}
+.pill.open{background:var(--flood-bg);color:var(--flood)}
+.pill.gate{background:var(--bone-bg);color:var(--bone)}
+.pill.theirs{background:var(--planned-soft);color:var(--ink-2)}
+.inv.use{border-left-color:var(--built)} .inv.disk{border-left-color:var(--partial)} .inv.rej{border-left-color:var(--accent)}
+.inv.open{border-left-color:var(--flood)} .inv.gate{border-left-color:var(--bone)} .inv.theirs{border-left-color:var(--planned)}
+/* weight bar */
+.wbar{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
+.wbar .t{height:18px;background:var(--grid);border-radius:4px;overflow:hidden}
+.wbar .t div{height:100%}
+.wbar .n{font-family:var(--mono);font-size:13px;text-align:right}
+@media(max-width:600px){.wbar{grid-template-columns:100px 1fr 60px}}
+/* asks */
+.askgrp{margin-bottom:16px}
+.askgrp h3{margin:0 0 6px;font-size:18px}
+.ask{display:grid;grid-template-columns:1.4fr 1.4fr 1fr 74px;gap:8px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;font-size:14px;margin-bottom:6px}
+.ask > div:first-child b{display:block;font-size:15px}
+.ask .lab{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);display:block;text-transform:uppercase;letter-spacing:.03em}
+.ask .pr{text-align:center;font-family:var(--mono);font-size:12px;border-radius:8px;padding:4px 0;font-weight:600}
+.pr.hi{background:var(--accent-soft);color:var(--accent)} .pr.me{background:var(--partial-soft);color:var(--partial)} .pr.lo{background:var(--planned-soft);color:var(--ink-3)}
+.ask input{margin-right:6px}
+@media(max-width:760px){.ask{grid-template-columns:1fr}.ask .pr{width:80px}}
+/* offer */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:760px){.offer{grid-template-columns:1fr}}
+.swap{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:14.5px;margin-bottom:6px}
+.swap .no{background:var(--accent-soft);border-radius:8px;padding:7px 10px;color:var(--accent);text-decoration:line-through;text-decoration-color:rgb(207 31 42/.5)}
+.swap .yes{background:var(--built-soft);border-radius:8px;padding:7px 10px}
+.swap .ar{text-align:center;color:var(--ink-3);font-weight:700}
+.chk label{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;margin-bottom:6px;font-size:15px;cursor:pointer}
+.chk label input{margin-top:5px}
+.chk .w{font-size:12.5px;color:var(--ink-3);display:block}
+.ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ppl .card{padding:10px 12px}
+@media(max-width:760px){.ppl{grid-template-columns:1fr}}
+.lat{display:grid;grid-template-columns:1.2fr 1.6fr 1.2fr;gap:8px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;font-size:14px;margin-bottom:6px}
+.lat > div:first-child b{display:block;font-size:15px}
+.lat .from{font-size:12.5px;color:var(--ink-3);display:block}
+.lat .lab{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);display:block;text-transform:uppercase;letter-spacing:.03em}
+.lat .th{font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;background:var(--bone-bg);color:var(--bone);white-space:nowrap;display:inline-block;margin-top:4px}
+@media(max-width:760px){.lat{grid-template-columns:1fr}}
+.pill.ev-open{background:var(--flood-bg);color:var(--flood)}
+.pill.ev-site{background:var(--built-soft);color:var(--built)}
+.pill.ev-plan{background:var(--partial-soft);color:var(--partial)}
+.pill.ev-menu{background:var(--planned-soft);color:var(--ink-3)}
+.lat .ev{margin-top:4px;display:inline-block}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <span class="reftag">Reference · agency file</span>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Reference · goes with Phase 2 (data) and Phase 7 (the room)</div>
+  <h1>APSAC: what we use, and what we need</h1>
+  <div class="goal">🛰️ <span>Every item we take from <b>APSAC</b> and its family (APSSDI, NRSC Bhuvan, SAC, NESAC), what it does in our product, and the <b>full list of what to ask for</b>, statewide.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · Who they are</a><a href="#s2">2 · In the product</a><a href="#s3">3 · Full inventory</a>
+    <a href="#s4">4 · What they hold</a><a href="#later">5 · For later</a><a href="#s5">6 · What we need</a><a href="#s6">7 · Do it ourselves</a>
+    <a href="#s7">8 · What we offer</a><a href="#s8">9 · Don't claim</a><a href="#s9">10 · Numbers</a><a href="#s10">11 · Check yourself</a>
+  </div>
+  <p class="tiny" style="margin-top:12px">✔ Curated from <code>docs/meetings/APSAC_VISIT_PREP_2026-10-23.html</code>, GOV_DATA_REQUEST_LIST.md, ROADMAP_LANDSLIDE.md, TEMPORAL_INVENTORY_ATTEMPTS.md, PILOT_TAWANG.md and the project notes on government portals. Section 5 also reads APSAC's site on 3 Nov 2026: the plan of action (project.php), the CHAMAN, groundwater and route-alignment pages, and the site menu. Re-checked 3 Nov 2026 against <code>scripts/fetch/fetch_16_apssdi.py</code>, the files in <code>data/raw/</code>, <code>reports/susceptibility_shap.csv</code>, <code>reports/gsi_susceptibility_comparison.json</code> and the app's code.</p>
+</div>
+
+<!-- glance -->
+<div class="glance">
+  <div class="gl" style="border-color:var(--built)"><div class="v">5</div><div class="t">APSAC-family items <b>inside the product</b> today</div></div>
+  <div class="gl"><div class="v">9 / 24</div><div class="t">open APSSDI map layers we've downloaded (all 24 in section 3)</div></div>
+  <div class="gl"><div class="v">30%</div><div class="t">of our training landslides come from APSAC / NRSC</div></div>
+  <div class="gl" style="border-color:var(--accent)"><div class="v">0</div><div class="t">written permissions so far (APSSDI publishes no licence)</div></div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>Who they are, and the family around them</h2>
+  <p class="sub"><b>APSAC</b> (Arunachal Pradesh Space Application Centre, formerly SRSAC) is the state's <b>nodal agency for remote sensing, GIS and GPS</b> for every department (notification of 29 Feb 2016). It sits under the state's Department of Science &amp; Technology.</p>
+  <div class="fam">
+    <div class="side">
+      <div class="p"><b>NRSC (ISRO)</b>runs <b>Bhuvan</b>. Partner on SILAAS (landslides) and SISDP-U (1:10K maps). Our 2014/2017/2023 landslide sets came via Bhuvan.</div>
+      <div class="p"><b>SAC (ISRO)</b>runs <b>VEDAS</b>. Partner on NWIA (wetlands and glacial lakes).</div>
+      <div class="p"><b>IIRS, Dehradun</b>ISRO's training institute, listed on APSAC's site.</div>
+    </div>
+    <div class="core"><b>APSAC</b><span class="small">Itanagar · ~20 staff, 10+ scientists</span>
+      <div class="portal"><b>APSSDI</b> — the state spatial data portal APSAC runs. Our rock-type and fault maps come from its open map server.</div>
+      <div class="portal" style="margin-top:6px">Data centre: 6 servers, 38 TB · LiDAR <b>processing</b> (no scanner) · camera drones, 6 drone ports</div>
+    </div>
+    <div class="side">
+      <div class="p"><b>NESAC (Umiam)</b>NE space centre. Runs <b>NESDR</b> (land-cover feed we found). Runs NE flood early warning: operational in Assam; Arunachal status unknown.</div>
+      <div class="p"><b>DST, Govt of AP · NEC</b>APSAC's parent department (sanction route) · funder of most NE space projects.</div>
+      <div class="p"><b>APSDMA / DDMAs</b>A separate department: who acts on a warning.</div>
+    </div>
+  </div>
+  <h3 style="margin:18px 0 8px">People to know (their Who's Who page, 22 Oct)</h3>
+  <div class="ppl">
+    <div class="card"><div class="kicker">decides</div><b>Dr. Harekrishna Dutta</b><div class="small">Director</div></div>
+    <div class="card"><div class="kicker">closest to landslides</div><b>Saumitra Deb</b><div class="small">Scientist-C · geology, geomorphology, RS</div></div>
+    <div class="card"><div class="kicker">runs the portal we read</div><b>Timothy Nima</b><div class="small">Technical Officer · IT / APSSDI</div></div>
+    <div class="card"><div class="kicker">land cover</div><b>Dr. Binita Baruah</b><div class="small">Scientist-C · land use / land cover</div></div>
+    <div class="card"><div class="kicker">drones</div><b>Neelam Nwma</b><div class="small">Technical Officer · civil, certified drone pilot</div></div>
+    <div class="card"><div class="kicker">contact</div><b>srsac.itanagar@gmail.com</b><div class="small">Block 1, Room 106, Civil Secretariat, Itanagar</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>What's inside the product today</h2>
+  <p class="sub">Five things reach the product. Everything else is on disk, tested, or only found. <b>The flood model uses nothing from APSSDI.</b> The state outline and districts come from GADM, not APSSDI.</p>
+  <div class="flow"><div class="s"><b>Lithology</b>APSSDI · 562 polygons, 24 rock units, 32 formations</div><div class="ar">→</div><div class="u"><b>Rock type, a landslide input</b><code>geol_lithunit_cat</code>, <code>geol_rockgr_cat</code></div><div class="ar">→</div><div class="w"><b>#2 of 34</b><span>by SHAP (#1 by split gain)</span></div></div>
+  <div class="flow"><div class="s"><b>Lineaments</b>APSSDI · 4,777 fault lines</div><div class="ar">→</div><div class="u"><b>Distance to nearest fault</b><code>dist_lineament_m</code></div><div class="ar">→</div><div class="w"><b>#18 of 34</b><span>by SHAP</span></div></div>
+  <div class="flow"><div class="s"><b>Settlements</b>APSSDI · 4,648 villages</div><div class="ar">→</div><div class="u"><b>The app's place search</b>gazetteer in <code>core/geo.py</code></div><div class="ar">→</div><div class="w"><b>every search</b><span>missing Itanagar + 5 HQ towns: 18 added by hand</span></div></div>
+  <div class="flow"><div class="s"><b>Bhuvan landslides 2014, 2017</b>NRSC · 3,029 + 4,708</div><div class="ar">→</div><div class="u"><b>Training answers</b>where slopes failed</div><div class="ar">→</div><div class="w"><b>11,329 of 37,788</b><span>30% of all training landslides, with SILAAS</span></div></div>
+  <div class="flow"><div class="s"><b>SILAAS 2023</b>APSAC + NRSC · 3,592 polygons (their page says 3,595)</div><div class="ar">→</div><div class="u"><b>Training answers</b>field-checked with their FLIM app</div><div class="ar">→</div><div class="w"><b>fair test vs GSI</b><span>on slides GSI never saw: 86 vs 58 in 100</span></div></div>
+  <h3 style="margin:18px 0 6px">How much the geology really matters</h3>
+  <div class="wbar"><span>weight: rock type + faults</span><div class="t"><div style="width:13.8%;background:var(--slide)"></div></div><span class="n">13.8%</span></div>
+  <div class="wbar"><span>AUC lost without rock type</span><div class="t"><div style="width:2%;background:var(--accent)"></div></div><span class="n">−0.004</span></div>
+  <p class="small">Big in the model, small in the score. The three APSSDI inputs carry 13.8% of the model's use (by SHAP; rock type alone takes 23% of split gain). But <b>terrain carries much the same signal</b>, so removing the two rock-type inputs moves AUC only from 0.859 to 0.855 (MODEL_SUSCEPTIBILITY.md §6). Say this honestly if asked "how much do you depend on us?".</p>
+  <div class="tip" style="margin-top:8px">🔓 <b>How we got it:</b> the APSSDI catalogue needs a login, but its map server (<code>apssdi.in/geoserver/ows</code>) answers openly. Fetched 28 Jul 2026 and credited in the app. Nothing behind a login was bypassed. Two traps then: a broken certificate chain (fixed on their side by 22 Oct) and the server dropping offline for about 30 minutes at a time.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>The full inventory: every item, and its state</h2>
+  <p class="sub">Filter by state. <b>Colours:</b> green in the product · amber on disk, not used · red tested and rejected · blue open, not pulled yet · purple behind a login or PDF only · grey theirs, not seen.</p>
+  <div class="filt" id="filt"></div>
+  <div id="inv"></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>What APSAC holds that touches our work</h2>
+  <p class="sub">From their geospatial database page and plan of action (checked 22 Oct). <b>They will compare our maps with their own hazard maps.</b></p>
+  <div class="grid g3">
+    <div class="card"><div class="kicker">hazard</div><b>Landslide hazard zonation, 1:10K</b><div class="small">5 districts: Tawang, West Kameng, East Kameng, Pakke-Kessang, Papum Pare (June 2024)</div></div>
+    <div class="card"><div class="kicker">hazard</div><b>Flood hazard zonation, 1:25K</b><div class="small">Whole state (June 2024)</div></div>
+    <div class="card"><div class="kicker">hazard</div><b>Landslide, flood, earthquake maps 1:50K</b><div class="small">With action plans; by toposheet or district; on request</div></div>
+    <div class="card"><div class="kicker">landslides</div><b>SILAAS inventory 2023</b><div class="small">3,595 slides, all 25 districts, LISS-IV 5.8 m, field-checked (FLIM app). Most in Pakke-Kessang (655)</div></div>
+    <div class="card"><div class="kicker">ground</div><b>1:50K thematic set</b><div class="small">Soil, slope, land use/cover, geomorphology, lineament, forest type and density, wasteland</div></div>
+    <div class="card"><div class="kicker">water</div><b>Drainage to 1st-order streams, watersheds</b><div class="small">1:50K. Plus Brahmaputra sub-basins, and sub-watershed prioritisation (9 districts)</div></div>
+    <div class="card"><div class="kicker">1:10K</div><b>SISDP-U (with NRSC)</b><div class="small">Land use, drainage, roads, settlements from 2.5 m imagery, on Bhuvan Panchayat</div></div>
+    <div class="card"><div class="kicker">lakes</div><b>NWIA wetlands (with SAC)</b><div class="small">1:25K, includes glacial and high-altitude lakes; public copy is PDF</div></div>
+    <div class="card"><div class="kicker">1:10K atlas</div><b>NRIMAP / SOLARIS-AR</b><div class="small">Soil, slope, land use viewer: Namsai, Lower Subansiri, Tawang</div></div>
+    <div class="card"><div class="kicker">base</div><b>Settlements, boundaries, roads 1:50K</b><div class="small">On request. Utility maps at 1:5,000 for three towns</div></div>
+    <div class="card"><div class="kicker">imagery</div><b>Optical and radar satellite data</b><div class="small">Any area, on request (they process LISS-IV for SILAAS)</div></div>
+    <div class="card"><div class="kicker">survey</div><b>UAV: 10 cm photo, terrain model, contours</b><div class="small">Drone ports: Seppa, Naharlagun, Yachuli, Basar, Roing, Longding (none in Tawang)</div></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">📋 <b>Their 2021–24 plan</b> (38 projects) includes "Landslide hazard zonation mapping <b>and monitoring</b>", flood hazard zonation, a Siang submergence study, and NESAC-run flood early warning. Our daily forecast is the "monitoring" half.</div>
+</section>
+
+<!-- later -->
+<section id="later">
+  <h2><span class="n">5</span>For later: what they hold that we don't need yet</h2>
+  <p class="sub">Everything APSAC holds or is building, public or private, that <b>no module needs today</b>, but that a <b>new task in a current module</b> or a <b>future module</b> could use. Built from their open map server (all 24 layers), their site's project pages, their 2021–24 plan of action (38 projects) and the programme names in their site menu. <b>Nothing here is a promise.</b></p>
+  <div class="grid g4" style="margin-bottom:12px">
+    <div class="card"><span class="pill ev-open">open now</span><div class="small" style="margin-top:4px">on APSSDI's open map server, or an open service. We could pull it today.</div></div>
+    <div class="card"><span class="pill ev-site">on their site</span><div class="small" style="margin-top:4px">described on a live APSAC page, or listed "on request".</div></div>
+    <div class="card"><span class="pill ev-plan">in their plan</span><div class="small" style="margin-top:4px">a project in the 2021–24 plan. <b>Whether it was finished is unknown</b>: ask.</div></div>
+    <div class="card"><span class="pill ev-menu">name only</span><div class="small" style="margin-top:4px">a programme in their site menu whose page is down (404). It exists; what it holds is unknown.</div></div>
+  </div>
+  <div class="filt" id="lfilt"></div>
+  <div class="filt" id="efilt"></div>
+  <div id="later_list"></div>
+  <div class="tip" style="margin-top:12px">🏥 <b>The hidden gem: APSSDI's health layer.</b> 1,006 facilities, open now, each with beds, ambulance (572 yes), blood bank (229), emergency care (677), operating theatre (288), oxygen and X-ray. Today we hold 48 health sites from OpenStreetMap. It turns "this road may be blocked" into "<b>the nearest hospital with an operating theatre may be cut off</b>".</div>
+  <div class="tip ok" style="margin-top:8px">🛣️ <b>The best fit for a new SlideSense task: their route-alignment work.</b> APSAC already plans routes for roads and power lines (a drone-surveyed Likabali–Siji line; border roads Tato–Mechuka and Zido–Singha). Adding our landslide hazard to their route choices is a joint product, not a competitor.</div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">6</span>What we need from them: the full list</h2>
+  <p class="sub">Always <b>statewide</b>. Each ask names the gap it fixes, measured. Tick what's been asked. The biggest gap is <b>dates</b>: WHERE learns from 37,788 slides, but WHEN is tested on only 72 dated events.</p>
+  <div id="asks"></div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">7</span>What we can do ourselves first, without asking</h2>
+  <p class="sub">The project rule: don't wait on an ask if we can get it ourselves. These are open now, or need only a free account.</p>
+  <div class="chk" id="self"></div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">8</span>What we offer back</h2>
+  <p class="sub">Their maps answer <b>where</b>. Ours adds <b>when</b>, every day, on the same ground.</p>
+  <div class="offer">
+    <div class="card"><div class="kicker">live</div><b>A daily "when" layer, statewide</b><div class="small">7-day landslide outlook for any place or road; flood chances at 32 gauged rivers, plus an area outlook.</div></div>
+    <div class="card"><div class="kicker">live</div><b>A public score sheet</b><div class="small">Every river forecast written down before the day and checked against the gauge.</div></div>
+    <div class="card"><div class="kicker">ready</div><b>An independent score of their maps</b><div class="small">The same test we ran on GSI's map: ranking, capture at equal area, where maps disagree.</div></div>
+    <div class="card"><div class="kicker">built as files</div><b>The Data Backbone as APSSDI layers</b><div class="small">29 sources on one 100 m grid, served the way APSSDI already serves layers.</div></div>
+    <div class="card"><div class="kicker">planned</div><b>Field data in their SILAAS format</b><div class="small">Any field visit logs slides and flood marks in FLIM-compatible fields.</div></div>
+    <div class="card"><div class="kicker">when funded</div><b>Survey work for their drone team</b><div class="small">If a client funds detailed terrain, APSAC flies it instead of an outside vendor.</div></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🧰 <b>Fixes we found, to hand over politely:</b> settlements miss Itanagar and 5 HQ towns · SILAAS report/map/dataset links return 404 · many menu pages 404 (landslide, cryosphere, disaster management) · the map server dropped offline for ~30 minutes at a time in Jul–Aug. (The certificate fault is already fixed.)</div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">9</span>Don't claim → say instead</h2>
+  <div id="swaps"></div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">10</span>Numbers to have ready for APSAC</h2>
+  <div class="grid g4" id="nums"></div>
+  <p class="tiny" style="margin-top:8px">Live flood figures move daily: the visit prep (22 Oct) said 6,272 / 3,108 forecasts; on 2 Nov it was 8,288 / 4,178. Read them off the screen on the day.</p>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">11</span>Check yourself</h2>
+  <p class="sub">Answer out loud, then open and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<footer>Reference page in <code>docs/lrn/</code>. Main source: docs/meetings/APSAC_VISIT_PREP_2026-10-23.html (sources opened 22 Oct 2026). Also GOV_DATA_REQUEST_LIST.md §4, ROADMAP_LANDSLIDE.md, TEMPORAL_INVENTORY_ATTEMPTS.md, PILOT_TAWANG.md. Code and data checks: scripts/fetch/fetch_16_apssdi.py, data/raw/, reports/susceptibility_shap.csv, reports/gsi_susceptibility_comparison.json, webapp/core/geo.py.</footer>
+</div>
+
+<script>
+const KEY = "lrn-apsac";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+
+/* inventory: [item, from, what it does / why not, state] */
+const ST = {use:"In the product", disk:"On disk, not used", rej:"Tested, rejected", open:"Open, not pulled", gate:"Login / PDF only", theirs:"Theirs, not seen"};
+const INV = [
+  ["Lithology (rock type)","APSSDI map server","Landslide input, #2 of 34. 562 polygons, 24 units","use"],
+  ["Lineaments (fault lines)","APSSDI map server","Distance to nearest fault, #18 of 34. 4,777 lines","use"],
+  ["Settlements","APSSDI map server","The app's place search, 4,648 villages","use"],
+  ["Landslides 2014 and 2017","NRSC Bhuvan (harvested from its map service)","Training answers: 3,029 + 4,708","use"],
+  ["SILAAS landslides 2023","APSAC + NRSC, via Bhuvan","Training answers: 3,592. Year = the year it happened, but season counts don't carry timing (tested)","use"],
+  ["Administrative circles (186)","APSSDI","Used by hand once for a district quote; not in the app","disk"],
+  ["Geomorphology · litho-geomorphology","APSSDI","Terrain from the elevation model already covers it","disk"],
+  ["Drainage (1:50K)","APSSDI","We use HydroSHEDS and flow paths from the 30 m elevation model","disk"],
+  ["Snow cover · geology & mining","APSSDI","Context only","disk"],
+  ["Flood inundation 2003–2020","NRSC Bhuvan","Rejected: 70.5% of its flood pixels sit on slopes over 15°","rej"],
+  ["District boundaries (28)","APSSDI map server","Official districts; our app still uses GADM's 18","open"],
+  ["Headquarters (204)","APSSDI map server","Would fill the place-search gap (capital, HQ towns)","open"],
+  ["Health facilities (1,006)","APSSDI map server","Exposure; we hold only 48 from OpenStreetMap","open"],
+  ["Tawang road layer","APSSDI map server","Roads near the Jang/Tawang area","open"],
+  ["Deep-learning land cover, every 6 months","NESAC · NESDR map service","Open map service, not harvested. Never checked on the ground (80–85% self-scored). We use ESA WorldCover 10 m","open"],
+  ["SISDP-U drainage, road, settlement layers","NESDR map service (same programme)","Open map service; possibly the 1:10K layers without a Bhuvan login. Not tested","open"],
+  ["Wetland Information System","SAC · VEDAS","Open map service with recent water extent; Arunachal detail not yet checked","open"],
+  ["Food & civil supplies (1,972)","APSSDI map server","1,922 fair price shops, 26 wholesale points, 24 offices. Not needed today; see For later","open"],
+  ["Animal husbandry (869)","APSSDI map server","Vet dispensaries, aid centres, breeding farms. Not needed today","open"],
+  ["Horticulture (427)","APSSDI map server","Department quarters, offices, stores, gardens. Not needed today","open"],
+  ["Fisheries (190)","APSSDI map server","Fish farms, hatcheries, nurseries. Not needed today","open"],
+  ["Libraries (73) · handloom & textile (115) · art & culture (23) · social justice (15)","APSSDI map server","Public buildings and schemes; little hazard use","open"],
+  ["State and international boundary lines","APSSDI map server","Official outline; we use GADM's","open"],
+  ["Aerial survey grid, Itanagar capital region (90 cells)","APSSDI map server","Index to the 89 aerial imagery tiles","open"],
+  ["SISDP-U bulk download (1:10K)","NRSC Bhuvan","Needs a Bhuvan login (free registration may work)","gate"],
+  ["NWIA wetlands and glacial lakes atlas","SAC + APSAC","Public copy is PDF only: no layer to load","gate"],
+  ["NESDR downloads","NESAC","Gated by a government form","gate"],
+  ["~27 APSSDI datasets + 171 documents","APSSDI catalogue","Visible only with an account (113 public vs 140 signed in). Unknown contents","gate"],
+  ["SILAAS reports, maps, dataset","APSAC SILAAS page","Download links return 404","gate"],
+  ["APSSDI aerial imagery tiles (89)","APSSDI catalogue","Itanagar capital region only; marked Free; not pulled","gate"],
+  ["NRIMAP 1:10K atlas (SOLARIS-AR)","APSAC viewer","Viewer only, 3 districts incl. Tawang","gate"],
+  ["Landslide hazard zonation 1:10K","APSAC","5 districts. A benchmark, never an input","theirs"],
+  ["Flood hazard zonation 1:25K","APSAC","Whole state. A benchmark for the flood WHERE layer","theirs"],
+  ["1:50K soil, land use, forest density, wasteland","APSAC","On request","theirs"],
+  ["1:50K roads, settlements, boundaries","APSAC","On request","theirs"],
+  ["LISS-IV and radar scenes","APSAC (processed for SILAAS)","On request","theirs"],
+  ["UAV surveys","APSAC drone team","10 cm photo and terrain, on request","theirs"]
+];
+let fsel = "all";
+const FILT = ["all","use","disk","rej","open","gate","theirs"];
+function drawInv(){
+  $("filt").innerHTML = FILT.map(f => `<button class="${f === fsel ? "on" : ""}" data-f="${f}">${f === "all" ? "All" : ST[f]}<span class="c">${f === "all" ? INV.length : INV.filter(r => r[3] === f).length}</span></button>`).join("");
+  $("inv").innerHTML = INV.filter(r => fsel === "all" || r[3] === fsel).map(([it, from, what, st]) =>
+    `<div class="inv ${st}"><div><b>${it}</b></div><div class="from">${from}</div><div>${what}</div><div class="st"><span class="pill ${st}">${ST[st]}</span></div></div>`).join("");
+}
+$("filt").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { fsel = b.dataset.f; drawInv(); } });
+drawInv();
+
+/* for later: [group, item, where it is, evidence, what it would give, worth getting when] */
+const LATER = [
+  ["SlideSense: new tasks","Route alignment for planned roads and power lines","Plan: border roads Tato–Mechuka, Zido–Singha; power line route by drone (Likabali–Siji, on their site)","site","Landslide screening of a corridor before it's built: which stretch, which slope. Their route tool plus our hazard","When a road, power or transmission agency asks (Power Dept, PGCIL, BRO)"],
+  ["SlideSense: new tasks","Health facilities with their services (1,006)","APSSDI layer; their Health Information System (HIMS) is in the plan","open","Hospitals and which services (operating theatre, blood bank, beds) sit in a High zone or behind a road at risk","As soon as we show risk, not just hazard. Cheap: one download"],
+  ["SlideSense: new tasks","Headquarters (204): 25 district, 103 circle, 75 sub-division, the capital","APSSDI layer","open","Whether the office that runs the response is itself exposed; also fixes place search","Now (place search), and for any district or circle report"],
+  ["SlideSense: new tasks","Fair price shops (1,922) and wholesale points (26)","APSSDI layer","open","Food supply points in hazard zones; villages that lose their ration shop if a road goes","Relief planning, a natural ask from the disaster authority"],
+  ["SlideSense: new tasks","Schools (asset mapping of educational institutes)","Plan: selected districts","plan","Schools at risk; schools that could serve as shelters","When shelter or evacuation planning is asked for"],
+  ["SlideSense: new tasks","Degraded forest and forest-gap areas (canopy under 25%)","Plan","plan","Slopes that have lost their cover: a \"ground has changed\" input the model lacks","When the landslide model is retrained with change-over-time inputs"],
+  ["SlideSense: new tasks","Shifting cultivation (jhum) at 1:10K","Plan (run by NESAC)","plan","Fresh clearings on steep slopes, where slides and soil loss start. Also tells jhum from forest","Model retraining; and SoilSense in Arunachal (see below)"],
+  ["SlideSense: new tasks","Groundwater prospects at 1:10K","Itanagar map done (Dec 2023, on their site, PDF); statewide 1:10K in the plan","site","Wet, spring-fed ground and terraces: slope water the model can't see; also drinking-water sources at risk","A town study (Itanagar first), or a slope-water input"],
+  ["SlideSense: new tasks","Rural development plans for border model villages (Kaho, Kibithoo, Mosai) and village clusters","Plan","plan","Village cards for planned works: is the new building on a weak slope?","When a village or district plan is being drawn up"],
+  ["SlideSense: new tasks","Site suitability studies (air traffic control sites incl. Yachuli; eco-tourism infrastructure)","Plan","plan","A ready \"site check\" service: hazard for one chosen site","When a department screens a site"],
+  ["SlideSense: new tasks","Geology & mining layer (quarries)","APSSDI layer, on our disk","open","Quarries and blasting as a local landslide cause","If road-cut and quarry triggers are modelled"],
+  ["SlideSense: new tasks","Earthquake hazard maps 1:50K","Listed on request","site","A second trigger beside rain","If earthquake-triggered slides become a module"],
+  ["FloodSense: new tasks","River atlas of the major rivers","Plan (run by NESAC)","plan","Channel width, sand bars, bank lines: where rivers move. Riverbank erosion, crossing points","Big-river flooding and bank erosion work"],
+  ["FloodSense: new tasks","Siang submergence study","Plan","plan","Reservoir area and big-river context upstream","If dam releases or a Siang module come in"],
+  ["FloodSense: new tasks","Wetland water extent (VEDAS) and NWIA wetlands","SAC open service; NWIA is PDF","open","Dated water extent: where water actually spread, a check on flood maps","Next flood WHERE retraining"],
+  ["FloodSense: new tasks","Utility maps 1:5,000","Listed: Namsai-Chowkham, Bomdila-Dirang, Aalo-Kamba","site","Town drains, roads, utilities: what city flooding needs","If city flooding is added (listed in the brief)"],
+  ["FloodSense: new tasks","Aerial imagery, Itanagar capital region (89 tiles)","APSSDI catalogue, marked Free","open","Very fine imagery of the capital: drains, buildings, hillside cuts","An Itanagar city-flood or hillside-cut study"],
+  ["FloodSense: new tasks","Crop and horticulture maps (CHAMAN; crop acreage; site suitability)","CHAMAN on their site (3 districts); acreage and suitability in the plan","site","Farmland under a flood forecast: crop-loss estimates for Agriculture","When the Agriculture Department asks \"what of ours is at risk?\""],
+  ["FloodSense: new tasks","Livestock, fisheries and cold-water aquatic resources","APSSDI layers (869 + 190); livestock system and aquatic mapping in the plan","open","Farms, hatcheries and vet centres in flood zones: livelihood losses","Same, for line departments"],
+  ["FloodSense: new tasks","Cadastral information system","Plan","plan","Land parcels at risk; a link to relief and compensation","Only with the Revenue Department involved"],
+  ["SoilSense in Arunachal","CHAMAN soil layers: depth, texture, drainage, erosion, pH","Their site: LISS-III/IV + CartoDEM, 3 districts","site","Local soil the erosion formula needs, and their own erosion layer to compare against","If SoilSense moves to Arunachal (the same switch that built Assam)"],
+  ["SoilSense in Arunachal","IWMP watershed works","Programme in their menu (page down)","menu","Where treatment (bunds, terraces) was done: the protection factor SoilSense can't see","Same. In Assam this exact gap is why every number says \"if untreated\""],
+  ["SoilSense in Arunachal","Land degradation and desertification maps","Programmes in their menu (pages down)","menu","Land already degraded: a check on the erosion map","Same"],
+  ["SoilSense in Arunachal","Sub-watershed prioritisation (9 districts)","June 2024 on their geospatial page","site","Their own ranking to set beside a SoilSense ranking","Same"],
+  ["SoilSense in Arunachal","NRIMAP / land resource inventory 1:10K; wasteland 1:50K","SOLARIS-AR viewer (3 districts); land inventory in the plan; wasteland on request","site","Fine soil and cover, the inputs erosion depends on most after slope","Same"],
+  ["Future modules","Forest-fire-prone areas at 1:10K","Plan","plan","A ready starting map for a forest-fire module","If forest fire is added (listed in the brief)"],
+  ["Future modules","Forest type and density 1:50K; bamboo resources","On request; bamboo mapping in the plan (NESAC)","site","Fuel type and amount for fire; cover type for slopes","Same"],
+  ["Future modules","Lightning nowcasting","Plan (NESAC)","plan","Ignition timing for fires; storm warnings","If NESAC shares it as a feed"],
+  ["Future modules","Deep-learning land cover every 6 months","NESAC NESDR, open map service","open","Forest loss and regrowth over time: burn scars, slopes losing cover","Fire module; also a landslide change input"],
+  ["Future modules","Cryosphere programme; snow cover; NWIA glacial lakes","Menu (page down); snow cover on our disk; NWIA as PDF","menu","Snow, ice and lakes for melt-fed rivers and lake-burst floods","If glacial-lake floods are picked up again (dropped from the deck on 12 Oct)"],
+  ["Future modules","Change analysis; 1:50K mapping cycles","Programmes in their menu (pages down)","menu","Land-cover change between mapping cycles, over many years","Any change-over-time input or module"],
+  ["Future modules","Wild-animal habitat and human–animal conflict zones 1:50K","Plan","plan","Not a planned hazard; a sign the same backbone could serve Forest work","Only if a Forest Department product is wanted"],
+  ["Ground truth and operations","FLIM field app (SILAAS)","Their app","site","Log slides and flood marks in the field, already in their format","Any field season, ours or theirs"],
+  ["Ground truth and operations","Drone surveys after an event","Their drone team, 6 drone ports","site","Measured size and runout of a real slide or flood","After the first live event we want to grade"],
+  ["Ground truth and operations","Satellite archive: LISS-IV, Cartosat, CartoDEM","They process it for SILAAS and CHAMAN","site","Before-and-after images of any event; a finer elevation model","Event checks; any terrain upgrade"],
+  ["Ground truth and operations","APSSDI data centre (6 servers, 38 TB) and its map server","Their infrastructure page","site","State hosting for government use; a place to publish backbone layers","When a government client needs state hosting, or the open feed is built"],
+  ["Ground truth and operations","Official 28 districts, 186 circles, state and international lines; Tawang road","APSSDI layers","open","Reports on the official map; a clean state outline","Now, as a fix; essential for any government deliverable"],
+  ["Ground truth and operations","~27 login-only datasets and 171 documents on APSSDI","APSSDI catalogue (needs an account)","menu","Unknown: the first thing to look at once we have an account","With the APSSDI account ask"],
+  ["Ground truth and operations","User services (their data request route); NeSDR capacity building; IIRS training","Menu (page down); plan","menu","The formal channel to request any item above; trained hands","Before the first formal request"]
+];
+const EV = {open:"open now", site:"on their site", plan:"in their plan", menu:"name only"};
+const LTH = ["All", ...new Set(LATER.map(r => r[0]))];
+const EVS = ["All", "open", "site", "plan", "menu"];
+let lsel = "All", esel = "All";
+function drawLater(){
+  const rows = LATER.filter(r => (lsel === "All" || r[0] === lsel) && (esel === "All" || r[3] === esel));
+  $("lfilt").innerHTML = LTH.map(t => `<button class="${t === lsel ? "on" : ""}" data-t="${t}">${t}<span class="c">${t === "All" ? LATER.length : LATER.filter(r => r[0] === t).length}</span></button>`).join("");
+  $("efilt").innerHTML = EVS.map(e => `<button class="${e === esel ? "on" : ""}" data-e="${e}">${e === "All" ? "Any evidence" : EV[e]}<span class="c">${e === "All" ? LATER.length : LATER.filter(r => r[3] === e).length}</span></button>`).join("");
+  $("later_list").innerHTML = rows.length ? rows.map(([g, it, where, ev, gives, when]) =>
+    `<div class="lat"><div><b>${it}</b><span class="from">${where}</span><span class="th">${g}</span> <span class="pill ev ev-${ev}">${EV[ev]}</span></div><div><span class="lab">what it would give</span>${gives}</div><div><span class="lab">worth getting when</span>${when}</div></div>`).join("")
+    : `<p class="small">Nothing with both filters.</p>`;
+}
+$("lfilt").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { lsel = b.dataset.t; drawLater(); } });
+$("efilt").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { esel = b.dataset.e; drawLater(); } });
+drawLater();
+
+/* asks: group -> [ask, gap it fixes, do they have it, priority] */
+const ASKS = [
+  ["A · Landslide records and timing", [
+    ["SILAAS full records, all districts","FLIM entries (visit date, photos, new vs reactivated, size), the satellite image dates before and after each slide, and any 2024/2025 cycles","Timing is tested on only 72 dated events (AUC 0.768 ± 0.098). Image dates would narrow \"2023 monsoon\" to a few weeks","Yes for 2023","hi"],
+    ["How the 2014 and 2017 inventories were made","","2014's slide count doesn't match its rain (only 12th wettest of 25 years). Was it a baseline survey?","NRSC / APSAC","me"],
+    ["Recent LISS-IV scenes before and after each monsoon, statewide","","Our own dating from Sentinel-2 failed: ~1% of monsoon scenes are usable through cloud","They process them for SILAAS","me"],
+    ["Field-checked slides at high altitude","","At 2,000–4,000 m (42% of modelled land) we give High+ to 10.5% of land, but that band holds 20.3% of known slides","Partly, in SILAAS","hi"]
+  ]],
+  ["B · Their hazard maps, as benchmarks", [
+    ["Landslide hazard zonation 1:10K (5 districts) + any 1:50K for the rest, with method","","A second official benchmark, scored the way we scored GSI's (85 vs 60 in 100)","Yes","hi"],
+    ["Flood hazard zonation 1:25K, whole state, with method","","A benchmark for our flood WHERE layer, whose area figures run about 4× high","Yes, June 2024","hi"],
+    ["Earthquake hazard maps 1:50K","","Earthquake-triggered slides are outside our rain model","Yes","lo"]
+  ]],
+  ["C · Finer ground layers", [
+    ["Soil maps 1:50K (plus 1:10K NRIMAP where done)","","Our soil is SoilGrids 250 m (global); soil is 11 of the model's top 20 inputs","Yes","hi"],
+    ["Land use, forest type and density 1:50K; SISDP-U 1:10K","","Land cover is ESA WorldCover 10 m, with no forest-density detail","Yes","me"],
+    ["Drainage to 1st-order streams, watersheds, sub-basins","","Small-stream flooding: most reaches have no gauge","Yes","me"],
+    ["Official road network 1:50K","","We use OpenStreetMap; distance to road is the #5 input and drives road outlooks","Yes","me"],
+    ["Official 28 districts and circles, with how often they're updated","","The app still shows 18 districts","On APSSDI","me"],
+    ["Full-resolution imagery and elevation behind their land-cover layers","","Sharper land-cover and terrain inputs for both forecasts","Likely","me"]
+  ]],
+  ["D · Water, lakes and terrain", [
+    ["NWIA glacial and high-altitude lakes as GIS layers, statewide","Anything from their cryosphere work too","We have no lake layer: lake bursts and melt floods are blind spots","Mapped 1:25K; public copy PDF","me"],
+    ["Siang submergence study; sub-watershed prioritisation","","Big-river and catchment context for flood","In their plan / June 2024","lo"],
+    ["Finer terrain: any Cartosat elevation model; existing LiDAR (hydro, BRO, highway surveys); drone surveys of hotspots","","We run on a 30 m elevation model: too coarse for flood depth or debris runout","Drones yes; LiDAR processing only","me"]
+  ]],
+  ["E · Exposure", [
+    ["Health, schools, headquarters, utility maps, land records","","Exposure is thin: 48 health sites and 17,719 buildings from OpenStreetMap","Partly on APSSDI","me"]
+  ]],
+  ["F · Access and permission", [
+    ["Written permission and attribution wording for APSSDI layers","","They are live model inputs, and the portal publishes no licence","Their call","hi"],
+    ["A data-sharing agreement or nodal-agency letter, plus a named contact","","Opens the Bhuvan/SISDP-U login and NESDR downloads (both gated), and backs our asks to other departments","APSAC is the nodal agency","hi"],
+    ["An APSSDI account","","~27 datasets and 171 documents are visible only when signed in","Yes","me"],
+    ["Status of NESAC's flood early warning for Arunachal","","Avoid duplicating; find where we plug in","Unknown","me"]
+  ]]
+];
+const PR = {hi:"HIGH", me:"MED", lo:"LOW"};
+$("asks").innerHTML = ASKS.map(([g, rows], gi) => `<div class="askgrp"><h3>${g}</h3>` + rows.map(([a, detail, gap, have, p], i) => {
+  const id = "a" + gi + "_" + i;
+  return `<div class="ask"><div><label><input type="checkbox" data-id="${id}" ${S[id] ? "checked" : ""}><b style="display:inline">${a}</b></label>${detail ? `<div class="small">${detail}</div>` : ""}</div>
+    <div><span class="lab">gap it fixes</span>${gap}</div><div><span class="lab">do they have it?</span>${have}</div><div class="pr ${p}">${PR[p]}</div></div>`;
+}).join("") + `</div>`).join("");
+$("asks").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+/* self-serve */
+const SELF = [
+  ["Pull APSSDI districts (28), headquarters (204), health (1,006) and fair price shops (1,972)","open on the same map server as our geology; add them to fetch_16_apssdi.py. Cheap now, and needed for risk later"],
+  ["Switch the app to the 28 official districts","after the pull; fixes \"your districts are out of date\""],
+  ["Add the 204 headquarters to place search","replaces some of the 18 hand-added towns"],
+  ["Test NESDR's open map service for the land-cover and SISDP-U layers","read with text/plain, not JSON; check against ESA WorldCover before using"],
+  ["Check VEDAS's Wetland Information System for Arunachal","how fine, how recent, any glacial lakes"],
+  ["Try a free Bhuvan account for SISDP-U downloads","the bulk page is a login wall, but registration may be free"]
+];
+$("self").innerHTML = SELF.map(([t, w], i) => `<label><input type="checkbox" data-id="s${i}" ${S["s"+i] ? "checked" : ""}><span>${t}<span class="w">${w}</span></span></label>`).join("");
+$("self").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+const SW = [
+  ["\"APSAC has LiDAR.\"","\"They process LiDAR; no scanner is listed. They fly camera drones.\""],
+  ["\"NESAC's flood warning covers Arunachal.\"","\"It's operational in Assam; we'd like to know its status here.\""],
+  ["\"SILAAS gives us dates.\"","\"It gives the year. Our test showed season counts don't carry timing.\""],
+  ["\"APSSDI is broken\" / \"we got past the login\".","\"The map service is openly served and we used it as served.\""],
+  ["\"Bhuvan's flood map shows real floods.\"","Only if asked: \"Most of its flood pixels are on steep slopes, so we used radar instead.\""],
+  ["\"NESDR land cover is ground truth.\"","\"It was never checked on the ground; it scores itself 80–85%.\""],
+  ["\"Our map is more detailed than yours.\"","\"Yours is 1:10K in five districts; ours is a 100 m grid, daily and scored statewide.\""],
+  ["\"We'll replace APSAC's maps.\"","\"We add a daily forecast on top and give field data back.\""],
+  ["\"Your geology is what makes our model work.\"","\"It's a strong input, but terrain carries much the same signal: dropping rock type costs 0.004 AUC.\""]
+];
+$("swaps").innerHTML = SW.map(([a, b]) => `<div class="swap"><div class="no">${a}</div><div class="ar">→</div><div class="yes">${b}</div></div>`).join("");
+
+const NUMS = [
+  ["83,743 km²","area of Arunachal (their SOLARIS-AR)"],["3,595","SILAAS 2023 slides, all 25 districts"],["38","projects in their 2021–24 plan"],["24","layers on APSSDI's open map service"],
+  ["37,788","mapped slides behind our WHERE (GSI 26,459 + Bhuvan/SILAAS 11,329)"],["0.859 ± 0.016","location AUC on held-out regions"],["85 vs 60","ranking in 100, ours vs GSI's national map (0.854 vs 0.596)"],["67% vs 25%","slides on the top 13.8% of land: ours vs GSI's High"],
+  ["72 · 0.768","dated events · timing AUC"],["42% · 10.5% vs 20.3%","land at 2,000–4,000 m · its High+ share vs its share of slides"],["29 · 308 GB","sources · raw files held"],["8.2 million","100 m squares, 34 facts each"]
+];
+$("nums").innerHTML = NUMS.map(([v, t]) => `<div class="card"><b style="font-family:var(--display);font-weight:400;font-size:24px;display:block;line-height:1.1">${v}</b><div class="small">${t}</div></div>`).join("");
+
+const QUIZ = [
+  ["What of ours do you use?","APSAC Director","APSSDI rock type and fault lines as landslide inputs; the settlements as place search; the SILAAS 2023 and Bhuvan 2014/2017 inventories (11,329 slides) as training answers. All from openly served map services."],
+  ["Did you ask permission?","APSAC Director","Not yet, and it's one of our asks today. The portal publishes no licence; we credit APSSDI in the app and don't redistribute the raw files."],
+  ["Why not use our hazard maps as an input?","Saumitra Deb (geology)","A model trained on another map learns that map, not landslides. Official maps stay benchmarks, as GSI's does. We'd like to score yours the same way."],
+  ["What's the single most useful thing we could give you?","APSAC scientist","Dates: SILAAS field records and the satellite image dates around each slide. Location is learned from 37,788 slides; timing only from 72 dated events."],
+  ["How good is it in the high mountains?","APSAC scientist","Weaker. At 2,000–4,000 m it gives High+ to 10.5% of land, but that band holds 20.3% of known slides, likely because fewer slides get mapped where access is hard. Field-checked high slides from SILAAS go straight at that gap."],
+  ["What do we get in return?","APSAC Director","A daily \"when\" layer on top of your \"where\" maps, an independent score of your maps, field data back in SILAAS format, and survey work for your drone team when a client funds it."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

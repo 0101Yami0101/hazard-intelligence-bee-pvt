@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 1 · The science underneath — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+/* phase 1 widgets */
+.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.topic{display:block;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--c);border-radius:10px;padding:12px;box-shadow:var(--shadow)}
+.topic .ico{font-size:28px}
+.topic b{display:block;font-size:16px}
+.topic span{font-size:13px;color:var(--ink-2)}
+.ctl{display:grid;grid-template-columns:150px 1fr 70px;gap:10px;align-items:center;font-size:15px;margin:6px 0}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctl output{font-family:var(--mono);font-size:14px;text-align:right}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}.ctl{grid-template-columns:110px 1fr 60px}}
+svg.fig{width:100%;height:auto;display:block}
+.verdict{font-family:var(--display);font-size:28px;line-height:1.1}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.ladder div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;font-size:14px;text-align:center}
+.ladder div b{display:block;font-size:15px}
+.ladder .us{border:2px solid var(--slide);background:var(--slide-bg)}
+@media(max-width:760px){.ladder{grid-template-columns:1fr 1fr}}
+.dem{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;width:100%;max-width:380px;margin:auto}
+.dem div{aspect-ratio:1;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:500;transition:background .25s}
+.stepper{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.stepper button,.btn{font:inherit;font-size:14px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:4px 11px}
+.stepper button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.btn:hover{border-color:var(--ink-3)}
+.factor{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:6px;align-items:stretch;text-align:center}
+.factor .f{border-radius:10px;padding:8px 6px;border:2px solid var(--soil);background:var(--soil-bg)}
+.factor .f > b{font-family:var(--display);font-weight:400;font-size:26px;display:block;color:var(--soil)}
+.factor .f span{font-size:12.5px;display:block;line-height:1.25}
+.factor .f .v{font-family:var(--mono);font-size:13px;margin-top:4px;color:var(--ink)}
+.factor .res{background:var(--ink);color:#fff;border-radius:10px;padding:8px 12px;display:flex;flex-direction:column;justify-content:center;min-width:110px}
+.factor .res b{font-family:var(--display);font-weight:400;font-size:30px}
+@media(max-width:760px){.factor{grid-template-columns:repeat(3,1fr)}}
+.presets{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.sats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.sat{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.sat .ico{font-size:32px}
+.sat h4{margin:2px 0 4px;font-size:18px}
+.sat .row2{display:flex;justify-content:space-between;font-size:13px;border-top:1px dashed var(--grid);padding-top:3px;margin-top:3px}
+.sat .row2 span:first-child{color:var(--ink-3)}
+.big-n{font-family:var(--display);font-size:44px;line-height:1}
+.trap{background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px}
+.trap b{display:block;font-size:16px}
+.trap .fix{font-size:14px;margin-top:6px;color:var(--built)}
+.trap .fix::before{content:"lesson → ";font-family:var(--mono);font-size:12px}
+.paper{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:14.5px}
+.paper .t{font-weight:600}
+.paper .t i{font-weight:400}
+@media(max-width:700px){.paper{grid-template-columns:1fr}}
+.formula{font-family:var(--display);font-size:22px;text-align:center;background:var(--sheet-2);border:1px solid var(--rule);border-radius:8px;padding:6px;margin:8px 0}
+.attempts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.att{border-radius:10px;padding:12px;border:2px solid;background:var(--sheet)}
+.att.fail{border-color:var(--accent)}.att.part{border-color:var(--partial)}
+.att .s{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.att.fail .s{color:var(--accent)}.att.part .s{color:var(--partial)}
+.att > b{display:block;font-size:15.5px;margin:3px 0}
+.sb{display:grid;grid-template-columns:minmax(150px,1.3fr) 2fr 80px;gap:8px;align-items:center;font-size:14px;margin:4px 0}
+.sb .t{height:16px;background:var(--grid);border-radius:4px;overflow:hidden}
+.sb .t div{height:100%;border-radius:4px}
+.sb .n{font-family:var(--mono);font-size:13px;text-align:right}
+.sb.ship{font-weight:700}
+.sb .why{grid-column:1/-1;font-size:12.5px;color:var(--ink-3);margin:-2px 0 4px}
+.ladder2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.rung{border-radius:10px;padding:10px 12px;border:1px solid var(--rule);border-left:5px solid;background:var(--sheet)}
+.rung.done{border-left-color:var(--built)}.rung.todo{border-left-color:var(--partial)}
+.rung .s{font-family:var(--mono);font-size:11px;text-transform:uppercase}
+.rung.done .s{color:var(--built)}.rung.todo .s{color:var(--partial)}
+.rung > b{display:block;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.st{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;font-size:14px}
+.st .k{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;margin-right:6px}
+@media(max-width:600px){.sb{grid-template-columns:1fr 1.2fr 70px}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div class="now">1 Science</div><div>2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div>6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 1 · Days 2–4 · about 15 hours</div>
+  <h1>The science underneath</h1>
+  <div class="goal">🎯 <span>Enough science to <b>talk to the scientists</b> as an equal, and to know <b>why we built it this way</b>.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · The map</a><a href="#s2">2 · Why slopes fail</a><a href="#s3">3 · Rain as trigger</a>
+    <a href="#s4">4 · Water on a height map</a><a href="#s5">5 · River forecasting</a><a href="#s6">6 · Soil loss</a>
+    <a href="#s7">7 · Satellites</a><a href="#s8">8 · Is the model good?</a><a href="#s9">9 · Traps we hit</a>
+    <a href="#s10">10 · Words</a><a href="#s11">11 · Papers</a><a href="#s12">12 · Quiz</a><a href="#s13">13 · Teach it</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>Seven topics, one per scientist</h2>
+  <p class="sub">Each topic is what one kind of expert in the room knows deeply. You only need the core idea, plus <b>how we used it</b>.</p>
+  <div class="topics">
+    <a class="topic" href="#s2" style="--c:var(--slide)"><div class="ico">⛰️</div><b>Why slopes fail</b><span>geologist (GSI)</span></a>
+    <a class="topic" href="#s3" style="--c:var(--slide)"><div class="ico">🌧️</div><b>Rain as trigger</b><span>landslide researcher</span></a>
+    <a class="topic" href="#s4" style="--c:var(--flood)"><div class="ico">💧</div><b>Water on a height map</b><span>hydrologist</span></a>
+    <a class="topic" href="#s5" style="--c:var(--flood)"><div class="ico">📈</div><b>River forecasting</b><span>CWC engineer</span></a>
+    <a class="topic" href="#s6" style="--c:var(--soil)"><div class="ico">🟫</div><b>Soil loss</b><span>soil conservation officer</span></a>
+    <a class="topic" href="#s7" style="--c:var(--bone)"><div class="ico">🛰️</div><b>Satellites</b><span>APSAC remote-sensing scientist</span></a>
+    <a class="topic" href="#s8" style="--c:var(--accent)"><div class="ico">🧪</div><b>Is the model good?</b><span>ML reviewer</span></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>Why slopes fail</h2>
+  <p class="sub">A slope is a tug of war. <b>Gravity pulls</b> the soil downhill. <b>Grip</b> (friction plus roots and cement) holds it. When pull beats grip, it slides.</p>
+  <div class="card two">
+    <div>
+      <svg class="fig" viewBox="0 0 340 230" id="slopeSvg">
+        <polygon id="hill" points="20,210 320,210 320,60" fill="#d8cdb8" stroke="#946610" stroke-width="2"/>
+        <g id="block"><rect x="-26" y="-32" width="52" height="32" rx="3" fill="#b45f06"/><text x="0" y="-11" text-anchor="middle" fill="#fff" font-size="12" font-family="Mukta,sans-serif">soil</text></g>
+        <g id="water" opacity="0"><text x="0" y="0" font-size="16">💧💧</text></g>
+        <g id="roots"><text x="0" y="0" font-size="16">🌿</text></g>
+        <text id="angLbl" x="60" y="200" font-family="IBM Plex Mono,monospace" font-size="13" fill="#45514a"></text>
+      </svg>
+    </div>
+    <div>
+      <div class="ctl"><span>⛰️ Steepness</span><input type="range" id="ang" min="5" max="60" value="30"><output id="angO"></output></div>
+      <div class="ctl"><span>💧 Water in soil</span><input type="range" id="wet" min="0" max="100" value="20"><output id="wetO"></output></div>
+      <div class="ctl"><span>🌿 Roots (trees)</span><input type="range" id="root" min="0" max="100" value="50"><output id="rootO"></output></div>
+      <div style="margin-top:10px"><span class="tiny">grip ÷ pull (stays if above 1)</span>
+        <div class="verdict" id="fsOut"></div></div>
+      <p class="tiny">A toy version of the textbook "infinite slope" sum, to build intuition. It is <b>not</b> our model. Our model learns from 35,744 real landslides.</p>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">💧 <b>Water is the key.</b> Water fills the gaps between soil grains and pushes them apart. That cuts friction, so grip drops. That is why rain triggers slides.</div>
+    <div class="card small">🪨 <b>Rock matters.</b> Near a fault line, rock is shattered and weak. Some rock types weather into slippery clay.</div>
+    <div class="card small">🛣️ <b>People matter.</b> Cutting a road into a slope removes its foot. Many mapped slides sit along roads.</div>
+  </div>
+
+  <h3 style="margin:22px 0 8px">How people map "where slides can happen" (susceptibility)</h3>
+  <div class="ladder">
+    <div><b>Expert weights</b>a geologist scores each factor by hand</div>
+    <div><b>Statistics</b>how often slides sit on each kind of ground (frequency ratio, logistic regression)</div>
+    <div class="us"><b>Machine learning ✓ us</b>gradient-boosted trees (LightGBM) learn from past slides</div>
+    <div><b>Physics</b>work out grip ÷ pull for every square. Needs soil depth and strength we don't have</div>
+    <div><b>Deep learning</b>neural nets. Shine with images or millions of labels</div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🌳 <b>Why trees, not deep learning?</b> We have <b>35,744 mapped slides</b> and a table of ~20 facts per square. On tables that size, trees win, train in minutes, and can <b>explain each score</b>, which a government officer needs. What we lack is not slides but <b>dates</b> of slides. Deep learning doesn't fix that.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>Rain as the trigger</h2>
+  <p class="sub">The classic way to forecast landslides from rain is a threshold line. We tried it four ways, measured why it fails here, and replaced it with a sliding score. This section is the full story, with every number re-checked against the data.</p>
+  <div class="card two">
+    <svg class="fig" viewBox="0 0 360 240">
+      <rect x="40" y="10" width="300" height="190" fill="#f7f8f5"/>
+      <path d="M40 30 C 90 100, 170 150, 340 175" fill="none" stroke="#cf1f2a" stroke-width="3"/>
+      <text x="200" y="135" font-size="13" fill="#cf1f2a" font-family="Mukta,sans-serif">the threshold line</text>
+      <g fill="#1d8673"><circle cx="90" cy="45" r="5"/><circle cx="140" cy="80" r="5"/><circle cx="210" cy="110" r="5"/><circle cx="280" cy="140" r="5"/><circle cx="120" cy="60" r="5"/></g>
+      <g fill="#b6beb7"><circle cx="80" cy="150" r="5"/><circle cx="150" cy="175" r="5"/><circle cx="230" cy="185" r="5"/><circle cx="300" cy="192" r="5"/><circle cx="110" cy="185" r="5"/></g>
+      <text x="250" y="60" font-size="13" fill="#1d8673" font-family="Mukta,sans-serif">● slide days</text>
+      <text x="250" y="78" font-size="13" fill="#737e78" font-family="Mukta,sans-serif">● quiet days</text>
+      <line x1="40" y1="200" x2="340" y2="200" stroke="#17201b"/><line x1="40" y1="10" x2="40" y2="200" stroke="#17201b"/>
+      <text x="190" y="225" text-anchor="middle" font-size="13" font-family="Mukta,sans-serif">how long it rained →</text>
+      <text x="14" y="105" transform="rotate(-90 14 105)" text-anchor="middle" font-size="13" font-family="Mukta,sans-serif">how hard →</text>
+    </svg>
+    <div>
+      <p style="margin-top:0"><b>The textbook idea</b> (Caine 1980, Guzzetti 2008): plot past landslides by <b>how long</b> it rained and <b>how hard</b>. Draw the lowest line under them. Rain above the line = "slides can start".</p>
+      <div class="formula">I = a · D<sup>−b</sup></div>
+      <p class="small"><b>I</b> = how hard (mm per hour), <b>D</b> = how long (hours). The minus sign is the whole idea: <b>long storms trigger at lighter rain</b>, short ones need a downpour.</p>
+      <p class="small" style="margin-bottom:0">Two published lines are in our code (<code>rainfall_features.py</code>): <b>Caine 1980</b> I = 14.82·D<sup>−0.39</sup> and <b>Guzzetti 2008</b> (global) I = 2.20·D<sup>−0.44</sup>.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 8px">What happened when we tried it here: four attempts</h3>
+  <div class="attempts">
+    <div class="att fail"><span class="s">attempt 1 · failed</span><b>Guzzetti's line on rolling windows</b>
+      <div class="small">Checked against the last 1, 3, 7… 30 days of rain. <b>Correlation 0.97</b> with plain 30-day rain: it was just a 30-day total in disguise. In a monsoon it rains nearly every day, so "the last 30 days" isn't a storm.</div></div>
+    <div class="att part"><span class="s">attempt 2 · works, but too loose</span><b>The same line on real storms</b>
+      <div class="small">A "storm" = a run of days each with more than 1 mm. Now it carries its own information. But it is a <b>global</b> line and Arunachal is ~2.4× wetter than the world average: it fires on <b>~30%</b> of days, about <b>116 days a year</b> at a typical place. <span class="tiny">(Re-checked on the state's own rain squares. The doc's 24% was measured over the whole rain box.)</span></div></div>
+    <div class="att fail"><span class="s">attempt 3 · came out backwards</span><b>Fit our own line on our slides</b>
+      <div class="small">The exponent came out <b>+0.64</b>, not negative. Here, <b>longer "storms" are harder</b>, not lighter (correlation +0.59). A wet run can last <b>~200 days</b>: that's the monsoon itself, not a storm. A 1–2 day run is a passing shower of a few mm.</div></div>
+    <div class="att part"><span class="s">attempt 4 · right shape, can't be an alarm</span><b>Switch to "total rain vs duration"</b>
+      <div class="formula" style="font-size:18px">E = 0.0115 · D<sup>1.644</sup></div>
+      <div class="small"><b>E</b> = total storm rain (mm), <b>D</b> = hours. Fits our data well (correlation 0.91) and sits under <b>89%</b> of rainy-day slides. But it fires on <b>87–165 days a year</b>, depending on the place.</div></div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <b>See it with the real data</b> <span class="tiny">every storm plotted by length and total rain · log scales</span>
+    <div class="two" style="margin-top:6px">
+      <svg class="fig" viewBox="0 0 420 320" id="edSvg"></svg>
+      <div class="small">
+        <p style="margin-top:0"><span style="color:var(--accent)">●</span> <b>66 dated landslides</b> that fell during a wet run (6 more fell on dry days: soaked ground giving way later, or no rain trigger at all).</p>
+        <p><span style="color:#9aa39d">●</span> <b>400 ordinary rainy monsoon days</b>, picked at random at the same places, with no recorded slide.</p>
+        <p><span style="color:var(--flood)">━</span> <b>our fitted line</b>, drawn so 90% of slides sit above it.</p>
+        <p class="tip warn" style="font-size:14px;margin-bottom:0">👀 <b>Look at the grey dots: <span id="edShare">74%</span> of ordinary rainy days are above the line too.</b> In a monsoon, most wet days already pass the lowest rain that has ever caused a slide. A yes/no line here is a weather report, not a warning.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">💡 <b>This isn't a coding mistake, and it isn't unique to us.</b> The docs note the literature reports the same problem for monsoon climates. The textbook line was built for climates with <b>distinct storms</b>. Arunachal averages ~1,900 mm a year; much of the state gets 2,000–4,000.</div>
+
+  <h3 style="margin:22px 0 6px">Our trigger: "how unusual is this rain <i>here</i>?"</h3>
+  <p class="small" style="margin-top:0">150 mm in 3 days is normal in the wet Siang valley and extreme on the dry northern crest. So each place is compared with <b>its own</b> rain history, not with one number for the whole state.</p>
+  <div class="card">
+    <div class="ctl"><span>🌧️ Rain, last 3 days</span><input type="range" id="rain" min="0" max="300" value="150"><output id="rainO"></output></div>
+    <div class="grid g2" style="margin-top:8px">
+      <div><b>Wet place</b> <span class="tiny">(like the Siang valley)</span><div id="pWet"></div></div>
+      <div><b>Dry place</b> <span class="tiny">(like the northern crest)</span><div id="pDry"></div></div>
+    </div>
+    <p class="tiny" style="margin-bottom:0">Made-up rain histories, just to show the idea. The real trigger averages the 3-day and 7-day percentiles against each point's own monsoon history.</p>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">📏 <b>Percentile</b> = "wetter than X% of days on record here". It is <b>not</b> a chance of a landslide.</div>
+    <div class="card small">🧮 <b>Not fitted on purpose.</b> With only 72 dated slides, a fitted model scored <b>0.755</b>. The plain average scored <b>0.768</b>. Fitting added noise.</div>
+    <div class="card small">🌱 <b>Rain from earlier days</b> ("antecedent rain") matters in theory. Tested: soil wetness and 15/30-day rain, on 72 and 583 events, even with fitted weights: no gain. The top metre of soil sits at 89–95% full from April to September, so "how wet already" barely varies.</div>
+  </div>
+
+  <h3 style="margin:26px 0 8px">The scoreboard: everything we tried, on the same test</h3>
+  <p class="small" style="margin-top:0"><b>The test:</b> 72 dated slides (NASA's catalogue, 2008–2017) against 20,000 ordinary monsoon place-days picked at random from the same places. Score = AUC (pick one slide day and one ordinary day; how often does the score rank the slide day higher?). 0.5 = coin toss. <b>All re-checked on 2 Nov 2026</b> from the raw rain data; every number in the docs reproduced.</p>
+  <div class="card">
+    <div id="scoreboard"></div>
+    <p class="small" style="margin-bottom:0">⚖️ <b>Read it honestly:</b> with only 72 events, the shipped score's range is about <b>0.70–0.82</b>. So the top few rows are <b>statistically tied</b>. We didn't pick 3+7 days because it clearly wins. We picked it because it's <b>at the top, has nothing fitted, is easy to explain</b>, and the 7-day half captures the multi-day soaking a geologist expects. The clear losers are the threshold-line versions and the fitted model.</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card">
+      <b>Across the Himalaya: does the rule hold elsewhere?</b>
+      <div class="small" style="margin-top:6px">The same rule on <b>583 dated slides along the Himalayan arc</b>, with a different rain source (ERA5-Land): <b>0.69</b>. Lower than Arunachal's 0.77 (different rain data, rougher locations), but clearly above chance on 8× more events. Adding soil wetness or 15/30-day rain there: <b>no gain</b> (at most +0.008).</div>
+    </div>
+    <div class="card">
+      <b>Why "compare with its own history"? Measured.</b>
+      <div class="small" style="margin-top:6px">One statewide line (3-day rain ≥ 80 mm, the state's own 90th percentile) gives:</div>
+      <div id="fairBars" style="margin-top:6px"></div>
+      <div class="small">Comparing each place with <b>its own</b> history gives every place about <b>18</b>. The AUC test above can't show this (raw mm 0.754 vs own-history 0.761), because it only looks at places where slides were recorded. <b>Fairness across the state is the real reason.</b></div>
+    </div>
+  </div>
+
+  <div class="tip warn" style="margin-top:12px">🔎 <b>Found while checking: the docs call the threshold line "a floor", but nothing uses it as one.</b> The line is fitted and saved (<code>models/trigger.json</code>) by <code>trigger.py</code>, but no code in the app or the daily cloud run reads it. Today it is <b>explanation only</b>: the physics a geologist expects, and the yardstick the sliding score was chosen over. If asked, say exactly that: <i>"we kept the classic line for explanation; it fires too often here to be an alarm, so the forecast uses the sliding score."</i></div>
+
+  <h3 style="margin:26px 0 8px">How we'd know if we're wrong, and how anything replaces it</h3>
+  <div class="ladder2">
+    <div class="rung done"><span class="s">done</span><b>Ranks slide days well</b><div class="small">0.768 on 72 events; range 0.70–0.82.</div></div>
+    <div class="rung done"><span class="s">done</span><b>Warns early</b><div class="small">Backtest on the live rain path: the score is raised 5 days before slides (Phase 3).</div></div>
+    <div class="rung done"><span class="s">done</span><b>Holds on more events</b><div class="small">0.69 on 583 Himalayan slides, different rain data.</div></div>
+    <div class="rung done"><span class="s">done</span><b>"× the usual" measured</b><div class="small">Rain bands → 0.2× … 9×, with rules written before running.</div></div>
+    <div class="rung todo"><span class="s">weak spot</span><b>Chosen on the same 72</b><div class="small">3+7 days was picked by looking at these same events, so 0.768 is slightly optimistic. It needs a <b>fresh test</b> on events never used.</div></div>
+    <div class="rung todo"><span class="s">next</span><b>Fresh events</b><div class="small">~25–40 new dated Arunachal slides in GSI's field reports; road-block logs; the daily forecast log (since 10 Oct), graded once dates come in.</div></div>
+    <div class="rung todo"><span class="s">next</span><b>Check the rain itself</b><div class="small">Satellite vs ground gauges. At Jang the 3-day agreement is only 0.36 (IMERG) and 0.44 (Open-Meteo).</div></div>
+    <div class="rung todo"><span class="s">the bar</span><b>Any replacement must win fairly</b><div class="small">E.g. a model trained on the Himalayan arc <b>without</b> Arunachal must beat 0.768 on Arunachal's own events. Pass/fail rules are written <b>before</b> running, as the soil test did (gain ≥ +0.02, with the range above 0).</div></div>
+  </div>
+
+  <h3 style="margin:26px 0 8px">The trigger, step by step, as it runs every day</h3>
+  <div class="steps">
+    <div class="st"><span class="k">1</span>Fetch rain for the last days + the next 7 at <b>219 points</b> (Open-Meteo).</div>
+    <div class="st"><span class="k">2</span>Add up <b>3-day</b> and <b>7-day</b> totals for each day.</div>
+    <div class="st"><span class="k">3</span>Look each total up in that point's own <b>May–October history since 2010</b> (stored as 101 cut-points, so the app's file is tiny).</div>
+    <div class="st"><span class="k">4</span>Average the two percentiles → <b>rain score 0–1</b>.</div>
+    <div class="st"><span class="k">5</span>Multiply by the ground score (Phase 3) → the level on the map.</div>
+  </div>
+  <p class="tiny">Designed and scored on NASA's 11 km satellite rain (2000–2026). The live app uses Open-Meteo's history, so the backtest re-scored the live version separately. Code: <code>scripts/model/trigger.py</code>, <code>webapp/core/rainfall.py</code>.</p>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>Water on a height map</h2>
+  <p class="sub">From a grid of ground heights alone, you can work out where every drop of rain goes. Step through it. The numbers are a tiny made-up valley.</p>
+  <div class="card">
+    <div class="stepper" id="demSteps">
+      <button data-s="0" class="on">1 · Heights</button><button data-s="1">2 · Flow direction</button>
+      <button data-s="2">3 · Flow count</button><button data-s="3">4 · Streams</button><button data-s="4">5 · HAND</button>
+    </div>
+    <div class="two">
+      <div class="dem" id="dem"></div>
+      <div><h3 id="demT" style="font-family:var(--display);font-weight:400;font-size:24px;margin:0"></h3><p id="demX" class="small"></p></div>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="tip ok">🌊 <b>HAND = Height Above Nearest Drainage</b> (Nobre et al. 2011). A square 2 m above its stream floods long before one 40 m above it. It is the single strongest clue to <b>where floods reach</b>.</div>
+    <div class="tip">🗺️ <b>How FloodSense uses it:</b> its WHERE half reads only <b>shape</b>: height above the river, river size and how closed-in the valley is. Adding land cover made test scores <i>higher</i> but the map <i>wrong</i> (see trap 1 below).</div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>River forecasting</h2>
+  <p class="sub">A gauge measures how high the river is. Officials draw lines on that scale. A flood forecast asks: <b>will the river reach the line, and when?</b></p>
+  <div class="card">
+    <svg class="fig" viewBox="0 0 760 250">
+      <rect x="50" y="10" width="690" height="200" fill="#f7f8f5"/>
+      <line x1="50" y1="40" x2="740" y2="40" stroke="#6a4fbd" stroke-dasharray="6 4"/><text x="56" y="34" font-size="13" fill="#6a4fbd" font-family="Mukta,sans-serif">highest ever recorded (HFL)</text>
+      <line x1="50" y1="80" x2="740" y2="80" stroke="#cf1f2a" stroke-width="2"/><text x="56" y="74" font-size="13" fill="#cf1f2a" font-family="Mukta,sans-serif">danger level ← "the line" we forecast</text>
+      <line x1="50" y1="110" x2="740" y2="110" stroke="#a86a0f" stroke-dasharray="6 4"/><text x="56" y="104" font-size="13" fill="#a86a0f" font-family="Mukta,sans-serif">warning level</text>
+      <path d="M50 180 C 120 175, 170 170, 220 150 S 300 120, 340 125 S 420 160, 470 140" fill="none" stroke="#2f6cae" stroke-width="3"/>
+      <path d="M470 140 C 510 120, 540 95, 580 88 S 650 100, 700 120" fill="none" stroke="#2f6cae" stroke-width="3" stroke-dasharray="3 6"/>
+      <line x1="470" y1="10" x2="470" y2="210" stroke="#17201b"/><text x="476" y="200" font-size="13" font-family="IBM Plex Mono,monospace">now</text>
+      <text x="250" y="200" font-size="13" fill="#2f6cae" font-family="Mukta,sans-serif">measured level</text>
+      <text x="560" y="140" font-size="13" fill="#2f6cae" font-family="Mukta,sans-serif">forecast level</text>
+      <text x="580" y="225" font-size="13" font-family="Mukta,sans-serif" text-anchor="middle">⟵ lead time ⟶</text>
+      <line x1="480" y1="232" x2="690" y2="232" stroke="#17201b"/>
+    </svg>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">🏛️ <b>CWC</b> (Central Water Commission) runs the main gauges and sets danger levels. Where none exists, our line is the river's own <b>wettest 2% of days</b>.</div>
+    <div class="card small">⏱️ <b>Lead time</b> = how far ahead. Big slow rivers give days of warning; small hill streams rise in hours. That's physics, not budget.</div>
+    <div class="card small">🎲 <b>Our river forecast</b> gives a <b>chance</b> the river reaches its line in the next 7 days, from rain plus the river's own recent week. A dotted level line goes 2 days ahead.</div>
+  </div>
+  <h3 style="margin:22px 0 8px">How Google Flood Hub does it: two models</h3>
+  <div class="grid g2">
+    <div class="card"><b>🌍 Global river model</b><div class="small">Forecasts river <i>flow</i> 7 days ahead from weather and catchment facts. Learned from ~16,000 gauges worldwide. <b>Does not read the river's latest reading.</b> Covers all the hill points in Arunachal.</div></div>
+    <div class="card"><b>📏 Level model (India and Bangladesh)</b><div class="small">Reads the gauge's last week plus upstream gauges. Forecasts <i>level</i> 8–48 h ahead, with about 0.1 m error at 24 h. Works best on <b>big, slow rivers</b>, not flash floods.</div></div>
+  </div>
+  <div class="tip" style="margin-top:12px">🧭 <b>Our stance:</b> we build our own models on Arunachal's rivers, so we can prove them to clients. Google's model can be a cross-check on the big rivers, not our feed. Its code has been open since June 2026.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>Soil loss: the five-factor recipe (RUSLE)</h2>
+  <p class="sub">The standard soil-conservation sum (Renard et al. 1997). Five numbers <b>multiplied</b> together give tonnes of soil lost per hectare per year.</p>
+  <div class="card">
+    <div class="factor" id="rusle"></div>
+    <div class="presets" id="presets"></div>
+    <div id="rsl"></div>
+    <p class="tiny" style="margin-bottom:0">Values are round, illustrative numbers for learning, <b>not</b> SoilSense outputs.</p>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">✖️ <b>Multiplied, not added.</b> If any one factor is near zero (flat ground, thick forest), the loss is near zero. Same logic as WHERE × WHEN.</div>
+    <div class="card small">🧱 <b>"If untreated".</b> P (bunds, terraces) is unknown until the department shares its treated-area records, so we set P = 1. Every SoilSense number means "if nothing has been done here".</div>
+    <div class="card small">⚠️ <b>Trap we caught:</b> India's common rain formula (Singh 1981) read <b>91% too low</b> at Guwahati against a real gauge. We use a satellite rain-strength map (InRESatE) instead.</div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>Satellites: what each one sees</h2>
+  <p class="sub">Most of our data comes from space. Know what each sees, how fine its squares are, and when it goes blind.</p>
+  <div class="sats">
+    <div class="sat"><div class="ico">📡</div><h4>Sentinel-1 (radar)</h4><div class="small">Sends its own pulse and listens for the echo. <b>Sees through cloud and at night.</b> Calm water reflects the pulse away, so it shows up <b>dark</b>.</div>
+      <div class="row2"><span>squares</span><span>~10 m</span></div><div class="row2"><span>we use it for</span><span>checking flood reports</span></div><div class="row2"><span>blind spot</span><span>steep valleys (shadow)</span></div></div>
+    <div class="sat"><div class="ico">📷</div><h4>Sentinel-2 (optical)</h4><div class="small">A camera, in colours including some the eye can't see. Great for <b>plant cover and bare ground</b>.</div>
+      <div class="row2"><span>squares</span><span>10 m</span></div><div class="row2"><span>we use it for</span><span>land cover, bare ground</span></div><div class="row2"><span>blind spot</span><span><b>clouds = the whole monsoon</b></span></div></div>
+    <div class="sat"><div class="ico">🌧️</div><h4>IMERG (NASA rain)</h4><div class="small">Rain worked out from many satellites. Gives a <b>gap-free rain history</b> everywhere.</div>
+      <div class="row2"><span>squares</span><span>~11 km</span></div><div class="row2"><span>we use it for</span><span>26 years of daily rain</span></div><div class="row2"><span>blind spot</span><span>one value per 11 km</span></div></div>
+    <div class="sat"><div class="ico">🏔️</div><h4>Copernicus DEM</h4><div class="small">Ground height from a radar satellite pair. Everything about slope and drainage comes from it.</div>
+      <div class="row2"><span>squares</span><span>30 m</span></div><div class="row2"><span>we use it for</span><span>slope, drainage, HAND</span></div><div class="row2"><span>blind spot</span><span>treetops, not ground</span></div></div>
+  </div>
+
+  <h3 style="margin:22px 0 8px">Sizes, to scale</h3>
+  <div class="card two">
+    <svg class="fig" viewBox="0 0 300 300" id="scaleSvg"></svg>
+    <div class="small" id="scaleTxt">
+      <p style="margin-top:0">The big square is <b>one rain square</b> (11 km). The red dot is <b>one map square</b> (100 m).</p>
+      <p>About <b>12,000 map squares</b> share the same rain value. The map looks sharp at 100 m, but the <b>rain is not that sharp</b>. Say this when you show the map.</p>
+      <p class="tiny">Other sizes in the backbone: ground height 30 m, soil 250 m.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>Is the model any good? Four ideas</h2>
+  <p class="sub">This is where reviewers attack. Learn these four, and the traps in section 9.</p>
+
+  <h3 style="margin:10px 0 6px">A · AUC: "pick a pair"</h3>
+  <div class="card two">
+    <div>
+      <p style="margin-top:0">Take one random square that <b>had</b> a slide and one that <b>didn't</b>. Did the model score the slide square higher? <b>AUC = how often it does.</b> 0.5 = coin toss. 1.0 = perfect.</p>
+      <button class="btn" id="pairBtn">🎲 Draw 1 pair</button> <button class="btn" id="pair100">Draw 100</button>
+      <div id="pairOut" style="margin-top:10px"></div>
+    </div>
+    <div style="text-align:center"><div class="tiny">running AUC</div><div class="big-n" id="aucN">–</div><div class="tiny">SlideSense WHERE: <b>0.859</b> on unseen ground ≈ "6 times in 7"</div></div>
+  </div>
+
+  <h3 style="margin:22px 0 6px">B · Calibration: "does 20% mean 20%?"</h3>
+  <div class="card two">
+    <svg class="fig" viewBox="0 0 300 260">
+      <rect x="40" y="10" width="240" height="210" fill="#f7f8f5"/>
+      <line x1="40" y1="220" x2="280" y2="10" stroke="#1d7a4b" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="170" y="70" font-size="12" fill="#1d7a4b" font-family="Mukta,sans-serif" transform="rotate(-41 170 70)">perfectly honest</text>
+      <g fill="#2f6cae"><circle cx="52" cy="210" r="5"/><circle cx="76" cy="186" r="5"/><circle cx="100" cy="170" r="5"/><circle cx="148" cy="126" r="5"/><circle cx="196" cy="88" r="5"/></g>
+      <g fill="#cf1f2a"><circle cx="76" cy="214" r="5"/><circle cx="100" cy="212" r="5"/><circle cx="148" cy="200" r="5"/><circle cx="196" cy="180" r="5"/></g>
+      <text x="200" y="200" font-size="12" fill="#cf1f2a" font-family="Mukta,sans-serif">over-confident</text>
+      <line x1="40" y1="220" x2="280" y2="220" stroke="#17201b"/><line x1="40" y1="10" x2="40" y2="220" stroke="#17201b"/>
+      <text x="160" y="245" text-anchor="middle" font-size="12" font-family="Mukta,sans-serif">what it said →</text>
+      <text x="14" y="115" transform="rotate(-90 14 115)" text-anchor="middle" font-size="12" font-family="Mukta,sans-serif">what happened →</text>
+    </svg>
+    <div class="small">
+      <p style="margin-top:0">A model can rank well (good AUC) and still say the <b>wrong size</b> of chance. <b>Calibrated</b> means: of all the days it said 20%, about 20% came true.</p>
+      <p>✅ FloodSense's river chances are calibrated: <b>at a gauged river, 20% means about 20%</b>.</p>
+      <p>⚠️ SlideSense levels are <b>not</b> chances. They are ranks, with a measured "× the usual".</p>
+      <p><b>Base rate:</b> how common the event is anyway. If floods happen on 1% of days, "5%" is already 5× the usual.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 6px">C · Test on ground it has never seen (spatial cross-validation)</h3>
+  <div class="card two">
+    <div style="display:flex;gap:16px;justify-content:center">
+      <div style="text-align:center"><svg width="130" height="130" id="cvRand"></svg><div class="tiny">random split ✗</div></div>
+      <div style="text-align:center"><svg width="130" height="130" id="cvBlock"></svg><div class="tiny">block split ✓</div></div>
+    </div>
+    <div class="small">
+      <p style="margin-top:0"><span style="color:var(--flood)">■ train</span> &nbsp; <span style="color:var(--accent)">■ test</span>. Neighbouring squares are nearly identical. In a <b>random</b> split, every test square has a twin in training, so the score is <b>too good</b> (often 0.90+ in papers).</p>
+      <p>We hold out <b>whole blocks</b> of the state, 5 times over. Score: <b>0.859 ± 0.016</b>. Honest, but lower than random-split papers. <b>Not comparable</b>: always ask which split a paper used.</p>
+      <p><b>Leakage</b> = any way the answer sneaks into training. A random split is the most common kind.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 6px">D · A percentile max looks like 99% on a normal day</h3>
+  <div class="card two">
+    <div>
+      <p style="margin-top:0">Take 97 rain points. Each one's percentile is a fair random draw on an ordinary day. What is the <b>highest</b> of the 97?</p>
+      <button class="btn" id="maxBtn">🎲 Simulate an ordinary day</button>
+      <div id="maxOut" style="margin-top:10px"></div>
+    </div>
+    <div class="tip warn" style="font-size:14px">The old app showed this max as "0.99" for every town, every day. It looked like "99% chance of a landslide". It was just arithmetic. <b>Now:</b> show each place's own value, or the share of land at High.</div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>Traps we actually fell into</h2>
+  <p class="sub">Real stories from this project. Scientists respect a team that knows its own traps. Tell these.</p>
+  <div class="grid g2">
+    <div class="trap"><b>1 · Higher score, wrong map</b>Adding land cover lifted the flood WHERE score to 0.94. Its top squares were <b>glacial lakes</b> 360 m above any river. 97% of training rows were in the lowlands, so no test ever asked about a mountain (that's "out of distribution").<div class="fix">a good test score is not proof. Add checks the tests can't fake. Prefer causes (shape) over place-names (land cover)</div></div>
+    <div class="trap"><b>2 · The official flood map was wrong</b>70.5% of its "flooded" pixels sat on slopes steeper than 15°. Water doesn't pond on a cliff. It scored 0.53 against our layer, which is chance.<div class="fix">check a source before trusting it, even an official one</div></div>
+    <div class="trap"><b>3 · A fake 0.879</b>93% of squares scored exactly 0. Breaking ties by sort order gave AUC 0.879. Averaging ties properly gave about 0.5: <b>chance</b>.<div class="fix">any AUC on mostly-zero scores needs a tie check</div></div>
+    <div class="trap"><b>4 · The flood screen that passed everything</b>An early radar check "confirmed" flood reports, but it also passed 97–100% of known dry dates. A new pre-registered radar test plus gauges gave 2,185 verified floods.<div class="fix">test the test on known "no" cases too</div></div>
+    <div class="trap"><b>5 · The textbook rule that didn't hold</b>Textbooks say picking "no-slide" squares carelessly inflates scores. Measured here: 0.860 vs 0.862, no difference, because Arunachal has almost no flat land.<div class="fix">justify choices on what you measured, never on what textbooks say</div></div>
+    <div class="trap"><b>6 · The fitted model that lost</b>A fitted trigger (0.755) lost to a plain unfitted average (0.768). Only 72 dated slides is too few to fit on.<div class="fix">with little data, simple and fixed beats clever and fitted</div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Words to own</h2>
+  <p class="sub">👆 Tap to flip. Say it in your own words first.</p>
+  <div class="grid g4" id="words"></div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>Papers: read the abstract, the figures and the conclusion only</h2>
+  <p class="sub">About 30–45 minutes each. You only need to say "yes, I know that work, and here's how ours relates".</p>
+  <div id="papers"></div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Check yourself</h2>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Finish line: teach it back</h2>
+  <p class="sub">Phase 1 is done when you can explain each of these in <b>one minute</b>, with no notes, to someone who knows nothing.</p>
+  <div class="beats">
+    <div class="beat"><span class="s">1 min</span><b>Why rain triggers slides</b>water pushes grains apart, grip drops</div>
+    <div class="beat"><span class="s">1 min</span><b>Why "unusual for here"</b>same rain, different places, different meaning</div>
+    <div class="beat"><span class="s">1 min</span><b>What HAND is</b>and why low ground floods first</div>
+    <div class="beat"><span class="s">1 min</span><b>A×B×C×D×E</b>the soil-loss recipe, and "if untreated"</div>
+    <div class="beat"><span class="s">1 min</span><b>Radar vs camera</b>why radar wins in the monsoon</div>
+    <div class="beat"><span class="s">1 min</span><b>AUC vs calibration</b>ranking vs honest size</div>
+    <div class="beat"><span class="s">1 min</span><b>Why block testing</b>and why our 0.86 beats a paper's 0.95</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 1 like a GSI geologist and a CWC hydrologist"</i>, and move to Phase 2, the data backbone.</div>
+</section>
+
+<footer>Phase 1 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Project facts from MODEL_SUSCEPTIBILITY.md, MODEL_TRIGGER_AND_HAZARD.md, SOILSENSE.md, FLOOD_MODULE.md and the project's research notes, checked 1 Nov 2026. Toys and charts marked "illustrative" use made-up numbers.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase1";
+const S = JSON.parse(localStorage.getItem(KEY) || "{}");
+const save = () => { localStorage.setItem(KEY, JSON.stringify(S)); meter(); };
+const $ = id => document.getElementById(id);
+const rad = d => d * Math.PI / 180;
+// small seeded random, so the pictures are the same on every load
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+/* ---------- slope toy: grip / pull ---------- */
+function slope(){
+  const a = +$("ang").value, w = +$("wet").value / 100, r = +$("root").value / 100;
+  $("angO").textContent = a + "°"; $("wetO").textContent = Math.round(w*100) + "%"; $("rootO").textContent = Math.round(r*100) + "%";
+  // friction angle 35°, water cuts friction up to half, roots add a little cohesion
+  const fs = Math.tan(rad(35)) * (1 - 0.5*w) / Math.tan(rad(a)) + 0.35 * r / Math.sin(rad(2*a));
+  const ok = fs >= 1;
+  $("fsOut").innerHTML = `<span style="color:${ok?'var(--built)':'var(--accent)'}">${fs.toFixed(2)} · ${ok?'✅ it stays':'💥 it slides'}</span>`;
+  const x0 = 20, y0 = 210, len = 300, x1 = x0 + len, y1 = y0 - len*Math.tan(rad(a));
+  const yTop = Math.max(y1, 10), xTop = x0 + (y0 - yTop)/Math.tan(rad(a));
+  $("hill").setAttribute("points", `${x0},${y0} ${xTop},${y0} ${xTop},${yTop}`);
+  const t = ok ? 0.55 : 0.3, bx = x0 + (xTop-x0)*t, by = y0 - (y0-yTop)*t;
+  $("block").setAttribute("transform", `translate(${bx},${by}) rotate(${-a})`);
+  $("water").setAttribute("transform", `translate(${bx-18},${by-38})`); $("water").setAttribute("opacity", w);
+  $("roots").setAttribute("transform", `translate(${bx+20},${by-30})`); $("roots").setAttribute("opacity", r);
+  $("angLbl").textContent = a + "°";
+}
+["ang","wet","root"].forEach(i => $(i).addEventListener("input", slope)); slope();
+
+/* ---------- rain percentile toy ---------- */
+// illustrative: log-logistic histories, median 3-day monsoon rain 70 mm (wet) vs 15 mm (dry)
+const pct = (mm, med) => mm <= 0 ? 0 : 1 / (1 + Math.pow(med / mm, 2.2));
+function bar(p){
+  const c = p > .95 ? "var(--accent)" : p > .8 ? "var(--partial)" : "var(--built)";
+  const word = p > .95 ? "very unusual here" : p > .8 ? "unusual here" : "normal here";
+  return `<div style="background:var(--grid);border-radius:6px;height:22px;margin:6px 0"><div style="width:${p*100}%;height:100%;background:${c};border-radius:6px"></div></div>
+    <span class="mono">wetter than ${Math.round(p*100)}% of days</span> · <b style="color:${c}">${word}</b>`;
+}
+function rain(){ const mm = +$("rain").value; $("rainO").textContent = mm + " mm"; $("pWet").innerHTML = bar(pct(mm, 70)); $("pDry").innerHTML = bar(pct(mm, 15)); }
+$("rain").addEventListener("input", rain); rain();
+
+
+/* ---------- real storms vs the fitted E-D line (IMERG + NASA GLC; exported 2 Nov 2026) ---------- */
+const ED = {"ev":[[32,1103.4],[9,415.1],[61,1702.1],[20,332.8],[32,1103.4],[14,310.6],[28,801.7],[6,199.1],[43,1040.0],[7,172.1],[20,594.4],[29,928.1],[3,9.2],[12,346.4],[34,1121.1],[32,1060.9],[1,2.2],[5,34.6],[8,121.3],[5,49.9],[23,628.3],[11,266.0],[13,224.6],[8,123.8],[4,43.6],[3,14.2],[32,1081.4],[24,739.7],[5,72.5],[9,206.2],[3,4.0],[12,346.4],[12,193.3],[5,167.1],[17,505.6],[3,42.1],[24,739.7],[9,281.1],[4,161.2],[5,479.6],[3,13.1],[5,105.0],[5,105.2],[7,121.1],[6,38.9],[9,190.2],[13,448.1],[29,928.1],[11,341.4],[12,261.4],[3,27.7],[4,52.4],[3,119.0],[6,268.1],[56,974.0],[2,15.1],[2,6.4],[10,179.2],[3,44.0],[5,109.7],[15,256.0],[14,472.1],[10,152.7],[22,688.0],[9,316.3],[32,1060.9]],"ord":[[13,247.6],[5,103.9],[52,887.7],[10,515.8],[3,150.9],[9,86.3],[1,1.8],[8,117.7],[1,7.5],[1,4.9],[3,243.3],[8,109.2],[1,21.0],[21,701.6],[2,30.4],[1,19.7],[5,48.5],[1,1.2],[4,93.5],[44,1185.4],[4,114.8],[1,1.0],[10,118.4],[29,323.4],[1,5.9],[5,35.0],[2,20.0],[5,32.2],[14,289.8],[3,29.4],[4,57.6],[9,332.9],[96,1185.7],[1,4.1],[3,20.3],[1,1.7],[4,66.4],[11,538.1],[2,71.7],[2,9.3],[17,204.5],[1,6.8],[5,186.7],[3,15.0],[4,72.6],[40,1503.1],[2,22.8],[1,1.8],[3,34.3],[3,18.5],[1,30.5],[14,394.7],[5,187.5],[78,1720.8],[5,36.5],[33,419.3],[6,43.3],[4,21.1],[26,446.5],[18,535.9],[9,222.4],[9,93.1],[82,1119.3],[12,220.7],[3,41.2],[2,9.1],[33,842.1],[1,2.6],[22,332.6],[5,100.7],[5,72.8],[5,275.9],[7,185.0],[5,135.7],[44,661.8],[31,518.6],[5,47.8],[1,11.1],[9,319.8],[14,527.5],[3,33.5],[22,501.7],[84,1554.9],[9,78.5],[1,2.6],[1,18.4],[11,119.4],[4,24.9],[6,83.9],[2,9.9],[2,23.8],[3,10.2],[32,1199.1],[9,276.3],[9,180.2],[4,10.8],[2,30.8],[21,206.6],[28,489.6],[16,351.1],[2,32.5],[3,29.9],[1,7.4],[9,48.6],[20,341.2],[1,1.7],[4,10.4],[11,211.2],[1,9.1],[7,126.3],[15,976.9],[4,47.5],[7,72.7],[7,119.1],[12,222.5],[14,156.9],[27,289.3],[3,3.8],[49,631.4],[2,33.4],[3,13.2],[3,6.8],[4,16.4],[1,1.5],[19,260.2],[2,5.1],[3,34.3],[1,4.8],[71,910.9],[1,2.5],[4,43.3],[23,265.5],[1,1.1],[7,78.7],[1,8.6],[10,143.8],[1,3.4],[13,150.1],[24,247.5],[1,1.8],[11,164.6],[1,9.0],[13,151.4],[37,893.6],[8,36.0],[53,1121.5],[16,382.0],[2,4.0],[6,15.1],[4,23.8],[2,25.9],[4,78.5],[2,21.0],[3,25.7],[17,534.5],[6,117.5],[44,1058.2],[20,303.9],[8,203.6],[17,117.6],[20,403.2],[8,126.1],[9,183.2],[40,1049.7],[1,3.5],[22,551.5],[2,132.4],[17,586.2],[3,19.6],[33,574.4],[10,203.2],[7,256.6],[3,26.3],[18,165.3],[12,294.2],[7,317.9],[55,2183.4],[1,13.3],[30,271.8],[1,6.4],[24,274.6],[12,256.7],[2,17.5],[1,2.4],[7,42.9],[4,112.8],[2,6.8],[69,2003.1],[1,7.1],[8,79.0],[1,1.3],[5,47.6],[9,103.1],[2,11.9],[3,32.2],[9,265.6],[1,3.9],[35,776.3],[7,114.1],[4,52.5],[11,240.7],[5,45.8],[7,131.1],[4,114.9],[11,37.0],[7,148.4],[11,124.4],[5,62.0],[2,24.2],[1,3.2],[2,10.4],[23,259.8],[1,3.9],[9,321.5],[1,6.3],[1,1.3],[3,38.5],[8,188.7],[52,1157.8],[31,624.3],[2,24.1],[1,7.8],[6,162.3],[7,249.0],[5,155.9],[6,138.5],[2,84.7],[7,74.9],[8,234.8],[2,9.2],[2,27.8],[21,433.7],[4,148.5],[1,4.4],[3,185.7],[1,12.7],[2,9.8],[17,375.1],[5,58.8],[5,100.9],[5,118.6],[7,79.1],[7,104.4],[6,40.6],[3,18.3],[56,629.5],[23,478.7],[1,1.5],[29,598.5],[2,32.0],[8,163.6],[3,65.2],[4,35.9],[29,1268.2],[1,6.7],[7,176.5],[7,113.1],[9,99.1],[37,786.5],[27,456.5],[7,112.0],[5,40.6],[3,46.7],[3,25.2],[12,435.5],[22,265.6],[2,8.8],[1,1.6],[1,2.7],[3,15.8],[1,3.2],[39,1302.3],[13,244.0],[1,5.3],[14,352.4],[13,354.3],[88,1593.9],[4,39.2],[3,9.6],[39,786.3],[16,228.1],[1,1.0],[2,62.9],[1,3.7],[12,231.7],[5,84.6],[2,21.5],[14,231.0],[16,245.8],[1,1.6],[32,556.6],[7,66.5],[6,36.1],[2,6.9],[2,30.7],[3,8.4],[22,104.7],[17,142.4],[5,78.2],[1,5.2],[13,258.5],[42,907.6],[1,3.3],[2,32.2],[2,2.1],[1,65.5],[6,95.1],[2,19.2],[3,36.8],[4,29.7],[1,5.0],[2,2.8],[6,150.5],[7,151.2],[11,138.1],[2,85.2],[6,122.1],[8,110.8],[1,1.9],[2,51.7],[3,9.0],[6,24.1],[5,13.1],[9,192.9],[7,64.2],[1,13.8],[2,10.7],[1,18.1],[1,30.9],[4,72.2],[8,115.8],[25,761.7],[1,1.5],[9,230.7],[11,328.0],[2,68.2],[10,207.9],[7,43.9],[7,82.5],[8,54.6],[1,3.3],[55,1006.9],[5,32.8],[34,397.3],[5,95.2],[2,31.5],[6,75.0],[16,218.1],[1,3.0],[32,974.1],[16,174.4],[35,476.7],[2,6.1],[2,11.4],[56,1228.0],[2,94.7],[42,867.4],[8,126.6],[5,64.3],[5,33.7],[1,15.0],[42,1457.5],[1,18.4],[17,272.1],[8,175.2],[19,330.9],[1,2.3],[2,16.2],[4,15.7],[9,123.6],[4,38.7],[35,633.1],[4,56.3],[1,22.1],[15,197.1],[8,130.5],[1,5.2],[3,138.4],[5,22.1],[3,13.4],[17,221.0],[9,57.0],[4,128.0],[5,51.5],[1,4.6],[30,630.5],[1,1.0],[63,1345.5],[25,345.6],[1,13.9],[12,369.2],[10,239.2],[2,61.0],[1,1.6],[3,90.8],[58,1359.9],[2,16.6],[7,30.6],[137,2037.6],[3,13.4]]};
+(function(){
+  const L = 52, B = 270, T = 12, R = 410, W = 420, H = 320;
+  const lx = h => L + (Math.log10(h) - Math.log10(20)) / (Math.log10(6000) - Math.log10(20)) * (R - L);
+  const ly = e => B - Math.log10(Math.max(e, 1)) / Math.log10(8000) * (B - T);
+  let g = `<rect x="${L}" y="${T}" width="${R-L}" height="${B-T}" fill="#f7f8f5"/>`;
+  [24, 24*7, 24*30, 24*100].forEach((h, i) => { g += `<line x1="${lx(h)}" x2="${lx(h)}" y1="${T}" y2="${B}" stroke="#e3e8e1"/><text x="${lx(h)}" y="${B+15}" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace" fill="#737e78">${["1 day","1 week","1 month","100 days"][i]}</text>`; });
+  [10, 100, 1000].forEach(e => { g += `<line x1="${L}" x2="${R}" y1="${ly(e)}" y2="${ly(e)}" stroke="#e3e8e1"/><text x="${L-4}" y="${ly(e)+4}" text-anchor="end" font-size="11" font-family="IBM Plex Mono,monospace" fill="#737e78">${e}</text>`; });
+  ED.ord.forEach(([d, e]) => { g += `<circle cx="${lx(d*24)}" cy="${ly(e)}" r="3" fill="#9aa39d" opacity=".55"/>`; });
+  let path = ""; for (let h = 20; h <= 6000; h *= 1.15) path += (path ? " L" : "M") + lx(h).toFixed(1) + " " + ly(0.011545 * Math.pow(h, 1.644)).toFixed(1);
+  g += `<path d="${path}" fill="none" stroke="#2f6cae" stroke-width="3"/>`;
+  ED.ev.forEach(([d, e]) => { g += `<circle cx="${lx(d*24)}" cy="${ly(e)}" r="4.5" fill="#cf1f2a" stroke="#fff" stroke-width="1"/>`; });
+  g += `<text x="${(L+R)/2}" y="${B+34}" text-anchor="middle" font-size="12" font-family="Mukta,sans-serif">how long the wet run had lasted →</text>`;
+  g += `<text x="13" y="${(T+B)/2}" transform="rotate(-90 13 ${(T+B)/2})" text-anchor="middle" font-size="12" font-family="Mukta,sans-serif">total rain in the run, mm →</text>`;
+  $("edSvg").setAttribute("viewBox", `0 0 ${W} ${H}`); $("edSvg").innerHTML = g;
+  const a = ED.ord.filter(([d, e]) => e >= 0.011545 * Math.pow(d*24, 1.644)).length / ED.ord.length;
+  $("edShare").textContent = Math.round(a*100) + "%";
+})();
+
+/* ---------- scoreboard (re-checked 2 Nov 2026; matches MODEL_TRIGGER_AND_HAZARD.md and SOIL_WETNESS_TEST.md) ---------- */
+const SB = [
+  ["3 + 7 days, own history (shipped)", .768, "var(--built)", "the shipped rain score; nothing fitted", 1],
+  ["1 + 3 + 7 days, own history", .767, "var(--slide)", "adding the last day changes nothing"],
+  ["+ soil wetness", .762, "var(--slide)", "soil test, 28 Sep: no gain"],
+  ["3 days alone, own history", .761, "var(--slide)", "almost as good; the 7-day half adds the soaking"],
+  ["+ 15/30-day rain", .760, "var(--slide)", "soil test: no gain"],
+  ["fitted model, 6 rain facts", .755, "var(--partial)", "logistic regression, 5-fold: fitting on 72 events adds noise"],
+  ["3 days, raw mm (no own-history)", .754, "var(--partial)", "close on this test, but unfair across the state (see below)"],
+  ["Guzzetti global line, as a sliding score", .731, "var(--accent)", "attempt 2, used as a ratio"],
+  ["30 days alone", .680, "var(--accent)", "long totals blur the trigger"],
+  ["our fitted E–D line, as a sliding score", .649, "var(--accent)", "attempt 4, used as a ratio"]
+];
+$("scoreboard").innerHTML = SB.map(([l, v, c, w, ship]) =>
+  `<div class="sb${ship ? " ship" : ""}"><span>${l}</span><div class="t"><div style="width:${(v-0.5)/0.3*100}%;background:${c}"></div></div><span class="n">${v.toFixed(3)}</span><span class="why">${w}</span></div>`).join("") +
+  `<div class="sb" style="margin-top:8px"><span>our fitted E–D line, as a yes/no alarm</span><div class="t"><div style="width:82%;background:var(--accent);opacity:.5"></div></div><span class="n">82% / 54%</span><span class="why">catches 82% of slides but fires on 54% of monsoon days. No AUC, because it is only yes/no</span></div>` +
+  `<p class="tiny" style="margin:6px 0 0">Bars start at 0.5, a coin toss.</p>`;
+
+/* ---------- fairness: one mm line vs own history (re-checked 2 Nov 2026) ---------- */
+$("fairBars").innerHTML = [["driest 10% of places (~1,300 mm/yr)", 4.7], ["wettest 10% of places (~3,500 mm/yr)", 31.5]].map(([l, v]) =>
+  `<div class="sb"><span>${l}</span><div class="t"><div style="width:${v/35*100}%;background:var(--accent)"></div></div><span class="n">${v.toFixed(0)} days</span></div>`).join("") +
+  `<div class="tiny">alert days per monsoon under the one statewide line</div>`;
+
+/* ---------- DEM stepper (D8 on a tiny valley) ---------- */
+const R = 7, C = 7;
+const H = [...Array(R)].map((_, r) => [...Array(C)].map((_, c) => 4*Math.abs(c-3) + (R-1-r)*2 + (c===3?0:((r*c)%3)) + 10));
+const ARROW = {"-1,-1":"↖","-1,0":"↑","-1,1":"↗","0,-1":"←","0,1":"→","1,-1":"↙","1,0":"↓","1,1":"↘"};
+const dir = [...Array(R)].map(() => Array(C).fill(null));
+for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+  let best = null, drop = 0;
+  for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) {
+    if (!dr && !dc) continue; const rr = r+dr, cc = c+dc;
+    if (rr < 0 || cc < 0 || rr >= R || cc >= C) continue;
+    const d = (H[r][c] - H[rr][cc]) / Math.hypot(dr, dc);
+    if (d > drop) { drop = d; best = [dr, dc]; }
+  }
+  dir[r][c] = best || [1, 0];   // bottom row drains out of the map
+}
+const acc = [...Array(R)].map(() => Array(C).fill(0));
+for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+  let rr = r, cc = c, n = 0;
+  while (rr >= 0 && cc >= 0 && rr < R && cc < C && n++ < 50) { acc[rr][cc]++; const [dr, dc] = dir[rr][cc]; rr += dr; cc += dc; }
+}
+const STREAM = 5, isS = (r, c) => acc[r][c] >= STREAM;
+const hand = [...Array(R)].map((_, r) => [...Array(C)].map((_, c) => {
+  let rr = r, cc = c, n = 0;
+  while (!isS(rr, cc) && n++ < 50) { const [dr, dc] = dir[rr][cc]; rr += dr; cc += dc; if (rr >= R) return H[r][c] - H[R-1][3]; }
+  return H[r][c] - H[rr][cc];
+}));
+const maxH = Math.max(...H.flat()), maxA = Math.max(...acc.flat()), maxHand = Math.max(...hand.flat());
+const DEMSTEP = [
+  ["Heights", "Each square holds one number: the ground height in metres. Low in the middle and at the bottom, so it's a valley draining downward. This is all we start with."],
+  ["Flow direction", "Rain on each square runs to its <b>steepest-down neighbour</b>, one of 8 directions. This simple rule is called D8."],
+  ["Flow count", "Follow the arrows from every square and count how many squares drain <b>through</b> each one. Big numbers = lots of land draining there (flow accumulation)."],
+  ["Streams", `Where enough land drains through (here ${STREAM}+ squares), there's a stream. All the squares draining to one point form its <b>catchment</b>.`],
+  ["HAND", "For each square, follow the water down to the first stream square, then subtract heights. <b>Small HAND = floods first.</b> Stream squares are 0."]
+];
+function dem(s){
+  document.querySelectorAll("#demSteps button").forEach(b => b.classList.toggle("on", +b.dataset.s === s));
+  $("demT").textContent = DEMSTEP[s][0]; $("demX").innerHTML = DEMSTEP[s][1];
+  let html = "";
+  for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+    let bg, fg = "#17201b", t;
+    if (s === 0) { const k = H[r][c]/maxH; bg = `hsl(35,${30+30*k}%,${88-45*k}%)`; t = H[r][c]; }
+    else if (s === 1) { bg = "#eef1ed"; t = ARROW[dir[r][c].join(",")]; }
+    else if (s === 2) { const k = Math.log(acc[r][c])/Math.log(maxA); bg = `hsl(212,60%,${95-55*k}%)`; t = acc[r][c]; if (k > .6) fg = "#fff"; }
+    else if (s === 3) { bg = isS(r,c) ? "#2f6cae" : "#eef1ed"; fg = isS(r,c) ? "#fff" : "#737e78"; t = isS(r,c) ? "≈" : ARROW[dir[r][c].join(",")]; }
+    else { const k = hand[r][c]/maxHand; bg = `hsl(${212-180*k},55%,${60+28*k}%)`; t = hand[r][c]; }
+    html += `<div style="background:${bg};color:${fg}">${t}</div>`;
+  }
+  $("dem").innerHTML = html;
+}
+document.querySelectorAll("#demSteps button").forEach(b => b.addEventListener("click", () => dem(+b.dataset.s))); dem(0);
+
+/* ---------- RUSLE toy ---------- */
+const F = [
+  ["R","rain strength","how hard the rain hits",[3000,20000,500]],
+  ["K","soil","how easily it washes",[0.005,0.06,0.005]],
+  ["LS","slope","steepness × length",[0.1,50,0.1]],
+  ["C","cover","1 = bare, 0.001 = thick forest",[0.001,1,0.001]],
+  ["P","protection","bunds, terraces. 1 = none",[0.1,1,0.05]]
+];
+const PRE = {"🌲 Forest hill":[12000,0.03,15,0.003,1],"🍃 Tea garden":[12000,0.03,3,0.1,1],"🔥 Bare jhum slope":[12000,0.03,15,0.5,1],"🌾 Flat paddy":[10000,0.03,0.1,0.2,1],"🧱 Same jhum, terraced":[12000,0.03,15,0.5,0.2]};
+const val = [12000,0.03,15,0.5,1];
+function rusle(){
+  const A = val.reduce((a, b) => a*b, 1);
+  $("rusle").innerHTML = F.map(([k, n, h], i) => `<div class="f"><b>${k}</b><span><b>${n}</b></span><span class="tiny">${h}</span><div class="v">${val[i]}</div></div>`).join("") +
+    `<div class="res"><span class="tiny" style="color:#b9c2bc">A, soil lost</span><b>${A < 10 ? A.toFixed(1) : Math.round(A)}</b><span class="tiny" style="color:#b9c2bc">t / ha / yr</span></div>`;
+  $("rsl").innerHTML = F.map(([k, n], i) => `<div class="ctl"><span>${k} · ${n}</span><input type="range" data-i="${i}" min="0" max="1000" value="${toS(i)}"><output>${val[i]}</output></div>`).join("");
+  document.querySelectorAll("#rsl input").forEach(el => el.addEventListener("input", e => { const i = +e.target.dataset.i; val[i] = fromS(i, +e.target.value); rusle(); }));
+}
+// log sliders so small factors are easy to set
+const toS = i => { const [lo, hi] = F[i][3]; return Math.round(1000*Math.log(val[i]/lo)/Math.log(hi/lo)); };
+const fromS = (i, s) => { const [lo, hi] = F[i][3]; const v = lo*Math.pow(hi/lo, s/1000); return +v.toPrecision(2); };
+$("presets").innerHTML = Object.keys(PRE).map(k => `<button class="btn" data-p="${k}">${k}</button>`).join("");
+$("presets").addEventListener("click", e => { const k = e.target.dataset.p; if (k) { PRE[k].forEach((v, i) => val[i] = v); rusle(); } });
+rusle();
+
+/* ---------- scale picture ---------- */
+(function(){
+  const s = $("scaleSvg"), W = 280, px100 = W / 110;   // 11 km ≈ 110 × 100 m
+  s.innerHTML = `<rect x="10" y="10" width="${W}" height="${W}" fill="#dbe7f5" stroke="#2f6cae" stroke-width="2"/>
+    <text x="150" y="40" text-anchor="middle" font-size="14" fill="#2f6cae" font-family="Mukta,sans-serif">one rain square · 11 km</text>
+    <rect x="148" y="150" width="${Math.max(px100,2.5)}" height="${Math.max(px100,2.5)}" fill="#cf1f2a"/>
+    <line x1="152" y1="152" x2="200" y2="200" stroke="#cf1f2a"/><text x="204" y="210" font-size="13" fill="#cf1f2a" font-family="Mukta,sans-serif">one map square · 100 m</text>`;
+})();
+
+/* ---------- AUC pair game ---------- */
+// illustrative scores: slide squares ~ higher. Gap chosen so the long-run AUC is about 0.86
+const z = () => { let u = 0; for (let i = 0; i < 12; i++) u += rnd(); return u - 6; };
+let pairs = 0, wins = 0;
+function draw(n){
+  let last;
+  for (let i = 0; i < n; i++) {
+    const y = 0.5 + 0.17*z() + 0.13, nn = 0.5 + 0.17*z() - 0.13;
+    pairs++; if (y > nn) wins++; last = [y, nn];
+  }
+  const [y, nn] = last.map(v => Math.min(.99, Math.max(.01, v)));
+  $("pairOut").innerHTML = `slide square: <b class="mono">${y.toFixed(2)}</b> · no-slide square: <b class="mono">${nn.toFixed(2)}</b> → ${y > nn ? "✅ ranked right" : "❌ ranked wrong"}<br><span class="tiny">${wins} right of ${pairs} pairs</span>`;
+  $("aucN").textContent = (wins/pairs).toFixed(2);
+}
+$("pairBtn").addEventListener("click", () => draw(1)); $("pair100").addEventListener("click", () => draw(100));
+
+/* ---------- CV pictures ---------- */
+function cv(id, block){
+  const svg = $(id), n = 10, s = 13; let h = "";
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+    const test = block ? (r >= 5 && c >= 5) : rnd() < 0.25;
+    h += `<rect x="${c*s}" y="${r*s}" width="${s-1}" height="${s-1}" fill="${test ? '#cf1f2a' : '#2f6cae'}" opacity="${test ? 1 : .55}"/>`;
+  }
+  svg.innerHTML = h;
+}
+cv("cvRand", false); cv("cvBlock", true);
+
+/* ---------- percentile max ---------- */
+$("maxBtn").addEventListener("click", () => {
+  const d = [...Array(97)].map(Math.random), m = Math.max(...d), avg = d.reduce((a, b) => a + b) / 97;
+  $("maxOut").innerHTML = `<div class="big-n" style="color:var(--accent)">${m.toFixed(2)}</div><span class="small">the highest of 97, on a perfectly ordinary day. The average point was ${avg.toFixed(2)}. Try again: it's almost always 0.95 or more.</span>`;
+});
+
+/* ---------- words ---------- */
+const WORDS = [
+  ["Susceptibility","WHERE something can happen, from the ground alone. Carries no date."],
+  ["Trigger","WHAT sets it off, almost always rain. Changes daily."],
+  ["Pore pressure","Water between soil grains pushing them apart. It cuts grip. That's why rain triggers slides."],
+  ["Antecedent rain","Rain that fell on earlier days, which leaves the ground already wet."],
+  ["Percentile","\"Wetter than X% of days on record here.\" Not a chance of anything."],
+  ["DEM","Digital Elevation Model: a grid of ground heights. Slope and drainage come from it."],
+  ["Flow accumulation","How many squares drain through this one. Big = a stream."],
+  ["Catchment","All the land that drains to one point on a river."],
+  ["HAND","Height Above Nearest Drainage. Low HAND floods first."],
+  ["Danger level","The official river height CWC calls a flood at that gauge."],
+  ["Lead time","How far ahead a forecast speaks. Big rivers: days. Hill streams: hours."],
+  ["RUSLE","A = R·K·LS·C·P. Soil lost per hectare per year, if untreated."],
+  ["Backscatter","The radar echo. Calm water sends it away, so water looks dark."],
+  ["AUC","Pick a yes and a no; how often the model ranks the yes higher. 0.5 = coin toss."],
+  ["Calibrated","When it says 20%, about 20% happen."],
+  ["Base rate","How common the event is anyway. Every chance should be read against it."],
+  ["Spatial CV","Testing on whole blocks of land the model never saw."],
+  ["Leakage","When the answer sneaks into training, so the score is too good."],
+  ["Out of distribution","Asking a model about places unlike anything it trained on."],
+  ["Pre-registration","Writing the pass/fail rule down before running the test, so you can't move the goalposts."]
+];
+$("words").innerHTML = WORDS.map(([w, d]) => `<div class="flip"><div class="in"><div class="f"><div class="big" style="font-size:24px">${w}</div><div class="tiny">tap to flip</div></div><div class="b">${d}</div></div></div>`).join("");
+document.querySelectorAll("#words .flip").forEach(el => el.addEventListener("click", () => el.classList.toggle("on")));
+
+/* ---------- papers ---------- */
+const PAPERS = [
+  ["Reichenbach et al. 2018, <i>A review of statistically-based landslide susceptibility models</i>, Earth-Science Reviews","the map of methods (section 2's ladder) and the common mistakes. Ours is a tree model with block testing, which is the better-practice side of their review."],
+  ["Guzzetti et al. 2007 / 2008, rainfall thresholds for landslides","the classic rain line. Explains why ours came out backwards in the monsoon, and why we use a sliding score."],
+  ["Nobre et al. 2011, <i>Height Above the Nearest Drainage</i>, Journal of Hydrology","HAND itself. FloodSense's WHERE half is built on this idea."],
+  ["Nearing et al. 2024, <i>Global prediction of extreme floods in ungauged watersheds</i>, Nature","Google's global river model. What it does well, and why it can't read the river's latest level."],
+  ["Renard et al. 1997, USDA Agriculture Handbook 703 (RUSLE)","the five factors. Read the chapter openings only, not the tables."],
+  ["ESA Sentinel-1 / Sentinel-2 and NASA GPM IMERG product pages","what each satellite sees, square size, how often it passes."]
+];
+$("papers").innerHTML = PAPERS.map(([t, w], i) => `<div class="paper"><div class="t"><label><input type="checkbox" data-id="p${i}" ${S["p"+i]?"checked":""}> ${t}</label></div><div class="small"><b>Why:</b> ${w}</div></div>`).join("");
+$("papers").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+/* ---------- quiz ---------- */
+const QUIZ = [
+  ["Why does rain trigger landslides?","GSI geologist",
+   "Water fills the gaps between soil grains and pushes them apart (pore pressure). That cuts friction, so the grip holding the slope drops below gravity's pull."],
+  ["Why didn't you use a classic rainfall threshold line?","landslide researcher",
+   "On our data the classic intensity–duration line came out backwards, because in the monsoon a 'long storm' is just the monsoon. The better 'total rain vs duration' line sits under 89% of rainy-day slides but fires on 87–165 days a year. So we keep it only as the physics explanation and forecast with a sliding score: how unusual the last 3 and 7 days of rain are for that exact spot."],
+  ["So do you use the rainfall threshold line at all?","landslide researcher",
+   "It's fitted and saved (E = 0.0115·D^1.644, under 89% of rainy-day slides) as the physics explanation and the yardstick, but the live forecast doesn't use it: it fires on 87–165 days a year here, and 74% of ordinary rainy monsoon days sit above it. As a sliding score it ranks slide days at only 0.649, against 0.768 for the 3 + 7-day own-history score."],
+  ["How do you know your rain score is any good, and what would replace it?","ML reviewer",
+   "0.768 on 72 dated slides vs 20,000 ordinary monsoon days (range about 0.70–0.82), 0.69 on 583 Himalayan slides with different rain data, and the backtest shows it raised days before slides. Weak spot: it was chosen on those same 72 events, so it needs fresh ones (GSI's field reports, road-block logs). A replacement must beat 0.768 on Arunachal events it never saw, with pass/fail rules written before the test."],
+  ["Why compare rain to each place's own history?","APSAC scientist",
+   "Arunachal ranges from about 800 to 4,200 mm of rain a year. A single millimetre cut-off would alarm the wet south every day and never the dry north. 'Unusual for here' fixes that."],
+  ["Why is a high AUC on a susceptibility map not proof that a forecast works?","ML reviewer",
+   "AUC on the map only shows it ranks WHERE well. It says nothing about WHEN, and the timing part rests on only 72 dated slides. AUC also says nothing about the size of the chance (calibration). And with clustered training data it can't see places unlike the training set."],
+  ["Why is the max of 97 percentile scores not a probability?","ML reviewer",
+   "Each point's percentile is like a random draw on an ordinary day, so the highest of 97 is about 0.99 by pure arithmetic. It carries almost no weather information. And a percentile is 'wetter than X% of days', never a chance of a landslide."],
+  ["Why does radar beat optical satellites for flood mapping in the monsoon?","APSAC scientist",
+   "Optical satellites are cameras, and monsoon floods happen under cloud. Radar sends its own pulse, sees through cloud and at night, and calm water reflects it away, so water shows up dark."],
+  ["What is HAND, and why does it matter for floods?","CWC hydrologist",
+   "Height Above Nearest Drainage: how high a square sits above the stream it drains to, worked out from the height map. Low-HAND ground floods first. FloodSense's WHERE half is built on it and on river size and valley shape."],
+  ["A reviewer says 0.86 is weak, because other papers report 0.95. Answer.","reviewer",
+   "Most 0.9+ results use a random split, which leaks near-identical neighbouring squares into the test. We test on whole blocks of land the model never saw, 5 times over: 0.859 ± 0.016. The numbers aren't comparable. Ask which split they used."],
+  ["What does 'calibrated' mean? Which of our numbers are?","CWC engineer",
+   "Of all the times it says 20%, about 20% happen. FloodSense's river chances at gauged rivers are calibrated. SlideSense levels are not chances at all: they are ranks with a measured 'times the usual'."],
+  ["Explain RUSLE, and why your numbers say 'if untreated'.","soil conservation officer",
+   "A = R × K × LS × C × P: rain strength × how easily the soil washes × slope × ground cover × protection, in tonnes per hectare per year. Protection (bunds, terraces) is unknown until the department shares its records, so P = 1, meaning 'if nothing has been done here'."],
+  ["Why trees and not deep learning?","investor / ML reviewer",
+   "We have 35,744 mapped slides and a table of ~20 facts per square. On tables that size, gradient-boosted trees match or beat deep nets, train in minutes, and explain each score. Our real shortage is dated slides, and deep learning doesn't fix that."],
+  ["A model gets a better test score. Why might you still reject it?","you",
+   "The flood WHERE model with land cover scored 0.94, but its top squares were glacial lakes far above any river. The tests were all drawn from the lowlands, so they never checked a mountain. Out of distribution: a good score isn't proof. Check the map makes physical sense."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+
+function meter(){
+  const ids = [...document.querySelectorAll("[data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

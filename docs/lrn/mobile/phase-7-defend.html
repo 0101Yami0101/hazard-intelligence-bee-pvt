@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 7 · Defending it in the room — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.room{background:var(--sheet);border:2px solid var(--rule);border-top-width:6px;border-radius:12px;padding:12px 14px;font-size:14.5px}
+.room > b{font-family:var(--display);font-weight:400;font-size:22px;display:block;line-height:1.1}
+.room .who{font-size:13px;color:var(--ink-3);margin-bottom:6px}
+.room .lab{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);margin-top:8px;display:block}
+.room ul{margin:2px 0 0;padding-left:18px}
+@media(max-width:760px){.rooms{grid-template-columns:1fr}}
+/* fallback lines */
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.line{background:var(--ink);color:#eef3ef;border-radius:10px;padding:10px 12px;font-size:14.5px}
+.line > b{display:block;font-size:16px;color:#fff}
+.line span{color:#a9bbb0;font-size:12.5px}
+@media(max-width:760px){.lines{grid-template-columns:1fr}}
+/* say / ask / keep */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.zone{border-radius:12px;padding:12px 14px;font-size:14.5px;border:2px solid}
+.zone > b{font-size:17px;display:block;margin-bottom:4px}
+.zone ul{margin:0;padding-left:18px}
+.zone.free{border-color:var(--built);background:var(--built-soft)}
+.zone.ask{border-color:var(--partial);background:var(--partial-soft)}
+.zone.keep{border-color:var(--accent);background:var(--accent-soft)}
+@media(max-width:760px){.zones{grid-template-columns:1fr}}
+/* number cards */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nc{perspective:900px;min-height:178px;cursor:pointer}
+.nc .in{position:relative;width:100%;height:100%;min-height:178px;transition:transform .45s;transform-style:preserve-3d}
+.nc.open .in{transform:rotateY(180deg)}
+.nc .f,.nc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--rule);overflow:auto}
+.nc .f{background:var(--sheet);display:flex;flex-direction:column;justify-content:space-between}
+.nc .f .v{font-family:var(--display);font-size:34px;line-height:1}
+.nc .f .t{font-size:14px}
+.nc .f .h{font-size:11.5px;color:var(--ink-3);font-family:var(--mono)}
+.nc .b{background:var(--sheet-2);transform:rotateY(180deg);font-size:12.5px;line-height:1.35}
+.nc .b .src{font-family:var(--mono);font-size:11px;color:var(--flood);display:block;margin-bottom:4px;overflow-wrap:anywhere}
+.nc .b .not{display:block;margin-top:5px;color:var(--accent)}
+.nc.knew .f{border-color:var(--built);box-shadow:inset 0 0 0 2px var(--built-soft)}
+.nc .tick{font-size:11px;margin-top:6px;display:inline-block;border:1px solid var(--rule);border-radius:99px;padding:1px 8px;background:var(--sheet)}
+@media(max-width:900px){.nums{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.nums{grid-template-columns:1fr}}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;border-radius:99px;padding:0 7px;margin-right:4px}
+.tag.free{background:var(--built-soft);color:var(--built)}
+.tag.ask{background:var(--partial-soft);color:var(--partial)}
+.tag.keep{background:var(--accent-soft);color:var(--accent)}
+/* twin counts */
+.twin{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.6fr;gap:6px;font-size:14px;align-items:stretch;margin-bottom:6px}
+.twin > div{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:7px 10px}
+.twin .k{font-weight:600}
+.twin .a{font-family:var(--mono);font-size:13px}
+.twin.hd > div{background:none;border:none;font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:0 10px}
+@media(max-width:700px){.twin{grid-template-columns:1fr 1fr}.twin .k,.twin .w{grid-column:1/-1}.twin.hd{display:none}}
+/* limits sorter */
+.filt{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.filt button{font:inherit;font-size:14px;border:2px solid var(--rule);background:var(--sheet);border-radius:99px;padding:4px 12px;cursor:pointer}
+.filt button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.lim{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;font-size:14.5px;margin-bottom:6px}
+.lim .lift{font-size:12.5px;color:var(--ink-2);display:block}
+.lim .tags{text-align:right;white-space:nowrap}
+.tag.phys{background:var(--bone-bg);color:var(--bone)}
+.tag.budget{background:var(--flood-bg);color:var(--flood)}
+.tag.paid{background:var(--slide-bg);color:var(--slide)}
+@media(max-width:600px){.lim{grid-template-columns:1fr}.lim .tags{text-align:left}}
+/* never say */
+.swap{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:14.5px;margin-bottom:6px}
+.swap .no{background:var(--accent-soft);border-radius:8px;padding:7px 10px;color:var(--accent);text-decoration:line-through;text-decoration-color:rgb(207 31 42/.5)}
+.swap .yes{background:var(--built-soft);border-radius:8px;padding:7px 10px}
+.swap .ar{text-align:center;color:var(--ink-3);font-weight:700}
+/* grilling */
+.ptabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.ptabs button{font:inherit;font-size:15px;border:2px solid var(--rule);background:var(--sheet);border-radius:10px;padding:6px 14px;cursor:pointer}
+.ptabs button.on{border-color:var(--ink);box-shadow:var(--shadow);font-weight:600}
+.drill{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--ink);color:#fff;border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.drill button{font:inherit;border:0;border-radius:8px;padding:6px 14px;cursor:pointer;background:#fff;color:var(--ink);font-weight:600}
+.drill .clock{font-family:var(--mono);font-size:22px;min-width:64px}
+.drill .dq{flex:1 1 260px;font-size:16px}
+.gq{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px}
+.gq .q{padding:10px 14px;cursor:pointer;display:grid;grid-template-columns:26px 1fr;gap:6px;font-weight:600}
+.gq .a{display:none;padding:0 14px 12px 46px;font-size:14.5px}
+.gq.open .a{display:block}
+.gq .a .say{background:var(--built-soft);border-radius:8px;padding:8px 10px;margin:4px 0}
+.gq .a .trap{background:var(--accent-soft);border-radius:8px;padding:6px 10px;margin:4px 0;font-size:13.5px}
+.gq .a .go{font-size:13px;color:var(--ink-2)}
+.gq.got{border-left:5px solid var(--built)}
+.gq.miss{border-left:5px solid var(--accent)}
+.gq .grade button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px;margin:6px 6px 0 0;cursor:pointer}
+/* rivals */
+.vs{display:grid;grid-template-columns:120px repeat(3,1fr);gap:4px;font-size:14px}
+.vs > div{background:var(--sheet);padding:7px 10px;border-radius:6px}
+.vs .h{background:none;font-weight:700}
+.vs .us{background:var(--built-soft)}
+.vs .rl{background:none;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;align-items:center}
+@media(max-width:700px){.vs{grid-template-columns:80px repeat(3,1fr);font-size:12.5px}.vs > div{padding:5px 6px}}
+/* ensemble */
+.ens{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;gap:6px;align-items:center;text-align:center}
+.ens .box{border:2px dashed var(--planned);border-radius:12px;padding:10px;background:var(--sheet)}
+.ens .box > b{display:block}
+.ens .box .m{font-size:12.5px;border-radius:6px;margin:3px 0;padding:2px 6px;background:var(--planned-soft)}
+.ens .box .m.live{background:var(--built-soft);color:var(--built);font-weight:600}
+.ens .op{font-family:var(--display);font-size:30px;color:var(--ink-3)}
+.ens .res{background:var(--ink);color:#fff;border-radius:12px;padding:16px 10px;font-family:var(--display);font-size:22px}
+@media(max-width:700px){.ens{grid-template-columns:1fr}.ens .op{font-size:22px}}
+.chk label{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;margin-bottom:6px;font-size:15px;cursor:pointer}
+.chk label input{margin-top:5px}
+.chk .w{font-size:12.5px;color:var(--ink-3);display:block}
+.code-list label{display:grid;grid-template-columns:22px 300px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
+@media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+.asks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.asks .card ul{margin:4px 0 0;padding-left:18px;font-size:14px}
+@media(max-width:760px){.asks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div>1 Science</div><div>2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div>6 App &amp; ops</div><div class="now">7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 7 · Days 27–30 · about 16 hours</div>
+  <h1>Defending it in the room</h1>
+  <div class="goal">🎯 <span>Answer an <b>APSAC</b>, <b>GSI</b> or <b>CWC</b> scientist calmly: <b>the right number, where it comes from, what it doesn't mean</b>, and where to stop.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · Three rooms</a><a href="#s2">2 · Where the line is</a><a href="#s3">3 · Numbers card</a>
+    <a href="#s4">4 · Twin counts</a><a href="#s5">5 · Limits card</a><a href="#s6">6 · Never say</a>
+    <a href="#s7">7 · The grilling</a><a href="#s8">8 · Rivals</a><a href="#s9">9 · What's next</a>
+    <a href="#s10">10 · Stale lines</a><a href="#s11">11 · Before the meeting</a><a href="#s12">12 · Your exercises</a>
+  </div>
+  <p class="tiny" style="margin-top:12px">✔ Every number here was re-read on 3 Nov 2026 from <code>webapp/assets/landslide/metrics.json</code>, <code>reports/landslide_times_usual.json</code>, the live flood snapshot (issued 2 Nov), <code>catalogue.json</code> and <code>reports/erosion_priority_assam*.csv</code>, then cross-read with BEYOND_PRESENTATION.md. Where the question bank is out of date, section 10 says so.</p>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>Three rooms, three different worries</h2>
+  <p class="sub">Same product, different first question. Know what each room is guarding.</p>
+  <div class="rooms">
+    <div class="room" style="border-top-color:var(--slide)"><b>APSAC</b><div class="who">state remote sensing centre · satellite and map people</div>
+      <span class="lab">they worry about</span><ul><li>false precision (100 m map, 11 km rain)</li><li>how the maps were checked</li><li>satellite choices, clouds</li></ul>
+      <span class="lab">bring</span><ul><li>the shared grid and its rules</li><li>the radar flood test</li><li>tests on unseen 50 km blocks</li></ul></div>
+    <div class="room" style="border-top-color:var(--soil)"><b>GSI</b><div class="who">Geological Survey of India · landslide geologists</div>
+      <span class="lab">they worry about</span><ul><li>their inventory being misused</li><li>timing from too few dated slides</li><li>rain thresholds, geology</li></ul>
+      <span class="lab">bring</span><ul><li>where × when, kept apart</li><li>the threshold lines we tried</li><li>"× the usual", never a chance</li></ul></div>
+    <div class="room" style="border-top-color:var(--flood)"><b>CWC</b><div class="who">Central Water Commission · hydrologists</div>
+      <span class="lab">they worry about</span><ul><li>their danger levels, their gauges</li><li>bad readings</li><li>skill vs "river stays put"</li></ul>
+      <span class="lab">bring</span><ul><li>"20% means 20%" table</li><li>the spike filter</li><li>the level line vs no-change</li></ul></div>
+  </div>
+  <h3 style="margin:20px 0 8px">The six lines to fall back on</h3>
+  <div class="lines">
+    <div class="line"><b>Do the hard part once.</b><span>why a backbone, cost, speed, the next product</span></div>
+    <div class="line"><b>A product is a question: where × when.</b><span>how a forecast works, a new hazard</span></div>
+    <div class="line"><b>Written down before, checked after.</b><span>accuracy, trust, proof</span></div>
+    <div class="line"><b>Every number says what it is.</b><span>and says so when unsure</span></div>
+    <div class="line"><b>An area and days today. Finer with records. One slope with sensors.</b><span>any "can it…" — give the limit and what lifts it</span></div>
+    <div class="line"><b>We give the forecast. The warning stays with the authority.</b><span>responsibility</span></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>Where the line is</h2>
+  <div class="zones">
+    <div class="zone free"><b>✅ Say freely</b><ul><li>the idea, the five steps, the rules we keep</li><li>what each product asks, gives, reads</li><li>how to read the screen</li><li>29 sources · 8.2 million squares · 26 years</li><li>what's planned; every limit with what lifts it</li></ul></div>
+    <div class="zone ask"><b>🟡 Only when asked</b><ul><li>tested figures (exactly, from the card)</li><li>kinds of agencies the data comes from</li><li>the method family, in one sentence</li><li>rounded counts: landslides mapped, gauges read</li><li>what we tried that failed</li></ul></div>
+    <div class="zone keep"><b>🔒 Keep</b><ul><li>how each source is reached, cleaned, checked</li><li>the exact facts per square</li><li>how examples are chosen; the settings</li><li>how a score becomes an honest %</li><li>the records and the code</li></ul></div>
+  </div>
+  <div class="tip" style="margin-top:12px">🗣️ <b>To hold the line politely:</b> "I can explain the logic fully. The exact recipe is the part we keep, as any company would." · "Happy to go deeper in a technical session, with a simple confidentiality note." · "I don't have that figure with me. I'll send it today."</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>Your numbers card</h2>
+  <p class="sub">The roadmap's exercise: <b>name the source before you flip.</b> Tap a card to flip it; tap <i>"I knew it"</i> on the back when you did.</p>
+  <div class="nums" id="nums"></div>
+  <p class="tiny" style="margin-top:8px">Tags: <span class="tag free">say freely</span><span class="tag ask">only if asked</span>. Flood track-record numbers move daily: read them off the screen on the day.</p>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>Twin counts: same thing, different numbers</h2>
+  <p class="sub">The fastest way to look unprepared is to quote one count while the screen shows another. Know why each pair differs.</p>
+  <div class="twin hd"><div>what</div><div>count A</div><div>count B</div><div>why they differ</div></div>
+  <div class="twin"><div class="k">Mapped landslides</div><div class="a">35,744 unique outlines<br><span class="tiny">DESIGN.md</span></div><div class="a">37,788 → 91,610 squares<br><span class="tiny">metrics.json</span></div><div class="w">A: older count, GSI + Bhuvan with overlaps removed. B: what actually trains the model (all four sets joined). Say <b>"about 37,000"</b>.</div></div>
+  <div class="twin"><div class="k">Dated landslides</div><div class="a">~90 dated<br><span class="tiny">NASA catalogue: 99 points</span></div><div class="a">72 · 84<br><span class="tiny">IMERG · Open-Meteo</span></div><div class="w">90 exist. 72 survive the filters on 11 km IMERG; 84 on Open-Meteo, whose grid covers a few more.</div></div>
+  <div class="twin"><div class="k">Verified floods</div><div class="a">2,185<br><span class="tiny">FLOOD_MODULE.md</span></div><div class="a">2,180<br><span class="tiny">live snapshot</span></div><div class="w">The record was rebuilt after the docs were written. Quote the snapshot.</div></div>
+  <div class="twin"><div class="k">Flood timing</div><div class="a">0.879<br><span class="tiny">docs, Sep</span></div><div class="a">0.896<br><span class="tiny">snapshot: 43 floods, 1,035 days</span></div><div class="w">Same test, later model. 0.706→0.845 is a different step (old record → verified record).</div></div>
+  <div class="twin"><div class="k">Level-line gauges</div><div class="a">17 CWC<br><span class="tiny">FLOOD_MODULE.md</span></div><div class="a">16 on 2 Nov<br><span class="tiny">snapshot</span></div><div class="w">17 carry one; Yinkiang's gauge is offline, so 16 drew it that day.</div></div>
+  <div class="twin"><div class="k">Live record</div><div class="a">~4,500 / 2,100<br><span class="tiny">question bank, 12 Oct</span></div><div class="a">8,288 / 4,178<br><span class="tiny">snapshot, 2 Nov</span></div><div class="w">It grows every day. Never quote it from memory.</div></div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>Your limits card: every limit with what lifts it</h2>
+  <p class="sub">Never say a free-tier limit as if it were permanent. Name the tier that lifts it, and keep <b>physics</b> apart from <b>budget</b>.</p>
+  <div class="filt" id="filt"></div>
+  <div id="lims"></div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>Never say → say instead</h2>
+  <div id="swaps"></div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>The grilling: hostile questions by room</h2>
+  <p class="sub">Pick a room. Use <b>Drill</b> for a random question with a 90-second clock: answer out loud, then open the card and grade yourself.</p>
+  <div class="ptabs" id="ptabs"></div>
+  <div class="drill"><button id="dgo">🎲 Drill</button><span class="clock" id="clock">1:30</span><span class="dq" id="dq">Press Drill for a question from this room.</span></div>
+  <div id="gqs"></div>
+  <p class="score" id="score" style="margin-top:6px"></p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>Rivals: who else is in the room's head</h2>
+  <div class="vs">
+    <div class="h"></div><div class="h us">Us</div><div class="h">iIoTs (IIT Mandi)</div><div class="h">Alertis (Dehradun)</div>
+    <div class="rl">what</div><div class="us">statewide forecast from data, no hardware</div><div>sensor boxes on chosen slopes</div><div>sensor pods, landslide + flood + fire</div>
+    <div class="rl">covers</div><div class="us">every square of the state</div><div>~60 sites, one slope each</div><div>sites they install</div>
+    <div class="rl">floods</div><div class="us">yes, 32 gauges, graded daily</div><div>none found</div><div>claimed, no proof shown</div>
+    <div class="rl">proof</div><div class="us">replays + live record since 21 Sep</div><div>Kotropi 2018, real save; papers</div><div>none; founded Oct 2025</div>
+    <div class="rl">trust</div><div class="us">none yet</div><div>MoUs, awards, PM visit</div><div>none found</div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🤝 <b>Say:</b> "They wire the slopes someone already chose. We say which slopes, out of millions, deserve wiring. We're complementary." <b>Don't</b> run anyone down; say what they have that we don't (a real save, years of trust).</div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>What's next: the plan, and the asks</h2>
+  <p class="sub">The model plan (ENSEMBLE_STRATEGY.md). <b>Nothing past one method per box is built.</b> Grey = planned.</p>
+  <div class="ens">
+    <div class="box"><b>WHERE panel</b><div class="m live">trees on 34 facts</div><div class="m">other ML</div><div class="m">deep learning ×2</div><div class="m">referee (blends)</div></div>
+    <div class="op">×</div>
+    <div class="box"><b>WHEN panel</b><div class="m live">percentile rule / day model</div><div class="m">other ML</div><div class="m">deep learning ×2</div><div class="m">referee (blends)</div></div>
+    <div class="op">=</div>
+    <div class="res">hazard</div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card"><div class="kicker">rule 1</div><b>Judge the team, not the player</b><div class="small">A model joins if the <i>whole panel</i> gets better on held-out data, even if it's weak alone.</div></div>
+    <div class="card"><div class="kicker">rule 2</div><b>Referee as simple as the proof allows</b><div class="small">Few dated events → a simple blend. Complexity grows only with records.</div></div>
+    <div class="card"><div class="kicker">rule 3</div><b>Retrain on a schedule</b><div class="small">Each season's graded record becomes new examples.</div></div>
+  </div>
+  <h3 style="margin:20px 0 8px">The asks, by room (statewide, not one valley)</h3>
+  <div class="asks">
+    <div class="card"><div class="kicker" style="color:var(--slide)">APSAC</div><ul><li>glacial-lake and wetland maps (NWIA), bulk</li><li>2.5 m imagery access (SISDP-U)</li><li>full-resolution land-cover sources</li><li>LiDAR for priority districts (they have the skill)</li></ul></div>
+    <div class="card"><div class="kicker" style="color:var(--soil)">GSI / PWD / BRO</div><ul><li>dated landslide records with places</li><li><b>road-block logs</b> (PWD, BRO, PMGSY): the best route to more dated slides</li><li>post-disaster study reports</li></ul></div>
+    <div class="card"><div class="kicker" style="color:var(--flood)">CWC / dam operators</div><ul><li>danger levels not yet published (7 of our 32 have official ones)</li><li>river cross-sections → depth</li><li>reservoir levels and release schedules</li></ul></div>
+  </div>
+  <div class="tip" style="margin-top:10px">🗣️ <b>Frame it:</b> "You'd be giving records to your own forecast. Lined up on the map, they sharpen every product for your district, and the terms stay yours."</div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Lines in the question bank that are now out of date</h2>
+  <p class="sub">BEYOND_PRESENTATION.md is dated 12 Oct. Since then:</p>
+  <div class="stale"><div class="old">"It runs from one machine today" (a weak spot)<span class="src">§11.7</span></div><div class="ar">→</div><div class="new">Runs in the cloud every morning since <b>20 Oct</b>. The honest weak spot now: <b>nobody is alerted if it fails</b>.</div></div>
+  <div class="stale"><div class="old">"about 4,500 and 2,100" river forecasts<span class="src">Numbers to have ready</span></div><div class="ar">→</div><div class="new"><b>8,288</b> written down, <b>4,178</b> checked (2 Nov). Read it off the screen.</div></div>
+  <div class="stale"><div class="old">Soil erosion as hollow dots (planned)<span class="src">§6.8</span></div><div class="ar">→</div><div class="new">SoilSense is built and on the public app (31 Oct). The public page and deck still don't name the state (the user's rule, 12 Oct).</div></div>
+  <div class="stale"><div class="old">"Any date for the server move: no date yet"<span class="src">To decide before the meeting</span></div><div class="ar">→</div><div class="new">Done. Only the PC's backup task is left to switch off.</div></div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>Decide before the meeting</h2>
+  <p class="sub">Nothing written anywhere answers these. Agree one line each with the team.</p>
+  <div class="chk" id="dec"></div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Your exercises</h2>
+  <div class="chk" id="ex"></div>
+  <div class="cmdlist">
+    <div class="cmd"><span>Play an APSAC remote-sensing scientist. Grill me for an hour on SlopeSense, hostile questions only, one at a time. Grade each answer against the docs and tell me what I got wrong.</span><button onclick="cp(this)">copy</button></div>
+    <div class="cmd" style="margin-top:6px"><span>Play a CWC hydrologist. Grill me for an hour on FloodSense, hostile questions only, one at a time. Grade each answer against the live snapshot and the docs.</span><button onclick="cp(this)">copy</button></div>
+  </div>
+  <h3 style="margin:22px 0 8px">Read</h3>
+  <div class="card code-list" id="docList"></div>
+  <div class="tip ok" style="margin-top:14px">🏁 <b>That's the whole path.</b> Go back to any phase's quiz before a meeting; the 10-day fast track in the roadmap says which.</div>
+</section>
+
+<footer>Phase 7 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Lines from BEYOND_PRESENTATION.md; rivals from COMPETITOR_IIOTS.md and COMPETITOR_ALERTIS.md; plan from ENSEMBLE_STRATEGY.md; asks from GOV_DATA_REQUEST_LIST.md and CEO_PILOT_NEXT_STEPS.md. Numbers re-read from the files named on each card.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase7";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+function cp(b){ navigator.clipboard.writeText(b.previousElementSibling.textContent); b.textContent = "copied"; }
+
+/* numbers card: [value, what, zone, source, means, not] */
+const NUMS = [
+  ["29","sources lined up","free","webapp/assets/backbone/catalogue.json (n_sources)","29 data sources, about 308 GB held, on one grid.","Not 29 partners or agreements."],
+  ["8.2 M","100 m squares, Arunachal","free","the shared grid (Phase 2) · grid.json","Every fact sits on the same 100 m squares.","Not a 100 m forecast: rain is ~11 km (history) and ~22 km (live)."],
+  ["26 yrs","of daily rain everywhere","free","IMERG archive, 2000-06-01 → now, 9,555 days","Satellite rain for every place, every day.","Not ground gauges, and not the live rain (that's Open-Meteo)."],
+  ["2 files","the first flood module added","free","BEYOND_PRESENTATION §6.5","Everything else came from the backbone.","Not \"floods were easy\": the verified flood record took weeks."],
+  ["~37,000","mapped landslides","ask","metrics.json labels: 37,788 outlines → 91,610 squares","What teaches WHERE slopes fail.","Not dated: none of GSI's outlines carry a date."],
+  ["~90","dated landslides","ask","NASA Global Landslide Catalog: 99 points, 90 dated","All we have to learn WHEN. 72 used on IMERG, 84 on Open-Meteo.","Not enough for machine learning: a fitted model lost to the simple rule."],
+  ["6 in 7","landslide place ranked above a quiet one","ask","metrics.json: AUC 0.860 ± 0.016, 50 km test blocks","Ranking on ground the model never saw.","Not \"86% accurate\" and not a chance."],
+  ["2.7× · 10×","landslides at High · Very High","ask","reports/landslide_times_usual.json (84 slides)","vs a usual day at the same place. Ranges: 1.4–4.4 and 6.5–13.8.","Not a chance of a landslide. Very Low (0.22×) is not \"safe\"."],
+  ["0.768","rain-timing score","ask","metrics.json trigger: 72 events, ±0.098","Mean of the 3-day and 7-day rain percentiles, nothing fitted. 0.764 on live-source rain.","Not graded live: dated slides arrive too slowly to grade forecasts yet."],
+  ["20% = 20%","at a gauged river","ask","snapshot method.gauge.reliability","Said 25–50%: averaged 36.7%, happened 37.9%.","Not true of the \"near here\" outlook, which is approximate."],
+  ["61% · 68%","caught · right, warning at 25%","ask","snapshot method.gauge (replay, 1 day ahead)","Of floods at gauges, 61% warned; of warnings, 68% came true.","Not a live result: past years replayed."],
+  ["2,180","verified floods","ask","snapshot method.record","Built from the flood map archive, a validated radar test and gauges.","Not every flood: small floods in clouded valleys are missed."],
+  ["8,288 · 4,178","river forecasts written · checked","ask","snapshot track_record (2 Nov)","Every forecast written down before its day. 3 warnings so far, all one faulty reading.","Not a monsoon test: the record began 21 Sep, as the rains ended."],
+  ["2 days","level line, 17 CWC gauges","ask","FLOOD_MODULE.md · snapshot method.level","Typical miss 0.13 m (1 day), 0.22 m (2 days) vs 0.17 and 0.26 if the river stayed put.","Not a flood depth on the ground."],
+  ["32","river gauges read","ask","snapshot rivers: 18 CWC + 14 NWDP","7 have official danger levels; the rest come from each river's own record.","Not 32 rain gauges."],
+  ["703 · 35 · 2,589","catchments · districts · places (Assam)","ask","reports/erosion_priority_assam*.csv · SOILSENSE.md","Ranked for treatment, each with how firm its rank is.","Not field-checked yet. Public material doesn't name the state."]
+];
+$("nums").innerHTML = NUMS.map(([v, t, z, src, m, n], i) =>
+  `<div class="nc${S["n"+i] ? " knew" : ""}" data-i="${i}"><div class="in">
+    <div class="f"><span class="h">${z === "free" ? '<span class="tag free">say freely</span>' : '<span class="tag ask">only if asked</span>'}</span><div><div class="v">${v}</div><div class="t">${t}</div></div><span class="h">source? tap to check</span></div>
+    <div class="b"><span class="src">${src}</span>${m}<span class="not">✗ ${n}</span><span class="tick" data-k="${i}">${S["n"+i] ? "✓ I knew it" : "I knew it?"}</span></div>
+  </div></div>`).join("");
+$("nums").addEventListener("click", e => {
+  const t = e.target.closest(".tick");
+  if (t) { const k = "n" + t.dataset.k; S[k] = !S[k]; t.textContent = S[k] ? "✓ I knew it" : "I knew it?"; t.closest(".nc").classList.toggle("knew", S[k]); save(); e.stopPropagation(); return; }
+  const c = e.target.closest(".nc"); if (c) c.classList.toggle("open");
+});
+
+/* limits: [limit, lifts it, tier, kind] tier: free|ask|paid ; kind: phys|budget */
+const LIMS = [
+  ["Live rain is ~22 km, not 11 km","fetch 892 points once a day in the cloud run (parked item 19); a paid plan for commercial use","free","budget"],
+  ["Landslide timing rests on ~90 dated slides; can't be graded live","dated road-block logs (PWD, BRO, PMGSY); the Himalayan pool is parked","ask","budget"],
+  ["High ground is under-warned for landslides","more mapping where surveyors rarely go","ask","budget"],
+  ["Flood \"near here\" outlook is approximate","more verified flood records; people's reports","ask","budget"],
+  ["A river above its line can be told too low a chance","still open; more high-water days to learn from","free","budget"],
+  ["No flood depth or which houses","CWC river cross-sections (ask) and LiDAR terrain (paid)","paid","budget"],
+  ["Monsoon cloud hides the ground from optical satellites","radar instead; can't be bought away","free","phys"],
+  ["A single valley cloudburst can fall between rain points","ground or radar rain at that valley","paid","phys"],
+  ["Not through a live monsoon yet","time: next monsoon is the proof","free","phys"],
+  ["Nobody is alerted if the daily run fails","a small alert on the cloud job","free","budget"],
+  ["Open-Meteo free tier is non-commercial","a paid plan before a paying client","paid","budget"],
+  ["One slope's movement can't be seen from data","sensors on chosen slopes","paid","phys"]
+];
+const FILT = [["all","All"],["free","Free"],["ask","Ask"],["paid","Paid"],["phys","Physics"],["budget","Budget"]];
+let fsel = "all";
+function drawLims(){
+  [...$("filt").children].forEach((b, i) => b.classList.toggle("on", FILT[i][0] === fsel));
+  $("lims").innerHTML = LIMS.filter(r => fsel === "all" || r[2] === fsel || r[3] === fsel).map(([l, lift, tier, kind]) =>
+    `<div class="lim"><span><b>${l}</b><span class="lift">lifted by: ${lift}</span></span><span class="tags"><span class="tag ${tier}">${tier.toUpperCase()}</span><span class="tag ${kind}">${kind === "phys" ? "physics" : "budget"}</span></span></div>`).join("");
+}
+$("filt").innerHTML = FILT.map(f => `<button>${f[1]}</button>`).join("");
+[...$("filt").children].forEach((b, i) => b.addEventListener("click", () => { fsel = FILT[i][0]; drawLims(); }));
+drawLims();
+
+const SW = [
+  ["\"It's 90% accurate.\"","\"6 times in 7 it ranks the right place higher\", or \"20% means 20% at a gauged river\"."],
+  ["\"We caught the flood at…\"","\"Tested on past years. The next monsoon is the proof.\""],
+  ["\"This area is safe.\"","\"Very Low: landslides have been rare on ground like this.\""],
+  ["\"High means a 70% chance.\"","\"High is a rank. About 3 times the usual.\""],
+  ["\"It works for any state.\"","\"The steps run anywhere. Each place needs its own records and testing.\""],
+  ["\"Our sensors… our SMS alerts…\"","\"Planned, on chosen spots. Not built.\""],
+  ["\"The loop is closed.\"","\"Closed for floods. Landslides are written down, not yet graded.\""],
+  ["\"Better than the official forecast.\"","\"We add to it. The official warning stays official.\""],
+  ["\"We own unique data.\"","\"The inputs are public. Ours is the assembly and the checked record.\""],
+  ["\"The high-river problem is fixed.\"","\"Cut sharply, not gone. Rivers that haven't risen yet aren't affected.\""],
+  ["\"Six rules.\"","\"Rules we keep in mind.\""]
+];
+$("swaps").innerHTML = SW.map(([a, b]) => `<div class="swap"><div class="no">${a}</div><div class="ar">→</div><div class="yes">${b}</div></div>`).join("");
+
+/* grilling: room -> [q, say, trap, further] */
+const G = {
+  "APSAC": [
+    ["Your map is 100 m but your rain is 11 km. Isn't that false precision?","Two halves. WHERE is 100 m, from terrain, soil and cover. WHEN is at rain scale: ~11 km in the history, ~22 km live. The map's fine texture is the terrain, not the weather, and the app says so.","Don't claim 100 m rain.","Finer live rain is a paid-plan step; a valley cloudburst can still fall between points."],
+    ["Monsoon is cloudy. How did you map floods at all?","Radar sees through cloud. We built a radar flood test, checked it before using it, and joined it with the global flood map archive and gauge records: 2,180 verified floods.","Don't say optical satellites were enough.","Only if asked: the old radar screen passed 97–100% of flood-free dates, so it was replaced."],
+    ["Did you test on random points? Neighbours leak, so the score is inflated.","No. Tested on 50 km blocks the model never saw: 0.860 ± 0.016. Random splits would score higher, which is exactly why we don't use them.","Don't quote one decimal more than you have.",""],
+    ["Why not deep learning? Everyone uses CNNs now.","For WHERE we have ~37,000 mapped slides, so trees on 34 facts do well and can be explained. Our shortage is in time (~90 dated slides), and deep learning doesn't fix a shortage of examples. Deep models are in the plan, admitted only if they improve the whole panel.","Don't call trees \"old-fashioned\" or deep learning \"hype\".",""],
+    ["How did you pick the no-landslide places? Random ones on gentle ground make it easy.","We tested picking them only from steep ground: 0.860 vs 0.862, no real difference here, because almost all of the state is steep. We choose them for valid labels, not for the score.","Keep back the exact sampling rules.",""],
+    ["Why didn't you use the national flood mask?","We tested it first: most of its flooded pixels sit on slopes over 15°, where water can't stand. It gets the region right, not the pixels.","Only if asked, and as a checked fact, never as an attack.",""],
+    ["What would you need from us?","Glacial-lake and wetland maps in bulk, 2.5 m imagery access, full-resolution land-cover sources, and LiDAR for priority districts. Statewide, and each one named against what it improves.","Don't make it about one valley.",""]
+  ],
+  "GSI": [
+    ["Your labels are our inventory, and it has no dates. How can you forecast timing?","WHERE learns from the inventory, which needs no dates. WHEN is a separate rule from ~90 dated slides: how unusual this week's rain is for that exact place. Scored 0.768 on 72 events, with nothing fitted.","Don't say the inventory forecasts timing.","A model fitted on those events lost to the simple rule."],
+    ["Why not intensity–duration thresholds, like the literature?","We tried. The intensity–duration line came out backwards on our data. The total-rain line catches 89% of slides but fires 87–165 days a year, so it can't warn. A per-place percentile is fairer: dry places aren't silent and wet places aren't always on alarm.","Don't say the line is used as a floor: it isn't in the code.",""],
+    ["What does \"High\" mean? Is that a probability?","A rank. On 84 dated slides, High places-and-days saw about 2.7× the usual number of slides (range 1.4–4.4), Very High about 10×.","Never a percentage.",""],
+    ["Very Low — so it's safe?","No. Slides there have been rare, about 0.22× the usual. Rare isn't never.","Never say \"safe\".",""],
+    ["Earthquakes, road cuts, blasting?","Rain-triggered slides only. Road-cut and quarry records are on our ask list; earthquakes would need their own trigger.","Don't stretch it to cover them.",""],
+    ["How does your map compare with ours?","Ours learns from the full inventory at 100 m, statewide, and is paired with a daily rain trigger. Happy to sit down with your team and compare, place by place.","Keep back our side-by-side numbers in a room.",""],
+    ["What would help most?","Dated slides with places. Road-block logs from PWD, BRO and PMGSY are probably the best route: each closure is a dated, located event.","Don't call your event table \"the fix\": the public extract is a few hundred rows nationally.",""]
+  ],
+  "CWC": [
+    ["What does 20% on my gauge mean?","Of all the days it said around 20%, about one in five came true, on replayed past years. Example: said 25–50%, averaged 36.7%, happened 37.9%.","Don't quote the near-here outlook this way: it's approximate.",""],
+    ["Whose danger levels?","Yours, where published: 7 of our 32 gauges. Elsewhere a line from each river's own record, labelled as such.","Don't present a derived line as official.","Unpublished danger levels are on our ask list."],
+    ["Gauges send bad readings. How do you cope?","A three-step spike filter. It caught a case where one wrong reading would have shown as a 52% flood, and 18 false high-water days were confirmed and removed. Models were retrained on the cleaned history.","",""],
+    ["The river is already above danger. What do you say for tomorrow?","Honestly: this is our known weak spot. A river already above its line can be given too low a chance for the next 2–3 days. It's been cut sharply, not fixed. Rivers that haven't risen yet aren't affected.","Never say it's fixed.",""],
+    ["Is your level forecast better than \"the river stays put\"?","Yes, modestly: typical miss 0.13 m a day ahead vs 0.17 m for no-change; 0.22 vs 0.26 m two days ahead. Its range is built to hold 80% of days and held 85.9% live.","Don't claim a depth forecast on the ground.",""],
+    ["Why not just use Flood Hub or GloFAS?","We built our own on Arunachal's own rivers so we can show its record. Big-river global models are useful as a cross-check alongside.","Don't dismiss Google's models.",""],
+    ["How many false alarms?","For rivers it's counted on the record: 3 warnings at 25% so far, all from one faulty reading at one gauge on 29 Sep. 8,288 forecasts written down since 21 Sep, 4,178 checked.","Read the live numbers off the screen; never from memory.",""],
+    ["And streams with no gauge?","An approximate outlook, tagged as approximate on screen. It failed its strict calibration test, so we don't call it a forecast.","",""]
+  ]
+};
+const ROOMS = Object.keys(G);
+let room = S.room && G[S.room] ? S.room : "APSAC";
+function drawRoom(){
+  [...$("ptabs").children].forEach((b, i) => b.classList.toggle("on", ROOMS[i] === room));
+  $("gqs").innerHTML = G[room].map(([q, say, trap, more], i) => {
+    const id = room + i;
+    return `<div class="gq${S[id]==="got"?" got":S[id]==="miss"?" miss":""}" data-id="${id}"><div class="q"><span>${i+1}.</span><span>${q}</span></div>
+      <div class="a"><div class="say">🗣️ ${say}</div>${trap ? `<div class="trap">⚠️ ${trap}</div>` : ""}${more ? `<div class="go">↪ ${more}</div>` : ""}
+      <div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div></div>`;
+  }).join("");
+  score();
+}
+$("ptabs").innerHTML = ROOMS.map(r => `<button>${r}</button>`).join("");
+[...$("ptabs").children].forEach((b, i) => b.addEventListener("click", () => { room = ROOMS[i]; S.room = room; save(); drawRoom(); }));
+$("gqs").addEventListener("click", e => {
+  const g = e.target.closest(".gq"); if (!g) return;
+  const b = e.target.closest("button[data-g]");
+  if (b) { S[g.dataset.id] = b.dataset.g; g.classList.remove("got","miss","open"); g.classList.add(b.dataset.g); save(); score(); return; }
+  if (e.target.closest(".q")) g.classList.toggle("open");
+});
+let tmr = null;
+$("dgo").addEventListener("click", () => {
+  const qs = G[room], i = Math.floor(Math.random() * qs.length);
+  $("dq").textContent = `${room} asks: ${qs[i][0]}`;
+  document.querySelectorAll(".gq").forEach((g, j) => g.classList.toggle("open", false));
+  let t = 90; clearInterval(tmr);
+  const tick = () => { $("clock").textContent = `${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`; if (t-- <= 0) { clearInterval(tmr); $("clock").textContent = "time"; document.querySelectorAll(".gq")[i].classList.add("open"); } };
+  tick(); tmr = setInterval(tick, 1000);
+});
+function score(){
+  const all = ROOMS.flatMap(r => G[r].map((_, i) => r + i));
+  const got = all.filter(id => S[id] === "got").length, tried = all.filter(id => S[id]).length;
+  $("score").textContent = tried ? `${got} of ${all.length} answered well so far (${tried} tried)` : "";
+}
+drawRoom();
+
+/* checklists */
+function checks(id, items, pre){
+  $(id).innerHTML = items.map(([t, w], i) => `<label><input type="checkbox" data-id="${pre}${i}" ${S[pre+i] ? "checked" : ""}><span>${t}<span class="w">${w}</span></span></label>`).join("");
+  $(id).addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+}
+checks("dec", [
+  ["Price and business model","what to say if asked for a figure"],
+  ["The pilot offer","place, length, what we give, what we ask back"],
+  ["The link to hand out","which public link, and who checks it the morning of the meeting"],
+  ["Terms for records","one sentence on how an office's records are held, used and shown"],
+  ["Dates","for the open feed and anything else; today the honest answer is \"no date yet\""],
+  ["The company and the team","who we are, how long, how it's funded"],
+  ["Hosting and security","where a client's copy would run, who has access"]
+], "d");
+checks("ex", [
+  ["Build your own numbers card","one page: every headline number, its source file, what it does not mean. Use section 3 as the check, not the crib."],
+  ["Build your own limits card","each limit with FREE / ASK / PAID, physics kept apart from budget"],
+  ["Mock grilling 1: APSAC scientist","one hour with Claude, hostile only (prompt below)"],
+  ["Mock grilling 2: CWC hydrologist","one hour with Claude, hostile only (prompt below)"],
+  ["Re-read the agency asks","GOV_DATA_REQUEST_LIST.md, framed statewide"]
+], "x");
+const DOCS = [
+  ["docs/BEYOND_PRESENTATION.md","the question bank, with the \"keep back\" lines (★ first)"],
+  ["docs/design/COMPETITOR_IIOTS.md · COMPETITOR_ALERTIS.md","the two rivals"],
+  ["docs/design/ENSEMBLE_STRATEGY.md","the model plan and its three rules"],
+  ["docs/design/REMAINING_WORK.md","what's still open"],
+  ["docs/design/CEO_PILOT_NEXT_STEPS.md","Free / Ask / Paid, and likely questions"],
+  ["docs/design/PROJECTED.md","this build vs the first SlopeSense app"],
+  ["docs/design/GOV_DATA_REQUEST_LIST.md","the asks, by agency"]
+];
+$("docList").innerHTML = DOCS.map(([f, w], i) => `<label><input type="checkbox" data-id="r${i}" ${S["r"+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
+$("docList").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id)
+    .concat(NUMS.map((_, i) => "n"+i)).concat(ROOMS.flatMap(r => G[r].map((_, i) => r + i)));
+  const done = ids.filter(id => S[id] === true || S[id] === "got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+}
+meter();
+</script>
+</body>
+</html>

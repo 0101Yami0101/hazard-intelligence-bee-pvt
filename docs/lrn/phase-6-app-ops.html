@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 6 · The app and operations — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="lrn.css">
+<style>
+/* the three machines */
+.arch{display:grid;grid-template-columns:1fr 40px 1.3fr 40px 1fr;gap:6px;align-items:stretch}
+.arch .m{background:var(--sheet);border:2px solid var(--rule);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.arch .m .kicker{margin-bottom:2px}
+.arch .m > b{font-family:var(--display);font-weight:400;font-size:21px;display:block;line-height:1.15}
+.arch .m ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.arch .m.app{border-color:var(--slide)}
+.arch .m.cloud{border-color:var(--bone)}
+.arch .m.ext{border-color:var(--flood)}
+.arch .ar{display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:12px;color:var(--ink-3);text-align:center;line-height:1.1}
+.arch .ar span{font-size:22px;color:var(--ink-2)}
+@media(max-width:760px){.arch{grid-template-columns:1fr}.arch .ar{flex-direction:row;gap:8px}.arch .ar span{transform:rotate(90deg)}}
+/* registry */
+.reg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.reg button{font:inherit;border:2px solid var(--rule);background:var(--sheet);border-radius:10px;padding:10px 6px;cursor:pointer;text-align:center}
+.reg button b{display:block;font-size:15px}
+.reg button span{font-size:12px;color:var(--ink-3)}
+.reg button.on{box-shadow:var(--shadow);background:var(--sheet-2)}
+@media(max-width:600px){.reg{grid-template-columns:1fr 1fr}}
+.manifest{font-family:var(--mono);font-size:13px;background:var(--ink);color:#e8efe9;border-radius:10px;padding:12px 14px;margin-top:10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.manifest i{color:#9fb3a7;font-style:normal}
+/* bundle bars */
+.hbar{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-size:14px;margin:5px 0}
+.hbar .t{height:18px;background:var(--grid);border-radius:4px;overflow:hidden}
+.hbar .t div{height:100%}
+.hbar .n{font-family:var(--mono);font-size:13px;text-align:right}
+@media(max-width:600px){.hbar{grid-template-columns:100px 1fr 60px}}
+/* timeline */
+.tl{position:relative;margin:6px 0 0 8px;padding-left:22px;border-left:3px solid var(--bone)}
+.tl .e{position:relative;margin:0 0 12px}
+.tl .e:before{content:"";position:absolute;left:-30px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--sheet);border:3px solid var(--bone)}
+.tl .e .w{font-family:var(--mono);font-size:12px;color:var(--bone)}
+.tl .e > b{display:block}
+.tl .e .small{color:var(--ink-2)}
+/* break-it simulator */
+.brk{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.brk button{font:inherit;font-size:14px;border:2px solid var(--rule);background:var(--sheet);border-radius:99px;padding:5px 12px;cursor:pointer}
+.brk button.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.fx{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.fx .c{border-radius:10px;padding:10px 12px;border:2px solid var(--rule);background:var(--sheet);font-size:14px;line-height:1.35}
+.fx .c .h{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:4px}
+.fx .c.ok{border-color:var(--built);background:var(--built-soft)}
+.fx .c.warn{border-color:var(--partial);background:var(--partial-soft)}
+.fx .c.bad{border-color:var(--accent);background:var(--accent-soft)}
+@media(max-width:760px){.fx{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.fx{grid-template-columns:1fr}}
+.fixline{margin-top:10px;font-size:14.5px;background:var(--sheet-2);border-left:4px solid var(--bone);border-radius:6px;padding:8px 12px}
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.repo{border-radius:12px;padding:10px 12px;border:2px solid var(--rule);background:var(--sheet);font-size:14px}
+.repo .r{font-family:var(--mono);font-size:12px;color:var(--ink-3);display:block;overflow-wrap:anywhere}
+.repo > b{font-size:16px;display:block}
+.repo .to{margin-top:6px;padding-top:6px;border-top:1px dashed var(--rule)}
+.repo.live{border-color:var(--built)}
+.repo.old{border-color:var(--partial)}
+.repo.dead{border-style:dashed}
+.repo.pvt{border-color:var(--bone)}
+@media(max-width:760px){.repos{grid-template-columns:1fr 1fr}}
+/* checklist */
+.chk label{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:start;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:9px 12px;margin-bottom:6px;font-size:15px;cursor:pointer}
+.chk label input{margin-top:5px}
+.chk .w{font-size:12.5px;color:var(--ink-3);display:block}
+.limit{display:grid;grid-template-columns:30px 1fr;gap:10px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.limit .i{font-size:22px}
+.code-list label{display:grid;grid-template-columns:22px 300px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
+@media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+.cmdlist .cmd{margin:6px 0}
+.cmdlist .lbl{font-size:13.5px;color:var(--ink-2);margin-top:12px}
+.calc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px}
+.calc .box{background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:6px 12px;text-align:center}
+.calc .box b{font-family:var(--display);font-weight:400;font-size:26px;display:block;line-height:1.1}
+.calc .box span{font-size:12px;color:var(--ink-3)}
+.calc .op{font-size:22px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div>1 Science</div><div>2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div class="now">6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 6 · Days 24–26 · about 12 hours</div>
+  <h1>The app and how it runs every day</h1>
+  <div class="goal">🎯 <span>Know <b>what runs where</b>, <b>what breaks when a free service says no</b>, and how to <b>ship a change to the public app</b> without breaking anything.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · Three machines</a><a href="#s2">2 · The shell</a><a href="#s3">3 · The bundle</a>
+    <a href="#s4">4 · Live rain</a><a href="#s5">5 · The daily run</a><a href="#s6">6 · Break it</a>
+    <a href="#s7">7 · Where code lives</a><a href="#s8">8 · Before a push</a><a href="#s9">9 · A v2 deploy</a>
+    <a href="#s10">10 · Stale docs</a><a href="#s11">11 · Limits</a><a href="#s12">12 · Code</a><a href="#s13">13 · Quiz</a>
+  </div>
+  <p class="tiny" style="margin-top:12px">✔ Checked against the code on 3 Nov 2026: <code>webapp/app.py</code>, <code>core/rainfall.py</code>, <code>products/flood/feed.py</code>, <code>scripts/cloud/modal_daily.py</code>, the asset folder sizes, the rain point files, the git remotes and the PC's scheduled task. Docs that disagree with the code are listed in section 10.</p>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>Three machines, one product</h2>
+  <p class="sub">The public app <b>never runs a model</b>. It shows files. The models run once a day in the cloud.</p>
+  <div class="arch">
+    <div class="m cloud">
+      <div class="kicker">cloud · Modal (Mumbai)</div>
+      <b>The daily run</b>
+      <ul><li>08:30 India time</li><li>fetches rain, gauges, soil</li><li>runs the flood models</li><li>writes the logs</li><li>publishes one file</li></ul>
+    </div>
+    <div class="ar"><span>→</span>a link<br>(read-only)</div>
+    <div class="m app">
+      <div class="kicker">host · Streamlit Community Cloud</div>
+      <b>The app (<code>webapp/</code>)</b>
+      <ul><li>reads a <b>16 MB</b> bundle of files</li><li>checks the cloud link each hour</li><li>fetches live rain itself</li><li>numpy, pandas, folium, streamlit only</li></ul>
+    </div>
+    <div class="ar"><span>←</span>rain<br>(free API)</div>
+    <div class="m ext">
+      <div class="kicker">outside · free services</div>
+      <b>Open-Meteo</b>
+      <ul><li>live rain, 10 days back + 8 ahead</li><li>no key</li><li>rate-limited</li><li>non-commercial on the free tier</li></ul>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card"><div class="kicker">the PC</div><b>Where everything is built</b><div class="small">Data, training, bundles and deploys all start here. Its own 08:30 task (<b>"FloodSense daily forecast"</b>) is <b>still switched on</b> as a backup (checked 3 Nov).</div></div>
+    <div class="card"><div class="kicker">the rule</div><b>Heavy work offline</b><div class="small">No rasterio, geopandas, lightgbm or scikit-learn on the host. Terrain work and models run on the PC or Modal and ship as plain numpy arrays and JSON.</div></div>
+    <div class="card"><div class="kicker">why it matters</div><b>Free hosting works</b><div class="small">A small dependency list builds in about 2 minutes and fits the host's free memory.</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>The shell, and how a module joins</h2>
+  <p class="sub"><code>app.py</code> is only a <b>shell</b>: home page and router. It knows nothing about landslides or floods. Every module is one entry in <code>products/__init__.py</code>. Tap one:</p>
+  <div class="reg" id="reg"></div>
+  <div class="manifest" id="man"></div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card"><div class="kicker">adding a module</div><b>1 folder + 1 entry</b><div class="small"><code>products/&lt;slug&gt;/</code> with <code>view.py</code> (a <code>render(shell)</code>) and <code>assets/&lt;slug&gt;/</code>. The tiles, side menu and home page read the list; none of them name a module.</div></div>
+    <div class="card"><div class="kicker">loaded late</div><b>Only the opened module</b><div class="small">A module's code is imported inside <code>render()</code>, so the home page doesn't pay for every module's maps.</div></div>
+    <div class="card"><div class="kicker">loaded once</div><b>The <code>Shell</code> object</b><div class="small">Grid, geography, elevation and the visitor's place are loaded once by <code>app.py</code> and handed in. A module never loads the grid itself, so two modules can't disagree on where Arunachal is.</div></div>
+  </div>
+  <div class="tip" style="margin-top:12px">🔗 <b>The module is in the address:</b> <code>?m=flood</code>. A link to FloodSense stays a link to FloodSense, and the back button moves between modules.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>The bundle: everything the app reads</h2>
+  <p class="sub">Folder sizes in <code>webapp/assets/</code>, measured 3 Nov:</p>
+  <div id="bundle"></div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><div class="kicker">why <code>base/</code> is shared</div><b>Both hazards read the same rain</b><div class="small">The rain points and their history live in <code>base/</code>, not under one module, so FloodSense never imports from SlideSense.</div></div>
+    <div class="card"><div class="kicker">why SoilSense is big</div><b>It brings its own state</b><div class="small">Assam is not on the Arunachal grid, so <code>erosion/assam/</code> carries its own outline, districts, catchments and villages.</div></div>
+    <div class="card"><div class="kicker">the Data Backbone page</div><b>308 GB shown in 0.17 MB</b><div class="small">Histograms, ~6 km previews and made-up demo rows. None of the licensed source data is in it, on purpose.</div></div>
+    <div class="card"><div class="kicker">how it's rebuilt</div><b>Four builders, Backbone last</b><div class="small"><code>export_webapp_bundle.py</code> (base + landslide) → <code>build_flood_layers.py</code> → <code>export_erosion_bundle.py</code> (with <code>REGION=assam</code>) → <code>build_backbone_bundle.py</code>, which measures the others.</div></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>Live rain inside the app</h2>
+  <p class="sub">The one live call the app makes itself. One fetch serves SlideSense and FloodSense. SoilSense makes its own for Assam.</p>
+  <div class="calc">
+    <div class="box"><b>219</b><span>rain points, Arunachal</span></div><span class="op">÷</span>
+    <div class="box"><b>40</b><span>points per call</span></div><span class="op">=</span>
+    <div class="box"><b>6</b><span>calls</span></div><span class="op">+</span>
+    <div class="box"><b>7</b><span>for Assam's 248 points</span></div><span class="op">→</span>
+    <div class="box" style="border-color:var(--built)"><b>1 h</b><span>cache, shared by every visitor</span></div>
+  </div>
+  <p class="small" style="margin-top:8px">So 10 visitors or 10,000 cost the same: at most 13 calls an hour per running copy of the app. A failed call is retried 3 times with growing waits before the page gives up.</p>
+  <div class="grid g2" style="margin-top:10px">
+    <div class="card"><div class="kicker">rule</div><b>One source, end to end</b><div class="small">The live rain is scored against <b>Open-Meteo's own past</b>, not IMERG. Open-Meteo runs 1.68× wetter than IMERG, and the two agree poorly day to day (0.32). Mixing them gives confident wrong numbers. Open-Meteo's archive and its forecast's past days match (ratio 1.00).</div></div>
+    <div class="card"><div class="kicker">checked</div><b>The switch didn't cost skill</b><div class="small">The landslide trigger scored 0.768 on IMERG and <b>0.764</b> on Open-Meteo (84 events). Percentiles rank wet days alike even when the millimetres differ.</div></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>The daily run in the cloud</h2>
+  <p class="sub">Moved off the PC on 20 Oct 2026, because the PC missed 1, 3, 13 and 15 Oct and often ran hours late. <b>A missed day can never be graded.</b></p>
+  <div class="two-col grid g2">
+    <div class="tl">
+      <div class="e"><span class="w">08:30 IST</span><b>Modal starts the job</b><span class="small">in Mumbai, on the <code>pankajkarjay</code> workspace</span></div>
+      <div class="e"><span class="w">fetch</span><b>Rain, river gauges, soil wetness</b><span class="small">Open-Meteo · CWC + NWDP · Earth Engine (robot key in a Modal secret)</span></div>
+      <div class="e"><span class="w">~1 min</span><b>Flood models run</b><span class="small"><code>flood_forecast_live.py</code>, the same script the PC runs</span></div>
+      <div class="e"><span class="w">log</span><b>Write the day, grade yesterday</b><span class="small">flood and landslide logs, kept on a Modal storage volume</span></div>
+      <div class="e"><span class="w">publish</span><b>One snapshot at one link</b><span class="small"><code>live_forecast.json</code>, read-only</span></div>
+      <div class="e"><span class="w">≤ 1 h later</span><b>The app picks it up</b><span class="small"><code>feed.py</code> fetches it if it's a newer issue. No push, no restart.</span></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:8px"><div class="kicker">trap 1 · found while building</div><b>CWC doesn't answer from abroad</b><div class="small">From US, Tokyo and Jakarta machines every gauge request hung for 60 s. From Mumbai: about 1 s. So the job is pinned to India (1.75× the price), and a run with <b>no fresh CWC gauge is retried</b>.</div></div>
+      <div class="card" style="margin-bottom:8px"><div class="kicker">trap 2 · found while building</div><b>Some machines gave different numbers</b><div class="small">Machines with AVX-512 chips rounded the last digit differently (2 of 5 failed the same-numbers check). Fixed by switching those routines off in numpy: then 8 of 8 matched the PC exactly.</div></div>
+      <div class="card"><div class="kicker">cost</div><b>Under $2 a month</b><div class="small">About 53 s a run. Free plan with $30 a month of credit.</div></div>
+    </div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">⚠️ <b>The cloud runs the copy uploaded at the last deploy</b>, not the PC's files. After any change to the forecast code or a model: <code>record</code> on the PC → <code>seed --what golden</code> → <code>::golden --times 4</code> → <code>modal deploy</code>.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>Break it: what happens when something fails?</h2>
+  <p class="sub">Pick a failure. See what each part of the product does. (Read from the code: <code>rainfall.py</code>, <code>feed.py</code>, <code>modal_daily.py</code>, the module views.)</p>
+  <div class="brk" id="brk"></div>
+  <div class="fx" id="fx"></div>
+  <div class="fixline" id="fixline"></div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>Where the code lives, and which link follows what</h2>
+  <div class="repos">
+    <div class="repo live"><span class="r">origin · hazard-intelligence-bee</span><b>branch <code>v2</code></b>public · app files on top of the old main<div class="to">→ <b>the new public app</b> (SlopeSense platform). Last push 31 Oct (77ab140).</div></div>
+    <div class="repo old"><span class="r">slopesense2 · SlopeSense2</span><b>branch <code>main</code></b>public<div class="to">→ <b>the old app</b>, sense-it.streamlit.app. Leave it alone unless the user wants the old app changed.</div></div>
+    <div class="repo dead"><span class="r">origin · hazard-intelligence-bee</span><b>branch <code>main</code></b>public<div class="to">→ <b>nothing live</b>. A push here changes no app (found the hard way, 7 Oct).</div></div>
+    <div class="repo pvt"><span class="r">pvt · hazard-intelligence-bee-pvt</span><b>branch <code>main</code></b>private<div class="to">→ <b>the full backup</b>: scripts, models, records, docs. Refreshed only when the user asks.</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="tip">📦 <b><code>v2</code> gets app files only:</b> <code>webapp/</code>, <code>requirements.txt</code>, <code>runtime.txt</code>, <code>.streamlit/</code>. Models, logs, training code and internal docs stay private.</div>
+    <div class="tip warn">🚫 <b>Never <code>records/</code> or <code>flood_intake.py</code> on a deployed branch.</b> Together they make the hosted app show a flood report form that saves to a disk the host wipes. Reports would vanish.</div>
+  </div>
+  <div class="tip" style="margin-top:10px">🧹 <b><code>webapp/</code> is public.</b> Before a push, scrub its code comments of anything internal (no secrets, private hostnames or customer data). The v2 app's own address isn't written down anywhere yet; ask the user for it.</div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>Before any push: the checklist</h2>
+  <p class="sub">Tick as you go. Your ticks are saved.</p>
+  <div class="chk" id="chk"></div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>One <code>v2</code> deploy, start to finish</h2>
+  <p class="sub">The roadmap's exercise: <b>do this once yourself, with Claude watching.</b> It updates <code>v2</code> without touching your local branch or your ~240 uncommitted files, using a temporary index.</p>
+  <div class="tip warn">⚠️ Step 5 publishes to a public repo and changes the live app. Only with the user's say-so.</div>
+  <div class="cmdlist">
+    <div class="lbl">1 · All screens open, no errors (expect "PASS", 58 screens)</div>
+    <div class="cmd"><span>.venv\Scripts\python scripts\run\check_app_screens.py</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">2 · Same check on the host's newer packages (clean venv at <code>C:\hv_1011</code>; Streamlit 1.66.1 / pandas 3.1.0 on 31 Oct)</div>
+    <div class="cmd"><span>C:\hv_1011\Scripts\python scripts\run\check_app_screens.py</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">3 · Build the new <code>v2</code> tree in a temporary index (PowerShell). Nothing is published yet.</div>
+    <div class="cmd"><span>git fetch origin; $env:GIT_INDEX_FILE = "$env:TEMP2.idx"; git read-tree origin/v2; git add webapp requirements.txt runtime.txt .streamlit; $t = git write-tree; Remove-Item Env:GIT_INDEX_FILE</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">4 · See exactly which files would change. Read the list: no <code>records/</code>, nothing internal.</div>
+    <div class="cmd"><span>git diff --stat origin/v2 $t</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">5 · Make the commit on top of <code>v2</code> (short message) and push it by its hash</div>
+    <div class="cmd"><span>$c = git commit-tree $t -p origin/v2 -m "One short sentence"; git -c http.version=HTTP/1.1 push origin "${c}:refs/heads/v2"</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">6 · Watch the app rebuild (about 2 min), then open each module once on the live link</div>
+  </div>
+  <p class="tiny">Pushes over ~10 MB fail from this PC (timeout, then a 403 for a while): push one folder per commit. Your local <code>main</code> and working files are never touched by steps 3–5.</p>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Docs that are out of date</h2>
+  <p class="sub">Trust the code. These were checked on 3 Nov.</p>
+  <div class="stale"><div class="old">Deploy from <code>SlopeSense2</code>, branch <code>main</code>; "every push to main redeploys"<span class="src">webapp/DEPLOY.md, step 2</span></div><div class="ar">→</div><div class="new">The new app follows <code>hazard-intelligence-bee</code> branch <b><code>v2</code></b>. SlopeSense2 main is the <b>old</b> app.</div></div>
+  <div class="stale"><div class="old">"3 live API calls per hour"<span class="src">webapp/DEPLOY.md, free-tier table</span></div><div class="ar">→</div><div class="new"><b>6</b> (219 points ÷ 40) + <b>7</b> for SoilSense's Assam points.</div></div>
+  <div class="stale"><div class="old">"~0.4 MB" / "~4.4 MB" bundle<span class="src">requirements.txt comments</span></div><div class="ar">→</div><div class="new"><b>16 MB</b> since SoilSense.</div></div>
+  <div class="stale"><div class="old">~120 query points, ~33 km rain<span class="src">WEBAPP_PLAN.md §3 (Aug 2026)</span></div><div class="ar">→</div><div class="new"><b>219</b> points on a 0.2° grid (~22 km) since 22 Sep.</div></div>
+  <div class="stale"><div class="old">"The hosted flood forecast is frozen at the pushed file"<span class="src">older notes</span></div><div class="ar">→</div><div class="new">Since 20 Oct the app <b>fetches</b> the cloud snapshot hourly (<code>feed.py</code>).</div></div>
+  <div class="stale"><div class="old">Side-by-side week → switch the PC task off<span class="src">PARKED_OFF_PC_DAILY_RUN.md §0, rules 3–5</span></div><div class="ar">→</div><div class="new">The week's result is <b>not written down</b>, and the PC task is <b>still on</b>. Open item.</div></div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>The operations limits card</h2>
+  <div class="grid g2">
+    <div class="limit"><span class="i">🌧️</span><span><b>Open-Meteo free tier is non-commercial.</b> <i>Paid</i>: a paid plan before a paying client, which also allows finer (~11 km) rain.</span></div>
+    <div class="limit"><span class="i">🔕</span><span><b>Nobody is alerted when the daily run fails.</b> It shows only in Modal's dashboard and <code>status.json</code> (<code>::pull</code>). <i>Free</i>: add an alert.</span></div>
+    <div class="limit"><span class="i">💤</span><span><b>The free host sleeps when unused.</b> The first visitor waits for it to wake, and up to 10 s for today's forecast.</span></div>
+    <div class="limit"><span class="i">🧠</span><span><b>Free host memory is tight</b> (the docs plan for 1 GB). Biggest load: SoilSense's 13 maps, about 55 MB, only when opened.</span></div>
+    <div class="limit"><span class="i">🔁</span><span><b>Two daily runs still exist</b> (PC + cloud) until the week's result is recorded and the PC task is switched off.</span></div>
+    <div class="limit"><span class="i">🛰️</span><span><b>Earth Engine on a restricted, non-commercial quota.</b> Fix before commercial use.</span></div>
+    <div class="limit"><span class="i">🧪</span><span><b>A research prototype, not a safety tool.</b> The app doesn't send warnings to anyone.</span></div>
+    <div class="limit"><span class="i">🌍</span><span><b>CWC gauges need an India-based machine.</b> Moving hosts outside India silently drops them.</span></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Code and docs, in reading order</h2>
+  <div class="card code-list" id="codeList"></div>
+  <h3 style="margin:22px 0 8px">Docs</h3>
+  <div class="card code-list" id="docList"></div>
+  <h3 style="margin:22px 0 8px">🖐️ Safe hands-on (nothing is published)</h3>
+  <div class="cmdlist">
+    <div class="lbl">Run the app on this PC, then open each module</div>
+    <div class="cmd"><span>.venv\Scripts\streamlit run webapp\app.py</span><button onclick="cp(this)">copy</button></div>
+    <div class="lbl">See today's cloud run, straight from the link (read-only)</div>
+    <div class="cmd"><span>(Invoke-RestMethod https://pankajkarjay--slopesense-flood-latest.us-east.modal.run) | Select-Object issued_on, generated_at</span><button onclick="cp(this)">copy</button></div>
+  </div>
+  <p class="tiny">Start one copy of the app and reuse it. Every fresh copy fetches live rain, and a night of restarts once tripped Open-Meteo's limit.</p>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Check yourself</h2>
+  <p class="sub">Answer out loud, then open and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+  <div class="beats" style="margin-top:18px">
+    <div class="beat"><span class="s">draw</span><b>The three machines</b>and what moves between them</div>
+    <div class="beat"><span class="s">explain</span><b>Each failure</b>and what the visitor sees</div>
+    <div class="beat"><span class="s">do</span><b>One v2 deploy</b>with the checklist</div>
+    <div class="beat"><span class="s">know</span><b>When to redeploy Modal</b>and how</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 6 like a CTO taking over the ops"</i>, and move to Phase 7, defending it in the room.</div>
+</section>
+
+<footer>Phase 6 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. From webapp/app.py, core/bundle.py, core/rainfall.py, products/__init__.py, products/flood/feed.py, scripts/cloud/modal_daily.py, scripts/run/check_app_screens.py; docs webapp/DEPLOY.md, WEBAPP_PLAN.md, LANDING_PAGE.md, PARKED_OFF_PC_DAILY_RUN.md.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase6";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+function cp(b){ navigator.clipboard.writeText(b.previousElementSibling.textContent); b.textContent = "copied"; }
+
+/* the registry, as in webapp/products/__init__.py */
+const REG = [
+  ["landslide","SlideSense","#1d8673","live","view","Arunachal Pradesh","Evidence, Model & Validation"],
+  ["flood","FloodSense","#2f6cae","live","fl_view","Arunachal Pradesh","How to read this forecast"],
+  ["erosion","SoilSense","#946610","building","er_view","Assam","—"],
+  ["backbone","Data Backbone","#6b5784","live","bb_view","Arunachal Pradesh","— (kind = foundation: sits under the tiles)"]
+];
+function showReg(i){
+  const [slug, name, col, status, nav, region, extra] = REG[i];
+  [...$("reg").children].forEach((b, j) => { b.classList.toggle("on", j === i); b.style.borderColor = j === i ? col : ""; });
+  $("man").innerHTML =
+`Product(
+  slug    = "${slug}"      <i># folder, ?m=${slug}, assets/${slug}/</i>
+  name    = "${name}"
+  status  = "${status}"   <i># live | building: both open; "building" shows a 🔧 pill</i>
+  nav_key = "${nav}"   <i># which session key holds its current page</i>
+  region  = "${region}"
+  extra   = ${extra}   <i># pages behind the ℹ️ button</i>
+)`;
+}
+$("reg").innerHTML = REG.map(([s, n, c, st]) => `<button><b style="color:${c}">${n}</b><span>${st}</span></button>`).join("");
+[...$("reg").children].forEach((b, i) => b.addEventListener("click", () => showReg(i)));
+showReg(0);
+
+/* bundle sizes, MB (du of webapp/assets, matches DEPLOY.md) */
+const B = [["erosion/assam (SoilSense)",10.46,"var(--soil)"],["base (shared)",2.14,"var(--ink-2)"],["landslide (SlideSense)",1.59,"var(--slide)"],
+  ["flood (FloodSense)",1.26,"var(--flood)"],["backbone",0.17,"var(--bone)"],["landing (2 pictures)",0.10,"var(--planned)"]];
+$("bundle").innerHTML = B.map(([l, v, c]) => `<div class="hbar"><span>${l}</span><div class="t"><div style="width:${Math.max(1, 100*v/10.46)}%;background:${c}"></div></div><span class="n">${v.toFixed(2)} MB</span></div>`).join("")
+  + `<div class="tiny">total about 15.7 MB · the models themselves are never on the host</div>`;
+
+/* break-it simulator: [label, slide, flood, soil, log, fix]; each cell [state, text] */
+const BRK = [
+  ["Open-Meteo says no (in the app)",
+    ["bad","Forecast page: red box, \"Live rainfall is unavailable right now\". The susceptibility map still works."],
+    ["ok","The forecast still shows: it comes from the morning snapshot. Only the Rain panel and the Catchments page say rain is unavailable."],
+    ["warn","\"This week\" says the rain couldn't be fetched. Maps, list and village card work."],
+    ["ok","No effect. The log is written by the daily run, not the app."],
+    "Each call is retried 3 times first. The 1-hour cache means it heals itself within minutes once the limit lifts. Don't restart the app over and over: each restart fetches again."],
+  ["Open-Meteo says no (at 08:30)",
+    ["ok","Unaffected: the app fetches its own rain."],
+    ["warn","The run stops (\"Live rain unavailable\") and tries again 10 min later, up to 3 times. If all fail, the app keeps yesterday's issue and its dot turns amber: \"1 day old\"."],
+    ["ok","Unaffected."],
+    ["bad","If all 3 tries fail, that day has no issue, and it can never be graded."],
+    "The PC's own 08:30 task is still on, so the PC's log may still get the day, but the public app follows only the cloud. Once the PC task is off, the 3 cloud tries are the only ones."],
+  ["The Modal run fails 3 times",
+    ["ok","Unaffected."],
+    ["warn","The link keeps serving yesterday's snapshot. The header shows \"1 day old\" (2+ days: red)."],
+    ["ok","Unaffected."],
+    ["bad","No issue for the day, in both the flood and the landslide logs. status.json says ok: false."],
+    "Nothing alerts anyone. You find out from Modal's dashboard or by pulling status.json (::pull). Adding an alert is a cheap, open item."],
+  ["The Modal link is down",
+    ["ok","Unaffected."],
+    ["warn","The app keeps the last copy on disk and tries again every 5 min. After a host restart that copy is the one bundled at the last push (31 Oct), so it could show as many days old."],
+    ["ok","Unaffected."],
+    ["ok","Unaffected: the run still writes to the volume."],
+    "The forecast never goes missing, it only goes stale, and the page says how stale."],
+  ["CWC gauge site doesn't answer",
+    ["ok","Unaffected."],
+    ["warn","The run retries (no fresh CWC gauge). On the last try it keeps the issue: rain-only chances for those rivers, and their graphs say offline."],
+    ["ok","Unaffected."],
+    ["warn","The issue is logged, with a warning in status.json."],
+    "This is why the job runs in Mumbai: from outside India, CWC never answers."],
+  ["Earth Engine key fails",
+    ["ok","Unaffected."],
+    ["warn","The cloud run fails on purpose (SOIL_REQUIRED=1) and is retried, so it never quietly issues a rain-only forecast."],
+    ["ok","Unaffected (its maps are prebuilt)."],
+    ["bad","If it keeps failing, the day is missed."],
+    "Check the Modal secret slopesense-ee and the robot account's roles."],
+  ["Model changed, Modal not redeployed",
+    ["ok","Unaffected."],
+    ["bad","The cloud keeps running the OLD models and code. Nothing looks wrong, but its numbers no longer match the PC's."],
+    ["ok","Unaffected."],
+    ["bad","The log fills with the old model's forecasts."],
+    "After any forecast code or model change: record → seed --what golden → ::golden --times 4 → modal deploy."],
+  ["records/ + flood_intake.py pushed to v2",
+    ["ok","Unaffected."],
+    ["bad","A \"Seen a flood? Report it\" form appears, and its reports are written to a disk the host wipes."],
+    ["ok","Unaffected."],
+    ["bad","Reports people sent are lost, and private records are now public."],
+    "Never push them. v2 gets webapp/, requirements.txt, runtime.txt and .streamlit/ only."]
+];
+const HEAD = ["SlideSense","FloodSense","SoilSense","Logs / record"];
+function showBrk(i){
+  [...$("brk").children].forEach((b, j) => b.classList.toggle("on", j === i));
+  const r = BRK[i];
+  $("fx").innerHTML = r.slice(1, 5).map(([s, t], j) => `<div class="c ${s}"><span class="h">${HEAD[j]}</span>${t}</div>`).join("");
+  $("fixline").innerHTML = "🔧 " + r[5];
+}
+$("brk").innerHTML = BRK.map(r => `<button>${r[0]}</button>`).join("");
+[...$("brk").children].forEach((b, i) => b.addEventListener("click", () => showBrk(i)));
+showBrk(0);
+
+/* checklist */
+const CHK = [
+  ["The user said yes to this push","never commit or push unless asked"],
+  ["check_app_screens.py: PASS","58 screens open with no error"],
+  ["The same on the host's newer packages","clean venv at C:\\hv_1011; the host installs the newest Streamlit and pandas"],
+  ["check_live_unchanged.py check, if shared code changed","proves the flood forecast's numbers didn't move"],
+  ["Phone and tablet look, if the layout changed","check_app_mobile.py on an app already running"],
+  ["webapp/ comments scrubbed","it's public: no secrets, private hostnames or customer data"],
+  ["Only app files go","webapp, requirements.txt, runtime.txt, .streamlit. Never records/ or flood_intake.py"],
+  ["Modal redeployed, if forecast code or a model changed","after the golden check passes on 4 machines"],
+  ["Bundles rebuilt, if the data changed","the four builders, Backbone last"]
+];
+$("chk").innerHTML = CHK.map(([t, w], i) => `<label><input type="checkbox" data-id="k${i}" ${S["k"+i] ? "checked" : ""}><span>${t}<span class="w">${w}</span></span></label>`).join("");
+$("chk").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+const CODE = [
+  ["webapp/app.py","the shell: home page, router, the feed check"],
+  ["webapp/core/shell.py · bundle.py","what every module is handed; loading the files"],
+  ["webapp/core/rainfall.py","live rain → totals → percentiles → trigger; the 1-hour cache"],
+  ["webapp/core/mapping.py · landing.py","the shared map; the home page's five-part story"],
+  ["webapp/products/__init__.py","the registry: how modules join"],
+  ["webapp/products/flood/feed.py","fetching the cloud snapshot"],
+  ["scripts/run/export_webapp_bundle.py","building base/ + landslide/"],
+  ["scripts/cloud/modal_daily.py","the cloud run: schedule, retries, link, golden check"],
+  ["scripts/run/check_app_screens.py · scripts/model/check_live_unchanged.py","the two checks before a push"]
+];
+const DOCS = [
+  ["webapp/DEPLOY.md","layout and free-tier fit (deploy steps are stale, see 10)"],
+  ["docs/design/PARKED_OFF_PC_DAILY_RUN.md","§0: the cloud run's live state and rules"],
+  ["docs/design/WEBAPP_PLAN.md","§1–§2: the one-source rain rule and its check"],
+  ["docs/design/LANDING_PAGE.md","the home page, and its public wording rules"]
+];
+function list(id, items, pre){
+  $(id).innerHTML = items.map(([f, w], i) => `<label><input type="checkbox" data-id="${pre}${i}" ${S[pre+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
+  $(id).addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+}
+list("codeList", CODE, "c"); list("docList", DOCS, "d");
+
+const QUIZ = [
+  ["What breaks if Open-Meteo rate-limits us?","roadmap","In the app: SlideSense's forecast page shows \"live rainfall unavailable\" (susceptibility still works), FloodSense's Rain panel and Catchments page go blank but its forecast still shows (it's from the morning snapshot), SoilSense's \"This week\" can't load. It heals within minutes: 3 retries per call, a 1-hour shared cache. At 08:30 the daily run stops and retries 10 min later, up to 3 times. If all fail, the day has no issue and can't be graded."],
+  ["What happens if the Modal run fails one morning?","roadmap","Three tries, 10 min apart. If all fail: status.json says ok: false, no issue is logged that day (it can never be graded), the link keeps serving yesterday's snapshot and the app shows it as \"1 day old\". Nobody is alerted automatically. The PC's own 08:30 task still runs and keeps its own log, but the public app follows only the cloud."],
+  ["What's on the free tier's memory budget?","roadmap","The docs plan for 1 GB. The app needs only numpy, pandas, pillow, requests, streamlit and folium. No models, no rasterio. It reads a 16 MB bundle; the biggest thing in memory is SoilSense's 13 one-byte maps (about 55 MB), loaded only when SoilSense is opened."],
+  ["Why doesn't the app run the models itself?","new engineer","They need scikit-learn, rasterio and 100 m rasters, which don't fit a free host, and they should run once a day at a fixed time so each issue is written down before the day. So Modal runs them and the app only shows the result."],
+  ["How does today's forecast reach the app without a push?","new engineer","The cloud run publishes live_forecast.json at one read-only link. The app's feed.py checks that link at most hourly and replaces its copy on disk if the issue is newer. If the link is down it keeps the old copy and retries every 5 min."],
+  ["I pushed a fix to origin main. Why didn't the app change?","co-founder","Nothing live follows origin main. The new app follows origin v2; the old app (sense-it) follows SlopeSense2 main."],
+  ["Why is the cloud run pinned to Mumbai when it costs 1.75× more?","finance","The CWC gauge site doesn't answer from outside India: every request hung 60 s from US, Tokyo and Jakarta. Without the pin the forecast would quietly drop to rain-only for gauged rivers. Even so it's under $2 a month."],
+  ["We retrained a flood model. What else must happen?","tech lead","Redeploy Modal: the cloud runs the copy uploaded at the last deploy. First record on the PC, seed the golden day, run the golden check on 4 machines, then modal deploy. If the app shows anything new, it also needs a v2 push."],
+  ["Why score live rain against Open-Meteo's past and not IMERG?","APSAC scientist","Open-Meteo runs 1.68× wetter than IMERG and the two agree poorly day to day (0.32), so a value from one in the other's table gives confident wrong numbers. Open-Meteo's archive matches its forecast's past exactly, and the trigger scored 0.764 on it vs 0.768 on IMERG."],
+  ["What must never go on v2, and why?","tech lead","records/ and flood_intake.py: together they switch on a flood report form that writes to a disk the host wipes, and records are private. Also internal docs, models and training code: v2 is public. App files only."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>

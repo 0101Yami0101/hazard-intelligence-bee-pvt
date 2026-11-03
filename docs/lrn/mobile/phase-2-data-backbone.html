@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 2 · The data backbone — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+/* phase 2 widgets */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.fstep{position:relative;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:10px 8px;margin:0 10px;cursor:pointer;text-align:center;transition:.15s}
+.fstep:hover{border-color:var(--ink-3)}
+.fstep.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.fstep .ico{font-size:24px}
+.fstep b{display:block;font-size:15px}
+.fstep code{font-size:11px;background:none;border:none;padding:0;color:var(--ink-3)}
+.fstep:not(:last-child)::after{content:"➜";position:absolute;right:-19px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+@media(max-width:820px){.flow{grid-template-columns:1fr 1fr}.fstep{margin:6px}.fstep::after{display:none}}
+.sdetail{margin-top:12px;background:var(--sheet-2);border:1px solid var(--rule);border-radius:10px;padding:14px;min-height:110px}
+.sdetail h4{margin:0 0 4px;font-size:18px}
+.files{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);margin-top:8px}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.grp{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;cursor:pointer;transition:.15s}
+.grp:hover{border-color:var(--ink-3)}
+.grp.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
+.grp b{font-size:15px}
+.grp .gb{font-family:var(--mono);font-size:12px;color:var(--ink-3);float:right}
+.grp .bar{height:6px;border-radius:3px;background:var(--grid);margin:6px 0 4px;overflow:hidden}
+.grp .bar div{height:100%;background:var(--bone)}
+.grp .p{font-size:13px;color:var(--ink-2)}
+.srcs{margin-top:12px}
+.src{display:grid;grid-template-columns:1.4fr 1fr 90px;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;margin-bottom:6px;font-size:14.5px}
+.src .lic{font-size:12.5px}
+.src .d{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+@media(max-width:700px){.src{grid-template-columns:1fr}.src .d{text-align:left}}
+.lic-g{color:var(--built)}.lic-a{color:var(--partial)}.lic-r{color:var(--accent)}
+.law{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.law .card{padding:14px}
+.law .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.law .v{font-family:var(--display);font-size:24px;line-height:1.1;margin:2px 0 6px}
+.lock::after{content:" 🔒";font-size:14px}
+.decoder{display:grid;grid-template-columns:1fr 1.3fr;gap:18px;align-items:center}
+@media(max-width:760px){.decoder{grid-template-columns:1fr}}
+.decoder input[type=text]{font:inherit;font-family:var(--mono);font-size:18px;padding:6px 10px;border:2px solid var(--rule);border-radius:8px;width:100%}
+.dec-out{font-family:var(--mono);font-size:14px;margin-top:10px;line-height:1.8}
+.dec-out b{color:var(--accent)}
+.towns{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.fgrp{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--c);border-radius:10px;padding:12px}
+.fgrp h4{margin:0 0 2px;font-size:17px;display:flex;justify-content:space-between}
+.fgrp h4 span{font-family:var(--mono);font-size:13px;color:var(--c)}
+.fgrp .src2{font-size:12px;color:var(--ink-3);margin-bottom:6px}
+.fchip{display:inline-block;font-family:var(--mono);font-size:11.5px;background:var(--sheet-2);border:1px solid var(--grid);border-radius:5px;padding:1px 6px;margin:2px 2px 0 0;cursor:help}
+.moves{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.moves svg{width:100%;height:auto;display:block;margin-bottom:6px}
+.rainbox{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.rainbox{grid-template-columns:1fr}}
+.sq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.sq{grid-template-columns:1fr}}
+.vals{width:100%;border-collapse:collapse;font-size:14.5px}
+.vals td{padding:5px 6px;border-bottom:1px dashed var(--grid);vertical-align:top}
+.vals td:nth-child(2){font-family:var(--mono);font-weight:500;white-space:nowrap}
+.vals td:nth-child(3){font-size:12px;color:var(--ink-3)}
+.vals tr.h td{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);border-bottom:1px solid var(--rule);padding-top:12px}
+.mine input{font:inherit;font-size:14px;width:100%;border:1px solid var(--rule);border-radius:6px;padding:3px 6px;background:var(--sheet-2)}
+.region{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.region{grid-template-columns:1fr}}
+.region .same li::marker{content:"＝ ";color:var(--built)}
+.region .diff li::marker{content:"≠ ";color:var(--accent)}
+.region ul{margin:6px 0 0;padding-left:22px;font-size:14.5px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.tier{border-radius:10px;padding:12px;color:var(--ink)}
+.tier b{font-family:var(--display);font-weight:400;font-size:24px;display:block}
+.tier ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+@media(max-width:700px){.tiers{grid-template-columns:1fr}}
+.asks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.ask{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.ask .who{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.portal{display:grid;grid-template-columns:150px 1fr 1fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:14.5px}
+.portal .nm{font-weight:700}
+.portal .looks::before{content:"🚫 looks: ";font-family:var(--mono);font-size:11px;color:var(--accent)}
+.portal .is::before{content:"✅ really: ";font-family:var(--mono);font-size:11px;color:var(--built)}
+@media(max-width:700px){.portal{grid-template-columns:1fr}}
+.code-list label{display:grid;grid-template-columns:22px 260px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
+.code-list label code{font-size:13px}
+@media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <div class="phases" title="The 8 phases of the learning roadmap">
+    <div>0 Big picture</div><div>1 Science</div><div class="now">2 Data</div><div>3 SlideSense</div>
+    <div>4 FloodSense</div><div>5 SoilSense</div><div>6 App &amp; ops</div><div>7 Defend</div>
+  </div>
+  <div class="done-meter" id="meter">0% done</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Phase 2 · Days 5–8 · about 20 hours</div>
+  <h1>The data backbone</h1>
+  <div class="goal">🎯 <span>Follow <b>any square of ground</b> from the raw download to its row in the big table, and name the source and date of every value.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · The assembly line</a><a href="#s2">2 · 29 sources</a><a href="#s3">3 · The law</a>
+    <a href="#s4">4 · Cell ID</a><a href="#s5">5 · The 34 facts</a><a href="#s6">6 · Three moves</a>
+    <a href="#s7">7 · Rain is special</a><a href="#s8">8 · One real square</a><a href="#s9">9 · Assam</a>
+    <a href="#s10">10 · Free / Ask / Paid</a><a href="#s11">11 · Portals</a><a href="#s12">12 · Checks</a>
+    <a href="#s13">13 · Code to read</a><a href="#s14">14 · Quiz</a><a href="#s15">15 · Finish</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>The assembly line, with real file names</h2>
+  <p class="sub">Phase 0 showed the idea. Here is the real pipeline in the code. 👆 Click a stage.</p>
+  <div class="card">
+    <div class="flow" id="flow">
+      <div class="fstep" data-k="fetch"><div class="ico">📥</div><b>Fetch</b><code>scripts/fetch/</code></div>
+      <div class="fstep" data-k="raw"><div class="ico">🗄️</div><b>Raw store</b><code>data/raw/</code></div>
+      <div class="fstep" data-k="terrain"><div class="ico">⛰️</div><b>Terrain + water</b><code>terrain.py · hydrology.py</code></div>
+      <div class="fstep" data-k="feat"><div class="ico">🧱</div><b>Other layers</b><code>features.py · distances.py</code></div>
+      <div class="fstep" data-k="table"><div class="ico">📋</div><b>The big table</b><code>assemble.py</code></div>
+      <div class="fstep" data-k="bundle"><div class="ico">📦</div><b>App bundle</b><code>export_*_bundle.py</code></div>
+    </div>
+    <div class="sdetail" id="flowDetail"><span class="small">← pick a stage</span></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">🖐️ <b>Run by hand, one stage at a time.</b> Only the daily forecast run is automatic. Rebuilding the backbone itself is a manual job, and that is fine because the ground barely changes.</div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>The 29 sources, on 14 shelves</h2>
+  <p class="sub">Straight from the app's own catalogue: 10,853 files, 308 GB. 👆 Click a shelf to see its sources and their <b>terms of use</b>.</p>
+  <div class="groups" id="groups"></div>
+  <div class="srcs" id="srcs"></div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small"><span class="lic-g">●</span> <b>Open</b>: free to use and share with credit (NASA, ESA, CC-BY).</div>
+    <div class="card small"><span class="lic-a">●</span> <b>Non-commercial or unverified</b>: fine for research. Check before selling or sharing.</div>
+    <div class="card small"><span class="lic-r">●</span> <b>Restricted or unstated</b>: GSI says "not to be published". Indian portals often state no terms. <b>Ask first.</b></div>
+  </div>
+  <div class="tip" style="margin-top:12px">💾 <b>Why 308 GB?</b> 300 GB of it is radar pictures of flood dates, used once to check flood reports. Everything else fits in <b>8 GB</b>. The app itself reads a bundle of about 16 MB.</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>The law: six frozen choices</h2>
+  <p class="sub">From <code>DATA_CONTRACT.md</code>. Changing any of them means rebuilding everything. 🔒 means changing it after a model exists would <b>void every number we've published</b>.</p>
+  <div class="law">
+    <div class="card"><div class="k">1 · map projection</div><div class="v">UTM zone 46N</div><div class="small">Raw data comes in degrees, and a degree isn't a fixed distance. In metres, "500 m from a road" is easy. Arunachal spans two zones, but the error is 0.4%.</div></div>
+    <div class="card"><div class="k">2 · square size</div><div class="v">100 m</div><div class="small">30 m = 91 M squares, too slow. 250 m blurs the steep face that actually fails. 100 m = 8.2 M, fits in memory.</div></div>
+    <div class="card"><div class="k">3 · starting corner</div><div class="v">x 350,000 · y 2,950,000</div><div class="small">A round number fixed by hand, <b>not</b> taken from the border file. If the border file changed, a computed corner would shift every square silently.</div></div>
+    <div class="card"><div class="k">4 · square ID</div><div class="v">row × 100,000 + col</div><div class="small">You can decode any ID in your head, so a bad join shows up at once. Try it in section 4.</div></div>
+    <div class="card"><div class="k">5 · column names</div><div class="v">group_name_unit</div><div class="small"><code>soil_bdod_0-5cm_cgcm3</code>. The unit is in the name because a soil density of "107" once fooled us: it is centigrams, not grams.</div></div>
+    <div class="card"><div class="k lock">6 · test blocks</div><div class="v">50 km → 5 groups</div><div class="small">Fixed seed 42, frozen <b>before</b> any model was trained, with a fingerprint (<code>ce08e9f0124386ac</code>) to prove it. Otherwise you'd pick blocks that flatter the model without noticing.</div></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">⚖️ <b>If the doc and the code disagree, the code wins.</b> <code>scripts/build/grid.py</code> is the single source of truth. The doc only explains why.</div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>Decode a square ID</h2>
+  <p class="sub">Every row in the big table has a cell ID. Type one, or click a town. The ID tells you exactly where the square is.</p>
+  <div class="card decoder">
+    <div>
+      <input type="text" id="cid" value="222402305" inputmode="numeric" aria-label="cell id">
+      <div class="towns" id="towns"></div>
+      <div class="dec-out" id="decOut"></div>
+    </div>
+    <svg viewBox="0 0 5900 3200" style="width:100%;height:auto;background:var(--sheet-2);border:1px solid var(--rule);border-radius:8px">
+      <polygon points="4480,60 4380,160 4280,160 4260,200 4180,200 4100,300 4020,300 4020,340 3960,360 3980,440 3920,440 3900,560 3700,540 3680,480 3560,480 3480,420 3240,420 3240,340 3080,220 3020,360 2880,360 2660,540 2620,680 2480,780 2480,880 2440,880 2420,980 2300,940 2280,980 1920,980 1820,1020 1780,1160 1680,1240 1720,1260 1720,1360 1560,1380 1520,1400 1520,1460 1440,1440 1380,1520 1320,1540 1300,1500 1220,1560 1160,1660 1220,1680 1240,1760 1180,1840 1100,1860 1080,1920 1000,1900 980,1940 900,1920 880,1960 800,1960 780,1880 700,1880 600,1980 480,1980 460,2040 420,2040 340,1940 240,1940 200,1880 80,1880 80,1920 160,1940 160,2040 80,2100 100,2220 280,2320 540,2300 560,2460 620,2500 620,2540 560,2520 580,2600 540,2640 540,2760 620,2840 620,2960 800,2940 840,2900 900,2920 940,2880 1100,2880 1140,2860 1140,2800 1380,2820 1480,2920 1640,2920 1740,2880 2020,2900 2160,2880 2220,2800 2260,2800 2260,2760 2320,2760 2300,2660 2380,2600 2380,2560 2540,2440 2660,2280 2740,2260 2740,2200 2700,2180 2720,2120 2740,2160 2920,2160 2920,2200 2960,2200 3140,2120 3160,2080 3300,2060 3340,2000 3520,1960 3660,1880 3940,1860 4060,1740 4420,1720 4400,1800 4260,1920 4220,2020 4260,2140 4340,2200 4320,2340 4420,2300 4480,2400 4380,2500 4260,2480 4080,2560 3980,2520 3940,2560 3940,2660 3780,2720 3740,2780 3680,2780 3720,2900 3680,2960 3720,3160 3780,3200 3860,3180 3980,3080 4000,3000 4100,3000 4140,2920 4220,2940 4240,2820 4280,2780 4380,2780 4480,2660 4500,2580 4660,2520 4680,2480 4900,2440 5000,2460 5060,2380 5200,2360 5360,2480 5360,2580 5460,2580 5480,2620 5620,2660 5640,2600 5560,2540 5500,2420 5460,2420 5420,2300 5360,2260 5380,2160 5340,2080 5440,2020 5460,1940 5540,1940 5540,1880 5580,1880 5700,1740 5820,1780 5800,1660 5840,1620 5740,1580 5760,1460 5820,1420 5700,1340 5580,1320 5560,1260 5380,1300 5340,1240 5200,1260 5180,1200 5100,1160 5000,1160 4940,1220 4900,1200 4860,1300 4820,1300 4800,1240 4700,1240 4760,1160 4800,1160 4760,1080 4840,1060 4840,1020 4920,980 4900,920 5020,860 5020,780 4940,700 4940,600 4900,600 4920,500 4740,540 4660,660 4580,680 4600,560 4540,480 4600,480 4620,420 4760,380 4800,280 4760,260 4700,320 4640,320 4600,180 4480,60" fill="#e8e3ee" stroke="#6b5784" stroke-width="14"/>
+      <g id="townDots"></g>
+      <g id="pin"><circle r="70" fill="#cf1f2a"/><circle r="150" fill="none" stroke="#cf1f2a" stroke-width="20"/></g>
+      <text x="80" y="3120" font-size="110" fill="#737e78" font-family="IBM Plex Mono,monospace">grid box: 5,900 × 3,200 squares · row 0 is the north edge</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>The 34 facts, in six families</h2>
+  <p class="sub">Every square gets these 34 columns. Hover a chip to read what it means. Most come from just <b>two</b> downloads: the height map and the soil map.</p>
+  <div class="facts" id="facts"></div>
+  <div class="tip warn" style="margin-top:12px">➕ <b>Also on the grid, but not among the 34:</b> HAND and the size of the nearest channel (built later for FloodSense), and the <b>rain index</b> (section 7). The 34 are the landslide model's inputs. Each product reads the columns it needs.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>Three moves turn any shape into a column</h2>
+  <p class="sub">Sources come as grids, outlines or lines. Each has its own move to land on the 100 m squares.</p>
+  <div class="moves">
+    <div class="card">
+      <svg viewBox="0 0 240 110"><g stroke="#fff" stroke-width="1">
+        <rect x="5" y="15" width="40" height="40" fill="#b45f06"/><rect x="45" y="15" width="40" height="40" fill="#946610"/><rect x="5" y="55" width="40" height="40" fill="#d8a45a"/><rect x="45" y="55" width="40" height="40" fill="#b45f06"/></g>
+        <text x="105" y="60" font-size="22" fill="#cf1f2a">➜</text>
+        <g id="fine"></g></svg>
+      <b>🔲 Grid → grid</b><div class="small">A coarse grid (soil at 250 m) is spread over the squares it covers. A fine one (height at 30 m) is <b>worked out first, then averaged</b>: slope is worked out at 25 m and then averaged, so steep faces aren't smoothed away.</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 240 110"><path d="M10 20 L80 10 L95 60 L40 95 L5 70 Z" fill="#a64d79" opacity=".7"/><path d="M80 10 L100 15 L95 60 Z" fill="#6aa84f" opacity=".7"/>
+        <text x="110" y="60" font-size="22" fill="#cf1f2a">➜</text><g id="poly"></g></svg>
+      <b>🧩 Outline → label</b><div class="small">A rock map is a set of outlines. Each square asks <b>"which outline am I inside?"</b> and stores that rock's code.</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 240 110"><path d="M5 90 C 30 60, 60 70, 95 15" fill="none" stroke="#2f6cae" stroke-width="4"/>
+        <text x="110" y="60" font-size="22" fill="#cf1f2a">➜</text><g id="dist"></g></svg>
+      <b>📏 Line → distance</b><div class="small">A road, river or fault is a line. Each square stores <b>"how far to the nearest one"</b>. This is measured on the full box, so a square near the border still finds a road just across it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="n">7</span>Rain is special: never copied onto the 100 m squares</h2>
+  <p class="sub">Copying rain onto every square would mean 8.2 M squares × 9,555 days = <b>78 billion numbers</b>, about 12,000 copies of each rain value. So we don't.</p>
+  <div class="card two">
+    <svg viewBox="0 0 370 200" style="width:100%">
+      <g id="idxGrid"></g>
+      <text x="230" y="40" font-size="13" font-family="Mukta,sans-serif" fill="#2f6cae">rain squares</text>
+      <text x="230" y="56" font-size="13" font-family="Mukta,sans-serif" fill="#2f6cae">(11 km, numbered)</text>
+      <text x="230" y="150" font-size="13" font-family="Mukta,sans-serif" fill="#45514a">each 100 m square</text>
+      <text x="230" y="166" font-size="13" font-family="Mukta,sans-serif" fill="#45514a">stores just the</text>
+      <text x="230" y="182" font-size="13" font-family="Mukta,sans-serif" fill="#45514a">number it sits in</text>
+    </svg>
+    <div class="small">
+      <p style="margin-top:0"><b>The trick:</b> one file, <code>imerg_index.tif</code>, stores for every 100 m square <b>which rain square it sits in</b>. Models join on <i>(rain square, date)</i>. It holds the same information with <b>four orders of magnitude</b> less storage.</p>
+      <p><b>It's also honest.</b> A 100 m rain map would <i>look</i> sharp and invite people to trust it at 100 m. It's 11 km data.</p>
+    </div>
+  </div>
+  <div class="rainbox" style="margin-top:12px">
+    <div class="card"><b>📚 Rain history</b><div class="small">NASA IMERG, ~11 km squares, <b>2000-06-01 → 2026-07-29, 9,555 days, zero gaps</b>. 892 rain squares cover the state. The whole archive is only 326 MB, and downloading it is a ~2-hour job.</div></div>
+    <div class="card"><b>📡 Live rain + 7-day forecast</b><div class="small">Open-Meteo, a free weather service, at <b>219 points about 22 km apart</b>. One fetch feeds both forecasts. Points are spaced that far apart because of the free tier's limits: <b>a budget limit, not a science limit</b>.</div></div>
+  </div>
+  <div class="tip warn" style="margin-top:12px">🔁 <b>Trap we hit:</b> four days looked like holes in NASA's archive. They were our own bug: the script asked for the wrong file version. <b>Always re-check before calling data missing.</b></div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="n">8</span>One real square, all the way down</h2>
+  <p class="sub">A forested hillside about 600 m from Ziro (Hapoli), read from the real local data. Left: the answer. Right: <b>do the same for your own village</b>.</p>
+  <div class="sq">
+    <div class="card">
+      <div class="kicker">worked example · cell 222402305</div>
+      <h3 style="font-family:var(--display);font-weight:400;font-size:24px;margin:2px 0 6px">Hillside above Ziro</h3>
+      <table class="vals" id="ziro"></table>
+    </div>
+    <div class="card mine">
+      <div class="kicker">your turn · saved in this browser</div>
+      <h3 style="font-family:var(--display);font-weight:400;font-size:24px;margin:2px 0 6px">My village</h3>
+      <p class="small" style="margin-top:0">Pick a village you know. Get its lat/long from Google Maps (right-click), then run:</p>
+      <div class="cmd"><span>.venv\Scripts\python docs\lrn\tools\one_square.py 27.5494 93.8159 "My village"</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
+      <p class="tiny">Or, with no code: open the app → Data Backbone → Layer explorer.</p>
+      <table class="vals" id="mine"></table>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card small">🏘️ <b>Try the town centre too.</b> In Hapoli itself the soil reads <b>blank</b>: the soil map often has no value under towns. Knowing the gaps in each layer is part of the job.</div>
+    <div class="card small">🌧️ <b>Satellite rain ≠ a gauge.</b> IMERG says ~3,200 mm a year for Ziro's 11 km square. A rain gauge in the valley can read quite differently. That gap is why we want IMD's gauges (the "Ask" tier).</div>
+    <div class="card small">🛣️ <b>Road at 0 m.</b> A road crosses this square. Slides are ~2.3× more common near roads, partly because cuts weaken slopes and partly because surveyors map near roads.</div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="n">9</span>How the backbone moved to Assam</h2>
+  <p class="sub">One switch: <code>REGION=assam</code>. Every script reads it at start-up. With nothing set, everything runs for Arunachal exactly as before.</p>
+  <div class="region">
+    <div class="card same"><b style="color:var(--built)">＝ What stayed the same</b><ul>
+      <li>Projection (UTM 46N), 100 m squares, the ID formula, column names</li>
+      <li>Every fetch and build script: the same code, run with the switch</li>
+      <li>Raw folders (file names carry the region)</li>
+      <li>Arunachal's files and live forecasts: <b>proven unchanged</b> by <code>check_live_unchanged.py</code></li>
+    </ul></div>
+    <div class="card diff"><b style="color:var(--accent)">≠ What Assam got of its own</b><ul>
+      <li>Its own corner (160,000 / 2,660,000) and box (6,500 × 4,500 squares)</li>
+      <li>Its own download area (89.5–96.2°E, 24.0–28.2°N)</li>
+      <li>The official <b>Survey of India</b> outline (35 districts), not GADM: 78,424 km² against the official 78,438 km²</li>
+      <li>Its own folders (<code>data/interim/assam/</code>) and its own frozen test blocks</li>
+    </ul></div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🧩 <b>One lattice.</b> Both corners are whole multiples of 10 km, so where the two boxes overlap, Assam's squares sit <b>exactly</b> on Arunachal's. A river that crosses the border can be stitched square by square.</div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="n">10</span>Free → Ask → Paid: the data ladder</h2>
+  <p class="sub">Every limit belongs to a tier. Never call a Free-tier limit permanent. Say what lifts it.</p>
+  <div class="tiers">
+    <div class="tier" style="background:var(--built-soft);border:2px solid var(--built)"><b>Free · today</b><span class="small">open satellite and government data</span><ul><li>an area, days ahead</li><li>everything on this page</li></ul></div>
+    <div class="tier" style="background:var(--partial-soft);border:2px solid var(--partial);min-height:190px"><b>Ask · letters, not money</b><span class="small">what offices already hold</span><ul><li>finer and faster</li><li>gauges, road-block logs, river cross-sections, dam releases</li></ul></div>
+    <div class="tier" style="background:var(--accent-soft);border:2px solid var(--accent);min-height:230px"><b>Paid · chosen spots</b><span class="small">what we generate</span><ul><li>one slope or river reach, hours ahead</li><li>sensors, drones, LiDAR terrain</li></ul></div>
+  </div>
+  <h3 style="margin:22px 0 8px">The asks that matter most (from <code>GOV_DATA_REQUEST_LIST.md</code>)</h3>
+  <div class="asks">
+    <div class="ask"><div class="who">GSI</div><b>The <code>Landslidedata_1</code> event table</b>: date, time and rain for each slide. This unlocks <i>when</i>. Ask for it by table and field name.</div>
+    <div class="ask"><div class="who">State PWD · BRO · PMGSY</div><b>Road-block logs</b>: dated, located slides. The best realistic source of landslide dates, and what lets us grade the landslide forecast.</div>
+    <div class="ask"><div class="who">IMD</div><b>Rain gauge records</b>, hourly. Ground truth for satellite rain on the ridges and at Tawang.</div>
+    <div class="ask"><div class="who">CWC</div><b>River cross-sections</b> (to turn a level into a depth and extent) and danger lines for gauges that don't have them.</div>
+    <div class="ask"><div class="who">NHPC · dam operators</div><b>Dam release schedules</b>: on a regulated river, a release can matter more than rain.</div>
+    <div class="ask"><div class="who">SDMA · DDMA</div><b>Event and damage records</b>: what really happened, to grade both forecasts.</div>
+  </div>
+  <div class="tip" style="margin-top:12px">🧭 <b>Standing rule:</b> don't wait for an ask. Derive the missing piece ourselves where we can, and use it as proof of capability. Asks <b>sharpen</b>; they don't <b>block</b>.</div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="n">11</span>Portals that look closed, but aren't</h2>
+  <p class="sub">Several sources first got logged as "blocked, needs a formal request". Each time, <b>the web page lied, not the server</b>.</p>
+  <div id="portals"></div>
+  <div class="tip ok">🔍 <b>The method:</b> read the map viewer's own code for its real data addresses, then ask the server directly what it holds. This matters in the room: if an APSAC scientist says "that layer isn't public", you know how it was reached.</div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="n">12</span>Checked before trusted: real catches</h2>
+  <p class="sub">Rule 3 in action. Each of these would have quietly poisoned a model.</p>
+  <div class="grid g2">
+    <div class="trap" style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Official flood map on cliffs</b><div class="small">70.5% of Bhuvan's "flooded" pixels were on slopes over 15°. It's a rendered picture, smeared at the edges. Declared unusable as truth.</div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>GSI's map came out scrambled</b><div class="small">Exported in one big piece, the national susceptibility map matched its own source on only 41% of squares. Fixed by downloading in tiles on the server's own grid, then checking a small tile against a big one.</div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Landslides outside the state</b><div class="small">GSI sends data by map sheet, not by state: 246 of its polygons were in Nagaland and Assam. Filter by state before counting.</div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>One wrong river reading = a "52% flood"</b><div class="small">A single bad gauge value looked like a flood. Now a three-pass spike filter cleans readings, and it has found 18 false high-water days.</div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Soil density of 107</b><div class="small">That's centigrams per cm³, i.e. 1.07 g/cm³. Hence the unit in every column name.</div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Rain "holes" that weren't</b><div class="small">Four missing days were our own version bug, not NASA's. Re-check before declaring data missing.</div></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Read the code, in this order</h2>
+  <p class="sub">Read each file's opening comment block first. In this repo it says <i>why</i>. Tick as you go.</p>
+  <div class="card code-list" id="codeList"></div>
+  <h3 style="margin:22px 0 8px">And the docs</h3>
+  <div class="card code-list" id="docList"></div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <h2><span class="n">14</span>Check yourself</h2>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<!-- 15 -->
+<section id="s15">
+  <h2><span class="n">15</span>Finish line</h2>
+  <p class="sub">Phase 2 is done when you can do all four:</p>
+  <div class="beats">
+    <div class="beat"><span class="s">exercise</span><b>Your village, filled in</b>every value with its source and date (section 8)</div>
+    <div class="beat"><span class="s">explain</span><b>Download → column</b>for the height map, a rock outline and a road line</div>
+    <div class="beat"><span class="s">explain</span><b>Why rain isn't on the 100 m grid</b>both the storage reason and the honesty reason</div>
+    <div class="beat"><span class="s">explain</span><b>What REGION changed</b>and how we proved Arunachal didn't move</div>
+  </div>
+  <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 2 like an APSAC GIS scientist"</i>, and move to Phase 3, SlideSense.</div>
+</section>
+
+<footer>Phase 2 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Sources from <code>webapp/assets/backbone/catalogue.json</code>; rules from DATA_CONTRACT.md; worked example read from <code>data/interim/</code> with <code>docs/lrn/tools/one_square.py</code>, checked 2 Nov 2026.</footer>
+</div>
+
+<script>
+const KEY = "lrn-phase2";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+
+/* ---------- assembly line ---------- */
+const FLOW = {
+  fetch:{t:"📥 Fetch",x:"About 56 scripts, one per source, numbered in the order they were added (<code>fetch_01_boundaries</code> … <code>fetch_56_river_colour</code>). Each downloads only the state's box and calls <code>record()</code> to write down where the file came from.",f:"scripts/fetch/fetch_02_terrain.py · fetch_04_landcover.py · fetch_11_imerg.py · fetch_21_cwc_gauges.py · fetch_42_erosivity.py"},
+  raw:{t:"🗄️ Raw store",x:"Files kept exactly as downloaded, never edited. Each folder has a <code>_SOURCES.json</code>: source, link, fetch time, terms of use, and a fingerprint of every file. Not in git (hundreds of GB).",f:"data/raw/01_boundaries … 16_groundsource · each with _SOURCES.json"},
+  terrain:{t:"⛰️ Terrain + water",x:"From the 28 height tiles: steepness (worked out at 25 m, then averaged to 100 m), facing, curvature, relief. Then water routing on the <b>unmasked</b> map, because rivers flow in from Tibet, Bhutan and Assam, and cutting at the border would chop every catchment.",f:"scripts/build/terrain.py · hydrology.py · build_hand_100m.py → data/interim/terrain/*.tif"},
+  feat:{t:"🧱 Other layers",x:"Soil (6 properties × 3 depths), land cover, rock type and rock group are fitted onto the squares. Distances to river, road and fault line are measured.",f:"scripts/build/features.py · distances.py → data/interim/features/*.tif"},
+  table:{t:"📋 The big table (shelf 1)",x:"Every layer joined into one table: <b>one row per square inside the state, one column per fact</b>. Split into 5 parts by test block, so reading \"everything except block 3\" is cheap. From here on, nothing else opens a map file. Rain sits beside it, in its own stack (section 7).",f:"scripts/build/assemble.py → data/interim/grid_100m/fold=0…4 (~966 MB)"},
+  bundle:{t:"📦 App bundle",x:"Hundreds of GB shrunk to a ~16 MB pack the app can load on free hosting: coarser display maps, lookup tables and the catalogue you saw in section 2.",f:"scripts/run/export_webapp_bundle.py · scripts/build/build_backbone_bundle.py → webapp/assets/"}
+};
+document.querySelectorAll("#flow .fstep").forEach(el => el.addEventListener("click", () => {
+  document.querySelectorAll("#flow .fstep").forEach(e => e.classList.remove("on")); el.classList.add("on");
+  const s = FLOW[el.dataset.k];
+  $("flowDetail").innerHTML = `<h4>${s.t}</h4><div>${s.x}</div><div class="files">📂 ${s.f}</div>`;
+}));
+
+/* ---------- sources (from webapp/assets/backbone/catalogue.json) ---------- */
+const G = [
+  ["Boundaries","state and district outlines everything is clipped to",0.05,[["GADM 4.1","non-commercial; credit required","a","2026-07-26"]]],
+  ["Terrain","height, and everything from its shape",1.19,[["Copernicus DEM GLO-30","free worldwide, credit required","g","2026-07-26"]]],
+  ["Soil & geology","soil, rock type, fault lines",2.08,[["SoilGrids 2.0 (ISRIC)","CC-BY 4.0","g","2026-07-26"],["SMAP soil moisture (NASA)","NASA open data","g","2026-07-27"],["APSSDI (APSAC)","unstated; confirm before sharing","r","2026-07-28"]]],
+  ["Land cover","what grows or is built on it",0.46,[["ESA WorldCover 2021","CC-BY 4.0","g","2026-07-26"]]],
+  ["Hydrology","rivers, catchments, river flow",1.88,[["HydroSHEDS (WWF)","free, credit required","g","2026-07-26"],["GloFAS v4 (Copernicus)","Copernicus licence","g","2026-07-27"],["APSSDI (APSAC)","unstated","r","2026-07-28"]]],
+  ["Weather","daily rain, what makes it a forecast",0.38,[["NOAA GFS + ONI","public domain","g","2026-07-26"],["NASA GPM IMERG","NASA open data","g","2026-07-27"],["ERA5-Land (Copernicus)","Copernicus licence","g","2026-07-27"]]],
+  ["Seismic","earthquakes, a second trigger",0.004,[["USGS + IRIS","public domain / open","g","2026-07-26"]]],
+  ["Evidence","mapped landslides and floods: the answer key",0.10,[["NASA Global Landslide Catalog","re-host terms unverified","a","2026-07-26"],["GSI landslide inventory + polygons","RESTRICTED: not to be published","r","2026-07-28"],["NRSC Bhuvan landslides","unstated (Bhuvan terms)","r","2026-07-29"],["NRSC Bhuvan flood extent 2003–20","unstated","r","2026-07-29"]]],
+  ["Exposure","roads, settlements, people",0.92,[["WorldPop + OpenStreetMap + WDPA","mixed; WDPA non-commercial","a","2026-07-26"],["APSSDI (APSAC)","unstated","r","2026-07-28"]]],
+  ["Context","official maps we're compared against",0.06,[["Macrostrat geology","CC-BY 4.0","g","2026-07-26"],["GSI susceptibility map (50 m)","unstated","r","2026-10-10"]]],
+  ["River gauges","measured river levels",0.14,[["CWC Flood Forecasting System","open, no login","g","2026-08-31"],["NWDP river discharge (NWIC)","open","g","2026-08-31"]]],
+  ["Satellite","radar scenes of flood dates",300.46,[["Sentinel-1 radar (Copernicus)","free, full, open","g","2026-09-05"]]],
+  ["Flood records","global archive of big floods",0.003,[["DFO Global Flood Records","CC0","g","2026-09-02"]]],
+  ["Flood reports","news-based flood reports to verify",0.67,[["Groundsource (Google)","CC-BY 4.0","g","2026-09-05"]]]
+];
+const maxLog = Math.log10(301 * 1000);
+$("groups").innerHTML = G.map(([t, p, gb], i) => {
+  const w = Math.max(3, 100 * Math.log10(Math.max(gb, 0.001) * 1000) / maxLog);
+  return `<div class="grp" data-i="${i}"><b>${t}</b><span class="gb">${gb < 0.01 ? "<0.01" : gb >= 10 ? gb.toFixed(0) : gb.toFixed(2)} GB</span>
+    <div class="bar"><div style="width:${w}%"></div></div><div class="p">${p}</div></div>`;
+}).join("");
+const DOT = {g:'<span class="lic-g">●</span>', a:'<span class="lic-a">●</span>', r:'<span class="lic-r">●</span>'};
+function showGroup(i){
+  document.querySelectorAll(".grp").forEach(e => e.classList.toggle("on", +e.dataset.i === i));
+  $("srcs").innerHTML = G[i][3].map(([n, l, k, d]) => `<div class="src"><b>${n}</b><span class="lic">${DOT[k]} ${l}</span><span class="d">fetched ${d}</span></div>`).join("");
+}
+document.querySelectorAll(".grp").forEach(e => e.addEventListener("click", () => showGroup(+e.dataset.i)));
+showGroup(7);
+
+/* ---------- cell id decoder ---------- */
+const TOWNS = {Itanagar:[2740,2100],Tawang:[2181,373],Ziro:[2229,2309],Pasighat:[1633,3785],Aalo:[1526,3267],Tezu:[1776,4620],Bomdila:[2546,925],Anini:[807,4330],Khonsa:[2799,3980],Daporijo:[1744,2699]};
+$("townDots").innerHTML = Object.entries(TOWNS).map(([n, [r, c]]) => `<circle cx="${c}" cy="${r}" r="35" fill="#17201b"/><text x="${c+60}" y="${r+35}" font-size="105" font-family="Mukta,sans-serif" fill="#45514a">${n}</text>`).join("");
+$("towns").innerHTML = Object.entries(TOWNS).map(([n, [r, c]]) => `<button class="btn" data-id="${r*100000+c}" style="font-size:13px;padding:2px 9px">${n}</button>`).join("");
+$("towns").addEventListener("click", e => { if (e.target.dataset.id) { $("cid").value = e.target.dataset.id; decode(); } });
+function decode(){
+  const v = parseInt(($("cid").value || "").replace(/\D/g, ""), 10);
+  if (isNaN(v)) { $("decOut").textContent = "type a number"; return; }
+  const r = Math.floor(v / 100000), c = v % 100000;
+  const ok = r < 3200 && c < 5900;
+  const x = 350000 + c*100 + 50, y = 2950000 + 320000 - r*100 - 50;
+  $("decOut").innerHTML = `${v.toLocaleString("en")} ÷ 100,000<br>→ row <b>${r}</b> (${(r*0.1).toFixed(1)} km down from the north edge)<br>→ col <b>${c}</b> (${(c*0.1).toFixed(1)} km across from the west edge)<br>→ centre x ${x.toLocaleString()} m, y ${y.toLocaleString()} m (UTM 46N)` + (ok ? "" : `<br><span style="color:var(--accent)">⚠ outside the grid box</span>`);
+  $("pin").setAttribute("transform", `translate(${Math.min(c,5900)},${Math.min(r,3200)})`); $("pin").style.display = ok ? "" : "none";
+}
+$("cid").addEventListener("input", decode); decode();
+
+/* ---------- 34 facts ---------- */
+const FACTS = [
+  ["⛰️ Ground shape", "var(--soil)", "Copernicus height map, 30 m", [
+    ["dem_elev_m","height above sea"],["terrain_slope_deg","average steepness"],["terrain_slope_max_deg","steepest 25 m patch inside the square"],["terrain_relief_m","highest minus lowest point in the square"],
+    ["terrain_northness","faces north (+1) or south (−1)"],["terrain_eastness","faces east (+1) or west (−1)"],["terrain_curv_prof","bends down-slope: bulging or hollow"],["terrain_curv_plan","bends across-slope: water spreads or gathers"]]],
+  ["💧 Water", "var(--flood)", "also from the height map", [["hydro_flowacc_cells","how many squares drain through here"],["hydro_twi","wetness index: big catchment + gentle floor = wet"]]],
+  ["📏 Distances", "var(--bone)", "HydroSHEDS · OpenStreetMap · APSSDI", [["dist_river_m","to the nearest mapped river"],["dist_road_m","to the nearest road"],["dist_lineament_m","to the nearest fault or fracture line"]]],
+  ["🌳 Cover", "#6aa84f", "ESA WorldCover 2021, 10 m", [["lc_class_cat","tree, shrub, grass, crop, built-up, bare, snow, water…"]]],
+  ["🪨 Rock", "#a64d79", "APSSDI (APSAC state portal)", [["geol_rockgr_cat","rock group, e.g. gneiss-granitoid complex"],["geol_lithunit_cat","rock type, e.g. granitoid gneiss"]]],
+  ["🟫 Soil (6 × 3 depths)", "#b45f06", "SoilGrids 2.0, 250 m", [["clay","clay share (g/kg)"],["sand","sand share (g/kg)"],["silt","silt share (g/kg)"],["bdod","density (cg/cm³)"],["cfvo","stones (cm³/dm³)"],["soc","organic carbon (dg/kg)"],["@ 0–5 cm","top"],["@ 15–30 cm","middle"],["@ 60–100 cm","deep"]]]
+];
+const counts = [8, 2, 3, 1, 2, 18];
+$("facts").innerHTML = FACTS.map(([t, c, s, list], i) => `<div class="fgrp" style="--c:${c}"><h4>${t}<span>${counts[i]}</span></h4><div class="src2">${s}</div>${list.map(([n, d]) => `<span class="fchip" title="${d}">${n}</span>`).join("")}</div>`).join("");
+
+/* ---------- three moves: small pictures ---------- */
+(function(){
+  const cols = ["#b45f06","#946610","#d8a45a","#b45f06"]; let h = "";
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) h += `<rect x="${140+c*11}" y="${15+r*11}" width="10" height="10" fill="${cols[(r>3?2:0)+(c>3?1:0)]}"/>`;
+  $("fine").innerHTML = h; h = "";
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) { const x = c*12, y = r*11; const inG = x > 70 && y < 50 && (x-70) < (y+20); h += `<rect x="${140+c*11}" y="${15+r*11}" width="10" height="10" fill="${inG ? '#6aa84f' : (x < 95 && y < 85 ? '#a64d79' : '#eef1ed')}" opacity=".8"/>`; }
+  $("poly").innerHTML = h; h = "";
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) { const d = Math.abs((7-r) - c*0.8) / 6; h += `<rect x="${140+c*11}" y="${15+r*11}" width="10" height="10" fill="hsl(212,55%,${35+Math.min(d,1)*58}%)"/>`; }
+  $("dist").innerHTML = h;
+})();
+
+/* ---------- rain index picture ---------- */
+(function(){
+  let h = ""; const n = 4, s = 50;
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+    const id = 1281 + r*63 + c;
+    h += `<rect x="${10+c*s}" y="${10+r*s}" width="${s-2}" height="${s-2}" fill="${(r+c)%2 ? '#dbe7f5' : '#c5d7ee'}"/>`;
+    h += `<text x="${10+c*s+24}" y="${10+r*s+20}" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace" fill="#2f6cae">${id}</text>`;
+    for (let k = 0; k < 9; k++) h += `<rect x="${10+c*s+6+(k%3)*13}" y="${10+r*s+25+Math.floor(k/3)*7}" width="11" height="5" fill="#737e78" opacity=".35"/>`;
+  }
+  $("idxGrid").innerHTML = h;
+})();
+
+/* ---------- one real square (read from data/interim with docs/lrn/tools/one_square.py) ---------- */
+const ZIRO = [
+  ["Where"],["cell id","222402305","row 2224 · col 2305"],["lat / long","27.5494, 93.8159",""],
+  ["Ground shape"],["height","1,618 m","Copernicus DEM · fetched 2026-07-26"],["steepness","28.9° (max 34.6°)","from the DEM"],["faces","north (+0.98)","from the DEM"],
+  ["Water"],["squares draining through","1 (nothing drains into it)","from the DEM"],["wetness index","5.9 (dry-ish)","from the DEM"],["height above stream (HAND)","67.5 m","from the DEM"],
+  ["Distances"],["to river","500 m","HydroSHEDS · 2026-07-26"],["to road","0 m","OpenStreetMap · 2026-07-26"],["to fault line","1,676 m","APSSDI · 2026-07-28"],
+  ["Cover and rock"],["land cover","tree cover","ESA WorldCover 2021 · 2026-07-26"],["rock","granitoid gneiss","APSSDI · 2026-07-28"],
+  ["Soil, top 5 cm"],["clay / sand / silt","31% / 33% / 36%","SoilGrids 2.0 · 2026-07-26"],["stones","15%","SoilGrids"],["density","1.06 g/cm³","SoilGrids"],
+  ["Rain (11 km square 1285)"],["a year, on average","3,232 mm","NASA IMERG · 2000–2026"],["wettest day","332 mm (30 May 2025)","IMERG"],["3-day monsoon rain","half < 33 mm · 1 in 10 > 111 mm","IMERG"]
+];
+$("ziro").innerHTML = ZIRO.map(r => r.length === 1 ? `<tr class="h"><td colspan="3">${r[0]}</td></tr>` : `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+$("mine").innerHTML = ZIRO.map((r, i) => r.length === 1 ? `<tr class="h"><td colspan="2">${r[0]}</td></tr>` :
+  `<tr><td>${r[0]}</td><td><input data-v="m${i}" value="${(S["m"+i] || "").replace(/"/g, "&quot;")}" placeholder="value · source · date"></td></tr>`).join("");
+$("mine").addEventListener("input", e => { if (e.target.dataset.v) { S[e.target.dataset.v] = e.target.value; save(); } });
+
+/* ---------- portals ---------- */
+const PORTALS = [
+  ["APSSDI (APSAC)","the catalogue needs a login","the map server underneath is open: state rock map (562 outlines) and 4,777 fault lines"],
+  ["GSI Bhusanket","search says \"No data\" for everything","a broken part on their server. The data is reachable through the site's own map proxy"],
+  ["NRSC Bhuvan","downloads switched off","the map service returns full shapes if asked in small tiles. One big request silently returns a capped, biased subset"],
+  ["CWC flood site","just a map","an open data service behind it: Pasighat has river levels from 1971 to today, plus danger lines"],
+  ["NWDP (NWIC)","a portal","a documented open data service: 14 small-river gauges, 750,000+ readings"]
+];
+$("portals").innerHTML = PORTALS.map(([n, l, r]) => `<div class="portal"><span class="nm">${n}</span><span class="looks">${l}</span><span class="is">${r}</span></div>`).join("");
+
+/* ---------- code + docs reading lists ---------- */
+const CODE = [
+  ["scripts/common.py","paths, the REGION switch, record() which writes provenance"],
+  ["scripts/build/grid.py","the grid every layer snaps to: encode, decode, test blocks"],
+  ["scripts/fetch/ (names only)","skim all ~56 names. Read 02 terrain, 04 land cover, 11 IMERG, 21 CWC gauges, 42 erosivity"],
+  ["scripts/build/terrain.py","why slope is worked out at 25 m first"],
+  ["scripts/build/hydrology.py","why water is routed on the unmasked map"],
+  ["scripts/build/features.py · distances.py","the outline → label and line → distance moves"],
+  ["scripts/build/rainfall_stack.py","the imerg_index trick, and the north–south rain check"],
+  ["scripts/build/assemble.py","the one big table, split by test block"],
+  ["scripts/build/build_backbone_bundle.py → webapp/products/backbone/","how the catalogue reaches the app's Data Backbone pages"]
+];
+const DOCS = [
+  ["docs/design/DATA_CONTRACT.md","the law (section 3 of this page). Read all 180 lines"],
+  ["docs/data_research/Base.md · Appendix.md","every source we considered, including the rejected ones"],
+  ["docs/data_research/DATA_VERIFICATION.md","what was checked about each source. Skim the headings and findings"],
+  ["docs/design/GOV_DATA_REQUEST_LIST.md","the asks, by agency"],
+  ["docs/design/RAINFALL_FEATURES.md · RAINFALL_RESOLUTION_LIMITS.md","rain as input, and its honest limits"]
+];
+function list(id, items, pre){
+  $(id).innerHTML = items.map(([f, w], i) => `<label><input type="checkbox" data-id="${pre}${i}" ${S[pre+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
+  $(id).addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+}
+list("codeList", CODE, "c"); list("docList", DOCS, "d");
+
+/* ---------- quiz ---------- */
+const QUIZ = [
+  ["Why UTM and not latitude/longitude?","GIS officer","A degree isn't a fixed distance, so squares aren't square and '500 m from a road' can't be measured directly. UTM is in metres. Arunachal crosses two UTM zones, but the area error is only 0.4% at 100 m squares."],
+  ["Why 100 m squares, not 30 m or 250 m?","APSAC scientist","30 m gives 91 million squares, too slow to experiment with. 250 m averages away the steep faces that actually fail. 100 m gives 8.2 million, which fits in memory. And 100 m is the terrain detail, not the forecast detail: rain is 11 km."],
+  ["Why is the square ID row × 100,000 + col?","engineer","You can decode it in your head, so a wrong join is obvious at once. A simple counter (0, 1, 2…) would shift silently if the grid ever changed, and joins would corrupt with no error."],
+  ["Why were the test blocks frozen before any model was trained?","ML reviewer","If you choose blocks after seeing results, you unconsciously pick ones that flatter the model. Freezing them first, with a published fingerprint, proves the test came before the numbers."],
+  ["Why isn't rain copied onto the 100 m squares?","engineer","It would be 78 billion numbers, about 12,000 copies of each rain value. Instead each square stores which 11 km rain square it sits in, and models join on that. It's also honest: a 100 m rain map would look sharper than the data is."],
+  ["Which sources are open, which need asking, which are paid?","CTO question","Free: satellites (Copernicus DEM, IMERG, Sentinel), SoilGrids, WorldCover, OpenStreetMap, CWC and NWDP gauges. Ask: GSI's dated event table, road-block logs, IMD gauges, CWC cross-sections, dam releases, SDMA records. Paid: our own sensors, drones, LiDAR."],
+  ["What did REGION=assam change, and what didn't it?","co-founder","Changed: the grid's corner and size, the download area, the outline (Survey of India), its own folders and test blocks. Unchanged: projection, 100 m, the ID formula, column names, all the code. Arunachal's live forecasts were proven unchanged by check_live_unchanged.py."],
+  ["Which government portals look closed but aren't?","APSAC scientist","APSSDI (login on the catalogue, open map server underneath), GSI Bhusanket (broken search, data via its own proxy), Bhuvan (downloads off, but the map service returns full shapes in small tiles), the CWC flood site (an open data service behind the map), and NWDP."],
+  ["Can we share all this data with a client or partner?","investor","Not all of it. Most satellite data is open with credit. But GSI's inventory says 'not to be published', several Indian portals state no terms, and some sources are non-commercial. Sharing outward depends on each source's terms, which is why the open feed is planned, not live."],
+  ["A slope in the table reads 4°, but you know it's a steep hill. What could be wrong?","GIS officer","Check whether slope was computed on a coarse height map: averaging heights first flattens slopes, which is why we work it out at 25 m and then aggregate. Check the square really is the one you mean (decode the ID). Check whether it's outside the state mask or masked as water or ice."]
+];
+const quiz = $("quiz");
+QUIZ.forEach(([q, who, a], i) => {
+  const id = "q"+i, d = document.createElement("div");
+  d.className = "qa" + (S[id]==="got"?" got":S[id]==="miss"?" miss":"");
+  d.innerHTML = `<div class="q"><span>${i+1}.</span><span>${q}</span><span class="who">asked by: ${who}</span></div>
+    <div class="a"><p>${a}</p><div class="grade"><button data-g="got">✓ I had it</button><button data-g="miss">✗ Missed it</button></div></div>`;
+  d.querySelector(".q").addEventListener("click", () => d.classList.toggle("open"));
+  d.querySelectorAll(".grade button").forEach(b => b.addEventListener("click", () => {
+    S[id] = b.dataset.g; d.classList.remove("got","miss","open"); d.classList.add(b.dataset.g); save();
+  }));
+  quiz.appendChild(d);
+});
+
+function meter(){
+  const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));
+  const done = ids.filter(id => S[id]===true || S[id]==="got").length;
+  $("meter").textContent = Math.round(100*done/ids.length) + "% done";
+  const got = QUIZ.filter((_, i) => S["q"+i]==="got").length, tried = QUIZ.filter((_, i) => S["q"+i]).length;
+  $("score").textContent = tried ? `· ${got}/${QUIZ.length} right so far` : "";
+}
+meter();
+</script>
+</body>
+</html>
