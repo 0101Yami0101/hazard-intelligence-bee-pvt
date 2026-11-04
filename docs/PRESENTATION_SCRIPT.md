@@ -55,7 +55,7 @@ Now look at the line underneath, because it matters most. Every forecast is writ
 
 Today that means:
 
-- **29** sources lined up.
+- **46** sources lined up.
 - **8.2 million** squares on the shared map.
 - **26 years** of daily rain, for every place in the state.
 

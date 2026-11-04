@@ -20,14 +20,17 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs" / "nesfic" / "shots"
 PORT = 8794
-# (file name, sidebar button, district to pick or None, page height to keep)
+# (file name, sidebar button, district to pick or None, page height to keep[, map run])
 SHOTS = [("01_map", "Erosion map", None, 1250),
+         ("09_ai", "Erosion map", None, 1250, "AI map"),
+         ("10_streams", "Erosion map", None, 1250, "Soil reaching streams"),
          ("02_map_district", "Erosion map", "Dima Hasao", 1250),
          ("07_week", "This week", None, 1750),
          ("08_village", "Village card", "q:Haflong", 1250),
          ("03_change", "Change over time", None, 1700),
          ("04_change_district", "Change over time", "Dima Hasao", 1700),
          ("05_priority", "Priority list", None, 2600),
+         ("11_whatif", "What if we treat it?", None, 1700),
          ("06_method", "How to read this", None, 2400)]
 
 
@@ -55,7 +58,7 @@ def main() -> None:
                 time.sleep(1)
         with sync_playwright() as p:
             b = p.chromium.launch(headless=True)
-            for name, button, district, height in SHOTS:
+            for name, button, district, height, *run in SHOTS:
                 pg = b.new_page(viewport={"width": 1440, "height": 1000}, device_scale_factor=1)
                 pg.goto(f"http://localhost:{PORT}/?m=erosion", timeout=90000)
                 nav = pg.locator("[data-testid='stSidebar'] button", has_text=button).first
@@ -71,6 +74,9 @@ def main() -> None:
                 elif district:
                     pick_district(pg, district)
                     pg.wait_for_timeout(7000)
+                if run:                                      # a map run other than the main one
+                    pg.locator("[data-testid='stMain'] button", has_text=run[0]).first.click()
+                    pg.wait_for_timeout(8000)
                 pg.set_viewport_size({"width": 1440, "height": height})
                 pg.wait_for_timeout(6000)              # map tiles
                 pg.screenshot(path=str(OUT / f"{name}.png"), full_page=False)

@@ -168,20 +168,32 @@ def build_catalogue() -> dict:
         # replaced would otherwise be counted twice (CWC's first three
         # stations were re-fetched under their station codes).
         on_disk = {f.name: f.stat().st_size for f in d.rglob("*") if f.is_file()}
-        # A group may keep one manifest per sub-folder (11_gauges/cwc, /nwdp).
+        # One entry per source per GROUP, even when the group keeps one
+        # manifest per sub-folder (11_gauges/cwc and /cwc_assam are one CWC).
+        merged: dict[str, dict] = {}
         for sp in sorted(d.rglob("_SOURCES.json")):
             entries = json.loads(sp.read_text(encoding="utf-8"))
             for s in entries:
                 s["files"] = [{"name": f["name"], "bytes": on_disk[f["name"]]}
-                              for f in s.get("files", []) if f.get("name") in on_disk]
+                              if f.get("name") in on_disk else
+                              {"name": f["name"], "bytes": (ROOT / f["path"]).stat().st_size}
+                              for f in s.get("files", [])
+                              if f.get("name") in on_disk
+                              or (f.get("path") and (ROOT / f["path"]).is_file())]
+                # files kept outside the folder count towards its totals too
+                for f in s.get("files", []):
+                    if f["name"] not in on_disk:
+                        n += 1
+                        b += f["bytes"]
             entries = [s for s in entries if s["files"]]
             # A fetcher that records once PER STATION (CWC: 21 entries named
             # "CWC FFS (<station>)") is one source, not 21. Entries are merged
             # only when three or more in one manifest share the name before
             # the bracket — "ERA5-Land hourly (Copernicus CDS)" stays itself.
-            base = [re.sub(r"\s*\([^)]*\)\s*$", "", s.get("source", "—")) for s in entries]
+            # The bracket may hold a bracket: "CWC FFS (Chenimari (Khowang))".
+            base = [re.sub(r"\s*\((?:[^()]|\([^()]*\))*\)\s*$", "", s.get("source", "—"))
+                    for s in entries]
             many = {x for x in base if base.count(x) >= 3}
-            merged: dict[str, dict] = {}
             for s, bname in zip(entries, base):
                 files = s.get("files", [])
                 name = bname if bname in many else s.get("source", "—")
@@ -197,7 +209,8 @@ def build_catalogue() -> dict:
                     "license": s.get("license", "—"), "fetched": "",
                     "notes": "" if bname in many else s.get("notes", ""),
                     "n_files": 0, "bytes": 0, "_fetches": {}, "_seen": set(),
-                    "regions": []})
+                    "_per_station": False, "regions": []})
+                m["_per_station"] |= bname in many
                 # a file two entries both list is one file (and one series)
                 fresh = [f for f in files if f["name"] not in m["_seen"]]
                 m["_seen"] |= {f["name"] for f in fresh}
@@ -207,19 +220,44 @@ def build_catalogue() -> dict:
                 m["_fetches"][region] = m["_fetches"].get(region, 0) + bool(fresh)
                 if region not in m["regions"]:
                     m["regions"].append(region)
-            for m in merged.values():
-                del m["_seen"]
-                n_series = max(m.pop("_fetches").values(), default=0)
-                if n_series > 1:
-                    m["source"] = f"{m['source']} ({n_series} series)"
-                m["regions"] = sorted(m["regions"], key=lambda r: (r != "arunachal", r))
-                srcs.append(m)
+        for m in merged.values():
+            del m["_seen"]
+            # Per-station series in two states are different stations (add);
+            # one source fetched for two states is one series (take the max).
+            f = m.pop("_fetches").values()
+            n_series = sum(f) if m.pop("_per_station") else max(f, default=0)
+            m["base"] = m["source"]
+            if n_series > 1:
+                m["source"] = f"{m['source']} ({n_series} series)"
+            m["regions"] = sorted(m["regions"], key=lambda r: (r != "arunachal", r))
+            srcs.append(m)
         groups.append({"key": key, "title": title, "purpose": purpose,
                        "n_files": n, "bytes": b, "sources": srcs})
+    # A source that feeds several groups (APSSDI: geology, rivers, places,
+    # boundaries) is still one source.
+    held = {s.pop("base") for g in groups for s in g["sources"]}
+    for g in groups:
+        for s in g["sources"]:
+            s["status"] = "held"
+    # Sources checked and ready to pull, not pulled yet (scripts/fetch/
+    # ready_sources.py checks each one live). Listed so the inventory shows
+    # what we can reach, never counted as data held.
+    ready = []
+    rp = RAW / "_READY.json"
+    by_key = {g["key"]: g for g in groups}
+    for r in (json.loads(rp.read_text(encoding="utf-8")) if rp.exists() else []):
+        if r["source"] in held or r["group"] not in by_key:
+            continue
+        ready.append(r["source"])
+        by_key[r["group"]]["sources"].append({
+            "source": r["source"], "url": r["url"], "license": r["license"],
+            "fetched": "", "notes": r["notes"], "n_files": 0, "bytes": 0,
+            "regions": [], "status": "ready", "checked": r["checked"]})
     return {"groups": groups,
             "total_files": sum(g["n_files"] for g in groups),
             "total_bytes": sum(g["bytes"] for g in groups),
-            "n_sources": sum(len(g["sources"]) for g in groups)}
+            "n_held": len(held), "n_ready": len(set(ready)),
+            "n_sources": len(held) + len(set(ready))}
 
 
 def summarise(path: Path, kind: str):

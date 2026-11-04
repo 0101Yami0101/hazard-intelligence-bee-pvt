@@ -284,6 +284,10 @@ def record(folder: Path, source: str, url: str, files: list[Path],
         "notes": notes,
         "files": [
             {"name": f.name,
+             # Where the file lives, when it is kept outside the raw folder
+             # (a source whose untouched copy is the interim store itself).
+             **({} if f.resolve().parent.is_relative_to(folder.resolve())
+                else {"path": f.resolve().relative_to(ROOT).as_posix()}),
              "bytes": f.stat().st_size if f.exists() else 0,
              "sha256_head": sha256(f) if f.exists() else ""}
             for f in files

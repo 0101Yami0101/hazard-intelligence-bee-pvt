@@ -34,7 +34,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-from common import INTERIM, UA
+from common import INTERIM, UA, WEATHER, record
 
 API = "https://previous-runs-api.open-meteo.com/v1/forecast"
 OUT = INTERIM / "rainfall_om_prev"
@@ -115,6 +115,17 @@ def main() -> None:
     np.save(OUT / "dates.npy", np.array([str(d.date()) for d in dates]))
     print(f"  wrote {OUT / 'prev_mm.npy'} {mm.shape}; complete days by lead: "
           f"{[int(np.isfinite(mm[k]).all(axis=1).sum()) for k in range(LEADS)]}")
+    record_source()
+
+
+def record_source() -> None:
+    """Provenance in the raw store. The untouched copy is the interim store."""
+    record(WEATHER, source="Open-Meteo previous model runs", url=API,
+           files=[OUT / "prev_mm.npy", OUT / "dates.npy"],
+           license_="CC BY 4.0 (data). The free API is for non-commercial use; commercial use needs "
+                     "an Open-Meteo API plan.",
+           notes="What the forecast said 1-6 days ahead for every past day: "
+                 "grades forecast rain against what fell.")
 
 
 if __name__ == "__main__":

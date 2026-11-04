@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lining up the data, explained simply — SlopeSense learning path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Shared look for the docs/lrn learning pages (same palette as the codebase map). */
+:root{
+  --paper:#f1f3ef;--sheet:#fff;--sheet-2:#f7f8f5;--ink:#17201b;--ink-2:#45514a;--ink-3:#737e78;
+  --rule:#d6dcd5;--grid:#e3e8e1;--accent:#cf1f2a;--accent-soft:#fbe3e2;
+  --built:#1d7a4b;--built-soft:#dcefe3;--partial:#a86a0f;--partial-soft:#f7e9cf;
+  --planned:#7a8580;--planned-soft:#eef1ed;
+  --slide:#1d8673;--slide-bg:#d7eee8;--flood:#2f6cae;--flood-bg:#dbe7f5;
+  --soil:#946610;--soil-bg:#f2e8d0;--bone:#6b5784;--bone-bg:#e8e3ee;
+  --shadow:0 1px 2px rgb(23 32 27/.06),0 8px 24px rgb(23 32 27/.08);
+  --display:"Rozha One","Noto Serif Devanagari",Georgia,serif;
+  --body:"Mukta","Nirmala UI","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+a{color:var(--flood)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+code{background:var(--sheet-2);border:1px solid var(--grid);border-radius:4px;padding:0 .3em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:10;background:rgb(241 243 239/.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:20px;white-space:nowrap}
+.brand span{color:var(--accent)}
+.phases{display:flex;gap:4px;flex:1;min-width:280px}
+.phases div{flex:1;height:30px;border-radius:5px;background:var(--planned-soft);border:1px solid var(--rule);font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);text-align:center;line-height:1.1;padding:0 2px}
+.phases div.now{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.done-meter{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:46px;line-height:1.05;margin:6px 0 10px}
+.goal{display:inline-flex;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+.goal b{color:var(--accent)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.toc a{font-size:13px;text-decoration:none;color:var(--ink-2);background:var(--sheet);border:1px solid var(--rule);border-radius:99px;padding:3px 10px}
+.toc a:hover{border-color:var(--ink-3)}
+
+/* sections */
+section{padding:30px 0 8px}
+h2{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{font-family:var(--mono);font-size:13px;color:#fff;background:var(--ink);border-radius:5px;padding:2px 7px;position:relative;top:-4px}
+.sub{color:var(--ink-2);margin:0 0 16px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.small{font-size:14px;color:var(--ink-2)}
+.tiny{font-size:12px;color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;font-weight:500;white-space:nowrap}
+.p-built{background:var(--built-soft);color:var(--built)}
+.p-part{background:var(--partial-soft);color:var(--partial)}
+.p-plan{background:var(--planned-soft);color:var(--planned);border:1px dashed var(--planned)}
+.tip{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px}
+.tip.ok{border-color:var(--built);background:var(--built-soft)}
+.tip.warn{border-color:var(--partial);background:var(--partial-soft)}
+
+/* road picture */
+.road svg{width:100%;height:auto;display:block}
+
+/* names tree */
+.tree{display:grid;grid-template-columns:1fr;gap:10px}
+.tree .root{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:12px}
+.tree .root b{font-family:var(--display);font-weight:400;font-size:24px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{border-radius:10px;padding:12px;border:2px solid}
+.mod h4{margin:0;font-size:19px}
+.mod .q{font-size:14px;margin-top:4px}
+.mod.sl{border-color:var(--slide);background:var(--slide-bg)}.mod.sl h4{color:var(--slide)}
+.mod.fl{border-color:var(--flood);background:var(--flood-bg)}.mod.fl h4{color:var(--flood)}
+.mod.so{border-color:var(--soil);background:var(--soil-bg)}.mod.so h4{color:var(--soil)}
+.bone{background:var(--bone-bg);border:2px solid var(--bone);border-radius:10px;padding:12px;text-align:center}
+.bone b{color:var(--bone);font-size:19px}
+@media(max-width:700px){.mods{grid-template-columns:1fr}h1{font-size:36px}}
+
+/* four walls */
+.wall{text-align:center;padding:16px 12px}
+.wall .ico{font-size:34px;line-height:1}
+.wall b{display:block;margin:6px 0 2px}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.step{position:relative;cursor:pointer;background:var(--sheet);border:2px solid var(--rule);border-radius:10px;padding:12px 8px;margin:0 12px;text-align:center;transition:.15s}
+.step:hover{border-color:var(--ink-3)}
+.step.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.step .ico{font-size:28px}
+.step b{display:block;font-size:16px}
+.step .tiny{display:block}
+.step:not(:last-child)::after{content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:18px}
+.loop{margin:10px 12px 0;border:2px dashed var(--accent);border-top:none;border-radius:0 0 14px 14px;padding:8px;text-align:center;font-size:14px;color:var(--accent);cursor:pointer}
+.loop.on{background:var(--accent-soft)}
+.detail{margin-top:14px;min-height:118px}
+.detail h4{margin:0 0 4px;font-size:18px}
+.detail .where{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:8px}
+@media(max-width:760px){.pipe{grid-template-columns:1fr}.step{margin:6px 0}.step:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+
+/* layers */
+.layers-wrap{display:grid;grid-template-columns:minmax(260px,1fr) 1.1fr;gap:20px;align-items:center}
+@media(max-width:760px){.layers-wrap{grid-template-columns:1fr}}
+.stack{position:relative;height:380px;perspective:900px}
+.lyr{position:absolute;left:12%;width:76%;height:64px;border-radius:6px;transform:rotateX(58deg) rotateZ(-30deg);transform-origin:center;cursor:pointer;transition:.18s;border:1px solid rgb(0 0 0/.15);
+  background-image:linear-gradient(rgb(255 255 255/.35) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.35) 1px,transparent 1px);background-size:12px 12px}
+.lyr:hover,.lyr.on{filter:brightness(1.12);box-shadow:0 0 0 3px var(--ink)}
+.lyr-label{position:absolute;right:0;font-size:12px;font-family:var(--mono);color:var(--ink-2);pointer-events:none}
+.pin{position:absolute;left:50%;top:16px;bottom:22px;width:2px;background:var(--accent)}
+.pin::before{content:"one square";position:absolute;top:-14px;left:6px;font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+.uses{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.chip{border-radius:8px;padding:6px 10px;font-weight:600;font-size:14px;border:2px solid var(--rule);color:var(--ink-3);background:var(--sheet-2);transition:.15s}
+.chip.y.sl{border-color:var(--slide);background:var(--slide-bg);color:var(--slide)}
+.chip.y.fl{border-color:var(--flood);background:var(--flood-bg);color:var(--flood)}
+.chip.y.so{border-color:var(--soil);background:var(--soil-bg);color:var(--soil)}
+.chip.p{border-style:dashed}
+
+/* rules */
+.rule{display:flex;gap:12px;align-items:flex-start}
+.rule .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:500}
+.rule b{display:block}
+.rule .why{font-size:14px;color:var(--ink-2)}
+.rule .why::before{content:"why → ";color:var(--accent);font-family:var(--mono);font-size:12px}
+
+/* equation */
+.eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center}
+.eq .box{background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:14px 18px;min-width:180px}
+.eq .box > b{font-family:var(--display);font-weight:400;font-size:28px;display:block}
+.eq .op{font-family:var(--display);font-size:38px;color:var(--accent)}
+.eq .box.res{background:var(--ink);color:#fff}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;cursor:pointer;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:5px 12px}
+.tabs button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.hz{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.hz .op{display:flex;align-items:center;font-family:var(--display);font-size:28px;color:var(--accent)}
+.hz .c{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.hz .c .tiny{text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
+@media(max-width:700px){.hz{grid-template-columns:1fr}.hz .op{justify-content:center}}
+.gun{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.gun div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.gun .big{font-size:26px}
+.gun .yes{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:700px){.gun{grid-template-columns:repeat(2,1fr)}}
+
+/* status board */
+.board{display:grid;grid-template-columns:1fr;gap:6px}
+.row{display:grid;grid-template-columns:1.2fr 110px 2fr;gap:10px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;font-size:15px}
+.row .small{font-size:13px}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.legend{display:flex;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+
+/* flip cards */
+.flip{perspective:800px;cursor:pointer;height:150px}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;padding:12px 14px}
+.flip .f{background:var(--sheet);text-align:center}
+.flip .f .big{font-family:var(--display);font-size:38px;line-height:1}
+.flip .f .tiny{margin-top:6px}
+.flip .b{background:var(--ink);color:#fff;transform:rotateY(180deg);font-size:14.5px;line-height:1.4}
+.flip .b .tiny{color:#b9c2bc;margin-top:6px}
+
+/* never say */
+.never{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:15px}
+.never div{padding:9px 12px;border-bottom:1px solid var(--rule)}
+.never .no{background:var(--accent-soft)}
+.never .no::before{content:"✗ ";color:var(--accent);font-weight:700}
+.never .yes{background:var(--built-soft)}
+.never .yes::before{content:"✓ ";color:var(--built);font-weight:700}
+.never .h{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--sheet-2)}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tour .mcol{border-radius:12px;border:2px solid;padding:12px;background:var(--sheet)}
+.tour h4{margin:0 0 6px;font-size:18px}
+.tour label{display:flex;gap:8px;align-items:flex-start;font-size:15px;padding:4px 0;cursor:pointer;border-top:1px dashed var(--grid)}
+.tour input[type=checkbox]{margin-top:5px;accent-color:var(--built)}
+.tour label span .tiny{display:block}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--ink);color:#e8ede9;border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+.cmd button{margin-left:auto;font:inherit;font-size:12px;border:1px solid #6b766f;background:transparent;color:#e8ede9;border-radius:6px;padding:3px 8px;cursor:pointer}
+
+/* folders */
+.folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.fold{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px}
+.fold .nm{font-family:var(--mono);font-weight:500;font-size:15px}
+.fold .nm::before{content:"📁 "}
+.fold .what{font-size:14px;color:var(--ink-2)}
+.fold .stage{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px}
+
+/* reading list */
+.read{display:grid;grid-template-columns:40px 1fr 90px;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.read .o{font-family:var(--display);font-size:28px;text-align:center;color:var(--accent)}
+.read .f{font-family:var(--mono);font-size:14px;font-weight:500}
+.read .t{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right}
+.read .how{font-size:14px;color:var(--ink-2)}
+
+/* stale */
+.stale{display:grid;grid-template-columns:1fr 26px 1fr;gap:8px;align-items:center;font-size:15px;margin-bottom:8px}
+.stale .old{background:var(--planned-soft);border-radius:8px;padding:8px 10px;text-decoration:line-through;text-decoration-color:var(--accent);color:var(--ink-3)}
+.stale .new{background:var(--built-soft);border-radius:8px;padding:8px 10px}
+.stale .ar{text-align:center;color:var(--accent);font-weight:700}
+.stale .src{font-family:var(--mono);font-size:11px;display:block;text-decoration:none;color:var(--ink-3)}
+
+/* quiz */
+.qa{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.qa .q{display:flex;gap:10px;align-items:center;padding:11px 14px;cursor:pointer;font-weight:600}
+.qa .q .who{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:auto;white-space:nowrap}
+.qa .a{display:none;padding:0 14px 12px 14px;border-top:1px dashed var(--grid)}
+.qa.open .a{display:block}
+.qa .a p{margin:10px 0 8px}
+.qa .grade{display:flex;gap:6px}
+.qa .grade button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px}
+.qa.got{border-left:5px solid var(--built)}
+.qa.miss{border-left:5px solid var(--accent)}
+.score{font-family:var(--mono);font-size:14px}
+
+/* 3-minute story */
+.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:b}
+.beat{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--ink);border-radius:8px;padding:10px;font-size:14px;position:relative}
+.beat b{display:block;font-size:15px}
+.beat .s{font-family:var(--mono);font-size:11px;color:var(--accent)}
+footer{padding:40px 0 60px;color:var(--ink-3);font-size:13px}
+
+/* ---- phone fixes (2026-11-03) ---- */
+code{overflow-wrap:anywhere}
+@media(max-width:700px){
+  .wrap{padding:0 16px}
+  header.top .wrap{gap:8px}
+  .phases{flex-basis:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .phases div{flex:0 0 auto;min-width:58px;font-size:10px;height:26px}
+  .goal{display:flex;max-width:100%}
+  h1{font-size:34px}
+  h2{font-size:25px}
+  .tip,.card{overflow-wrap:anywhere}
+}
+.read > div{min-width:0}
+.read .f{overflow-wrap:anywhere}
+@media(max-width:700px){.read{grid-template-columns:30px 1fr 64px;gap:8px}}
+
+</style>
+<style>
+.reftag{font-family:var(--mono);font-size:11px;border:1px solid var(--rule);border-radius:99px;padding:2px 10px;color:var(--ink-2);background:var(--sheet)}
+svg{display:block;width:100%;height:auto}
+.pic{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);padding:12px}
+.cap{font-size:15px;color:var(--ink-2);margin-top:8px}
+.big{font-size:19px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.btns button,.tabs button{font:inherit;font-size:14px;border:1px solid var(--rule);background:var(--sheet);border-radius:99px;padding:4px 12px;cursor:pointer}
+.btns button.on,.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.trick h3{font-family:var(--display);font-weight:400;font-size:24px;margin:4px 0 2px}
+.trick .why{font-size:16px;margin:6px 0}
+.trick .real{font-size:14px;color:var(--ink-3)}
+.addr{font-family:var(--mono);font-size:15px;background:var(--sheet-2);border:1px solid var(--grid);border-radius:8px;padding:8px 12px;margin-top:8px}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:start}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.facts{display:grid;gap:5px}
+.facts div{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;background:var(--sheet-2);border:1px solid var(--grid);border-radius:8px;padding:5px 10px;font-size:15px}
+.facts code{font-size:11.5px;display:block;color:var(--ink-3);background:none;border:0;padding:0}
+.facts b{font-family:var(--mono);font-size:14px;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.steps div{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;text-align:center;font-size:14px}
+.steps div span{font-size:28px;display:block}
+.steps div.me{border:2px solid var(--accent);background:var(--accent-soft)}
+@media(max-width:560px){.steps{grid-template-columns:1fr 1fr}}
+.q{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.q .a{display:none;margin-top:6px;color:var(--ink-2);font-size:15px}
+.q.open .a{display:block}
+.q.got{border-color:var(--built)}
+.q .grade{margin-top:6px;display:flex;gap:6px}
+.q .grade button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--sheet);border-radius:6px;padding:2px 10px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand">Learn <span>SlopeSense</span></div>
+  <span class="reftag">Explainer · lining up the data</span>
+  <div class="done-meter" id="meter"></div>
+</div></header>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">Explainer · for anyone, age 12 and up</div>
+  <h1>29 maps, one sheet of graph paper</h1>
+  <div class="goal">🎯 <span>Understand what <b>"lining up the data"</b> means, and why nothing works without it.</span></div>
+  <div class="toc">
+    <a href="#s1">1 · The mess</a><a href="#s2">2 · The graph paper</a><a href="#s3">3 · The 6 tricks</a>
+    <a href="#s4">4 · One square, all its facts</a><a href="#s5">5 · Where it fits</a><a href="#s6">6 · Check yourself</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="n">1</span>The mess: every map is drawn differently</h2>
+  <p class="sub big">We collect maps from 29 places. Each one was drawn by different people, for different jobs. They <b>don't fit together</b>.</p>
+  <div class="pic"><svg id="mess" viewBox="0 0 640 190"></svg></div>
+  <div class="btns" id="messbtn"><button data-m="0" class="on">Four maps</button><button data-m="1">Stack them as they come 😵</button><button data-m="2">Lined up ✅</button></div>
+  <p class="cap" id="messcap"></p>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="n">2</span>The graph paper: every square has an address</h2>
+  <div class="two">
+    <div class="pic"><svg id="paper" viewBox="0 0 400 240"></svg><div class="addr" id="addr">👆 Tap any square</div></div>
+    <div>
+      <p class="big">We cover the whole state with <b>one sheet of graph paper</b>. Then we copy every map onto it.</p>
+      <div class="facts">
+        <div><span>📏</span><span>Each square is <b>100 m × 100 m</b>, about one football pitch</span><span></span></div>
+        <div><span>🔢</span><span><b>8.2 million</b> squares inside the state</span><span></span></div>
+        <div><span>🏠</span><span>Every square has an address: <b>row × 100,000 + column</b>. Like a house number, you can work out where it is from the number</span><span></span></div>
+        <div><span>📌</span><span>The sheet's corner is nailed to a round number and <b>never moves</b>, even if a source map changes</span><span></span></div>
+      </div>
+      <p class="real tiny" style="margin-top:8px">Real: <code>scripts/build/grid.py</code> · <code>docs/design/DATA_CONTRACT.md</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="n">3</span>The 6 tricks for copying a map onto our paper</h2>
+  <p class="sub">Every map is a different kind of problem. Pick one. Left is what arrives; right is what goes on our paper.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="pic trick">
+    <h3 id="th"></h3>
+    <svg id="tsvg" viewBox="0 0 440 210"></svg>
+    <div class="btns" id="tbtn"></div>
+    <p class="why" id="twhy"></p>
+    <p class="real" id="treal"></p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="n">4</span>The prize: one square, all its facts</h2>
+  <p class="sub big">After lining up, you can point at <b>any one square</b> and read every fact about it, all about the same patch of ground.</p>
+  <div class="two">
+    <div class="pic"><svg id="tower" viewBox="0 0 400 300"></svg><p class="cap">Every sheet is the same graph paper, so a pin through one square hits the same spot on all of them.</p></div>
+    <div>
+      <div class="facts" id="facts"></div>
+      <p class="tiny" style="margin-top:6px">Real fact names; pretend numbers. The real table has <b>34 facts</b> per square and <b>26 years</b> of daily rain per place.</p>
+    </div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🧠 <b>Why it matters:</b> the model can only learn "steep + weak rock + lots of unusual rain = danger" if all three facts are about the <b>same square</b>. Without lining up, it would be mixing facts from different places, like matching one kid's height with another kid's shoe size.</div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="n">5</span>Where lining up sits in the whole system</h2>
+  <div class="steps">
+    <div><span>📥</span>1 · Collect<br><span class="tiny">fetch 29 sources</span></div>
+    <div><span>🗄️</span>2 · Keep<br><span class="tiny">store untouched</span></div>
+    <div class="me"><span>📐</span>3 · Line up<br><span class="tiny">this page</span></div>
+    <div><span>📋</span>4 · Describe<br><span class="tiny">34 facts a square</span></div>
+    <div><span>📚</span>5 · Shelve<br><span class="tiny">same for every module</span></div>
+    <div><span>❓</span>6 · Ask<br><span class="tiny">where? and when?</span></div>
+    <div><span>🗺️</span>7 · Answer<br><span class="tiny">the forecast</span></div>
+    <div><span>✅</span>8 · Check<br><span class="tiny">graded afterwards</span></div>
+  </div>
+  <div class="tip" style="margin-top:12px">🔁 <b>Done once, used by all.</b> SlideSense, FloodSense and SoilSense all read the same lined-up table. That's why the first flood module needed only two files of its own.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="n">6</span>Check yourself</h2>
+  <p class="sub">Say the answer out loud, then tap to see it. <span class="score" id="score"></span></p>
+  <div id="quiz"></div>
+</section>
+
+<footer>Explainer in <code>docs/lrn/</code>. Checked against the code on 4 Nov 2026: <code>scripts/build/grid.py</code> (100 m, EPSG:32646, 5,900 × 3,200, cell id), <code>scripts/build/features.py</code> (bilinear soil, majority land cover, rock outlines and label tidying), <code>scripts/build/distances.py</code> (distance on the full grid), <code>docs/design/DATA_CONTRACT.md</code> (unit suffixes, the 107 example), <code>docs/BRIEFING.md</code> §4 (the eight steps). Land cover codes are ESA WorldCover's. Note: the comment in features.py calls 45 "shrubland"; WorldCover's shrubland is 20, and 45 is no class at all.</footer>
+</div>
+
+<script>
+const KEY = "lrn-lineup";
+let S = {};
+try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} meter(); };
+const $ = id => document.getElementById(id);
+const NS = "http://www.w3.org/2000/svg";
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const C = { forest:"#2f7d4a", water:"#2f6cae", soilLo:"#f2e8d0", soilHi:"#946610", rain:"#2f6cae", road:"#45514a", rock1:"#c9a3d6", rock2:"#e7b98a", grid:"#d6dcd5", out:"#cfd4cf", ink:"#17201b" };
+const mix = (a, b, t) => { const p = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16)); const [x,y] = [p(a),p(b)]; return "#" + x.map((v,i) => Math.round(v + (y[i]-v)*t).toString(16).padStart(2,"0")).join(""); };
+const el = (svg, tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; };
+const label = (svg, x, y, t, size = 13, anchor = "middle", fill = C.ink, w = 600) => el(svg, "text", { x, y, "font-size": size, "text-anchor": anchor, fill, "font-family": "Mukta, Segoe UI, sans-serif", "font-weight": w }, t);
+const arrow = (svg, x, y) => { el(svg, "path", { d: `M${x-14} ${y} h24 m-8 -7 l8 7 l-8 7`, stroke: C.ink, "stroke-width": 2.5, fill: "none" }); };
+
+/* 1 · the mess */
+const MESS_CAP = [
+  "Rain comes in <b>huge blocks</b> (~11 km). Land cover in <b>tiny dots</b> (10 m). Rock type as <b>outlines</b>. Roads as <b>lines</b>.",
+  "Stacked as they arrive, nothing matches up. Which block, dot, outline or line belongs to <b>this spot</b>? You can't tell.",
+  "Copied onto <b>one graph paper</b>, every map uses the same squares. Now each square has one rain, one land cover, one rock and one distance to the road."
+];
+function drawMess(mode){
+  const s = $("mess"); s.innerHTML = "";
+  seed = 11;
+  const panels = [["🌧️ Rain", 0], ["🌲 Land cover", 160], ["🪨 Rock type", 320], ["🛣️ Roads", 480]];
+  const drawRain = (ox, oy, w, h, op = 1) => { [[0,0,"#9cc0e4"],[1,0,"#5a8fca"],[0,1,"#2f6cae"],[1,1,"#7fa9d8"]].forEach(([i,j,c]) => el(s, "rect", { x: ox + i*w/2, y: oy + j*h/2, width: w/2, height: h/2, fill: c, opacity: op })); };
+  const drawLC = (ox, oy, w, h, op = 1) => { for (let i = 0; i < 24; i++) for (let j = 0; j < 20; j++) el(s, "rect", { x: ox + i*w/24, y: oy + j*h/20, width: w/24, height: h/20, fill: rnd() < 0.72 ? C.forest : C.water, opacity: op }); };
+  const drawRock = (ox, oy, w, h, op = 1) => { el(s, "path", { d: `M${ox} ${oy} h${w*0.62} q${-w*0.2} ${h*0.5} ${w*0.1} ${h} h${-w*0.72} z`, fill: C.rock1, opacity: op }); el(s, "path", { d: `M${ox+w*0.62} ${oy} h${w*0.38} v${h} h${-w*0.28} q${-w*0.3} ${-h*0.5} ${-w*0.1} ${-h} z`, fill: C.rock2, opacity: op }); };
+  const drawRoad = (ox, oy, w, h) => el(s, "path", { d: `M${ox} ${oy+h*0.8} C ${ox+w*0.3} ${oy+h*0.2}, ${ox+w*0.6} ${oy+h*1.0}, ${ox+w} ${oy+h*0.25}`, stroke: C.road, "stroke-width": 4, fill: "none", "stroke-dasharray": "10 5" });
+  if (mode === 0) {
+    const fns = [drawRain, drawLC, drawRock, drawRoad];
+    panels.forEach(([t, x], k) => { el(s, "rect", { x: x+6, y: 28, width: 148, height: 148, fill: "#fff", stroke: C.grid }); fns[k](x+6, 28, 148, 148); label(s, x+80, 18, t, 14); });
+  } else if (mode === 1) {
+    drawRain(170, 20, 180, 160, .55); seed = 11; drawLC(205, 10, 150, 150, .45); drawRock(150, 35, 200, 140, .45); drawRoad(160, 15, 220, 170);
+    label(s, 470, 90, "Which rain goes", 16, "start"); label(s, 470, 110, "with which dot? 🤷", 16, "start");
+  } else {
+    const n = 8, cs = 18, ox = 50, oy = 22;
+    seed = 3;
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+      el(s, "rect", { x: ox + i*cs, y: oy + j*cs, width: cs, height: cs, fill: (i < 4) === (j < 4) ? "#9cc0e4" : "#5a8fca", stroke: "#fff" });
+    }
+    label(s, ox + 72, 14, "same squares, every map", 12, "middle", C.ink, 500);
+    const names = [["🌧️", "#5a8fca"], ["🌲", C.forest], ["🪨", C.rock1], ["🛣️", C.road]];
+    names.forEach(([t, c], k) => {
+      const x = 250 + k * 95;
+      for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) el(s, "rect", { x: x + i*18, y: 50 + j*18, width: 18, height: 18, fill: mix("#ffffff", c, .35 + .5*((i+j*3+k)%4)/3), stroke: "#fff" });
+      el(s, "rect", { x: x + 18, y: 68, width: 18, height: 18, fill: "none", stroke: "#cf1f2a", "stroke-width": 3 });
+      label(s, x + 36, 40, t, 18);
+    });
+    label(s, 440, 150, "the red square is the same patch of ground on all four", 13, "middle", "#cf1f2a");
+  }
+  $("messcap").innerHTML = MESS_CAP[mode];
+  [...$("messbtn").children].forEach((b, i) => b.classList.toggle("on", i === mode));
+}
+$("messbtn").addEventListener("click", e => { const b = e.target.closest("button"); if (b) drawMess(+b.dataset.m); });
+drawMess(0);
+
+/* 2 · the graph paper */
+(function(){
+  const s = $("paper"), cols = 10, rows = 6, cs = 36, ox = 20, oy = 18;
+  label(s, ox + cols*cs/2, 12, "columns →", 11, "middle", "#737e78", 500);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+    const q = el(s, "rect", { x: ox + c*cs, y: oy + r*cs, width: cs, height: cs, fill: "#fff", stroke: C.grid, style: "cursor:pointer" });
+    q.addEventListener("click", () => {
+      s.querySelectorAll("rect").forEach(x => x.setAttribute("fill", "#fff"));
+      q.setAttribute("fill", "#fbe3e2");
+      const row = 1200 + r, col = 3400 + c;
+      $("addr").innerHTML = `Row <b>${row.toLocaleString()}</b>, column <b>${col.toLocaleString()}</b> → address <b>${(row*100000+col).toLocaleString()}</b><br><span class="tiny">Read it back: the first part is the row, the last five digits are the column. If two files are matched up wrong, the numbers give it away.</span>`;
+    });
+  }
+  label(s, 8, oy + rows*cs/2, "rows ↓", 11, "middle", "#737e78", 500).setAttribute("transform", `rotate(-90 8 ${oy + rows*cs/2})`);
+})();
+
+/* 3 · the tricks */
+const TR = [
+  { tab: "🔍 Too small", h: "Too small: pick the most common",
+    why: "Land cover arrives as <b>10 m tiles</b>, so 100 tiles fit in one of our squares. We give the square <b>whichever kind there is most of</b>.",
+    real: "Real: ESA WorldCover, 10 m → 100 m, majority vote (scripts/build/features.py).",
+    btn: ["Most common ✅", "Average them ❌"], draw: (s, v) => {
+      seed = 5; const ox = 10, oy = 30, big = 80;
+      for (let a = 0; a < 2; a++) for (let b = 0; b < 2; b++) {
+        const pf = [0.8, 0.3, 0.65, 0.1][a*2+b];
+        for (let i = 0; i < 10; i++) for (let j = 0; j < 10; j++) el(s, "rect", { x: ox + a*big + i*8, y: oy + b*big + j*8, width: 8, height: 8, fill: rnd() < pf ? C.forest : C.water });
+        el(s, "rect", { x: ox + a*big, y: oy + b*big, width: big, height: big, fill: "none", stroke: "#fff", "stroke-width": 2 });
+      }
+      label(s, 90, 20, "100 tiny tiles per square", 12);
+      arrow(s, 210, 110);
+      for (let a = 0; a < 2; a++) for (let b = 0; b < 2; b++) {
+        const pf = [0.8, 0.3, 0.65, 0.1][a*2+b];
+        const x = 250 + a*big, y = oy + b*big;
+        el(s, "rect", { x, y, width: big, height: big, fill: v === 0 ? (pf > .5 ? C.forest : C.water) : "#b9a7c9", stroke: "#fff", "stroke-width": 2 });
+        label(s, x + 40, y + 46, v === 0 ? (pf > .5 ? "🌲 10" : "💧 80") : "45 ???", 15, "middle", "#fff");
+      }
+      label(s, 330, 20, v === 0 ? "forest (10) or water (80)" : "forest 10 + water 80 ÷ 2 = 45", 12);
+      if (v === 1) label(s, 330, 205, "45 isn't any kind of land! Codes are names, not amounts.", 12, "middle", "#cf1f2a");
+    } },
+  { tab: "🔎 Too big", h: "Too big: spread it smoothly",
+    why: "Soil comes in <b>250 m blocks</b>, bigger than our squares. We <b>spread it smoothly</b> across the smaller squares. That's fine here because soil really does change gradually, and \"30% clay\" can blend with \"50% clay\".",
+    real: "Real: SoilGrids, 18 soil facts, 250 m → 100 m, smooth blending (scripts/build/features.py).",
+    draw: s => {
+      const v = [[20, 40], [30, 55]], ox = 10, oy = 30;
+      for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) { el(s, "rect", { x: ox + i*80, y: oy + j*80, width: 80, height: 80, fill: mix(C.soilLo, C.soilHi, v[j][i]/60), stroke: "#fff", "stroke-width": 2 }); label(s, ox + i*80 + 40, oy + j*80 + 46, v[j][i] + "%", 15, "middle", v[j][i] > 35 ? "#fff" : C.ink); }
+      label(s, 90, 20, "4 big soil blocks (clay %)", 12);
+      arrow(s, 210, 110);
+      const n = 8, cs = 20;
+      for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+        const x = (i + .5) / n, y = (j + .5) / n, tx = Math.min(Math.max((x - .25) / .5, 0), 1), ty = Math.min(Math.max((y - .25) / .5, 0), 1);
+        const val = v[0][0]*(1-tx)*(1-ty) + v[0][1]*tx*(1-ty) + v[1][0]*(1-tx)*ty + v[1][1]*tx*ty;
+        el(s, "rect", { x: 250 + i*cs, y: oy + j*cs, width: cs, height: cs, fill: mix(C.soilLo, C.soilHi, val/60), stroke: "#fff", "stroke-width": .5 });
+      }
+      label(s, 330, 20, "64 of our squares, blended", 12);
+    } },
+  { tab: "🌧️ Rain", h: "Rain: use the nearest rain point",
+    why: "Rain is only known at points <b>many km apart</b>. Each square takes the rain from its <b>nearest point</b>. So hundreds of squares share one rain value, which is why the fine detail on our maps comes from the <b>ground</b>, not the weather.",
+    real: "Real: about 11 km rain cells in the history; 219 live rain points across the state (webapp/core/rainfall.py).",
+    draw: s => {
+      const P = [[60, 60, 12, "#9cc0e4"], [150, 140, 48, "#2f6cae"], [40, 170, 25, "#5a8fca"]], oy = 30;
+      el(s, "rect", { x: 10, y: oy, width: 180, height: 170, fill: "#fff", stroke: C.grid });
+      P.forEach(([x, y, mm]) => { el(s, "circle", { cx: 10 + x, cy: oy + y - 30, r: 9, fill: C.rain }); label(s, 10 + x, oy + y - 44, mm + " mm", 12); });
+      label(s, 100, 20, "3 rain points", 12);
+      arrow(s, 215, 110);
+      const n = 9, cs = 20;
+      for (let i = 0; i < n; i++) for (let j = 0; j < n - 1; j++) {
+        const x = (i + .5) * 180/n, y = (j + .5) * 170/(n-1) + 30;
+        let best = 0, d = 1e9; P.forEach(([px, py], k) => { const dd = (px-x)**2 + (py-y)**2; if (dd < d) { d = dd; best = k; } });
+        el(s, "rect", { x: 245 + i*cs, y: oy + j*21.25, width: cs, height: 21.25, fill: P[best][3], stroke: "#fff", "stroke-width": .7 });
+      }
+      label(s, 335, 20, "each square copies its nearest point", 12);
+    } },
+  { tab: "🪨 Shapes", h: "Shapes: which one am I inside?",
+    why: "APSAC's rock map is drawn as <b>outlines</b>. Each square asks <b>\"which outline is my middle inside?\"</b> and takes that rock. First we tidy the names: their file has both \"basalt\" and \"Basalt\", which a computer would treat as two different rocks.",
+    real: "Real: APSSDI rock types and rock units (scripts/build/features.py, names made lower case and trimmed).",
+    draw: s => {
+      const A = [[10,30],[120,30],[95,110],[130,200],[10,200]];
+      const B = [[120,30],[190,30],[190,200],[130,200],[95,110]];
+      const path = pts => "M" + pts.map(p => p.join(" ")).join(" L") + " Z";
+      el(s, "path", { d: path(A), fill: C.rock1, stroke: "#fff", "stroke-width": 2 });
+      el(s, "path", { d: path(B), fill: C.rock2, stroke: "#fff", "stroke-width": 2 });
+      label(s, 50, 120, "granite", 13); label(s, 155, 160, "basalt", 13);
+      label(s, 100, 20, "outlines from the rock map", 12);
+      arrow(s, 215, 110);
+      const inside = (x, y, pts) => { let c = false; for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) { const [xi, yi] = pts[i], [xj, yj] = pts[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c; } return c; };
+      const n = 9, cs = 20;
+      for (let i = 0; i < n; i++) for (let j = 0; j < 8; j++) {
+        const x = 10 + (i + .5) * 180/n, y = 30 + (j + .5) * 170/8;
+        el(s, "rect", { x: 245 + i*cs, y: 30 + j*21.25, width: cs, height: 21.25, fill: inside(x, y, A) ? C.rock1 : C.rock2, stroke: "#fff", "stroke-width": .7 });
+      }
+      label(s, 335, 20, "each square: one rock", 12);
+    } },
+  { tab: "🛣️ Lines", h: "Lines: how far to the nearest one?",
+    why: "Roads, rivers and faults are <b>lines</b>, so a square can't be \"inside\" them. Instead each square gets a <b>distance in metres</b> to the nearest one. Squares near the state's edge measure to roads <b>just across the border</b> too, so they don't wrongly look far from everything.",
+    real: "Real: distance to road, river and fault for every square (scripts/build/distances.py). Distance to a road is one of the strongest landslide clues: slides are about 2.3× more likely near a road.",
+    draw: s => {
+      const road = x => 30 + 85 + 55 * Math.sin(x / 40);
+      let d = ""; for (let x = 0; x <= 180; x += 4) d += (x ? " L" : "M") + (10 + x) + " " + road(x);
+      el(s, "rect", { x: 10, y: 30, width: 180, height: 170, fill: "#fff", stroke: C.grid });
+      el(s, "path", { d, stroke: C.road, "stroke-width": 4, fill: "none", "stroke-dasharray": "10 5" });
+      label(s, 100, 20, "a road (a line)", 12);
+      arrow(s, 215, 110);
+      const n = 9, cs = 20, ch = 21.25;
+      for (let i = 0; i < n; i++) for (let j = 0; j < 8; j++) {
+        const x = (i + .5) * cs, y = 30 + (j + .5) * ch;
+        let m = 1e9; for (let t = 0; t <= 180; t += 2) m = Math.min(m, Math.hypot(t - x, road(t) - y));
+        const steps = Math.round(m / cs);
+        el(s, "rect", { x: 245 + i*cs, y: 30 + j*ch, width: cs, height: ch, fill: mix("#45514a", "#ffffff", Math.min(steps / 4, 1)), stroke: "#fff", "stroke-width": .7 });
+        if (j % 2 === 0 && i % 2 === 0) label(s, 245 + i*cs + 10, 30 + j*ch + 14, steps * 100, 8, "middle", steps < 2 ? "#fff" : C.ink, 500);
+      }
+      label(s, 335, 20, "metres to the road", 12);
+    } },
+  { tab: "🏷️ Labels", h: "Labels and rulers: no silent mix-ups",
+    why: "Three small rules stop silent mistakes. <b>1.</b> The unit goes in the name: a soil file says <b>107</b>, which means 1.07 g/cm³, so the fact is called <code>soil_bdod_0-5cm_cgcm3</code> and nobody misreads it. <b>2.</b> Past rain and today's rain come from <b>the same source</b>: two sources differ by 1.68×, so mixing them would make normal rain look unusual. <b>3.</b> Squares outside the state stay <b>grey: \"not checked\", never \"safe\"</b>.",
+    real: "Real: docs/design/DATA_CONTRACT.md (names carry the unit) · the rain rule in Phase 6 · out-of-area squares are empty, not low.",
+    draw: s => {
+      const card = (x, emo, a, b, c) => { el(s, "rect", { x, y: 30, width: 135, height: 170, rx: 10, fill: "#f7f8f5", stroke: C.grid }); label(s, x + 67, 68, emo, 30); label(s, x + 67, 108, a, 13); label(s, x + 67, 132, b, 12, "middle", "#45514a", 500); label(s, x + 67, 156, c, 12, "middle", "#45514a", 500); };
+      card(5, "🏷️", "107 → 1.07", "unit in the name:", "…_cgcm3");
+      card(152, "📏", "one rain ruler", "same source for", "past and today");
+      card(299, "⬜", "grey = not checked", "outside the state", "is never \"safe\"");
+    } }
+];
+let cur = 0, cv = 0;
+$("tabs").innerHTML = TR.map((t, i) => `<button data-i="${i}">${t.tab}</button>`).join("");
+function drawTrick(){
+  const t = TR[cur], s = $("tsvg"); s.innerHTML = "";
+  [...$("tabs").children].forEach((b, i) => b.classList.toggle("on", i === cur));
+  $("th").textContent = t.h; $("twhy").innerHTML = t.why; $("treal").textContent = t.real;
+  $("tbtn").innerHTML = (t.btn || []).map((b, i) => `<button data-v="${i}" class="${i === cv ? "on" : ""}">${b}</button>`).join("");
+  t.draw(s, cv);
+  S.seen = S.seen || {}; S.seen[cur] = 1; save();
+}
+$("tabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { cur = +b.dataset.i; cv = 0; drawTrick(); } });
+$("tbtn").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { cv = +b.dataset.v; drawTrick(); } });
+drawTrick();
+
+/* 4 · the tower */
+const LAYERS = [
+  ["⛰️", "Height", "dem_elev_m", (r, c) => (1800 + r*140 - c*60) + " m", "#8fa98f"],
+  ["📐", "Slope", "terrain_slope_deg", (r, c) => (22 + (r*7 + c*3) % 20) + "°", "#a9bfa0"],
+  ["🪨", "Rock type", "geol_rockgr_cat", (r, c) => (c < 3 ? "granite" : "basalt"), C.rock1],
+  ["🟫", "Clay in the soil", "soil_clay_0-5cm_gkg", (r, c) => (240 + r*30 + c*10) + " g/kg", C.soilHi],
+  ["🌲", "Land cover", "lc_class_cat", (r, c) => ((r + c) % 3 ? "forest" : "grass"), C.forest],
+  ["🛣️", "Distance to road", "dist_road_m", (r, c) => (Math.abs(c - 2) * 100 + r * 100) + " m", C.road],
+  ["🏞️", "Distance to river", "dist_river_m", (r, c) => (Math.abs(r - 1) * 100 + 100) + " m", C.water],
+  ["🌧️", "Rain, last 7 days", "rain_sum7d_mm", (r, c) => (c < 3 ? 86 : 142) + " mm", "#5a8fca"]
+];
+let pick = [1, 2];
+function drawTower(){
+  const s = $("tower"); s.innerHTML = "";
+  const L = 6, cols = 5, rows = 3, w = 26, h = 14;
+  for (let k = L - 1; k >= 0; k--) {
+    const ox = 60 + k * 10, oy = 40 + k * 36;
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const x = ox + c*w + r*14, y = oy + r*h;
+      const on = r === pick[0] && c === pick[1];
+      el(s, "path", { d: `M${x} ${y} h${w} l14 ${h} h${-w} z`, fill: on ? "#cf1f2a" : mix("#ffffff", LAYERS[k][4], .45), stroke: "#fff", "stroke-width": 1, style: "cursor:pointer" })
+        .addEventListener("click", () => { pick = [r, c]; drawTower(); });
+    }
+    label(s, ox + cols*w + 50, oy + 26, LAYERS[k][0] + " " + LAYERS[k][1], 12, "start", "#45514a", 500);
+  }
+  const px = 60 + pick[1]*w + pick[0]*14 + 20, top = 40 + pick[0]*h + 7;
+  el(s, "line", { x1: px, y1: top - 26, x2: px + 50, y2: top + 5*36 + 10, stroke: "#cf1f2a", "stroke-width": 2.5 });
+  el(s, "circle", { cx: px, cy: top - 28, r: 6, fill: "#cf1f2a" });
+  label(s, 200, 290, "👆 tap a square on any sheet", 12, "middle", "#737e78", 500);
+  $("facts").innerHTML = `<div style="background:#fbe3e2;border-color:#cf1f2a"><span>📍</span><span>Square <b>row ${1200+pick[0]}, column ${3400+pick[1]}</b></span><span></span></div>` +
+    LAYERS.map(([e, n, code, f]) => `<div><span>${e}</span><span>${n}<code>${code}</code></span><b>${f(pick[0], pick[1])}</b></div>`).join("");
+}
+drawTower();
+
+/* 6 · quiz */
+const Q = [
+  ["Why can't we just stack the 29 maps as they arrive?", "Each one is drawn with different-sized pieces (blocks, tiny dots, outlines, lines), so nothing tells you which piece belongs to the same spot."],
+  ["Land cover comes in 10 m tiles. How does one 100 m square get its land cover?", "It takes whichever kind there is most of among its 100 tiles. Never the average: codes are names, and forest 10 + water 80 ÷ 2 = 45 is no kind of land at all."],
+  ["Why is it fine to blend soil, but not land cover?", "Soil is an amount (30% clay can blend with 50%). Land cover is a name (forest, water), and names can't be averaged."],
+  ["Hundreds of squares share one rain number. Why?", "Rain is only known at points many km apart, so each square takes its nearest point's rain. The fine detail comes from the ground."],
+  ["A square sits right at the state's edge. How far is it from a road?", "Measured to the nearest road on either side of the border, so it doesn't wrongly look far from everything."],
+  ["A square outside the state shows grey. Does that mean safe?", "No. Grey means \"not checked\". We never say \"safe\" for a place we didn't look at."],
+  ["What's the prize at the end of lining up?", "Point at any square and read all its facts (34 of them, plus 26 years of daily rain), all about the same patch of ground. Every module uses that one table."]
+];
+$("quiz").innerHTML = Q.map(([q, a], i) => `<div class="q${S["q"+i] ? " got" : ""}" data-i="${i}"><b>${i+1}. ${q}</b><div class="a">${a}<div class="grade"><button data-g="1">✓ I had it</button><button data-g="0">✗ Not yet</button></div></div></div>`).join("");
+$("quiz").addEventListener("click", e => {
+  const q = e.target.closest(".q"); if (!q) return;
+  const b = e.target.closest("button[data-g]");
+  if (b) { S["q"+q.dataset.i] = b.dataset.g === "1"; q.classList.toggle("got", S["q"+q.dataset.i]); save(); return; }
+  q.classList.toggle("open");
+});
+function meter(){
+  const got = Q.filter((_, i) => S["q"+i]).length, seen = Object.keys(S.seen || {}).length;
+  $("meter").textContent = `${seen}/6 tricks · ${got}/${Q.length} quiz`;
+  $("score").textContent = got ? `${got} of ${Q.length} right` : "";
+}
+meter();
+</script>
+</body>
+</html>

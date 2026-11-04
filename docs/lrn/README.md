@@ -20,3 +20,5 @@ Ticks and quiz marks are saved in that browser. All pages share `lrn.css`.
 `mobile/` holds the same pages as single files with the styles built in, for phones. Rebuild them after editing a page or `lrn.css`.
 
 **Reference pages:** [apsac.html](apsac.html) — everything we use from APSAC and its family (APSSDI, Bhuvan, SAC, NESAC), and the full list of what to ask them for.
+
+**Explainers:** [line-up.html](line-up.html) — what "lining up the data" means, drawn simply (the graph paper, the six tricks, one square with all its facts).

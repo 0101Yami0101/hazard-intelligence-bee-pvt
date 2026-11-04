@@ -76,7 +76,7 @@ import pandas as pd
 import rasterio
 import requests
 
-from common import INTERIM
+from common import INTERIM, WEATHER, record
 
 warnings.filterwarnings("ignore")
 
@@ -199,6 +199,18 @@ def main() -> None:
     print(f"\n  wrote {v.shape[0]:,} days x {v.shape[1]} points "
           f"({v.nbytes/1e6:.1f} MB)   mean {np.nanmean(v):.2f} mm/day")
     print(f"  done in {(time.time()-t0)/60:.0f} min")
+    record_source()
+
+
+def record_source() -> None:
+    """Provenance in the raw store. The untouched copy is the interim store."""
+    record(WEATHER, source="Open-Meteo historical weather archive (ERA5)", url=ARCHIVE,
+           files=[OUT / "precip_mm.npy", OUT / "dates.npy", OUT / "points.json"],
+           license_="CC BY 4.0 (data). The free API is for non-commercial use; commercial use needs "
+                     "an Open-Meteo API plan.",
+           notes="Daily rain at the live app's query points: the history every "
+                 "'unusual rain' score is measured against. Same chain as the live "
+                 "forecast API, so past and today share one ruler.")
 
 
 if __name__ == "__main__":

@@ -218,7 +218,7 @@ backbone.
 
 | Part of the backbone | State |
 |---|---|
-| Collecting outside sources | **Built.** 29 sources catalogued, about 308 GB of raw files, river gauges and flood records included |
+| Collecting outside sources | **Built.** 46 sources held and 20 more checked and ready to pull, about 344 GB of raw files, river gauges and flood records included |
 | Raw store, with a record for every file | **Built** |
 | One shared map | **Built.** 8.2 million squares, 34 facts each, 26 years of daily rain |
 | Two shelves | **Built** as files. No outside access yet |
@@ -364,7 +364,7 @@ ladder — a free statewide layer, then paid tiers.
 
 | Number | What it is |
 |---|---|
-| 29 | sources lined up; about 308 GB of raw files |
+| 46 | sources lined up, and 20 more checked and ready to pull; about 344 GB of raw files |
 | 8.2 million | squares of 100 m on the shared map, 34 facts each |
 | 26 years | of daily rain for every place, no gaps |
 | 1.9 million | river gauge readings, some back to 1971 |

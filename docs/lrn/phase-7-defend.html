@@ -138,7 +138,7 @@
   <h1>Defending it in the room</h1>
   <div class="goal">🎯 <span>Answer an <b>APSAC</b>, <b>GSI</b> or <b>CWC</b> scientist calmly: <b>the right number, where it comes from, what it doesn't mean</b>, and where to stop.</span></div>
   <div class="toc">
-    <a href="#s1">1 · Three rooms</a><a href="#s2">2 · Where the line is</a><a href="#s3">3 · Numbers card</a>
+    <a href="#s1">1 · The rooms</a><a href="#s2">2 · Where the line is</a><a href="#s3">3 · Numbers card</a>
     <a href="#s4">4 · Twin counts</a><a href="#s5">5 · Limits card</a><a href="#s6">6 · Never say</a>
     <a href="#s7">7 · The grilling</a><a href="#s8">8 · Rivals</a><a href="#s9">9 · What's next</a>
     <a href="#s10">10 · Stale lines</a><a href="#s11">11 · Before the meeting</a><a href="#s12">12 · Your exercises</a>
@@ -221,7 +221,7 @@
 <!-- 7 -->
 <section id="s7">
   <h2><span class="n">7</span>The grilling: hostile questions by room</h2>
-  <p class="sub">Pick a room. Use <b>Drill</b> for a random question with a 90-second clock: answer out loud, then open the card and grade yourself.</p>
+  <p class="sub">Pick a room. <b>Big idea</b> is for any room: why us, why not Google, will we be obsolete. Use <b>Drill</b> for a random question with a 90-second clock: answer out loud, then open the card and grade yourself.</p>
   <div class="ptabs" id="ptabs"></div>
   <div class="drill"><button id="dgo">🎲 Drill</button><span class="clock" id="clock">1:30</span><span class="dq" id="dq">Press Drill for a question from this room.</span></div>
   <div id="gqs"></div>
@@ -408,6 +408,22 @@ const G = {
     ["Why not just use Flood Hub or GloFAS?","We built our own on Arunachal's own rivers so we can show its record. Big-river global models are useful as a cross-check alongside.","Don't dismiss Google's models.",""],
     ["How many false alarms?","For rivers it's counted on the record: 3 warnings at 25% so far, all from one faulty reading at one gauge on 29 Sep. 8,288 forecasts written down since 21 Sep, 4,178 checked.","Read the live numbers off the screen; never from memory.",""],
     ["And streams with no gauge?","An approximate outlook, tagged as approximate on screen. It failed its strict calibration test, so we don't call it a forecast.","",""]
+  ],
+  "Big idea": [
+    ["What are you doing differently from everyone else?","Everyone else does one piece: a fixed hazard map (where), a global river model, or sensors on one slope. We join where and when for the whole state, every day, and grade every forecast afterwards. And it all sits on one data backbone, so the next hazard is cheap: the first flood module added two files of its own.","Don't say nobody else forecasts. Say the gap is the joining.","Backbone first, products are the proof."],
+    ["Google or another big company could build this. Won't you be obsolete?","Big companies build one model for the whole world. Google already did it for floods, and opened it. That helps us: we plan to run it beside ours as a second opinion. What a global model doesn't do is the local work: this state's gauges, rock maps and agency records, the field checks, and a graded record that sits with the office. That's slow, local, trust work, not a size problem. If their models get better, ours does too, because we can take theirs in as an input.","Never say \"they can't\" or \"they won't come here\". Respect their work.","On hill rivers Flood Hub works from weather alone and doesn't read the river's latest level; ours reads the gauges every morning."],
+    ["What if a big company gives it away free?","Then the free part becomes a free input to us. Our base layer already runs on free data, on purpose. What people pay for is what a free global tool doesn't give: their own records brought in, their own warning levels, sensors on chosen sites, a feed into their systems, and someone local who answers for it.","No price figures: agree them with the CEO first.",""],
+    ["Weather forecasts are getting much better. Doesn't that make you unnecessary?","The opposite. Rain is an input. A better rain forecast is a better input to us. A weather model says how much rain falls. It doesn't say which slope gives way or which river rises. That needs the ground, the rivers and the local record, which is the backbone.","",""],
+    ["What if the government builds it itself?","Each agency does its own part well. Joining them is nobody's job. We'd rather be that joining for them: their data, their terms, their forecast. And if a national system comes, the backbone can feed it.","Never frame an agency as having failed.",""],
+    ["The data is public. What's stopping anyone from copying you?","Three things can't be downloaded: the assembly (29 sources made to fit one map), the daily upkeep, and the checked history. Every forecast is written down and graded, and that record grows every day. A copy of the files is a snapshot. It doesn't keep itself current or prove itself.","Don't say \"we own unique data\". Most inputs are public.","Keep back how each source is reached and what had to be repaired in it."],
+    ["Someone copies your code. Then what?","The code is the small part. Copying it gives a snapshot, not the daily runs, the source repairs, the agency relationships or the months of graded record. We'd still be ahead the next morning.","Don't rely on secrecy as the answer.",""],
+    ["Why can't AI, ChatGPT, just do this?","A chat model learned from text. It has never measured a slope here, and it can't tell whether last week's rain was unusual for one valley. This is a measuring problem, not a language problem. Where AI helps us is reading: pulling dated events out of old reports and news.","",""],
+    ["Sensor companies already warn about landslides. Why you?","They put instruments on a slope someone already chose and watch it minute by minute. Useful, and different. We scan the whole state without hardware and say which slopes and rivers deserve an instrument. The two fit together.","Never run a competitor down. Say what they have that we don't: a real save, years of trust.",""],
+    ["Why trust a small startup with this?","Not on trust, on evidence. Judge by what's running: 29 sources, a statewide map, two live forecasts, a daily check. Then start small: one district, one season, every forecast on record, and judge us on the score.","No claims of awards, papers or certification.",""],
+    ["Isn't this a research project, not a product?","It runs every morning by itself and shows its own score. That's the difference between a service and a study.","","The parts still done by hand: refreshing the slower sources and publishing the public copy."],
+    ["Does it work beyond one state?","Nothing in the backbone is tied to a place or a hazard. It knows the ground, the rain and the rivers. Any area with a where, a when and a record to check against fits. Our third module already runs in a neighbouring state.","Don't give dates for new states. Don't name the state on the public deck.",""],
+    ["Your forecast is wrong and people are hurt. Who's responsible?","The warning is always the authority's call. We give a forecast, which is information, with an honest statement of how sure it is. The screens say they don't replace official warnings.","Never say we issue warnings.",""],
+    ["Why should anyone pay for it?","The statewide layer runs on free data. Paid work starts where someone wants it finer and faster: their records brought in, sensors on chosen sites, and later the feed. We'd rather size it with you than quote a number today.","Prices and market size aren't in our notes. Agree them first.",""]
   ]
 };
 const ROOMS = Object.keys(G);

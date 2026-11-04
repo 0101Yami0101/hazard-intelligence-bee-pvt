@@ -29,7 +29,7 @@ Every answer has the same parts. **Say** is the answer, in words you can speak. 
 
 **Where the line is**
 
-- **Say freely** (to anyone, in any room): the idea, the five steps, the rules we keep; what each product asks, gives and reads; how to read the screen; the three figures: 29 sources, 8.2 million squares, 26 years; what is planned, and every limit with what lifts it.
+- **Say freely** (to anyone, in any room): the idea, the five steps, the rules we keep; what each product asks, gives and reads; how to read the screen; the three figures: 46 sources, 8.2 million squares, 26 years; what is planned, and every limit with what lifts it.
 - **Only when asked** (by a serious listener, plainly and briefly): the tested figures (section 11); which kinds of agencies the sources come from; the family of method used, in one sentence; rounded counts: landslides mapped, gauges read; what we tried that failed.
 - **Keep** (the recipe is the company): how each source is reached, cleaned and checked; the exact list of facts per square; how the examples are chosen, and the settings; how a score is turned into an honest percentage; the records themselves, and the code.
 
@@ -106,7 +106,7 @@ Every answer has the same parts. **Say** is the answer, in words you can speak. 
 
 ### 2.1 You say the data already exists. Where does it come from?
 
-**Say:** From public bodies. Satellites give the height of the ground, the land cover and the rain. National and state agencies give the rock types, the soil, the mapped landslides, the rivers and the river gauges. Weather models give the rain for the week ahead. 29 sources today, and each one is on record in the app with where it came from and when.
+**Say:** From public bodies. Satellites give the height of the ground, the land cover and the rain. National and state agencies give the rock types, the soil, the mapped landslides, the rivers and the river gauges. Weather models give the rain for the week ahead. 46 sources today, and each one is on record in the app with where it came from and when.
 
 **Only if asked:** The kinds of sources: American and European satellite programmes, the national geological survey, the national space agency's portals, the state space centre, the central water agencies. The Data catalogue page in the app lists them.
 
@@ -114,7 +114,7 @@ Every answer has the same parts. **Say** is the answer, in words you can speak. 
 
 ### 2.2 If the data is all public, what is actually yours? ★
 
-**Say:** Three things. The assembly: 29 sources made to fit one map. The upkeep: it is fetched and checked every day, not once. And the checked history: every forecast written down and graded. Anyone can download the same files. Very few will do the rest. And nobody can download seasons of checked local history.
+**Say:** Three things. The assembly: 46 sources made to fit one map. The upkeep: it is fetched and checked every day, not once. And the checked history: every forecast written down and graded. Anyone can download the same files. Very few will do the rest. And nobody can download seasons of checked local history.
 
 **Careful:** Do not say "we own unique data". Most inputs are public. Ours is the assembly, the upkeep and the checked record.
 
@@ -807,7 +807,7 @@ For landslides I cannot give an honest one. If we flag a hillside and nothing is
 
 ### 14.6 It is a small team. Can you deliver?
 
-**Say:** Judge by what is running: 29 sources lined up, a map of the whole state, two live forecasts, and a daily check. A small team could build it because the hard part was done once.
+**Say:** Judge by what is running: 46 sources lined up, a map of the whole state, two live forecasts, and a daily check. A small team could build it because the hard part was done once.
 
 ### 14.7 Where are you in a year?
 
@@ -901,7 +901,7 @@ The track-record figures move every day. Read them off the screen on the day.
 
 | Number | What it is | When |
 |---|---|---|
-| 29 | sources lined up | say freely |
+| 46 | sources lined up | say freely |
 | 8.2 million | squares of 100 metres on the shared map | say freely |
 | 26 years | of daily rain for every place, from 2000 | say freely |
 | 2 files | what the first flood module added of its own | say freely |

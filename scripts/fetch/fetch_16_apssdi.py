@@ -24,7 +24,7 @@ import json
 import certifi
 import requests
 
-from common import AOI_NAME, CONTEXT, SOIL_GEOLOGY, HYDROLOGY, EXPOSURE, UA, record
+from common import AOI_NAME, BOUNDARIES, CONTEXT, SOIL_GEOLOGY, HYDROLOGY, EXPOSURE, UA, record
 
 OWS = "https://apssdi.in/geoserver/ows"
 
@@ -75,6 +75,37 @@ LAYERS = [
      "apssdi_settlements_vector", EXPOSURE),
     ("sdi_137:Administrative_Circle_Layer_-_Arunachal_Pradesh",
      "apssdi_admin-circles_vector", EXPOSURE),
+    # The other 15 open layers, pulled 2026-11-04 so the store holds all 24.
+    # No product reads them yet: official districts and outlines for reports,
+    # headquarters for place search, facilities for risk (docs/lrn/apsac.html).
+    ("sdi_882:District_Boundary_layer-_ARUNACHAL_PRADESH",
+     "apssdi_districts_vector", BOUNDARIES),
+    ("sdi_908:state_boundary", "apssdi_state-boundary_vector", BOUNDARIES),
+    ("sdi_909:international_boundary",
+     "apssdi_international-boundary_vector", BOUNDARIES),
+    ("sdi_150:Headquarters_Layer_-_Arunachal_Pradesh",
+     "apssdi_headquarters_vector", EXPOSURE),
+    ("sdi_159:Health_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_health_vector", EXPOSURE),
+    ("sdi_118:Food_&_Civil_Supply_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_food-civil-supply_vector", EXPOSURE),
+    ("sdi_114:Animal_Husbandry_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_animal-husbandry_vector", EXPOSURE),
+    ("sdi_113:Fisheries_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_fisheries_vector", EXPOSURE),
+    ("sdi_123:Horticulture_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_horticulture_vector", EXPOSURE),
+    ("sdi_124:Library_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_libraries_vector", EXPOSURE),
+    ("sdi_148:Handloom_and_Textile_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_handloom-textile_vector", EXPOSURE),
+    ("sdi_151:Art_and_Culture_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_art-culture_vector", EXPOSURE),
+    ("sdi_115:Social_Justice_empowerment_and_tribal_affairs_Information_Layer_-_Arunachal_Pradesh",
+     "apssdi_social-justice_vector", EXPOSURE),
+    ("sdi_913:Tawang_road", "apssdi_tawang-road_vector", EXPOSURE),
+    ("sdi_204:Aerial_Survey_Grid_-_Itanagar_Capital_Region",
+     "apssdi_aerial-survey-grid_vector", CONTEXT),
 ]
 
 

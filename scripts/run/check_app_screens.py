@@ -14,7 +14,12 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import os
+
 from streamlit.testing.v1 import AppTest
+
+# Open modules marked "under development" too, so they keep being tested.
+os.environ["SLOPESENSE_SHOW_WIP"] = "1"
 
 ROOT = Path(__file__).resolve().parents[2]
 APP = str(ROOT / "webapp" / "app.py")

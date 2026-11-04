@@ -667,7 +667,8 @@ def _place_label(name: str, lat: float, lon: float, p: float, when: str) -> list
 
 # ── panels ───────────────────────────────────────────────────────────────────
 def _hero(val: float, scope: str, when: str, spark: str = "", more: str = "") -> str:
-    """The headline: the outlook's level word, its number, and 7 bars."""
+    """The headline: the outlook's level word and its number. The week is
+    in the day buttons beside the map, not repeated here as bars."""
     k = _band(val)
     icon = "🌧️" if k >= 2 else "🌦️" if k == 1 else "☁️"
     return (f"<div class='fs-hero' style='--c:{CHANCE_COLORS[k] if k else '#6b7a8c'};"
@@ -678,24 +679,6 @@ def _hero(val: float, scope: str, when: str, spark: str = "", more: str = "") ->
             f"<div class='fs-hero-row'><div class='fs-hero-num'>{_pct_short(val)}</div>"
             f"<div class='fs-hero-badge'>{badge('outlook', more, 'down left')}</div></div>"
             f"<div class='fs-hero-when'>{when}</div>{spark}</div>")
-
-
-def _spark(days: list[str], vals: list[float], on: int = -1) -> str:
-    """Seven bars, one per day; days 4-7 faded (weaker rain forecasts).
-    Scaled to at least 2% (the first level): a week of 0.01%-0.03% days is
-    flat and quiet, not a tall bar beside short ones."""
-    mx = max(max(vals), float(CHANCE_CUTS[0]))
-    out = []
-    for i, (d, v) in enumerate(zip(days, vals)):
-        k = _band(v)
-        col = CHANCE_COLORS[k] if k else TIERS["outlook"][2]
-        h = 5 + 42 * (v / mx)
-        cls = ("later " if i >= SURE_DAYS else "") + ("on" if i == on else "")
-        tip = f"{_day_label(d)}: {_pct(v)}" + (" · less sure (days 4–7)" if i >= SURE_DAYS else "")
-        out.append(f"<div class='fs-sb {cls}'><i class='fs-tip' data-tip='{_esc(tip)}' "
-                   f"style='height:{h:.0f}px;--b:{col}'></i>"
-                   f"<span>{datetime.fromisoformat(d).day}</span></div>")
-    return f"<div class='fs-spark'>{''.join(out)}</div>"
 
 
 def _spark_svg(hist, line: float, w: int = 104, h: int = 26) -> str:
@@ -722,12 +705,15 @@ def _spark_svg(hist, line: float, w: int = 104, h: int = 26) -> str:
             f"<circle cx='{xs[-1]:.1f}' cy='{y(vals[-1]):.1f}' r='2.6' fill='{col}'/></svg>")
 
 
-def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot) -> None:
+def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot,
+                picker=lambda: None) -> None:
     """Left of the map: the answer for the selected place — the outlook near
     it (the headline, the same kind of number everywhere), what that means
     for this exact spot, the gauge on its own river and what it reads now,
     and how many floods are on record. With nothing selected: Arunachal as
-    a whole, and the areas with the highest outlook, one click away."""
+    a whole, and the areas with the highest outlook, one click away.
+    `picker` draws the 7-day outlook buttons, right under the headline: in
+    view without a scroll (2026-11-04; they used to sit under the map)."""
     days, nh = snap["days"], snap.get("near_here")
     if not sel:
         st.markdown("<div class='fs-place'>All of Arunachal<small>search a place or click "
@@ -735,9 +721,9 @@ def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot) ->
         if nh is not None:
             vals = list(nh["arunachal_daily"])
             val = nh["arunachal_week"] if period < 0 else vals[period]
-            st.markdown(_hero(val, "somewhere in the state", _when(days, period),
-                              _spark(days, vals, period), more=_error_line(nh)),
+            st.markdown(_hero(val, "somewhere in the state", _when(days, period), more=_error_line(nh)),
                         unsafe_allow_html=True)
+        picker()
         if hot:
             # the colours ride with the heading: an element of its own, even an
             # empty one, takes a gap in the panel
@@ -766,6 +752,7 @@ def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot) ->
     if pl is None:
         st.markdown("<div class='fs-empty'><b>Outside the mapped area</b><br>This forecast "
                     "covers Arunachal Pradesh only.</div>", unsafe_allow_html=True)
+        picker()
         return
     _, _, k, w, near = pl
 
@@ -773,8 +760,7 @@ def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot) ->
     if nh is not None and k >= 0:
         vals = [nh["daily"][i][k] for i in range(len(days))]
         val = nh["week"][k] if period < 0 else vals[period]
-        st.markdown(_hero(val, "within ~10 km of here", _when(days, period),
-                          _spark(days, vals, period), more=_error_line(nh)),
+        st.markdown(_hero(val, "within ~10 km of here", _when(days, period), more=_error_line(nh)),
                     unsafe_allow_html=True)
     elif nh is None:
         st.info("This snapshot predates the flood-chance numbers. Run the forecast again "
@@ -782,6 +768,7 @@ def _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot) ->
     else:
         st.markdown("<div class='fs-empty'>No flood outlook here — no ground a river flood "
                     "can reach within ~10 km.</div>", unsafe_allow_html=True)
+    picker()
 
     st.markdown(_tiles(_place_tiles(sel, pl, snap, period, rp, fmeta, own, river_at, levels),
                        2, grow=True), unsafe_allow_html=True)
@@ -909,6 +896,26 @@ def _place_tiles(sel, pl, snap, period, rp, fmeta, own, river_at, levels) -> lis
                                f"Latest daily high {v:,.2f} {unit} on {d_}; its {line} is "
                                f"{thr:,.2f} {unit}.{lag}", "right"))
 
+    # 4b. NO GAUGE READING TO SHOW: how unusual today is for this area. The
+    #     slot stood empty (2026-11-04); this is the timing measure the
+    #     replay grades ("times normal", PARKED_HIMALAYAN_FLOOD_WHERE.md §0l).
+    tn = snap.get("times_normal")
+    if own_r is None and tn and nh is not None and k >= 0:
+        if period < 0:
+            i_ = max(range(len(days)), key=lambda i: tn[i][k])
+            when_ = f"highest day {_day_short(days[i_])}"
+        else:
+            i_, when_ = period, _day_short(days[period])
+        x = float(tn[i_][k])
+        tiles.append(_tile("Vs an ordinary day", f"{x:.1f}×" if x > 0 else "—",
+                           f"flood chance near here · {when_}", "outlook",
+                           "#e8b04a" if x >= 2 else "var(--txt)" if x > 0 else "var(--dim)",
+                           "This area's chance of a flood, as a multiple of its chance on an "
+                           "ordinary day. Over 2023–26, on days that really flooded it was "
+                           "typically about 2.5×; a warning at 2× caught about 6 in 10 floods. "
+                           "It shows how unusual the day is, not how likely a flood is.",
+                           "left" if len(tiles) % 2 else "right"))
+
     # 5. WHAT IS ON RECORD NEAR HERE
     if nh is not None and k >= 0:
         n = int(nh["floods_on_record"][k])
@@ -944,8 +951,7 @@ def _full_panel(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot, cl
         if nh is not None:
             vals = list(nh["arunachal_daily"])
             val = nh["arunachal_week"] if period < 0 else vals[period]
-            out += _hero(val, "somewhere in the state", _when(days, period),
-                         _spark(days, vals, period), more=_error_line(nh))
+            out += _hero(val, "somewhere in the state", _when(days, period), more=_error_line(nh))
         if hot:
             out += _sec("Highest outlook", badge("outlook", where="right")) + "".join(
                 f"<div class='fsf-row' style='--c:"
@@ -963,8 +969,7 @@ def _full_panel(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot, cl
             if nh is not None and k >= 0:
                 vals = [nh["daily"][i][k] for i in range(len(days))]
                 val = nh["week"][k] if period < 0 else vals[period]
-                out += _hero(val, "within ~10 km of here", _when(days, period),
-                             _spark(days, vals, period), more=_error_line(nh))
+                out += _hero(val, "within ~10 km of here", _when(days, period), more=_error_line(nh))
             elif nh is None:
                 out += ("<div class='fs-empty'>This snapshot predates the flood-chance "
                         "numbers.</div>")
@@ -980,35 +985,44 @@ def _full_panel(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot, cl
 
 
 def _outlook_buttons(days: list[str], vals: list[float] | None, scope: str) -> None:
-    """The period picker, as the mock-up's 7-day outlook: the whole week,
-    then each day, each with its outlook and a bar in its level's colour.
-    Days 4-7 dashed: they rest on weaker rain forecasts."""
-    names = ["7 days"] + ["Today" if datetime.fromisoformat(d).date() == date.today()
-                          else datetime.fromisoformat(d).strftime("%a %d") for d in days]
+    """The period picker, as the mock-up's 7-day outlook: one box a day, each
+    with its outlook and a bar in its level's colour. Days 4-7 dashed: they
+    rest on weaker rain forecasts. The whole week (`vals[0]`) is the headline
+    card's until a day is picked, never a box (ui.week_head). A second click
+    on the picked day goes back to the week too."""
+    from products.flood.ui import week_back
+    period = st.session_state.flv_day
+    names = ["Today" if datetime.fromisoformat(d).date() == date.today()
+             else datetime.fromisoformat(d).strftime("%a %d") for d in days]
     css = ""
-    for j in range(len(names)):
+    for i in range(len(names)):
+        j = i + 1                       # keys and vals keep the week at 0
         v = vals[j] if vals else None
         k = _band(v)
         col = CHANCE_COLORS[k] if k else "#8f99a8"
         css += f".st-key-flv_d{j} button{{border-top:3px solid {col}!important}}"
-        if j - 1 >= SURE_DAYS:
+        if i >= SURE_DAYS:
             css += (f".st-key-flv_d{j} button{{border-left-style:dashed!important;"
                     f"border-right-style:dashed!important;border-bottom-style:dashed!important}}")
     st.markdown(f"<style>{css}</style>"
-                + _sec("7-day outlook", badge("outlook", where="left down"), note=scope),
+                + _sec("7 days", badge("outlook", where="left down"), note=scope),
                 unsafe_allow_html=True)
     for row in (range(0, 4), range(4, len(names))):
         cols = st.columns(4, gap="small")
-        for col, j in zip(cols, row):
+        if period >= 0 and len(row) < 4:
+            with cols[3]:
+                if week_back("flv_week"):
+                    st.session_state.flv_day = -1
+                    st.rerun()
+        for col, i in zip(cols, row):
             with col:
-                v = vals[j] if vals else None
-                label = f"{names[j]}  \n**{_pct_short(v)}**" if vals else names[j]
-                later = j - 1 >= SURE_DAYS
-                if st.button(label, key=f"flv_d{j}", width="stretch",
-                             type="primary" if j - 1 == st.session_state.flv_day else "secondary",
+                v = vals[i + 1] if vals else None
+                label = f"{names[i]}  \n**{_pct_short(v)}**" if vals else names[i]
+                if st.button(label, key=f"flv_d{i + 1}", width="stretch",
+                             type="primary" if i == period else "secondary",
                              help=("Less sure: rests on rain forecasts 4–7 days ahead"
-                                   if later else None)):
-                    st.session_state.flv_day = j - 1
+                                   if i >= SURE_DAYS else None)):
+                    st.session_state.flv_day = -1 if i == period else i
                     st.rerun()
 
 
@@ -1806,7 +1820,9 @@ def render(shell, s, search_row) -> None:
     hot = []
     if chance is not None:
         seen = set()
-        for j in np.argsort(-chance)[:12]:
+        # wide enough that five distinct names survive: neighbouring areas
+        # often share the nearest settlement's name (only 4 of the top 12 did)
+        for j in np.argsort(-chance)[:80]:
             name, pick, la, lo = _area_name(int(j), cen, towns)
             if name not in seen:
                 seen.add(name)
@@ -1856,12 +1872,27 @@ def render(shell, s, search_row) -> None:
                                "gauges. " for o in feeds)
                        + "Offline: " + ", ".join(off) + ". Their chances rest on rain alone.")
                       if off else "Every gauge sent a complete day recently.", "left"))
-    st.markdown(_tiles(kpis, len(kpis)), unsafe_allow_html=True)
+    from products.flood.ui import statewide
+    state_strip = statewide(kpis, len(kpis), when)      # drawn under the main row
 
     # ── main row: place | map | outlook + conditions ────────────────────
+    if nh is not None:
+        if k_sel is not None:
+            vals = [nh["week"][k_sel]] + [nh["daily"][i][k_sel] for i in range(len(days))]
+            scope = "near " + sel["label"]
+        else:
+            vals = [nh["arunachal_week"]] + list(nh["arunachal_daily"])
+            scope = "anywhere in Arunachal"
+    else:
+        vals, scope = None, ""
+
+    def picker() -> None:
+        with st.container(key="fs_days"):
+            _outlook_buttons(days, vals, scope)
+
     cl, cm, cr = main_row()
     with cl, st.container(key="fs_col_l"):
-        _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot)
+        _place_card(sel, pl, snap, period, rp, fmeta, own, river_at, levels, hot, picker)
 
     with cm, st.container(key="fs_col_m"):
         with st.container(border=True, key="fs_mapcard"):
@@ -2061,17 +2092,6 @@ def render(shell, s, search_row) -> None:
                     unsafe_allow_html=True)
 
     with cr, st.container(key="fs_col_r"):
-        if nh is not None:
-            if k_sel is not None:
-                vals = [nh["week"][k_sel]] + [nh["daily"][i][k_sel] for i in range(len(days))]
-                scope = "near " + sel["label"]
-            else:
-                vals = [nh["arunachal_week"]] + list(nh["arunachal_daily"])
-                scope = "anywhere in Arunachal"
-        else:
-            vals, scope = None, ""
-        with st.container(key="fs_r_a"):
-            _outlook_buttons(days, vals, scope)
         with st.container(key="fs_r_b"):
             tab = st.segmented_control("Conditions", ["Rivers", "Rain", "Soil"],
                                        default="Rivers", key="flv_cond",
@@ -2082,6 +2102,9 @@ def render(shell, s, search_row) -> None:
                 _soil_panel(snap, k_sel, sel)
             else:
                 _rivers_panel(rp, levels, own[0] if own else None, days)
+
+    # ── Arunachal as a whole ─────────────────────────────────────────────
+    st.markdown(state_strip, unsafe_allow_html=True)
 
     # ── what changed · needs attention · track record ────────────────────
     st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
