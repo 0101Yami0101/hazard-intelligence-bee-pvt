@@ -290,6 +290,59 @@ code{overflow-wrap:anywhere}
 .cmp th,.cmp td{padding:6px 8px;border-bottom:1px solid var(--grid);text-align:right}
 .cmp th:first-child,.cmp td:first-child{text-align:left}
 .cmp th{font-family:var(--mono);font-size:12px;color:var(--ink-3);font-weight:500}
+/* ---- triggers block + Blockland boxes (see LORE.md) ---- */
+:root{--g-bg:#1b2440;--g-bg2:#263257;--g-ink:#eef2ff;--g-dim:#b8c2e6;--g-gold:#ffc94a;--g-cyan:#7fd3ff}
+.play{background:var(--g-bg);color:var(--g-ink);border-radius:12px;padding:12px 16px;border:3px solid var(--g-gold);box-shadow:4px 4px 0 #0d1326;font-size:15.5px;line-height:1.5;margin-top:12px}
+.play .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g-gold);display:block;margin-bottom:4px}
+.play b{color:var(--g-gold)}.play i{color:var(--g-cyan);font-style:normal}.play p{margin:6px 0}
+.play ul{margin:6px 0;padding-left:20px}.play li{margin:3px 0}
+.play .real{background:rgb(255 255 255/.07);border-left:3px solid var(--g-cyan);border-radius:6px;font-size:13.5px;margin-top:8px;padding:6px 10px;color:var(--g-dim)}
+.play .real::before{content:"🔁 Real version: ";color:var(--g-cyan);font-weight:600}
+.pask{margin-top:10px;background:var(--g-bg2);border-radius:8px;padding:6px 10px}
+.pask summary{cursor:pointer;font-weight:600;color:#fff;list-style:none}
+.pask summary::-webkit-details-marker{display:none}
+.pask summary::before{content:"🤖 Pixel asks: ";color:var(--g-gold)}
+.pask summary::after{content:" ▸ tap to check";font-weight:400;font-size:12px;color:var(--g-dim)}
+.pask .ans{margin-top:6px;padding-top:6px;border-top:1px dashed rgb(255 255 255/.2)}
+.ttbl{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.ttbl th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);background:var(--sheet-2)}
+.ttbl td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top}
+.ttbl tr:last-child td{border-bottom:0}
+.ttbl td:first-child{font-weight:600;white-space:nowrap}
+.st{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;white-space:nowrap}
+.st.live{background:var(--built-soft);color:var(--built)}
+.st.plan{background:var(--planned-soft);color:var(--ink-2);border:1px dashed var(--planned)}
+.st.ask{background:var(--partial-soft);color:var(--partial)}
+.st.gap{background:var(--accent-soft);color:var(--accent)}
+.st.no{background:var(--sheet-2);color:var(--ink-3);text-decoration:line-through}
+@media(max-width:760px){.ttbl{font-size:12.5px}.ttbl td:first-child{white-space:normal}}
+/* ---- Level 3 story mode (see LORE.md) ---- */
+.play b,.play strong{color:var(--g-gold)}
+.play code,.gm code{background:rgb(255 255 255/.14);color:#fff;border:0}
+.play svg{display:block;width:100%;height:auto;margin:8px 0;border-radius:8px}
+.play ol,.play ul{margin:6px 0;padding-left:22px}.play li{margin:5px 0}
+.pask[open] summary::after{content:" ▾"}
+.pask .ans{color:var(--g-ink)}
+.gm{margin-top:8px;background:var(--g-bg);color:var(--g-ink);border-radius:8px;padding:6px 9px;font-size:13.5px;line-height:1.4;border-left:4px solid var(--g-gold);display:block;font-weight:400;text-align:left;font-family:var(--body,inherit)}
+.gm b{color:var(--g-gold);display:inline;font-size:inherit;font-family:inherit;font-weight:700}
+.gm i{color:var(--g-cyan);font-style:normal}
+.gm::before{content:"🎮 "}
+.gmrow{margin:10px 0 0}
+.eq .box.res .gm{background:#263257}
+.kid{background:#fff6d6;border:2px dashed #e0b23a;border-radius:10px;padding:8px 12px;font-size:16.5px;line-height:1.45;margin:0 0 14px;color:#3a2a00}
+.kid::before{content:"🧒 Super simple: ";font-weight:700;color:#8a5a00}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wc{perspective:900px;min-height:160px;cursor:pointer}
+.wc .in{position:relative;min-height:160px;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.wc.on .in{transform:rotateY(180deg)}
+.wc .f,.wc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.wc .f{background:var(--g-bg);color:#fff;border:3px solid var(--g-gold);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.wc .f b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1}
+.wc .f span{font-size:12px;color:var(--g-dim);margin-top:6px}
+.wc .b{background:var(--sheet);border:2px solid var(--rule);transform:rotateY(180deg);font-size:13.5px;line-height:1.4}
+.wc .b .gn{display:block;margin-top:6px;color:var(--bone);font-weight:600}
+.wc .b .back{display:block;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+@media(max-width:900px){.words{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -306,53 +359,96 @@ code{overflow-wrap:anywhere}
 <div class="wrap">
 
 <div class="hero">
-  <div class="kicker">Phase 3 · Days 9–13 · about 25 hours</div>
+  <div class="kicker">Phase 3 · Days 9–13 · about 25 hours · 🎮 Level 3: SlideSense's training</div>
   <h1>SlideSense, the landslide forecast</h1>
   <div class="goal">🎯 <span>Defend every SlideSense number to a <b>GSI geologist</b>, and name every dead end with the reason it closed.</span></div>
   <div class="toc">
-    <a href="#s1">1 · In one picture</a><a href="#s2">2 · The labels</a><a href="#s3">3 · The training set</a>
+    <a href="#start">🎮 Start here</a><a href="#s1">1 · In one picture</a><a href="#s2">2 · The labels</a><a href="#s3">3 · The training set</a>
     <a href="#s4">4 · WHERE model</a><a href="#s5">5 · vs GSI's map</a><a href="#s6">6 · WHEN</a>
     <a href="#s7">7 · Make a level</a><a href="#s8">8 · Backtest</a><a href="#s9">9 · Dead ends</a>
-    <a href="#s10">10 · On screen</a><a href="#s11">11 · Limits</a><a href="#s12">12 · Code</a><a href="#s13">13 · Quiz</a><a href="#s14">14 · Finish</a>
+    <a href="#s10">10 · On screen</a><a href="#s11">11 · Limits</a><a href="#s12">12 · Code</a><a href="#s13">13 · Quiz</a><a href="#s14">14 · Finish</a><a href="#s15">15 · Word cards</a>
   </div>
 </div>
+
+<!-- start -->
+<section id="start">
+  <h2><span class="n">🎮</span>Start here: Level 3, SlideSense's training</h2>
+  <p class="sub">Level 2 built the world's loot. Now Guardian 1, <b>SlideSense</b>, goes into the training gym. You'll see what it learned from, how it was tested, what it shows on screen, and every door we tried that turned out to be locked.</p>
+  <div class="play">
+    <span class="lv">Level 3 · the training gym</span>
+    <svg viewBox="0 0 640 200" role="img" aria-label="SlideSense in the training gym: a huge pile of mapped old slides, and only a tiny stack of dated ones">
+      <rect width="640" height="200" fill="#263257"/>
+      <text x="150" y="40" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">🕳️ ~37,800 mapped old slides</text>
+      <rect x="30" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="56" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="67" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="78" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="89" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="100" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="111" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="122" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="133" width="9" height="9" rx="2" fill="#b45f06"/><rect x="30" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="41" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="52" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="63" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="74" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="85" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="96" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="107" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="118" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="129" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="140" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="151" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="162" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="173" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="184" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="195" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="206" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="217" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="228" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="239" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="250" y="144" width="9" height="9" rx="2" fill="#b45f06"/><rect x="261" y="144" width="9" height="9" rx="2" fill="#b45f06"/>
+      <text x="150" y="172" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">WHERE they happened: lots of answers</text>
+      <rect x="282" y="70" width="76" height="66" rx="10" fill="#1d8673"/><text x="320" y="102" text-anchor="middle" font-size="22" fill="#fff">◭</text><text x="320" y="124" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#fff">SlideSense</text>
+      <text x="320" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">🏋️ in training</text>
+      <text x="500" y="40" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">📅 ~90 with a known day</text>
+      <rect x="486" y="100" width="28" height="22" rx="3" fill="#eef2ff"/><rect x="486" y="100" width="28" height="6" fill="#cf1f2a"/>
+      <text x="500" y="172" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">WHEN they happened: the missing pages</text>
+    </svg>
+    <p><b>Quick recap.</b> A forecast is <b>🧨 TNT × ⚡ spark</b> (Level 0). Blocks fall when pull beats grip, and the spark is rain that's unusual <i>for that block</i> (Level 1). Every block carries a 🎒 backpack of 34 facts (Level 2).</p>
+    <p><b>The big problem of this level:</b> SlideSense has a huge pile of answers to <i>where</i> slides happen, but only a handful to <i>when</i>. Almost every choice in this level comes from that gap.</p>
+    <span class="lv" style="margin-top:12px">Level 3 in seven sentences: learn these first</span>
+    <ol>
+      <li><b>Two halves, multiplied:</b> the 🧨 TNT map (how weak the ground is) × the ⚡ spark score (how unusual this week's rain is).</li>
+      <li><b>The TNT map learned from ~37,800 mapped slide outlines</b> (35,744 distinct slides) drawn by GSI and Bhuvan.</li>
+      <li><b>Only about 90 slides have a known day</b>: the 📅 missing calendar pages. So the spark uses a simple fixed rule, not a trained brain.</li>
+      <li><b>It sat a 🏋️ surprise exam</b> on regions it never saw: 0.86, right about 6 times in 7.</li>
+      <li><b>10% of the state holds 71% of the mapped slides.</b> Survey a tenth, cover seven in ten.</li>
+      <li><b>The level is a 📊 rank, never a chance:</b> High has seen about 3× the usual number of slides, Very High about 10×.</li>
+      <li><b>Every closed door was tested.</b> Two are still open: GSI's field reports and road-block logs.</li>
+    </ol>
+    <div class="real">SlideSense = susceptibility (LightGBM on ~37,800 mapped outlines, AUC 0.859 ± 0.016 on 50 km blocks) × trigger (the mean of 3- and 7-day rain percentiles, unfitted, 0.768 on 72 dated events). Levels carry a measured "× the usual" (0.2×, 1×, 2×, 3×, 10×) from LANDSLIDE_TIMES_USUAL.md. All numbers re-checked against <code>webapp/assets/landslide/metrics.json</code> on 5 Nov 2026.</div>
+    <details class="pask"><summary>Why does SlideSense have a trained brain for WHERE but only a simple rule for WHEN?</summary><div class="ans">Because of the answers it can learn from: ~37,800 mapped slides say <b>where</b>, but only ~90 say <b>when</b>. With 90 examples, a trained brain learns noise (a fitted model scored 0.755, the plain rule 0.768). So WHEN stays simple until more dated slides arrive.</div></details>
+  </div>
+</section>
 
 <!-- 1 -->
 <section id="s1">
   <h2><span class="n">1</span>SlideSense in one picture</h2>
   <p class="sub">Two very different halves, multiplied. Learn the data behind each half. That difference explains almost every decision.</p>
+  <p class="kid">SlideSense multiplies two things: <b>how weak the ground is</b> (learned from ~37,800 old slides) and <b>how unusual this week's rain is</b> (a simple rule). It has about 1,000 times more answers for the first than for the second. That gap explains almost everything.</p>
   <div class="eq">
     <div class="box" style="border-color:var(--slide)"><span class="k">WHERE · "how weak is this ground?"</span><b>Ground score</b>
-      <ul><li>machine learning (LightGBM trees)</li><li>100 m squares, the same every day</li><li>learned from <b>~37,800 mapped slides</b></li><li>tested: <b>0.86</b> on unseen ground</li></ul></div>
+      <ul><li>machine learning (LightGBM trees)</li><li>100 m squares, the same every day</li><li>learned from <b>~37,800 mapped slides</b></li><li>tested: <b>0.86</b> on unseen ground</li></ul><span class="gm"><b>🧨 The TNT map.</b> The same every day.</span></div>
     <div class="op">×</div>
     <div class="box" style="border-color:var(--flood)"><span class="k">WHEN · "is the rain unusual here?"</span><b>Rain score</b>
-      <ul><li><b>no fitting</b>: average of 2 percentiles</li><li>219 rain points, changes daily</li><li>only <b>~90 dated slides</b> exist</li><li>tested: <b>0.77</b> on 72 events</li></ul></div>
+      <ul><li><b>no fitting</b>: average of 2 percentiles</li><li>219 rain points, changes daily</li><li>only <b>~90 dated slides</b> exist</li><li>tested: <b>0.77</b> on 72 events</li></ul><span class="gm"><b>⚡ The spark score.</b> Changes every day.</span></div>
     <div class="op">=</div>
     <div class="box res"><span class="k">WHAT YOU SEE</span><b>A level, 7 days</b>
-      <ul><li>Very Low … Very High</li><li>each with a measured "× the usual"</li><li><b>a rank, never a chance</b></li></ul></div>
+      <ul><li>Very Low … Very High</li><li>each with a measured "× the usual"</li><li><b>a rank, never a chance</b></li></ul><span class="gm"><b>📊 The leaderboard</b>: which places to look at first.</span></div>
   </div>
-  <div class="tip" style="margin-top:12px">⚖️ <b>The whole story in one line:</b> we have <b>~37,800 answers to WHERE</b> and <b>~90 answers to WHEN</b>. That is a gap of nearly 1,000×. So WHERE gets a trained model, WHEN gets a simple fixed rule, and most of the "dead ends" are attempts to close that gap.</div>
+  <div class="tip" style="margin-top:12px">⚖️ <b>The whole story in one line:</b> we have <b>~37,800 answers to WHERE</b> and <b>~90 answers to WHEN</b>. That is a gap of nearly 1,000×. So WHERE gets a trained model, WHEN gets a simple fixed rule, and most of the "dead ends" are attempts to close that gap.<span class="gm"><b>A city map from 37,800 photos, a bus timetable from 90 tickets.</b> You'd learn the map really well, and keep the timetable rule simple, because 90 tickets can't teach you much.</span></div>
 </section>
 
 <!-- 2 -->
 <section id="s2">
   <h2><span class="n">2</span>The labels: where slides have been mapped</h2>
   <p class="sub">Four maps of past landslides, made into one. Plus two point lists kept aside <b>only for checking</b>.</p>
+  <p class="kid">To learn where slides happen, SlideSense studied maps of <b>old slides</b> (🕳️ craters) drawn by GSI and Bhuvan. Most slides are tiny, and nobody has ever proved that a place has <b>no</b> slides.</p>
   <div class="card">
     <div id="labelBars"></div>
     <div class="grid g3" style="margin-top:12px">
-      <div class="small">📐 <b>Tiny slides.</b> The median mapped slide is <b>944 m²</b>, about 30 × 30 m. <b>91.5%</b> are smaller than one 100 m square. So a square counts as "slide" if an outline <b>touches</b> it at all. Otherwise 9 in 10 would vanish.</div>
-      <div class="small">🧮 <b>Three counts, all correct.</b> 37,788 outlines from four maps. About 35,744 distinct slides once overlaps are removed. 91,610 squares touched (1.1% of the state).</div>
-      <div class="small">🚫 <b>No true "no".</b> Nobody ever certified a square as slide-free. Most of Arunachal has never been walked. Absence of a record isn't absence of a slide.</div>
+      <div class="small">📐 <b>Tiny slides.</b> The median mapped slide is <b>944 m²</b>, about 30 × 30 m. <b>91.5%</b> are smaller than one 100 m square. So a square counts as "slide" if an outline <b>touches</b> it at all. Otherwise 9 in 10 would vanish.<span class="gm"><b>Smaller than one block.</b> A typical crater is about 30 × 30 m, smaller than our 100 m block. So a block counts as a crater block if a crater touches it at all.</span></div>
+      <div class="small">🧮 <b>Three counts, all correct.</b> 37,788 outlines from four maps. About 35,744 distinct slides once overlaps are removed. 91,610 squares touched (1.1% of the state).<span class="gm"><b>Three ways to count the same craters:</b> outlines drawn, real slides, blocks touched. All correct, for different questions.</span></div>
+      <div class="small">🚫 <b>No true "no".</b> Nobody ever certified a square as slide-free. Most of Arunachal has never been walked. Absence of a record isn't absence of a slide.<span class="gm"><b>No "all-clear" stamps.</b> Nobody has ever stamped a block "no slide here". Most of Arunachal has never been walked.</span></div>
     </div>
   </div>
-  <div class="tip warn" style="margin-top:12px">🔑 <b>Why "no true no" matters:</b> the ground score can <b>rank</b> squares, but it can never be a <b>probability</b>. A probability needs the true count of slide-free places, and that doesn't exist. So a ground score of 0.5 does <b>not</b> mean a 50% chance.</div>
+  <div class="tip warn" style="margin-top:12px">🔑 <b>Why "no true no" matters:</b> the ground score can <b>rank</b> squares, but it can never be a <b>probability</b>. A probability needs the true count of slide-free places, and that doesn't exist. So a ground score of 0.5 does <b>not</b> mean a 50% chance.<span class="gm"><b>That's why it's a 📊 leaderboard, not 🎲 honest dice.</b> To say "20% chance", you'd need to know how many places truly never slide. Nobody knows that.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the crater collection</span>
+    <p>Four Guilds' maps of old slides were merged into one big <b>crater collection</b>: GSI's outlines plus three Bhuvan surveys (2014, 2017, 2023). Two more lists (GSI's points and NASA's points) were kept <b>locked away</b>, only for checking later.</p><p>Here's the catch: the collection only says where craters <i>are</i>. It never says where they <i>aren't</i>. So SlideSense can learn which blocks look most like crater blocks (a ranking), but it can't say "this block has a 20% chance".</p>
+    <div class="real">37,788 outlines from four inventories; ~35,744 distinct slides; 91,610 squares touched (1.1% of the state). Median slide 944 m²; 91.5% smaller than one 100 m square, so a square is a "slide" if an outline touches it. Presence-only data: no certified negatives, so the score is a relative index, not a probability.</div>
+    <details class="pask"><summary>A ground score says 0.5. Is that a 50% chance of a slide?</summary><div class="ans"><b>No.</b> It's a position on the leaderboard: higher means "looks more like places that slid". A chance would need a count of places that truly never slide, and nobody has one.</div></details>
+  </div>
 </section>
 
 <!-- 3 -->
 <section id="s3">
   <h2><span class="n">3</span>Building the training set</h2>
   <p class="sub">A model learns from "yes" squares and "no" squares. Picking the "no" squares is the hard part. These are the rules, frozen with a fingerprint (<code>b58e7dcc22134c1f</code>).</p>
+  <p class="kid">To learn, the Guardian needs <b>yes</b> examples (crater blocks) and <b>no</b> examples (quiet blocks). Picking the quiet blocks carefully is the hard part.</p>
   <div class="card two">
     <svg viewBox="0 0 360 260" style="width:100%" id="sampleSvg"></svg>
     <div>
@@ -363,25 +459,35 @@ code{overflow-wrap:anywhere}
         <li><b>"No" squares at least 500 m from any mapped slide</b>, so we don't pick unrecorded slides as "no".</li>
         <li><b>5 "no" for every "yes"</b>, the same in every test block.</li>
       </ol>
+      <span class="gm"><b>Three picking rules.</b> ① Only ground where a slide <i>could</i> happen: no ice, lakes or flat fields. ② Quiet blocks at least 500 m from any known crater. ③ Five quiet blocks for every crater block.</span>
     </div>
   </div>
-  <div class="tip ok" style="margin-top:12px">📏 <b>Textbook vs measured.</b> Textbooks say careless "no" picking inflates scores. Here it made <b>no difference</b>: 0.860 vs 0.862. Arunachal has almost no flat land to cheat with (median slope 29°). We keep the rules anyway, for the reasons AUC <b>can't</b> see: 15.8% of a careless "no" pool sits within 500 m of a known slide.</div>
+  <div class="tip ok" style="margin-top:12px">📏 <b>Textbook vs measured.</b> Textbooks say careless "no" picking inflates scores. Here it made <b>no difference</b>: 0.860 vs 0.862. Arunachal has almost no flat land to cheat with (median slope 29°). We keep the rules anyway, for the reasons AUC <b>can't</b> see: 15.8% of a careless "no" pool sits within 500 m of a known slide.<span class="gm"><b>The rule that didn't change the score.</b> Arunachal is so steep that there's hardly any easy, flat ground to cheat with. We kept the careful rules anyway, so that quiet blocks really are quiet.</span></div>
+  <div class="play">
+    <span class="lv">🎮 picking the quiet blocks</span>
+    <p>Imagine teaching someone to spot cracked eggs. You show them cracked eggs (yes) and good eggs (no). But if some of your "good" eggs are secretly cracked, they learn the wrong thing. That's why quiet blocks are picked <b>at least 500 m</b> from any known crater: a block right next to a crater might hold a slide nobody mapped.</p>
+    <div class="real">Negatives: inside the domain (slope > 10°, not ice, water or moss; 85.7% of the state), at least 500 m from any mapped slide, at 1:5, balanced per fold, frozen with a fingerprint. Measured: careful vs careless sampling gave 0.860 vs 0.862.</div>
+    <details class="pask"><summary>Why must quiet blocks be at least 500 m from a known crater?</summary><div class="ans">Because a block close to a crater could hold a slide nobody mapped. In a careless pool, 15.8% of the "no" blocks sat within 500 m of a known slide: probably some of them are unrecorded slides. Teaching with those is teaching with secretly cracked eggs.</div></details>
+  </div>
 </section>
 
 <!-- 4 -->
 <section id="s4">
   <h2><span class="n">4</span>The WHERE model and how it was tested</h2>
   <p class="sub">LightGBM gradient-boosted trees, trained 5 times, each time hiding one block of the state.</p>
+  <p class="kid">SlideSense's brain is lots of little 20-Questions games added together. It was tested 5 times, each time on a region of the map it had never seen. It picks the right block about <b>6 times in 7</b>.</p>
   <div class="grid g2">
     <div class="card">
       <b>Score on each hidden block</b> <span class="tiny">(AUC, 0.5 = coin toss)</span>
       <div id="foldBars" style="margin-top:8px"></div>
       <p class="small" style="margin-bottom:0"><b>Two sets of models:</b> the 5 "fold" models give <b>every reported number</b>. A 6th model trained on everything runs <b>in the app</b>, but may never quote a score: it has no hidden ground left. Quoting that one's score is how projects claim 0.99.</p>
+      <span class="gm"><b>🏋️ Five surprise exams.</b> Each time one region was hidden, the Guardian trained on the rest, then sat the exam on the hidden region. The 6th Guardian, trained on everything, works in the app, but it may never quote a score: it has already seen every answer.</span>
     </div>
     <div class="card">
       <b>How the map concentrates slides</b> <span class="tiny">(share of land vs share of mapped slides)</span>
       <div id="classBars" style="margin-top:8px"></div>
       <p class="small" style="margin-bottom:0"><b>10% of the state holds 71% of the mapped slides.</b> That's the operational claim: survey a tenth of the land and cover seven in ten failures.</p>
+      <span class="gm"><b>Search a tenth, find seven in ten.</b> Careful, two different "× the usual": on the <i>TNT map alone</i>, High ground holds 4.4× its share of craters. The <i>forecast levels on screen</i> (TNT × spark, places and days) were measured separately: High is about 3×.</span>
     </div>
   </div>
   <div class="grid g2" style="margin-top:12px">
@@ -389,11 +495,13 @@ code{overflow-wrap:anywhere}
       <b>What it leans on</b> <span class="tiny">(average SHAP, how much each fact moved the score)</span>
       <div id="shapBars" style="margin-top:8px"></div>
       <p class="small" style="margin-bottom:0"><b>Facing direction</b> leads: north-facing Himalayan slopes hold moisture and snow differently. The <b>steepest 25 m patch</b> beats average steepness, which is why slope is worked out at 25 m.</p>
+      <span class="gm"><b>Which clues mattered most:</b> which way the slope faces, rock type, height, and the steepest 25 m patch.</span>
     </div>
     <div class="card">
       <b>"Your model just detects roads."</b> <span class="tiny">Take facts out, re-test</span>
       <div id="ablBars" style="margin-top:8px"></div>
       <p class="small" style="margin-bottom:0">No single suspect fact carries it. <b>Ground shape + water alone</b> (10 physical facts) keeps 97.7% of the score.</p>
+      <span class="gm"><b>The take-out test.</b> Remove a clue and sit the exam again. Without roads, the score barely moves (0.859 → 0.850). The shape and water clues alone keep almost all of it.</span>
     </div>
   </div>
   <div class="grid g2" style="margin-top:12px">
@@ -401,6 +509,7 @@ code{overflow-wrap:anywhere}
       <b>⚠️ Known weakness: high ground is under-warned</b>
       <div id="elevBars" style="margin-top:8px"></div>
       <p class="small" style="margin-bottom:0"><span style="color:var(--accent)">■</span> % of real slides <span style="color:var(--slide)">■</span> % of squares called High+. At <b>2,000–4,000 m</b> the model under-calls. Fewer slides are mapped up there because it's hard to reach, and the model learned "high = safe". More model power won't fix it; better labels would.</p>
+      <span class="gm"><b>The blind spot up high.</b> Few people walk the high mountains, so few craters are mapped there, and the Guardian learned "high = safe". A bigger brain can't fix that. More craters mapped up high can.</span>
     </div>
     <div class="card">
       <b>🧪 The honest outside check</b>
@@ -408,15 +517,24 @@ code{overflow-wrap:anywhere}
       <div class="hbar"><span>NASA points</span><div class="t"><div style="width:1.4%;background:var(--built)"></div></div><span class="n">1.4%</span></div>
       <p class="tiny" style="margin-top:0">share sitting right on a training outline</p>
       <p class="small">GSI's points are the centres of the <b>same</b> slides we trained on, so scoring them is <b>not</b> an independent test. NASA's 56 points are independent: <b>28.6%</b> fall in the top 10% of ground, <b>2.9×</b> chance. That's weaker than 71%, probably because NASA's locations are rough. State that number and its caveat.</p>
+      <span class="gm"><b>Not yesterday's exam.</b> GSI's points are the centres of the same craters we trained on, so testing on them is like re-sitting yesterday's exam. NASA's 56 points are new questions: 2.9× better than chance.</span>
     </div>
   </div>
-  <div class="tip warn" style="margin-top:12px">⬜ <b>Grey means "not assessed", never "low".</b> 14.3% of the state (flat ground, ice, water, alpine moss) gets no score. The model never saw a glacier, so it has no business scoring one.</div>
+  <div class="tip warn" style="margin-top:12px">⬜ <b>Grey means "not assessed", never "low".</b> 14.3% of the state (flat ground, ice, water, alpine moss) gets no score. The model never saw a glacier, so it has no business scoring one.<span class="gm"><b>Grey = "not my job".</b> The Guardian never trained on ice, lakes or flat fields, so it doesn't score them.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the surprise exam</span>
+    <p>Imagine a class learning the map of a city. If the exam only asks about streets right next to the ones they studied, everyone scores 95%. So SlideSense's exam was harder: <b>whole 50 km regions were hidden</b>, five times over, and it was tested only there. It scored <b>0.86</b>: pick a crater block and a quiet block it has never seen, and it points at the crater block about <b>6 times in 7</b>.</p>
+    <div class="real">LightGBM; 5 fold models give every reported number (0.878, 0.838, 0.854, 0.879, 0.849; mean 0.859 ± 0.016). The full model runs in the app and never quotes a score. Top 10% of ground holds 71% of mapped slides. Ablation: removing road distance 0.859 → 0.850; shape and water alone keep 97.7%. Under-warns at 2,000–4,000 m (survey bias).</div>
+    <details class="pask"><summary>Why can't the app's Guardian (trained on everything) quote its own score?</summary><div class="ans">Because it has no hidden ground left: it has seen every answer. Its score would be like marking your own homework. Only the five exam Guardians, each tested on a region it never saw, give honest numbers.</div></details>
+    <details class="pask"><summary>Someone says "your model just detects roads". How do you answer?</summary><div class="ans">"Take road distance out and the score only drops from 0.859 to 0.850. Shape and water alone keep 97.7% of it. Roads matter for a real reason (cut slopes), and partly because surveyors map near roads; we say both."</div></details>
+  </div>
 </section>
 
 <!-- 5 -->
 <section id="s5">
   <h2><span class="n">5</span>Against GSI's own national map</h2>
   <p class="sub">GSI publishes a 50 m map in three classes. Both maps were scored on the same 508,138 squares, with ours scored only by models that never saw that region.</p>
+  <p class="kid">The Rock Guild (GSI) has its own national landslide map. On the same blocks, ours ranks the old craters better: <b>85 in 100</b> against 60. Their map was made for a different job, so say it with respect.</p>
   <div class="card">
     <div class="hbar"><span><b>Ranking</b> (in 100 pairs)</span><div class="t"><div style="width:85%;background:var(--slide)"></div></div><span class="n">85</span></div>
     <div class="hbar"><span>GSI</span><div class="t"><div style="width:60%;background:var(--planned)"></div></div><span class="n">60</span></div>
@@ -425,23 +543,53 @@ code{overflow-wrap:anywhere}
     <div class="hbar" style="margin-top:14px"><span>Slides only <b>Bhuvan</b> mapped</span><div class="t"><div style="width:86%;background:var(--slide)"></div></div><span class="n">86</span></div>
     <div class="hbar"><span>GSI</span><div class="t"><div style="width:58%;background:var(--planned)"></div></div><span class="n">58</span></div>
     <p class="small">The Bhuvan-only line matters: those slides aren't GSI's own, so this isn't just "GSI's map vs GSI's inventory".</p>
+    <span class="gm"><b>Another player's map.</b> GSI's map paints all of India in three broad colours. Ours ranks one state finely. Different jobs, and ours only scored on regions its Guardian never saw.</span>
   </div>
-  <div class="tip" style="margin-top:12px">🔍 <b>First run: GSI scored 50, pure chance.</b> That's not believable for a published map, so the <b>file</b> was checked before anything was said. Our download had come back scrambled (it matched a fresh copy on only 41% of squares). Re-downloaded properly, GSI scores 60. <b>Say it carefully in the room:</b> GSI's map is three broad classes made for a different job. Ours ranks finer.</div>
+  <div class="tip" style="margin-top:12px">🔍 <b>First run: GSI scored 50, pure chance.</b> That's not believable for a published map, so the <b>file</b> was checked before anything was said. Our download had come back scrambled (it matched a fresh copy on only 41% of squares). Re-downloaded properly, GSI scores 60. <b>Say it carefully in the room:</b> GSI's map is three broad classes made for a different job. Ours ranks finer.<span class="gm"><b>👾 The scrambled download.</b> GSI's first score was a coin toss, which isn't believable for a published map, so we checked our own file first. It had come back jumbled.</span></div>
+  <div class="play">
+    <span class="lv">🎮 comparing with the Rock Guild's map</span>
+    <p>When two players' maps are compared, the fair way is to score both on the <b>same blocks</b>, with ours scored only by Guardians that never saw those blocks. Both maps were asked the same question: pick a crater block and a quiet block, which one looks riskier? Ours picked right 85 times in 100, GSI's 60.</p>
+    <div class="real">Same 508,138 squares; ours scored out-of-fold. Ranking 85 vs 60; our top 13.8% of land holds 67% of slides vs 25% in GSI's High class; Bhuvan-only slides 86 vs 58. GSI's first score (50) came from a scrambled download; re-downloaded, it scores 60.</div>
+    <details class="pask"><summary>A GSI geologist asks: "So you're saying your map is better than ours?" What do you say?</summary><div class="ans">"It does a different job. Yours covers all of India in three classes; ours ranks one state finely and was tested on ground it never saw. On these slides it ranks them more finely, and your inventory is the main thing it learned from. Thank you for it."</div></details>
+  </div>
 </section>
 
 <!-- 6 -->
 <section id="s6">
   <h2><span class="n">6</span>WHEN: the rain score</h2>
   <p class="sub">You met it in Phase 1. Here's what's under it.</p>
+  <p class="kid">The spark score asks one question: is the last 3 and 7 days of rain unusual <b>for this block</b>? It's a fixed rule, because only about 90 slides have a known day.</p>
   <div class="grid g3">
-    <div class="card"><div class="kicker">the formula</div><b>average of two percentiles</b><div class="small">How unusual the last <b>3 days</b> and the last <b>7 days</b> of rain are, each against that point's own monsoon history. Nothing is fitted, so nothing can overfit, and it's easy to explain to APSDMA.</div></div>
-    <div class="card"><div class="kicker">the evidence</div><b>~90 dated slides</b><div class="small">All from NASA's Global Landslide Catalog, 2008–2018, with rough locations. 72 line up with the 11 km rain history, and 84 with the live rain archive from 2010.</div></div>
-    <div class="card"><div class="kicker">the score</div><b>0.768 vs 0.755</b><div class="small">The plain average beat a fitted model on 6 rain facts. With ~72 events, fitting adds noise, not signal. Soil wetness and 15/30-day rain were also tested: no gain.</div></div>
+    <div class="card"><div class="kicker">the formula</div><b>average of two percentiles</b><div class="small">How unusual the last <b>3 days</b> and the last <b>7 days</b> of rain are, each against that point's own monsoon history. Nothing is fitted, so nothing can overfit, and it's easy to explain to APSDMA.</div><span class="gm"><b>📔 The rain diary</b> from Level 1: each block compares today with its own past.</span></div>
+    <div class="card"><div class="kicker">the evidence</div><b>~90 dated slides</b><div class="small">All from NASA's Global Landslide Catalog, 2008–2018, with rough locations. 72 line up with the 11 km rain history, and 84 with the live rain archive from 2010.<span class="gm"><b>📅 The missing calendar pages.</b> We know <i>where</i> ~37,800 slides happened, but the <i>day</i> for only about 90.</span></div></div>
+    <div class="card"><div class="kicker">the score</div><b>0.768 vs 0.755</b><div class="small">The plain average beat a fitted model on 6 rain facts. With ~72 events, fitting adds noise, not signal. Soil wetness and 15/30-day rain were also tested: no gain.</div><span class="gm"><b>The plain rule won</b> (Level 1): 72 practice questions are too few for a fancy brain.</span></div>
   </div>
   <div class="card" style="margin-top:12px">
     <b>Measured: how much more common slides are, by how unusual the rain is</b> <span class="tiny">(84 dated slides, 219 points, 2010–2026)</span>
     <div id="rainBands" style="margin-top:8px"></div>
     <p class="small" style="margin-bottom:0">These "× the usual" figures were measured with rules <b>written down before running</b> (at least 8 slides per band, numbers must rise). The screen rounds them, because 84 slides can't support more precision.</p>
+    <span class="gm"><b>Spark strength.</b> On days with the rarest rain for that place (top 5%), slides were about 9× more common than usual. On ordinary days (below the middle), about 0.2×.</span>
+  </div>
+
+  <h3 style="margin:26px 0 8px">Other triggers for landslides: today and next</h3>
+  <p class="small" style="margin:0 0 8px">The rain score above is SlideSense's <b>only</b> trigger today. Here's what else sets off slides, and where each one stands. The full list for all hazards, with the physics, is in <a href="phase-1-science.html#s3">Phase 1, section 3</a>.</p>
+  <table class="ttbl">
+    <tr><th>Trigger</th><th>Status for SlideSense</th><th>What it would take</th></tr>
+    <tr><td>🌧️ Rain (3 and 7 days, against the place's own history)</td><td><span class="st live">live</span> the rain score above</td><td>Already running. Better rain (IMD ground gauges, finer live rain) makes it sharper.</td></tr>
+    <tr><td>💦 Soil wetness</td><td><span class="st no">not used</span> tested, and it didn't improve the landslide timing</td><td>Nothing: the test said no. (It does help floods on flat ground.)</td></tr>
+    <tr><td>📳 Earthquake shaking</td><td><span class="st plan">planned</span> the next trigger. The earthquake record (USGS) is held; shaking maps (ShakeMap) are ready to pull</td><td>Pull the shaking maps, then design how shaking combines with the WHERE map. <i>Not designed yet.</i> Two effects to cover: slides on the day of the quake, and slopes left weaker for later monsoons.</td></tr>
+    <tr><td>❄️ Snowmelt</td><td><span class="st plan">ready, not used</span> daily snow cover is listed as ready</td><td>Matters on high ground, which is already our weakest area (under-warned, see the limits card).</td></tr>
+    <tr><td>⛏️ Road cutting, blasting, quarrying</td><td><span class="st ask">partly</span> road cutting enters WHERE through "distance to road"; APSSDI's quarry layer is on disk, unused</td><td>Blasting and construction records from PWD, BRO and NHIDCL (on the ask list).</td></tr>
+    <tr><td>⛈️ Cloudburst</td><td><span class="st gap">a gap</span> the same rain trigger, but too small and short to see</td><td>Weather radar, or a rain sensor in the valley.</td></tr>
+    <tr><td>🔥 Wildfire scars</td><td><span class="st gap">idea only</span> fire data listed as ready; not in any plan</td><td>Would be a condition (WHERE), not a trigger.</td></tr>
+    <tr><td>📡 Slope sensors</td><td><span class="st plan">planned</span> the paid tier</td><td>Tilt, crack and ground-water sensors on chosen slopes: hours of warning on that one slope.</td></tr>
+  </table>
+  <div class="tip ok" style="margin-top:10px">🗣️ <b>If a GSI geologist asks "what about earthquakes?":</b> "Today SlideSense covers rain-triggered slides, which are most of them here. Earthquake shaking is the planned second trigger, and its data is already in the backbone. It isn't designed yet, so I won't claim it." <b>Never</b> say we cover earthquakes.</div>
+  <div class="play">
+    <span class="lv">🎮 Blockland: SlideSense's spark list</span>
+    <p>SlideSense watches <b>one spark today</b>: the ⚡ rain spark, checked against each block's own rain diary. Next on its training list is the <b>📳 quake shake</b>. The chest with every past earthquake is already in the Vault, and the shaking maps are spotted but not opened. Snowmelt, digger sparks and pinpoint cloudbursts come later, or need help from the Guilds.</p>
+    <div class="real">SlideSense's trigger is rain only. Earthquake shaking is planned (data held, design not started). Soil wetness was tested for slides and didn't help.</div>
+    <details class="pask"><summary>Someone says "So you'd have warned about a slide caused by an earthquake?" Honest answer?</summary><div class="ans">"No. Today SlideSense only watches rain. The earthquake record is already in our backbone, and shaking is the next trigger we'll add, but it isn't built."</div></details>
   </div>
 </section>
 
@@ -449,6 +597,7 @@ code{overflow-wrap:anywhere}
 <section id="s7">
   <h2><span class="n">7</span>Make a level yourself</h2>
   <p class="sub">The exact sum the app runs: <code>ground × rain</code>, then four fixed cut-offs. Move the sliders.</p>
+  <p class="kid">The level on the map is just <b>TNT × spark</b>, sorted into five boxes. Move the sliders and watch the box change.</p>
   <div class="card two">
     <div>
       <div class="ctl"><span>⛰️ Ground score</span><input type="range" id="gS" min="0" max="100" value="40"><output id="gO"></output></div>
@@ -459,6 +608,7 @@ code{overflow-wrap:anywhere}
         <button class="btn" data-g="70" data-r="95">Weak slope, very wet</button>
       </div>
       <p class="tiny">Cut-offs: 0.02 · 0.06 · 0.15 · 0.30 (<code>webapp/products/landslide/model.py</code>). They are top-heavy on purpose: Very High is ~3% of the state, so the map doesn't paint a fifth of Arunachal red.</p>
+      <span class="gm"><b>Five boxes, each with its measured "× the usual":</b> Very Low 0.2×, Low 1×, Moderate 2×, High 3×, Very High 10×.</span>
     </div>
     <div style="text-align:center">
       <div class="tiny">ground × rain</div>
@@ -467,27 +617,36 @@ code{overflow-wrap:anywhere}
       <div class="small" id="lvlTxt" style="margin-top:10px"></div>
     </div>
   </div>
-  <div class="tip ok" style="margin-top:12px">✖️ <b>Why multiply, not add?</b> A cliff in dry weather doesn't fail, and a downpour on flat ground does nothing. Multiplying keeps that: if either is near 0, the result is near 0. Adding would let a stormy day push flat ground into danger.</div>
+  <div class="tip ok" style="margin-top:12px">✖️ <b>Why multiply, not add?</b> A cliff in dry weather doesn't fail, and a downpour on flat ground does nothing. Multiplying keeps that: if either is near 0, the result is near 0. Adding would let a stormy day push flat ground into danger.<span class="gm"><b>No TNT, no bang. No spark, no bang.</b> That's why it's TNT × spark (Level 0).</span></div>
+  <div class="play">
+    <span class="lv">🎮 making a level</span>
+    <p>Every block, every day, SlideSense does one sum: <b>TNT score × spark score</b>. Then it drops the answer into one of five boxes, from Very Low to Very High. Each box carries a real, measured number: places and days in the High box have seen about <b>3×</b> the usual number of slides.</p><p>Try the <i>Firm slope, record rain</i> button. Even with record rain, a firm slope only reaches Moderate: there isn't much TNT to set off.</p>
+    <div class="real">Hazard = ground score × rain score; cut-offs 0.02, 0.06, 0.15, 0.30 (<code>webapp/products/landslide/model.py</code>); Very High is ~3% of the state. Each level's "× the usual" (0.2×, 1×, 2×, 3×, 10×) was measured on 84 dated slides with rules written first; High's 3× could be 1.4–4.4×.</div>
+    <details class="pask"><summary>Firm slope (0.10), record rain (0.99). What level, and why not Very High?</summary><div class="ans">0.10 × 0.99 ≈ 0.10, which is <b>Moderate</b>. The rain is extreme, but firm ground has little to set off. Multiplying keeps that: if either half is small, the answer stays small.</div></details>
+  </div>
 </section>
 
 <!-- 8 -->
 <section id="s8">
   <h2><span class="n">8</span>The backtest: what would it have said?</h2>
   <p class="sub">AUC says it can rank. A disaster manager asks three different things: how often would it alert, what share of known slides would it catch, and does the warning come <b>before</b> the slope fails?</p>
+  <p class="kid"><b>Replay mode:</b> we replayed old monsoons and asked what SlideSense <i>would</i> have said. Its spark score was already raised 5 days before slides. And catching more slides always means ringing the alarm more often.</p>
   <div class="card">
     <b>Does the warning come early?</b> <span class="tiny">median rain score around the 84 dated slides (re-run 2 Nov 2026, 219 points)</span>
     <svg viewBox="0 0 640 230" style="width:100%;margin-top:6px" id="leadSvg"></svg>
     <p class="small" style="margin-bottom:0">Even <b>5 days before</b>, the rain score at the failure site is already well above an ordinary monsoon day (0.73 vs 0.50), and it climbs to the event. Slides here follow <b>wet spells</b> that build over days, not one storm. <b>Caveat:</b> wet days cluster, so this shows risk is raised across a window. It isn't a 5-day pinpoint.</p>
+    <span class="gm"><b>The wet spell builds up.</b> Slides follow several wet days in a row, not one storm. Five days before, the spark score was already 0.73, against 0.50 on an ordinary day.</span>
   </div>
   <div class="card" style="margin-top:12px">
     <b>The trade-off: pick an alert line</b>
     <div class="ctl"><span>alert when rain score ≥</span><input type="range" id="thr" min="0" max="3" step="1" value="1"><output id="thrO"></output></div>
     <div class="grid g3" id="thrOut" style="margin-top:8px"></div>
     <p class="small" style="margin-bottom:0"><b>There is no free lunch.</b> Catching more means alerting more. Where to sit is a <b>policy choice for APSDMA</b>: the cost of a missed slide against the cost of an ignored warning. We suggest starting near 0.90.</p>
+    <span class="gm"><b>The alarm knob.</b> Turn it down and you catch more slides but ring more often. Where to set it is APSDMA's choice, not ours.</span>
   </div>
   <div class="grid g2" style="margin-top:12px">
-    <div class="tip">🗺️ <b>Alerts must be local.</b> A single statewide alarm fires if <i>anywhere</i> is wet: ~100 days a year. Arunachal is 550 km wide and the monsoon lasts months. That's why the app maps levels instead of issuing one state number.</div>
-    <div class="tip warn">🚫 <b>We never quote a false-alarm rate.</b> An alert day with no recorded slide may be a false alarm, or a slide in an empty valley that nobody wrote down. With 84 dated slides in 16 years, nobody can measure it. Saying so is more credible than a made-up number.</div>
+    <div class="tip">🗺️ <b>Alerts must be local.</b> A single statewide alarm fires if <i>anywhere</i> is wet: ~100 days a year. Arunachal is 550 km wide and the monsoon lasts months. That's why the app maps levels instead of issuing one state number.<span class="gm"><b>One alarm for the whole state</b> would ring on about 100 days a year. Local levels don't.</span></div>
+    <div class="tip warn">🚫 <b>We never quote a false-alarm rate.</b> An alert day with no recorded slide may be a false alarm, or a slide in an empty valley that nobody wrote down. With 84 dated slides in 16 years, nobody can measure it. Saying so is more credible than a made-up number.<span class="gm"><b>Silent valleys.</b> An alert with no recorded slide might be a slide nobody saw.</span></div>
   </div>
   <h3 style="margin:22px 0 8px">🖐️ Hands-on: re-run it</h3>
   <div class="cmd"><span>.venv\Scripts\python scripts\model\backtest.py</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
@@ -504,6 +663,14 @@ code{overflow-wrap:anywhere}
       <tr><td>ordinary monsoon day</td><td>0.499</td><td>0.498</td></tr>
     </table>
     <p class="small" style="margin-bottom:0"><b>The shape held</b>; the details moved a little. Statewide alarms went <i>up</i> because more points means more chances that one is wet. That's exactly the point about local alerts. Knowing <b>why</b> a number moved is the CTO skill here.</p>
+    <span class="gm"><b>Same shape, small moves.</b> The app went from 97 to 219 rain points, so the replay numbers shifted a little. Knowing why is the skill.</span>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 replay mode</span>
+    <p>You can't wait years to see if a Guardian is good. So you <b>replay old monsoons</b>: feed it the rain from past years, day by day, and see what it would have said before each known slide. SlideSense's spark score was already well up <b>5 days before</b> slides, because slides here follow wet spells that build for days.</p><p>But there's a trade-off, like a smoke alarm's sensitivity: <b>catch more, ring more</b>.</p>
+    <div class="real"><code>scripts/model/backtest.py</code> on 84 dated slides and 219 points (re-run 2 Nov 2026): at an alert line of 0.90, 7.9% of place-days alert and 38% of known slides are caught; the median rain score is 0.73 five days before vs 0.50 on an ordinary day. No false-alarm rate is quoted, because unrecorded slides make it unmeasurable.</div>
+    <details class="pask"><summary>An officer asks: "What's your false-alarm rate?" What do you say?</summary><div class="ans">"We can't measure it honestly. An alert day with no recorded slide might be a slide nobody wrote down, in an empty valley. What we can measure: at our suggested line, 7.9% of place-days alert, and about 38% of known slides fall on them."</div></details>
+    <details class="pask"><summary>Why do statewide alarm days go <i>up</i> when we add more rain points?</summary><div class="ans">More points means more chances that one of them is wet on any day. That's exactly why alerts must be local: one statewide alarm rings whenever <i>anywhere</i> is wet.</div></details>
   </div>
 </section>
 
@@ -511,6 +678,7 @@ code{overflow-wrap:anywhere}
 <section id="s9">
   <h2><span class="n">9</span>The dead ends, and the doors still open</h2>
   <p class="sub">Every closed door below was tested, not guessed. Experts trust a team that knows what <b>doesn't</b> work. Learn each one with its single killer number.</p>
+  <p class="kid">We tried every door we could think of to find more slide <b>dates</b>. Most were locked, and we know exactly why. One is parked, and two are open.</p>
   <div class="doors">
     <div class="door shut"><span class="s">closed · route 1</span><b>Bhuvan's year as the date</b><div class="small">11,329 slides <i>are</i> dated to a monsoon season (APSAC's SILAAS confirms it). But does a wetter monsoon carry more slides in the same place? <b>24–34% vs 33% chance</b>: no signal. Survey effort drowns it.</div></div>
     <div class="door shut"><span class="s">closed · route 2</span><b>Train a model on the 72 events</b><div class="small">Fitted: <b>0.755</b>. Plain average: <b>0.768</b>. Too few events to fit.</div></div>
@@ -523,12 +691,21 @@ code{overflow-wrap:anywhere}
     <div class="door open"><span class="s">open · found</span><b>GSI's written field reports</b><div class="small">48 Arunachal reports are openly downloadable. Since ~2016 they come as structured datasheets with exact date, time and location: <b>~25–40 new Arunachal events</b>.</div></div>
     <div class="door open"><span class="s">open · the ask</span><b>Road-block logs (PWD, BRO, PMGSY)</b><div class="small">Dated, located slides at scale. The best realistic way to <b>grade</b> the landslide forecast, which is written down daily since 10 Oct but not graded.</div></div>
   </div>
+  <span class="gm gmrow"><b>The doors, in game words.</b> 🔒 Closed: season dates (too blurry), a trained spark brain (too few pages), dating from camera pictures (☁️ Cloud Curtain) or radar (scars look like any hillside), the circle (to test a dating trick you need dated slides), and slide size (it measures the survey team). ⏸️ Parked: borrowing the whole Himalaya's dated slides. 🔓 Open: GSI's field reports and road-block logs.</span>
+  <div class="play">
+    <span class="lv">🎮 the locked doors</span>
+    <p>Every locked door here was <b>tried</b>, not guessed. That's what makes a Builder trustworthy: you can say exactly why each door is locked, with one number. The saddest one is <b>the circle</b>: to prove a trick for finding slide dates works, you need slides that are already dated <i>and</i> precisely placed, and those are the very thing we're short of.</p>
+    <div class="real">Closed: Bhuvan's season years (24–34% vs 33% chance), a fitted trigger (0.755 vs 0.768), optical dating (55–80 day windows; 86% under cloud), radar dating (0.53), the validation circle, size (survey explains 16.7%, terrain 0%), GSI Landslidedata_1 (~402 rows nationally). Parked: Himalayan pooling (812 dated slides). Open: GSI field reports (~25–40 events), road-block logs.</div>
+    <details class="pask"><summary>Why can't you just date slides from satellite pictures?</summary><div class="ans">Camera satellites can't see through the monsoon cloud: 86% of slides happen under it, and the best window we could get was 55–80 days, against the 7 needed. Radar sees through cloud, but slide scars looked like any other hillside (0.53, a coin toss).</div></details>
+    <details class="pask"><summary>What's "the circle"?</summary><div class="ans">To test a method for dating slides, you need slides that are <b>both</b> precisely placed <b>and</b> dated. GSI and Bhuvan have the place but no date; NASA has the date but a rough place. So the shortage blocks its own fix.</div></details>
+  </div>
 </section>
 
 <!-- 10 -->
 <section id="s10">
   <h2><span class="n">10</span>What reaches the screen</h2>
   <p class="sub">The maths didn't change when the screens were rebuilt on 10 Oct. How it's <b>said</b> did.</p>
+  <p class="kid">What the player sees: a level with its real "× the usual", a town search that tells you when it moved uphill, a roads page, a one-page report, and a diary written every day.</p>
   <div class="grid g3">
     <div class="card small">✖️ <b>"3× the usual", not "4 of 5".</b> The user rejected a scale position as a headline. Every level now carries its measured figure, with the 90% range behind an ⓘ.</div>
     <div class="card small">📍 <b>Valley towns snap uphill.</b> 12% of the state's 4,648 settlements sit on flat, unscored ground. The search moves to the nearest scored slope <b>and says so, with the distance</b>. What threatens a valley town is the slope above it.</div>
@@ -537,12 +714,14 @@ code{overflow-wrap:anywhere}
     <div class="card small">📝 <b>Written down daily</b> since 10 Oct (<code>records/landslide_forecast/</code>), each day's rain at every point with fingerprints of the fixed files. <b>Not graded</b>: no dated slides flow in.</div>
     <div class="card small">📏 <b>Rain detail.</b> The ground is 100 m sharp; the live rain is ~22 km. Say this when showing the map.</div>
   </div>
+  <span class="gm gmrow"><b>Show the real number, not a position on a scale.</b> "3× the usual" means something; "4 of 5" doesn't. And the 📖 Prophecy Book is written every day, but the 🏆 Scoreboard is empty until dated slides arrive.</span>
 </section>
 
 <!-- 11 -->
 <section id="s11">
   <h2><span class="n">11</span>The limits card</h2>
   <p class="sub">Say these before anyone asks. Each one is in the docs; none is a secret.</p>
+  <p class="kid">Every honest game box lists what the game <b>can't</b> do. Say these limits before anyone asks: it makes people trust everything else you say.</p>
   <div class="grid g2">
     <div class="limit"><span class="i">🎲</span><span><b>Not a probability.</b> Ranks and "× the usual" only. There are no true "no" places to build a chance from.</span></div>
     <div class="limit"><span class="i">📅</span><span><b>WHEN rests on ~84 dated slides.</b> Every rain figure has a wide range. High's "3×" could be 1.4–4.4×.</span></div>
@@ -553,12 +732,14 @@ code{overflow-wrap:anywhere}
     <div class="limit"><span class="i">⏳</span><span><b>Not graded live yet.</b> Logged daily, but grading waits for dated slides (road-block logs).</span></div>
     <div class="limit"><span class="i">🌋</span><span><b>Rain only.</b> Earthquake-triggered slides aren't covered.</span></div>
   </div>
+  <span class="gm gmrow"><b>The honest label on the box:</b> a leaderboard, not dice · only ~84 calendar pages · a blind spot up high · coarse rain slabs · no false-alarm rate · no size · the Scoreboard isn't running yet · rain is the only spark.</span>
 </section>
 
 <!-- 12 -->
 <section id="s12">
   <h2><span class="n">12</span>Read the code and docs, in this order</h2>
   <p class="sub">Code follows the data: labels → sample → folds → train → predict → rain → combine → test → screen.</p>
+  <p class="kid">Follow the code in the same order as the data: craters → quiet blocks → exam regions → training → the TNT map → the spark → TNT × spark → replay → the screen.</p>
   <div class="card code-list" id="codeList"></div>
   <h3 style="margin:22px 0 8px">Docs</h3>
   <div class="card code-list" id="docList"></div>
@@ -567,7 +748,7 @@ code{overflow-wrap:anywhere}
 <!-- 13 -->
 <section id="s13">
   <h2><span class="n">13</span>Check yourself: a GSI geologist's questions</h2>
-  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. These are the grown-up questions: answer in real words, not game words. <span class="score" id="score"></span></p>
   <div id="quiz"></div>
 </section>
 
@@ -582,10 +763,31 @@ code{overflow-wrap:anywhere}
     <div class="beat"><span class="s">exercise</span><b>Re-run the backtest</b>and explain every number that moved</div>
     <div class="beat"><span class="s">explain</span><b>All the doors</b>each closed one with its killer number</div>
   </div>
+  <div class="play">
+    <span class="lv">🎮 the Level 3 boss: explain it to a 12-year-old</span>
+    <p>To finish Level 3, explain each of these with the game words first, then the real words:</p>
+    <ul>
+      <li>🕳️ 37,800 craters vs 📅 ~90 calendar pages, and why that shapes everything</li>
+      <li>picking quiet blocks, and the 500 m ring</li>
+      <li>the 🏋️ surprise exam, and why the app's Guardian never quotes its own score</li>
+      <li>the take-out test: "it's not just roads"</li>
+      <li>TNT × spark → five boxes, each with a real "× the usual"</li>
+      <li>replay mode, the alarm knob, and why there's no false-alarm rate</li>
+      <li>every locked door, with its one killer number</li>
+    </ul>
+    <p><b>Next up, Level 4: River watch.</b> Guardian 2, FloodSense: the height sticks, the gauge Glitch, 🎲 honest dice, and the dotted level line.</p>
+  </div>
   <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 3 like a hostile GSI geologist"</i>, and move to Phase 4, FloodSense.</div>
 </section>
 
-<footer>Phase 3 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Numbers from MODEL_SUSCEPTIBILITY.md, LABELS_AND_SAMPLING.md, MODEL_TRIGGER_AND_HAZARD.md, BACKTEST.md (plus a re-run on 2 Nov 2026), LANDSLIDE_TIMES_USUAL.md, GSI_MAP_COMPARISON.md, TEMPORAL_INVENTORY_ATTEMPTS.md and <code>webapp/products/landslide/model.py</code>.</footer>
+<!-- 15 -->
+<section id="s15">
+  <h2><span class="n">15</span>Word cards</h2>
+  <p class="sub">Every grown-up word from this level, with its kid meaning and its game name. 👆 Tap to flip. Cards marked "back from" are old friends.</p>
+  <div class="words" id="words"></div>
+</section>
+
+<footer>Phase 3 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Numbers from MODEL_SUSCEPTIBILITY.md, LABELS_AND_SAMPLING.md, MODEL_TRIGGER_AND_HAZARD.md, BACKTEST.md (plus a re-run on 2 Nov 2026), LANDSLIDE_TIMES_USUAL.md, GSI_MAP_COMPARISON.md, TEMPORAL_INVENTORY_ATTEMPTS.md and <code>webapp/products/landslide/model.py</code>. Key numbers re-checked against <code>webapp/assets/landslide/metrics.json</code> on 5 Nov 2026. 🎮 Story mode added 5 Nov 2026; game names in <code>docs/lrn/LORE.md</code>.</footer>
 </div>
 
 <script>
@@ -730,6 +932,35 @@ QUIZ.forEach(([q, who, a], i) => {
   }));
   quiz.appendChild(d);
 });
+
+/* ---------- word cards: [word, kid meaning, game name, comes back in] ---------- */
+const WORDS = [
+  ["Landslide inventory","Maps of where past slides were found.","🕳️ the crater collection","Levels 4, 7"],
+  ["Presence-only data","Records of where things happened, but no certified \"didn't happen here\".","no all-clear stamps","Levels 4, 7"],
+  ["Negative sampling","Picking the \"no\" examples a model learns from.","picking the quiet blocks","Level 4"],
+  ["Buffer","A no-pick zone around known slides (500 m here).","the 500 m ring","Level 4"],
+  ["Domain mask","Only the ground where a slide could happen: steeper than 10°, not ice or water.","\"not my job\" grey","Level 4"],
+  ["Gradient-boosted trees","Many small decision trees, each fixing the last one's mistakes, added up.","lots of little 20-Questions games","Level 4"],
+  ["Fold","One region hidden for testing.","one surprise-exam region","Level 4"],
+  ["Spatial CV","Testing on whole regions the model never saw.","🏋️ the surprise exam","back from Level 0 · Level 4"],
+  ["Full model","The model trained on everything; it runs in the app but never quotes a score.","the app's Guardian","Level 6"],
+  ["AUC","Pick a yes and a no; how often the model ranks the yes higher. 0.5 = coin toss.","the pick-the-right-block game","back from Level 0 · Level 4"],
+  ["SHAP","How much each fact pushed a score up or down.","which clues mattered","Level 7"],
+  ["Ablation","Remove a fact, retrain, and see how much the score drops.","the take-out test","Level 7"],
+  ["Lift / success rate","How much more often slides fall on the top-ranked land than on average.","search a tenth, find seven in ten","Level 7"],
+  ["Survey bias","Slides get mapped where people can reach, so remote ground looks safer than it is.","the blind spot up high","Level 7"],
+  ["Independent validation","Testing on data the model didn't learn from, not even indirectly.","not yesterday's exam","Levels 4, 7"],
+  ["Hazard","Susceptibility × trigger: where, times when.","🧨 TNT × ⚡ spark","back from Level 0 · Level 4"],
+  ["Rank vs chance","A rank says where to look first; a chance says how often it happens.","📊 leaderboard vs 🎲 dice","back from Level 0 · Level 4"],
+  ["Times the usual","How much more common slides are at this level than on an average place and day.","\"× the usual\"","Levels 4, 7"],
+  ["Backtest","Replaying past years to see what a forecast would have said.","replay mode","Levels 4, 6"],
+  ["Alert threshold","The score at which an alert goes out.","the alarm knob","Level 4"],
+  ["Capture rate","The share of known events that fell on alert days.","slides caught","Level 4"],
+  ["False alarm rate","The share of alerts with no event. Not measurable here: slides go unrecorded.","silent valleys","Levels 4, 7"]
+];
+$("words").innerHTML = WORDS.map(([w, m, g, b]) =>
+  `<div class="wc"><div class="in"><div class="f"><b>${w}</b><span>tap to flip</span></div><div class="b">${m}<span class="gn">🎮 ${g}</span><span class="back">${b.startsWith("back") ? b : "comes back in: " + b}</span></div></div></div>`).join("");
+$("words").addEventListener("click", e => { const c = e.target.closest(".wc"); if (c) c.classList.toggle("on"); });
 
 function meter(){
   const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));

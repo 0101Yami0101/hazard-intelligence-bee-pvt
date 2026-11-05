@@ -68,6 +68,42 @@
 .ctl input[type=range]{width:100%;accent-color:var(--accent)}
 .ctl output{font-family:var(--mono);font-size:14px;text-align:right}
 .big-out{font-family:var(--display);font-size:38px;line-height:1}
+/* ---- Level 4 story mode (see LORE.md) ---- */
+:root{--g-bg:#1b2440;--g-bg2:#263257;--g-ink:#eef2ff;--g-dim:#b8c2e6;--g-gold:#ffc94a;--g-cyan:#7fd3ff}
+.play{background:var(--g-bg);color:var(--g-ink);border-radius:12px;padding:12px 16px;border:3px solid var(--g-gold);box-shadow:4px 4px 0 #0d1326;font-size:15.5px;line-height:1.5;margin-top:12px}
+.play .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g-gold);display:block;margin-bottom:4px}
+.play b,.play strong{color:var(--g-gold)}.play i{color:var(--g-cyan);font-style:normal}.play p{margin:6px 0}
+.play ol,.play ul{margin:6px 0;padding-left:22px}.play li{margin:5px 0}
+.play code,.gm code{background:rgb(255 255 255/.14);color:#fff;border:0}
+.play svg{display:block;width:100%;height:auto;margin:8px 0;border-radius:8px}
+.play .real{background:rgb(255 255 255/.07);border-left:3px solid var(--g-cyan);border-radius:6px;font-size:13.5px;margin-top:8px;padding:6px 10px;color:var(--g-dim)}
+.play .real::before{content:"🔁 Real version: ";color:var(--g-cyan);font-weight:600}
+.pask{margin-top:10px;background:var(--g-bg2);border-radius:8px;padding:6px 10px}
+.pask summary{cursor:pointer;font-weight:600;color:#fff;list-style:none}
+.pask summary::-webkit-details-marker{display:none}
+.pask summary::before{content:"🤖 Pixel asks: ";color:var(--g-gold)}
+.pask summary::after{content:" ▸ tap to check";font-weight:400;font-size:12px;color:var(--g-dim)}
+.pask[open] summary::after{content:" ▾"}
+.pask .ans{margin-top:6px;padding-top:6px;border-top:1px dashed rgb(255 255 255/.2);color:var(--g-ink)}
+.gm{margin-top:8px;background:var(--g-bg);color:var(--g-ink);border-radius:8px;padding:6px 9px;font-size:13.5px;line-height:1.4;border-left:4px solid var(--g-gold);display:block;font-weight:400;text-align:left;font-family:var(--body,inherit)}
+.gm b{color:var(--g-gold);display:inline;font-size:inherit;font-family:inherit;font-weight:700}
+.gm i{color:var(--g-cyan);font-style:normal}
+.gm::before{content:"🎮 "}
+.gmrow{margin:10px 0 0}
+.kid{background:#fff6d6;border:2px dashed #e0b23a;border-radius:10px;padding:8px 12px;font-size:16.5px;line-height:1.45;margin:0 0 14px;color:#3a2a00}
+.kid::before{content:"🧒 Super simple: ";font-weight:700;color:#8a5a00}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wc{perspective:900px;min-height:160px;cursor:pointer}
+.wc .in{position:relative;min-height:160px;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.wc.on .in{transform:rotateY(180deg)}
+.wc .f,.wc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.wc .f{background:var(--g-bg);color:#fff;border:3px solid var(--g-gold);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.wc .f b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1}
+.wc .f span{font-size:12px;color:var(--g-dim);margin-top:6px}
+.wc .b{background:var(--sheet);border:2px solid var(--rule);transform:rotateY(180deg);font-size:13.5px;line-height:1.4}
+.wc .b .gn{display:block;margin-top:6px;color:var(--bone);font-weight:600}
+.wc .b .back{display:block;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+@media(max-width:900px){.words{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -84,39 +120,83 @@
 <div class="wrap">
 
 <div class="hero">
-  <div class="kicker">Phase 4 · Days 14–19 · about 30 hours · the deepest module</div>
+  <div class="kicker">Phase 4 · Days 14–19 · about 30 hours · the deepest module · 🎮 Level 4: River watch</div>
   <h1>FloodSense, the flood forecast</h1>
   <div class="goal">🎯 <span>Explain each of FloodSense's numbers to a <b>CWC hydrologist</b>: what it means, how it was proven, and where it is still weak.</span></div>
   <div class="toc">
-    <a href="#s1">1 · Three numbers</a><a href="#s2">2 · How it fits</a><a href="#s3">3 · The flood record</a>
+    <a href="#start">🎮 Start here</a><a href="#s1">1 · Three numbers</a><a href="#s2">2 · How it fits</a><a href="#s3">3 · The flood record</a>
     <a href="#s4">4 · WHERE</a><a href="#s5">5 · River forecast</a><a href="#s6">6 · Level line</a>
     <a href="#s7">7 · Bad readings</a><a href="#s8">8 · High-river fault</a><a href="#s9">9 · Near here</a>
     <a href="#s10">10 · Better over time</a><a href="#s11">11 · Tested, not shipped</a><a href="#s12">12 · vs Google</a>
-    <a href="#s13">13 · Daily run</a><a href="#s14">14 · Limits</a><a href="#s15">15 · Old docs</a><a href="#s16">16 · Code</a><a href="#s17">17 · Quiz</a>
+    <a href="#s13">13 · Daily run</a><a href="#s14">14 · Limits</a><a href="#s15">15 · Old docs</a><a href="#s16">16 · Code</a><a href="#s17">17 · Quiz</a><a href="#s18">18 · Word cards</a>
   </div>
-  <p class="tiny" style="margin-top:12px">✔ Numbers on this page were read from the live snapshot (<code>webapp/assets/flood/live_forecast.json</code>, issued 2 Nov 2026) and the reports, not only from the docs. Where the docs are older, section 15 lists it.</p>
+  <p class="tiny" style="margin-top:12px">✔ Numbers on this page were read from the live snapshot (<code>webapp/assets/flood/live_forecast.json</code>, issued 4 Nov 2026; track-record numbers refreshed from it on 5 Nov) and the reports, not only from the docs. Where the docs are older, section 15 lists it.</p>
 </div>
+
+<!-- start -->
+<section id="start">
+  <h2><span class="n">🎮</span>Start here: Level 4, River watch</h2>
+  <p class="sub">Guardian 2, <b>FloodSense</b>, watches the water. It's the deepest Guardian, with the most moving parts, so this level goes slowly. Learn the seven sentences first and the rest fits around them.</p>
+  <div class="play">
+    <span class="lv">Level 4 · the river's height stick</span>
+    <svg viewBox="0 0 640 210" role="img" aria-label="A river height stick with its red line, the measured level so far, a dotted line ahead, and FloodSense watching">
+      <rect width="640" height="210" fill="#263257"/>
+      <rect x="60" y="20" width="30" height="180" fill="#eef2ff"/><line x1="70" y1="30" x2="80" y2="30" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="40" x2="86" y2="40" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="50" x2="80" y2="50" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="60" x2="80" y2="60" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="70" x2="80" y2="70" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="80" x2="86" y2="80" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="90" x2="80" y2="90" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="100" x2="80" y2="100" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="110" x2="80" y2="110" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="120" x2="86" y2="120" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="130" x2="80" y2="130" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="140" x2="80" y2="140" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="150" x2="80" y2="150" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="160" x2="86" y2="160" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="170" x2="80" y2="170" stroke="#1b2440" stroke-width="2"/><line x1="70" y1="180" x2="80" y2="180" stroke="#1b2440" stroke-width="2"/>
+      <line x1="90" y1="64" x2="620" y2="64" stroke="#ff6b6b" stroke-width="3"/>
+      <text x="100" y="56" font-family="Mukta,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#ff6b6b">🟥 the red line (danger level)</text>
+      <path d="M90 160 C 160 156, 200 150, 250 140 S 330 112, 380 118" fill="none" stroke="#7fd3ff" stroke-width="4"/>
+      <path d="M380 118 C 420 104, 450 90, 500 84" fill="none" stroke="#ffc94a" stroke-width="4" stroke-dasharray="3 7"/>
+      <path d="M380 118 C 420 92, 450 70, 500 62 L 500 106 C 450 112, 420 120, 380 118 Z" fill="#ffc94a" opacity=".18"/>
+      <line x1="380" y1="20" x2="380" y2="196" stroke="#eef2ff" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="386" y="190" font-family="IBM Plex Mono,monospace" font-size="11" fill="#eef2ff">today</text>
+      <text x="230" y="182" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#7fd3ff">what the height stick read</text>
+      <text x="510" y="100" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#ffc94a">where it's heading</text>
+      <rect x="520" y="130" width="96" height="60" rx="10" fill="#2f6cae"/><text x="568" y="157" text-anchor="middle" font-size="20" fill="#fff">◈</text><text x="568" y="178" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#fff">FloodSense</text>
+    </svg>
+    <p><b>Quick recap.</b> Water rolls to the lowest block, and blocks only a little above a river flood first: <b>⬆️ steps above the river</b>, or HAND (Level 1). Each river has a <b>📏 height stick</b> with a <b>🟥 red line</b> painted on it (Level 1). And only some numbers are <b>🎲 honest dice</b> (Level 1).</p>
+    <span class="lv" style="margin-top:12px">Level 4 in seven sentences: learn these first</span>
+    <ol>
+      <li><b>FloodSense gives three different answers</b>, each with its own badge: the river chance (✔), the near-here outlook (≈) and "if a flood comes" (◆). Never mix them.</li>
+      <li><b>The river chance is the strongest:</b> at 32 height sticks it's 🎲 honest dice. When it says about 15%, about 15% happen.</li>
+      <li><b>A flood only counts if a witness confirms it:</b> radar, a global flood archive, or a height stick crossing its line. That gave 2,180 checked floods.</li>
+      <li><b>"If a flood comes" reads only the ground's shape</b>: how many steps above the river, and how big the river is.</li>
+      <li><b>A dotted line shows where the river is heading</b>, 2 days ahead, on 17 CWC height sticks.</li>
+      <li><b>👾 One broken reading once looked like a 52% flood</b>, so every reading now goes through a three-pass Glitch scanner.</li>
+      <li><b>The boss fight hasn't happened yet.</b> Every forecast is written in the 📖 Prophecy Book, but no river has crossed its line since logging began. The 2027 monsoon is the real test.</li>
+    </ol>
+    <div class="real">FloodSense: gauge chance models at 32 gauges (calibrated, 1 day ahead: warn at 25% → 61% of crossings caught, 68% of warnings right); a level line 2 days ahead at CWC gauges; the near-here outlook (approximate, Gate A failed); WHERE per 100 m ("if a flood comes", shape only, calibrated). Verified record: 2,180 floods. Track record (4 Nov): 8,736 forecasts logged, 0 crossings. All from <code>webapp/assets/flood/live_forecast.json</code>.</div>
+    <details class="pask"><summary>Name FloodSense's three answers, and say which one to lead with.</summary><div class="ans">① <b>The river chance</b> (✔ Forecast): will this river reach its line? Honest dice. <b>Lead with this one.</b> ② <b>The near-here outlook</b> (≈ Outlook): a flood within ~10 km this week? Approximate. ③ <b>If a flood comes</b> (◆ Estimate): does water reach this 100 m spot? Never say "this spot has X% chance today".</div></details>
+  </div>
+</section>
 
 <!-- 1 -->
 <section id="s1">
   <h2><span class="n">1</span>Three numbers, never mixed</h2>
   <p class="sub">FloodSense answers three different questions. Each has its own badge on screen. Mixing them up is the most common mistake, so learn these first.</p>
+  <p class="kid">FloodSense gives three different answers to three different questions. Each one wears its own badge on screen, like a label on a jar, so nobody mixes them up.</p>
   <div class="nums3">
     <div class="num" style="--c:var(--built)"><span class="badge">Forecast ✔</span><b>Will this river reach its line?</b>
-      <ul><li>At <b>32 river gauges</b>, 1–9 days ahead</li><li>Reads the river itself + rain</li><li><b>Calibrated:</b> when it says 20%, about 20% happen</li><li>Graded every day against the gauge</li></ul></div>
+      <ul><li>At <b>32 river gauges</b>, 1–9 days ahead</li><li>Reads the river itself + rain</li><li><b>Calibrated:</b> when it says 20%, about 20% happen</li><li>Graded every day against the gauge</li></ul><span class="gm"><b>🎲 Honest dice</b> at the height stick.</span></div>
     <div class="num" style="--c:var(--partial)"><span class="badge">Outlook ≈</span><b>A flood within ~10 km this week?</b>
-      <ul><li>For <b>every place</b> in the state</li><li>Ranks well (about 90 in 100)</li><li><b>Approximate:</b> failed its calibration test; shown by the user's decision with its error</li></ul></div>
+      <ul><li>For <b>every place</b> in the state</li><li>Ranks well (about 90 in 100)</li><li><b>Approximate:</b> failed its calibration test; shown by the user's decision with its error</li></ul><span class="gm"><b>≈ A rough guess</b> for every block: good at <i>which</i> places, rough on <i>how much</i>.</span></div>
     <div class="num" style="--c:var(--soil)"><span class="badge">Estimate ◆</span><b>If a flood comes, does water reach this spot?</b>
-      <ul><li>Each <b>100 m square</b>, from terrain shape</li><li>The same every day</li><li>Shown capped at "20%+", with its checked rate</li></ul></div>
+      <ul><li>Each <b>100 m square</b>, from terrain shape</li><li>The same every day</li><li>Shown capped at "20%+", with its checked rate</li></ul><span class="gm"><b>◆ "If a flood comes"</b>: how easily water reaches this block, from the ground's shape.</span></div>
   </div>
   <div class="badges"><span>Forecast ✔</span><span>Outlook ≈</span><span>Estimate ◆</span><span>Measured ●</span><span>Input ☂</span><span>Record ◷</span><span class="tiny" style="border:none;background:none">the six badges on screen</span></div>
-  <div class="tip warn" style="margin-top:12px">🚫 <b>Never say "this spot has X% chance of flooding today".</b> Spot × day is tiny, can't be checked, and runs ~4× high inside Arunachal. The <b>river forecast</b> is the strongest number. Lead with it.</div>
+  <div class="tip warn" style="margin-top:12px">🚫 <b>Never say "this spot has X% chance of flooding today".</b> Spot × day is tiny, can't be checked, and runs ~4× high inside Arunachal. The <b>river forecast</b> is the strongest number. Lead with it.<span class="gm"><b>Three jars, three labels.</b> Pour from the wrong jar and the answer is wrong. The ✔ jar is the one we've proven most.</span></div>
+  <div class="play">
+    <span class="lv">🎮 three answers, three badges</span>
+    <p>A villager asks: <i>"Will it flood?"</i> FloodSense has three ways to answer, and each is a different question:</p><ul><li><b>✔ At a height stick:</b> "Will <i>this river</i> reach its red line on Thursday?" A chance you can trust.</li><li><b>≈ Anywhere:</b> "Will there be a flood <i>somewhere near you</i> this week?" A rough guess: good at ranking places, rough on the exact size.</li><li><b>◆ For one block:</b> "<i>If</i> a flood comes, will water reach <i>this spot</i>?" Read from the ground's shape, and the same every day.</li></ul>
+    <div class="real">Six badges on screen: Forecast ✔, Outlook ≈, Estimate ◆, Measured ●, Input ☂, Record ◷. Never quote "spot X% today": spot × day is tiny, uncheckable, and runs ~4× high inside Arunachal.</div>
+    <details class="pask"><summary>Why never say "this spot has a 0.3% chance of flooding today"?</summary><div class="ans">Because it mixes two answers (if a flood comes × will a flood come), the number is tiny, it can't be checked, and inside Arunachal it runs about 4× too high. Lead with the river chance instead.</div></details>
+  </div>
 </section>
 
 <!-- 2 -->
 <section id="s2">
   <h2><span class="n">2</span>How the pieces fit</h2>
   <p class="sub">Inputs on the left, models in the middle, what you see on the right. 👆 Click any box.</p>
+  <p class="kid">On the left: what FloodSense reads (rain, wet soil, river heights, the ground's shape, past floods). In the middle: four Guardian brains. On the right: what you see.</p>
   <div class="card">
     <div class="blocks">
       <div class="col"><h4>Inputs</h4>
@@ -141,16 +221,18 @@
     </div>
     <div class="bdetail" id="bDetail"><span class="small">← pick a box</span></div>
   </div>
-  <div class="tip ok" style="margin-top:12px">🔗 <b>Same trick as SlideSense:</b> every input is "how unusual is this <i>for here</i>". Rain is compared with each point's own history. A river's level is measured as its share of the way <b>from its ordinary level (0) to its line (1)</b>. That lets a 5 m trunk river and a 0.5 m hill stream share one model.</div>
+  <div class="tip ok" style="margin-top:12px">🔗 <b>Same trick as SlideSense:</b> every input is "how unusual is this <i>for here</i>". Rain is compared with each point's own history. A river's level is measured as its share of the way <b>from its ordinary level (0) to its line (1)</b>. That lets a 5 m trunk river and a 0.5 m hill stream share one model.<span class="gm"><b>"How far to my red line?"</b> Every river's height is turned into "0 = normal, 1 = at the red line". A giant river and a tiny stream can then share one brain, like measuring every runner by the share of the race they've finished.</span></div>
 </section>
 
 <!-- 3 -->
 <section id="s3">
   <h2><span class="n">3</span>The flood record: what "a flood" means here</h2>
   <p class="sub">Every model learns from past floods. This is the story of how the list of past floods was fixed, the most important fix in the module.</p>
+  <p class="kid">A Guardian learns from past floods. But a news report of a flood isn't proof. So a flood only counts if a <b>witness</b> confirms it: a radar picture, a global flood archive, or a height stick crossing its line.</p>
   <div class="card">
     <div class="funnel" id="funnel"></div>
     <p class="small" style="margin-bottom:0">Each verified flood keeps the list of routes that confirm it. Routes overlap, so they add up to more than 2,180.</p>
+    <span class="gm"><b>The witnessed flood diary.</b> 3,331 reported floods went in; 1,302 had a witness. Add floods the witnesses found that nobody had reported: 2,180 checked floods.</span>
   </div>
   <div class="grid g2" style="margin-top:12px">
     <div class="card">
@@ -158,11 +240,13 @@
       <div class="hbar"><span>flood dates passed</span><div class="t"><div style="width:100%;background:var(--accent)"></div></div><span class="n">100%</span></div>
       <div class="hbar"><span>dry dates passed</span><div class="t"><div style="width:97%;background:var(--accent)"></div></div><span class="n">97%</span></div>
       <p class="small">The early radar screen "confirmed" flood reports, but when tested on <b>known dry dates</b> at the same places, it passed those too. It had only ever been checked on 4 real floods. So the old list was really just <b>news reports</b>.</p>
+      <span class="gm"><b>👾 The detector that always beeps</b> (Level 1). It said "yes, flood" on 97% of days we <i>knew</i> were dry. A witness who agrees with everything proves nothing.</span>
     </div>
     <div class="card">
       <b>✅ The new radar test, written down before running</b>
       <div class="hbar"><span>dry dates correctly "no"</span><div class="t"><div style="width:97.8%;background:var(--built)"></div></div><span class="n">97.8%</span></div>
       <p class="small">It compares a flood-date image with the <b>same place in the dry season</b> (up to 15 passes) and the same season, looking only at low, flat, normally-dry ground. New water must drop more than 3 dB to below −18 dB. It failed narrowly on attempt 1, was fixed, and passed on <b>fresh records</b>. A radar "no" doesn't disprove a report: floods can drain before the satellite passes.</p>
+      <span class="gm"><b>A fair witness.</b> The new test compares the flood day with the same place on dry days, and it says "no" on 97.8% of known dry days. The rules were written before it ran.</span>
     </div>
   </div>
   <div class="card" style="margin-top:12px">
@@ -170,49 +254,74 @@
     <svg viewBox="0 0 760 170" style="width:100%;margin-top:6px" id="yearsSvg"></svg>
     <p class="small" style="margin-bottom:0">Thin before 2014: those are old news reports that Google's Global Flood Database confirmed. Regular radar coverage starts in 2015. The record ends in Oct 2025, because confirmations arrive late.</p>
   </div>
+  <div class="play">
+    <span class="lv">🎮 the witnessed flood diary</span>
+    <p>Imagine a classroom where anyone can shout "there was a flood!". Some are right, some got the day wrong, some mean a river that just changed course. So FloodSense keeps a diary with one rule: <b>a flood only goes in if a witness confirms it</b>. There are three witnesses: <b>📡 Echo-Eye</b> (the radar test), the <b>🌍 global flood archive</b>, and a <b>📏 height stick</b> that crossed its line.</p><p>The first radar witness was useless: it said "yes" to almost everything. The new one was tested on known dry days first, and passed. Fixing the diary was the biggest single jump in FloodSense's score.</p>
+    <div class="real">2,180 verified floods: 1,153 by the validated radar test, 1,016 by the Global Flood Database, 125 by gauge crossings (routes overlap); 1,302 of 3,331 news reports confirmed, 878 floods not on the old list; 5 false gauge floods dropped by rule. The old screen passed 97% of known dry dates; the new test calls 97.8% of them "no".</div>
+    <details class="pask"><summary>Why isn't a news report of a flood good enough to train on?</summary><div class="ans">Reports can have the wrong day or place, or describe a river shifting its channel (215 records were exactly that). The old radar check didn't help: it also "confirmed" 97% of dry days. Training on unchecked reports teaches a Guardian the wrong lessons.</div></details>
+    <details class="pask"><summary>If the radar witness says "no water", does that disprove the report?</summary><div class="ans">No. A flood can drain away before the satellite passes over. A radar "no" just means that witness can't confirm it; the other two witnesses still can.</div></details>
+  </div>
 </section>
 
 <!-- 4 -->
 <section id="s4">
   <h2><span class="n">4</span>WHERE: if a flood comes, does water reach this square?</h2>
   <p class="sub">A tree model (LightGBM) on <b>15 terrain-shape facts</b> only, learned from 2,806 satellite-confirmed floods, then <b>calibrated</b> into a real chance. Read it as "given a flood in this catchment", not a yearly chance.</p>
+  <p class="kid"><b>If a flood comes</b>, does the water reach this block? FloodSense answers from the ground's <b>shape</b> only: how many steps the block sits above the river, and how big that river is.</p>
   <div class="grid g2">
     <div class="card">
       <b>What it leans on</b> <span class="tiny">share of the model's use</span>
       <div id="whereImp" style="margin-top:6px"></div>
       <p class="small" style="margin-bottom:0"><b>HAND</b> (height above the nearest stream, Phase 1) leads, then the <b>size of that river</b>. Valley shape within 2 km tells an open plain from a gorge.</p>
+      <span class="gm"><b>⬆️ Steps above the river come first</b>, then how big the river is. A big river can climb more steps.</span>
     </div>
     <div class="card">
       <b>Physical check: chance by height above the stream</b>
       <div id="handBars" style="margin-top:6px"></div>
       <p class="small" style="margin-bottom:0">Falls to zero by 25 m above the stream, as physics says it must. The top 0.1% of squares statewide sit at a median <b>0 m</b> above the channel, <b>0.4°</b> slope, <b>136 m</b> elevation: real floodplain.</p>
+      <span class="gm"><b>The physics check.</b> Climb 25 m above the stream and the chance drops to zero, just as it should. A Guardian that broke this rule would be caught.</span>
     </div>
   </div>
   <div class="grid g3" style="margin-top:12px">
     <div class="card"><div class="kicker">ranking</div><div class="big-out">0.863</div><div class="small">inside Arunachal, on blocks the model never saw. On steep ground only 0.67: flash floods in gorges are hard.</div></div>
     <div class="card"><div class="kicker">calibration error</div><div class="big-out">1.1%</div><div class="small">inside Arunachal, held out (all regions: 3.3% before calibrating, 1.3% after). The chances are the right size, not just the right order.</div></div>
-    <div class="card"><div class="kicker">⚠️ rejected</div><div class="big-out" style="color:var(--accent)">0.935</div><div class="small">The same model <b>with land cover</b> scored higher, and put its top squares on <b>glacial lakes</b> 360 m above any river.</div></div>
+    <div class="card"><div class="kicker">⚠️ rejected</div><div class="big-out" style="color:var(--accent)">0.935</div><div class="small">The same model <b>with land cover</b> scored higher, and put its top squares on <b>glacial lakes</b> 360 m above any river.</div><span class="gm"><b>👾 The ice-lake Glitch</b> (Level 1).</span></div>
   </div>
-  <div class="tip" style="margin-top:12px">🏔️ <b>The out-of-distribution trap, in one line:</b> 97% of training squares are below 500 m, so no test block ever asked about a mountain. "Permanent water" means a river channel at 200 m and a glacial lake at 3,000 m. A better test score is not proof. The fix is <b>physical checks the tests can't fake</b> (<code>check_flood_where_sanity.py</code>), and using <b>causes</b> (shape) rather than <b>place-names</b> (land cover, height).</div>
+  <div class="tip" style="margin-top:12px">🏔️ <b>The out-of-distribution trap, in one line:</b> 97% of training squares are below 500 m, so no test block ever asked about a mountain. "Permanent water" means a river channel at 200 m and a glacial lake at 3,000 m. A better test score is not proof. The fix is <b>physical checks the tests can't fake</b> (<code>check_flood_where_sanity.py</code>), and using <b>causes</b> (shape) rather than <b>place-names</b> (land cover, height).<span class="gm"><b>Causes, not labels.</b> "Water" on a land-cover map means a river at 200 m <i>and</i> an ice lake at 3,000 m. The ground's shape means the same thing everywhere.</span></div>
+  <div class="play">
+    <span class="lv">🎮 if a flood comes</span>
+    <p>This Guardian brain looks only at the <b>shape of the ground</b>: how many ⬆️ steps above the river a block sits, how big the river is, and whether the valley is an open plain or a narrow gorge. It learned from 2,806 satellite-confirmed floods. Then its numbers were <b>calibrated</b>, so they're the right size, not just the right order.</p><p>A version that also read land cover scored <i>higher</i>, and was thrown away, because it thought ice lakes high in the mountains were floodplains. Nearly all of its exam questions were about lowlands, so no exam ever caught it. Only a physics check did.</p>
+    <div class="real">LightGBM on 15 shape facts (HAND leads at 25.6%, then the size of that stream); isotonic calibration across spatial blocks. Inside Arunachal: ranking 0.863 on held-out blocks (0.67 on steep ground); calibration error 1.1%. The land-cover version scored 0.935 and was rejected. Physical checks in <code>check_flood_where_sanity.py</code>.</div>
+    <details class="pask"><summary>A new model scores better on the test. Why might you still reject it?</summary><div class="ans">Because the test may not ask the right questions. The land-cover version scored 0.935, but its top blocks were glacial lakes 360 m above any river. 97% of training blocks were below 500 m, so the test never asked about mountains. Check that the map makes physical sense.</div></details>
+  </div>
 </section>
 
 <!-- 5 -->
 <section id="s5">
   <h2><span class="n">5</span>The river forecast: the strongest number</h2>
   <p class="sub">At each of 32 gauges: the chance the river reaches its line, 1 to 9 days ahead. It reads the river's last reading, its last week, and the rain.</p>
+  <p class="kid">At each of 32 rivers with a height stick, FloodSense says the chance the water reaches the red line, 1 to 9 days ahead. This is the <b>strongest</b> number, because we checked it is 🎲 <b>honest dice</b>.</p>
   <div class="card">
     <b>Is it honest? Said vs happened</b> <span class="tiny">held-out years, all gauges and leads · from the live snapshot</span>
     <svg viewBox="0 0 460 300" style="width:100%;max-width:560px;display:block;margin:8px auto 0" id="relSvg"></svg>
     <p class="small" style="margin-bottom:0">Dots on the dashed line = honest. They sit on it almost everywhere. The one honest exception: when it says <b>50–75%</b>, only <b>44%</b> happen (97 days). Know that one.</p>
+    <span class="gm"><b>🎲 The honest-dice jars.</b> Every replayed day went into a jar by what FloodSense said. Then we counted how often the river really reached its line. When the dots sit on the dashed line, the dice are honest.</span>
   </div>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card"><div class="kicker">warn at 25%, 1 day ahead</div><div class="big-out">61%</div><div class="small">of crossings caught. Rain alone: <b>10%</b>.</div></div>
+    <div class="card"><div class="kicker">warn at 25%, 1 day ahead</div><div class="big-out">61%</div><div class="small">of crossings caught. Rain alone: <b>10%</b>.</div><span class="gm"><b>Reading the river helps a lot.</b> From rain alone, it caught only 10%.</span></div>
     <div class="card"><div class="kicker">when it warns</div><div class="big-out">68%</div><div class="small">of warnings were right.</div></div>
-    <div class="card"><div class="kicker">"onset" days</div><div class="big-out">✓</div><div class="small">Results are also reported on days when the river was still <b>below</b> its line, the warning people actually need. A river already above is easy to "predict".</div></div>
+    <div class="card"><div class="kicker">"onset" days</div><div class="big-out">✓</div><div class="small">Results are also reported on days when the river was still <b>below</b> its line, the warning people actually need. A river already above is easy to "predict".</div><span class="gm"><b>The hard question:</b> warning while the river is still <i>below</i> the line.</span></div>
   </div>
   <div class="grid g2" style="margin-top:12px">
-    <div class="card small"><b>Two kinds of line, never blur them.</b> <b>7</b> gauges use CWC's <b>official danger level</b>: "chance it crosses danger". The others use the river's <b>own wettest 2% of days</b>: real, but a home-made line. Doimukh and Tamen moved to their own 2%: they had never truly reached danger.</div>
-    <div class="card small"><b>32 gauges, two networks.</b> 18 CWC (big and medium rivers, levels in metres, live) and 14 NWDP (small rivers, flow, 2–3 days late). Today (2 Nov) the whole NWDP feed is down, so those 14 fall back to <b>rain only</b> and the screen says so.</div>
+    <div class="card small"><b>Two kinds of line, never blur them.</b> <b>7</b> gauges use CWC's <b>official danger level</b>: "chance it crosses danger". The others use the river's <b>own wettest 2% of days</b>: real, but a home-made line. Doimukh and Tamen moved to their own 2%: they had never truly reached danger.<span class="gm"><b>Two kinds of red line.</b> Seven are painted by the River Guild. The rest we paint ourselves, at the river's own wettest 2 days in 100.</span></div>
+    <div class="card small"><b>32 gauges, two networks.</b> 18 CWC (big and medium rivers, levels in metres, live) and 14 NWDP (small rivers, flow, 2–3 days late). In the 4 Nov snapshot the whole NWDP feed is still down (and 1 CWC gauge is offline), so those gauges fall back to <b>rain only</b> and the screen says so.<span class="gm"><b>When a height stick goes quiet</b>, FloodSense falls back to the rain alone and says so on screen.</span></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 honest dice at the height stick</span>
+    <p>Here's what "honest" means. Suppose FloodSense said "about 15%" on 924 days. If the river really reached its line on about 15% of those days, the dice are honest. That's what happened: it said 15.9% on average, and the river reached its line 15.4% of the time.</p><p>It isn't perfect. When it said 50–75%, only 44% came true, on just 97 days. Knowing that one weak jar, and saying it, is what makes people trust the rest.</p>
+    <div class="real">Calibration at 32 gauges, held-out years (1 day ahead): said 1.4% → 1.7%, 3.1% → 3.0%, 6.6% → 7.6%, 15.9% → 15.4%, 36.7% → 37.9%, 60.2% → 44.3% (n 97), 91.0% → 90.7%. Warning at 25%, 1 day ahead: 61% of crossings caught, 68% of warnings right; rain only: 10% caught. 7 gauges use CWC's official danger level; the rest their own wettest 2% of days.</div>
+    <details class="pask"><summary>A CWC engineer asks: "Your 20%: what does it actually mean?"</summary><div class="ans">"On the days we say about 20%, the river reaches its line on about 20% of them. We checked that on years the model never saw: for example, it said 15.9% and 15.4% happened. The weak spot is 50–75%, where only 44% happened, on 97 days."</div></details>
+    <details class="pask"><summary>Is a river forecast "68% accurate"?</summary><div class="ans">Don't say that. Say it both ways: warning at 25% one day ahead <b>caught 61% of crossings</b>, and <b>68% of its warnings were right</b>. For rare events, "% accurate" hides everything: a model that always says "no" is right on almost every day.</div></details>
   </div>
 </section>
 
@@ -220,28 +329,53 @@
 <section id="s6">
   <h2><span class="n">6</span>The level line: where the river is heading</h2>
   <p class="sub">A dotted line with a shaded range on each CWC gauge graph, for <b>2 days</b>. Live since 6 Oct. It's the one thing Google Flood Hub had at a gauge that we didn't.</p>
+  <p class="kid">A dotted line on each CWC river's graph shows where the water level is heading for the next <b>2 days</b>, with a shaded band around it. It's graded every day.</p>
   <div class="grid g2">
     <div class="card">
       <b>Tested before going live</b> <span class="tiny">typical miss, metres</span>
       <div id="lvlTest" style="margin-top:6px"></div>
       <p class="small" style="margin-bottom:0">"River stays put" is the honest baseline: tomorrow = today. The line beats it at both days, and its range was built to hold 80% of days.</p>
+      <span class="gm"><b>Beat the lazy guess.</b> The lazy guess is "tomorrow will be the same as today". The dotted line beats it, both 1 and 2 days ahead.</span>
     </div>
     <div class="card">
-      <b>Graded live since 6 Oct</b> <span class="tiny">623 gauge-days, 16 CWC gauges</span>
-      <div class="hbar"><span>range held (target 80%)</span><div class="t"><div style="width:85.9%;background:var(--built)"></div></div><span class="n">85.9%</span></div>
-      <div class="hbar"><span>mean miss</span><div class="t"><div style="width:35%;background:var(--flood)"></div></div><span class="n">0.07 m</span></div>
-      <div class="hbar"><span>if "stays put"</span><div class="t"><div style="width:56%;background:var(--planned)"></div></div><span class="n">0.11 m</span></div>
-      <div class="hbar"><span>weakest: Doimukh range held</span><div class="t"><div style="width:48.8%;background:var(--accent)"></div></div><span class="n">48.8%</span></div>
+      <b>Graded live since 6 Oct</b> <span class="tiny">699 gauge-days, 16 CWC gauges (to 4 Nov)</span>
+      <div class="hbar"><span>range held (target 80%)</span><div class="t"><div style="width:85.1%;background:var(--built)"></div></div><span class="n">85.1%</span></div>
+      <div class="hbar"><span>mean miss</span><div class="t"><div style="width:35%;background:var(--flood)"></div></div><span class="n">0.075 m</span></div>
+      <div class="hbar"><span>if "stays put"</span><div class="t"><div style="width:56%;background:var(--planned)"></div></div><span class="n">0.113 m</span></div>
+      <div class="hbar"><span>weakest: Doimukh range held</span><div class="t"><div style="width:48.9%;background:var(--accent)"></div></div><span class="n">48.9%</span></div>
       <p class="small" style="margin-bottom:0">Post-monsoon rivers are calm, so the real test is the 2027 monsoon.</p>
+      <span class="gm"><b>The shaded band is a promise:</b> "the real level will land inside it on 8 days in 10". It has landed inside on 85 in 100.</span>
     </div>
   </div>
-  <div class="tip warn" style="margin-top:12px">📏 <b>Why only 2 days?</b> Beyond that, the line and the chance began to <b>disagree</b>. The rule is that two forecasts on one graph must never contradict each other. The line needed the newer chance models (with the river's own week as inputs), which went live with it.</div>
+  <div class="tip warn" style="margin-top:12px">📏 <b>Why only 2 days?</b> Beyond that, the line and the chance began to <b>disagree</b>. The rule is that two forecasts on one graph must never contradict each other. The line needed the newer chance models (with the river's own week as inputs), which went live with it.<span class="gm"><b>Two forecasts on one graph must never argue.</b> If the dotted line says "rising fast" while the chance says "0%", nobody knows what to believe. So the line stops at 2 days.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the dotted footsteps</span>
+    <svg viewBox="0 0 640 180" role="img" aria-label="A measured river level up to today, then a dotted line with a shaded band for 2 days, beside a flat lazy guess">
+      <rect width="640" height="180" fill="#263257"/>
+      <path d="M30 130 C 110 128, 170 118, 230 112 S 320 96, 360 100" fill="none" stroke="#7fd3ff" stroke-width="4"/>
+      <path d="M360 100 C 420 70, 470 56, 560 52 L 560 128 C 470 120, 420 116, 360 100 Z" fill="#ffc94a" opacity=".2"/>
+      <path d="M360 100 C 420 84, 470 82, 560 88" fill="none" stroke="#ffc94a" stroke-width="4" stroke-dasharray="3 7"/>
+      <line x1="360" y1="100" x2="560" y2="100" stroke="#b8c2e6" stroke-width="2" stroke-dasharray="8 6"/>
+      <line x1="360" y1="20" x2="360" y2="160" stroke="#eef2ff" stroke-dasharray="4 4"/>
+      <text x="366" y="170" font-family="IBM Plex Mono,monospace" font-size="11" fill="#eef2ff">today</text>
+      <text x="460" y="168" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#eef2ff">+1 day · +2 days</text>
+      <text x="570" y="86" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#ffc94a">dotted line</text>
+      <text x="570" y="104" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">lazy guess</text>
+      <text x="470" y="40" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#ffc94a">shaded band: holds the real level on ~8 days in 10</text>
+      <text x="180" y="150" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#7fd3ff">what the height stick read</text>
+    </svg>
+    <p>The height stick tells you where the water <i>is</i>. The <b>dotted line</b> tells you where it's <i>heading</i>: the day's highest level, 1 and 2 days ahead, with a shaded band around it. To be worth anything, it has to beat the lazy guess ("tomorrow = today"). It does: it misses by about 0.13 m one day ahead, against 0.17 m for the lazy guess.</p>
+    <div class="real">Level models forecast the daily high with a range built to hold 80% of days; drawn 2 days ahead at CWC gauges (DRAW_TO_LEAD = 2). Tested: 0.134 m / 0.215 m typical miss vs 0.169 / 0.261 if the river stays put. Graded live to 4 Nov: 699 gauge-days, range held 85.1%, mean miss 0.075 m vs 0.113 m; weakest gauge Doimukh at 48.9%.</div>
+    <details class="pask"><summary>Why does the dotted line stop at 2 days?</summary><div class="ans">Beyond 2 days the line and the chance began to disagree, and two forecasts on one graph must never contradict each other. So it's drawn only as far as it agrees with the chance.</div></details>
+    <details class="pask"><summary>The band held on 85% of days, but it was built for 80%. Is that good?</summary><div class="ans">Slightly too wide, which is the safe side, and the rivers have been calm since the monsoon ended. The real test is the 2027 monsoon.</div></details>
+  </div>
 </section>
 
 <!-- 7 -->
 <section id="s7">
   <h2><span class="n">7</span>One wrong reading = a "52% flood"</h2>
   <p class="sub">On 28 Sep, CWC's feed held one reading of <b>2,231.30 m</b> at Murga Bridge against a steady 2,134.30 m. Probably another station's value under the wrong code. The forecast read <b>52%</b>.</p>
+  <p class="kid">One wrong number from one height stick (a jump of 97 m in one reading!) made FloodSense shout "52% flood!". Now every reading goes through a <b>three-pass 👾 Glitch scanner</b> first.</p>
   <div class="card two">
     <svg viewBox="0 0 380 190" style="width:100%">
       <rect x="30" y="10" width="340" height="150" fill="#f7f8f5"/>
@@ -253,17 +387,26 @@
     </svg>
     <div class="small">
       <p style="margin-top:0"><b>Why the old check missed it:</b> it flagged a reading 3× its neighbours. On heights above sea level (2,134 m) that never fires.</p>
+      <span class="gm"><b>Why the old scanner missed it:</b> it looked for a reading 3 times bigger than its neighbours. On a river measured from sea level (2,134 m), a 97 m jump is only 5% bigger.</span>
       <p><b>Now, three passes:</b> (1) the old ratio test for zeros and slipped decimals; (2) <b>impossible excursions</b>: a level that leaves a steady stretch by more than 5 m and comes straight back within 72 h; (3) <b>keying slips</b>: a swapped digit (210.5 for 201.5).</p>
       <p style="margin-bottom:0">On all <b>1.18 M readings</b>: 194 removed, <b>18 false high-water days</b>, all 18 confirmed false by four separate tests. The real landslide-dam surge at Tuting (Oct 2018) kept all 144 of its readings.</p>
+      <span class="gm"><b>Catch the fakes, keep the real surprises.</b> The scanner removed 194 of 1.18 million readings, but kept a real 2018 surge that looked wild.</span>
     </div>
   </div>
-  <div class="tip" style="margin-top:12px">🧬 <b>What the false readings had done:</b> Doimukh and Tamen had <b>never really</b> reached danger. And gauge-found "floods" resting on false readings were in the training list. Five are now dropped by rule. Removing a handful of no-rain "floods" lifted timing in Arunachal from 0.879 to 0.895: <b>false floods on dry days teach a model that floods come from nothing.</b></div>
+  <div class="tip" style="margin-top:12px">🧬 <b>What the false readings had done:</b> Doimukh and Tamen had <b>never really</b> reached danger. And gauge-found "floods" resting on false readings were in the training list. Five are now dropped by rule. Removing a handful of no-rain "floods" lifted timing in Arunachal from 0.879 to 0.895: <b>false floods on dry days teach a model that floods come from nothing.</b><span class="gm"><b>Bad lessons.</b> A fake flood on a dry day teaches the Guardian "floods can come from nowhere". Removing a few lifted its score.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the gauge Glitch</span>
+    <p>One morning, the Murga Bridge height stick sent one reading 97 m higher than all its neighbours. Rivers don't jump 97 m and come back. It was probably another station's number with the wrong label. But FloodSense believed it, and said 52%.</p><p>So now every reading goes through <b>three scanners</b>: ① a number far too big or small (zeros, slipped decimals), ② a jump that leaves a calm stretch by more than 5 m and comes straight back, ③ two digits swapped (210.5 instead of 201.5).</p>
+    <div class="real">Murga Bridge, 28 Sep: 2,231.30 m against a steady 2,134.30 m → 52%. Three-pass filter on all 1.18 M readings: 194 removed, 18 false high-water days, all confirmed false by four tests; the Tuting 2018 surge kept. Five false gauge floods dropped from training; Arunachal timing rose 0.879 → 0.895.</div>
+    <details class="pask"><summary>Why did the old spike check miss a 97 m jump?</summary><div class="ans">It flagged a reading 3× bigger than its neighbours. CWC levels are heights above sea level, so at 2,134 m a 97 m jump is only about 5% bigger: the ratio test never fired.</div></details>
+  </div>
 </section>
 
 <!-- 8 -->
 <section id="s8">
   <h2><span class="n">8</span>The high-river fault: smaller, still open</h2>
   <p class="sub">A river already <b>above</b> its line can be told about 0% for the next 1–4 days, though many such days stay above. Say this before anyone finds it.</p>
+  <p class="kid">When a river is <b>already above</b> its red line, FloodSense can wrongly say "almost no chance" for the next few days. It's much smaller than it was, but it isn't fixed. Say so before anyone finds it.</p>
   <div class="grid g2">
     <div class="card">
       <b>2 days ahead: high-river days told "under 5%" that flooded anyway</b>
@@ -271,6 +414,7 @@
       <div class="hbar"><span>live since 6 Oct</span><div class="t"><div style="width:24%;background:var(--partial)"></div></div><span class="n">5 of 21</span></div>
       <div class="hbar"><span>the bar it must clear</span><div class="t"><div style="width:10%;background:var(--built)"></div></div><span class="n">&lt; 1 in 10</span></div>
       <p class="small" style="margin-bottom:0">Adopted by the user's decision <b>knowing it failed this one test</b>, because it is far better everywhere else. Most failing days: <b>Rho Basti, June 2016</b>, a melt-fed river sitting 0–21 cm above its line, where "flood" hangs on centimetres.</p>
+      <span class="gm"><b>The river sitting on the line.</b> At Rho Basti in June 2016, the water bobbed between 0 and 21 cm above the red line. Whether that day counts as a "flood" depends on a few centimetres.</span>
     </div>
     <div class="card">
       <b>Seven designs tried, each with rules written first</b>
@@ -284,7 +428,21 @@
         <li>Fresh melt at high gauges: failed year to year</li>
       </ol>
       <p class="small" style="margin-bottom:0"><b>Decided: no eighth design on this history.</b> More tries on the same few hundred days would find luck, not a cure. What helps is <b>new information</b>: more monsoons logged, gauges further upstream, dam schedules.</p>
+      <span class="gm"><b>No more rerolls.</b> Trying an eighth idea on the same few hundred days would just find a lucky one. The real fix is new loot: more monsoons, more height sticks upstream, dam schedules.</span>
     </div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 the river on the line</span>
+    <svg viewBox="0 0 640 150" role="img" aria-label="A river level wobbling just above and below the red line">
+      <rect width="640" height="150" fill="#263257"/>
+      <line x1="20" y1="70" x2="620" y2="70" stroke="#ff6b6b" stroke-width="3"/>
+      <text x="24" y="60" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#ff6b6b">🟥 red line</text>
+      <path d="M20 110 C 80 100, 120 80, 160 64 S 220 72, 250 66 S 300 58, 330 72 S 380 62, 410 68 S 460 60, 500 74 S 560 66, 620 70" fill="none" stroke="#7fd3ff" stroke-width="4"/>
+      <text x="320" y="118" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">a few cm above or below the line: "flood" or not hangs on centimetres</text>
+    </svg>
+    <p>Most rivers are easy: far below the line, or rushing up to it. The hard case is a river <b>sitting right on</b> its red line, wobbling a few centimetres up and down. Tomorrow it might be 5 cm over (a "flood") or 5 cm under ("no flood"). FloodSense sometimes says "under 5%" on those days, and the river stays over.</p><p>Seven designs were tried, each with its pass mark written first. One (reading the river's own last week) helped a lot and is live. But none passed the strict test, so we stopped: <b>no eighth try on the same old days</b>.</p>
+    <div class="real">At 2 days ahead, high-river days told under 5% that stayed above: 25 of 61 with the old models, 5 of 21 with the models live since 6 Oct; the bar is under 1 in 10. Adopted by the user's decision despite failing this one test. Most failures: Rho Basti, June 2016. Lifted by new information: more monsoons, upstream gauges, dam schedules.</div>
+    <details class="pask"><summary>An expert asks: "Doesn't your model fail when the river is already high?" What do you say?</summary><div class="ans">"Yes, on one hard case: a river sitting just above its line can be told under 5% for the next days. At 2 days, 5 of 21 such days stayed above; it used to be 25 of 61. We've tried seven designs and stopped, because more tries on the same history would find luck. More monsoons, upstream gauges and dam schedules would lift it."</div></details>
   </div>
 </section>
 
@@ -292,6 +450,7 @@
 <section id="s9">
   <h2><span class="n">9</span>"Near here": the outlook for every place</h2>
   <p class="sub">Where there's no gauge, people still ask: "will it flood near me?" This is that number, and it's the approximate one.</p>
+  <p class="kid">Most places have no height stick nearby. For them, FloodSense gives a <b>rough guess</b>: the chance of a flood within about 10 km this week. It's good at <b>which</b> places, rough on <b>how much</b>.</p>
   <div class="grid g2">
     <div class="card">
       <b>How it's made</b>
@@ -300,6 +459,7 @@
         <li>Combine the areas a <b>10 km circle</b> touches, then the 7 days.</li>
         <li>Map to how often a recorded flood really fell within 10 km (calibration).</li>
       </ol>
+      <span class="gm"><b>The area brain</b> reads how strange the rain is (here and upstream) and how much low ground the area has. That comes from the ground's shape, not from where news reports were written, so a quiet valley isn't told it never floods.</span>
     </div>
     <div class="card">
       <b>Its measured error</b> <span class="tiny">2023–Oct 2025, weekly, inside Arunachal</span>
@@ -308,20 +468,29 @@
       <div class="hbar"><span>places with none on record</span><div class="t"><div style="width:70%;background:var(--partial)"></div></div><span class="n">2.1× more</span></div>
       <div class="hbar"><span>at 10%+ it said / happened</span><div class="t"><div style="width:62%;background:var(--accent)"></div></div><span class="n">18% / 10%</span></div>
       <p class="tiny" style="margin-bottom:0">"× more" = recorded floods compared with what it said.</p>
+      <span class="gm"><b>Right order, rough size.</b> It ranks places right about 90 times in 100. But where floods are on record, about 1.5× as many came as it said; where none are on record, about 2.1×.</span>
     </div>
   </div>
-  <div class="tip warn" style="margin-top:12px">⚖️ <b>Why "approximate":</b> it failed its pre-registered test (Gate A). The flood record's own rate <b>doubled in 2024–25</b> compared with the rain, so no fixed level holds from year to year. It ranks well, so by the user's decision (27 Sep) it ships <b>labelled approximate, with its measured error on screen</b>, and is logged daily. And it counts <b>recorded</b> floods: unreported ones aren't in the truth, so it's a floor.</div>
+  <div class="tip warn" style="margin-top:12px">⚖️ <b>Why "approximate":</b> it failed its pre-registered test (Gate A). The flood record's own rate <b>doubled in 2024–25</b> compared with the rain, so no fixed level holds from year to year. It ranks well, so by the user's decision (27 Sep) it ships <b>labelled approximate, with its measured error on screen</b>, and is logged daily. And it counts <b>recorded</b> floods: unreported ones aren't in the truth, so it's a floor.<span class="gm"><b>Why the size wobbles.</b> The flood diary filled up twice as fast in 2024–25 as the rain alone would explain, so no fixed size holds from year to year.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the rough guess for every block</span>
+    <p>The near-here outlook is like a weather reporter who's great at saying <i>which</i> towns will get the most rain, but often wrong about <i>how much</i>. So the screen labels it <b>≈ approximate</b> and shows its measured error beside it. It's still useful: it points people to the places to watch.</p>
+    <div class="real">Near-here: P(a recorded flood within 10 km, next 7 days). Gate A failed (level not stable between years); ships labelled approximate by the user's decision of 27 Sep. Measured 2023–Oct 2025, weekly, inside Arunachal: ranking 0.90; recorded floods ~1.5× what it said where floods are on record, ~2.1× where none are; at 10%+ it said 18% and 10% happened. Truth is recorded floods only, so it's a floor.</div>
+    <details class="pask"><summary>Is the near-here outlook "honest dice" like the river chance?</summary><div class="ans"><b>No.</b> It ranks places well (about 90 in 100), but its size is off: where floods are on record, about 1.5× as many came as it said; where none are on record, about 2.1×. That's why it wears the ≈ badge.</div></details>
+  </div>
 </section>
 
 <!-- 10 -->
 <section id="s10">
   <h2><span class="n">10</span>How it got better: one tested step at a time</h2>
   <p class="sub">Timing inside Arunachal (how well it ranks flood days, on floods no model saw). Each step had pass/fail rules written <b>before</b> running.</p>
+  <p class="kid">FloodSense got better in five steps, each one tested with the pass mark written down first. The biggest jump wasn't a smarter brain: it was <b>fixing the flood diary</b> it learns from.</p>
   <div class="card">
     <div class="stair" id="stair"></div>
     <div class="stair-l" id="stairL"></div>
     <p class="tiny" style="margin:4px 0 0">Bars start at 0.6, which makes the steps look bigger than they are.</p>
     <p class="small" style="margin-bottom:0">Today's snapshot: <b>0.896</b> on 43 floods over 1,035 days. The biggest jump wasn't a smarter model; it was <b>fixing the truth it learns from</b>.</p>
+    <span class="gm"><b>Five level-ups:</b> the witnessed diary (0.706 → 0.845), wet soil on flat ground, floods back to 2003, then false gauge floods removed (→ 0.896). Each had to beat its pass mark.</span>
   </div>
 </section>
 
@@ -329,6 +498,7 @@
 <section id="s11">
   <h2><span class="n">11</span>Tested and not shipped</h2>
   <p class="sub">As important as what shipped. Each one has a killer number.</p>
+  <p class="kid">Lots of ideas were tried and <b>not</b> used, because the tests said no. Knowing why each door is locked is as important as what shipped.</p>
   <div class="doors">
     <div class="door shut"><span class="s">not shipped</span><b>Gauge readings on the map</b><div class="small">Timing got worse (0.838 → 0.829). The reading stays a per-river number.</div></div>
     <div class="door shut"><span class="s">not shipped</span><b>Ground rain gauges as an input</b><div class="small">CWC rain gauges failed the gain test. They now <b>grade</b> the forecast rain instead.</div></div>
@@ -339,12 +509,14 @@
     <div class="door shut"><span class="s">dropped</span><b>Upstream gauges, snow melt</b><div class="small">Upstream adds nothing beyond the river's own week. Melt failed the year-to-year check.</div></div>
     <div class="door open"><span class="s">shipped</span><b>Floods back to 2003</b><div class="small">Learning from 2003, not 2015: timing 0.851 → 0.879.</div></div>
   </div>
+  <span class="gm gmrow"><b>The locked doors, in game words:</b> height-stick readings painted on the map (worse), ground rain buckets as a clue (no gain, so they grade the rain instead), retraining on the live rain (worse), a terrain fix for "if a flood comes" (failed), wet soil on steep ground (hurt), rivers shifting channel (not floods, removed), upstream sticks and snowmelt (no gain). 🔓 Open: older floods back to 2003.</span>
 </section>
 
 <!-- 12 -->
 <section id="s12">
   <h2><span class="n">12</span>Us vs Google Flood Hub</h2>
   <p class="sub">The question every hydrologist asks: "why not just use Google?"</p>
+  <p class="kid">Google, another player, forecasts floods for the whole world. We build our own so we can <b>prove</b> it works on Arunachal's own rivers, and keep score ourselves. Google's big advantage is size: about 16,000 rivers against our 32.</p>
   <div class="card">
     <table class="cmp">
       <tr><th></th><th>Google Flood Hub</th><th>FloodSense</th></tr>
@@ -355,25 +527,38 @@
       <tr><td><b>Track record</b></td><td>at gauges</td><td>every forecast logged and graded daily, kept by us</td></tr>
     </table>
   </div>
-  <div class="tip ok" style="margin-top:12px">🧭 <b>The decision (the user's, 19 Aug and 6 Oct):</b> the tech must be <b>our own</b>, proven on Arunachal. Google's open-sourced model (June 2026) may sit <b>beside</b> ours as a second opinion, credited, never as the core. Its real advantage is scale: ~16,000 rivers against our 32. That is the honest gap.</div>
+  <div class="tip ok" style="margin-top:12px">🧭 <b>The decision (the user's, 19 Aug and 6 Oct):</b> the tech must be <b>our own</b>, proven on Arunachal. Google's open-sourced model (June 2026) may sit <b>beside</b> ours as a second opinion, credited, never as the core. Its real advantage is scale: ~16,000 rivers against our 32. That is the honest gap.<span class="gm"><b>🎮 Another player.</b> Their world map is huge; ours is small but proven here, with our own Scoreboard. Their model can be a second opinion beside ours, with credit.</span></div>
+  <div class="play">
+    <span class="lv">🎮 another player: Google</span>
+    <p>Google's global model is like a player who has visited 16,000 rivers around the world. But it doesn't look at a river's own height stick today, and at Pasighat it shows only the past week, with no prediction. FloodSense has visited only 32 rivers, but it reads their height sticks, writes every prophecy down, and checks it.</p>
+    <div class="real">Google Flood Hub: a global flow model (7 days, ~16,000 gauges, can't read a river's latest reading) and a level model in India and Bangladesh (8–48 h). At Pasighat: a trend panel only. FloodSense: chance models 1–9 days + a 2-day level line from Arunachal's own gauges, logged and graded daily. Decision: our own tech; Google's open model may sit beside it, credited.</div>
+    <details class="pask"><summary>A hydrologist asks: "Why not just use Google Flood Hub?"</summary><div class="ans">"We can prove ours on Arunachal's own rivers, with a track record we keep. Google's global model doesn't read a river's latest level, and gives no prediction at Pasighat. Its real advantage is scale, about 16,000 rivers to our 32, and its open model could sit beside ours as a second opinion."</div></details>
+  </div>
 </section>
 
 <!-- 13 -->
 <section id="s13">
   <h2><span class="n">13</span>The daily run and the track record</h2>
   <p class="sub">Every morning at <b>08:30 IST</b> in the cloud (Modal, Mumbai region, since 20 Oct): fetch rain, soil, gauges → clean → forecast → log → grade → publish a small snapshot the app reads.</p>
+  <p class="kid">Every morning at <b>8:30</b>, a server wakes up, reads the rain and the rivers, makes the forecasts, writes them in the 📖 <b>Prophecy Book</b>, and checks yesterday's on the 🏆 <b>Scoreboard</b>.</p>
   <div class="grid g4" id="trk"></div>
-  <div class="tip" style="margin-top:12px">📒 <b>Read it honestly:</b> logging began as the monsoon ended, so no river has crossed its line yet. "Too few to judge" is the true status. The <b>3 warnings, 0 right</b> are the 29 Sep false reading at Murga Bridge, kept in the log on purpose. Nothing is rewritten after the fact.</div>
+  <div class="tip" style="margin-top:12px">📒 <b>Read it honestly:</b> logging began as the monsoon ended, so no river has crossed its line yet. "Too few to judge" is the true status. The <b>3 warnings, 0 right</b> are the 29 Sep false reading at Murga Bridge, kept in the log on purpose. Nothing is rewritten after the fact.<span class="gm"><b>The boss fight hasn't started.</b> Logging began just as the Monsoon boss left. So far no river has crossed its line, and the only 3 warnings came from one broken reading, kept in the book on purpose.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the Prophecy Book</span>
+    <p>A Guardian's guess is only worth something if it's <b>written down before the day</b> and checked after. FloodSense does that every morning. By 4 Nov it had written 8,736 river prophecies and checked 4,457 of them against the real height sticks. Not one river has reached its line yet, because the monsoon was over. So the honest answer to "is it any good live?" is: <i>too early to judge, and here's the book</i>.</p>
+    <div class="real">Modal cloud, 08:30 IST, since 20 Oct: fetch → clean → forecast → log → grade → snapshot. Track record (4 Nov snapshot): 8,736 forecasts logged since 21 Sep; 4,457 checked; 0 crossings; 3 warnings, all from the false Murga Bridge reading, kept in the log. Level line: 699 days, range held 85.1%.</div>
+    <details class="pask"><summary>A journalist asks: "Has FloodSense ever caught a real flood?"</summary><div class="ans">"Not yet. We started writing forecasts down on 21 Sep, as the monsoon ended. By 4 Nov we'd logged 8,736 and checked 4,457, and no river has crossed its line. The only three warnings came from one broken gauge reading, and we kept them in the log. The 2027 monsoon is the real test."</div></details>
+  </div>
   <h3 style="margin:22px 0 8px">🖐️ Hands-on (the roadmap's exercise, done safely)</h3>
   <ol class="small" style="padding-left:18px">
     <li>Print the track record. This only reads the log:</li>
   </ol>
   <div class="cmd"><span>.venv\Scripts\python scripts\model\forecast_log.py show</span><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='copied'">copy</button></div>
-  <div class="out" style="margin-top:8px">Track record as of 2026-11-02: 8,288 river forecasts logged over 37 issue day(s) (2026-09-21 .. 2026-11-02)
-outcomes: {'checked': 4178, 'awaiting reading': 1884, 'no reading': 1362}
-checked: 4,178 forecasts, threshold reached 0 times; said 0.15% on average, happened 0.0%
+  <div class="out" style="margin-top:8px">Track record in the 4 Nov 2026 snapshot (your run will show today's): 8,736 river forecasts logged (2026-09-21 .. 2026-11-04)
+outcomes: {'checked': 4457, 'awaiting reading': 1826, 'no reading': 1557}
+checked: 4,457 forecasts, threshold reached 0 times; said 0.14% on average, happened 0.0%
 warnings at 25%+: 3 issued, 0 right, 0 crossings missed
-level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 0.112 had the river stayed put); range held 85.9% of days, built for 80%</div>
+level line (CWC, 16 gauges): 699 days checked; typical miss 0.018 m (mean 0.075; 0.113 had the river stayed put); range held 85.1% of days, built for 80%</div>
   <ol class="small" style="padding-left:18px" start="2">
     <li>Open <code>records/flood_forecast/gauge_forecasts.csv</code> and find today's rows (<code>issued_on</code> = today). Pick Pasighat: read its probability, band, basis ("rain + river reading") and level range for each day.</li>
     <li>Open the app → FloodSense → Live forecast → Pasighat, and match the numbers.</li>
@@ -384,6 +569,7 @@ level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 
 <!-- 14 -->
 <section id="s14">
   <h2><span class="n">14</span>The limits card</h2>
+  <p class="kid">The honest label on FloodSense's box: what it <b>can't</b> do yet. Say these before anyone asks.</p>
   <div class="grid g2">
     <div class="limit"><span class="i">🌧️</span><span><b>Hasn't been through a live flood yet.</b> Logging began as the 2026 monsoon ended. 2027 is the real test.</span></div>
     <div class="limit"><span class="i">≈</span><span><b>Near-here is approximate</b>: the record's rate moved ~2× between years. Ranks well; the level isn't stable.</span></div>
@@ -394,12 +580,14 @@ level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 
     <div class="limit"><span class="i">📏</span><span><b>No depth or extent map</b>: needs river cross-sections or LiDAR (Ask / Paid tier).</span></div>
     <div class="limit"><span class="i">🔢</span><span><b>32 gauges vs Google's ~16,000</b>: the real data gap.</span></div>
   </div>
+  <span class="gm gmrow"><b>The honest label on the box:</b> no boss fight yet · the rough guess is rough · the river on the line · height sticks go quiet · flash floods in gorges · only witnessed floods count · no depth map · 32 sticks, not 16,000.</span>
 </section>
 
 <!-- 15 -->
 <section id="s15">
   <h2><span class="n">15</span>Old docs: numbers that moved</h2>
   <p class="sub">FloodSense changed almost daily. Several docs' opening callouts are older than the live system. The snapshot wins.</p>
+  <p class="kid"><b>🩹 Patch notes.</b> FloodSense changed almost every day, so some old docs show old numbers. When a doc and the live snapshot disagree, the snapshot wins.</p>
   <div class="stale"><div class="old">Warn at 25%: catches 58%, right 56%<span class="src">FLOOD_MODULE.md · 2026-09-21 callout</span></div><div class="ar">→</div><div class="new">61% caught, 68% right (models of 6 Oct)</div></div>
   <div class="stale"><div class="old">Live timing in Arunachal 0.879<span class="src">FLOOD_MODULE.md · 2026-09-29 callout</span></div><div class="ar">→</div><div class="new">0.896 (after false gauge floods were removed)</div></div>
   <div class="stale"><div class="old">2,185 verified floods<span class="src">FLOOD_MODULE.md · several docs</span></div><div class="ar">→</div><div class="new">2,180 (five false gauge "floods" dropped by rule)</div></div>
@@ -412,6 +600,7 @@ level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 
 <section id="s16">
   <h2><span class="n">16</span>Read the code and docs</h2>
   <p class="sub">Code in the order data flows. Read each file's opening comment block first; most explain the "why".</p>
+  <p class="kid">Read the code in the order the water flows: witnesses → shape brain → Glitch scanner → river brains → area brain → the 8:30 run → the Prophecy Book → the screens.</p>
   <div class="card code-list" id="codeList"></div>
   <h3 style="margin:22px 0 8px">Docs (status sections first, history only when a question sends you there)</h3>
   <div class="card code-list" id="docList"></div>
@@ -420,7 +609,7 @@ level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 
 <!-- 17 -->
 <section id="s17">
   <h2><span class="n">17</span>Check yourself: a CWC hydrologist's questions</h2>
-  <p class="sub">Answer out loud, then open and grade yourself. <span class="score" id="score"></span></p>
+  <p class="sub">Answer out loud, then open and grade yourself. These are the grown-up questions: answer in real words, not game words. <span class="score" id="score"></span></p>
   <div id="quiz"></div>
   <div class="beats" style="margin-top:18px">
     <div class="beat"><span class="s">explain</span><b>The three numbers</b>and which one to lead with</div>
@@ -429,10 +618,32 @@ level line (CWC, 16 gauges): 623 days checked; typical miss 0.017 m (mean 0.07; 
     <div class="beat"><span class="s">defend</span><b>The high-river fault</b>honestly, with what lifts it</div>
     <div class="beat"><span class="s">exercise</span><b>Today's log</b>matched to the screen</div>
   </div>
+  <div class="play">
+    <span class="lv">🎮 the Level 4 boss: explain it to a 12-year-old</span>
+    <p>To finish Level 4, explain each of these with the game words first, then the real words:</p>
+    <ul>
+      <li>three jars, three badges (✔ ≈ ◆), and which one to lead with</li>
+      <li>the witnessed flood diary, and the detector that always beeped</li>
+      <li>⬆️ steps above the river, and the ice-lake Glitch</li>
+      <li>🎲 honest dice at the height stick, with its one weak jar (50–75%)</li>
+      <li>the dotted line, the shaded band, and the lazy guess it must beat</li>
+      <li>the 97 m Glitch and the three-pass scanner</li>
+      <li>the river sitting on its line, and why there's no eighth try</li>
+      <li>📖 the Prophecy Book, and why the boss fight hasn't happened yet</li>
+    </ul>
+    <p><b>Next up, Level 5: the second world.</b> Assam, where Guardian 3, SoilSense, watches soil wash away like a sandcastle in the rain.</p>
+  </div>
   <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 4 like a CWC flood forecaster"</i>, and move to Phase 5, SoilSense.</div>
 </section>
 
-<footer>Phase 4 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Numbers from the live snapshot of 2 Nov 2026 and <code>reports/</code> (flood_where_training, flood_where_sanity, flood_verified_record, flood_radar_test_validation, flood_s1_screen_specificity), cross-read with FLOOD_MODULE.md, RIVER_FORECAST_RECAP_2026-10-06.md, FLOOD_HUB_AND_MOCKUP_COMPARISON.md and the script docstrings.</footer>
+<!-- 18 -->
+<section id="s18">
+  <h2><span class="n">18</span>Word cards</h2>
+  <p class="sub">Every grown-up word from this level, with its kid meaning and its game name. 👆 Tap to flip. Cards marked "back from" are old friends.</p>
+  <div class="words" id="words"></div>
+</section>
+
+<footer>Phase 4 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Numbers from the live snapshot of 2 Nov 2026 and <code>reports/</code> (flood_where_training, flood_where_sanity, flood_verified_record, flood_radar_test_validation, flood_s1_screen_specificity), cross-read with FLOOD_MODULE.md, RIVER_FORECAST_RECAP_2026-10-06.md, FLOOD_HUB_AND_MOCKUP_COMPARISON.md and the script docstrings. Track-record numbers refreshed from the 4 Nov 2026 snapshot. 🎮 Story mode added 5 Nov 2026; game names in <code>docs/lrn/LORE.md</code>.</footer>
 </div>
 
 <script>
@@ -460,10 +671,25 @@ const BLK = {
   o3:{t:"Estimate ◆: if a flood comes",x:"The square's WHERE chance, shown capped at \"20%+\" with its checked rate, because inside Arunachal its top ranges come true less often than they say. When the place itself is high ground, the nearest floodable ground is shown too (Pasighat town 0.3%, the Siang bank 1 km away much higher).",f:"live.py · floodprob.npz"},
   o4:{t:"The track record",x:"Every river forecast is written down before the day and graded against the gauge afterwards. The level line is graded too. Near-here is logged and graded for ranking only, because its truth (new flood records) arrives late. Kept in records/ (never pushed to the public app branch).",f:"forecast_log.py → records/flood_forecast/ · reports/flood_forecast_scorecard.json"}
 };
+const BLKG = {
+  rain:"<b>⚡ The rain spark</b>, checked against each place's own 📔 rain diary, here and upstream.",
+  soil:"<b>💦 The full sponge</b>: only on flat ground, where a soaked field floods sooner.",
+  gauge:"<b>📏 Height-stick readings</b>, scanned for 👾 Glitches before anyone trusts them.",
+  terrain:"<b>⬆️ Steps above the river</b>, and how big that river is.",
+  record:"<b>The witnessed flood diary</b>: only floods a witness confirmed.",
+  gmodel:"<b>🎲 The honest-dice brain</b>: one for each day ahead, 1 to 9.",
+  lmodel:"<b>The footprint brain</b>: draws where the water level is heading.",
+  day:"<b>The area brain</b>: is today a flood day for this ~10 km patch?",
+  where:"<b>The ground-shape brain</b>: if a flood comes, does water reach this block?",
+  o1:"<b>✔ The answer you can lead with.</b>",
+  o2:"<b>≈ The rough guess</b>, with its measured error on show.",
+  o3:"<b>◆ If a flood comes</b>, capped at \"20%+\".",
+  o4:"<b>📖 Prophecy Book + 🏆 Scoreboard.</b>"
+};
 document.querySelectorAll(".blk").forEach(el => el.addEventListener("click", () => {
   document.querySelectorAll(".blk").forEach(e => e.classList.remove("on")); el.classList.add("on");
   const b = BLK[el.dataset.k];
-  $("bDetail").innerHTML = `<h4>${b.t}</h4><div class="small">${b.x}</div><div class="f">📂 ${b.f}</div>`;
+  $("bDetail").innerHTML = `<h4>${b.t}</h4><div class="small">${b.x}</div><div class="f">📂 ${b.f}</div>${BLKG[el.dataset.k] ? `<span class="gm">${BLKG[el.dataset.k]}</span>` : ""}`;
 }));
 
 /* ---------- funnel ---------- */
@@ -530,7 +756,7 @@ $("lvlTest").innerHTML = bars([
 })();
 
 /* ---------- track record tiles ---------- */
-$("trk").innerHTML = [["8,288","river forecasts logged","since 21 Sep, 37 issue days"],["4,178","already checked","against the real gauge"],["0","crossings so far","post-monsoon: rivers are calm"],["85.9%","level line range held","target 80%, 623 days"]].map(([n, l, s]) =>
+$("trk").innerHTML = [["8,736","river forecasts logged","21 Sep – 4 Nov"],["4,457","already checked","against the real gauge"],["0","crossings so far","post-monsoon: rivers are calm"],["85.1%","level line range held","target 80%, 699 days"]].map(([n, l, s]) =>
   `<div class="card" style="text-align:center"><div class="big-out">${n}</div><div><b>${l}</b></div><div class="tiny">${s}</div></div>`).join("");
 
 /* ---------- reading lists ---------- */
@@ -568,13 +794,13 @@ const QUIZ = [
   ["Why build your own model instead of feeding from GloFAS or Flood Hub?","CWC hydrologist","Ownership and proof: the user's decision is that the tech must be ours and proven on Arunachal's own rivers, with a running track record. Google's global flow model can't read a river's latest reading, issues no prediction at Pasighat, and covers small rivers only as low-confidence model points. Its open model may sit beside ours as a second opinion. Its real advantage is scale (~16,000 rivers vs our 32), and we say so."],
   ["How was the verified flood record built, and why did the old radar screen fail?","APSAC scientist","The old screen passed 97% of known dry dates (and 100% of flood dates). It had only been checked on 4 floods, so the old list was really just news reports. A new radar test, written down before running and passed on fresh records (97.8% of dry dates correctly 'no'), re-checked all 3,331 reports: 1,302 confirmed. Add the Global Flood Database and gauge crossings: 2,180 verified floods, 878 of them never on the old list. False gauge floods are dropped by rule."],
   ["What does the river forecast's '20%' mean, and how do you know it's honest?","CWC engineer","The chance this river reaches its line (official CWC danger at 7 gauges, otherwise its own wettest 2% of days) on that day. On held-out years, said vs happened sits on the line almost everywhere: 15.9% said, 15.4% happened; 36.7% said, 37.9% happened. Exception: 50–75% said, 44% happened. Warning at 25% one day ahead catches 61% of crossings and is right 68% of the time (rain alone: 10%)."],
-  ["What is the level line, how far ahead, and which test did the new models fail?","CWC hydrologist","A dotted forecast of the river's daily high, with a range built to hold 80% of days, at CWC gauges, 2 days ahead. Tested: 0.13 m and 0.22 m typical miss vs 0.17 and 0.26 if the river stays put. Live graded: range held 85.9%. It needed the new chance models with the river's own week, which failed one test (the high-river fault: under 1 in 10 at 2–4 days) and were adopted by the user's decision because they're better everywhere else."],
+  ["What is the level line, how far ahead, and which test did the new models fail?","CWC hydrologist","A dotted forecast of the river's daily high, with a range built to hold 80% of days, at CWC gauges, 2 days ahead. Tested: 0.13 m and 0.22 m typical miss vs 0.17 and 0.26 if the river stays put. Live graded: range held 85.1% (to 4 Nov). It needed the new chance models with the river's own week, which failed one test (the high-river fault: under 1 in 10 at 2–4 days) and were adopted by the user's decision because they're better everywhere else."],
   ["What is the high-river fault, and why are rivers sitting on their line the hard case?","CWC hydrologist","A river already above its line can be told ~0% for the next 1–4 days. At 2 days, of high-river days told under 5%, 5 of 21 flooded (was 25 of 61). Most failures are Rho Basti, June 2016, a melt-fed river 0–21 cm above its line, where whether it 'floods' hangs on centimetres. Seven designs were tried; we decided against an eighth on the same history. More monsoons, upstream gauges or dam schedules would lift it."],
   ["Why does soil wetness help on flat ground only?","APSAC scientist","On plains and valley floors, soaked ground floods sooner, so it adds timing (+0.009 with the 16-day-old reading we can always get). On steep ground floods are flash floods driven by the last days' rain, and the soil sits near full all monsoon, so it made things worse. It didn't help landslides either."],
   ["What did the gauge spike filter catch?","engineer","One reading of 2,231.30 m at Murga Bridge against a steady 2,134 m made the forecast say 52%. Levels are heights above sea, so the old ratio test was blind. The new three-pass filter (ratio, impossible excursions, keying slips) removed 194 of 1.18 M readings: 18 false high-water days, all confirmed false by four separate tests. The real Tuting surge of 2018 was kept."],
   ["Why did adding land cover to WHERE get rejected even though it scored higher?","ML reviewer","It scored 0.935 in Arunachal vs 0.863, but its top squares were glacial lakes 360 m above any river. 97% of training squares are below 500 m, so no test block asked about mountains. Land-cover classes change meaning with altitude. We use shape only, and run physical checks: the top 0.1% sit at a median 0 m above the stream, 0.4° slope, 136 m elevation."],
   ["Why is the near-here chance only 'approximate'?","reviewer","It failed its pre-registered calibration test: the flood record's own rate doubled in 2024–25 relative to the rain, so the level isn't stable year to year. It ranks well (0.90), so it ships labelled approximate with its measured error: places with floods on record see ~1.5× more recorded floods than it says, places with none ~2.1×, and at 10%+ it said 18% when 10% happened."],
-  ["Has FloodSense caught a real flood?","journalist","Not yet. Logging began on 21 Sep as the monsoon ended; 8,288 river forecasts have been written down and 4,178 checked, with no river crossing its line. The only warnings so far were three false ones from a wrong gauge reading, kept in the log. The 2027 monsoon is the real test."],
+  ["Has FloodSense caught a real flood?","journalist","Not yet. Logging began on 21 Sep as the monsoon ended; by 4 Nov, 8,736 river forecasts had been written down and 4,457 checked, with no river crossing its line. The only warnings so far were three false ones from a wrong gauge reading, kept in the log. The 2027 monsoon is the real test."],
   ["Can it tell me how deep the water will be in my village?","district officer","No. It gives the chance a river reaches its line, the chance of a flood near you, and whether water can reach your square if a flood comes. Depth and extent need river cross-sections or detailed terrain (LiDAR): an Ask or Paid tier item."],
   ["What happens when a gauge feed goes down?","engineer","That gauge falls back to a rain-only model, and the screen marks it offline. Today the whole NWDP feed (14 small-river gauges) is down at source, and some CWC gauges have been offline for months. The issue says which, so nobody reads a rain-only number as a river reading."]
 ];
@@ -590,6 +816,33 @@ QUIZ.forEach(([q, who, a], i) => {
   }));
   quiz.appendChild(d);
 });
+
+/* ---------- word cards: [word, kid meaning, game name, comes back in] ---------- */
+const WORDS = [
+  ["Gauge","A measured river level (or flow) at one spot, read every day.","📏 the height stick","back from Level 1 · Levels 6, 7"],
+  ["Danger level","The official height at which CWC calls a flood at that gauge.","🟥 the red line","back from Level 1"],
+  ["Own 2% line","Where there's no official line: the height the river reaches only on its wettest 2% of days.","a red line we paint ourselves","Level 7"],
+  ["Calibrated","When it says 20%, about 20% happen.","🎲 honest dice","back from Level 0 · Level 7"],
+  ["Reliability diagram","A chart of \"said\" against \"happened\". On the diagonal = honest.","the honest-dice jars","Level 7"],
+  ["Hit rate","The share of real floods that had a warning before them.","floods caught","Level 7"],
+  ["Success ratio","The share of warnings that came true.","warnings that were right","Level 7"],
+  ["Onset","A day when the river is still below its line: the warning people need.","the hard question","Level 7"],
+  ["Verified record","Floods confirmed by an independent check: radar, an archive, or a gauge.","the witnessed flood diary","Levels 6, 7"],
+  ["Specificity","How often a test correctly says \"no\" on days we know were dry.","a fair witness","Level 7"],
+  ["HAND","Height Above Nearest Drainage. Low HAND floods first.","⬆️ steps above the river","back from Level 1"],
+  ["Conditional probability","A chance that assumes something already happened: \"if a flood comes\".","◆ if a flood comes","Level 7"],
+  ["Out of distribution","Asking a model about places unlike anything it trained on.","👾 the ice-lake Glitch","back from Level 1"],
+  ["Level forecast","A forecast of the river's height, with a range.","the dotted footsteps","Level 6"],
+  ["Persistence baseline","The lazy guess: tomorrow will be the same as today.","the lazy guess","Level 7"],
+  ["Prediction interval","A range built to hold the real value on a set share of days (80% here).","the shaded band","Level 7"],
+  ["Spike filter","Checks that remove impossible readings before anything uses them.","the three-pass Glitch scanner","Level 6"],
+  ["Approximate","Ranks well, but the size of its numbers isn't reliable.","≈ the rough guess","Level 7"],
+  ["Gate (pre-registered test)","A pass/fail rule written before the test runs.","the pass mark written first","back from Level 1 · Level 7"],
+  ["Track record","Forecasts written before the day and graded after.","📖 Prophecy Book + 🏆 Scoreboard","back from Level 0 · Level 6"]
+];
+$("words").innerHTML = WORDS.map(([w, m, g, b]) =>
+  `<div class="wc"><div class="in"><div class="f"><b>${w}</b><span>tap to flip</span></div><div class="b">${m}<span class="gn">🎮 ${g}</span><span class="back">${b.startsWith("back") ? b : "comes back in: " + b}</span></div></div></div>`).join("");
+$("words").addEventListener("click", e => { const c = e.target.closest(".wc"); if (c) c.classList.toggle("on"); });
 
 function meter(){
   const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));

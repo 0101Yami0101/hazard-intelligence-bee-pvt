@@ -169,29 +169,32 @@ def cover(meta, ch) -> str:
 
 
 ASKS = [
-    ("Large-area identification and mapping of erosion-prone areas", "Erosion map of all Assam at 100 m, six classes, t/ha/yr", "built"),
-    ("Prioritisation of intervention locations", "703 catchments and 35 districts ranked; main cause, a second reason against similar slopes, typical measures; how firm each rank is (1,000 runs); re-rankable by the officer's own weights (loss, high-risk share, total, getting barer, villages)", "built"),
-    ("Faster preliminary assessment", "Type any village or a GPS position: one printable card with the loss around it, why, what helps, its catchment's rank, bare ground each year and this week's rain; districts have their own card", "built"),
-    ("Periodic monitoring, temporal comparison", "Bare ground every dry season 2019–2026 from Sentinel-2; any season, or the change between two", "first version"),
-    ("(beyond the statement) Timing the work", "Weekly outlook: where the next 7 days' rain, against the local normal, will wash off most soil; refreshed from the live forecast and written down daily", "first version"),
-    ("Combining spatial and environmental inputs", "Rain strength × soil × slope × cover × protection (RUSLE), each factor kept as its own layer", "built"),
-    ("Classification by risk level", "Common Indian six-class scheme until the department names its own", "built"),
-    ("GIS outputs for planning and field verification", "GeoPackage, KML, GeoJSON, CSV; 100 field points as GPS file with form columns", "first version"),
-    ("Pilot with comparison against field observations", "Blind field protocol to agree with the department; points chosen without the map's class", "planned · Phase 2"),
-    ("Satellite data via ASSAC; department data as available", "Runs on open data today; department records swap in, each with a before/after", "ready to receive"),
+    ("Large-area identification and mapping of erosion-prone areas", "Erosion map of all Assam at 100 m, six classes, t/ha/yr; river land, water and towns marked \"not assessed\"", "under development"),
+    ("Prioritisation of intervention locations", "703 catchments and 35 districts ranked; main cause, a second reason against similar slopes, typical measures; how firm each rank is (1,000 runs); re-rankable by the officer's own weights", "under development"),
+    ("(beyond the statement) Where works pay most", "Soil reaching streams (where check dams and gully plugs pay most); \"What if we treat it?\" (soil saved by each measure); value of soil lost as nutrients and topsoil", "under development"),
+    ("(beyond the statement) A second opinion from AI", "AI map learned from ISRO's mapped eroded land, shown beside the formula with the reasons for each area's score", "under development"),
+    ("Faster preliminary assessment", "Type any village or a GPS position: one printable card with the loss around it, why, what helps, its catchment's rank, bare ground each year and this week's rain", "under development"),
+    ("Periodic monitoring, temporal comparison", "Bare or burnt ground every dry season 2019–2026 from Sentinel-2; any season, or the change between two. Alerts for newly cleared slopes held back until they pass their tests", "under development"),
+    ("(beyond the statement) Timing the work", "Weekly erosive-rain outlook from the live forecast, written down daily and replayed over past monsoons", "under development"),
+    ("Combining spatial and environmental inputs", "Rain strength × soil × slope × cover × protection (RUSLE), each factor kept as its own layer", "under development"),
+    ("Classification by risk level", "Common Indian six-class scheme until the department names its own", "under development"),
+    ("GIS outputs for planning and field verification", "GeoPackage, KML, GeoJSON, CSV; 100 field points as a GPS file with form columns", "under development"),
+    ("Pilot with comparison against field observations", "Blind field protocol to agree with the department; points chosen without the map's class", "planned · Phase 2–3"),
+    ("Satellite data via ASSAC; department data as available", "Runs on open data today; department records swap in, each with a before/after", "planned · Phase 3"),
 ]
 
 
 def asks_page() -> str:
-    col = {"built": GOOD, "first version": BLUE}
+    col = {"under development": GOOD}
     rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td><span class='st' style='color:{col.get(c, PEND)}'>{c}</span></td></tr>"
                    for a, b, c in ASKS)
     return f"""
 <section class='page'>
   <h2>What the department asked for, and what exists today</h2>
   <table class='t'><tr><th>The department's words</th><th>SoilSense</th><th>State</th></tr>{rows}</table>
-  <p class='small'>"Built" means working in the app on real Assam data. "First version" means working,
-  with an upgrade planned in the timeline. Nothing on this page is a promise dressed as a feature.</p>
+  <p class='small'>"Under development" means built and working in the app on real Assam data, and still
+  being improved and tested. "Planned" means on our plan, with its phase. The same two labels are used
+  in our application answers. Nothing on this page is a promise dressed as a feature.</p>
 </section>"""
 
 
@@ -200,6 +203,14 @@ def screens(ch) -> str:
 <section class='page'>
   <h2>The working app · erosion map</h2>
   {shot('01_map', 'The whole state. Classes in t/ha/yr; uncoloured land is not scored (river land, water, towns). The top 20 catchments are outlined. Alternative runs (other rain map, lower forest value) are one click away, because those two inputs are not yet settled.', 1250)}
+</section>
+<section class='page'>
+  <h2>AI map: a second opinion beside the formula</h2>
+  {shot('09_ai', "A tree model (LightGBM) learned which squares ISRO's experts marked as eroded on the national land-degradation map (2015–16), from terrain, soil, rain strength and cover. Tested only on map blocks it never saw. Shown as five bands, a rank and not tonnes, with each catchment's main reason and how its rank compares with the formula's. On blind satellite pictures it found visible erosion no better than the formula, so it stays a second opinion, not a replacement (page \"Checks\").", 1250)}
+</section>
+<section class='page'>
+  <h2>Soil reaching streams</h2>
+  {shot('10_streams', "Not all the soil a slope loses reaches a river; much settles lower down. From how well each square connects to the channel below it (Borselli's connectivity index and InVEST's delivery ratio, standard settings), this view shows where soil does reach streams: where check dams and gully plugs pay most, and what silts rivers and reservoirs. An estimate, not yet checked against measurements.", 1250)}
 </section>
 <section class='page'>
   <h2>A district at a glance</h2>
@@ -220,10 +231,14 @@ def screens(ch) -> str:
 <section class='page'>
   <h2>Priority list and field kit</h2>
   {shot('05_priority', 'Ranked catchments and districts with cause, second reason and typical measures; downloads for any GIS; and the field kit: 100 points in the top 20 catchments as a GPS file and a CSV with columns for what the team finds.', 2600)}
+</section>
+<section class='page'>
+  <h2>What if we treat it?</h2>
+  {shot('11_whatif', "Pick a district or catchment, choose measures (replanting steep open land, bench terraces, contour bunds or trenches) and how much of the eligible land to treat. The recipe is re-run with the works in place: soil saved a year, land treated, and where each measure saves most soil per hectare. Values come from the literature and are provisional, to confirm with the Soil Conservation Department; costs per hectare can be added to rank by soil saved per rupee.", 1350)}
 </section>"""
 
 
-def checks_page(san, gauge, ch, nr, meta_grade=None) -> str:
+def checks_page(san, gauge, ch, nr, meta_grade=None, meta_ai=None) -> str:
     s1 = san["S1"]["main"]
     rows = [
         ("Hills against plains", "Hill districts ≥ 3× the plains (median)", f"{s1['ratio']}×", True),
@@ -255,6 +270,19 @@ def checks_page(san, gauge, ch, nr, meta_grade=None) -> str:
                  ("Weekly outlook replayed: heavy weeks at a place", "≥ 0.70 (pairwise)", f"{ga['G3_auc']:.2f}", og["G3_pass"]),
                  ("Weekly outlook replayed: which places within a week", "ρ ≥ 0.30, above the seasonal normal",
                   f"{ga['G1_median_rho']:.2f} (normal alone {ga['G1_climatology']:.2f})", og["G1_pass"])]
+    ai, eye = meta_ai or {}, jread(f"erosion_eyecheck_{REGION}.json")
+    if ai:
+        rows += [("AI map vs ISRO's eroded land, on blocks it never saw", "≥ 0.70 and ≥ 0.03 above the formula",
+                  f"{ai['auc']['ai_A']:.2f} (formula {ai['auc']['formula']:.2f})", True),
+                 ("AI map: catchment ranking vs ISRO's map", "ρ ≥ 0.40",
+                  f"{ai['catchment_rho']['A']:.2f} (formula {ai['catchment_rho']['formula']:.2f})", True)]
+    if eye:
+        pf, pa, pg = eye["P-F"], eye["P-AI"], eye["P-G"]
+        rows += [("Blind satellite pictures (300): formula's severe vs mild squares", "visible erosion ≥ 2× as often",
+                  f"{pf['ratio']:.1f}×", pf["pass"]),
+                 ("Blind satellite pictures: AI's top band vs its lower half", "≥ 2×",
+                  f"{pa['ratio']:.1f}×: AI stays a second opinion", pa["pass"]),
+                 ("Blind satellite pictures: terrain-only gully flag", "≥ 2×", f"{pg['ratio']:.1f}×: held back", pg["pass"])]
     if ch:
         t = ch["tests"]
         pct = lambda v: "–" if v is None else (f"{100 * v:.2f}%" if v < 0.001 else f"{100 * v:.1f}%")
@@ -271,8 +299,8 @@ def checks_page(san, gauge, ch, nr, meta_grade=None) -> str:
 <section class='page'>
   <h2>Checks, with the pass mark written down before the result</h2>
   <p>A failed check means "investigate and report", never "tweak until it passes". The failures
-  are listed because they shape how the map should be read: we lead with the ranking, and mark
-  every rank that depends on an unsettled input.</p>
+  are listed because they shape how the map should be read: we lead with the ranking, mark
+  every rank that depends on an unsettled input, and hold back any feature until it passes.</p>
   <table class='t'><tr><th>Check</th><th>Pass mark (set in advance)</th><th>Result</th><th></th></tr>{body}</table>
 </section>"""
 
@@ -368,19 +396,58 @@ def arch_page() -> str:
     the live Arunachal forecasts are re-checked after every change to shared code.</li>
     <li><b>The recipe is transparent.</b> RUSLE, the standard used in Indian soil conservation,
     with each factor kept as its own layer, so an officer can see why a place ranks high.</li>
-    <li><b>Machine learning where it earns its place:</b> classifying land cover from Sentinel-2,
-    and a correction layer trained on field findings once enough exist, tested on areas held
-    out from training.</li>
+    <li><b>AI beside the formula, never instead of it.</b> Under development: a gradient-boosted
+    model learned from ISRO's mapped eroded land, tested on areas it never saw, with the reasons
+    for each score. Planned: a panel of different models (formula, tree models, deep learning)
+    blended by a referee model, learned across the Himalaya and North East and fine-tuned for
+    Assam and each district; satellite-reading AI for forest, tea, <i>jhum</i> and fresh clearing.</li>
     <li><b>Outputs open anywhere:</b> GeoTIFF, GeoPackage, KML, GeoJSON, CSV, in WGS84 or UTM 46N;
     a web app that needs no installation.</li>
   </ul>
 </section>"""
 
 
+ROADMAP = [
+    ("Under development", [
+        "Erosion-risk map, all Assam, 100 m (RUSLE), with land not assessed marked",
+        "Priority list of catchments and districts: cause, typical measures, rank firmness, re-ranking",
+        "AI erosion map trained on ISRO's eroded land, as a second opinion with its reasons",
+        "Dry-season bare and burnt ground every year since 2019 (Sentinel-2)",
+        "Weekly erosive-rain outlook from the live forecast, graded against past monsoons",
+        "Soil reaching streams; value of soil lost (nutrients as urea bags and rupees, topsoil depth)",
+        "\"What if we treat it?\": soil saved by each measure",
+        "Village card for any place; field kit with GPS visit points and GIS downloads"]),
+    ("Planned", [
+        "AI panel: formula, tree and deep-learning models blended by a referee model; learned across the Himalaya and North East, fine-tuned for Assam and each district, local-only models kept alongside; retrained after every monsoon",
+        "Satellite-reading AI for forest, tea, jhum and fresh clearing, with jhum burn dating; radar monitoring through monsoon cloud",
+        "Alerts for newly cleared slopes and hill cutting, sent only after an AI second check",
+        "Seasonal outlook and a pre-monsoon watch list for divisions each April",
+        "\"Did the works help?\" tracking; a works planner with costs; outputs shaped for PMKSY watershed and MGNREGA plans",
+        "Stream sensors, rain gauges and soil-loss plots where the model points; drone and LiDAR surveys",
+        "Offline field app in Assamese; farmers' photo reports sorted by AI and checked by a person; SMS, WhatsApp and voice advisories; an AI assistant for officers",
+        "Riverbank erosion, flood sand on farmland, wetland and reservoir silting; landslide and flood forecasts for Assam on the same platform"]),
+]
+
+
+def roadmap_page() -> str:
+    cols = "".join(f"<div><h3 style='color:{GOOD if k == 'Under development' else BLUE}'>{k}</h3><ul>"
+                   + "".join(f"<li>{x}</li>" for x in items) + "</ul></div>" for k, items in ROADMAP)
+    return f"""
+<section class='page'>
+  <div class='kicker'>What comes next</div>
+  <h2>Everything SoilSense will provide</h2>
+  <p>Every item carries one of two labels, the same as in our application answers.
+  <b>Under development</b>: built and working in the app on real Assam data, still being improved
+  and tested. <b>Planned</b>: on our plan, for the programme (phases on the plan page) or after it.
+  Features that fail their tests are held back until they pass.</p>
+  <div class='two'>{cols}</div>
+</section>"""
+
+
 def wireframes_page() -> str:
     return """
 <section class='page'>
-  <h2>Next screens (planned, Phase 2): mock-ups</h2>
+  <h2>Next screens (Planned, Phase 2): mock-ups</h2>
   <div class='wf'>
     <div class='wfbox'><div class='wft'>Outlook scorecard</div>
       <div class='wfm'>[ each day's issued outlook against the rain that then fell, from satellite ]</div>
@@ -420,12 +487,13 @@ def live_page() -> str:
 
 
 def plan_page() -> str:
-    rows = [("Done (Oct 2026)", "Application proof", "Assam on the backbone; erosion map; 703 catchments ranked with reasons; dry-season bare ground 2019–2026; weekly erosive-rain outlook, written down daily; outside check against ISRO's map; GIS files and field kit"),
-            ("Nov – mid-Dec 2026", "Phase 1: cover + validation", "Split the satellite 'tree' class (forest, tea, jhum); rain factor from our own satellite rain archive; blind imagery sample of about 300 points"),
-            ("mid-Dec 2026 – Feb 2027", "Phase 2: prototype", "Outlook's rain graded daily against satellite rain; change flags, second attempt; field form round trip; Assamese village card; pilot protocol agreed with the department"),
-            ("Feb 2027", "Demo Day", "Working prototype, early field results, pilot plan"),
-            ("Feb – May 2027", "Phase 3: MVP", "Department data in (soil survey, treated areas, field records), each with a before/after; blind field comparison in pilot areas; calibration; outputs in the department's GIS"),
-            ("From Jun 2027", "Scale-up", "More districts and the whole state on a seasonal cycle")]
+    rows = [("Done, Oct 2026", "Under development", "Assam on the backbone; state-wide 100 m erosion map with pre-registered checks; ranked catchments and districts with causes and firmness; AI erosion map as a second opinion; blind satellite-picture validation; dry-season bare ground since 2019; weekly outlook graded on past monsoons; village card; \"What if we treat it?\"; soil reaching streams; nutrient value of lost soil; field-kit exports; all in a working web app"),
+            ("Nov 2026", "Conclave (Planned)", "Live demo on Assam data"),
+            ("Nov – mid-Dec 2026", "Phase 1: AI and monitoring (Planned)", "Satellite-reading AI for forest, tea and jhum; jhum burn dating; radar monitoring; change alerts with an AI second check; seasonal outlook; district bulletins; panel-of-experts framework; pooled Himalaya and North-East training data. Depends on: satellite processing quota; any department data shared"),
+            ("mid-Dec 2026 – Feb 2027", "Phase 2: prototype (Planned)", "Field-check protocol agreed with the department and dated before any visit; offline Assamese field app and village card; field and citizen intake with a holding area; \"did the works help?\"; pre-monsoon watch list; daily automated run with every outlook graded. Depends on: the department's choice of test areas and class scheme"),
+            ("Feb 2027", "Demo Day", "Working prototype, early results, plan to MVP"),
+            ("Feb – May 2027", "Phase 3: MVP (Planned)", "Field testing against pass marks set in advance; stream sensors, rain gauges, soil-loss plots and drone surveys at test sites; department data in; models fine-tuned for Assam and its districts and calibrated; works planner; layers in the department's GIS; staff training. Depends on: data-sharing permissions; field access"),
+            ("From Jun 2027", "Pilot validation, then scale-up (Planned)", "First pre-monsoon watch list before the 2027 monsoon; retraining after every monsoon; advisories; farmers' photo reports; officer assistant; gully finder on drone imagery; riverbank, sand-cast farmland and reservoir-silting watch; landslide and flood forecasts for Assam; other North-East states")]
     body = "".join(f"<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>" for a, b, c in rows)
     return f"""
 <section class='page'>
@@ -440,10 +508,11 @@ def plan_page() -> str:
   <h3>Data</h3>
   <p class='small'>Built on open data: Copernicus DEM GLO-30, SoilGrids (CC-BY), ESA WorldCover
   (CC-BY), Sentinel-2 via Google Earth Engine, InRESatE and IRED rain-strength maps (CC-BY),
-  HydroSHEDS, Survey of India outline. Used for comparison only, never redistributed: the IIT
-  Delhi national erosion map (IWED), India's soil-erodibility map (ISED), NRSC's land-degradation
-  map (Bhuvan). Ours: the backbone code, region switch, ranking and reasons, change detection,
-  checks, app and the checked local record.</p>
+  HydroSHEDS, Survey of India outline, NASA GPM IMERG and Open-Meteo rain, CWC river-sediment and
+  river-level records. Used for comparison only, never redistributed: the IIT Delhi national
+  erosion map (IWED), India's soil-erodibility map (ISED). NRSC's land-degradation map (Bhuvan):
+  training labels for the AI map and an outside check, never redistributed. Ours: the backbone code, region switch, ranking and reasons, change detection,
+  AI model and training pipeline, checks, app and the checked local record.</p>
 </section>"""
 
 
@@ -476,6 +545,7 @@ table.t td {{ border-bottom: 1px solid {GRID}; padding: 2mm; vertical-align: top
 .cv {{ font-size: 12px; font-weight: 700; fill: {INK}; }}
 .cn {{ font-size: 11px; fill: {INK2}; font-weight: 400; }}
 .two {{ display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }}
+li {{ margin-bottom: 1.5mm; }}
 .wf {{ display: grid; grid-template-columns: 1fr; gap: 5mm; }}
 .wfbox {{ border: 1.5px dashed #b9b8b2; border-radius: 6px; padding: 4mm; }}
 .wft {{ font-weight: 700; margin-bottom: 2mm; }}
@@ -492,8 +562,8 @@ def main() -> None:
     ch = meta.get("change")
     html = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             f"<title>SoilSense Proof of Work</title><style>{CSS}</style></head><body>"
-            + cover(meta, ch) + asks_page() + screens(ch) + change_page(ch) + checks_page(san, gauge, ch, nr, meta.get("outlook_grade"))
-            + findings_page(san) + arch_page() + wireframes_page() + live_page() + plan_page()
+            + cover(meta, ch) + asks_page() + screens(ch) + change_page(ch) + checks_page(san, gauge, ch, nr, meta.get("outlook_grade"), meta.get("ai"))
+            + findings_page(san) + arch_page() + live_page() + roadmap_page() + wireframes_page() + plan_page()
             + "</body></html>")
     OUT.mkdir(parents=True, exist_ok=True)
     h = OUT / "SoilSense_Proof_of_Work.html"

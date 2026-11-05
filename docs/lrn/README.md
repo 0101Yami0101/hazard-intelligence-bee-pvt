@@ -3,6 +3,8 @@
 The plan is in [../LEARNING_ROADMAP.md](../LEARNING_ROADMAP.md). Open each page in a browser.
 Ticks and quiz marks are saved in that browser. All pages share `lrn.css`.
 
+🎮 **Story mode:** the course is told as a video game, *Blockland*. Its cast, game names and level plan are in [LORE.md](LORE.md); keep every phase consistent with it. Phase 0 is done; phases 1–7 still to convert.
+
 | Phase | Page | State |
 |---|---|---|
 | 0 · The big picture | [phase-0-big-picture.html](phase-0-big-picture.html) | ready |

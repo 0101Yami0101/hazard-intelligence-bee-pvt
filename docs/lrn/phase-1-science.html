@@ -50,7 +50,7 @@ svg.fig{width:100%;height:auto;display:block}
 .sat .row2 span:first-child{color:var(--ink-3)}
 .big-n{font-family:var(--display);font-size:44px;line-height:1}
 .trap{background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px}
-.trap b{display:block;font-size:16px}
+.trap > b{display:block;font-size:16px}
 .trap .fix{font-size:14px;margin-top:6px;color:var(--built)}
 .trap .fix::before{content:"lesson → ";font-family:var(--mono);font-size:12px}
 .paper{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:14.5px}
@@ -80,6 +80,63 @@ svg.fig{width:100%;height:auto;display:block}
 .st{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:10px;font-size:14px}
 .st .k{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;margin-right:6px}
 @media(max-width:600px){.sb{grid-template-columns:1fr 1.2fr 70px}}
+/* ---- triggers block + Blockland boxes (see LORE.md) ---- */
+:root{--g-bg:#1b2440;--g-bg2:#263257;--g-ink:#eef2ff;--g-dim:#b8c2e6;--g-gold:#ffc94a;--g-cyan:#7fd3ff}
+.play{background:var(--g-bg);color:var(--g-ink);border-radius:12px;padding:12px 16px;border:3px solid var(--g-gold);box-shadow:4px 4px 0 #0d1326;font-size:15.5px;line-height:1.5;margin-top:12px}
+.play .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g-gold);display:block;margin-bottom:4px}
+.play b{color:var(--g-gold)}.play i{color:var(--g-cyan);font-style:normal}.play p{margin:6px 0}
+.play ul{margin:6px 0;padding-left:20px}.play li{margin:3px 0}
+.play .real{background:rgb(255 255 255/.07);border-left:3px solid var(--g-cyan);border-radius:6px;font-size:13.5px;margin-top:8px;padding:6px 10px;color:var(--g-dim)}
+.play .real::before{content:"🔁 Real version: ";color:var(--g-cyan);font-weight:600}
+.pask{margin-top:10px;background:var(--g-bg2);border-radius:8px;padding:6px 10px}
+.pask summary{cursor:pointer;font-weight:600;color:#fff;list-style:none}
+.pask summary::-webkit-details-marker{display:none}
+.pask summary::before{content:"🤖 Pixel asks: ";color:var(--g-gold)}
+.pask summary::after{content:" ▸ tap to check";font-weight:400;font-size:12px;color:var(--g-dim)}
+.pask .ans{margin-top:6px;padding-top:6px;border-top:1px dashed rgb(255 255 255/.2)}
+.ttbl{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.ttbl th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);background:var(--sheet-2)}
+.ttbl td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top}
+.ttbl tr:last-child td{border-bottom:0}
+.ttbl td:first-child{font-weight:600;white-space:nowrap}
+.tst{display:inline-block;font-family:var(--mono);font-size:11px;border-radius:99px;padding:1px 8px;white-space:nowrap}
+.tst.live{background:var(--built-soft);color:var(--built)}
+.tst.plan{background:var(--planned-soft);color:var(--ink-2);border:1px dashed var(--planned)}
+.tst.ask{background:var(--partial-soft);color:var(--partial)}
+.tst.gap{background:var(--accent-soft);color:var(--accent)}
+.tst.no{background:var(--sheet-2);color:var(--ink-3);text-decoration:line-through}
+@media(max-width:760px){.ttbl{font-size:12.5px}.ttbl td:first-child{white-space:normal}}
+/* ---- Level 1 story mode (see LORE.md) ---- */
+.play b,.play strong{color:var(--g-gold)}
+.play code,.gm code{background:rgb(255 255 255/.14);color:#fff;border:0}
+.play svg{display:block;width:100%;height:auto;margin:8px 0;border-radius:8px}
+.play ol{margin:6px 0;padding-left:22px}.play ol li{margin:5px 0}
+.pask[open] summary::after{content:" ▾"}
+.pask .ans{color:var(--g-ink)}
+.gm{margin-top:8px;background:var(--g-bg);color:var(--g-ink);border-radius:8px;padding:6px 9px;font-size:13.5px;line-height:1.4;border-left:4px solid var(--g-gold);display:block;font-weight:400;text-align:left}
+.gm b{color:var(--g-gold);display:inline;font-size:inherit}
+.gm i{color:var(--g-cyan);font-style:normal}
+.gm::before{content:"🎮 "}
+.gmrow{margin:10px 0 0}
+.topic .gm{color:var(--g-ink);font-size:12.5px}
+.topic .gm b,.trap .gm b{display:inline;font-size:inherit}
+.kid{background:#fff6d6;border:2px dashed #e0b23a;border-radius:10px;padding:8px 12px;font-size:16.5px;line-height:1.45;margin:0 0 14px;color:#3a2a00}
+.kid::before{content:"🧒 Super simple: ";font-weight:700;color:#8a5a00}
+.play .tbl2{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0}
+.play .tbl2 td,.play .tbl2 th{border-bottom:1px solid rgb(255 255 255/.15);padding:5px 6px;text-align:left;vertical-align:top}
+.play .tbl2 th{font-family:var(--mono);font-size:11px;color:var(--g-dim);text-transform:uppercase}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wc{perspective:900px;min-height:160px;cursor:pointer}
+.wc .in{position:relative;min-height:160px;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.wc.on .in{transform:rotateY(180deg)}
+.wc .f,.wc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.wc .f{background:var(--g-bg);color:#fff;border:3px solid var(--g-gold);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.wc .f b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1}
+.wc .f span{font-size:12px;color:var(--g-dim);margin-top:6px}
+.wc .b{background:var(--sheet);border:2px solid var(--rule);transform:rotateY(180deg);font-size:13.5px;line-height:1.4}
+.wc .b .gn{display:block;margin-top:6px;color:var(--bone);font-weight:600}
+.wc .b .back{display:block;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+@media(max-width:900px){.words{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -96,29 +153,80 @@ svg.fig{width:100%;height:auto;display:block}
 <div class="wrap">
 
 <div class="hero">
-  <div class="kicker">Phase 1 · Days 2–4 · about 15 hours</div>
+  <div class="kicker">Phase 1 · Days 2–4 · about 15 hours · 🎮 Level 1: World physics</div>
   <h1>The science underneath</h1>
   <div class="goal">🎯 <span>Enough science to <b>talk to the scientists</b> as an equal, and to know <b>why we built it this way</b>.</span></div>
   <div class="toc">
-    <a href="#s1">1 · The map</a><a href="#s2">2 · Why slopes fail</a><a href="#s3">3 · Rain as trigger</a>
+    <a href="#s0">🎮 Start here</a><a href="#s1">1 · The map</a><a href="#s2">2 · Why slopes fail</a><a href="#s3">3 · Rain as trigger</a>
     <a href="#s4">4 · Water on a height map</a><a href="#s5">5 · River forecasting</a><a href="#s6">6 · Soil loss</a>
     <a href="#s7">7 · Satellites</a><a href="#s8">8 · Is the model good?</a><a href="#s9">9 · Traps we hit</a>
-    <a href="#s10">10 · Words</a><a href="#s11">11 · Papers</a><a href="#s12">12 · Quiz</a><a href="#s13">13 · Teach it</a>
+    <a href="#s10">10 · Word cards</a><a href="#s11">11 · Papers</a><a href="#s12">12 · Quiz</a><a href="#s13">13 · Teach it</a>
   </div>
+  <p class="tiny" style="margin-top:10px">🎮 <b>Story mode.</b> Every section starts with a 🧒 super-simple line, has 🎮 boxes beside the facts, and ends with Pixel's questions. The game names are kept in <code>docs/lrn/LORE.md</code>. The real numbers are unchanged from the 2 Nov 2026 re-check.</p>
 </div>
+
+<!-- 0 -->
+<section id="s0">
+  <h2><span class="n">🎮</span>Start here: Level 1, World physics</h2>
+  <p class="sub">In Level 0 you met Blockland. Now you learn its <b>physics</b>: why blocks fall, where water goes, what the sky-eyes can see, and how to tell a good Guardian from a lucky one.</p>
+  <div class="play">
+    <span class="lv">Level 1 · the map of this level</span>
+    <svg viewBox="0 0 640 220" role="img" aria-label="Blockland with a hill, a river, a satellite above a cloud, and a scoreboard: the four things this level teaches">
+      <rect width="640" height="220" fill="#263257"/>
+      <g transform="translate(70,30)"><rect x="-14" y="-8" width="28" height="16" rx="2" fill="#b8c2e6"/><rect x="-40" y="-5" width="22" height="10" fill="#7fd3ff"/><rect x="18" y="-5" width="22" height="10" fill="#7fd3ff"/></g>
+      <text x="70" y="62" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">③ what sky-eyes see</text>
+      <g fill="#5d6a93"><ellipse cx="300" cy="38" rx="64" ry="20"/><ellipse cx="255" cy="46" rx="36" ry="15"/><ellipse cx="345" cy="47" rx="36" ry="15"/></g>
+      <text x="300" y="43" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#fff">☁️ Cloud Curtain</text>
+      <g stroke="#7fd3ff" stroke-width="2"><line x1="262" y1="66" x2="256" y2="84"/><line x1="290" y1="68" x2="284" y2="86"/><line x1="318" y1="68" x2="312" y2="86"/><line x1="346" y1="66" x2="340" y2="84"/></g>
+      <text x="630" y="32" text-anchor="end" font-family="Rozha One,Georgia,serif" font-size="20" fill="#ffc94a">Level 1 · World physics</text>
+      <g stroke="#1b2440" stroke-width="2"><rect x="0" y="180" width="40" height="40" fill="#6aa84f"/><rect x="40" y="180" width="40" height="40" fill="#7f6000"/><rect x="80" y="180" width="40" height="40" fill="#6aa84f"/><rect x="120" y="180" width="40" height="40" fill="#7f6000"/><rect x="160" y="180" width="40" height="40" fill="#3d85c6"/><rect x="200" y="180" width="40" height="40" fill="#3d85c6"/><rect x="240" y="180" width="40" height="40" fill="#6aa84f"/><rect x="280" y="180" width="40" height="40" fill="#7f6000"/><rect x="320" y="180" width="40" height="40" fill="#6aa84f"/><rect x="360" y="180" width="40" height="40" fill="#7f6000"/><rect x="400" y="180" width="40" height="40" fill="#6aa84f"/><rect x="440" y="180" width="40" height="40" fill="#7f6000"/><rect x="480" y="180" width="40" height="40" fill="#6aa84f"/><rect x="520" y="180" width="40" height="40" fill="#7f6000"/><rect x="560" y="180" width="40" height="40" fill="#6aa84f"/><rect x="600" y="180" width="40" height="40" fill="#7f6000"/><rect x="440" y="140" width="40" height="40" fill="#7f6000"/><rect x="480" y="140" width="40" height="40" fill="#6aa84f"/><rect x="520" y="140" width="40" height="40" fill="#7f6000"/><rect x="560" y="140" width="40" height="40" fill="#6aa84f"/><rect x="600" y="140" width="40" height="40" fill="#7f6000"/><rect x="520" y="100" width="40" height="40" fill="#cc0000"/><rect x="560" y="100" width="40" height="40" fill="#6aa84f"/><rect x="600" y="100" width="40" height="40" fill="#6aa84f"/><rect x="600" y="60" width="40" height="40" fill="#7f6000"/></g>
+      <text x="540" y="125" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="500" fill="#fff">TNT</text>
+      <g transform="translate(476,128) rotate(20)"><rect x="-14" y="-14" width="28" height="28" fill="#7f6000" stroke="#1b2440" stroke-width="2"/></g>
+      <g stroke="#eef2ff" stroke-width="2"><line x1="500" y1="112" x2="510" y2="104"/><line x1="504" y1="122" x2="516" y2="116"/></g>
+      <text x="430" y="126" text-anchor="end" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">① why blocks fall</text>
+      <text x="200" y="172" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">② where water goes</text>
+      <rect x="20" y="100" width="90" height="50" rx="6" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/>
+      <text x="65" y="121" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#ffc94a">🏆 Scoreboard</text>
+      <text x="65" y="141" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" fill="#fff">0.859</text>
+      <text x="65" y="170" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">④ how to score fairly</text>
+    </svg>
+    <p><b>Quick recap from Level 0.</b> A forecast is <b>🧨 TNT × ⚡ spark</b>. The TNT is weak ground (WHERE). The spark is what sets it off today, usually rain (WHEN). You need both: TNT with no spark does nothing, and a spark on solid rock does nothing.</p>
+    <p><b>This level is physics school.</b> Seven teachers each teach one big idea. You don't have to become a teacher. You need each teacher's <i>one big idea</i>, and <i>how our Guardians use it</i>. Then, in Level 7, when a real scientist tests you, you can answer like an equal.</p>
+    <span class="lv" style="margin-top:12px">Level 1 in seven sentences: learn these first</span>
+    <ol>
+      <li><b>Blocks fall when pull beats grip.</b> Gravity pulls soil down; friction and roots hold it. Water makes the grip weaker.</li>
+      <li><b>"A lot of rain" depends on the block.</b> We compare today's rain with that block's own 📔 rain diary.</li>
+      <li><b>Water rolls to the lowest block next door.</b> Blocks only a little higher than a river flood first.</li>
+      <li><b>Rivers have height sticks with painted lines.</b> A flood forecast asks: will the water reach the red line, and when?</li>
+      <li><b>Soil loss is a recipe of five things multiplied.</b> If one of them is zero, the answer is zero.</li>
+      <li><b>Camera satellites go blind behind the ☁️ Cloud Curtain.</b> Radar satellites see through it.</li>
+      <li><b>A score only counts on a surprise exam</b>: blocks the Guardian never saw while learning. And a <i>rank</i> is not a <i>chance</i>.</li>
+    </ol>
+    <div class="real">Seven topics, one per kind of expert: geologist (slopes), landslide researcher (rain), hydrologist (water on a height map), CWC engineer (rivers), soil conservation officer (soil loss), APSAC scientist (satellites), ML reviewer (is the model good). Every number on this page was re-checked against the data on 2 Nov 2026.</div>
+    <details class="pask"><summary>Without looking: what are the two halves of a forecast, in game words and real words?</summary><div class="ans"><b>🧨 TNT</b> = weak ground = WHERE (susceptibility). <b>⚡ Spark</b> = what sets it off today = WHEN (the trigger, mostly rain). Forecast = TNT × spark.</div></details>
+  </div>
+</section>
 
 <!-- 1 -->
 <section id="s1">
   <h2><span class="n">1</span>Seven topics, one per scientist</h2>
   <p class="sub">Each topic is what one kind of expert in the room knows deeply. You only need the core idea, plus <b>how we used it</b>.</p>
+  <p class="kid">Seven kinds of expert, seven big ideas. Learn each one's <b>big idea</b> and <b>what we did with it</b>. That's enough to talk to them as an equal.</p>
   <div class="topics">
-    <a class="topic" href="#s2" style="--c:var(--slide)"><div class="ico">⛰️</div><b>Why slopes fail</b><span>geologist (GSI)</span></a>
-    <a class="topic" href="#s3" style="--c:var(--slide)"><div class="ico">🌧️</div><b>Rain as trigger</b><span>landslide researcher</span></a>
-    <a class="topic" href="#s4" style="--c:var(--flood)"><div class="ico">💧</div><b>Water on a height map</b><span>hydrologist</span></a>
-    <a class="topic" href="#s5" style="--c:var(--flood)"><div class="ico">📈</div><b>River forecasting</b><span>CWC engineer</span></a>
-    <a class="topic" href="#s6" style="--c:var(--soil)"><div class="ico">🟫</div><b>Soil loss</b><span>soil conservation officer</span></a>
-    <a class="topic" href="#s7" style="--c:var(--bone)"><div class="ico">🛰️</div><b>Satellites</b><span>APSAC remote-sensing scientist</span></a>
-    <a class="topic" href="#s8" style="--c:var(--accent)"><div class="ico">🧪</div><b>Is the model good?</b><span>ML reviewer</span></a>
+    <a class="topic" href="#s2" style="--c:var(--slide)"><div class="ico">⛰️</div><b>Why slopes fail</b><span>geologist (GSI)</span><span class="gm"><b>Rock Teacher</b>: why blocks fall</span></a>
+    <a class="topic" href="#s3" style="--c:var(--slide)"><div class="ico">🌧️</div><b>Rain as trigger</b><span>landslide researcher</span><span class="gm"><b>Storm Teacher</b>: what lights the spark</span></a>
+    <a class="topic" href="#s4" style="--c:var(--flood)"><div class="ico">💧</div><b>Water on a height map</b><span>hydrologist</span><span class="gm"><b>Water Teacher</b>: where water runs</span></a>
+    <a class="topic" href="#s5" style="--c:var(--flood)"><div class="ico">📈</div><b>River forecasting</b><span>CWC engineer</span><span class="gm"><b>River Teacher</b>: reading the height stick</span></a>
+    <a class="topic" href="#s6" style="--c:var(--soil)"><div class="ico">🟫</div><b>Soil loss</b><span>soil conservation officer</span><span class="gm"><b>Soil Teacher</b>: the soil-loss recipe</span></a>
+    <a class="topic" href="#s7" style="--c:var(--bone)"><div class="ico">🛰️</div><b>Satellites</b><span>APSAC remote-sensing scientist</span><span class="gm"><b>Sky-Eye Teacher</b>: what satellites see</span></a>
+    <a class="topic" href="#s8" style="--c:var(--accent)"><div class="ico">🧪</div><b>Is the model good?</b><span>ML reviewer</span><span class="gm"><b>Exam Teacher</b>: how to score fairly</span></a>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 physics school</span>
+    <p>Each teacher is a real kind of expert you'll meet: a GSI geologist, a CWC engineer, an APSAC scientist, and so on. Each one knows one subject <b>very deeply</b>. You only need two things from each: <b>their one big idea</b>, and <b>how our Guardians use it</b>.</p>
+    <p>Why? Experts test you with one sharp question in their own subject. If your answer shows you know the idea <i>and</i> where we used it, they treat you as an equal.</p>
+    <div class="real">You don't need a geology degree. You need the core idea of seven fields, what we did with each, and the numbers behind it.</div>
+    <details class="pask"><summary>A CWC engineer is coming to the meeting. Which teachers' lessons do you revise the night before?</summary><div class="ans">The <b>River Teacher</b> (section 5: height sticks, danger lines, lead time) and the <b>Water Teacher</b> (section 4: water on a height map, HAND). Rivers and floods are CWC's world.</div></details>
   </div>
 </section>
 
@@ -126,6 +234,7 @@ svg.fig{width:100%;height:auto;display:block}
 <section id="s2">
   <h2><span class="n">2</span>Why slopes fail</h2>
   <p class="sub">A slope is a tug of war. <b>Gravity pulls</b> the soil downhill. <b>Grip</b> (friction plus roots and cement) holds it. When pull beats grip, it slides.</p>
+  <p class="kid">A hill stays put while its <b>grip</b> is stronger than gravity's <b>pull</b>. Rain sneaks into the soil and makes the grip weaker. When pull wins, the hill slides.</p>
   <div class="card two">
     <div>
       <svg class="fig" viewBox="0 0 340 230" id="slopeSvg">
@@ -146,9 +255,9 @@ svg.fig{width:100%;height:auto;display:block}
     </div>
   </div>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card small">💧 <b>Water is the key.</b> Water fills the gaps between soil grains and pushes them apart. That cuts friction, so grip drops. That is why rain triggers slides.</div>
-    <div class="card small">🪨 <b>Rock matters.</b> Near a fault line, rock is shattered and weak. Some rock types weather into slippery clay.</div>
-    <div class="card small">🛣️ <b>People matter.</b> Cutting a road into a slope removes its foot. Many mapped slides sit along roads.</div>
+    <div class="card small">💧 <b>Water is the key.</b> Water fills the gaps between soil grains and pushes them apart. That cuts friction, so grip drops. That is why rain triggers slides.<span class="gm"><b>A wet floor.</b> Your shoes grip a dry floor. Spill water and you slip. Soil grains are the same: water between them lets them slip past each other.</span></div>
+    <div class="card small">🧱 <b>Rock matters.</b> Near a fault line, rock is shattered and weak. Some rock types weather into slippery clay.<span class="gm"><b>Cracked bricks.</b> Rock near a fault line is like a cracked LEGO brick: it breaks first. Some rock slowly turns into clay, which gets slippery like soap when wet.</span></div>
+    <div class="card small">🛣️ <b>People matter.</b> Cutting a road into a slope removes its foot. Many mapped slides sit along roads.<span class="gm"><b>Jenga.</b> Cutting a road into a hill is like pulling a block from the bottom of a Jenga tower. Everything above has less to stand on.</span></div>
   </div>
 
   <h3 style="margin:22px 0 8px">How people map "where slides can happen" (susceptibility)</h3>
@@ -159,13 +268,39 @@ svg.fig{width:100%;height:auto;display:block}
     <div><b>Physics</b>work out grip ÷ pull for every square. Needs soil depth and strength we don't have</div>
     <div><b>Deep learning</b>neural nets. Shine with images or millions of labels</div>
   </div>
-  <div class="tip ok" style="margin-top:12px">🌳 <b>Why trees, not deep learning?</b> We have <b>35,744 mapped slides</b> and a table of ~20 facts per square. On tables that size, trees win, train in minutes, and can <b>explain each score</b>, which a government officer needs. What we lack is not slides but <b>dates</b> of slides. Deep learning doesn't fix that.</div>
+  <span class="gm gmrow"><b>Five ways to make a TNT map:</b> ① a teacher scores each block by hand · ② count how often old craters sit on each kind of ground · ③ <b>let the computer learn from 35,744 old craters (that's us)</b> · ④ do the physics sum for every block (needs soil depth and strength nobody has measured across the state) · ⑤ a giant brain (deep learning), which needs millions of pictures or labels.</span>
+  <div class="tip ok" style="margin-top:12px">🌳 <b>Why trees, not deep learning?</b> We have <b>35,744 mapped slides</b> and a table of ~20 facts per square. On tables that size, trees win, train in minutes, and can <b>explain each score</b>, which a government officer needs. What we lack is not slides but <b>dates</b> of slides. Deep learning doesn't fix that.<span class="gm"><b>A guessing game beats a giant brain here.</b> Our Guardian learns like the game 20 Questions: "Is it steep? Near a fault? Near a road?" It plays lots of small games and adds them up. It trains in minutes and can tell you <i>why</i> it scored a block high. What we're short of is <b>dates</b> (which day each slide happened), and no brain can invent those.</span></div>
+  <div class="play">
+    <span class="lv">🎮 why blocks fall: the tug of war</span>
+    <svg viewBox="0 0 640 200" role="img" aria-label="A soil block on a slope, with gravity pulling it down the slope and grip holding it up the slope">
+      <defs><marker id="ahR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff6b6b"/></marker>
+      <marker id="ahG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8fe388"/></marker></defs>
+      <rect width="640" height="200" fill="#263257"/>
+      <polygon points="40,185 600,185 600,35" fill="#7f6000"/>
+      <g transform="translate(330,107) rotate(-15)"><rect x="-32" y="-30" width="64" height="30" fill="#b45f06" stroke="#1b2440" stroke-width="2"/><text x="0" y="-10" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#fff">soil</text></g>
+      <text x="318" y="128" font-size="14">🌿</text>
+      <line x1="295" y1="100" x2="205" y2="124" stroke="#ff6b6b" stroke-width="5" marker-end="url(#ahR)"/>
+      <text x="232" y="98" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ff6b6b">PULL (gravity)</text>
+      <line x1="365" y1="84" x2="455" y2="60" stroke="#8fe388" stroke-width="5" marker-end="url(#ahG)"/>
+      <text x="430" y="44" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#8fe388">GRIP (friction + roots)</text>
+      <g stroke="#7fd3ff" stroke-width="2"><line x1="300" y1="16" x2="295" y2="32"/><line x1="325" y1="20" x2="320" y2="36"/><line x1="350" y1="16" x2="345" y2="32"/></g>
+      <text x="40" y="34" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#7fd3ff">💧 rain sneaks in → grip gets weaker</text>
+      <text x="390" y="176" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#fff">when PULL beats GRIP → it slides</text>
+    </svg>
+    <p>Every hill block is in a <b>🤼 tug of war</b>. <b>Pull</b> (gravity) drags it downhill. <b>Grip</b> (friction between grains, plus tree roots) holds it in place. A steeper hill means a stronger pull. More roots mean more grip.</p>
+    <p>Now the Monsoon arrives. Rain soaks in and fills the tiny gaps between the soil grains. The water <i>pushes the grains apart</i>, so they rub less, and the grip drops. The hill didn't get steeper. <b>The water made it weaker.</b> When pull wins, the block slides.</p>
+    <p>That's why the 🧨 TNT and the ⚡ spark are two different things. The TNT is ground that is steep, cracked or cut. The spark is the water that tips it over.</p>
+    <div class="real">Factor of safety = grip ÷ pull; below 1 the slope fails. Water raises the pressure between grains (pore pressure), which cuts friction. Faults, clay-forming rock and road cuts make the ground weaker. We map WHERE with tree models (LightGBM) trained on 35,744 mapped slides, not with the physics sum, because the soil depth and strength it needs aren't measured across the state.</div>
+    <details class="pask"><summary>A hill has stood for 100 years. Why could it fall this week?</summary><div class="ans">The hill didn't change; the <b>water</b> did. Heavy rain fills the gaps between soil grains and pushes them apart, so grip drops below gravity's pull. Push the 💧 slider up in the toy above and watch it happen.</div></details>
+    <details class="pask"><summary>Why don't we just do the physics sum for every block?</summary><div class="ans">The sum needs the soil's depth and strength at every block, and nobody has measured those across Arunachal. So we learn the pattern from 35,744 real slides instead. The toy above only builds the feeling.</div></details>
+  </div>
 </section>
 
 <!-- 3 -->
 <section id="s3">
   <h2><span class="n">3</span>Rain as the trigger</h2>
   <p class="sub">The classic way to forecast landslides from rain is a threshold line. We tried it four ways, measured why it fails here, and replaced it with a sliding score. This section is the full story, with every number re-checked against the data.</p>
+  <p class="kid">Weak ground needs a <b>spark</b>, and the main spark is rain. The textbook spark detector (a "rain line") rings on most monsoon days here, so it's useless as an alarm. So we ask instead: <b>is this rain unusual for this exact block?</b></p>
   <div class="card two">
     <svg class="fig" viewBox="0 0 360 240">
       <rect x="40" y="10" width="300" height="190" fill="#f7f8f5"/>
@@ -184,6 +319,7 @@ svg.fig{width:100%;height:auto;display:block}
       <div class="formula">I = a · D<sup>−b</sup></div>
       <p class="small"><b>I</b> = how hard (mm per hour), <b>D</b> = how long (hours). The minus sign is the whole idea: <b>long storms trigger at lighter rain</b>, short ones need a downpour.</p>
       <p class="small" style="margin-bottom:0">Two published lines are in our code (<code>rainfall_features.py</code>): <b>Caine 1980</b> I = 14.82·D<sup>−0.39</sup> and <b>Guzzetti 2008</b> (global) I = 2.20·D<sup>−0.44</sup>.</p>
+      <span class="gm"><b>The textbook spark detector.</b> Draw a line on a chart, just under every old slide. If today's rain lands above the line, ring the alarm. Long, gentle rain can ring it; so can a short, hard downpour.</span>
     </div>
   </div>
 
@@ -199,6 +335,7 @@ svg.fig{width:100%;height:auto;display:block}
       <div class="formula" style="font-size:18px">E = 0.0115 · D<sup>1.644</sup></div>
       <div class="small"><b>E</b> = total storm rain (mm), <b>D</b> = hours. Fits our data well (correlation 0.91) and sits under <b>89%</b> of rainy-day slides. But it fires on <b>87–165 days a year</b>, depending on the place.</div></div>
   </div>
+  <span class="gm gmrow"><b>Four tries at the textbook alarm.</b> ① It turned out to be just "the last 30 days of rain" in disguise. ② On real storms it worked, but the line was made for drier places, so it rang on about 116 days a year. ③ Fitted on our own slides, it came out <i>backwards</i>: here a "long storm" is just the monsoon itself. ④ The right shape, but it still rang on 87–165 days a year.</span>
 
   <div class="card" style="margin-top:12px">
     <b>See it with the real data</b> <span class="tiny">every storm plotted by length and total rain · log scales</span>
@@ -209,10 +346,11 @@ svg.fig{width:100%;height:auto;display:block}
         <p><span style="color:#9aa39d">●</span> <b>400 ordinary rainy monsoon days</b>, picked at random at the same places, with no recorded slide.</p>
         <p><span style="color:var(--flood)">━</span> <b>our fitted line</b>, drawn so 90% of slides sit above it.</p>
         <p class="tip warn" style="font-size:14px;margin-bottom:0">👀 <b>Look at the grey dots: <span id="edShare">74%</span> of ordinary rainy days are above the line too.</b> In a monsoon, most wet days already pass the lowest rain that has ever caused a slide. A yes/no line here is a weather report, not a warning.</p>
+        <span class="gm"><b>🔔 A smoke alarm that rings every time you make toast.</b> It never misses a fire, but soon nobody listens. In a monsoon almost every wet day passes the line, so "above the line" tells you very little.</span>
       </div>
     </div>
   </div>
-  <div class="tip ok" style="margin-top:12px">💡 <b>This isn't a coding mistake, and it isn't unique to us.</b> The docs note the literature reports the same problem for monsoon climates. The textbook line was built for climates with <b>distinct storms</b>. Arunachal averages ~1,900 mm a year; much of the state gets 2,000–4,000.</div>
+  <div class="tip ok" style="margin-top:12px">💡 <b>This isn't a coding mistake, and it isn't unique to us.</b> The docs note the literature reports the same problem for monsoon climates. The textbook line was built for climates with <b>distinct storms</b>. Arunachal averages ~1,900 mm a year; much of the state gets 2,000–4,000.<span class="gm"><b>Not our bug.</b> The alarm was built for places where storms come and go. Arunachal rains on most monsoon days, so there are no separate storms to catch.</span></div>
 
   <h3 style="margin:22px 0 6px">Our trigger: "how unusual is this rain <i>here</i>?"</h3>
   <p class="small" style="margin-top:0">150 mm in 3 days is normal in the wet Siang valley and extreme on the dry northern crest. So each place is compared with <b>its own</b> rain history, not with one number for the whole state.</p>
@@ -224,10 +362,11 @@ svg.fig{width:100%;height:auto;display:block}
     </div>
     <p class="tiny" style="margin-bottom:0">Made-up rain histories, just to show the idea. The real trigger averages the 3-day and 7-day percentiles against each point's own monsoon history.</p>
   </div>
+  <span class="gm gmrow"><b>The height chart.</b> 150 cm is tall for a 9-year-old and short for a grown-up. In the same way, 150 mm of rain in 3 days is ordinary in the wet Siang valley and extreme on the dry northern crest. So each block checks today's rain against its <b>own 📔 rain diary</b>. In the toy, try 100 mm: normal for the wet place, very unusual for the dry one.</span>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card small">📏 <b>Percentile</b> = "wetter than X% of days on record here". It is <b>not</b> a chance of a landslide.</div>
-    <div class="card small">🧮 <b>Not fitted on purpose.</b> With only 72 dated slides, a fitted model scored <b>0.755</b>. The plain average scored <b>0.768</b>. Fitting added noise.</div>
-    <div class="card small">🌱 <b>Rain from earlier days</b> ("antecedent rain") matters in theory. Tested: soil wetness and 15/30-day rain, on 72 and 583 events, even with fitted weights: no gain. The top metre of soil sits at 89–95% full from April to September, so "how wet already" barely varies.</div>
+    <div class="card small">📏 <b>Percentile</b> = "wetter than X% of days on record here". It is <b>not</b> a chance of a landslide.<span class="gm"><b>"Wetter than 95 of my 100 diary days."</b> That's all a percentile says. It is not "a 95% chance of a slide".</span></div>
+    <div class="card small">🧮 <b>Not fitted on purpose.</b> With only 72 dated slides, a fitted model scored <b>0.755</b>. The plain average scored <b>0.768</b>. Fitting added noise.<span class="gm"><b>Only 72 practice questions.</b> With so few, a fancy fitted alarm learns the quirks of those 72 and does worse (0.755) than a plain average (0.768). Like memorising answers instead of learning the subject.</span></div>
+    <div class="card small">🌱 <b>Rain from earlier days</b> ("antecedent rain") matters in theory. Tested: soil wetness and 15/30-day rain, on 72 and 583 events, even with fitted weights: no gain. The top metre of soil sits at 89–95% full from April to September, so "how wet already" barely varies.<span class="gm"><b>💦 A sponge that never dries.</b> "Was the ground already wet?" should matter. But from April to September the soil stays 89–95% full. If the sponge is always full, it can't tell one day from another.</span></div>
   </div>
 
   <h3 style="margin:26px 0 8px">The scoreboard: everything we tried, on the same test</h3>
@@ -235,6 +374,7 @@ svg.fig{width:100%;height:auto;display:block}
   <div class="card">
     <div id="scoreboard"></div>
     <p class="small" style="margin-bottom:0">⚖️ <b>Read it honestly:</b> with only 72 events, the shipped score's range is about <b>0.70–0.82</b>. So the top few rows are <b>statistically tied</b>. We didn't pick 3+7 days because it clearly wins. We picked it because it's <b>at the top, has nothing fitted, is easy to explain</b>, and the 7-day half captures the multi-day soaking a geologist expects. The clear losers are the threshold-line versions and the fitted model.</p>
+    <span class="gm"><b>A photo finish.</b> The top few runners crossed the line together, so we picked the one with no tricks: nothing fitted, easy to explain, and its 7-day half matches the "several days of soaking" a geologist expects.</span>
   </div>
 
   <div class="grid g2" style="margin-top:12px">
@@ -247,10 +387,11 @@ svg.fig{width:100%;height:auto;display:block}
       <div class="small" style="margin-top:6px">One statewide line (3-day rain ≥ 80 mm, the state's own 90th percentile) gives:</div>
       <div id="fairBars" style="margin-top:6px"></div>
       <div class="small">Comparing each place with <b>its own</b> history gives every place about <b>18</b>. The AUC test above can't show this (raw mm 0.754 vs own-history 0.761), because it only looks at places where slides were recorded. <b>Fairness across the state is the real reason.</b></div>
+      <span class="gm"><b>One rule for everyone isn't always fair.</b> One statewide line rings about 5 days a monsoon in the driest places and about 32 in the wettest. Checking each block against its own diary gives every place about 18.</span>
     </div>
   </div>
 
-  <div class="tip warn" style="margin-top:12px">🔎 <b>Found while checking: the docs call the threshold line "a floor", but nothing uses it as one.</b> The line is fitted and saved (<code>models/trigger.json</code>) by <code>trigger.py</code>, but no code in the app or the daily cloud run reads it. Today it is <b>explanation only</b>: the physics a geologist expects, and the yardstick the sliding score was chosen over. If asked, say exactly that: <i>"we kept the classic line for explanation; it fires too often here to be an alarm, so the forecast uses the sliding score."</i></div>
+  <div class="tip warn" style="margin-top:12px">🔎 <b>Found while checking: the docs call the threshold line "a floor", but nothing uses it as one.</b> The line is fitted and saved (<code>models/trigger.json</code>) by <code>trigger.py</code>, but no code in the app or the daily cloud run reads it. Today it is <b>explanation only</b>: the physics a geologist expects, and the yardstick the sliding score was chosen over. If asked, say exactly that: <i>"we kept the classic line for explanation; it fires too often here to be an alarm, so the forecast uses the sliding score."</i><span class="gm"><b>Kept in the museum, not on the wall.</b> The old line explains the physics. It doesn't ring any alarm.</span></div>
 
   <h3 style="margin:26px 0 8px">How we'd know if we're wrong, and how anything replaces it</h3>
   <div class="ladder2">
@@ -263,6 +404,7 @@ svg.fig{width:100%;height:auto;display:block}
     <div class="rung todo"><span class="s">next</span><b>Check the rain itself</b><div class="small">Satellite vs ground gauges. At Jang the 3-day agreement is only 0.36 (IMERG) and 0.44 (Open-Meteo).</div></div>
     <div class="rung todo"><span class="s">the bar</span><b>Any replacement must win fairly</b><div class="small">E.g. a model trained on the Himalayan arc <b>without</b> Arunachal must beat 0.768 on Arunachal's own events. Pass/fail rules are written <b>before</b> running, as the soil test did (gain ≥ +0.02, with the range above 0).</div></div>
   </div>
+  <span class="gm gmrow"><b>How we'd find out we're wrong:</b> new dated slides are new exam questions the Guardian has never seen. Any new spark detector must beat 0.768 on those, with the pass mark written down <i>before</i> the test.</span>
 
   <h3 style="margin:26px 0 8px">The trigger, step by step, as it runs every day</h3>
   <div class="steps">
@@ -273,12 +415,66 @@ svg.fig{width:100%;height:auto;display:block}
     <div class="st"><span class="k">5</span>Multiply by the ground score (Phase 3) → the level on the map.</div>
   </div>
   <p class="tiny">Designed and scored on NASA's 11 km satellite rain (2000–2026). The live app uses Open-Meteo's history, so the backtest re-scored the live version separately. Code: <code>scripts/model/trigger.py</code>, <code>webapp/core/rainfall.py</code>.</p>
+  <span class="gm gmrow"><b>Every day (the ⏰ 8:30 alarm, Level 6):</b> fetch the rain → add up the last 3 and 7 days → look each total up in that block's rain diary → average the two → multiply by the TNT score → paint the map.</span>
+  <div class="play">
+    <span class="lv">🎮 the spark detector</span>
+    <svg viewBox="0 0 640 200" role="img" aria-label="A drawing of 40 ordinary rainy days, with the alarm ringing on 30 of them">
+      <rect width="640" height="200" fill="#263257"/>
+      <text x="320" y="24" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" fill="#ffc94a">40 ordinary rainy monsoon days, no slide on any of them (a drawing)</text>
+      <rect x="40" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="66" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="96" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="122" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="152" y="36" width="52" height="28" rx="4" fill="#3b4670"/><text x="178" y="55" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="208" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="234" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="264" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="290" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="320" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="346" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="376" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="402" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="432" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="458" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="488" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="514" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="544" y="36" width="52" height="28" rx="4" fill="#a61b29"/><text x="570" y="55" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="40" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="66" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="96" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="122" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="152" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="178" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="208" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="234" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="264" y="68" width="52" height="28" rx="4" fill="#3b4670"/><text x="290" y="87" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="320" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="346" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="376" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="402" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="432" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="458" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="488" y="68" width="52" height="28" rx="4" fill="#3b4670"/><text x="514" y="87" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="544" y="68" width="52" height="28" rx="4" fill="#a61b29"/><text x="570" y="87" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="40" y="100" width="52" height="28" rx="4" fill="#a61b29"/><text x="66" y="119" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="96" y="100" width="52" height="28" rx="4" fill="#a61b29"/><text x="122" y="119" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="152" y="100" width="52" height="28" rx="4" fill="#3b4670"/><text x="178" y="119" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="208" y="100" width="52" height="28" rx="4" fill="#3b4670"/><text x="234" y="119" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="264" y="100" width="52" height="28" rx="4" fill="#a61b29"/><text x="290" y="119" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="320" y="100" width="52" height="28" rx="4" fill="#a61b29"/><text x="346" y="119" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="376" y="100" width="52" height="28" rx="4" fill="#3b4670"/><text x="402" y="119" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="432" y="100" width="52" height="28" rx="4" fill="#3b4670"/><text x="458" y="119" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="488" y="100" width="52" height="28" rx="4" fill="#3b4670"/><text x="514" y="119" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="544" y="100" width="52" height="28" rx="4" fill="#a61b29"/><text x="570" y="119" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="40" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="66" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="96" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="122" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="152" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="178" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="208" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="234" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="264" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="290" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="320" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="346" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="376" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="402" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="432" y="132" width="52" height="28" rx="4" fill="#a61b29"/><text x="458" y="151" text-anchor="middle" font-size="13" fill="#fff">🔔</text><rect x="488" y="132" width="52" height="28" rx="4" fill="#3b4670"/><text x="514" y="151" text-anchor="middle" font-size="13" fill="#fff">·</text><rect x="544" y="132" width="52" height="28" rx="4" fill="#3b4670"/><text x="570" y="151" text-anchor="middle" font-size="13" fill="#fff">·</text>
+      <text x="320" y="186" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" fill="#eef2ff">The textbook line rings 🔔 on about 3 in every 4. An alarm that always rings is no alarm.</text>
+    </svg>
+    <p>The TNT map says which blocks are weak. But weak blocks sit there for years. We need a <b>spark detector</b> that says "<i>today</i> is the dangerous day".</p>
+    <p>The textbook detector is a line on a chart. Here it acts like a <b>smoke alarm that rings whenever you make toast</b>: about 3 in every 4 ordinary rainy monsoon days already sit above the line. An alarm that rings all the time is no alarm.</p>
+    <p>So SlideSense asks a smarter question: <i>"Is this rain strange <b>for this block</b>?"</i> Each block opens its own 📔 rain diary (its May–October rain since 2010), looks at the last 3 days and the last 7 days, and asks "how many diary days were wetter than this?". The two answers are averaged into a <b>spark score</b> from 0 to 1.</p>
+    <div class="real">Rain score = the average of the 3-day and 7-day percentiles against each point's own monsoon history (219 points, Open-Meteo, live). Nothing fitted. It ranks slide days above ordinary days 0.768 of the time on 72 dated slides (range about 0.70–0.82), and 0.69 on 583 Himalayan slides. The classic threshold line is kept only as the physics explanation.</div>
+    <details class="pask"><summary>The spark score says 0.97. Is there a 97% chance of a landslide?</summary><div class="ans"><b>No.</b> It means the last few days were wetter than about 97% of monsoon days in that place's own diary. It measures how unusual the rain is, not the chance of a slide. The ground (the TNT) still has to be weak.</div></details>
+    <details class="pask"><summary>Why not use one rain number for the whole state, like "80 mm in 3 days = danger"?</summary><div class="ans">Because the state ranges from about 800 to 4,200 mm of rain a year. One number rings about 32 days a monsoon in the wettest places and about 5 in the driest. Comparing each place with its own diary gives each about 18: fair everywhere.</div></details>
+  </div>
+
+  <h3 style="margin:28px 0 8px">Rain isn't the only spark: every trigger, and where we stand</h3>
+  <p class="small" style="margin:0 0 8px">A <b>trigger</b> is whatever pushes an already-weak place over the edge <i>on a given day</i>. Rain is our main one today and feeds all three modules. Here is every trigger a scientist may ask about: the physics in one line, and our honest status. Statuses checked on 4 Nov 2026 against <code>catalogue.json</code> (held vs ready) and the test records (soil wetness: FLOOD_MODULE.md, 28 Sep).</p>
+  <table class="ttbl">
+    <tr><th>Trigger</th><th>What it does (the physics)</th><th>Sets off</th><th>Our status</th></tr>
+    <tr><td>🌧️ Rain</td><td>Water fills the gaps between soil grains and pushes them apart, so grip drops (section 2). On flat ground it piles up as floodwater; on bare soil, hard drops knock soil loose.</td><td>slides · floods · erosion</td><td><span class="tst live">live</span> all three modules</td></tr>
+    <tr><td>🌊 River level</td><td>The river itself rising toward its danger line.</td><td>floods</td><td><span class="tst live">live</span> 32 gauges read every morning</td></tr>
+    <tr><td>💦 Soil wetness</td><td>Ground that's already full can't soak up more, so new rain runs off.</td><td>floods (flat ground)</td><td><span class="tst live">live</span> for floods on flat ground since 28 Sep. <span class="tst no">not used</span> for slides: tested, no gain</td></tr>
+    <tr><td>📳 Earthquake shaking</td><td>A sudden sideways shove: a slope that held for years can fail in seconds. Shaking also cracks slopes, so they fail more easily in later rains.</td><td>slides</td><td><span class="tst plan">planned</span> the next landslide trigger. Earthquake record held (USGS); shaking maps (ShakeMap) ready to pull</td></tr>
+    <tr><td>❄️ Snowmelt</td><td>Slow, steady water from melting snow: the same effect as rain, but timed by warmth, on high ground in spring and early summer.</td><td>floods · high slides</td><td><span class="tst plan">ready, not used</span> daily snow cover (MODIS) is listed as ready</td></tr>
+    <tr><td>🧊 Glacial lake outburst</td><td>The natural dam holding a glacial lake breaks, and a wall of water runs down the valley, often with no rain at all.</td><td>floods (and slides on the way)</td><td><span class="tst plan">separate hazard</span> on the longer list, not being built. Lake maps (NWIA) on our APSAC ask</td></tr>
+    <tr><td>🚰 Dam release</td><td>A decision, not weather: water let out of a reservoir.</td><td>floods</td><td><span class="tst ask">needs an ask</span> the operators' release schedules</td></tr>
+    <tr><td>⛏️ Road cutting, blasting, quarrying</td><td>Digging removes the slope's foot, its support; blasting shakes it.</td><td>slides</td><td><span class="tst ask">partly</span> road cutting shows up through "distance to road", a ground fact. Blasting and construction records are on the ask list</td></tr>
+    <tr><td>⛈️ Cloudburst</td><td>Still rain, but extreme, over one small valley, and over in hours.</td><td>flash floods · slides</td><td><span class="tst gap">a gap</span> too small and short for our rain data (~11 km history, ~22 km live). Needs weather radar or an upstream sensor. Today: "this valley is primed this week"</td></tr>
+    <tr><td>🔥 Wildfire</td><td>Burns the roots that hold soil, so later rain slides and washes it away more easily.</td><td>slides · erosion (later)</td><td><span class="tst gap">idea only</span> fire and burned-area data are listed as ready; nothing in our plans uses them yet</td></tr>
+    <tr><td>📡 Ground sensors</td><td>Not a trigger: they <i>watch</i> one slope or river minute by minute (tilt, cracks, water in the ground, level upstream).</td><td>both</td><td><span class="tst plan">planned</span> the paid tier, on chosen sites</td></tr>
+  </table>
+  <div class="tip warn" style="margin-top:10px">🧠 <b>Trigger or condition?</b> A <b>trigger</b> acts on a day (rain, a quake, a release). A <b>condition</b> changes the ground itself, so it belongs to WHERE: a road cut, a burn scar, a forest cleared. Some things are both: the day a road is blasted is a trigger, and the cut slope it leaves is a condition.</div>
+  <div class="tip ok" style="margin-top:8px">🗣️ <b>The one-line answer:</b> "Rain is the trigger today, with river levels and soil wetness for floods. Earthquake shaking is the next landslide trigger, and its data is already in the backbone. Dam releases, snowmelt and glacial lakes need their own data, and those are on our ask list."</div>
+  <div class="play">
+    <span class="lv">🎮 Blockland: one TNT block, many kinds of spark</span>
+    <p>Remember: a weak block is a <b>🧨 TNT block</b>, and something has to light it. Rain is the spark we watch every day. But Blockland has other sparks too:</p>
+    <ul>
+      <li><b>⚡ Rain spark</b>: the one we watch today, for all three Guardians.</li>
+      <li><b>🌊 River-rising spark</b> and <b>💦 full-sponge spark</b> (soaked ground): FloodSense watches these too.</li>
+      <li><b>📳 Quake shake</b>: the whole world jolts and TNT blocks tumble. Next on SlideSense's list; its chest is already in the Vault.</li>
+      <li><b>❄️ Melting spark</b>: snow melting on the high blocks. Its chest is spotted, not opened.</li>
+      <li><b>🧊 Ice-dam burst</b>: a lake up in the ice breaks its wall. That's a whole new Guardian one day, not a spark for today's ones.</li>
+      <li><b>🚰 Dam tap</b>: a person opens a dam. We'd need the dam keepers to tell us their plans.</li>
+      <li><b>⛏️ Digger spark</b>: road cutting and blasting. The cut slope stays weaker afterwards, so the TNT itself grows.</li>
+      <li><b>⛈️ Pinpoint spark</b>: a cloudburst so small and quick that our rain map can't see it. Only a radar or a sensor nearby can.</li>
+      <li><b>🔥 Fire</b> doesn't light the TNT. It burns off the TNT's wrapping (the roots), so the <i>next</i> rain spark hits harder.</li>
+    </ul>
+    <div class="real">Live: rain (all), river level and soil wetness (floods). Planned: earthquake shaking (slides), sensors. Ready but unused: snowmelt, fire. Needs an ask: dam releases, blasting records, glacial-lake maps. Gap: cloudbursts.</div>
+    <details class="pask"><summary>Is a road cut a trigger or a condition?</summary><div class="ans"><b>Mostly a condition</b>: it leaves the slope weaker, so it belongs to WHERE (that's why "distance to road" is one of the 34 facts). The day of the digging or blasting is a trigger, and those records are on our ask list.</div></details>
+    <details class="pask"><summary>Why can't our forecast see a cloudburst coming?</summary><div class="ans">It's too small and too short. Our rain data comes in squares of about 11 km (history) and 22 km (live), a day at a time, and a cloudburst can hit one valley for an hour. Warning by the hour needs weather radar or a sensor upstream. What we can say is "this valley is primed this week".</div></details>
+  </div>
 </section>
 
 <!-- 4 -->
 <section id="s4">
   <h2><span class="n">4</span>Water on a height map</h2>
   <p class="sub">From a grid of ground heights alone, you can work out where every drop of rain goes. Step through it. The numbers are a tiny made-up valley.</p>
+  <p class="kid">Rain always runs to the <b>lowest block next door</b>. Follow every drop and you find the streams. Blocks that sit <b>only a little higher than a stream</b> flood first.</p>
   <div class="card">
     <div class="stepper" id="demSteps">
       <button data-s="0" class="on">1 · Heights</button><button data-s="1">2 · Flow direction</button>
@@ -289,9 +485,34 @@ svg.fig{width:100%;height:auto;display:block}
       <div><h3 id="demT" style="font-family:var(--display);font-weight:400;font-size:24px;margin:0"></h3><p id="demX" class="small"></p></div>
     </div>
   </div>
+  <span class="gm gmrow"><b>⚪ The marble run.</b> Put a marble on every block. Each marble rolls to its lowest neighbour (step 2). Count how many marbles roll through each block (step 3). Where lots of marbles pass, there's a stream (step 4). Then measure how high each block sits above its stream (step 5): that's HAND.</span>
   <div class="grid g2" style="margin-top:12px">
-    <div class="tip ok">🌊 <b>HAND = Height Above Nearest Drainage</b> (Nobre et al. 2011). A square 2 m above its stream floods long before one 40 m above it. It is the single strongest clue to <b>where floods reach</b>.</div>
-    <div class="tip">🗺️ <b>How FloodSense uses it:</b> its WHERE half reads only <b>shape</b>: height above the river, river size and how closed-in the valley is. Adding land cover made test scores <i>higher</i> but the map <i>wrong</i> (see trap 1 below).</div>
+    <div class="tip ok">🌊 <b>HAND = Height Above Nearest Drainage</b> (Nobre et al. 2011). A square 2 m above its stream floods long before one 40 m above it. It is the single strongest clue to <b>where floods reach</b>.<span class="gm"><b>⬆️ Steps above the river.</b> HAND is how many metres you'd climb from the nearest stream up to this block. 2 m is one big step: water reaches it easily. 40 m is a whole building: water can't.</span></div>
+    <div class="tip">🗺️ <b>How FloodSense uses it:</b> its WHERE half reads only <b>shape</b>: height above the river, river size and how closed-in the valley is. Adding land cover made test scores <i>higher</i> but the map <i>wrong</i> (see trap 1 below).<span class="gm"><b>Shape, not paint.</b> FloodSense's TNT map reads only the shape of the ground. When we let it read land cover too, its score went up, but it called mountain ice lakes the most flood-prone places: a 👾 Glitch (section 9).</span></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 where water goes</span>
+    <svg viewBox="0 0 640 200" role="img" aria-label="A valley cross-section: a house just above the river floods first, a house high on the slope stays dry">
+      <rect width="640" height="200" fill="#263257"/>
+      <path d="M0 50 L240 160 L268 172 L372 172 L392 150 L460 150 L640 36 L640 200 L0 200 Z" fill="#7f6000"/>
+      <rect x="268" y="160" width="104" height="12" fill="#3d85c6"/>
+      <text x="320" y="190" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#fff">river</text>
+      <line x1="372" y1="160" x2="640" y2="160" stroke="#7fd3ff" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="636" y="176" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#7fd3ff">river level</text>
+      <text x="413" y="149" font-size="22">🏠</text>
+      <line x1="448" y1="150" x2="448" y2="160" stroke="#ffc94a" stroke-width="3"/>
+      <text x="425" y="116" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#ff9a9a">2 m above: floods first</text>
+      <text x="574" y="60" font-size="22">🏠</text>
+      <line x1="612" y1="54" x2="612" y2="160" stroke="#ffc94a" stroke-width="3"/>
+      <text x="606" y="110" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="12" fill="#ffc94a">HAND</text>
+      <text x="560" y="26" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#8fe388">40 m above: stays dry</text>
+      <g fill="#eef2ff"><circle cx="60" cy="71" r="5"/><circle cx="120" cy="99" r="5"/><circle cx="180" cy="126" r="5"/></g>
+      <text x="40" y="28" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">⚪ water rolls downhill, to the lowest block next door</text>
+    </svg>
+    <p>Water is lazy. It always goes <b>downhill</b>, to the lowest block next door. That's the whole rule. From the ⛰️ ground-height chest alone (Level 0), the computer follows every drop and finds every stream and every valley.</p>
+    <p>Then it asks one question for every block: <i>"How high am I above the stream I drain into?"</i> That's <b>HAND</b>. A house 2 m above the river gets wet in a normal flood. A house 40 m up the hillside stays dry, even if it's just as close to the river.</p>
+    <div class="real">Height map (Copernicus DEM, 30 m) → flow direction (D8: each square drains to its steepest-down neighbour) → flow accumulation → streams and catchments → HAND (Nobre et al. 2011). FloodSense's WHERE half reads only shape: HAND, river size, and how closed-in the valley is.</div>
+    <details class="pask"><summary>Two houses are the same distance from a river. Why can one flood and the other stay dry?</summary><div class="ans">Distance isn't height. The one that sits only a little above the river (low <b>HAND</b>) floods first. The one high up the slope (high HAND) stays dry. That's why FloodSense reads height above the river, not just distance.</div></details>
   </div>
 </section>
 
@@ -299,6 +520,7 @@ svg.fig{width:100%;height:auto;display:block}
 <section id="s5">
   <h2><span class="n">5</span>River forecasting</h2>
   <p class="sub">A gauge measures how high the river is. Officials draw lines on that scale. A flood forecast asks: <b>will the river reach the line, and when?</b></p>
+  <p class="kid">Each river has a <b>height stick</b> with lines painted on it. The big question: <b>will the water reach the red line, and when?</b></p>
   <div class="card">
     <svg class="fig" viewBox="0 0 760 250">
       <rect x="50" y="10" width="690" height="200" fill="#f7f8f5"/>
@@ -315,22 +537,49 @@ svg.fig{width:100%;height:auto;display:block}
     </svg>
   </div>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card small">🏛️ <b>CWC</b> (Central Water Commission) runs the main gauges and sets danger levels. Where none exists, our line is the river's own <b>wettest 2% of days</b>.</div>
-    <div class="card small">⏱️ <b>Lead time</b> = how far ahead. Big slow rivers give days of warning; small hill streams rise in hours. That's physics, not budget.</div>
-    <div class="card small">🎲 <b>Our river forecast</b> gives a <b>chance</b> the river reaches its line in the next 7 days, from rain plus the river's own recent week. A dotted level line goes 2 days ahead.</div>
+    <div class="card small">🏛️ <b>CWC</b> (Central Water Commission) runs the main gauges and sets danger levels. Where none exists, our line is the river's own <b>wettest 2% of days</b>.<span class="gm"><b>The River Guild paints the lines.</b> Where they haven't painted one, we paint our own at the height the river reaches only on its wettest 2 days in 100.</span></div>
+    <div class="card small">⏱️ <b>Lead time</b> = how far ahead. Big slow rivers give days of warning; small hill streams rise in hours. That's physics, not budget.<span class="gm"><b>🛁 Bathtub vs cup.</b> A big river is a huge bathtub: it takes days to fill, so you see it coming. A hill stream is a cup under a tap: full in minutes. No money changes that.</span></div>
+    <div class="card small">🎲 <b>Our river forecast</b> gives a <b>chance</b> the river reaches its line in the next 7 days, from rain plus the river's own recent week. A dotted level line goes 2 days ahead.<span class="gm"><b>🎲 Honest dice.</b> At rivers with a height stick, the chance is honest: on the days it said about 15%, the river reached its line about 15% of the time. More in section 8 and Level 4.</span></div>
   </div>
   <h3 style="margin:22px 0 8px">How Google Flood Hub does it: two models</h3>
   <div class="grid g2">
     <div class="card"><b>🌍 Global river model</b><div class="small">Forecasts river <i>flow</i> 7 days ahead from weather and catchment facts. Learned from ~16,000 gauges worldwide. <b>Does not read the river's latest reading.</b> Covers all the hill points in Arunachal.</div></div>
     <div class="card"><b>📏 Level model (India and Bangladesh)</b><div class="small">Reads the gauge's last week plus upstream gauges. Forecasts <i>level</i> 8–48 h ahead, with about 0.1 m error at 24 h. Works best on <b>big, slow rivers</b>, not flash floods.</div></div>
   </div>
-  <div class="tip" style="margin-top:12px">🧭 <b>Our stance:</b> we build our own models on Arunachal's rivers, so we can prove them to clients. Google's model can be a cross-check on the big rivers, not our feed. Its code has been open since June 2026.</div>
+  <span class="gm gmrow"><b>Another player: Google.</b> One of its models guesses river flow from the weather anywhere in the world, without looking at the river's own height stick. The other reads the last week of height sticks, for 8–48 hours ahead.</span>
+  <div class="tip" style="margin-top:12px">🧭 <b>Our stance:</b> we build our own models on Arunachal's rivers, so we can prove them to clients. Google's model can be a cross-check on the big rivers, not our feed. Its code has been open since June 2026.<span class="gm"><b>Why build our own?</b> When a client asks "prove it works here", we can show our own score on Arunachal's own rivers. A borrowed model's score is someone else's.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the river's height stick</span>
+    <svg viewBox="0 0 640 210" role="img" aria-label="A river gauge: a height stick with a warning line, a danger line and the highest-ever mark, and the water rising">
+      <rect width="640" height="210" fill="#263257"/>
+      <rect x="0" y="140" width="640" height="70" fill="#3d85c6" opacity=".85"/>
+      <path d="M0 140 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="#7fd3ff" stroke-width="2"/>
+      <rect x="110" y="20" width="36" height="190" fill="#eef2ff"/><line x1="110" y1="30" x2="118" y2="30" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="40" x2="118" y2="40" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="50" x2="124" y2="50" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="60" x2="118" y2="60" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="70" x2="118" y2="70" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="80" x2="118" y2="80" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="90" x2="118" y2="90" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="100" x2="124" y2="100" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="110" x2="118" y2="110" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="120" x2="118" y2="120" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="130" x2="118" y2="130" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="140" x2="118" y2="140" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="150" x2="124" y2="150" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="160" x2="118" y2="160" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="170" x2="118" y2="170" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="180" x2="118" y2="180" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="190" x2="118" y2="190" stroke="#1b2440" stroke-width="2"/><line x1="110" y1="200" x2="124" y2="200" stroke="#1b2440" stroke-width="2"/>
+      <text x="128" y="14" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#eef2ff">📏 height stick</text>
+      <line x1="146" y1="40" x2="620" y2="40" stroke="#b48ce0" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="156" y="34" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#b48ce0">highest ever recorded</text>
+      <line x1="146" y1="70" x2="620" y2="70" stroke="#ff6b6b" stroke-width="3"/>
+      <text x="156" y="64" font-family="Mukta,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#ff6b6b">🟥 DANGER line: the one we forecast</text>
+      <line x1="146" y1="100" x2="620" y2="100" stroke="#ffb347" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="156" y="94" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#ffb347">warning line</text>
+      <line x1="540" y1="136" x2="540" y2="80" stroke="#ffc94a" stroke-width="4" stroke-dasharray="5 4"/>
+      <path d="M531 84 L540 72 L549 84 z" fill="#ffc94a"/>
+      <text x="525" y="126" text-anchor="end" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">❓ will the water reach the red line, and when?</text>
+      <text x="320" y="180" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#fff">the water today</text>
+    </svg>
+    <p>Picture a tall ruler standing in the river: a <b>📏 height stick</b> (a gauge). The water level on it is read every day. The River Guild (CWC) has painted lines on it: a <i>warning</i> line, a <b>danger</b> line, and a mark for the <i>highest the water has ever been</i>.</p>
+    <p>FloodSense asks: <b>"How likely is the water to reach the danger line?"</b> It looks at the rain coming <i>and</i> at how the river itself behaved this past week. For 17 rivers it also draws a dotted line showing where the level is heading, 2 days ahead.</p>
+    <div class="real">A gauge measures water level. CWC sets warning and danger levels and records the highest flood level (HFL). Where no danger level exists, we use the river's own wettest 2% of days. FloodSense's river chance is calibrated at gauged rivers; the dotted level line runs 2 days ahead on 17 CWC gauges. Lead time depends on river size: physics, not budget.</div>
+    <details class="pask"><summary>Why does a hill stream give less warning than a big river?</summary><div class="ans">A big river is a bathtub: it fills over days, so the rise shows early. A small hill stream is a cup under a tap: it rises in hours. That limit is physics. Money can't change it, though a sensor upstream can buy a little time.</div></details>
+    <details class="pask"><summary>Google already forecasts floods. Why build our own?</summary><div class="ans">So we can <b>prove</b> it works on Arunachal's own rivers, with our own scores, and fix it ourselves. Google's model can be a cross-check on the big rivers.</div></details>
+  </div>
 </section>
 
 <!-- 6 -->
 <section id="s6">
   <h2><span class="n">6</span>Soil loss: the five-factor recipe (RUSLE)</h2>
   <p class="sub">The standard soil-conservation sum (Renard et al. 1997). Five numbers <b>multiplied</b> together give tonnes of soil lost per hectare per year.</p>
+  <p class="kid">Soil loss is a <b>recipe of five things multiplied</b>: rain strength × soil type × slope × ground cover × protection. If any one of them is near zero, the answer is near zero.</p>
   <div class="card">
     <div class="factor" id="rusle"></div>
     <div class="presets" id="presets"></div>
@@ -338,9 +587,17 @@ svg.fig{width:100%;height:auto;display:block}
     <p class="tiny" style="margin-bottom:0">Values are round, illustrative numbers for learning, <b>not</b> SoilSense outputs.</p>
   </div>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card small">✖️ <b>Multiplied, not added.</b> If any one factor is near zero (flat ground, thick forest), the loss is near zero. Same logic as WHERE × WHEN.</div>
-    <div class="card small">🧱 <b>"If untreated".</b> P (bunds, terraces) is unknown until the department shares its treated-area records, so we set P = 1. Every SoilSense number means "if nothing has been done here".</div>
-    <div class="card small">⚠️ <b>Trap we caught:</b> India's common rain formula (Singh 1981) read <b>91% too low</b> at Guwahati against a real gauge. We use a satellite rain-strength map (InRESatE) instead.</div>
+    <div class="card small">✖️ <b>Multiplied, not added.</b> If any one factor is near zero (flat ground, thick forest), the loss is near zero. Same logic as WHERE × WHEN.<span class="gm"><b>🍰 A cake with no flour.</b> Multiply anything by zero and you get zero. Thick forest makes cover nearly zero, so even heavy rain on a steep slope loses little soil.</span></div>
+    <div class="card small">🧱 <b>"If untreated".</b> P (bunds, terraces) is unknown until the department shares its treated-area records, so we set P = 1. Every SoilSense number means "if nothing has been done here".<span class="gm"><b>We don't know where the walls are.</b> Farmers build small walls and steps (bunds, terraces) that hold soil. Until the department shares where they are, we assume none.</span></div>
+    <div class="card small">⚠️ <b>Trap we caught:</b> India's common rain formula (Singh 1981) read <b>91% too low</b> at Guwahati against a real gauge. We use a satellite rain-strength map (InRESatE) instead.<span class="gm"><b>👾 A broken ruler.</b> India's usual rain-strength formula read 91% too low when we checked it against a real rain gauge at Guwahati. So we swapped in a satellite rain-strength map.</span></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 the second world's recipe (Assam)</span>
+    <p>In world 2 (Assam), Guardian 3, <b>SoilSense</b>, watches soil wash away, like waves slowly eating a sandcastle. Its rule is a <b>recipe with five ingredients, multiplied</b>:</p>
+    <p style="font-family:var(--display);font-size:20px;text-align:center;color:#fff">🌧️ rain × 🟫 soil × ⛰️ slope × 🌳 cover × 🧱 protection</p>
+    <p>Try the presets above. A 🔥 bare jhum slope loses a lot. The 🌲 forest hill, with the same rain and slope, loses very little. The same jhum slope with 🧱 terraces loses a fifth as much.</p>
+    <div class="real">RUSLE: A = R × K × LS × C × P, in tonnes per hectare per year (Renard et al. 1997). P = 1 ("if untreated") until treated-area records are shared. R comes from a satellite erosivity map (InRESatE), because the common Singh 1981 formula read 91% too low at Guwahati.</div>
+    <details class="pask"><summary>A steep hill gets heavy rain, but it's covered in thick forest. Why is the soil loss small?</summary><div class="ans">Because the five factors are <b>multiplied</b>. Thick forest makes the cover factor C tiny (about 0.003 in the toy), so the whole answer becomes tiny, however big the rain and slope are.</div></details>
   </div>
 </section>
 
@@ -348,14 +605,15 @@ svg.fig{width:100%;height:auto;display:block}
 <section id="s7">
   <h2><span class="n">7</span>Satellites: what each one sees</h2>
   <p class="sub">Most of our data comes from space. Know what each sees, how fine its squares are, and when it goes blind.</p>
+  <p class="kid">Satellites are <b>sky-eyes</b>. Camera ones see colours but go blind under monsoon cloud. Radar ones send out their own signal and listen for the echo, so they see through cloud, day or night.</p>
   <div class="sats">
-    <div class="sat"><div class="ico">📡</div><h4>Sentinel-1 (radar)</h4><div class="small">Sends its own pulse and listens for the echo. <b>Sees through cloud and at night.</b> Calm water reflects the pulse away, so it shows up <b>dark</b>.</div>
+    <div class="sat"><div class="ico">📡</div><h4>Sentinel-1 (radar)</h4><div class="small">Sends its own pulse and listens for the echo. <b>Sees through cloud and at night.</b> Calm water reflects the pulse away, so it shows up <b>dark</b>.</div><span class="gm"><b>📡 Echo-Eye.</b> Like a bat: it shouts and listens for the echo. Calm water is a mirror that bounces the shout away, so water looks dark.</span>
       <div class="row2"><span>squares</span><span>~10 m</span></div><div class="row2"><span>we use it for</span><span>checking flood reports</span></div><div class="row2"><span>blind spot</span><span>steep valleys (shadow)</span></div></div>
-    <div class="sat"><div class="ico">📷</div><h4>Sentinel-2 (optical)</h4><div class="small">A camera, in colours including some the eye can't see. Great for <b>plant cover and bare ground</b>.</div>
+    <div class="sat"><div class="ico">📷</div><h4>Sentinel-2 (optical)</h4><div class="small">A camera, in colours including some the eye can't see. Great for <b>plant cover and bare ground</b>.</div><span class="gm"><b>📷 Camera-Eye.</b> Sharp colours, but the ☁️ Cloud Curtain blinds it for the whole monsoon, just when floods happen.</span>
       <div class="row2"><span>squares</span><span>10 m</span></div><div class="row2"><span>we use it for</span><span>land cover, bare ground</span></div><div class="row2"><span>blind spot</span><span><b>clouds = the whole monsoon</b></span></div></div>
-    <div class="sat"><div class="ico">🌧️</div><h4>IMERG (NASA rain)</h4><div class="small">Rain worked out from many satellites. Gives a <b>gap-free rain history</b> everywhere.</div>
+    <div class="sat"><div class="ico">🌧️</div><h4>IMERG (NASA rain)</h4><div class="small">Rain worked out from many satellites. Gives a <b>gap-free rain history</b> everywhere.</div><span class="gm"><b>🌧️ Rain-Counter.</b> Many sky-eyes together count the rain everywhere, every day, for 26 years. But it gives one number per big 11 km slab.</span>
       <div class="row2"><span>squares</span><span>~11 km</span></div><div class="row2"><span>we use it for</span><span>26 years of daily rain</span></div><div class="row2"><span>blind spot</span><span>one value per 11 km</span></div></div>
-    <div class="sat"><div class="ico">🏔️</div><h4>Copernicus DEM</h4><div class="small">Ground height from a radar satellite pair. Everything about slope and drainage comes from it.</div>
+    <div class="sat"><div class="ico">🏔️</div><h4>Copernicus DEM</h4><div class="small">Ground height from a radar satellite pair. Everything about slope and drainage comes from it.</div><span class="gm"><b>🏔️ Height-Mapper.</b> Two radar sky-eyes measure how high the ground is. In forests it partly measures the treetops.</span>
       <div class="row2"><span>squares</span><span>30 m</span></div><div class="row2"><span>we use it for</span><span>slope, drainage, HAND</span></div><div class="row2"><span>blind spot</span><span>treetops, not ground</span></div></div>
   </div>
 
@@ -366,7 +624,33 @@ svg.fig{width:100%;height:auto;display:block}
       <p style="margin-top:0">The big square is <b>one rain square</b> (11 km). The red dot is <b>one map square</b> (100 m).</p>
       <p>About <b>12,000 map squares</b> share the same rain value. The map looks sharp at 100 m, but the <b>rain is not that sharp</b>. Say this when you show the map.</p>
       <p class="tiny">Other sizes in the backbone: ground height 30 m, soil 250 m.</p>
+      <span class="gm"><b>One rain slab, about 12,000 blocks.</b> The map is sharp, but every block inside one slab gets the same rain number.</span>
     </div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 the ☁️ Cloud Curtain</span>
+    <svg viewBox="0 0 640 215" role="img" aria-label="A camera satellite blocked by cloud, and a radar satellite whose signal passes through the cloud to the ground">
+      <rect width="640" height="215" fill="#263257"/>
+      <g transform="translate(150,30)"><rect x="-14" y="-8" width="28" height="16" rx="2" fill="#b8c2e6"/><rect x="-40" y="-5" width="22" height="10" fill="#7fd3ff"/><rect x="18" y="-5" width="22" height="10" fill="#7fd3ff"/></g>
+      <g transform="translate(490,30)"><rect x="-14" y="-8" width="28" height="16" rx="2" fill="#b8c2e6"/><rect x="-40" y="-5" width="22" height="10" fill="#7fd3ff"/><rect x="18" y="-5" width="22" height="10" fill="#7fd3ff"/></g>
+      <text x="150" y="58" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">📷 Camera-Eye</text>
+      <text x="490" y="58" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">📡 Echo-Eye (radar)</text>
+      <g stroke="#ffe08a" stroke-width="2" stroke-dasharray="4 4"><line x1="150" y1="66" x2="128" y2="90"/><line x1="150" y1="66" x2="172" y2="90"/></g>
+      <g stroke="#7fd3ff" stroke-width="3"><line x1="490" y1="66" x2="462" y2="178"/><line x1="490" y1="66" x2="522" y2="178"/></g>
+      <g fill="#5d6a93"><ellipse cx="20" cy="108" rx="52" ry="20"/><ellipse cx="80" cy="120" rx="52" ry="20"/><ellipse cx="140" cy="108" rx="52" ry="20"/><ellipse cx="200" cy="120" rx="52" ry="20"/><ellipse cx="260" cy="108" rx="52" ry="20"/><ellipse cx="320" cy="120" rx="52" ry="20"/><ellipse cx="380" cy="108" rx="52" ry="20"/><ellipse cx="440" cy="120" rx="52" ry="20"/><ellipse cx="500" cy="108" rx="52" ry="20"/><ellipse cx="560" cy="120" rx="52" ry="20"/><ellipse cx="620" cy="108" rx="52" ry="20"/></g>
+      <text x="320" y="116" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#fff">☁️ the Cloud Curtain (all monsoon)</text>
+      <text x="150" y="88" text-anchor="middle" font-size="18" fill="#ff6b6b" font-weight="700">✗</text>
+      <text x="150" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#ff9a9a">✗ can't see the ground</text>
+      <text x="450" y="160" text-anchor="end" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#8fe388">✓ sees the ground, even at night</text>
+      <rect x="0" y="178" width="640" height="37" fill="#7f6000"/>
+      <rect x="470" y="178" width="170" height="37" fill="#0e2a50"/>
+      <text x="555" y="201" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#fff">calm water looks dark</text>
+    </svg>
+    <p>Every June the Monsoon boss pulls the <b>☁️ Cloud Curtain</b> across the sky. 📷 Camera-Eye (optical) can't see through it, so for months it sees only cloud. That's exactly when floods and slides happen.</p>
+    <p>📡 Echo-Eye (radar) doesn't need sunlight. It sends its own signal down and listens for the bounce. Rough ground bounces it back (bright). Calm water bounces it away, like a mirror (dark). So <b>radar is our flood checker in the monsoon</b>.</p>
+    <div class="real">Sentinel-1 (radar, ~10 m) sees through cloud and at night; water looks dark (low backscatter); its blind spot is radar shadow in steep valleys. Sentinel-2 (optical, 10 m) is cloud-blocked in the monsoon. IMERG rain is ~11 km, the DEM is 30 m, the map is 100 m: about 12,000 map squares share one rain value.</div>
+    <details class="pask"><summary>Why does a flood show up dark on radar?</summary><div class="ans">Calm water is smooth, like a mirror. It bounces the radar signal away from the satellite instead of back, so little echo returns and the water looks dark.</div></details>
+    <details class="pask"><summary>Our map has 100 m blocks. Is the rain that sharp?</summary><div class="ans"><b>No.</b> One rain value covers about 11 km, roughly 12,000 blocks. The sharp detail on the map comes from the ground (the TNT), not from the weather.</div></details>
   </div>
 </section>
 
@@ -374,6 +658,7 @@ svg.fig{width:100%;height:auto;display:block}
 <section id="s8">
   <h2><span class="n">8</span>Is the model any good? Four ideas</h2>
   <p class="sub">This is where reviewers attack. Learn these four, and the traps in section 9.</p>
+  <p class="kid">Four exam rules for any Guardian. Does it <b>rank</b> the right blocks first? Is its <b>chance the right size</b>? Was it tested on blocks it <b>never saw</b>? And don't be fooled by <b>"the tallest of 97"</b>.</p>
 
   <h3 style="margin:10px 0 6px">A · AUC: "pick a pair"</h3>
   <div class="card two">
@@ -384,6 +669,7 @@ svg.fig{width:100%;height:auto;display:block}
     </div>
     <div style="text-align:center"><div class="tiny">running AUC</div><div class="big-n" id="aucN">–</div><div class="tiny">SlideSense WHERE: <b>0.859</b> on unseen ground ≈ "6 times in 7"</div></div>
   </div>
+  <span class="gm gmrow"><b>The pick-the-right-block game.</b> Show the Guardian one block that slid and one that didn't. Which one does it point at? Play many rounds. SlideSense picks right about 6 times in 7 (0.859). It says nothing about <i>how big</i> the chance is: that's the next rule.</span>
 
   <h3 style="margin:22px 0 6px">B · Calibration: "does 20% mean 20%?"</h3>
   <div class="card two">
@@ -405,6 +691,23 @@ svg.fig{width:100%;height:auto;display:block}
       <p><b>Base rate:</b> how common the event is anyway. If floods happen on 1% of days, "5%" is already 5× the usual.</p>
     </div>
   </div>
+  <span class="gm gmrow"><b>🎲 Honest dice.</b> Think of a weather reporter who says "20% chance of rain". Watch them for a year. If on their "20%" days it really rained on about 1 day in 5, they're honest. That's <b>calibrated</b>. A model can <i>rank</i> well and still be wrong about the <i>size</i>, like a friend who always picks the winning team but always says "100% sure!".</span>
+  <div class="play">
+    <span class="lv">🎮 the honest-dice check, with real numbers</span>
+    <p>We sorted every replayed day at our gauged rivers into jars by what FloodSense said. Then we counted how often the river <b>really</b> reached its line. Honest dice means the two columns match.</p>
+    <table class="tbl2"><tr><th>It said</th><th>Days</th><th>Said on average</th><th>Really reached the line</th></tr><tr><td>1–2%</td><td>1,932</td><td>1.44%</td><td><b>1.71%</b></td></tr><tr><td>2–5%</td><td>3,426</td><td>3.10%</td><td><b>2.95%</b></td></tr><tr><td>5–10%</td><td>1,156</td><td>6.63%</td><td><b>7.61%</b></td></tr><tr><td>10–25%</td><td>924</td><td>15.9%</td><td><b>15.37%</b></td></tr><tr><td>25–50%</td><td>322</td><td>36.65%</td><td><b>37.89%</b></td></tr><tr><td>50–75%</td><td>97</td><td>60.2%</td><td><b>44.33%</b> ⚠️ few days; ran high</td></tr><tr><td>75–100%</td><td>655</td><td>90.97%</td><td><b>90.69%</b></td></tr></table>
+    <p style="font-size:13px;color:var(--g-dim)">Plus 83,253 days it said under 1% (0.07% said, 0.08% happened). River chance 1 day ahead, replayed years, from <code>webapp/assets/flood/live_forecast.json</code>. The 50–75% jar has only 97 days, so it's the roughest.</p>
+    <p><b>Which of our numbers are honest dice?</b> Only one, so far:</p>
+    <table class="tbl2">
+      <tr><th>Number</th><th>What kind</th><th>Say it like this</th></tr>
+      <tr><td>River chance at a gauged river</td><td>🎲 honest dice (calibrated)</td><td>"When it says 20%, about 20% of those days reach the line."</td></tr>
+      <tr><td>Flood "if a flood comes" for one spot</td><td>checked on held-out data</td><td>Inside Arunachal its top ranges come true about half as often as they say.</td></tr>
+      <tr><td>Flood "near here" outlook</td><td>approximate</td><td>Good at ranking (right about 90 times in 100), but its size is off: where floods are on record about 1.5× as many came as it said, where none are about 2.1×, and when it said 10%+ (18% on average) only 10% happened. Labelled approximate.</td></tr>
+      <tr><td>SlideSense levels</td><td>📊 leaderboard (a rank)</td><td>"High has about 3× the usual landslides; Very High about 10×." Never a percent.</td></tr>
+    </table>
+    <div class="real">Calibration: of all the days a model said X%, about X% happened. FloodSense's gauge model passes it (1 day ahead, replayed years). The near-here outlook failed its calibration test and ships as approximate. SlideSense levels are ranks with a measured "× the usual". Only say "20% means 20%" about gauged rivers.</div>
+    <details class="pask"><summary>SlideSense shows "High" for a valley. Does that mean a 20% chance of a slide?</summary><div class="ans"><b>No.</b> SlideSense levels are a <b>rank</b> (📊 leaderboard), not a chance. The honest way to say it: "Places and days rated High have had about 3× the usual rate of slides." Only the river chance at gauged rivers is 🎲 honest dice.</div></details>
+  </div>
 
   <h3 style="margin:22px 0 6px">C · Test on ground it has never seen (spatial cross-validation)</h3>
   <div class="card two">
@@ -418,6 +721,7 @@ svg.fig{width:100%;height:auto;display:block}
       <p><b>Leakage</b> = any way the answer sneaks into training. A random split is the most common kind.</p>
     </div>
   </div>
+  <span class="gm gmrow"><b>🏋️ The surprise exam.</b> Neighbouring blocks are almost twins. If the exam uses blocks picked at random, every exam block has a twin the Guardian already studied: that's <b>👀 copying from your twin</b>. So we hide whole regions of the map, five times over, and test there. Our 0.859 comes from that harder exam, so don't compare it with a paper's 0.95 from an easy one.</span>
 
   <h3 style="margin:22px 0 6px">D · A percentile max looks like 99% on a normal day</h3>
   <div class="card two">
@@ -428,40 +732,63 @@ svg.fig{width:100%;height:auto;display:block}
     </div>
     <div class="tip warn" style="font-size:14px">The old app showed this max as "0.99" for every town, every day. It looked like "99% chance of a landslide". It was just arithmetic. <b>Now:</b> show each place's own value, or the share of land at High.</div>
   </div>
+  <span class="gm gmrow"><b>The tallest of 97 kids.</b> Line up 97 kids from any school. The tallest one is always tall. That doesn't mean there's a giant in the school. In the same way, the wettest of 97 rain points always looks like "99%", even on a normal day.</span>
+  <div class="play">
+    <span class="lv">🎮 the four exam rules</span>
+    <svg viewBox="0 0 640 125" role="img" aria-label="Four exam rules: rank right, size right, surprise exam, tallest of 97">
+      <rect width="640" height="125" fill="#263257"/><rect x="10" y="12" width="150" height="100" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="85" y="48" text-anchor="middle" font-size="26">📊</text><text x="85" y="76" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#ffc94a">① Rank right</text><text x="85" y="97" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">AUC · 0.859</text><rect x="170" y="12" width="150" height="100" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="245" y="48" text-anchor="middle" font-size="26">🎲</text><text x="245" y="76" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#ffc94a">② Size right</text><text x="245" y="97" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">calibrated?</text><rect x="330" y="12" width="150" height="100" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="405" y="48" text-anchor="middle" font-size="26">🏋️</text><text x="405" y="76" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#ffc94a">③ Surprise exam</text><text x="405" y="97" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">ground it never saw</text><rect x="490" y="12" width="150" height="100" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="565" y="48" text-anchor="middle" font-size="26">📏</text><text x="565" y="76" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#ffc94a">④ Tallest of 97</text><text x="565" y="97" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" fill="#eef2ff">don't be fooled</text>
+    </svg>
+    <ol>
+      <li><b>Rank right</b> (AUC): does it point at the dangerous block first? 0.5 = coin toss, 1 = perfect. SlideSense's TNT map: 0.859.</li>
+      <li><b>Size right</b> (calibration): when it says 20%, does it happen about 20% of the time? So far only our gauged-river chance has passed.</li>
+      <li><b>Surprise exam</b> (block testing): scored only on regions it never saw while learning.</li>
+      <li><b>Don't be fooled by the tallest</b>: the biggest of many random numbers always looks scary.</li>
+    </ol>
+    <div class="real">AUC measures ranking (discrimination). Calibration measures whether the size of a chance is right. Spatial block cross-validation stops leakage from near-identical neighbours. The max of many percentiles is near 1 by arithmetic alone. For rare events, never say "% accurate": if floods happen on 1 day in 100, a model that always says "no flood" is 99% accurate and useless.</div>
+    <details class="pask"><summary>A company says "our flood model is 95% accurate". What two questions do you ask?</summary><div class="ans">① <b>Tested how?</b> On ground the model never saw (block split), or on random squares with twins in training? ② <b>Accurate at what?</b> Floods are rare, so a model that always says "no flood" is right on most days and catches nothing. Ask how many real floods it caught, how often its warnings came true, and whether its chances are calibrated.</div></details>
+  </div>
 </section>
 
 <!-- 9 -->
 <section id="s9">
   <h2><span class="n">9</span>Traps we actually fell into</h2>
   <p class="sub">Real stories from this project. Scientists respect a team that knows its own traps. Tell these.</p>
+  <p class="kid">Every game has bugs. These are six we found in our own work, and what each one taught us. Telling them makes scientists trust you <b>more</b>.</p>
   <div class="grid g2">
-    <div class="trap"><b>1 · Higher score, wrong map</b>Adding land cover lifted the flood WHERE score to 0.94. Its top squares were <b>glacial lakes</b> 360 m above any river. 97% of training rows were in the lowlands, so no test ever asked about a mountain (that's "out of distribution").<div class="fix">a good test score is not proof. Add checks the tests can't fake. Prefer causes (shape) over place-names (land cover)</div></div>
-    <div class="trap"><b>2 · The official flood map was wrong</b>70.5% of its "flooded" pixels sat on slopes steeper than 15°. Water doesn't pond on a cliff. It scored 0.53 against our layer, which is chance.<div class="fix">check a source before trusting it, even an official one</div></div>
-    <div class="trap"><b>3 · A fake 0.879</b>93% of squares scored exactly 0. Breaking ties by sort order gave AUC 0.879. Averaging ties properly gave about 0.5: <b>chance</b>.<div class="fix">any AUC on mostly-zero scores needs a tie check</div></div>
-    <div class="trap"><b>4 · The flood screen that passed everything</b>An early radar check "confirmed" flood reports, but it also passed 97–100% of known dry dates. A new pre-registered radar test plus gauges gave 2,185 verified floods.<div class="fix">test the test on known "no" cases too</div></div>
-    <div class="trap"><b>5 · The textbook rule that didn't hold</b>Textbooks say picking "no-slide" squares carelessly inflates scores. Measured here: 0.860 vs 0.862, no difference, because Arunachal has almost no flat land.<div class="fix">justify choices on what you measured, never on what textbooks say</div></div>
-    <div class="trap"><b>6 · The fitted model that lost</b>A fitted trigger (0.755) lost to a plain unfitted average (0.768). Only 72 dated slides is too few to fit on.<div class="fix">with little data, simple and fixed beats clever and fitted</div></div>
+    <div class="trap"><b>1 · Higher score, wrong map</b>Adding land cover lifted the flood WHERE score to 0.94. Its top squares were <b>glacial lakes</b> 360 m above any river. 97% of training rows were in the lowlands, so no test ever asked about a mountain (that's "out of distribution").<span class="gm"><b>👾 The ice-lake Glitch.</b> The exam only had lowland questions, so it never noticed the Guardian thought mountain ice lakes were floodplains.</span><div class="fix">a good test score is not proof. Add checks the tests can't fake. Prefer causes (shape) over place-names (land cover)</div></div>
+    <div class="trap"><b>2 · The official flood map was wrong</b>70.5% of its "flooded" pixels sat on slopes steeper than 15°. Water doesn't pond on a cliff. It scored 0.53 against our layer, which is chance.<span class="gm"><b>👾 Water on cliffs.</b> Water can't sit on a cliff, yet most of this official map's "flood" was on steep slopes. Even a Guild's chest can hold Glitches.</span><div class="fix">check a source before trusting it, even an official one</div></div>
+    <div class="trap"><b>3 · A fake 0.879</b>93% of squares scored exactly 0. Breaking ties by sort order gave AUC 0.879. Averaging ties properly gave about 0.5: <b>chance</b>.<span class="gm"><b>👾 The tie trick.</b> When almost every block scores 0, the order you list them in can fake a good score. Fair tie-breaking showed it was a coin toss.</span><div class="fix">any AUC on mostly-zero scores needs a tie check</div></div>
+    <div class="trap"><b>4 · The flood screen that passed everything</b>An early radar check "confirmed" flood reports, but it also passed 97–100% of known dry dates. A new pre-registered radar test plus gauges gave 2,185 verified floods.<span class="gm"><b>👾 The detector that always beeps.</b> A metal detector that beeps on plain sand finds nothing. Test your test on things you know are "no".</span><div class="fix">test the test on known "no" cases too</div></div>
+    <div class="trap"><b>5 · The textbook rule that didn't hold</b>Textbooks say picking "no-slide" squares carelessly inflates scores. Measured here: 0.860 vs 0.862, no difference, because Arunachal has almost no flat land.<span class="gm"><b>👾 The rule that didn't apply.</b> The textbook warning is about flat land. Arunachal has almost none, so here it made no difference.</span><div class="fix">justify choices on what you measured, never on what textbooks say</div></div>
+    <div class="trap"><b>6 · The fitted model that lost</b>A fitted trigger (0.755) lost to a plain unfitted average (0.768). Only 72 dated slides is too few to fit on.<span class="gm"><b>👾 Fancy lost to simple.</b> 72 practice questions are too few for a fancy alarm. The plain one won.</span><div class="fix">with little data, simple and fixed beats clever and fitted</div></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 hunting Glitches</span>
+    <p>Every game has bugs. A good Builder hunts them, fixes them and <b>writes down what they learned</b>. When you tell a scientist about a Glitch you caught yourself, they trust you <i>more</i>, not less: it shows you check your own work.</p>
+    <div class="real">Six real traps from this project, each with its lesson. Tell them in the room; they show the work is checked.</div>
+    <details class="pask"><summary>Your new model's test score went up. Why might you still throw it away?</summary><div class="ans">Because a score only checks what the exam asked. The flood map with land cover scored 0.94, but it called glacial lakes 360 m above any river the most flood-prone places. The exam was nearly all lowland blocks, so it never asked about mountains. <b>Look at the map, and check it makes physical sense.</b></div></details>
   </div>
 </section>
 
 <!-- 10 -->
 <section id="s10">
   <h2><span class="n">10</span>Words to own</h2>
-  <p class="sub">👆 Tap to flip. Say it in your own words first.</p>
-  <div class="grid g4" id="words"></div>
+  <p class="sub">Every grown-up word from this level, with its kid meaning and its game name. 👆 Tap to flip. Say it in your own words first. Cards marked "back from Level 0" are old friends.</p>
+  <div class="words" id="words"></div>
 </section>
 
 <!-- 11 -->
 <section id="s11">
   <h2><span class="n">11</span>Papers: read the abstract, the figures and the conclusion only</h2>
   <p class="sub">About 30–45 minutes each. You only need to say "yes, I know that work, and here's how ours relates".</p>
-  <div id="papers"></div>
+  <span class="gm gmrow"><b>The teachers' textbooks.</b> Read the cover (abstract), look at the pictures (figures) and read the last page (conclusion). That's enough to say "yes, I know that work".</span>
+  <div id="papers" style="margin-top:10px"></div>
 </section>
 
 <!-- 12 -->
 <section id="s12">
   <h2><span class="n">12</span>Check yourself</h2>
-  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. These are the grown-up questions: answer in real words, not game words. <span class="score" id="score"></span></p>
   <div id="quiz"></div>
 </section>
 
@@ -478,10 +805,24 @@ svg.fig{width:100%;height:auto;display:block}
     <div class="beat"><span class="s">1 min</span><b>AUC vs calibration</b>ranking vs honest size</div>
     <div class="beat"><span class="s">1 min</span><b>Why block testing</b>and why our 0.86 beats a paper's 0.95</div>
   </div>
+  <div class="play">
+    <span class="lv">🎮 the Level 1 boss: explain it to a 12-year-old</span>
+    <p>To finish Level 1, explain each idea to someone who knows nothing. Use the game words first, then the real words:</p>
+    <ul>
+      <li>🤼 the tug of war: pull vs grip, and water makes the grip weaker</li>
+      <li>📔 the rain diary: "unusual for this block", not one number for the state</li>
+      <li>⚪ the marble run, and ⬆️ steps above the river (HAND)</li>
+      <li>🍰 the five-ingredient recipe, and "if untreated"</li>
+      <li>📡 Echo-Eye sees through the ☁️ Cloud Curtain; 📷 Camera-Eye can't</li>
+      <li>📊 leaderboard vs 🎲 honest dice (a rank vs a calibrated chance)</li>
+      <li>🏋️ the surprise exam, and why our 0.86 beats a paper's 0.95</li>
+    </ul>
+    <p><b>Next up, Level 2: the great loot run.</b> The 46 chests, the Guilds that own them, and how every piece gets snapped onto one grid.</p>
+  </div>
   <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 1 like a GSI geologist and a CWC hydrologist"</i>, and move to Phase 2, the data backbone.</div>
 </section>
 
-<footer>Phase 1 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Project facts from MODEL_SUSCEPTIBILITY.md, MODEL_TRIGGER_AND_HAZARD.md, SOILSENSE.md, FLOOD_MODULE.md and the project's research notes, checked 1 Nov 2026. Toys and charts marked "illustrative" use made-up numbers.</footer>
+<footer>Phase 1 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Project facts from MODEL_SUSCEPTIBILITY.md, MODEL_TRIGGER_AND_HAZARD.md, SOILSENSE.md, FLOOD_MODULE.md and the project's research notes, checked 1 Nov 2026. Toys and charts marked "illustrative" use made-up numbers. 🎮 Story mode added 5 Nov 2026; the game names are in <code>docs/lrn/LORE.md</code>.</footer>
 </div>
 
 <script>
@@ -687,29 +1028,32 @@ $("maxBtn").addEventListener("click", () => {
 
 /* ---------- words ---------- */
 const WORDS = [
-  ["Susceptibility","WHERE something can happen, from the ground alone. Carries no date."],
-  ["Trigger","WHAT sets it off, almost always rain. Changes daily."],
-  ["Pore pressure","Water between soil grains pushing them apart. It cuts grip. That's why rain triggers slides."],
-  ["Antecedent rain","Rain that fell on earlier days, which leaves the ground already wet."],
-  ["Percentile","\"Wetter than X% of days on record here.\" Not a chance of anything."],
-  ["DEM","Digital Elevation Model: a grid of ground heights. Slope and drainage come from it."],
-  ["Flow accumulation","How many squares drain through this one. Big = a stream."],
-  ["Catchment","All the land that drains to one point on a river."],
-  ["HAND","Height Above Nearest Drainage. Low HAND floods first."],
-  ["Danger level","The official river height CWC calls a flood at that gauge."],
-  ["Lead time","How far ahead a forecast speaks. Big rivers: days. Hill streams: hours."],
-  ["RUSLE","A = R·K·LS·C·P. Soil lost per hectare per year, if untreated."],
-  ["Backscatter","The radar echo. Calm water sends it away, so water looks dark."],
-  ["AUC","Pick a yes and a no; how often the model ranks the yes higher. 0.5 = coin toss."],
-  ["Calibrated","When it says 20%, about 20% happen."],
-  ["Base rate","How common the event is anyway. Every chance should be read against it."],
-  ["Spatial CV","Testing on whole blocks of land the model never saw."],
-  ["Leakage","When the answer sneaks into training, so the score is too good."],
-  ["Out of distribution","Asking a model about places unlike anything it trained on."],
-  ["Pre-registration","Writing the pass/fail rule down before running the test, so you can't move the goalposts."]
+  ["Susceptibility","WHERE something can happen, from the ground alone. Carries no date.","🧨 the TNT map","back from Level 0 · Levels 3, 4"],
+  ["Trigger","WHAT sets it off on a day, almost always rain. Changes daily.","⚡ the spark","back from Level 0 · Levels 3, 4"],
+  ["Factor of safety","Grip ÷ pull. Above 1 the slope holds; below 1 it slides.","🤼 the tug of war","Level 3"],
+  ["Pore pressure","Water between soil grains pushing them apart. It cuts grip. That's why rain triggers slides.","💧 the wet-floor slip","Level 3"],
+  ["Antecedent rain","Rain that fell on earlier days, which leaves the ground already wet.","💦 the sponge that never dries","Level 3"],
+  ["Rainfall threshold","A line on a rain chart: above it, slides can start. Here it rings on most monsoon days.","🔔 the toast alarm","Levels 3, 7"],
+  ["Percentile","\"Wetter than X% of days on record here.\" Not a chance of anything.","📔 checking the rain diary","Levels 3, 6"],
+  ["DEM","Digital Elevation Model: a grid of ground heights. Slope and drainage come from it.","⛰️ the ground-height chest","back from Level 0 · Level 2"],
+  ["Flow accumulation","How many squares drain through this one. Big = a stream.","⚪ the marble count","Level 4"],
+  ["Catchment","All the land that drains to one point on a river.","🏞️ a river's funnel","Levels 4, 5"],
+  ["HAND","Height Above Nearest Drainage. Low HAND floods first.","⬆️ steps above the river","Level 4"],
+  ["Danger level","The official river height CWC calls a flood at that gauge.","🟥 the red line on the height stick","Level 4"],
+  ["Lead time","How far ahead a forecast speaks. Big rivers: days. Hill streams: hours.","🛁 bathtub vs cup","Level 4"],
+  ["RUSLE","A = R·K·LS·C·P. Soil lost per hectare per year, if untreated.","🍰 the five-ingredient recipe","Level 5"],
+  ["Backscatter","The radar echo. Calm water sends it away, so water looks dark.","📡 Echo-Eye's echo","Levels 2, 4"],
+  ["AUC","Pick a yes and a no; how often the model ranks the yes higher. 0.5 = coin toss.","the pick-the-right-block game","back from Level 0 · Level 3"],
+  ["Calibrated","When it says 20%, about 20% happen.","🎲 honest dice","back from Level 0 · Level 4"],
+  ["Base rate","How common the event is anyway. Every chance should be read against it.","🎯 the usual","Levels 3, 4"],
+  ["Spatial CV","Testing on whole blocks of land the model never saw.","🏋️ the surprise exam","back from Level 0 · Levels 3, 4"],
+  ["Leakage","When the answer sneaks into training, so the score is too good.","👀 copying from your twin","Levels 3, 7"],
+  ["Out of distribution","Asking a model about places unlike anything it trained on.","👾 the ice-lake Glitch","Level 4"],
+  ["Pre-registration","Writing the pass/fail rule down before running the test, so you can't move the goalposts.","📖 writing the pass mark first","Levels 3, 4, 6"]
 ];
-$("words").innerHTML = WORDS.map(([w, d]) => `<div class="flip"><div class="in"><div class="f"><div class="big" style="font-size:24px">${w}</div><div class="tiny">tap to flip</div></div><div class="b">${d}</div></div></div>`).join("");
-document.querySelectorAll("#words .flip").forEach(el => el.addEventListener("click", () => el.classList.toggle("on")));
+$("words").innerHTML = WORDS.map(([w, m, g, b]) =>
+  `<div class="wc"><div class="in"><div class="f"><b>${w}</b><span>tap to flip</span></div><div class="b">${m}<span class="gn">🎮 ${g}</span><span class="back">${b.startsWith("back") ? b : "comes back in: " + b}</span></div></div></div>`).join("");
+$("words").addEventListener("click", e => { const c = e.target.closest(".wc"); if (c) c.classList.toggle("on"); });
 
 /* ---------- papers ---------- */
 const PAPERS = [
@@ -746,7 +1090,7 @@ const QUIZ = [
   ["A reviewer says 0.86 is weak, because other papers report 0.95. Answer.","reviewer",
    "Most 0.9+ results use a random split, which leaks near-identical neighbouring squares into the test. We test on whole blocks of land the model never saw, 5 times over: 0.859 ± 0.016. The numbers aren't comparable. Ask which split they used."],
   ["What does 'calibrated' mean? Which of our numbers are?","CWC engineer",
-   "Of all the times it says 20%, about 20% happen. FloodSense's river chances at gauged rivers are calibrated. SlideSense levels are not chances at all: they are ranks with a measured 'times the usual'."],
+   "Of all the times it says 20%, about 20% happen. FloodSense's river chances at gauged rivers are calibrated. The flood 'near here' outlook is not, so it is labelled approximate. SlideSense levels are not chances at all: they are ranks with a measured 'times the usual'."],
   ["Explain RUSLE, and why your numbers say 'if untreated'.","soil conservation officer",
    "A = R × K × LS × C × P: rain strength × how easily the soil washes × slope × ground cover × protection, in tonnes per hectare per year. Protection (bunds, terraces) is unknown until the department shares its records, so P = 1, meaning 'if nothing has been done here'."],
   ["Why trees and not deep learning?","investor / ML reviewer",

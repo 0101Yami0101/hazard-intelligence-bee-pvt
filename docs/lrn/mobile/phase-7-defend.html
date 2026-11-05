@@ -334,13 +334,28 @@ code{overflow-wrap:anywhere}
 .gq.got{border-left:5px solid var(--built)}
 .gq.miss{border-left:5px solid var(--accent)}
 .gq .grade button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--sheet-2);border-radius:6px;padding:2px 10px;margin:6px 6px 0 0;cursor:pointer}
+/* who else */
+.land{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.lc{background:var(--sheet);border:1px solid var(--rule);border-left:6px solid var(--planned);border-radius:10px;padding:10px 14px;font-size:14px}
+.lc.gov{border-left-color:var(--slide)}.lc.res{border-left-color:var(--soil)}.lc.big{border-left-color:var(--flood)}.lc.co{border-left-color:var(--bone)}
+.lc > b{font-size:16px;display:block;line-height:1.2}
+.lc .k{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3)}
+.lc .r{display:grid;grid-template-columns:74px 1fr;gap:6px;margin-top:5px}
+.lc .r > i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:3px}
+.lc .fit{background:var(--built-soft);border-radius:6px;padding:4px 8px}
+.lc .ear{background:var(--accent-soft);border-radius:6px;padding:4px 8px;font-size:13px}
+.lc .near{display:inline-block;font-family:var(--mono);font-size:10.5px;background:var(--accent);color:#fff;border-radius:99px;padding:0 8px;margin-left:6px;vertical-align:2px}
+@media(max-width:760px){.land{grid-template-columns:1fr}}
+.why{counter-reset:w}
+.why .card{position:relative;padding-left:46px}
+.why .card::before{counter-increment:w;content:counter(w);position:absolute;left:12px;top:10px;font-family:var(--display);font-size:26px;color:var(--built)}
 /* rivals */
-.vs{display:grid;grid-template-columns:120px repeat(3,1fr);gap:4px;font-size:14px}
+.vs{display:grid;grid-template-columns:120px repeat(4,1fr);gap:4px;font-size:14px}
 .vs > div{background:var(--sheet);padding:7px 10px;border-radius:6px}
 .vs .h{background:none;font-weight:700}
 .vs .us{background:var(--built-soft)}
 .vs .rl{background:none;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;align-items:center}
-@media(max-width:700px){.vs{grid-template-columns:80px repeat(3,1fr);font-size:12.5px}.vs > div{padding:5px 6px}}
+@media(max-width:700px){.vs{grid-template-columns:64px repeat(4,1fr);font-size:11.5px}.vs > div{padding:4px 5px}}
 /* ensemble */
 .ens{display:grid;grid-template-columns:1fr 50px 1fr 50px 1fr;gap:6px;align-items:center;text-align:center}
 .ens .box{border:2px dashed var(--planned);border-radius:12px;padding:10px;background:var(--sheet)}
@@ -358,6 +373,47 @@ code{overflow-wrap:anywhere}
 .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .asks .card ul{margin:4px 0 0;padding-left:18px;font-size:14px}
 @media(max-width:760px){.asks{grid-template-columns:1fr}}
+.lc.intl{border-left-color:#6a4fbd}.lc.risk{border-left-color:var(--accent)}
+.sort4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sort4 div{background:var(--sheet);border:2px solid var(--ink);border-radius:10px;padding:10px 12px;font-size:14px}
+.sort4 div b{display:block;font-size:15.5px;margin-bottom:2px}
+@media(max-width:760px){.sort4{grid-template-columns:1fr 1fr}}
+/* ---- Level 7 story mode (see LORE.md) ---- */
+:root{--g-bg:#1b2440;--g-bg2:#263257;--g-ink:#eef2ff;--g-dim:#b8c2e6;--g-gold:#ffc94a;--g-cyan:#7fd3ff}
+.play{background:var(--g-bg);color:var(--g-ink);border-radius:12px;padding:12px 16px;border:3px solid var(--g-gold);box-shadow:4px 4px 0 #0d1326;font-size:15.5px;line-height:1.5;margin-top:12px}
+.play .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g-gold);display:block;margin-bottom:4px}
+.play b,.play strong{color:var(--g-gold)}.play i{color:var(--g-cyan);font-style:normal}.play p{margin:6px 0}
+.play ol,.play ul{margin:6px 0;padding-left:22px}.play li{margin:5px 0}
+.play code,.gm code{background:rgb(255 255 255/.14);color:#fff;border:0}
+.play svg{display:block;width:100%;height:auto;margin:8px 0;border-radius:8px}
+.play .real{background:rgb(255 255 255/.07);border-left:3px solid var(--g-cyan);border-radius:6px;font-size:13.5px;margin-top:8px;padding:6px 10px;color:var(--g-dim)}
+.play .real::before{content:"🔁 Real version: ";color:var(--g-cyan);font-weight:600}
+.pask{margin-top:10px;background:var(--g-bg2);border-radius:8px;padding:6px 10px}
+.pask summary{cursor:pointer;font-weight:600;color:#fff;list-style:none}
+.pask summary::-webkit-details-marker{display:none}
+.pask summary::before{content:"🤖 Pixel asks: ";color:var(--g-gold)}
+.pask summary::after{content:" ▸ tap to check";font-weight:400;font-size:12px;color:var(--g-dim)}
+.pask[open] summary::after{content:" ▾"}
+.pask .ans{margin-top:6px;padding-top:6px;border-top:1px dashed rgb(255 255 255/.2);color:var(--g-ink)}
+.gm{margin-top:8px;background:var(--g-bg);color:var(--g-ink);border-radius:8px;padding:6px 9px;font-size:13.5px;line-height:1.4;border-left:4px solid var(--g-gold);display:block;font-weight:400;text-align:left;font-family:var(--body,inherit)}
+.gm b{color:var(--g-gold);display:inline;font-size:inherit;font-family:inherit;font-weight:700}
+.gm i{color:var(--g-cyan);font-style:normal}
+.gm::before{content:"🎮 "}
+.gmrow{margin:10px 0 0}
+.kid{background:#fff6d6;border:2px dashed #e0b23a;border-radius:10px;padding:8px 12px;font-size:16.5px;line-height:1.45;margin:0 0 14px;color:#3a2a00}
+.kid::before{content:"🧒 Super simple: ";font-weight:700;color:#8a5a00}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wc{perspective:900px;min-height:160px;cursor:pointer}
+.wc .in{position:relative;min-height:160px;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.wc.on .in{transform:rotateY(180deg)}
+.wc .f,.wc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.wc .f{background:var(--g-bg);color:#fff;border:3px solid var(--g-gold);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.wc .f b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1}
+.wc .f span{font-size:12px;color:var(--g-dim);margin-top:6px}
+.wc .b{background:var(--sheet);border:2px solid var(--rule);transform:rotateY(180deg);font-size:13.5px;line-height:1.4}
+.wc .b .gn{display:block;margin-top:6px;color:var(--bone);font-weight:600}
+.wc .b .back{display:block;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+@media(max-width:900px){.words{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -374,22 +430,55 @@ code{overflow-wrap:anywhere}
 <div class="wrap">
 
 <div class="hero">
-  <div class="kicker">Phase 7 · Days 27–30 · about 16 hours</div>
+  <div class="kicker">Phase 7 · Days 27–30 · about 16 hours · 🎮 Level 7: The Council of Guilds</div>
   <h1>Defending it in the room</h1>
   <div class="goal">🎯 <span>Answer an <b>APSAC</b>, <b>GSI</b> or <b>CWC</b> scientist calmly: <b>the right number, where it comes from, what it doesn't mean</b>, and where to stop.</span></div>
   <div class="toc">
-    <a href="#s1">1 · The rooms</a><a href="#s2">2 · Where the line is</a><a href="#s3">3 · Numbers card</a>
+    <a href="#start">🎮 Start here</a><a href="#s1">1 · The rooms</a><a href="#s2">2 · Where the line is</a><a href="#s3">3 · Numbers card</a>
     <a href="#s4">4 · Twin counts</a><a href="#s5">5 · Limits card</a><a href="#s6">6 · Never say</a>
-    <a href="#s7">7 · The grilling</a><a href="#s8">8 · Rivals</a><a href="#s9">9 · What's next</a>
-    <a href="#s10">10 · Stale lines</a><a href="#s11">11 · Before the meeting</a><a href="#s12">12 · Your exercises</a>
+    <a href="#s7">7 · The grilling</a><a href="#s8">8 · Who else</a><a href="#s9">9 · What's next</a>
+    <a href="#s10">10 · Stale lines</a><a href="#s11">11 · Before the meeting</a><a href="#s12">12 · Your exercises</a><a href="#s13">13 · Word cards</a>
   </div>
-  <p class="tiny" style="margin-top:12px">✔ Every number here was re-read on 3 Nov 2026 from <code>webapp/assets/landslide/metrics.json</code>, <code>reports/landslide_times_usual.json</code>, the live flood snapshot (issued 2 Nov), <code>catalogue.json</code> and <code>reports/erosion_priority_assam*.csv</code>, then cross-read with BEYOND_PRESENTATION.md. Where the question bank is out of date, section 10 says so.</p>
+  <p class="tiny" style="margin-top:12px">✔ Every number here was re-read on 3 Nov 2026 from <code>webapp/assets/landslide/metrics.json</code>, <code>reports/landslide_times_usual.json</code>, the live flood snapshot (issued 4 Nov; track record refreshed 5 Nov), <code>catalogue.json</code> and <code>reports/erosion_priority_assam*.csv</code>, then cross-read with BEYOND_PRESENTATION.md. Where the question bank is out of date, section 10 says so. Source count re-read and section 8 + the <i>Who else</i> questions checked on the web on 4 Nov 2026 (<code>WHO_ELSE_LANDSCAPE.md</code>). NDEM, India-WRIS, ICIMOD, the UN's Early Warnings for All and the risk firms added after a web check on 5 Nov 2026.</p>
 </div>
+
+<!-- start -->
+<section id="start">
+  <h2><span class="n">🎮</span>Start here: Level 7, the Council of Guilds</h2>
+  <p class="sub">The last level. You walk into the <b>Council of Guilds</b>, the meeting room, and every Guild asks its hardest question. Other players are mentioned too: Google, IIT Mandi, the sensor makers, the big firms. You win by being <b>calm, exact and honest</b>, not by being loud.</p>
+  <div class="play">
+    <span class="lv">Level 7 · the Council of Guilds</span>
+    <svg viewBox="0 0 660 230" role="img" aria-label="The Council of Guilds: APSAC, GSI, CWC, IMD and APSDMA around a table, you in the middle, other players to the side">
+      <rect width="660" height="230" fill="#263257"/>
+      <ellipse cx="320" cy="132" rx="150" ry="52" fill="#5d4a2e" stroke="#ffc94a" stroke-width="2"/>
+      <rect x="268" y="32" width="104" height="40" rx="10" fill="#1d8673"/><text x="320" y="49" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Sky-Eye Guild</text><text x="320" y="65" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff">APSAC</text><rect x="418" y="72" width="104" height="40" rx="10" fill="#946610"/><text x="470" y="89" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Rock Guild</text><text x="470" y="105" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff">GSI</text><rect x="418" y="152" width="104" height="40" rx="10" fill="#2f6cae"/><text x="470" y="169" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#fff">River Guild</text><text x="470" y="185" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff">CWC</text><rect x="118" y="152" width="104" height="40" rx="10" fill="#6a4fbd"/><text x="170" y="169" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Sky Guild</text><text x="170" y="185" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff">IMD</text><rect x="118" y="72" width="104" height="40" rx="10" fill="#cf1f2a"/><text x="170" y="89" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#fff">the Mayor</text><text x="170" y="105" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff">APSDMA</text>
+      <rect x="235" y="205" width="170" height="22" rx="6" fill="#ffc94a"/><text x="320" y="221" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12.5" font-weight="700" fill="#1b2440">🧑‍🔧 you, the Builder</text>
+      <text x="320" y="138" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#ffc94a">"Why should we let you play?"</text>
+      <rect x="548" y="42" width="104" height="128" rx="10" fill="none" stroke="#b8c2e6" stroke-dasharray="5 4"/>
+      <text x="600" y="58" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#ffc94a">other players</text><text x="600" y="70" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">Google</text><text x="600" y="92" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">IIT Mandi</text><text x="600" y="114" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">sensor makers</text><text x="600" y="136" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">ISRO / NDEM</text><text x="600" y="158" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="12" fill="#b8c2e6">risk firms</text>
+    </svg>
+    <p><b>Everything so far, in one breath.</b> The ⚙️ World Engine (the backbone) holds 46 chests on one grid of blocks (Level 2). The Guardians play on it: SlideSense multiplies 🧨 TNT × ⚡ spark and shows a 📊 leaderboard (Level 3). FloodSense reads 📏 height sticks and rolls 🎲 honest dice at 32 rivers (Level 4). Every prophecy goes into the 📖 Prophecy Book and is checked on the 🏆 Scoreboard.</p>
+    <p>(Levels 5 and 6 are skipped for now. SoilSense is still being built, and the daily run is enough to know as "it runs by itself every morning at 8:30".)</p>
+    <span class="lv" style="margin-top:12px">Level 7 in seven sentences: learn these first</span>
+    <ol>
+      <li><b>Each Guild guards something different.</b> APSAC: false precision. GSI: their inventory and timing. CWC: their danger lines and bad readings.</li>
+      <li><b>Every number comes with where it's from and what it does <i>not</i> mean.</b></li>
+      <li><b>Every limit comes with what lifts it</b> (Free, Ask or Paid), and physics limits are kept apart from budget limits.</li>
+      <li><b>Every other player does one part</b>, often better than us. What nobody does yet for Arunachal is all of it together. <b>The joining is the product.</b></li>
+      <li><b>Never run another player down.</b> Say what they have that we don't.</li>
+      <li><b>We give the forecast. The warning stays with the authority.</b></li>
+      <li><b>Ask for a fair test:</b> one district, one monsoon, yardsticks agreed before it starts. Judge us on the score.</li>
+    </ol>
+    <div class="real">The room: APSAC, GSI, CWC (and often APSDMA, IMD, investors). The page gives the numbers card, the limits card, the never-say list, a question bank by room, everyone else in the field with one fair line each, the plan, and what to decide before the meeting.</div>
+    <details class="pask"><summary>Someone at the Council asks: "So what makes you different from everyone else?" Say it in one breath.</summary><div class="ans">"Each of them does one part, often better than we do. What nobody does yet for Arunachal is all of it together: the whole state every day, landslides and floods, seven days ahead, with the score shown, on one base that makes the next hazard cheap. The joining is the product."</div></details>
+  </div>
+</section>
 
 <!-- 1 -->
 <section id="s1">
   <h2><span class="n">1</span>Three rooms, three different worries</h2>
   <p class="sub">Same product, different first question. Know what each room is guarding.</p>
+  <p class="kid">Three Guilds, three worries. <b>APSAC</b> (Sky-Eye Guild) worries about maps that look sharper than they are. <b>GSI</b> (Rock Guild) worries about its landslide records and timing. <b>CWC</b> (River Guild) worries about its danger lines and bad readings. Answer the worry, not just the question.</p>
   <div class="rooms">
     <div class="room" style="border-top-color:var(--slide)"><b>APSAC</b><div class="who">state remote sensing centre · satellite and map people</div>
       <span class="lab">they worry about</span><ul><li>false precision (100 m map, 11 km rain)</li><li>how the maps were checked</li><li>satellite choices, clouds</li></ul>
@@ -410,82 +499,181 @@ code{overflow-wrap:anywhere}
     <div class="line"><b>An area and days today. Finer with records. One slope with sensors.</b><span>any "can it…" — give the limit and what lifts it</span></div>
     <div class="line"><b>We give the forecast. The warning stays with the authority.</b><span>responsibility</span></div>
   </div>
+  <span class="gm gmrow"><b>Six safe squares.</b> When a question surprises you, step back onto one of these six lines. Each one is true, short and calm.</span>
+  <div class="play">
+    <span class="lv">🎮 what each Guild guards</span>
+    <p>Every Guild at the table has spent years on one thing, and it's protective of it. The <b>Sky-Eye Guild</b> (APSAC) makes maps, so it spots false sharpness at once. The <b>Rock Guild</b> (GSI) made the landslide records we learned from, so it wants them used carefully. The <b>River Guild</b> (CWC) owns the height sticks and the red lines, so it watches how we treat them.</p><p>Before answering, ask yourself: <i>what is this Guild guarding?</i> Then answer that worry first.</p>
+    <div class="real">APSAC: false precision, how maps were checked, satellites and clouds. GSI: misuse of its inventory, timing from few dated slides, thresholds. CWC: its danger levels and gauges, bad readings, skill against "the river stays put".</div>
+    <details class="pask"><summary>An APSAC scientist says: "Your map is 100 m, but your rain is 11 km." What's the worry, and the one-line answer?</summary><div class="ans">The worry is <b>false precision</b>. "Two halves: the ground is 100 m, the rain is at rain scale, about 11 km in the history and 22 km live. The fine detail you see is the ground, not the weather, and the app says so."</div></details>
+  </div>
 </section>
 
 <!-- 2 -->
 <section id="s2">
   <h2><span class="n">2</span>Where the line is</h2>
+  <p class="kid">Three chests: things you <b>share freely</b>, things you show <b>only if asked</b>, and things you <b>keep locked</b> (the exact recipe). Know which chest each fact lives in before you walk in.</p>
   <div class="zones">
-    <div class="zone free"><b>✅ Say freely</b><ul><li>the idea, the five steps, the rules we keep</li><li>what each product asks, gives, reads</li><li>how to read the screen</li><li>29 sources · 8.2 million squares · 26 years</li><li>what's planned; every limit with what lifts it</li></ul></div>
+    <div class="zone free"><b>✅ Say freely</b><ul><li>the idea, the five steps, the rules we keep</li><li>what each product asks, gives, reads</li><li>how to read the screen</li><li>46 sources held · 8.2 million squares · 26 years</li><li>what's planned; every limit with what lifts it</li></ul></div>
     <div class="zone ask"><b>🟡 Only when asked</b><ul><li>tested figures (exactly, from the card)</li><li>kinds of agencies the data comes from</li><li>the method family, in one sentence</li><li>rounded counts: landslides mapped, gauges read</li><li>what we tried that failed</li></ul></div>
     <div class="zone keep"><b>🔒 Keep</b><ul><li>how each source is reached, cleaned, checked</li><li>the exact facts per square</li><li>how examples are chosen; the settings</li><li>how a score becomes an honest %</li><li>the records and the code</li></ul></div>
   </div>
-  <div class="tip" style="margin-top:12px">🗣️ <b>To hold the line politely:</b> "I can explain the logic fully. The exact recipe is the part we keep, as any company would." · "Happy to go deeper in a technical session, with a simple confidentiality note." · "I don't have that figure with me. I'll send it today."</div>
+  <div class="tip" style="margin-top:12px">🗣️ <b>To hold the line politely:</b> "I can explain the logic fully. The exact recipe is the part we keep, as any company would." · "Happy to go deeper in a technical session, with a simple confidentiality note." · "I don't have that figure with me. I'll send it today."<span class="gm"><b>The recipe stays in the kitchen.</b> You can tell everyone the dish is TNT × spark. You don't hand out the exact recipe: how each chest is reached and cleaned, and how the examples were picked.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the three chests</span>
+    <p>Everything you know sits in one of three chests. <b>🟢 Share freely:</b> the big idea, what each Guardian does, how to read the screen, the headline counts. <b>🟡 Only if asked:</b> tested scores, which kinds of agency the data comes from, what failed. <b>🔒 Keep:</b> how each source is reached and repaired, the exact facts per block, the sampling and settings, the code.</p>
+    <div class="real">Say freely / only when asked / keep. To hold the line: "I can explain the logic fully; the exact recipe is the part we keep, as any company would", or offer a technical session under a confidentiality note.</div>
+    <details class="pask"><summary>Someone asks for your exact sampling rules and model settings. What do you say?</summary><div class="ans">"I can explain the logic fully: quiet places at least 500 m from any known slide, tested on regions the model never saw. The exact recipe is the part we keep, as any company would. Happy to go deeper in a technical session with a simple confidentiality note."</div></details>
+  </div>
 </section>
 
 <!-- 3 -->
 <section id="s3">
   <h2><span class="n">3</span>Your numbers card</h2>
   <p class="sub">The roadmap's exercise: <b>name the source before you flip.</b> Tap a card to flip it; tap <i>"I knew it"</i> on the back when you did.</p>
+  <p class="kid">Every number is a card with three things on the back: <b>where it comes from</b>, <b>what it means</b>, and what it does <b>not</b> mean. Say the source before you flip.</p>
   <div class="nums" id="nums"></div>
   <p class="tiny" style="margin-top:8px">Tags: <span class="tag free">say freely</span><span class="tag ask">only if asked</span>. Flood track-record numbers move daily: read them off the screen on the day.</p>
+  <div class="play">
+    <span class="lv">🎮 your number cards</span>
+    <p>A number without its source sounds like a boast. A number with its source and its limit sounds like a scientist. Each card here has a red <b>✗ line</b>: the wrong way people will read it. Learn that line as hard as the number.</p>
+    <div class="real">Sixteen headline numbers, each with its source file, what it means, and what it doesn't. Track-record numbers change daily; read them off the screen.</div>
+    <details class="pask"><summary>Someone says: "So your landslide map is 86% accurate." Fix it kindly.</summary><div class="ans">"Not quite: 0.86 is a ranking score. Show it a place that slid and one that didn't, on ground it never saw, and it picks the right one about 6 times in 7. It isn't a percentage of correct answers, and it isn't a chance."</div></details>
+  </div>
 </section>
 
 <!-- 4 -->
 <section id="s4">
   <h2><span class="n">4</span>Twin counts: same thing, different numbers</h2>
   <p class="sub">The fastest way to look unprepared is to quote one count while the screen shows another. Know why each pair differs.</p>
+  <p class="kid">Some things have two true counts, like your age in years and in months. Know both, and why they differ, so the screen never catches you out.</p>
   <div class="twin hd"><div>what</div><div>count A</div><div>count B</div><div>why they differ</div></div>
   <div class="twin"><div class="k">Mapped landslides</div><div class="a">35,744 unique outlines<br><span class="tiny">DESIGN.md</span></div><div class="a">37,788 → 91,610 squares<br><span class="tiny">metrics.json</span></div><div class="w">A: older count, GSI + Bhuvan with overlaps removed. B: what actually trains the model (all four sets joined). Say <b>"about 37,000"</b>.</div></div>
   <div class="twin"><div class="k">Dated landslides</div><div class="a">~90 dated<br><span class="tiny">NASA catalogue: 99 points</span></div><div class="a">72 · 84<br><span class="tiny">IMERG · Open-Meteo</span></div><div class="w">90 exist. 72 survive the filters on 11 km IMERG; 84 on Open-Meteo, whose grid covers a few more.</div></div>
   <div class="twin"><div class="k">Verified floods</div><div class="a">2,185<br><span class="tiny">FLOOD_MODULE.md</span></div><div class="a">2,180<br><span class="tiny">live snapshot</span></div><div class="w">The record was rebuilt after the docs were written. Quote the snapshot.</div></div>
   <div class="twin"><div class="k">Flood timing</div><div class="a">0.879<br><span class="tiny">docs, Sep</span></div><div class="a">0.896<br><span class="tiny">snapshot: 43 floods, 1,035 days</span></div><div class="w">Same test, later model. 0.706→0.845 is a different step (old record → verified record).</div></div>
   <div class="twin"><div class="k">Level-line gauges</div><div class="a">17 CWC<br><span class="tiny">FLOOD_MODULE.md</span></div><div class="a">16 on 2 Nov<br><span class="tiny">snapshot</span></div><div class="w">17 carry one; Yinkiang's gauge is offline, so 16 drew it that day.</div></div>
-  <div class="twin"><div class="k">Live record</div><div class="a">~4,500 / 2,100<br><span class="tiny">question bank, 12 Oct</span></div><div class="a">8,288 / 4,178<br><span class="tiny">snapshot, 2 Nov</span></div><div class="w">It grows every day. Never quote it from memory.</div></div>
+  <div class="twin"><div class="k">Live record</div><div class="a">~4,500 / 2,100<br><span class="tiny">question bank, 12 Oct</span></div><div class="a">8,736 / 4,457<br><span class="tiny">snapshot, 4 Nov</span></div><div class="w">It grows every day. Never quote it from memory.</div></div>
+  <span class="gm gmrow"><b>Twin counts</b> are two honest counts of the same thing, made at different times or in different ways. Say which one you mean.</span>
+  <div class="play">
+    <span class="lv">🎮 twin counts</span>
+    <p>If the slide on the wall says 2,185 floods and the app says 2,180, someone will ask. Have the answer ready: the record was rebuilt after the doc was written, and five false gauge floods were dropped. Quote the live one.</p>
+    <div class="real">Mapped slides (35,744 vs 37,788 outlines), dated slides (90 / 72 / 84), verified floods (2,185 vs 2,180), timing (0.879 vs 0.896), level-line gauges (17 vs 16 that day), the live record (grows daily).</div>
+    <details class="pask"><summary>The doc says 2,185 verified floods; the screen says 2,180. Which is right?</summary><div class="ans">Both were right when written. The record was rebuilt and five false gauge "floods" were dropped by rule. Quote the live snapshot: 2,180.</div></details>
+  </div>
 </section>
 
 <!-- 5 -->
 <section id="s5">
   <h2><span class="n">5</span>Your limits card: every limit with what lifts it</h2>
   <p class="sub">Never say a free-tier limit as if it were permanent. Name the tier that lifts it, and keep <b>physics</b> apart from <b>budget</b>.</p>
+  <p class="kid">Every lock has a key. Some keys are <b>Free</b> (we can do it ourselves), some need an <b>Ask</b> (a letter to a Guild), some are <b>Paid</b>. And a few locks are <b>physics</b>: no key exists, like seeing through monsoon cloud with a camera.</p>
   <div class="filt" id="filt"></div>
   <div id="lims"></div>
+  <div class="play">
+    <span class="lv">🎮 every lock has a key</span>
+    <p>Never say a limit as if it were forever. Say what lifts it. "Live rain is about 22 km" is a <b>budget</b> lock: a paid plan or a bigger cloud fetch lifts it. "Camera satellites can't see through monsoon cloud" is a <b>physics</b> lock: no money lifts it, so we use radar instead.</p>
+    <div class="real">Each limit is tagged Free / Ask / Paid and physics / budget. Never present a free-tier limit as a permanent ceiling.</div>
+    <details class="pask"><summary>Is the ~22 km spacing of the live rain a permanent limit?</summary><div class="ans">No, it's a <b>budget</b> limit. Fetching all 892 rain points in the daily cloud run, or a paid weather plan, makes it finer. A valley cloudburst between points is a different, physics limit: that needs ground or radar rain in that valley.</div></details>
+  </div>
 </section>
 
 <!-- 6 -->
 <section id="s6">
   <h2><span class="n">6</span>Never say → say instead</h2>
+  <p class="kid"><b>🚫 Cheat codes</b> are phrases that sound good but lose an expert's trust in one second. Each one has a safe swap.</p>
   <div id="swaps"></div>
+  <div class="play">
+    <span class="lv">🎮 the cheat codes</span>
+    <p>In a game, a cheat code feels like winning. In the Council, it's how you lose. "90% accurate", "this area is safe", "better than the official forecast": each one makes an expert stop listening. The swaps say the same thing honestly.</p>
+    <div class="real">Thirteen never-say phrases with what to say instead: accuracy, "safe", chances, "any state", sensors and alerts, the loop, "better than official", unique data, the high-river fault, SDI, "environmental".</div>
+    <details class="pask"><summary>Why is "this area is safe" a cheat code?</summary><div class="ans">Because Very Low isn't zero: slides there have been rare (about 0.22× the usual), not impossible. And "safe" sounds like a warning decision, which belongs to the authority. Say: "Very Low: landslides have been rare on ground like this."</div></details>
+  </div>
 </section>
 
 <!-- 7 -->
 <section id="s7">
   <h2><span class="n">7</span>The grilling: hostile questions by room</h2>
-  <p class="sub">Pick a room. <b>Big idea</b> is for any room: why us, why not Google, will we be obsolete. Use <b>Drill</b> for a random question with a 90-second clock: answer out loud, then open the card and grade yourself.</p>
+  <p class="sub">Pick a room. <b>Big idea</b> is for any room: why us, why not Google, will we be obsolete. <b>Who else</b> is for "how are you different from X" (government, research, regional bodies), and "why should we let you". <b>Private firms</b> is for insurers' and climate-risk models, weather companies, sensor sellers, big IT integrators, price and copying. Use <b>Drill</b> for a random question with a 90-second clock: answer out loud, then open the card and grade yourself.</p>
+  <p class="kid">This is the <b>boss rush</b>: every hard question from every room, plus the "who else" and "private firms" questions. Press <b>Drill</b>, answer out loud in 90 seconds, then check yourself.</p>
   <div class="ptabs" id="ptabs"></div>
   <div class="drill"><button id="dgo">🎲 Drill</button><span class="clock" id="clock">1:30</span><span class="dq" id="dq">Press Drill for a question from this room.</span></div>
   <div id="gqs"></div>
   <p class="score" id="score" style="margin-top:6px"></p>
+  <span class="gm gmrow"><b>How to answer any question in four moves:</b> ① say the true thing in one line · ② give the number and where it's from · ③ say what it does <i>not</i> mean · ④ stop. Silence after a good answer is fine.</span>
 </section>
 
 <!-- 8 -->
 <section id="s8">
-  <h2><span class="n">8</span>Rivals: who else is in the room's head</h2>
-  <div class="vs">
-    <div class="h"></div><div class="h us">Us</div><div class="h">iIoTs (IIT Mandi)</div><div class="h">Alertis (Dehradun)</div>
-    <div class="rl">what</div><div class="us">statewide forecast from data, no hardware</div><div>sensor boxes on chosen slopes</div><div>sensor pods, landslide + flood + fire</div>
-    <div class="rl">covers</div><div class="us">every square of the state</div><div>~60 sites, one slope each</div><div>sites they install</div>
-    <div class="rl">floods</div><div class="us">yes, 32 gauges, graded daily</div><div>none found</div><div>claimed, no proof shown</div>
-    <div class="rl">proof</div><div class="us">replays + live record since 21 Sep</div><div>Kotropi 2018, real save; papers</div><div>none; founded Oct 2025</div>
-    <div class="rl">trust</div><div class="us">none yet</div><div>MoUs, awards, PM visit</div><div>none found</div>
+  <h2><span class="n">8</span>Who else is doing this, and why us</h2>
+  <p class="sub">"How are you different?" usually means <b>"why you, when X already exists?"</b> Know who X is, what they do well, what they leave open, and where we fit. Every card was checked on the web on <b>4 Nov 2026</b>, with sources in <code>docs/design/WHO_ELSE_LANDSCAPE.md</code>. Red boxes are <b>for your ears</b>, not for the room.</p>
+  <p class="kid">Lots of other players are in this field. Each one does <b>one part</b>, often better than us: a district bulletin, a river station, a rain warning, one slope's sensors, a world model, a map after the flood, a risk score for insurers. Nobody does <b>all of it together</b> for Arunachal yet. <b>The joining is the product.</b></p>
+
+  <div class="tip warn">🧭 <b>The one-line answer.</b> "Each of them does one part, often better than we do: a district bulletin, a river station, a weather threat, one slope's sensors, a global model, a map after the flood. What nobody does yet for Arunachal is <b>all of it together</b>: the whole state every day, landslides and floods, seven days ahead, with the score shown, on one base that makes the next hazard cheap. <b>The joining is the product.</b>" <span class="tiny">Never say "nobody else does this".</span></div>
+
+  <h3 style="margin:20px 0 8px">The four checks: sort any rival in ten seconds</h3>
+  <div class="sort4">
+    <div><b>1 · Whole state, every day?</b>Or one district, one station, one slope?</div>
+    <div><b>2 · Days ahead?</b>Or today only, or a map after the event?</div>
+    <div><b>3 · Score shown?</b>Written down before, checked after, for anyone to see?</div>
+    <div><b>4 · One base, many hazards?</b>Or one hazard, built to one tender?</div>
   </div>
-  <div class="tip ok" style="margin-top:12px">🤝 <b>Say:</b> "They wire the slopes someone already chose. We say which slopes, out of millions, deserve wiring. We're complementary." <b>Don't</b> run anyone down; say what they have that we don't (a real save, years of trust).</div>
+  <span class="gm gmrow"><b>The sorting game.</b> Run any player through the four checks. Where they pass all four, we plug in or compare side by side. Where they don't, that's the gap we fill. And always say what they do better than us.</span>
+
+  <h3 style="margin:20px 0 8px">The map of who does what</h3>
+  <div class="filt" id="lfilt"></div>
+  <div class="land" id="land"></div>
+
+  <h3 style="margin:22px 0 8px">Our five differences, each one checkable</h3>
+  <div class="lines">
+    <div class="line"><b>1 · The whole state, every day.</b><span>Not one district bulletin, one chosen station or one wired slope. Open the map, any square.</span></div>
+    <div class="line"><b>2 · Built for thin records.</b><span>Works with the ~90 dated slides that exist. No 10-year threshold to wait for.</span></div>
+    <div class="line"><b>3 · Days ahead, not after.</b><span>Seven days on forecast rain. Satellite maps tell you after the flood.</span></div>
+    <div class="line"><b>4 · The score is on the screen.</b><span>Written down before, checked after, for anyone to see.</span></div>
+    <div class="line"><b>5 · One base, many hazards.</b><span>46 sources on one grid. The first flood module added two files.</span></div>
+    <div class="line"><b>…and we give back.</b><span>Dated slides, cleaned gauge records and the graded record can all flow to the agencies.</span></div>
+  </div>
+  <span class="gm gmrow"><b>Five things you can prove on the spot:</b> open the map on any block, show the 7 days, show the Scoreboard, and say how the flood Guardian was added with two files. Proof beats promises.</span>
+
+  <h3 style="margin:22px 0 8px">"Why should we let you do it?" Seven reasons</h3>
+  <div class="grid g3 why">
+    <div class="card"><b>It's already running</b><div class="small">You judge a working thing, not a proposal. Hand them the link.</div></div>
+    <div class="card"><b>Nothing to buy to start</b><div class="small">It runs on free data. The asks are records: letters, not money. <i>No price, no "free forever", until agreed with the CEO.</i></div></div>
+    <div class="card"><b>Your warning stays yours</b><div class="small">We give the forecast. The authority decides and speaks.</div></div>
+    <div class="card"><b>Your records, your terms</b><div class="small">Source and terms stay attached; use is agreed in writing first. <i>The holding area is designed, not built.</i></div></div>
+    <div class="card"><b>A fair test, set beforehand</b><div class="small">One district, one monsoon, yardsticks chosen before it starts (e.g. hit and false-alert rates, which GSI itself uses). Judge us on the score.</div></div>
+    <div class="card"><b>It fills the gap, then hands over</b><div class="small">Works now where national plans arrive later, and feeds what it finds back to them.</div></div>
+    <div class="card"><b>No lock-in</b><div class="small">Built to feed their systems (Bhusanket, NDMA's SACHET, a state dashboard). <i>The open feed is planned, not built.</i></div></div>
+  </div>
+  <span class="gm gmrow"><b>Why the Guilds should let you play:</b> the game's already running, it costs nothing to start, their warning stays theirs, their chests stay on their terms, and the test is agreed before it starts.</span>
+
+  <div class="tip" style="margin-top:14px">🕵️ <b>"There may be projects you don't know about."</b> Don't guess, and don't dismiss one you've just heard of. <b>Say:</b> "Quite possibly, especially internal work, so I won't claim nobody else does this. What's running? If something already covers it, we'd rather feed it than copy it." Then the <b>three checks</b>: <i>does it cover the whole state every day? does it look days ahead? does it show its score?</i> "Where it does all three, we plug in. Where it doesn't, that's the gap we fill." Take the name and follow up in writing.</div>
+
+  <h3 style="margin:22px 0 8px">The data-and-sensor rivals, side by side</h3>
+  <div class="vs">
+    <div class="h"></div><div class="h us">Us</div><div class="h">IIT Mandi LEWS</div><div class="h">iIoTs (IIT Mandi spin-off)</div><div class="h">Alertis (Dehradun)</div>
+    <div class="rl">what</div><div class="us">statewide forecast from data, no hardware</div><div>Himalaya-wide landslide forecast from data</div><div>sensor boxes on chosen slopes</div><div>sensor pods, landslide + flood + fire</div>
+    <div class="rl">covers</div><div class="us">every square of the state</div><div>the Indian Himalayan Region</div><div>~60 sites, one slope each</div><div>sites they install</div>
+    <div class="rl">ahead</div><div class="us">7 days, on forecast rain</div><div>today + past 3 days (portal)</div><div>live, as the slope moves</div><div>not shown</div>
+    <div class="rl">floods</div><div class="us">yes, 32 gauges, graded daily</div><div>none found</div><div>none found</div><div>claimed, no proof shown</div>
+    <div class="rl">proof</div><div class="us">replays + live record since 21 Sep</div><div>launched 8 Jul 2026; test numbers not seen</div><div>Kotropi 2018, real save; papers</div><div>none; founded Oct 2025</div>
+    <div class="rl">trust</div><div class="us">none yet</div><div>an IIT's name, wide press</div><div>MoUs, awards, PM visit</div><div>none found</div>
+  </div>
+  <div class="tip ok" style="margin-top:12px">🤝 <b>Say:</b> "They wire the slopes someone already chose. We say which slopes, out of millions, deserve wiring. We're complementary." <b>Don't</b> run anyone down; say what they have that we don't (a real save, years of trust, an authority's mandate).</div>
+  <div class="tip warn" style="margin-top:8px">⚖️ <b>Weak spots against all of them, so say them first:</b> we're not an authority and must never sound like one · no live monsoon yet (the record began 21 Sep) · landslide forecasts are written down, not yet graded live · a small team, while years of trust sit on their side.</div>
+  <div class="play">
+    <span class="lv">🎮 the other players</span>
+    <p>In the Council, other players will be named: "GSI already does this", "IIT Mandi launched one", "Google is free", "insurers have flood models". Don't panic, and don't attack. Each one does <b>one part</b>. Say what they do well, say which of the four checks they pass, and say where we fit: often <i>beside</i> them, sometimes <i>feeding</i> them.</p><p>Your honest weak spots against all of them: no mandate, no live monsoon yet, landslide forecasts not graded live yet, and a small team. <b>Say these first</b>, before anyone else does.</p>
+    <div class="real">Government (GSI NLFC, GSI maps, CWC, IMD, NESAC, NDMA/APSDMA, ISRO/NRSC, NDEM, India-WRIS), research and sensors (IIT Mandi LEWS, iIoTs, Alertis, Amrita, CBRI), regional and UN (ICIMOD, Early Warnings for All), big tech (Google Flood Hub, AI earth models), risk firms (Moody's RMS, Fathom, Jupiter), Indian companies (Vassar Labs, satellite startups, private weather). Sources in <code>docs/design/WHO_ELSE_LANDSCAPE.md</code>.</div>
+    <details class="pask"><summary>"IIT Mandi already launched a Himalaya-wide landslide forecast." Answer in three lines.</summary><div class="ans">"Same family of method, and good work. Three differences: we look seven days ahead, they show today and the past three days; we run floods on the same base; our scores and daily record are on screen. We'd welcome a side-by-side on the same past events."</div></details>
+    <details class="pask"><summary>"Insurers already have India flood models." What's the difference?</summary><div class="ans">"Those price long-run risk for insurers and banks: how much damage a portfolio might take over many simulated years. Ours tells an officer what to watch this week, place by place, with a score. Different question, different buyer."</div></details>
+  </div>
 </section>
 
 <!-- 9 -->
 <section id="s9">
   <h2><span class="n">9</span>What's next: the plan, and the asks</h2>
   <p class="sub">The model plan (ENSEMBLE_STRATEGY.md). <b>Nothing past one method per box is built.</b> Grey = planned.</p>
+  <p class="kid">The next update: instead of one Guardian brain per job, a <b>team</b> of brains with a <b>referee</b>. A new brain joins only if the whole team gets better. Only the green boxes are built today.</p>
   <div class="ens">
     <div class="box"><b>WHERE panel</b><div class="m live">trees on 34 facts</div><div class="m">other ML</div><div class="m">deep learning ×2</div><div class="m">referee (blends)</div></div>
     <div class="op">×</div>
@@ -504,15 +692,22 @@ code{overflow-wrap:anywhere}
     <div class="card"><div class="kicker" style="color:var(--soil)">GSI / PWD / BRO</div><ul><li>dated landslide records with places</li><li><b>road-block logs</b> (PWD, BRO, PMGSY): the best route to more dated slides</li><li>post-disaster study reports</li></ul></div>
     <div class="card"><div class="kicker" style="color:var(--flood)">CWC / dam operators</div><ul><li>danger levels not yet published (7 of our 32 have official ones)</li><li>river cross-sections → depth</li><li>reservoir levels and release schedules</li></ul></div>
   </div>
-  <div class="tip" style="margin-top:10px">🗣️ <b>Frame it:</b> "You'd be giving records to your own forecast. Lined up on the map, they sharpen every product for your district, and the terms stay yours."</div>
+  <div class="tip" style="margin-top:10px">🗣️ <b>Frame it:</b> "You'd be giving records to your own forecast. Lined up on the map, they sharpen every product for your district, and the terms stay yours."<span class="gm"><b>Guild quests.</b> Each ask is a letter, not money: maps, records and readings the Guilds already hold. Ask statewide, and say what each one improves.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the next update</span>
+    <p>Today each job has one Guardian brain. The plan is a <b>panel</b>: several brains (other machine learning, two kinds of deep learning) plus a <b>referee</b> that blends them. The rule: a brain joins only if the <i>whole panel</i> gets better on data it never saw. And the referee stays simple until there are enough dated events to trust a clever one.</p>
+    <div class="real">From ENSEMBLE_STRATEGY.md: judge the team, not the player; the referee's complexity matches the proof data; retrain on a cadence from each season's graded record. Nothing beyond one method per box is built.</div>
+    <details class="pask"><summary>"Will you add deep learning?"</summary><div class="ans">"It's in the plan, as part of a panel, and a model only joins if it makes the whole panel better on data it never saw. Today our shortage is dated events, not model power, so a bigger model alone wouldn't help yet."</div></details>
+  </div>
 </section>
 
 <!-- 10 -->
 <section id="s10">
   <h2><span class="n">10</span>Lines in the question bank that are now out of date</h2>
   <p class="sub">BEYOND_PRESENTATION.md is dated 12 Oct. Since then:</p>
+  <p class="kid"><b>🩹 Patch notes.</b> The old question bank has a few lines that aren't true any more. Learn the new versions so you don't repeat an old one.</p>
   <div class="stale"><div class="old">"It runs from one machine today" (a weak spot)<span class="src">§11.7</span></div><div class="ar">→</div><div class="new">Runs in the cloud every morning since <b>20 Oct</b>. The honest weak spot now: <b>nobody is alerted if it fails</b>.</div></div>
-  <div class="stale"><div class="old">"about 4,500 and 2,100" river forecasts<span class="src">Numbers to have ready</span></div><div class="ar">→</div><div class="new"><b>8,288</b> written down, <b>4,178</b> checked (2 Nov). Read it off the screen.</div></div>
+  <div class="stale"><div class="old">"about 4,500 and 2,100" river forecasts<span class="src">Numbers to have ready</span></div><div class="ar">→</div><div class="new"><b>8,736</b> written down, <b>4,457</b> checked (4 Nov). Read it off the screen.</div></div>
   <div class="stale"><div class="old">Soil erosion as hollow dots (planned)<span class="src">§6.8</span></div><div class="ar">→</div><div class="new">SoilSense is built and on the public app (31 Oct). The public page and deck still don't name the state (the user's rule, 12 Oct).</div></div>
   <div class="stale"><div class="old">"Any date for the server move: no date yet"<span class="src">To decide before the meeting</span></div><div class="ar">→</div><div class="new">Done. Only the PC's backup task is left to switch off.</div></div>
 </section>
@@ -521,12 +716,15 @@ code{overflow-wrap:anywhere}
 <section id="s11">
   <h2><span class="n">11</span>Decide before the meeting</h2>
   <p class="sub">Nothing written anywhere answers these. Agree one line each with the team.</p>
+  <p class="kid">Before the game starts, settle the <b>house rules</b> with your team: price, the pilot offer, the link, dates. If nobody has agreed it, the honest answer in the room is "we'll come back to you".</p>
   <div class="chk" id="dec"></div>
 </section>
 
 <!-- 12 -->
 <section id="s12">
   <h2><span class="n">12</span>Your exercises</h2>
+
+  <p class="kid">The <b>final boss</b> is a mock Council: an hour of hostile questions, one at a time, graded against the docs. Do it twice, once as APSAC and once as CWC.</p>
   <div class="chk" id="ex"></div>
   <div class="cmdlist">
     <div class="cmd"><span>Play an APSAC remote-sensing scientist. Grill me for an hour on SlopeSense, hostile questions only, one at a time. Grade each answer against the docs and tell me what I got wrong.</span><button onclick="cp(this)">copy</button></div>
@@ -534,10 +732,22 @@ code{overflow-wrap:anywhere}
   </div>
   <h3 style="margin:22px 0 8px">Read</h3>
   <div class="card code-list" id="docList"></div>
+  <div class="play">
+    <span class="lv">🎮 the final boss: the mock Council</span>
+    <p>You've learned the world (Level 0), its physics (1), its loot (2), and its two Guardians (3 and 4). Now face the Council. Ask Claude to play an APSAC scientist, then a CWC hydrologist, then a GSI geologist, and to ask only hard questions, one at a time. For every answer: one true line, the number and its source, what it doesn't mean, then stop.</p>
+    <p><b>You win when</b> you can answer the "who else" and "private firms" questions calmly, without running anyone down, and every number you say matches the card.</p>
+  </div>
   <div class="tip ok" style="margin-top:14px">🏁 <b>That's the whole path.</b> Go back to any phase's quiz before a meeting; the 10-day fast track in the roadmap says which.</div>
 </section>
 
-<footer>Phase 7 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Lines from BEYOND_PRESENTATION.md; rivals from COMPETITOR_IIOTS.md and COMPETITOR_ALERTIS.md; plan from ENSEMBLE_STRATEGY.md; asks from GOV_DATA_REQUEST_LIST.md and CEO_PILOT_NEXT_STEPS.md. Numbers re-read from the files named on each card.</footer>
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="n">13</span>Word cards</h2>
+  <p class="sub">The words you'll hear in the Council, with their kid meaning and game name. 👆 Tap to flip.</p>
+  <div class="words" id="words"></div>
+</section>
+
+<footer>Phase 7 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Lines from BEYOND_PRESENTATION.md; rivals from COMPETITOR_IIOTS.md, COMPETITOR_ALERTIS.md and WHO_ELSE_LANDSCAPE.md (web-checked 4 Nov); plan from ENSEMBLE_STRATEGY.md; asks from GOV_DATA_REQUEST_LIST.md and CEO_PILOT_NEXT_STEPS.md. Numbers re-read from the files named on each card; track record refreshed from the 4 Nov snapshot. NDEM, India-WRIS, ICIMOD, Early Warnings for All and the risk firms checked on the web on 5 Nov 2026. 🎮 Story mode added 5 Nov 2026; game names in <code>docs/lrn/LORE.md</code>.</footer>
 </div>
 
 <script>
@@ -550,19 +760,19 @@ function cp(b){ navigator.clipboard.writeText(b.previousElementSibling.textConte
 
 /* numbers card: [value, what, zone, source, means, not] */
 const NUMS = [
-  ["29","sources lined up","free","webapp/assets/backbone/catalogue.json (n_sources)","29 data sources, about 308 GB held, on one grid.","Not 29 partners or agreements."],
+  ["46","sources held, 20 more ready","free","webapp/assets/backbone/catalogue.json (n_held 46, n_ready 20; 4 Nov)","46 data sources, about 344 GB, on one grid. 20 more are checked and ready to pull.","Not 46 partners or agreements. Never call a ready source data we hold. Older pages say 29."],
   ["8.2 M","100 m squares, Arunachal","free","the shared grid (Phase 2) · grid.json","Every fact sits on the same 100 m squares.","Not a 100 m forecast: rain is ~11 km (history) and ~22 km (live)."],
   ["26 yrs","of daily rain everywhere","free","IMERG archive, 2000-06-01 → now, 9,555 days","Satellite rain for every place, every day.","Not ground gauges, and not the live rain (that's Open-Meteo)."],
   ["2 files","the first flood module added","free","BEYOND_PRESENTATION §6.5","Everything else came from the backbone.","Not \"floods were easy\": the verified flood record took weeks."],
   ["~37,000","mapped landslides","ask","metrics.json labels: 37,788 outlines → 91,610 squares","What teaches WHERE slopes fail.","Not dated: none of GSI's outlines carry a date."],
   ["~90","dated landslides","ask","NASA Global Landslide Catalog: 99 points, 90 dated","All we have to learn WHEN. 72 used on IMERG, 84 on Open-Meteo.","Not enough for machine learning: a fitted model lost to the simple rule."],
-  ["6 in 7","landslide place ranked above a quiet one","ask","metrics.json: AUC 0.860 ± 0.016, 50 km test blocks","Ranking on ground the model never saw.","Not \"86% accurate\" and not a chance."],
-  ["2.7× · 10×","landslides at High · Very High","ask","reports/landslide_times_usual.json (84 slides)","vs a usual day at the same place. Ranges: 1.4–4.4 and 6.5–13.8.","Not a chance of a landslide. Very Low (0.22×) is not \"safe\"."],
+  ["6 in 7","landslide place ranked above a quiet one","ask","metrics.json: AUC 0.859 ± 0.016, 50 km test blocks","Ranking on ground the model never saw.","Not \"86% accurate\" and not a chance."],
+  ["2.7× · 10×","landslides at High · Very High","ask","reports/landslide_times_usual.json (84 slides)","vs a usual day at the same place (High 2.73×, Very High 10.16×). Ranges: 1.4–4.4 and 6.5–13.8. The screen rounds High to 3×, so both are right.","Not a chance of a landslide. Very Low (0.22×) is not \"safe\"."],
   ["0.768","rain-timing score","ask","metrics.json trigger: 72 events, ±0.098","Mean of the 3-day and 7-day rain percentiles, nothing fitted. 0.764 on live-source rain.","Not graded live: dated slides arrive too slowly to grade forecasts yet."],
   ["20% = 20%","at a gauged river","ask","snapshot method.gauge.reliability","Said 25–50%: averaged 36.7%, happened 37.9%.","Not true of the \"near here\" outlook, which is approximate."],
   ["61% · 68%","caught · right, warning at 25%","ask","snapshot method.gauge (replay, 1 day ahead)","Of floods at gauges, 61% warned; of warnings, 68% came true.","Not a live result: past years replayed."],
   ["2,180","verified floods","ask","snapshot method.record","Built from the flood map archive, a validated radar test and gauges.","Not every flood: small floods in clouded valleys are missed."],
-  ["8,288 · 4,178","river forecasts written · checked","ask","snapshot track_record (2 Nov)","Every forecast written down before its day. 3 warnings so far, all one faulty reading.","Not a monsoon test: the record began 21 Sep, as the rains ended."],
+  ["8,736 · 4,457","river forecasts written · checked","ask","snapshot track_record (4 Nov)","Every forecast written down before its day. 3 warnings so far, all one faulty reading.","Not a monsoon test: the record began 21 Sep, as the rains ended."],
   ["2 days","level line, 17 CWC gauges","ask","FLOOD_MODULE.md · snapshot method.level","Typical miss 0.13 m (1 day), 0.22 m (2 days) vs 0.17 and 0.26 if the river stayed put.","Not a flood depth on the ground."],
   ["32","river gauges read","ask","snapshot rivers: 18 CWC + 14 NWDP","7 have official danger levels; the rest come from each river's own record.","Not 32 rain gauges."],
   ["703 · 35 · 2,589","catchments · districts · places (Assam)","ask","reports/erosion_priority_assam*.csv · SOILSENSE.md","Ranked for treatment, each with how firm its rank is.","Not field-checked yet. Public material doesn't name the state."]
@@ -615,25 +825,66 @@ const SW = [
   ["\"Better than the official forecast.\"","\"We add to it. The official warning stays official.\""],
   ["\"We own unique data.\"","\"The inputs are public. Ours is the assembly and the checked record.\""],
   ["\"The high-river problem is fixed.\"","\"Cut sharply, not gone. Rivers that haven't risen yet aren't affected.\""],
-  ["\"Six rules.\"","\"Rules we keep in mind.\""]
+  ["\"Six rules.\"","\"Rules we keep in mind.\""],
+  ["\"We're building a spatial data infrastructure.\" (to APSAC)","\"A forecast-ready data backbone. APSSDI shares the maps; we line them up and keep them ready for daily forecasting.\""],
+  ["\"We hold all kinds of environmental data.\"","\"Geospatial data on the ground, water and weather, plus past events and exposure: 46 sources held, 20 more ready.\""]
 ];
 $("swaps").innerHTML = SW.map(([a, b]) => `<div class="swap"><div class="no">${a}</div><div class="ar">→</div><div class="yes">${b}</div></div>`).join("");
+
+/* who else: [group, name, does, leaves open, we fit (say), for your ears, closest?] — sources in WHO_ELSE_LANDSCAPE.md */
+const LAND = [
+  ["gov","GSI · National Landslide Forecasting Centre","District bulletins for today and tomorrow (Bhusanket portal, Bhooskhalan app; opened 2024). Rain forecasts from IMD and NCMRWF, GSI's own maps, rain thresholds. 2025: 21 districts in 8 states, 4 of them public.","Its own rule: at least 10 years of dated landslides to set a threshold, and 3 monsoons of private testing before going public. North-East plan: 6 districts public by 2028, 18 by 2030.","\"Theirs is the official forecast and should stay so. We work with the records that exist today, for the whole state, and every dated slide we find goes back to them.\"","GSI's own slide: Arunachal has 26,451 landslides, only 58 with dates. The one Arunachal district on their list is Itanagar. Never say that in a GSI room as a gap they left; say \"your plan\".",0],
+  ["gov","GSI · national landslide maps","The where map: 1:50,000, about 4.3 lakh km² across 181 districts.","It looks the same in January and August. There's no when.","\"We use it as a cross-check. We add when: today's rain against that place's own history.\"","We have compared our map with theirs, number for number. Keep that back.",0],
+  ["gov","CWC · flood forecasts","Official forecasts at about 350 stations across India, up to about a day ahead, with longer advisories and official danger levels.","Places away from a forecast station; small hill rivers.","\"We read the same public gauges plus 14 small-river ones: a chance for each of 7 days at all 32, an outlook away from gauges, and a public score.\"","Only 7 of our 32 gauges have official danger levels. Never present our own lines as official.",0],
+  ["gov","IMD · rain warnings and flash-flood guidance","The South Asia Flash Flood Guidance System gives the flash-flood threat by watershed, hours to about a day ahead (advisories up to 36 h since 2020).","It forecasts the weather threat, not which slope or river reach is loaded.","\"They forecast the rain. We forecast what it does to this ground. Their forecast is our input, not a rival.\"","GSI's own slide counts 73 IMD weather stations in Arunachal's landslide hills, about one per 960 km². That's why IMD ground rain is on our ask list.",0],
+  ["gov","NESAC · FLEWS","Flood alerts for Assam, by revenue circle, since 2009, with ASDMA. India's first GIS-based flood warning system of its kind.","Assam's plains, not Arunachal's hills.","\"Different ground, same rivers. Arunachal's hills are Assam's upstream, so our hill gauges could become one more input for them.\"","\"Could\" is an idea; nothing has been discussed with them. Don't compare scores: different place, different question.",0],
+  ["gov","NDMA and APSDMA · programmes","NDMA's landslide programme and its glacial-lake (GLOF) programme: ₹150 crore across 4 states, Arunachal among them. In Tawang, APSDMA is preparing water-level recorders, sirens and high-altitude weather stations (news, late Oct 2026).","Money and hardware for chosen sites. Someone still has to say where first.","\"We can help rank which slopes, rivers and lakes come first. That's what the backbone is for.\"","We have no lake-burst forecast. Glacial-lake maps (NWIA) are on our APSAC ask list.",0],
+  ["gov","ISRO, NRSC and Bhuvan","Satellite flood maps after events, and the landslide inventory we learn from.","After the event, not before.","\"Their inventory is what teaches our where map. Thank them for it.\"","We tested the national flood mask: 70.5% of its flooded pixels sit on slopes over 15°. Only if asked, and only as a checked fact.",0],
+  ["res","IIT Mandi · LEWS (Prof. D. P. Shukla's group)","Launched 8 Jul 2026: a daily landslide forecast for the whole Indian Himalayan Region. A where map from about 26,000 GSI landslides, and a rain trigger (\"P-RIL\") from NASA's catalogue and 15 days of satellite rain, shown in percentile classes. Portal, PDF bulletins, WhatsApp alerts.","Its portal shows today and the past 3 days. Landslides only. We haven't seen test numbers or map scale published.","\"Same family of method, and good work. We look 7 days ahead, we add floods and erosion on the same base, and our scores are on screen. We'd welcome a side-by-side on the same past events.\"","Same public inputs as ours (GSI, NASA, IMERG). Say \"we haven't seen\", never \"they don't\". Open their portal the week before. Not the same team as iIoTs.",1],
+  ["res","Sensor systems · iIoTs, Alertis, Amrita, CBRI","Instruments on chosen slopes, watched minute by minute. iIoTs has a real save (Kotropi, 2018).","One slope at a time; someone has to choose the slope.","\"They wire the slopes someone already chose. We say which ones deserve wiring.\"","Never run them down. A real save is worth more than any score of ours.",0],
+  ["big","Google · Flood Hub","Rivers 7 days ahead, worldwide. A level model at big gauged rivers in India. A flash-flood model: 20 km squares, next 24 h, only in cities or places with a flood history, trained on floods drawn from news reports. Open-sourced in June 2026.","In Arunachal's hills the river points are model-only, marked \"lower-confidence… for expert use\". It doesn't read the hill rivers' latest levels. No lake bursts.","\"They're the best in the world at the global part. We read 32 real gauges here each morning, 14 of them small rivers. Their model is planned as a second opinion beside ours.\"","Their API is mostly non-commercial. Never say \"Google can't\".",0],
+  ["big","IBM–NASA, NVIDIA, Google DeepMind · AI earth models","Open \"engines\": models that read satellite images (floods, burn scars, landslides) or forecast weather for the whole planet.","An engine, not a district forecast. Each still needs local labels, gauges and tests.","\"Engines need a driver who knows the road. Any of them can go inside the backbone wherever it makes the whole panel better.\"","We don't use any of them today. Don't imply we do.",0],
+  ["co","Vassar Labs and big IT firms","Flood-warning and disaster platforms for state governments, basin by basin (e.g. Kerala's Periyar).","Usually built to a tender, one basin or one hazard at a time.","\"Ours is already running here, on this state's own slopes and rivers. If the state picks an integrator, our feed can sit inside their platform.\"","They have a delivery record with governments that we don't. Say so.",0],
+  ["co","Satellite analytics startups (e.g. Suhora)","Flood and damage maps from radar satellites, after the event.","After, not before: damage assessment.","\"Their maps are what we learn from. Each mapped flood can become a verified record for us.\"","",0],
+  ["gov","ISRO / NRSC · NDEM (National Database for Emergency Management)","A national geo-portal: a multi-scale geospatial database for disasters, with decision-support tools, sharing space-based inputs and the services of forecasting agencies. Mirrored at the Ministry of Home Affairs.","A national shelf for emergency managers. It shares and supports decisions; it isn't one state's daily landslide-and-flood forecast with a graded record.","\"NDEM is the national shelf; we're one state's workshop. We line everything up on one 100 m grid, refresh it daily, forecast seven days ahead and grade every forecast. NDEM could be one place our forecast is shown.\"","We haven't checked NDEM's Arunachal layers in detail. Don't claim what it lacks; say what we do.",0],
+  ["gov","NWIC · India-WRIS","The national water-data portal: static and live water data (rainfall, reservoirs, river points, soil moisture, groundwater). NWDP, where our 14 small-river gauges come from, is in the same family.","It publishes the readings. It doesn't turn them into a forecast for each river, with a score.","\"It's one of our sources, and we thank it. They publish the readings; we turn them into a seven-day chance at each gauge and show how it scored.\"","The NWDP feed has been down at source for days (4 Nov snapshot). Don't blame them in the room.",0],
+  ["intl","ICIMOD · SERVIR-HKH (regional)","A regional centre for the Hindu Kush Himalaya. Its flood work downscales global flood forecasts with routing models to forecast water levels in flood-prone river stretches, 10–15 days ahead, and it runs community-based flood warning.","A regional programme working through partner countries and pilot rivers. Our job is one state's slopes and rivers, every day, with landslides too.","\"A respected regional centre whose methods we learn from. They work across the region; we work block by block on one state, reading its own gauges. Complementary.\"","Where SERVIR runs operationally wasn't checked. Never say it \"doesn't cover\" Arunachal.",0],
+  ["intl","UN · Early Warnings for All","The UN goal that everyone is covered by early warning by 2027, built on four pillars: knowing the risk; monitoring and forecasting; spreading the warning; and being ready to respond.","A goal and a framework, not a forecast.","\"We sit in the first two pillars: risk knowledge and forecasting, for this state. The warning and the response stay with the authorities, which is the other two pillars.\"","",0],
+  ["risk","Insurance catastrophe models · Moody's RMS, Fathom","Flood-risk models and maps for insurers, banks and planners. Moody's RMS sells an India inland flood model (125,000 simulated events across 9,033 catchments). Fathom (owned by Swiss Re) sells global flood maps.","Built to price long-run risk across many simulated years, not to say what to watch this week in one district.","\"They answer 'how much could a portfolio lose over the years'. We answer 'what should this officer watch this week, and how sure are we'. Different question, different buyer.\"","Their hazard maps are finer than ours in places and validated on insured losses. Never say they're wrong; say they're for a different job.",0],
+  ["risk","Climate-risk analytics · e.g. Jupiter Intelligence","Risk scores for any address worldwide under future climate scenarios, built for banks' and companies' financial decisions and disclosures.","Decades ahead, for finance. Not days ahead, for a district officer.","\"They tell a bank what 2050 might look like for a building. We tell an officer what next week looks like for a valley.\"","",0],
+  ["co","Private weather companies (e.g. Skymet)","Weather and rain forecasts, sold to farmers, insurers, media and others.","They forecast the rain, not what it does to a slope or a river.","\"Rain is our input. A better rain forecast from anyone makes ours better. They're a possible supplier, not a rival.\"","Not researched in detail. Don't quote their accuracy.",0]
+];
+const LG = [["all","All"],["gov","Government"],["res","Research & sensors"],["intl","Regional & UN"],["big","Big tech"],["risk","Risk & insurance firms"],["co","Indian companies"]];
+let lsel = "all";
+function drawLand(){
+  [...$("lfilt").children].forEach((b, i) => b.classList.toggle("on", LG[i][0] === lsel));
+  $("land").innerHTML = LAND.filter(r => lsel === "all" || r[0] === lsel).map(([g, n, does, open, fit, ear, near]) =>
+    `<div class="lc ${g}"><span class="k">${LG.find(x => x[0] === g)[1]}</span><b>${n}${near ? '<span class="near">closest to us</span>' : ""}</b>
+      <div class="r"><i>does</i><span>${does}</span></div>
+      <div class="r"><i>leaves open</i><span>${open}</span></div>
+      <div class="r"><i>we say</i><span class="fit">${fit}</span></div>
+      ${ear ? `<div class="r"><i>your ears</i><span class="ear">${ear}</span></div>` : ""}</div>`).join("");
+}
+$("lfilt").innerHTML = LG.map(f => `<button>${f[1]}</button>`).join("");
+[...$("lfilt").children].forEach((b, i) => b.addEventListener("click", () => { lsel = LG[i][0]; drawLand(); }));
+drawLand();
 
 /* grilling: room -> [q, say, trap, further] */
 const G = {
   "APSAC": [
     ["Your map is 100 m but your rain is 11 km. Isn't that false precision?","Two halves. WHERE is 100 m, from terrain, soil and cover. WHEN is at rain scale: ~11 km in the history, ~22 km live. The map's fine texture is the terrain, not the weather, and the app says so.","Don't claim 100 m rain.","Finer live rain is a paid-plan step; a valley cloudburst can still fall between points."],
     ["Monsoon is cloudy. How did you map floods at all?","Radar sees through cloud. We built a radar flood test, checked it before using it, and joined it with the global flood map archive and gauge records: 2,180 verified floods.","Don't say optical satellites were enough.","Only if asked: the old radar screen passed 97–100% of flood-free dates, so it was replaced."],
-    ["Did you test on random points? Neighbours leak, so the score is inflated.","No. Tested on 50 km blocks the model never saw: 0.860 ± 0.016. Random splits would score higher, which is exactly why we don't use them.","Don't quote one decimal more than you have.",""],
+    ["Did you test on random points? Neighbours leak, so the score is inflated.","No. Tested on 50 km blocks the model never saw: 0.859 ± 0.016. Random splits would score higher, which is exactly why we don't use them.","Don't quote one decimal more than you have.",""],
     ["Why not deep learning? Everyone uses CNNs now.","For WHERE we have ~37,000 mapped slides, so trees on 34 facts do well and can be explained. Our shortage is in time (~90 dated slides), and deep learning doesn't fix a shortage of examples. Deep models are in the plan, admitted only if they improve the whole panel.","Don't call trees \"old-fashioned\" or deep learning \"hype\".",""],
     ["How did you pick the no-landslide places? Random ones on gentle ground make it easy.","We tested picking them only from steep ground: 0.860 vs 0.862, no real difference here, because almost all of the state is steep. We choose them for valid labels, not for the score.","Keep back the exact sampling rules.",""],
     ["Why didn't you use the national flood mask?","We tested it first: most of its flooded pixels sit on slopes over 15°, where water can't stand. It gets the region right, not the pixels.","Only if asked, and as a checked fact, never as an attack.",""],
+    ["We already have APSSDI. Isn't this the same thing?","No, and it builds on it. APSSDI is the state's library of maps, and some of our most useful layers come from it: rock types, fault lines, villages. We do a different job: we add what changes every day, rain and rivers, line everything up on one grid, keep it fresh, forecast from it, and check every forecast.","Never say \"better than APSSDI\", and never call ours a \"spatial data infrastructure\" here.","Full version: Phase 2, section 0."],
     ["What would you need from us?","Glacial-lake and wetland maps in bulk, 2.5 m imagery access, full-resolution land-cover sources, and LiDAR for priority districts. Statewide, and each one named against what it improves.","Don't make it about one valley.",""]
   ],
   "GSI": [
     ["Your labels are our inventory, and it has no dates. How can you forecast timing?","WHERE learns from the inventory, which needs no dates. WHEN is a separate rule from ~90 dated slides: how unusual this week's rain is for that exact place. Scored 0.768 on 72 events, with nothing fitted.","Don't say the inventory forecasts timing.","A model fitted on those events lost to the simple rule."],
     ["Why not intensity–duration thresholds, like the literature?","We tried. The intensity–duration line came out backwards on our data. The total-rain line catches 89% of slides but fires 87–165 days a year, so it can't warn. A per-place percentile is fairer: dry places aren't silent and wet places aren't always on alarm.","Don't say the line is used as a floor: it isn't in the code.",""],
-    ["What does \"High\" mean? Is that a probability?","A rank. On 84 dated slides, High places-and-days saw about 2.7× the usual number of slides (range 1.4–4.4), Very High about 10×.","Never a percentage.",""],
+    ["What does \"High\" mean? Is that a probability?","A rank. On 84 dated slides, High places-and-days saw about 2.7× the usual number of slides (range 1.4–4.4; the screen rounds it to 3×), Very High about 10×.","Never a percentage.",""],
     ["Very Low — so it's safe?","No. Slides there have been rare, about 0.22× the usual. Rare isn't never.","Never say \"safe\".",""],
     ["Earthquakes, road cuts, blasting?","Rain-triggered slides only. Road-cut and quarry records are on our ask list; earthquakes would need their own trigger.","Don't stretch it to cover them.",""],
     ["How does your map compare with ours?","Ours learns from the full inventory at 100 m, statewide, and is paired with a daily rain trigger. Happy to sit down with your team and compare, place by place.","Keep back our side-by-side numbers in a room.",""],
@@ -644,9 +895,9 @@ const G = {
     ["Whose danger levels?","Yours, where published: 7 of our 32 gauges. Elsewhere a line from each river's own record, labelled as such.","Don't present a derived line as official.","Unpublished danger levels are on our ask list."],
     ["Gauges send bad readings. How do you cope?","A three-step spike filter. It caught a case where one wrong reading would have shown as a 52% flood, and 18 false high-water days were confirmed and removed. Models were retrained on the cleaned history.","",""],
     ["The river is already above danger. What do you say for tomorrow?","Honestly: this is our known weak spot. A river already above its line can be given too low a chance for the next 2–3 days. It's been cut sharply, not fixed. Rivers that haven't risen yet aren't affected.","Never say it's fixed.",""],
-    ["Is your level forecast better than \"the river stays put\"?","Yes, modestly: typical miss 0.13 m a day ahead vs 0.17 m for no-change; 0.22 vs 0.26 m two days ahead. Its range is built to hold 80% of days and held 85.9% live.","Don't claim a depth forecast on the ground.",""],
+    ["Is your level forecast better than \"the river stays put\"?","Yes, modestly: typical miss 0.13 m a day ahead vs 0.17 m for no-change; 0.22 vs 0.26 m two days ahead. Its range is built to hold 80% of days and held 85.1% live (to 4 Nov).","Don't claim a depth forecast on the ground.",""],
     ["Why not just use Flood Hub or GloFAS?","We built our own on Arunachal's own rivers so we can show its record. Big-river global models are useful as a cross-check alongside.","Don't dismiss Google's models.",""],
-    ["How many false alarms?","For rivers it's counted on the record: 3 warnings at 25% so far, all from one faulty reading at one gauge on 29 Sep. 8,288 forecasts written down since 21 Sep, 4,178 checked.","Read the live numbers off the screen; never from memory.",""],
+    ["How many false alarms?","For rivers it's counted on the record: 3 warnings at 25% so far, all from one faulty reading at one gauge on 29 Sep. 8,736 forecasts written down since 21 Sep, 4,457 checked (4 Nov).","Read the live numbers off the screen; never from memory.",""],
     ["And streams with no gauge?","An approximate outlook, tagged as approximate on screen. It failed its strict calibration test, so we don't call it a forecast.","",""]
   ],
   "Big idea": [
@@ -655,15 +906,54 @@ const G = {
     ["What if a big company gives it away free?","Then the free part becomes a free input to us. Our base layer already runs on free data, on purpose. What people pay for is what a free global tool doesn't give: their own records brought in, their own warning levels, sensors on chosen sites, a feed into their systems, and someone local who answers for it.","No price figures: agree them with the CEO first.",""],
     ["Weather forecasts are getting much better. Doesn't that make you unnecessary?","The opposite. Rain is an input. A better rain forecast is a better input to us. A weather model says how much rain falls. It doesn't say which slope gives way or which river rises. That needs the ground, the rivers and the local record, which is the backbone.","",""],
     ["What if the government builds it itself?","Each agency does its own part well. Joining them is nobody's job. We'd rather be that joining for them: their data, their terms, their forecast. And if a national system comes, the backbone can feed it.","Never frame an agency as having failed.",""],
-    ["The data is public. What's stopping anyone from copying you?","Three things can't be downloaded: the assembly (29 sources made to fit one map), the daily upkeep, and the checked history. Every forecast is written down and graded, and that record grows every day. A copy of the files is a snapshot. It doesn't keep itself current or prove itself.","Don't say \"we own unique data\". Most inputs are public.","Keep back how each source is reached and what had to be repaired in it."],
+    ["The data is public. What's stopping anyone from copying you?","Three things can't be downloaded: the assembly (46 sources made to fit one map), the daily upkeep, and the checked history. Every forecast is written down and graded, and that record grows every day. A copy of the files is a snapshot. It doesn't keep itself current or prove itself.","Don't say \"we own unique data\". Most inputs are public.","Keep back how each source is reached and what had to be repaired in it."],
     ["Someone copies your code. Then what?","The code is the small part. Copying it gives a snapshot, not the daily runs, the source repairs, the agency relationships or the months of graded record. We'd still be ahead the next morning.","Don't rely on secrecy as the answer.",""],
     ["Why can't AI, ChatGPT, just do this?","A chat model learned from text. It has never measured a slope here, and it can't tell whether last week's rain was unusual for one valley. This is a measuring problem, not a language problem. Where AI helps us is reading: pulling dated events out of old reports and news.","",""],
     ["Sensor companies already warn about landslides. Why you?","They put instruments on a slope someone already chose and watch it minute by minute. Useful, and different. We scan the whole state without hardware and say which slopes and rivers deserve an instrument. The two fit together.","Never run a competitor down. Say what they have that we don't: a real save, years of trust.",""],
-    ["Why trust a small startup with this?","Not on trust, on evidence. Judge by what's running: 29 sources, a statewide map, two live forecasts, a daily check. Then start small: one district, one season, every forecast on record, and judge us on the score.","No claims of awards, papers or certification.",""],
+    ["Why trust a small startup with this?","Not on trust, on evidence. Judge by what's running: 46 sources, a statewide map, two live forecasts, a daily check. Then start small: one district, one season, every forecast on record, and judge us on the score.","No claims of awards, papers or certification.",""],
     ["Isn't this a research project, not a product?","It runs every morning by itself and shows its own score. That's the difference between a service and a study.","","The parts still done by hand: refreshing the slower sources and publishing the public copy."],
     ["Does it work beyond one state?","Nothing in the backbone is tied to a place or a hazard. It knows the ground, the rain and the rivers. Any area with a where, a when and a record to check against fits. Our third module already runs in a neighbouring state.","Don't give dates for new states. Don't name the state on the public deck.",""],
     ["Your forecast is wrong and people are hurt. Who's responsible?","The warning is always the authority's call. We give a forecast, which is information, with an honest statement of how sure it is. The screens say they don't replace official warnings.","Never say we issue warnings.",""],
     ["Why should anyone pay for it?","The statewide layer runs on free data. Paid work starts where someone wants it finer and faster: their records brought in, sensors on chosen sites, and later the feed. We'd rather size it with you than quote a number today.","Prices and market size aren't in our notes. Agree them first.",""]
+  ],
+  "Who else": [
+    ["Name one thing you do that none of them do.","No single one of them does all five together for Arunachal: the whole state every day, landslides and floods, seven days ahead, the score on screen, and one base that makes the next hazard cheap. Each does one or two of those, often better than we do. The joining is the product.","Don't claim any single piece is unique to us. The combination is.","Then open the app and show it: any square, any river, the score."],
+    ["GSI already runs a National Landslide Forecasting Centre. Why do we need you?","Theirs is the official landslide forecast and should stay that way. It grows district by district, and each district needs years of dated landslides and three monsoons of testing first, which is the right standard. Arunachal has very few dated slides, so most of it comes later in their plan. We work with the records that exist today, for the whole state, and every dated slide we find can go back to them.","Never say GSI \"only covers Itanagar\" as a criticism. Say \"your plan\".","Their own slide: 26,451 Arunachal landslides, 58 with dates. NE plan: 6 districts public by 2028, 18 by 2030."],
+    ["IIT Mandi launched a Himalaya-wide landslide forecast in July. Isn't yours the same thing?","The same family of method, and good work: a where map from GSI's inventory and a rain trigger from NASA's catalogue and satellite rain. Three differences. We look seven days ahead on forecast rain; their portal shows today and the past three days. We run floods and soil erosion on the same base. And our test scores and daily record are on screen. We'd welcome a side-by-side on the same past events.","Don't say they don't test. Say \"we haven't seen their test numbers published\". Open their portal the week before.","If pressed on inputs: yes, the same public sources, because they're the best public sources. The difference is what's built on top and what's checked."],
+    ["Your inputs are all public. IIT Mandi uses the same ones. So what's yours?","What's built between the input and the screen: 46 sources made to fit one 100 m grid, four landslide sets joined into one, each place's own 26-year rain history, a test on ground the model never saw, and a record of every forecast, graded. Anyone can download the inputs. A checked, running forecast is the hard part.","Don't say \"we own unique data\".","Keep back how each source is reached and repaired."],
+    ["CWC already forecasts floods, and NESAC's FLEWS already warns Assam. Why another one?","CWC's forecasts are the official ones, at chosen stations. FLEWS covers Assam's plains by revenue circle and has run since 2009, the first of its kind. Ours is for Arunachal's hills: a chance for each of seven days at all 32 gauges we read, 14 of them small rivers, an outlook away from gauges, and a public score. Those hills are Assam's upstream, so our hill readings could help them too.","Never \"better than\". Don't compare our score with FLEWS: different place, different question.","\"Could help them\" is an idea. Nothing has been discussed."],
+    ["IMD already issues flash-flood guidance.","Yes: by watershed, hours to about a day ahead, and it's a weather threat. We take that rain and ask what it does to this slope and this river, for seven days, and keep score at the gauges. Their guidance is an input we'd like more of, not a rival.","",""],
+    ["Google's Flood Hub is free and now does flash floods too. Why pay you?","Google is the best in the world at the global part. Their flash-flood model works on 20 km squares for the next 24 hours, and only in cities or places with a flood history. In Arunachal's hills their river points are model-only, marked for expert use. We read 32 real gauges here every morning, and we add landslides and erosion. Their model is open now, and we plan to run it beside ours as a second opinion.","Never say \"Google can't\". Their API is mostly non-commercial, so it isn't a product feed.",""],
+    ["IBM, NVIDIA and Google all have AI earth models. Why not just use theirs?","Those are engines. They read satellite images or forecast the weather for the whole planet. An engine still needs a driver who knows the road: local landslides, local gauges, local tests. Any of them can go inside the backbone wherever it makes the whole panel better, and we'd be glad of it.","Don't imply we use them today. We don't.",""],
+    ["Big IT firms and companies like Vassar Labs build disaster platforms for states. Why a small startup?","They build well to a tender, usually one basin or one hazard at a time. Ours is already running here, on this state's own slopes and rivers, before anyone paid for it. Judge the running thing. And if the state picks an integrator, our feed can sit inside their platform.","Don't run them down. They have a delivery record with governments that we don't.",""],
+    ["Satellite companies already map floods.","After the flood. That's damage assessment, and it's useful. We forecast before. Their maps are exactly what we learn from: each mapped flood can become a verified record.","",""],
+    ["NDMA is spending ₹150 crore on glacial lakes, Arunachal included. Where do you fit?","That money buys sensors and preparedness at chosen lakes, which is right. We don't forecast lake bursts today. What the backbone can do is rank: which lakes, slopes and rivers deserve the sensors first. That's why glacial-lake maps are on our ask list.","Never imply we have a lake-burst product.",""],
+    ["There may be projects, even internal ones, that you don't know about. Maybe we're already building this.","Quite possibly, so I won't claim nobody else does it. What's running? If something already covers this, we'd rather feed it than copy it. Three checks: does it cover the whole state every day, does it look days ahead, does it show its score? Where it does all three, we plug in. Where it doesn't, that's the gap we fill.","Don't guess at a project you haven't seen, and don't dismiss one you've just heard of.","Take the name and follow up in writing."],
+    ["Why should we let you do this at all?","Because the ask is small and the test is fair. It's already running, so you judge a working thing. It needs no hardware to start. Your warning stays yours, and your records stay on your terms. Pick a district and one monsoon, set the yardsticks before it starts, and judge us on the score. If it doesn't earn its place, you've spent a few letters.","No price, no \"free forever\", no dates that haven't been agreed with the CEO.",""],
+    ["What's the risk to us if we let you in?","Two real ones. A wrong forecast: the warning stays yours, every number says how sure it is, and the screens say they don't replace official warnings. And confusion when two forecasts disagree: in a pilot, ours goes to your officers, and what reaches the public is your decision.","The app is publicly reachable today. Don't say the public can't see it. \"Officers first\" is a pilot term to agree.",""],
+    ["If GSI's bulletin and yours disagree, who's right?","The official one is the official one. A disagreement is information. We'd show both, say which way ours leans and why, and log who turned out right. Over a season that teaches everyone something.","Never say \"ours\".",""],
+    ["Won't you make our department look bad?","The aim is the opposite: your forecast, built on your records, shown the way you choose. We'd rather be the engine behind your bulletin than a rival to it.","Branding and naming are business decisions. Agree them with the CEO before offering anything.",""],
+    ["ISRO's NDEM already holds geospatial data for disasters. Isn't that your backbone?","NDEM is the national shelf: maps at many scales, forecasting agencies' services and decision-support tools for emergency managers across India. We're one state's workshop: everything lined up on one 100 m grid, refreshed every morning, turned into landslide and flood forecasts seven days ahead, and every forecast graded. Different jobs. NDEM could even be one of the places our forecast is shown.","Don't claim what NDEM lacks: we haven't checked its Arunachal layers in detail.","Same shape of answer as APSSDI: a library shares maps; a workshop builds forecasts from them."],
+    ["India-WRIS already publishes river and rain data. Why you?","It's one of our sources, and a good one: our 14 small-river gauges come from the same national water-data family. They publish the readings. We clean them, turn them into a chance for each of the next seven days at each gauge, add the outlook away from gauges, and show how it scored.","Never blame the feed in the room, even when it's down.",""],
+    ["ICIMOD already runs flood early warning in the Himalaya.","A respected regional centre, and its methods are worth learning from: it downscales global flood forecasts to river stretches, 10–15 days ahead, and runs community-based warning. It works across the region with partner countries. We work block by block on one state, from its own gauges, with landslides on the same base. Complementary, not competing.","Don't say where it does or doesn't run: we haven't checked.",""],
+    ["Doesn't the UN's Early Warnings for All already cover this?","It's the goal we're helping meet: everyone covered by early warning by 2027, on four pillars. We sit in the first two, knowing the risk and forecasting it, for this state. Spreading the warning and the response stay with the authorities.","",""],
+    ["IIT Mandi could add floods and a seven-day view next year. Then what?","Good: the state is better served, and so are we, because competition sharpens everyone. Three things don't copy in a year: a graded record (it can't be backdated), one backbone where the next hazard is cheap, and the work with this state's own agencies and records. And we'd rather compare side by side on the same past events, or work together, than race.","Never talk down an IIT. Their name and reach are real advantages.",""],
+    ["Why not just partner with IIT Mandi or GSI, instead of doing it yourselves?","We'd welcome that. The backbone is built to feed others: dated slides, cleaned gauge records and the graded record can all flow to them. But someone has to run Arunachal's forecast every morning now, and answer for it. That's the part we do.","Don't promise a partnership that hasn't been discussed.",""],
+    ["Why is a startup better placed than an IIT or an ISRO centre?","Not instead of them: their science is what we build on. A research group's job is methods and papers. A national centre's job is national coverage. Ours is narrower: run one state's forecast every day, keep its data fresh, show the score, and fix what breaks. Different jobs, and the state needs all three.","No claims of awards, papers or certification.",""]
+  ],
+  "Private firms": [
+    ["Insurers already have India flood models: Moody's RMS, Fathom. Why you?","Those are built to price long-run risk for insurers and banks: how much a portfolio could lose over many thousands of simulated years. Moody's RMS, for example, sells an India inland flood model built on 125,000 simulated events. Ours answers a different question for a different person: what should this officer watch this week, place by place, and how sure are we. Their maps could even be a cross-check for our \"if a flood comes\" layer.","Never say their models are wrong. They're validated on insured losses; say they're for a different job.",""],
+    ["Climate-risk firms give a risk score for any address in the world. Isn't that the same?","They look decades ahead, under climate scenarios, for banks and companies making financial decisions. We look days ahead, for a district officer making today's decisions. A 2050 risk score and next week's forecast are both useful, and they don't replace each other.","",""],
+    ["Private weather companies already forecast rain for every district.","Rain is our input. A weather forecast says how much rain falls; we say what that rain does to this slope and this river, against that place's own history. A better rain forecast from anyone makes ours better, so they're a possible supplier, not a rival.","Don't quote their accuracy: not researched.",""],
+    ["A sensor company offers hardware plus software as one package. Why not them?","If you already know which slope to wire, buy the sensors: they watch that slope minute by minute, and some have real saves. But Arunachal is about 84,000 km², and most of it has never been wired or walked. Start with the map that says where, and the sensors go where they count most. We'd happily point to their boxes.","Never run a sensor company down. A real save beats any score of ours.",""],
+    ["Big IT firms will bid for this, with bigger teams and a delivery record.","They build well to a tender, usually one basin or one hazard at a time, and they do have a delivery record with governments that we don't. Ours is already running here, statewide, on this state's own slopes and rivers, before anyone paid for it. Judge the running thing. If the state picks an integrator, our feed can sit inside their platform.","Don't run them down.",""],
+    ["A bigger company will undercut your price.","Then compare what each gives: the whole state every day, two hazards, seven days ahead, a graded record, your own records brought in. Our base layer runs on free data on purpose, so our costs are low too. The price itself is something we'd rather size with you.","No price figures until agreed with the CEO.",""],
+    ["Aren't you just repackaging NASA, ESA and Google data?","The inputs are public on purpose, so anyone can check them. What we add is everything between the input and the screen: 46 sources made to fit one grid, four landslide sets joined into one, each place's 26-year rain history, gauges cleaned of bad readings, tests on ground the model never saw, and a record of every forecast. A pile of downloads isn't a forecast that runs and proves itself.","Don't claim unique data.",""],
+    ["A competitor says their model is 95% accurate. Yours says 0.86. Explain.","Ask two things of any score. Tested how: on ground the model never saw, or on random points next to the ones it learned from? Ours is on 50 km blocks it never saw, which scores lower but honestly. And accurate at what: for rare events, always saying \"no flood\" is 99% accurate and useless. Ask for hits, false alarms, and whether the chances are calibrated. Happy to score both on the same past events.","Don't attack their number. Ask how it was measured.",""],
+    ["Your scores look good. Are they comparable with theirs?","Only if tested the same way. Three questions: was it tested on ground the model never saw, was it asked to rank or to give a chance, and on how many events? Ours: 0.859 ranking on 50 km blocks never seen, 72 events for landslide timing, 20% means 20% at gauged rivers. The fair way is one shared set of past events, scored for both.","",""],
+    ["What stops a well-funded company copying your whole approach?","Nothing stops them trying, and the method isn't secret: where × when is in the textbooks. What doesn't copy quickly is the running thing: the assembly of 46 sources, the daily upkeep, the repairs to each source, the agency records brought in, and a graded record that grows every day and can't be backdated. A copy is a snapshot. We'd be ahead the next morning, and still improving.","Don't rely on secrecy as the answer.",""],
+    ["Will you share our records with other clients or competitors?","No. Your records come in under terms agreed in writing first, with their source attached. They're used for your forecast, and nothing goes to another client or state without your say.","The holding area for agency records is designed, not built. Say so if asked.",""],
+    ["If a global company opens an India office next year, are you finished?","They'd bring a global model, which we can run beside ours as a second opinion, like Google's. What a global company doesn't bring is this state's own gauges, rock maps and agency records, the field checks, and a graded record that sits with the office. That's slow, local work, and it's what we do every morning.","Never say \"they can't\" or \"they won't come\".",""]
   ]
 };
 const ROOMS = Object.keys(G);
@@ -714,7 +1004,9 @@ checks("dec", [
   ["Terms for records","one sentence on how an office's records are held, used and shown"],
   ["Dates","for the open feed and anything else; today the honest answer is \"no date yet\""],
   ["The company and the team","who we are, how long, how it's funded"],
-  ["Hosting and security","where a client's copy would run, who has access"]
+  ["Hosting and security","where a client's copy would run, who has access"],
+  ["Look at the others the week before","open IIT Mandi's LEWS portal and GSI's Bhusanket; note what each shows for Arunachal that day"],
+  ["How to brand a joint forecast","if an agency wants it under its own name, what we say"]
 ], "d");
 checks("ex", [
   ["Build your own numbers card","one page: every headline number, its source file, what it does not mean. Use section 3 as the check, not the crib."],
@@ -725,7 +1017,8 @@ checks("ex", [
 ], "x");
 const DOCS = [
   ["docs/BEYOND_PRESENTATION.md","the question bank, with the \"keep back\" lines (★ first)"],
-  ["docs/design/COMPETITOR_IIOTS.md · COMPETITOR_ALERTIS.md","the two rivals"],
+  ["docs/design/WHO_ELSE_LANDSCAPE.md","everyone else in the field, government to Google, with sources"],
+  ["docs/design/COMPETITOR_IIOTS.md · COMPETITOR_ALERTIS.md","the two sensor rivals"],
   ["docs/design/ENSEMBLE_STRATEGY.md","the model plan and its three rules"],
   ["docs/design/REMAINING_WORK.md","what's still open"],
   ["docs/design/CEO_PILOT_NEXT_STEPS.md","Free / Ask / Paid, and likely questions"],
@@ -734,6 +1027,33 @@ const DOCS = [
 ];
 $("docList").innerHTML = DOCS.map(([f, w], i) => `<label><input type="checkbox" data-id="r${i}" ${S["r"+i] ? "checked" : ""}><code>${f}</code><span class="small">${w}</span></label>`).join("");
 $("docList").addEventListener("change", e => { if (e.target.dataset.id) { S[e.target.dataset.id] = e.target.checked; save(); } });
+
+/* ---------- word cards: [word, kid meaning, game name, comes back in] ---------- */
+const WORDS = [
+  ["Mandate","The official right and duty to warn people. GSI, CWC, IMD and the disaster authorities have it; we don't.","the Guilds' seal","Level 7"],
+  ["Forecast vs warning","A forecast is information. A warning is an official decision to tell people to act.","the prophecy vs the Mayor's bell","back from Level 0"],
+  ["Pilot","A small, time-boxed test in one place, judged against yardsticks agreed before it starts.","a practice match","Level 7"],
+  ["Yardstick","The measure a test will be judged on, chosen in advance (e.g. hit rate, false-alert rate).","the pass mark written first","back from Level 1"],
+  ["Hit rate","The share of real events that had a warning before them.","floods caught","back from Level 4"],
+  ["False-alert rate","The share of warnings with no event. Measurable for gauged rivers; not for landslides here.","silent valleys","back from Level 3"],
+  ["Calibrated","When it says 20%, about 20% happen.","🎲 honest dice","back from Level 0"],
+  ["AUC","How often the model ranks a real event's place above a quiet one. 0.5 = coin toss.","the pick-the-right-block game","back from Level 0"],
+  ["Spatial CV","Testing on whole regions the model never saw.","🏋️ the surprise exam","back from Level 0"],
+  ["Provenance","Where each piece of data came from, and on what terms.","🏷️ the tag","back from Level 2"],
+  ["Terms of use","The rules for using and sharing a source or an agency's records.","the chest's colour","back from Level 2"],
+  ["Lock-in","When a client can't easily leave a supplier. We design against it: our output can feed their systems.","no locked doors","Level 7"],
+  ["API / open feed","A door that lets other systems read our forecasts directly. Planned, not built.","🚪 the side door (locked)","back from Level 0"],
+  ["Ensemble","Several models blended by a referee; a model joins only if the whole team improves.","the panel and the referee","Level 7"],
+  ["Catastrophe model","An insurer's model that simulates many years of disasters to price long-run losses.","the insurers' dice","Level 7"],
+  ["Climate-risk score","A risk number for a place under future climate scenarios, for banks and companies.","the 2050 crystal ball","Level 7"],
+  ["Geo-portal","A website that shares maps from many sources (e.g. APSSDI, NDEM).","📚 a map library","back from Level 2"],
+  ["Integrator","A large firm that builds a whole system to a government tender.","the castle builders","Level 7"],
+  ["Complementary","Doing a different part of the same job, so the two fit together.","another player on your team","Level 7"],
+  ["The joining","Our core claim: the whole state, both hazards, days ahead, scored, on one base.","the World Engine at work","Level 7"]
+];
+$("words").innerHTML = WORDS.map(([w, m, g, b]) =>
+  `<div class="wc"><div class="in"><div class="f"><b>${w}</b><span>tap to flip</span></div><div class="b">${m}<span class="gn">🎮 ${g}</span><span class="back">${b.startsWith("back") ? b : "comes back in: " + b}</span></div></div></div>`).join("");
+$("words").addEventListener("click", e => { const c = e.target.closest(".wc"); if (c) c.classList.toggle("on"); });
 
 function meter(){
   const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id)

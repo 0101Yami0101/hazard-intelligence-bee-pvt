@@ -66,9 +66,11 @@ def _first_last(t: pd.Series, v: pd.Series) -> dict:
             zip(k.first().index, k.first(), k.last(), k.count())}
 
 
-def _cwc_daily(code: str, since: date) -> pd.Series:
-    """Daily max level from `since` on. The API takes a nested date filter,
-    so this is ~150 rows a week rather than the station's whole history."""
+def cwc_readings(code: str, since: date) -> pd.DataFrame:
+    """Every level reading from `since` on, as sent (datetime, level), oldest
+    first. The API takes a nested date filter, so this is ~150 rows a week
+    rather than the station's whole history. Also what the hourly cloud job
+    saves and serves (scripts/cloud/modal_daily.py, `hourly`)."""
     spec = {"where": {"expression": {"fieldName": "id.stationCode", "operator": "eq", "value": code}},
             "and": {"expression": {"fieldName": "id.datatypeCode", "operator": "eq", "value": "HHS"},
                     "and": {"expression": {"fieldName": "id.dataTime", "operator": "gte",
@@ -77,9 +79,17 @@ def _cwc_daily(code: str, since: date) -> pd.Series:
     r.raise_for_status()
     rows = r.json()
     if not rows:
+        return pd.DataFrame({"datetime": pd.to_datetime([]), "level": pd.Series(dtype=float)})
+    return (pd.DataFrame({"datetime": pd.to_datetime([x["id"]["dataTime"] for x in rows]),
+                          "level": [x["dataValue"] for x in rows]})
+            .dropna().sort_values("datetime"))
+
+
+def _cwc_daily(code: str, since: date) -> pd.Series:
+    """Daily max level from `since` on."""
+    df = cwc_readings(code, since)
+    if not len(df):
         return pd.Series(dtype=float, index=pd.DatetimeIndex([]))
-    df = pd.DataFrame({"datetime": pd.to_datetime([x["id"]["dataTime"] for x in rows]),
-                       "level": [x["dataValue"] for x in rows]}).dropna().sort_values("datetime")
     df = clean_readings(df.reset_index(drop=True))
     s = df.groupby(df["datetime"].dt.normalize())["level"].max().sort_index()
     s.attrs["first_last_n"] = _first_last(df["datetime"], df["level"])

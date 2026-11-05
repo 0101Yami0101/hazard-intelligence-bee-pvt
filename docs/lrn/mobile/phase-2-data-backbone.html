@@ -329,6 +329,69 @@ code{overflow-wrap:anywhere}
 .code-list label{display:grid;grid-template-columns:22px 260px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--grid);font-size:14.5px;cursor:pointer}
 .code-list label code{font-size:13px}
 @media(max-width:700px){.code-list label{grid-template-columns:22px 1fr}.code-list label span{grid-column:2}}
+/* ---- naming the backbone (s0) + Blockland boxes (see LORE.md) ---- */
+:root{--g-bg:#1b2440;--g-bg2:#263257;--g-ink:#eef2ff;--g-dim:#b8c2e6;--g-gold:#ffc94a;--g-cyan:#7fd3ff}
+.play{background:var(--g-bg);color:var(--g-ink);border-radius:12px;padding:12px 16px;border:3px solid var(--g-gold);box-shadow:4px 4px 0 #0d1326;font-size:15.5px;line-height:1.5;margin-top:12px}
+.play .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g-gold);display:block;margin-bottom:4px}
+.play b{color:var(--g-gold)}.play i{color:var(--g-cyan);font-style:normal}.play p{margin:6px 0}
+.play .real{background:rgb(255 255 255/.07);border-left:3px solid var(--g-cyan);border-radius:6px;font-size:13.5px;margin-top:8px;padding:6px 10px;color:var(--g-dim)}
+.play .real::before{content:"🔁 Real version: ";color:var(--g-cyan);font-weight:600}
+.pask{margin-top:10px;background:var(--g-bg2);border-radius:8px;padding:6px 10px}
+.pask summary{cursor:pointer;font-weight:600;color:#fff;list-style:none}
+.pask summary::-webkit-details-marker{display:none}
+.pask summary::before{content:"🤖 Pixel asks: ";color:var(--g-gold)}
+.pask summary::after{content:" ▸ tap to check";font-weight:400;font-size:12px;color:var(--g-dim)}
+.pask .ans{margin-top:6px;padding-top:6px;border-top:1px dashed rgb(255 255 255/.2)}
+.defn{background:var(--ink);color:#fff;border-radius:14px;padding:16px 20px;font-size:18px;line-height:1.45}
+.defn .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#a9bbb0;display:block;margin-bottom:6px}
+.defn b{color:#fff;text-decoration:underline;text-decoration-color:var(--partial);text-underline-offset:3px}
+.defn.short{font-size:16px;margin-top:8px;background:var(--bone)}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.tbl th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);background:var(--sheet-2)}
+.tbl td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{font-weight:600}
+.tbl .ok{color:var(--built);font-weight:600}.tbl .meh{color:var(--partial);font-weight:600}.tbl .no{color:var(--accent);font-weight:600}
+.cats{border:3px solid var(--ink);box-shadow:var(--shadow)}
+.cats td:first-child{white-space:nowrap}
+.cats td:first-child span{font-weight:400;color:var(--ink-3)}
+.lib{display:grid;grid-template-columns:1fr 60px 1fr;gap:8px;align-items:stretch}
+.lib .side{border-radius:12px;padding:12px 14px;font-size:14.5px;border:2px solid}
+.lib .side > b{font-family:var(--display);font-weight:400;font-size:22px;display:block;line-height:1.1;margin-bottom:4px}
+.lib .side ul{margin:4px 0 0;padding-left:18px}
+.lib .a{border-color:var(--planned);background:var(--planned-soft)}
+.lib .u{border-color:var(--built);background:var(--built-soft)}
+.lib .arr{display:flex;align-items:center;justify-content:center;font-size:12px;text-align:center;color:var(--ink-3);font-family:var(--mono)}
+@media(max-width:760px){.lib{grid-template-columns:1fr}.tbl{font-size:13px}.cats td:first-child{white-space:normal}}
+/* ---- Level 2 story mode (see LORE.md) ---- */
+.play b,.play strong{color:var(--g-gold)}
+.play code,.gm code{background:rgb(255 255 255/.14);color:#fff;border:0}
+.play svg{display:block;width:100%;height:auto;margin:8px 0;border-radius:8px}
+.play ol,.play ul{margin:6px 0;padding-left:22px}.play li{margin:5px 0}
+.pask[open] summary::after{content:" ▾"}
+.pask .ans{color:var(--g-ink)}
+.gm{margin-top:8px;background:var(--g-bg);color:var(--g-ink);border-radius:8px;padding:6px 9px;font-size:13.5px;line-height:1.4;border-left:4px solid var(--g-gold);display:block;font-weight:400;text-align:left;font-family:var(--body,inherit)}
+.gm b{color:var(--g-gold);display:inline;font-size:inherit;font-family:inherit}
+.gm i{color:var(--g-cyan);font-style:normal}
+.gm::before{content:"🎮 "}
+.gmrow{margin:10px 0 0}
+.tier .gm b{font-size:inherit;display:inline;font-family:inherit}
+.kid{background:#fff6d6;border:2px dashed #e0b23a;border-radius:10px;padding:8px 12px;font-size:16.5px;line-height:1.45;margin:0 0 14px;color:#3a2a00}
+.kid::before{content:"🧒 Super simple: ";font-weight:700;color:#8a5a00}
+.src.ready{border-style:dashed;background:var(--sheet-2)}
+.src.ready b{font-weight:500}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wc{perspective:900px;min-height:160px;cursor:pointer}
+.wc .in{position:relative;min-height:160px;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.wc.on .in{transform:rotateY(180deg)}
+.wc .f,.wc .b{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.wc .f{background:var(--g-bg);color:#fff;border:3px solid var(--g-gold);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.wc .f b{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.1}
+.wc .f span{font-size:12px;color:var(--g-dim);margin-top:6px}
+.wc .b{background:var(--sheet);border:2px solid var(--rule);transform:rotateY(180deg);font-size:13.5px;line-height:1.4}
+.wc .b .gn{display:block;margin-top:6px;color:var(--bone);font-weight:600}
+.wc .b .back{display:block;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+@media(max-width:900px){.words{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -345,22 +408,143 @@ code{overflow-wrap:anywhere}
 <div class="wrap">
 
 <div class="hero">
-  <div class="kicker">Phase 2 · Days 5–8 · about 20 hours</div>
+  <div class="kicker">Phase 2 · Days 5–8 · about 20 hours · 🎮 Level 2: The great loot run</div>
   <h1>The data backbone</h1>
   <div class="goal">🎯 <span>Follow <b>any square of ground</b> from the raw download to its row in the big table, and name the source and date of every value.</span></div>
   <div class="toc">
-    <a href="#s1">1 · The assembly line</a><a href="#s2">2 · 29 sources</a><a href="#s3">3 · The law</a>
+    <a href="#start">🎮 Start here</a><a href="#s0">0 · Say what it is</a><a href="#s1">1 · The assembly line</a><a href="#s2">2 · 66 sources</a><a href="#s3">3 · The law</a>
     <a href="#s4">4 · Cell ID</a><a href="#s5">5 · The 34 facts</a><a href="#s6">6 · Three moves</a>
     <a href="#s7">7 · Rain is special</a><a href="#s8">8 · One real square</a><a href="#s9">9 · Assam</a>
     <a href="#s10">10 · Free / Ask / Paid</a><a href="#s11">11 · Portals</a><a href="#s12">12 · Checks</a>
-    <a href="#s13">13 · Code to read</a><a href="#s14">14 · Quiz</a><a href="#s15">15 · Finish</a>
+    <a href="#s13">13 · Code to read</a><a href="#s14">14 · Quiz</a><a href="#s15">15 · Finish</a><a href="#s16">16 · Word cards</a>
   </div>
 </div>
+
+<!-- start -->
+<section id="start">
+  <h2><span class="n">🎮</span>Start here: Level 2, the great loot run</h2>
+  <p class="sub">In Level 1 you learned Blockland's physics. Now you go on the <b>loot run</b>: you find out which chests the World Engine has opened, where they came from, and how every piece gets snapped onto the same blocks.</p>
+  <div class="play">
+    <span class="lv">Level 2 · the conveyor belt</span>
+    <svg viewBox="0 0 640 195" role="img" aria-label="The conveyor belt: loot run, the Vault, snap to grid, two chests, Guardians, with a loop back through the Prophecy Book and Scoreboard">
+      <rect width="640" height="195" fill="#263257"/>
+      <path d="M570 62 C 570 42, 70 42, 70 62" fill="none" stroke="#ffc94a" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="320" y="30" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">📖 Prophecy Book → 🏆 Scoreboard → ⭐ XP comes back</text>
+      <rect x="20" y="122" width="600" height="12" rx="6" fill="#5d6a93"/><circle cx="30" cy="128" r="5" fill="#1b2440"/><circle cx="60" cy="128" r="5" fill="#1b2440"/><circle cx="90" cy="128" r="5" fill="#1b2440"/><circle cx="120" cy="128" r="5" fill="#1b2440"/><circle cx="150" cy="128" r="5" fill="#1b2440"/><circle cx="180" cy="128" r="5" fill="#1b2440"/><circle cx="210" cy="128" r="5" fill="#1b2440"/><circle cx="240" cy="128" r="5" fill="#1b2440"/><circle cx="270" cy="128" r="5" fill="#1b2440"/><circle cx="300" cy="128" r="5" fill="#1b2440"/><circle cx="330" cy="128" r="5" fill="#1b2440"/><circle cx="360" cy="128" r="5" fill="#1b2440"/><circle cx="390" cy="128" r="5" fill="#1b2440"/><circle cx="420" cy="128" r="5" fill="#1b2440"/><circle cx="450" cy="128" r="5" fill="#1b2440"/><circle cx="480" cy="128" r="5" fill="#1b2440"/><circle cx="510" cy="128" r="5" fill="#1b2440"/><circle cx="540" cy="128" r="5" fill="#1b2440"/><circle cx="570" cy="128" r="5" fill="#1b2440"/><circle cx="600" cy="128" r="5" fill="#1b2440"/>
+      <rect x="32" y="62" width="76" height="56" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="70" y="100" text-anchor="middle" font-size="26">🎁</text><text x="70" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">loot run</text><text x="70" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b8c2e6">collect</text><rect x="152" y="62" width="76" height="56" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="190" y="100" text-anchor="middle" font-size="26">🔐</text><text x="190" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">the Vault</text><text x="190" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b8c2e6">keep</text><rect x="282" y="62" width="76" height="56" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="320" y="100" text-anchor="middle" font-size="26">🧲</text><text x="320" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">snap to grid</text><text x="320" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b8c2e6">line up</text><rect x="412" y="62" width="76" height="56" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="450" y="100" text-anchor="middle" font-size="26">📦</text><text x="450" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">two chests</text><text x="450" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b8c2e6">shelve</text><rect x="532" y="62" width="76" height="56" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="570" y="100" text-anchor="middle" font-size="26">🛡️</text><text x="570" y="160" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">Guardians</text><text x="570" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b8c2e6">serve</text><text x="130" y="96" text-anchor="middle" font-size="18" fill="#7fd3ff">➜</text><text x="255" y="96" text-anchor="middle" font-size="18" fill="#7fd3ff">➜</text><text x="385" y="96" text-anchor="middle" font-size="18" fill="#7fd3ff">➜</text><text x="510" y="96" text-anchor="middle" font-size="18" fill="#7fd3ff">➜</text>
+    </svg>
+    <p><b>Quick recap.</b> Level 0: the <b>⚙️ World Engine</b> (the Data Backbone) runs everything, and the 🛡️ Guardians play on it. Level 1: blocks fall when pull beats grip, water rolls to the lowest block, and the ☁️ Cloud Curtain blinds camera satellites.</p>
+    <p><b>This level is about the loot.</b> Every map, every rain record and every river reading is a <b>🎁 loot chest</b>. Chests come from <b>🏛️ Guilds</b>: the Rock Guild (GSI), the River Guild (CWC), the Sky Guild (IMD), the Sky-Eye Guild (ISRO, APSAC and the satellites), and far-away Guilds like NASA and ESA.</p>
+    <span class="lv" style="margin-top:12px">Level 2 in seven sentences: learn these first</span>
+    <ol>
+      <li><b>46 chests are open and 20 more are spotted</b>: 66 in all, about 344 GB. 300 GB of it is radar pictures.</li>
+      <li><b>Every chest gets a 🏷️ tag</b>: where it came from, its rules, the date it was fetched, and a fingerprint.</li>
+      <li><b>The original loot is never edited.</b> It sits safe in the 🔐 Vault, so everything can be rebuilt.</li>
+      <li><b>Everything is snapped onto one grid</b> of 100 m blocks: 8.2 million in Arunachal.</li>
+      <li><b>Six game rules are frozen.</b> Change one and the whole world has to be rebuilt.</li>
+      <li><b>Each block carries 34 facts</b> in its 🎒 backpack. Rain is too big to copy, so each block just remembers which rain slab it's in.</li>
+      <li><b>Check before you trust.</b> Even a Guild's chest can hide 👾 Glitches.</li>
+    </ol>
+    <div class="real">The pipeline: collect (fetch scripts) → keep (raw store, with provenance) → line up (the 100 m grid) → shelve (shelf 1 ready data, shelf 2 answers) → serve (the app), with the forecast log and grading as the loop. Counts from <code>webapp/assets/backbone/catalogue.json</code>, read 5 Nov 2026: 46 held, 20 ready, 14,075 files, 344 GB.</div>
+    <details class="pask"><summary>Name the five stations on the belt, in game words and real words.</summary><div class="ans">🎁 Loot run = collect · 🔐 the Vault = keep · 🧲 snap to grid = line up · 📦 two chests = shelve · 🛡️ Guardians = serve. And the loop: 📖 Prophecy Book + 🏆 Scoreboard = the forecast log and grading.</div></details>
+  </div>
+</section>
+
+<!-- 0 -->
+<section id="s0">
+  <h2><span class="n">0</span>Say what the backbone is: one definition, the right words, and APSSDI</h2>
+  <p class="sub">Before the details, be able to say what we're building in one sentence, name the kinds of data it holds in standard terms, and explain why it isn't APSSDI. Worked out on 4 Nov 2026. Data groups and counts are from <code>webapp/assets/backbone/catalogue.json</code>; APSSDI's contents are from our check of its open map server on 3 Nov (<a href="apsac.html">apsac.html</a>).</p>
+  <p class="kid">The backbone is a <b>workshop</b>. It collects data about the ground, water and weather, checks it, lines it all up on one map, keeps it fresh every day, and checks every forecast against what really happened.</p>
+
+  <h3 style="margin:16px 0 8px">The definition</h3>
+  <div class="defn"><span class="k">full version · say this when there's time</span>"A data backbone that takes scattered data about the <b>ground, water and weather</b>, <b>checks it</b>, <b>lines it all up on one map</b> of the state, and <b>keeps it updated every day</b>, so hazards can be <b>forecast for any place</b>, and every forecast is <b>checked against what really happened</b>."</div>
+  <div class="defn short"><span class="k" style="color:#e8e3ee">short version · one breath</span>"A living, forecast-ready data backbone: every source checked, lined up on one map, updated daily, and graded against what really happens."</div>
+  <div class="tip" style="margin-top:10px">🏷️ <b>As a title or a slide line:</b> "A <b>geospatial data backbone for hazard forecasting</b>." The briefing's version, "the data backbone for mountain-hazard intelligence", says the same thing and is still fine.</div>
+  <span class="gm gmrow"><b>The World Engine in one breath:</b> it brings in the loot, checks it for Glitches, snaps it onto one set of blocks, refreshes it every morning, and keeps score of every prophecy.</span>
+
+  <h3 style="margin:22px 0 8px">⭐ The kinds of data, in standard categories</h3>
+  <p class="small" style="margin:0 0 8px">The answer to <b>"what kind of data, specifically?"</b> These are the categories scientists use. They <b>don't depend on any module</b>, so the list still fits when a new hazard is added. Learn the left column by heart.</p>
+  <table class="tbl cats">
+    <tr><th>Standard category</th><th>What it covers</th><th>Examples we hold today</th></tr>
+    <tr><td>Topographic <span>(terrain)</span></td><td>Ground height and everything worked out from it: slope, aspect, curvature</td><td>Copernicus 30 m elevation, turned into steepness, facing, drainage, height above the river</td></tr>
+    <tr><td>Geological</td><td>Rock types, faults, structure</td><td>Rock types and fault lines (APSAC / APSSDI)</td></tr>
+    <tr><td>Pedological <span>(soil)</span></td><td>Soil type, depth, texture, moisture</td><td>SoilGrids, NASA SMAP soil wetness, Indian soil-erodibility data</td></tr>
+    <tr><td>Land cover / land use</td><td>Forest, farmland, bare ground, built-up</td><td>ESA WorldCover, tree height and forest loss, NRSC land degradation</td></tr>
+    <tr><td>Hydrological</td><td>Rivers, catchments, surface water, river levels and flows</td><td>HydroSHEDS, JRC surface water (1984–2021), GloFAS, CWC and NWDP gauges (32 in Arunachal)</td></tr>
+    <tr><td>Meteorological / climatological</td><td>Rainfall, temperature, forecasts, long-term climate records</td><td>NASA IMERG daily rain (26 years), ERA5, the live 7-day forecast (Open-Meteo), CWC rain gauges</td></tr>
+    <tr><td>Seismic</td><td>Earthquakes and ground shaking</td><td>USGS earthquake events (kept ready as a second landslide trigger)</td></tr>
+    <tr><td>Cryospheric</td><td>Snow, glaciers, glacial lakes</td><td>Glacier inventory and daily snow cover: <i>listed as "ready", not held yet</i></td></tr>
+    <tr><td>Hazard event records</td><td>Past landslides and floods, with places and dates</td><td>GSI and Bhuvan landslide maps, NASA's landslide catalogue, Bhuvan flood maps, global flood records, news-based flood reports</td></tr>
+    <tr><td>Exposure / socio-economic</td><td>Roads, settlements, population</td><td>WorldPop, OpenStreetMap, APSSDI villages</td></tr>
+  </table>
+  <span class="gm gmrow"><b>Ten kinds of loot:</b> ⛰️ ground shape (topographic) · 🧱 rock (geological) · 🟫 soil (pedological) · 🌳 the world's skin (land cover) · 💧 water (hydrological) · 🌧️ weather (meteorological) · 📳 quakes (seismic) · ❄️ ice and snow (cryospheric) · 🕳️ old craters and floods (hazard events) · 🏘️ villages and roads (exposure). The kinds don't depend on any Guardian, so a new Guardian fits the same list.</span>
+  <div class="tip ok" style="margin-top:10px">🗣️ <b>The one-breath answer first:</b> "Facts about the <b>ground</b>, the <b>water</b> and the <b>weather</b>, plus a <b>record of what happened</b> before." <b>Then the numbers:</b> 46 sources held, about 344 GB, and 20 more checked and ready to pull. <b>For scientists:</b> "Multi-source geospatial data on the physical environment: topographic, geological, pedological, hydrological and meteorological, with hazard inventories and exposure."</div>
+  <div class="tip warn" style="margin-top:8px">⚠️ <b>Careful:</b> never call a "ready" source data we hold (CHIRPS rain, Google's building outlines and the glacier inventory are listed, not pulled). If asked "is the data yours?", say "most of it is public; ours is putting it together, keeping it fresh, and the checked record." Name an agency's data in its own room with thanks, never as proof its maps are worse.</div>
+
+  <h3 style="margin:22px 0 8px">Why these words, and not the others</h3>
+  <table class="tbl">
+    <tr><th>Term</th><th>What's good about it</th><th>The catch</th><th>Use it?</th></tr>
+    <tr><td>"Environmental data pipeline"</td><td>Everyone understands it</td><td>"Pipeline" sounds like plumbing that only moves data. It leaves out keeping it fresh, checking it, and the record of every forecast, which is the hard part to copy.</td><td class="meh">Only with engineers, plus "with a feedback loop"</td></tr>
+    <tr><td>"Environmental"</td><td>A fair umbrella for terrain, soil, water and weather</td><td>Wider than us (air pollution, wildlife: "do you do air quality?"), and it doesn't cover roads, villages and population, which are exposure data</td><td class="meh">Fine, but not needed</td></tr>
+    <tr><td>"Geospatial"</td><td>Covers <i>everything</i> tied to a place on a map, now and later, including exposure</td><td>Says nothing about what it's for</td><td class="ok">Yes, with a purpose: "…for hazard forecasting"</td></tr>
+    <tr><td>"(Spatial) data infrastructure"</td><td>A recognised category</td><td>In India it means the <b>NSDI</b> and the state portals, including <b>APSSDI</b>. APSAC will hear "you're building another APSSDI". It also sounds static.</td><td class="no">Not in a government room</td></tr>
+    <tr><td>"Everything"</td><td>Sounds big</td><td>Easy to challenge: "Everything? Soil chemistry?"</td><td class="meh">Only as "everything <i>needed to</i> forecast"</td></tr>
+    <tr><td>"In a location"</td><td>Simple</td><td>Sounds like one spot. We cover a whole state, square by square.</td><td class="ok">Say "for any place across a whole state"</td></tr>
+    <tr><td>"Data backbone"</td><td>Ours. It means shared, standing, and built on</td><td>Needs one sentence of explanation</td><td class="ok">Yes: the name</td></tr>
+  </table>
+  <span class="gm gmrow"><b>Why the word matters:</b> "geospatial" means "anything that sits at a place on the map". It covers every chest we have now and every chest a new Guardian might need. Say "spatial data infrastructure" to APSAC and they hear "you're building another APSSDI".</span>
+
+  <h3 style="margin:22px 0 8px">The same idea, by room</h3>
+  <table class="tbl">
+    <tr><th>Room</th><th>Say</th></tr>
+    <tr><td>Anyone</td><td>"A data backbone that keeps hazard data ready and up to date, for every place in a state."</td></tr>
+    <tr><td>Investors</td><td>"A geospatial data backbone for hazard forecasting: it keeps everything needed to forecast hazards ready and up to date, for every place in a state."</td></tr>
+    <tr><td>APSAC / government</td><td>"A forecast-ready geospatial data backbone. APSSDI shares the maps; we line them up and keep them ready for daily forecasting."</td></tr>
+    <tr><td>Engineers</td><td>"Geospatial data infrastructure, built for forecasting, with a feedback loop."</td></tr>
+    <tr><td>If asked for the category</td><td>"It's geospatial data infrastructure, built for forecasting rather than for sharing maps."</td></tr>
+  </table>
+
+  <h3 style="margin:22px 0 8px">Is APSSDI the same as us?</h3>
+  <p class="small" style="margin:0 0 8px">No. But it isn't "only space stuff" either. The name misleads: it's run by APSAC, the Arunachal Pradesh <b>Space</b> Application Centre, but it's the <b>state's map-sharing portal</b>, where government departments publish their map layers.</p>
+  <div class="lib">
+    <div class="side a"><b>📚 APSSDI: the library</b>
+      <span class="tiny">what it holds (24 layers on its open map server; 113 catalogue items public, 140 signed in)</span>
+      <ul><li><b>Admin maps:</b> state and district lines, 186 circles, 204 headquarters</li>
+      <li><b>Earth science:</b> rock types, fault lines, landforms</li>
+      <li><b>Facilities:</b> 4,648 villages, 1,006 health centres, fair price shops, animal husbandry and fisheries sites, Tawang roads</li>
+      <li><b>Imagery:</b> aerial photos of the Itanagar capital region</li></ul>
+      <span class="tiny">fixed maps, each in its own shape and scale</span></div>
+    <div class="arr">3 layers feed us →<br>rock · faults · villages</div>
+    <div class="side u"><b>🔧 The backbone: the workshop</b>
+      <span class="tiny">what we add, which APSSDI doesn't hold</span>
+      <ul><li>daily rain, and 26 years of rain history</li><li>the live weather forecast</li><li>river levels from 32 gauges</li><li>dated landslide and flood records</li><li>everything lined up on one 100 m grid, refreshed daily</li><li>forecasts, and a record of how each one turned out</li></ul></div>
+  </div>
+  <table class="tbl" style="margin-top:10px">
+    <tr><th>APSSDI (a spatial data infrastructure)</th><th>Our data backbone</th></tr>
+    <tr><td style="font-weight:400">Shares maps as each office published them</td><td style="font-weight:400"><b>Lines them up</b> on one 100 m grid, so they can be used together</td></tr>
+    <tr><td style="font-weight:400">Mostly fixed layers</td><td style="font-weight:400"><b>Updated daily</b> with live rain and river levels</td></tr>
+    <tr><td style="font-weight:400">Shows the data</td><td style="font-weight:400"><b>Checks</b> the data before using it</td></tr>
+    <tr><td style="font-weight:400">A place to view and download maps</td><td style="font-weight:400">A base that <b>forecasts</b> are built on</td></tr>
+    <tr><td style="font-weight:400">No memory of outcomes</td><td style="font-weight:400"><b>Records every forecast</b> and what really happened</td></tr>
+  </table>
+  <div class="tip ok" style="margin-top:10px">🗣️ <b>The line for APSAC:</b> "APSSDI is the state's library of maps, and some of our most useful layers come from it, like rock types and fault lines. We add the parts that change every day, like rain and rivers, line it all up, and forecast from it." <b>Never</b> say ours is "better"; say it does a different job. APSSDI is a source we thank.</div>
+
+  <div class="play">
+    <span class="lv">🎮 Blockland: the library and the workshop</span>
+    <p>The <b>Sky-Eye Guild</b> (APSAC) keeps a big <b>map library</b> called APSSDI. It's full of useful scrolls: rock maps, fault cracks, village lists, hospital lists. Each scroll is drawn in its own style and size, and they don't change much.</p>
+    <p>Our <b>World Engine</b> is a <b>workshop</b>, not a library. It borrows a few scrolls (rock, faults, villages), adds the things that change every day (rain, rivers), snaps everything onto the same blocks, and lets the Guardians make <i>prophecies</i> from it. Then it checks every prophecy on the Scoreboard. A library lends you books; a workshop builds things with them.</p>
+    <p>And the chests come in <b>ten kinds</b>, like ten colours of loot: ground shape, rock, soil, skin (land cover), water, weather, quakes, ice, old craters (past events) and villages and roads (exposure).</p>
+    <div class="real">APSSDI is the state's map-sharing portal; we use 3 of its layers. The backbone adds daily rain, rivers, dated events and the forecast record, all lined up on one grid and kept fresh. The data falls into ten standard categories.</div>
+    <details class="pask"><summary>An APSAC officer says "We already have APSSDI. Why build another one?"</summary><div class="ans">"We're not building another one. APSSDI is where the state's maps are shared, and we use them: rock types, faults, villages. We do a different job: we add the daily rain and rivers, line it all up on one grid, keep it fresh, forecast from it, and check every forecast. Your maps are one of our sources."</div></details>
+    <details class="pask"><summary>Name the ten categories of data, in standard words.</summary><div class="ans">Topographic, geological, pedological (soil), land cover / land use, hydrological, meteorological / climatological, seismic, cryospheric, hazard event records, exposure / socio-economic.</div></details>
+  </div>
+</section>
 
 <!-- 1 -->
 <section id="s1">
   <h2><span class="n">1</span>The assembly line, with real file names</h2>
   <p class="sub">Phase 0 showed the idea. Here is the real pipeline in the code. 👆 Click a stage.</p>
+  <p class="kid">Data moves along a factory belt: download it → keep the original safe → work out the ground shape and water → fit every other map onto the blocks → join it all into one big table → pack a small copy for the app.</p>
   <div class="card">
     <div class="flow" id="flow">
       <div class="fstep" data-k="fetch"><div class="ico">📥</div><b>Fetch</b><code>scripts/fetch/</code></div>
@@ -372,13 +556,21 @@ code{overflow-wrap:anywhere}
     </div>
     <div class="sdetail" id="flowDetail"><span class="small">← pick a stage</span></div>
   </div>
-  <div class="tip warn" style="margin-top:12px">🖐️ <b>Run by hand, one stage at a time.</b> Only the daily forecast run is automatic. Rebuilding the backbone itself is a manual job, and that is fine because the ground barely changes.</div>
+  <div class="tip warn" style="margin-top:12px">🖐️ <b>Run by hand, one stage at a time.</b> Only the daily forecast run is automatic. Rebuilding the backbone itself is a manual job, and that is fine because the ground barely changes.<span class="gm"><b>Mountains don't move.</b> The ground chests are rebuilt by hand, now and then. Only the things that change every day (rain and rivers) run on the ⏰ 8:30 alarm.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the loot run</span>
+    <p>Each chest has its <b>own little bot</b> (a fetch script). The bot goes to one Guild, downloads only Blockland's part of the map, and puts the loot in the <b>🔐 Vault</b> exactly as it found it. Then it writes a <b>🏷️ tag</b>: where it got it, the link, the date, the rules for using it, and a <b>fingerprint</b> of the file.</p><p>Why so careful? Because if anyone ever asks <i>"where did this number come from?"</i>, you can follow the tag all the way back to the Guild that made it.</p>
+    <div class="real">Fetch scripts download each source for the state's box and call <code>record()</code>, which writes <code>_SOURCES.json</code> (source, link, fetch time, terms, and a checksum per file). Raw files are never edited and aren't in git. Only the daily forecast run is automatic.</div>
+    <details class="pask"><summary>Why keep the raw file untouched, instead of cleaning it straight away?</summary><div class="ans">So you can always <b>start again</b>. If a later step has a bug, you fix the step and rebuild from the original. And you can prove where every number came from.</div></details>
+    <details class="pask"><summary>A scientist asks "where did the rock type for this block come from, and when?" How do you answer?</summary><div class="ans">Follow the tag: the rock map came from APSSDI (APSAC's portal), fetched on 4 Nov 2026; the tag holds the link and a fingerprint of the exact file. Every source has one.</div></details>
+  </div>
 </section>
 
 <!-- 2 -->
 <section id="s2">
-  <h2><span class="n">2</span>The 29 sources, on 14 shelves</h2>
-  <p class="sub">Straight from the app's own catalogue: 10,853 files, 308 GB. 👆 Click a shelf to see its sources and their <b>terms of use</b>.</p>
+  <h2><span class="n">2</span>66 sources on 14 shelves: 46 held, 20 ready</h2>
+  <p class="sub">Straight from the app's own catalogue (<code>catalogue.json</code>, read 5 Nov 2026): <b>46 sources held</b> (14,075 files, 344 GB) and <b>20 more checked and ready to pull</b>. 👆 Click a shelf to see its sources and their <b>terms of use</b>. Dashed rows are "ready": checked, not downloaded yet.</p>
+  <p class="kid">We've opened <b>46 chests</b> and spotted <b>20 more</b>. Each chest comes with rules: some are free to share, some are only for research, and some say "ask us first".</p>
   <div class="groups" id="groups"></div>
   <div class="srcs" id="srcs"></div>
   <div class="grid g3" style="margin-top:12px">
@@ -386,28 +578,51 @@ code{overflow-wrap:anywhere}
     <div class="card small"><span class="lic-a">●</span> <b>Non-commercial or unverified</b>: fine for research. Check before selling or sharing.</div>
     <div class="card small"><span class="lic-r">●</span> <b>Restricted or unstated</b>: GSI says "not to be published". Indian portals often state no terms. <b>Ask first.</b></div>
   </div>
-  <div class="tip" style="margin-top:12px">💾 <b>Why 308 GB?</b> 300 GB of it is radar pictures of flood dates, used once to check flood reports. Everything else fits in <b>8 GB</b>. The app itself reads a bundle of about 16 MB.</div>
+  <span class="gm gmrow"><b>Chest colours.</b> 🟢 Green: free to share, just say thank you (credit). 🟠 Orange: fine for practice and research; check before selling. 🔴 Red: "ask the Guild first". A <b>dashed</b> chest is spotted and checked, but not opened yet. Never call a dashed chest one we hold.</span>
+  <div class="tip" style="margin-top:12px">💾 <b>Why 344 GB?</b> 300 GB of it is radar pictures of flood dates, used once to check flood reports. Everything else is about <b>44 GB</b> (the biggest are soil and geology, 19 GB, and weather, 17 GB). The app itself reads a bundle of about 16 MB.<span class="gm"><b>One giant pile of radar pictures.</b> Most of the Vault's weight is one chest of radar snapshots, used once to check which floods really happened. The rest would fit on a phone.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the Guilds and their chests</span>
+    <svg viewBox="0 0 640 150" role="img" aria-label="Bar sizes: radar 300 GB, everything else about 44 GB, the app pack 16 MB">
+      <rect width="640" height="150" fill="#263257"/>
+      <text x="20" y="34" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">📡 radar pictures</text><rect x="170" y="20" width="349" height="20" rx="4" fill="#7fd3ff"/><text x="527" y="35" font-family="IBM Plex Mono,monospace" font-size="12" fill="#fff">300 GB</text>
+      <text x="20" y="74" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">🎁 everything else</text><rect x="170" y="60" width="51" height="20" rx="4" fill="#ffc94a"/><text x="229" y="75" font-family="IBM Plex Mono,monospace" font-size="12" fill="#fff">~44 GB</text>
+      <text x="20" y="114" font-family="Mukta,Segoe UI,sans-serif" font-size="13" fill="#eef2ff">🎒 the app's backpack</text><rect x="170" y="100" width="3" height="20" fill="#8fe388"/><text x="182" y="115" font-family="IBM Plex Mono,monospace" font-size="12" fill="#fff">~16 MB: too small to see at this scale</text>
+    </svg>
+    <p>The Guilds own the chests. The <b>Rock Guild</b> (GSI) has the landslide maps. The <b>River Guild</b> (CWC) has the river height sticks. The <b>Sky Guild</b> (IMD) has rain gauges. The <b>Sky-Eye Guild</b> (ISRO, APSAC) has satellite maps and the state's map library. Far-away Guilds (NASA, ESA, Google) give out free chests for the whole world.</p><p>Here's the honest part: <b>most chests are public</b>. What's ours is the <i>work</i>: finding them, checking them, snapping them together, keeping them fresh, and keeping score.</p>
+    <div class="real">46 sources held and 20 ready, across 14 groups. Licences range from open (NASA, ESA, CC-BY) to non-commercial to restricted (GSI's inventory: "not to be published") or unstated (most Indian portals). 300 of the 344 GB is Sentinel-1 radar; the app bundle is about 16 MB.</div>
+    <details class="pask"><summary>A client asks: "Can we get a copy of all your data?" What do you say?</summary><div class="ans">Not all of it, and say why: each chest has its own rules. Most satellite data is open with credit. But GSI's inventory says "not to be published", several Indian portals state no terms, and some sources are non-commercial. We can share what each source's terms allow, and the answers we make from them.</div></details>
+    <details class="pask"><summary>Why is the Vault 344 GB when the app needs only 16 MB?</summary><div class="ans">Because 300 GB is radar pictures used once to check the flood record, and the rest (44 GB) is raw material. The app only needs the finished answers and small display maps, packed into about 16 MB.</div></details>
+  </div>
 </section>
 
 <!-- 3 -->
 <section id="s3">
   <h2><span class="n">3</span>The law: six frozen choices</h2>
   <p class="sub">From <code>DATA_CONTRACT.md</code>. Changing any of them means rebuilding everything. 🔒 means changing it after a model exists would <b>void every number we've published</b>.</p>
+  <p class="kid">Six rules are frozen, like the rules printed on a board game's box. Change one, and every block in the world has to be rebuilt, and every score we've published stops counting.</p>
   <div class="law">
-    <div class="card"><div class="k">1 · map projection</div><div class="v">UTM zone 46N</div><div class="small">Raw data comes in degrees, and a degree isn't a fixed distance. In metres, "500 m from a road" is easy. Arunachal spans two zones, but the error is 0.4%.</div></div>
-    <div class="card"><div class="k">2 · square size</div><div class="v">100 m</div><div class="small">30 m = 91 M squares, too slow. 250 m blurs the steep face that actually fails. 100 m = 8.2 M, fits in memory.</div></div>
-    <div class="card"><div class="k">3 · starting corner</div><div class="v">x 350,000 · y 2,950,000</div><div class="small">A round number fixed by hand, <b>not</b> taken from the border file. If the border file changed, a computed corner would shift every square silently.</div></div>
-    <div class="card"><div class="k">4 · square ID</div><div class="v">row × 100,000 + col</div><div class="small">You can decode any ID in your head, so a bad join shows up at once. Try it in section 4.</div></div>
-    <div class="card"><div class="k">5 · column names</div><div class="v">group_name_unit</div><div class="small"><code>soil_bdod_0-5cm_cgcm3</code>. The unit is in the name because a soil density of "107" once fooled us: it is centigrams, not grams.</div></div>
-    <div class="card"><div class="k lock">6 · test blocks</div><div class="v">50 km → 5 groups</div><div class="small">Fixed seed 42, frozen <b>before</b> any model was trained, with a fingerprint (<code>ce08e9f0124386ac</code>) to prove it. Otherwise you'd pick blocks that flatter the model without noticing.</div></div>
+    <div class="card"><div class="k">1 · map projection</div><div class="v">UTM zone 46N</div><div class="small">Raw data comes in degrees, and a degree isn't a fixed distance. In metres, "500 m from a road" is easy. Arunachal spans two zones, but the error is 0.4%.<span class="gm"><b>A ruler, not degrees.</b> A degree of longitude isn't the same length everywhere. Metres are, so "500 m from a road" is easy to measure.</span></div></div>
+    <div class="card"><div class="k">2 · square size</div><div class="v">100 m</div><div class="small">30 m = 91 M squares, too slow. 250 m blurs the steep face that actually fails. 100 m = 8.2 M, fits in memory.<span class="gm"><b>A football field per block.</b> Smaller means too many blocks to play with; bigger hides the steep cliff that actually falls.</span></div></div>
+    <div class="card"><div class="k">3 · starting corner</div><div class="v">x 350,000 · y 2,950,000</div><div class="small">A round number fixed by hand, <b>not</b> taken from the border file. If the border file changed, a computed corner would shift every square silently.<span class="gm"><b>The corner stone, nailed down by hand.</b> If it were worked out from the border file, a new border file could quietly slide the whole world.</span></div></div>
+    <div class="card"><div class="k">4 · square ID</div><div class="v">row × 100,000 + col</div><div class="small">You can decode any ID in your head, so a bad join shows up at once. Try it in section 4.<span class="gm"><b>A cinema seat number.</b> Row and seat glued together. You can read any block's address in your head.</span></div></div>
+    <div class="card"><div class="k">5 · column names</div><div class="v">group_name_unit</div><div class="small"><code>soil_bdod_0-5cm_cgcm3</code>. The unit is in the name because a soil density of "107" once fooled us: it is centigrams, not grams.<span class="gm"><b>Always write the unit.</b> Like writing "cm" after a height. A soil density of "107" once fooled us.</span></div></div>
+    <div class="card"><div class="k lock">6 · test blocks</div><div class="v">50 km → 5 groups</div><div class="small">Fixed seed 42, frozen <b>before</b> any model was trained, with a fingerprint (<code>ce08e9f0124386ac</code>) to prove it. Otherwise you'd pick blocks that flatter the model without noticing.<span class="gm"><b>The 🏋️ surprise-exam regions, sealed in an envelope.</b> Chosen and fingerprinted <i>before</i> any training, so nobody could pick easy ones later.</span></div></div>
   </div>
   <div class="tip ok" style="margin-top:12px">⚖️ <b>If the doc and the code disagree, the code wins.</b> <code>scripts/build/grid.py</code> is the single source of truth. The doc only explains why.</div>
+  <div class="play">
+    <span class="lv">🎮 the gamerules</span>
+    <p>Every board game has rules printed on the box. Blockland has six, and they're <b>frozen</b>. They decide how the world is measured (metres), how big a block is (100 m), where the world's corner is, how each block's address is written, how each fact is labelled, and which regions are kept back for the surprise exam.</p><p>Why freeze them? Because every model, every score and every forecast is built on top. If you moved the corner by one block, every block would get a different address, and nothing would line up any more.</p>
+    <div class="real">From <code>DATA_CONTRACT.md</code>: UTM 46N, 100 m squares, a fixed origin (350,000 / 2,950,000), cell ID = row × 100,000 + col, column names group_name_unit, and test blocks of 50 km in 5 groups (seed 42, fingerprint <code>ce08e9f0124386ac</code>). <code>scripts/build/grid.py</code> is the source of truth.</div>
+    <details class="pask"><summary>Why was the world's corner typed in by hand, instead of taken from the state border?</summary><div class="ans">If it came from the border file, a new or corrected border file would quietly shift every block. Typed in by hand, it can never move.</div></details>
+    <details class="pask"><summary>What does the 🔒 on rule 6 mean?</summary><div class="ans">The test regions were sealed before any model was trained. Changing them now would make every published score meaningless, because you could be choosing regions that flatter the model.</div></details>
+  </div>
 </section>
 
 <!-- 4 -->
 <section id="s4">
   <h2><span class="n">4</span>Decode a square ID</h2>
   <p class="sub">Every row in the big table has a cell ID. Type one, or click a town. The ID tells you exactly where the square is.</p>
+  <p class="kid">Every block has an address number. Cut off the last five digits and you get its <b>row</b> and its <b>column</b>, like a row and seat number in a cinema.</p>
   <div class="card decoder">
     <div>
       <input type="text" id="cid" value="222402305" inputmode="numeric" aria-label="cell id">
@@ -421,38 +636,68 @@ code{overflow-wrap:anywhere}
       <text x="80" y="3120" font-size="110" fill="#737e78" font-family="IBM Plex Mono,monospace">grid box: 5,900 × 3,200 squares · row 0 is the north edge</text>
     </svg>
   </div>
+  <span class="gm gmrow"><b>Try it:</b> 222402305 → row <b>2224</b>, seat <b>02305</b> → 222.4 km down from the top edge, 230.5 km across from the left → the hillside above Ziro (section 8).</span>
+  <div class="play">
+    <span class="lv">🎮 reading a block's address</span>
+    <p>Blockland is a giant cinema with 3,200 rows and 5,900 seats in each row. Every block's address is its <b>row number</b> followed by its <b>seat number</b> (always 5 digits). Row 0 is the top (north) edge. Each step is 100 m, so row 1,000 is 100 km south of the top edge.</p>
+    <div class="real">Cell ID = row × 100,000 + col. Row 0 is the north edge of the grid box; each step is 100 m in UTM 46N. You can decode any ID in your head, so a wrong join shows up at once.</div>
+    <details class="pask"><summary>Where is block 100002000?</summary><div class="ans">100002000 ÷ 100,000 → row <b>1000</b>, column <b>2000</b>: 100 km down from the north edge and 200 km across from the west edge.</div></details>
+    <details class="pask"><summary>Why not just number the blocks 0, 1, 2, 3…?</summary><div class="ans">A simple counter can't be read in your head, and if the grid ever changed, every number would shift silently and joins would go wrong with no error. Row-and-seat can always be checked.</div></details>
+  </div>
 </section>
 
 <!-- 5 -->
 <section id="s5">
   <h2><span class="n">5</span>The 34 facts, in six families</h2>
   <p class="sub">Every square gets these 34 columns. Hover a chip to read what it means. Most come from just <b>two</b> downloads: the height map and the soil map.</p>
+  <p class="kid">Every block carries a <b>🎒 backpack of 34 facts</b>: how steep it is, how wet, how far from a road, what grows there, what rock and soil it's made of.</p>
   <div class="facts" id="facts"></div>
-  <div class="tip warn" style="margin-top:12px">➕ <b>Also on the grid, but not among the 34:</b> HAND and the size of the nearest channel (built later for FloodSense), and the <b>rain index</b> (section 7). The 34 are the landslide model's inputs. Each product reads the columns it needs.</div>
+  <div class="tip warn" style="margin-top:12px">➕ <b>Also on the grid, but not among the 34:</b> HAND and the size of the nearest channel (built later for FloodSense), and the <b>rain index</b> (section 7). The 34 are the landslide model's inputs. Each product reads the columns it needs.<span class="gm"><b>Extra pockets.</b> HAND (for FloodSense) lives on the grid too, and rain lives in its own stack. The 34 are just the ones SlideSense reads.</span></div>
+  <div class="play">
+    <span class="lv">🎮 opening one block's backpack</span>
+    <svg viewBox="0 0 640 185" role="img" aria-label="A backpack with six pockets holding 8, 2, 3, 1, 2 and 18 facts">
+      <rect width="640" height="185" fill="#263257"/>
+      <path d="M290 40 q30 -12 60 0" fill="none" stroke="#b45f06" stroke-width="8"/>
+      <rect x="70" y="40" width="500" height="128" rx="26" fill="#b45f06"/>
+      <rect x="88" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="124" y="98" text-anchor="middle" font-size="20">⛰️</text><text x="124" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">8</text><text x="124" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">ground shape</text><rect x="170" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="206" y="98" text-anchor="middle" font-size="20">💧</text><text x="206" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">2</text><text x="206" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">water</text><rect x="252" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="288" y="98" text-anchor="middle" font-size="20">📏</text><text x="288" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">3</text><text x="288" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">distances</text><rect x="334" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="370" y="98" text-anchor="middle" font-size="20">🌳</text><text x="370" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">1</text><text x="370" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">cover</text><rect x="416" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="452" y="98" text-anchor="middle" font-size="20">🧱</text><text x="452" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">2</text><text x="452" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">rock</text><rect x="498" y="70" width="72" height="80" rx="10" fill="#1b2440" stroke="#ffc94a" stroke-width="2"/><text x="534" y="98" text-anchor="middle" font-size="20">🟫</text><text x="534" y="124" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="18" fill="#ffc94a">18</text><text x="534" y="142" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="11.5" fill="#eef2ff">soil</text>
+      <text x="320" y="30" text-anchor="middle" font-family="Mukta,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#ffc94a">🎒 one block's backpack: 34 facts</text>
+    </svg>
+    <p>Every one of the 8.2 million blocks carries the same backpack with six pockets. <b>28 of the 34 facts</b> come from just two chests: 10 from the ground-height chest (shape and water) and 18 from the soil chest (6 soil things at 3 depths). Hover a chip above to see what each fact means.</p>
+    <div class="real">34 columns per square: 8 terrain, 2 hydrology, 3 distances, 1 land cover, 2 geology, 18 soil (6 properties × 3 depths). 10 come from the Copernicus DEM and 18 from SoilGrids. They're the landslide model's inputs.</div>
+    <details class="pask"><summary>Why does the soil pocket hold 18 facts, when there are only 6 soil things?</summary><div class="ans">Each of the 6 (clay, sand, silt, density, stones, organic carbon) is measured at <b>3 depths</b>: the top 5 cm, 15–30 cm and 60–100 cm. 6 × 3 = 18.</div></details>
+    <details class="pask"><summary>Why isn't rain one of the 34?</summary><div class="ans">Rain changes every day. The 34 describe the ground, which barely changes. Rain lives in its own stack, and each block just remembers which rain slab it sits in (section 7).</div></details>
+  </div>
 </section>
 
 <!-- 6 -->
 <section id="s6">
   <h2><span class="n">6</span>Three moves turn any shape into a column</h2>
   <p class="sub">Sources come as grids, outlines or lines. Each has its own move to land on the 100 m squares.</p>
+  <p class="kid">Data comes in three shapes: <b>grids</b> (like pixels), <b>outlines</b> (like countries on a map) and <b>lines</b> (like roads). Each shape has its own trick for landing on our blocks.</p>
   <div class="moves">
     <div class="card">
       <svg viewBox="0 0 240 110"><g stroke="#fff" stroke-width="1">
         <rect x="5" y="15" width="40" height="40" fill="#b45f06"/><rect x="45" y="15" width="40" height="40" fill="#946610"/><rect x="5" y="55" width="40" height="40" fill="#d8a45a"/><rect x="45" y="55" width="40" height="40" fill="#b45f06"/></g>
         <text x="105" y="60" font-size="22" fill="#cf1f2a">➜</text>
         <g id="fine"></g></svg>
-      <b>🔲 Grid → grid</b><div class="small">A coarse grid (soil at 250 m) is spread over the squares it covers. A fine one (height at 30 m) is <b>worked out first, then averaged</b>: slope is worked out at 25 m and then averaged, so steep faces aren't smoothed away.</div>
+      <b>🔲 Grid → grid</b><div class="small">A coarse grid (soil at 250 m) is spread over the squares it covers. A fine one (height at 30 m) is <b>worked out first, then averaged</b>: slope is worked out at 25 m and then averaged, so steep faces aren't smoothed away.</div><span class="gm"><b>Pouring.</b> A big soil pixel pours its value into every block under it. Tiny height pixels are turned into steepness <i>first</i>, then averaged, so a cliff stays a cliff.</span>
     </div>
     <div class="card">
       <svg viewBox="0 0 240 110"><path d="M10 20 L80 10 L95 60 L40 95 L5 70 Z" fill="#a64d79" opacity=".7"/><path d="M80 10 L100 15 L95 60 Z" fill="#6aa84f" opacity=".7"/>
         <text x="110" y="60" font-size="22" fill="#cf1f2a">➜</text><g id="poly"></g></svg>
-      <b>🧩 Outline → label</b><div class="small">A rock map is a set of outlines. Each square asks <b>"which outline am I inside?"</b> and stores that rock's code.</div>
+      <b>🧩 Outline → label</b><div class="small">A rock map is a set of outlines. Each square asks <b>"which outline am I inside?"</b> and stores that rock's code.</div><span class="gm"><b>"Which country am I in?"</b> Each block checks which rock outline it's standing inside, and writes down that rock's name.</span>
     </div>
     <div class="card">
       <svg viewBox="0 0 240 110"><path d="M5 90 C 30 60, 60 70, 95 15" fill="none" stroke="#2f6cae" stroke-width="4"/>
         <text x="110" y="60" font-size="22" fill="#cf1f2a">➜</text><g id="dist"></g></svg>
-      <b>📏 Line → distance</b><div class="small">A road, river or fault is a line. Each square stores <b>"how far to the nearest one"</b>. This is measured on the full box, so a square near the border still finds a road just across it.</div>
+      <b>📏 Line → distance</b><div class="small">A road, river or fault is a line. Each square stores <b>"how far to the nearest one"</b>. This is measured on the full box, so a square near the border still finds a road just across it.</div><span class="gm"><b>"How far to the nearest road?"</b> Each block measures it, even if the road is just over the border.</span>
     </div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 three snapping tricks</span>
+    <p>The loot arrives in three shapes, and the World Engine has one trick for each. <b>Pour</b> a grid onto the blocks. Ask <b>"which outline am I in?"</b> for shapes. Measure <b>"how far to the nearest one?"</b> for lines. Every chest, whatever shape it came in, ends up as one column in the backpack.</p>
+    <div class="real">Raster → raster (resample, or derive first then aggregate), polygon → label (point in polygon), line → distance (distance transform on the full box, not the state mask).</div>
+    <details class="pask"><summary>Why work out the slope <i>before</i> shrinking the height map to 100 m?</summary><div class="ans">Averaging heights first flattens the hill: a steep 25 m face inside a gentle 100 m square disappears. Working out slope at 25 m and then averaging keeps the steep bits, and steep faces are what fail.</div></details>
   </div>
 </section>
 
@@ -460,6 +705,7 @@ code{overflow-wrap:anywhere}
 <section id="s7">
   <h2><span class="n">7</span>Rain is special: never copied onto the 100 m squares</h2>
   <p class="sub">Copying rain onto every square would mean 8.2 M squares × 9,555 days = <b>78 billion numbers</b>, about 12,000 copies of each rain value. So we don't.</p>
+  <p class="kid">Rain is too big to copy onto 8.2 million blocks for 9,555 days. So each block just remembers <b>which rain slab it sits in</b>, like knowing your class number instead of copying the whole timetable into every pupil's notebook.</p>
   <div class="card two">
     <svg viewBox="0 0 370 200" style="width:100%">
       <g id="idxGrid"></g>
@@ -472,19 +718,28 @@ code{overflow-wrap:anywhere}
     <div class="small">
       <p style="margin-top:0"><b>The trick:</b> one file, <code>imerg_index.tif</code>, stores for every 100 m square <b>which rain square it sits in</b>. Models join on <i>(rain square, date)</i>. It holds the same information with <b>four orders of magnitude</b> less storage.</p>
       <p><b>It's also honest.</b> A 100 m rain map would <i>look</i> sharp and invite people to trust it at 100 m. It's 11 km data.</p>
+      <span class="gm"><b>No fake sharpness.</b> Painting 11 km rain onto 100 m blocks would make it <i>look</i> sharp, and people would trust it more than they should.</span>
     </div>
   </div>
   <div class="rainbox" style="margin-top:12px">
     <div class="card"><b>📚 Rain history</b><div class="small">NASA IMERG, ~11 km squares, <b>2000-06-01 → 2026-07-29, 9,555 days, zero gaps</b>. 892 rain squares cover the state. The whole archive is only 326 MB, and downloading it is a ~2-hour job.</div></div>
-    <div class="card"><b>📡 Live rain + 7-day forecast</b><div class="small">Open-Meteo, a free weather service, at <b>219 points about 22 km apart</b>. One fetch feeds both forecasts. Points are spaced that far apart because of the free tier's limits: <b>a budget limit, not a science limit</b>.</div></div>
+    <div class="card"><b>📡 Live rain + 7-day forecast</b><div class="small">Open-Meteo, a free weather service, at <b>219 points about 22 km apart</b>. One fetch feeds both forecasts. Points are spaced that far apart because of the free tier's limits: <b>a budget limit, not a science limit</b>.<span class="gm"><b>Free-plan spacing.</b> 219 rain points, about 22 km apart, because that's what the free plan allows. A paid weather plan, or IMD's ground gauges (an Ask), would make it finer.</span></div></div>
   </div>
-  <div class="tip warn" style="margin-top:12px">🔁 <b>Trap we hit:</b> four days looked like holes in NASA's archive. They were our own bug: the script asked for the wrong file version. <b>Always re-check before calling data missing.</b></div>
+  <div class="tip warn" style="margin-top:12px">🔁 <b>Trap we hit:</b> four days looked like holes in NASA's archive. They were our own bug: the script asked for the wrong file version. <b>Always re-check before calling data missing.</b><span class="gm"><b>👾 Fake holes.</b> The holes were in our own bot, not in NASA's chest.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the rain slabs</span>
+    <p>Over Blockland, the sky is cut into big <b>rain slabs</b>, each about 11 km wide. About 12,000 blocks sit under each slab. Copying every slab's rain onto every block, for every day since 2000, would mean <b>78 billion numbers</b>. So each block carries just one tiny note: <i>"my rain slab is number 1285"</i>. When a Guardian needs the rain, it looks up the slab.</p>
+    <div class="real"><code>imerg_index.tif</code> stores, for every 100 m square, which 11 km IMERG cell it sits in; models join on (rain cell, date). IMERG: 2000-06-01 to 2026-07-29, 9,555 days, no gaps, 892 cells over the state. Live rain: Open-Meteo at 219 points ~22 km apart (a free-tier limit).</div>
+    <details class="pask"><summary>Why not just copy the rain onto every block?</summary><div class="ans">Two reasons. <b>Size:</b> 78 billion numbers, about 12,000 copies of each value. <b>Honesty:</b> a 100 m rain map would look far sharper than 11 km data really is.</div></details>
+    <details class="pask"><summary>Is the 22 km spacing of the live rain a limit of science?</summary><div class="ans">No: it's the <b>free plan</b>. A paid weather plan, or IMD's gauges through an Ask, would make it finer. Say what lifts a limit; never call a free-tier limit permanent.</div></details>
+  </div>
 </section>
 
 <!-- 8 -->
 <section id="s8">
   <h2><span class="n">8</span>One real square, all the way down</h2>
   <p class="sub">A forested hillside about 600 m from Ziro (Hapoli), read from the real local data. Left: the answer. Right: <b>do the same for your own village</b>.</p>
+  <p class="kid">Open one real block's backpack (a hillside above Ziro) and read every fact, with where it came from and when. Then do the same for a village you know.</p>
   <div class="sq">
     <div class="card">
       <div class="kicker">worked example · cell 222402305</div>
@@ -501,9 +756,15 @@ code{overflow-wrap:anywhere}
     </div>
   </div>
   <div class="grid g3" style="margin-top:12px">
-    <div class="card small">🏘️ <b>Try the town centre too.</b> In Hapoli itself the soil reads <b>blank</b>: the soil map often has no value under towns. Knowing the gaps in each layer is part of the job.</div>
-    <div class="card small">🌧️ <b>Satellite rain ≠ a gauge.</b> IMERG says ~3,200 mm a year for Ziro's 11 km square. A rain gauge in the valley can read quite differently. That gap is why we want IMD's gauges (the "Ask" tier).</div>
-    <div class="card small">🛣️ <b>Road at 0 m.</b> A road crosses this square. Slides are ~2.3× more common near roads, partly because cuts weaken slopes and partly because surveyors map near roads.</div>
+    <div class="card small">🏘️ <b>Try the town centre too.</b> In Hapoli itself the soil reads <b>blank</b>: the soil map often has no value under towns. Knowing the gaps in each layer is part of the job.<span class="gm"><b>Empty pockets.</b> The soil chest often has nothing under towns. A good Builder knows where each chest has holes.</span></div>
+    <div class="card small">🌧️ <b>Satellite rain ≠ a gauge.</b> IMERG says ~3,200 mm a year for Ziro's 11 km square. A rain gauge in the valley can read quite differently. That gap is why we want IMD's gauges (the "Ask" tier).<span class="gm"><b>Sky count vs bucket.</b> The sky-eye's rain count for an 11 km slab and a rain bucket in one valley can disagree a lot.</span></div>
+    <div class="card small">🛣️ <b>Road at 0 m.</b> A road crosses this square. Slides are ~2.3× more common near roads, partly because cuts weaken slopes and partly because surveyors map near roads.<span class="gm"><b>Two reasons, not one.</b> Road cuts really do weaken slopes (Jenga, Level 1). But surveyors also walk along roads, so slides near roads get <i>noticed</i> more.</span></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 your quest: fill your own village's backpack</span>
+    <p>Pick a village you know. Find its spot on Google Maps, run the one-line command above (or open the app's Layer explorer), and fill in its backpack: height, steepness, water, distances, cover, rock, soil and rain. For each fact, write <b>which chest it came from and when</b>. When you can do that, you really know the World Engine.</p>
+    <div class="real">The worked example is cell 222402305, read from <code>data/interim/</code> with <code>docs/lrn/tools/one_square.py</code> on 2 Nov 2026: 1,618 m high, 28.9° steep, HAND 67.5 m, a road through it, granitoid gneiss, about 3,232 mm of rain a year.</div>
+    <details class="pask"><summary>The Ziro block sits 67.5 m above its stream, on a 28.9° slope, with a road through it. Which Guardian cares about it more?</summary><div class="ans"><b>SlideSense.</b> At 67.5 m above the stream, floodwater won't reach it (FloodSense doesn't worry). But it's steep, and a road is cut through it: weak ground for landslides.</div></details>
   </div>
 </section>
 
@@ -511,6 +772,7 @@ code{overflow-wrap:anywhere}
 <section id="s9">
   <h2><span class="n">9</span>How the backbone moved to Assam</h2>
   <p class="sub">One switch: <code>REGION=assam</code>. Every script reads it at start-up. With nothing set, everything runs for Arunachal exactly as before.</p>
+  <p class="kid">One switch moved the whole World Engine to a second world, Assam, without changing a single block in Arunachal.</p>
   <div class="region">
     <div class="card same"><b style="color:var(--built)">＝ What stayed the same</b><ul>
       <li>Projection (UTM 46N), 100 m squares, the ID formula, column names</li>
@@ -525,49 +787,76 @@ code{overflow-wrap:anywhere}
       <li>Its own folders (<code>data/interim/assam/</code>) and its own frozen test blocks</li>
     </ul></div>
   </div>
-  <div class="tip ok" style="margin-top:12px">🧩 <b>One lattice.</b> Both corners are whole multiples of 10 km, so where the two boxes overlap, Assam's squares sit <b>exactly</b> on Arunachal's. A river that crosses the border can be stitched square by square.</div>
+  <div class="tip ok" style="margin-top:12px">🧩 <b>One lattice.</b> Both corners are whole multiples of 10 km, so where the two boxes overlap, Assam's squares sit <b>exactly</b> on Arunachal's. A river that crosses the border can be stitched square by square.<span class="gm"><b>Two boards, one pattern.</b> Lay two chess boards so they overlap. If both start on a whole square, the squares line up exactly where they meet. That's why a river can be followed from Arunachal into Assam block by block.</span></div>
+  <div class="play">
+    <span class="lv">🎮 world 2: Assam</span>
+    <p>The same game rules, a new board. Flip one switch (<code>REGION=assam</code>) and every bot and every build step runs for Assam instead: its own corner, its own box, its own outline (the official Survey of India one) and its own sealed exam regions. Flip it off, and Arunachal runs exactly as before.</p>
+    <div class="real">REGION=assam changes the corner (160,000 / 2,660,000), box (6,500 × 4,500 squares), download area, outline (Survey of India, 35 districts) and folders. Projection, 100 m, the ID formula, column names and all code stay the same. Arunachal was proven unchanged by <code>check_live_unchanged.py</code>.</div>
+    <details class="pask"><summary>How do we <i>know</i> moving to Assam didn't break Arunachal?</summary><div class="ans">We didn't just hope: a check script (<code>check_live_unchanged.py</code>) compared Arunachal's files and live forecasts before and after, and proved they were unchanged.</div></details>
+  </div>
 </section>
 
 <!-- 10 -->
 <section id="s10">
   <h2><span class="n">10</span>Free → Ask → Paid: the data ladder</h2>
   <p class="sub">Every limit belongs to a tier. Never call a Free-tier limit permanent. Say what lifts it.</p>
+  <p class="kid"><b>Free</b> chests we can open today. <b>Ask</b> chests need a polite letter to a Guild. <b>Paid</b> chests are ones we build ourselves: sensors, drones, detailed terrain scans.</p>
   <div class="tiers">
-    <div class="tier" style="background:var(--built-soft);border:2px solid var(--built)"><b>Free · today</b><span class="small">open satellite and government data</span><ul><li>an area, days ahead</li><li>everything on this page</li></ul></div>
-    <div class="tier" style="background:var(--partial-soft);border:2px solid var(--partial);min-height:190px"><b>Ask · letters, not money</b><span class="small">what offices already hold</span><ul><li>finer and faster</li><li>gauges, road-block logs, river cross-sections, dam releases</li></ul></div>
-    <div class="tier" style="background:var(--accent-soft);border:2px solid var(--accent);min-height:230px"><b>Paid · chosen spots</b><span class="small">what we generate</span><ul><li>one slope or river reach, hours ahead</li><li>sensors, drones, LiDAR terrain</li></ul></div>
+    <div class="tier" style="background:var(--built-soft);border:2px solid var(--built)"><b>Free · today</b><span class="small">open satellite and government data</span><ul><li>an area, days ahead</li><li>everything on this page</li></ul><span class="gm"><b>The open world.</b> Chests anyone can open.</span></div>
+    <div class="tier" style="background:var(--partial-soft);border:2px solid var(--partial);min-height:190px"><b>Ask · letters, not money</b><span class="small">what offices already hold</span><ul><li>finer and faster</li><li>gauges, road-block logs, river cross-sections, dam releases</li></ul><span class="gm"><b>Guild quests.</b> Write a letter, get a chest.</span></div>
+    <div class="tier" style="background:var(--accent-soft);border:2px solid var(--accent);min-height:230px"><b>Paid · chosen spots</b><span class="small">what we generate</span><ul><li>one slope or river reach, hours ahead</li><li>sensors, drones, LiDAR terrain</li></ul><span class="gm"><b>Craft your own chest</b>, for one chosen spot.</span></div>
   </div>
   <h3 style="margin:22px 0 8px">The asks that matter most (from <code>GOV_DATA_REQUEST_LIST.md</code>)</h3>
   <div class="asks">
-    <div class="ask"><div class="who">GSI</div><b>The <code>Landslidedata_1</code> event table</b>: date, time and rain for each slide. This unlocks <i>when</i>. Ask for it by table and field name.</div>
-    <div class="ask"><div class="who">State PWD · BRO · PMGSY</div><b>Road-block logs</b>: dated, located slides. The best realistic source of landslide dates, and what lets us grade the landslide forecast.</div>
+    <div class="ask"><div class="who">GSI</div><b>The <code>Landslidedata_1</code> event table</b>: date, time and rain for each slide. Worth asking by table and field name, but it's small (about 400 rows nationally), so it won't fill the gap in dated slides on its own.</div>
+    <div class="ask"><div class="who">State PWD · BRO · PMGSY</div><b>Road-block logs</b>: dated, located slides. The best realistic source of landslide dates, and what lets us grade the landslide forecast.<span class="gm"><b>The biggest quest prize.</b> Each log entry is a dated slide: a new surprise-exam question for SlideSense.</span></div>
     <div class="ask"><div class="who">IMD</div><b>Rain gauge records</b>, hourly. Ground truth for satellite rain on the ridges and at Tawang.</div>
     <div class="ask"><div class="who">CWC</div><b>River cross-sections</b> (to turn a level into a depth and extent) and danger lines for gauges that don't have them.</div>
     <div class="ask"><div class="who">NHPC · dam operators</div><b>Dam release schedules</b>: on a regulated river, a release can matter more than rain.</div>
     <div class="ask"><div class="who">SDMA · DDMA</div><b>Event and damage records</b>: what really happened, to grade both forecasts.</div>
   </div>
-  <div class="tip" style="margin-top:12px">🧭 <b>Standing rule:</b> don't wait for an ask. Derive the missing piece ourselves where we can, and use it as proof of capability. Asks <b>sharpen</b>; they don't <b>block</b>.</div>
+  <div class="tip" style="margin-top:12px">🧭 <b>Standing rule:</b> don't wait for an ask. Derive the missing piece ourselves where we can, and use it as proof of capability. Asks <b>sharpen</b>; they don't <b>block</b>.<span class="gm"><b>Never wait at a locked door.</b> Find another way to the same loot, and use it to show what you can do.</span></div>
+  <div class="play">
+    <span class="lv">🎮 three kinds of chest</span>
+    <p>Picture a game map with three areas. In the <b>open world</b> (Free), chests are lying around: satellites and open government data. Everything on this page came from there. In the <b>Guild halls</b> (Ask), chests are given out if you ask nicely: gauges, road-block logs, dam schedules. In the <b>workshop</b> (Paid), you craft your own: sensors on one slope, a drone survey of one river reach.</p><p>Each step up gives <i>finer</i> and <i>faster</i> forecasts, for a smaller area.</p>
+    <div class="real">Free: an area, days ahead, on open data. Ask: finer and faster, from data offices already hold. Paid: one slope or river reach, hours ahead, from sensors, drones and LiDAR. Every limit belongs to a tier; say what lifts it.</div>
+    <details class="pask"><summary>An officer says "without our gauges, your forecast is useless". How do you answer?</summary><div class="ans">"It works today on open data, and we can show its scores. Your gauges would make it sharper, and here is exactly what they'd add." Asks sharpen the forecast; they don't block it.</div></details>
+  </div>
 </section>
 
 <!-- 11 -->
 <section id="s11">
   <h2><span class="n">11</span>Portals that look closed, but aren't</h2>
   <p class="sub">Several sources first got logged as "blocked, needs a formal request". Each time, <b>the web page lied, not the server</b>.</p>
+  <p class="kid">Some Guild doors look locked, but the lock is only painted on the front. The real door is round the back.</p>
   <div id="portals"></div>
-  <div class="tip ok">🔍 <b>The method:</b> read the map viewer's own code for its real data addresses, then ask the server directly what it holds. This matters in the room: if an APSAC scientist says "that layer isn't public", you know how it was reached.</div>
+  <div class="tip ok">🔍 <b>The method:</b> read the map viewer's own code for its real data addresses, then ask the server directly what it holds. This matters in the room: if an APSAC scientist says "that layer isn't public", you know how it was reached.<span class="gm"><b>Read the map, not the sign.</b> The map viewer's own code tells you where its loot really comes from.</span></div>
+  <div class="play">
+    <span class="lv">🎮 the painted-on locks</span>
+    <p>A website might say "no data" or "login needed". But the map you see on that website has to get its pictures from somewhere. Look at where they come from, and you often find an <b>open door</b>: the server that feeds the map, which anyone can ask.</p>
+    <div class="real">APSSDI, GSI Bhusanket, Bhuvan, the CWC flood site and NWDP all looked closed and weren't: their map servers or data services answer directly. Being reachable is not the same as permission to republish; terms still apply.</div>
+    <details class="pask"><summary>An APSAC scientist says "that layer isn't public". What do you say?</summary><div class="ans">Politely: "It's served on your open map server; this is the address we read it from. We'd still welcome your permission and guidance on using it properly." Being reachable isn't the same as permission to republish.</div></details>
+  </div>
 </section>
 
 <!-- 12 -->
 <section id="s12">
   <h2><span class="n">12</span>Checked before trusted: real catches</h2>
   <p class="sub">Rule 3 in action. Each of these would have quietly poisoned a model.</p>
+  <p class="kid">Every chest gets scanned for 👾 Glitches before a Guardian is allowed to learn from it. Even official chests.</p>
   <div class="grid g2">
-    <div class="trap" style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Official flood map on cliffs</b><div class="small">70.5% of Bhuvan's "flooded" pixels were on slopes over 15°. It's a rendered picture, smeared at the edges. Declared unusable as truth.</div></div>
-    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>GSI's map came out scrambled</b><div class="small">Exported in one big piece, the national susceptibility map matched its own source on only 41% of squares. Fixed by downloading in tiles on the server's own grid, then checking a small tile against a big one.</div></div>
-    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Landslides outside the state</b><div class="small">GSI sends data by map sheet, not by state: 246 of its polygons were in Nagaland and Assam. Filter by state before counting.</div></div>
-    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>One wrong river reading = a "52% flood"</b><div class="small">A single bad gauge value looked like a flood. Now a three-pass spike filter cleans readings, and it has found 18 false high-water days.</div></div>
-    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Soil density of 107</b><div class="small">That's centigrams per cm³, i.e. 1.07 g/cm³. Hence the unit in every column name.</div></div>
-    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Rain "holes" that weren't</b><div class="small">Four missing days were our own version bug, not NASA's. Re-check before declaring data missing.</div></div>
+    <div class="trap" style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Official flood map on cliffs</b><div class="small">70.5% of Bhuvan's "flooded" pixels were on slopes over 15°. It's a rendered picture, smeared at the edges. Declared unusable as truth.<span class="gm"><b>👾 Water on cliffs.</b> Water can't sit on a cliff.</span></div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>GSI's map came out scrambled</b><div class="small">Exported in one big piece, the national susceptibility map matched its own source on only 41% of squares. Fixed by downloading in tiles on the server's own grid, then checking a small tile against a big one.<span class="gm"><b>👾 The scrambled puzzle.</b> One big download came out jumbled; small pieces came out right.</span></div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Landslides outside the state</b><div class="small">GSI sends data by map sheet, not by state: 246 of its polygons were in Nagaland and Assam. Filter by state before counting.<span class="gm"><b>👾 Visitors from next door.</b> Some craters were in Nagaland and Assam.</span></div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>One wrong river reading = a "52% flood"</b><div class="small">A single bad gauge value looked like a flood. Now a three-pass spike filter cleans readings, and it has found 18 false high-water days.<span class="gm"><b>👾 One broken height stick.</b> One bad reading looked like a flood.</span></div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Soil density of 107</b><div class="small">That's centigrams per cm³, i.e. 1.07 g/cm³. Hence the unit in every column name.<span class="gm"><b>👾 The missing "cm".</b> 107 what?</span></div></div>
+    <div style="background:var(--sheet);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:12px 14px"><b>Rain "holes" that weren't</b><div class="small">Four missing days were our own version bug, not NASA's. Re-check before declaring data missing.<span class="gm"><b>👾 Fake holes.</b> Our bot's bug, not NASA's.</span></div></div>
+  </div>
+  <div class="play">
+    <span class="lv">🎮 the Glitch scanner</span>
+    <p>Before any chest reaches a Guardian, you <b>scan it</b>. Does the water sit where water can sit? Are the craters inside Blockland? Does one weird reading stand out? Do the units make sense? Each Glitch above would have taught a Guardian something false, without any error message.</p>
+    <div class="real">Rule 3 of the backbone: check before you trust. Six real catches: Bhuvan's flood map on slopes, GSI's scrambled export, polygons outside the state, a single bad gauge reading (now a three-pass spike filter), soil density units, and our own fetch bug.</div>
+    <details class="pask"><summary>Why is the unit written in every column name?</summary><div class="ans">Because a soil density of "107" looked like grams but was centigrams per cm³ (1.07 g/cm³). With the unit in the name (<code>…_cgcm3</code>), nobody can misread it again.</div></details>
   </div>
 </section>
 
@@ -575,7 +864,9 @@ code{overflow-wrap:anywhere}
 <section id="s13">
   <h2><span class="n">13</span>Read the code, in this order</h2>
   <p class="sub">Read each file's opening comment block first. In this repo it says <i>why</i>. Tick as you go.</p>
-  <div class="card code-list" id="codeList"></div>
+  <p class="kid">Read the code like a guidebook. The first comment in each file tells you <b>why</b> it exists. Start there.</p>
+  <span class="gm gmrow"><b>The Builder's manual.</b> Start with <code>common.py</code> (where the tag-writer lives) and <code>grid.py</code> (the frozen rules), then follow the belt in order.</span>
+  <div class="card code-list" id="codeList" style="margin-top:10px"></div>
   <h3 style="margin:22px 0 8px">And the docs</h3>
   <div class="card code-list" id="docList"></div>
 </section>
@@ -583,7 +874,7 @@ code{overflow-wrap:anywhere}
 <!-- 14 -->
 <section id="s14">
   <h2><span class="n">14</span>Check yourself</h2>
-  <p class="sub">Answer out loud, then open the answer and grade yourself. <span class="score" id="score"></span></p>
+  <p class="sub">Answer out loud, then open the answer and grade yourself. These are the grown-up questions: answer in real words, not game words. <span class="score" id="score"></span></p>
   <div id="quiz"></div>
 </section>
 
@@ -597,10 +888,31 @@ code{overflow-wrap:anywhere}
     <div class="beat"><span class="s">explain</span><b>Why rain isn't on the 100 m grid</b>both the storage reason and the honesty reason</div>
     <div class="beat"><span class="s">explain</span><b>What REGION changed</b>and how we proved Arunachal didn't move</div>
   </div>
+  <div class="play">
+    <span class="lv">🎮 the Level 2 boss: explain it to a 12-year-old</span>
+    <p>To finish Level 2, explain each of these using the game words first, then the real words:</p>
+    <ul>
+      <li>🎁→🔐→🧲→📦→🛡️ the conveyor belt, and the 🏷️ tag on every chest</li>
+      <li>46 chests open, 20 spotted, and what the chest colours mean</li>
+      <li>the six frozen gamerules, and why the corner was typed by hand</li>
+      <li>reading a block's address like a cinema seat</li>
+      <li>the 🎒 backpack of 34 facts, and the three snapping tricks</li>
+      <li>why each block only remembers its rain slab</li>
+      <li>Free, Ask and Paid chests, and the painted-on locks</li>
+    </ul>
+    <p><b>Next up, Level 3: SlideSense's training.</b> How Guardian 1 learned from 35,744 old craters, why the missing calendar pages matter, and how it sat its surprise exam.</p>
+  </div>
   <div class="tip ok" style="margin-top:14px">✅ <b>Then:</b> ask Claude <i>"quiz me on phase 2 like an APSAC GIS scientist"</i>, and move to Phase 3, SlideSense.</div>
 </section>
 
-<footer>Phase 2 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Sources from <code>webapp/assets/backbone/catalogue.json</code>; rules from DATA_CONTRACT.md; worked example read from <code>data/interim/</code> with <code>docs/lrn/tools/one_square.py</code>, checked 2 Nov 2026.</footer>
+<!-- 16 -->
+<section id="s16">
+  <h2><span class="n">16</span>Word cards</h2>
+  <p class="sub">Every grown-up word from this level, with its kid meaning and its game name. 👆 Tap to flip. Cards marked "back from Level 0" are old friends.</p>
+  <div class="words" id="words"></div>
+</section>
+
+<footer>Phase 2 of the learning path in <code>docs/LEARNING_ROADMAP.md</code>. Sources from <code>webapp/assets/backbone/catalogue.json</code>; rules from DATA_CONTRACT.md; worked example read from <code>data/interim/</code> with <code>docs/lrn/tools/one_square.py</code>, checked 2 Nov 2026. Source counts re-read 5 Nov 2026 (46 held, 20 ready). 🎮 Story mode added 5 Nov 2026; game names in <code>docs/lrn/LORE.md</code>.</footer>
 </div>
 
 <script>
@@ -612,36 +924,99 @@ const $ = id => document.getElementById(id);
 
 /* ---------- assembly line ---------- */
 const FLOW = {
-  fetch:{t:"📥 Fetch",x:"About 56 scripts, one per source, numbered in the order they were added (<code>fetch_01_boundaries</code> … <code>fetch_56_river_colour</code>). Each downloads only the state's box and calls <code>record()</code> to write down where the file came from.",f:"scripts/fetch/fetch_02_terrain.py · fetch_04_landcover.py · fetch_11_imerg.py · fetch_21_cwc_gauges.py · fetch_42_erosivity.py"},
+  fetch:{t:"📥 Fetch",x:"About 64 scripts, one per source, numbered in the order they were added (<code>fetch_01_boundaries</code> … <code>fetch_61_dem_crosscheck</code>). Each downloads only the state's box and calls <code>record()</code> to write down where the file came from.",f:"scripts/fetch/fetch_02_terrain.py · fetch_04_landcover.py · fetch_11_imerg.py · fetch_21_cwc_gauges.py · fetch_42_erosivity.py"},
   raw:{t:"🗄️ Raw store",x:"Files kept exactly as downloaded, never edited. Each folder has a <code>_SOURCES.json</code>: source, link, fetch time, terms of use, and a fingerprint of every file. Not in git (hundreds of GB).",f:"data/raw/01_boundaries … 16_groundsource · each with _SOURCES.json"},
   terrain:{t:"⛰️ Terrain + water",x:"From the 28 height tiles: steepness (worked out at 25 m, then averaged to 100 m), facing, curvature, relief. Then water routing on the <b>unmasked</b> map, because rivers flow in from Tibet, Bhutan and Assam, and cutting at the border would chop every catchment.",f:"scripts/build/terrain.py · hydrology.py · build_hand_100m.py → data/interim/terrain/*.tif"},
   feat:{t:"🧱 Other layers",x:"Soil (6 properties × 3 depths), land cover, rock type and rock group are fitted onto the squares. Distances to river, road and fault line are measured.",f:"scripts/build/features.py · distances.py → data/interim/features/*.tif"},
   table:{t:"📋 The big table (shelf 1)",x:"Every layer joined into one table: <b>one row per square inside the state, one column per fact</b>. Split into 5 parts by test block, so reading \"everything except block 3\" is cheap. From here on, nothing else opens a map file. Rain sits beside it, in its own stack (section 7).",f:"scripts/build/assemble.py → data/interim/grid_100m/fold=0…4 (~966 MB)"},
   bundle:{t:"📦 App bundle",x:"Hundreds of GB shrunk to a ~16 MB pack the app can load on free hosting: coarser display maps, lookup tables and the catalogue you saw in section 2.",f:"scripts/run/export_webapp_bundle.py · scripts/build/build_backbone_bundle.py → webapp/assets/"}
 };
+const FLOWG = {
+  fetch:"<b>Loot run.</b> One little bot per chest goes out and brings the loot home, and writes a tag saying where it found it.",
+  raw:"<b>🔐 The Vault.</b> Loot goes in exactly as it arrived and is never edited, so any mistake later can be undone by starting again from here.",
+  terrain:"<b>Shaping the world.</b> From the ground-height chest, work out steepness, facing and where every drop of water runs. Water is followed across the border too, because rivers don't stop at it.",
+  feat:"<b>🧲 Snap to grid.</b> Every other chest (soil, rock, land cover, roads) is fitted onto the same 100 m blocks.",
+  table:"<b>📦 The Materials chest.</b> One giant list: one line per block, one column per fact. After this, nobody needs to open a map file again.",
+  bundle:"<b>The small backpack.</b> Hundreds of GB squeezed into about 16 MB, so the app can carry it on a free server."
+};
 document.querySelectorAll("#flow .fstep").forEach(el => el.addEventListener("click", () => {
   document.querySelectorAll("#flow .fstep").forEach(e => e.classList.remove("on")); el.classList.add("on");
   const s = FLOW[el.dataset.k];
-  $("flowDetail").innerHTML = `<h4>${s.t}</h4><div>${s.x}</div><div class="files">📂 ${s.f}</div>`;
+  $("flowDetail").innerHTML = `<h4>${s.t}</h4><div>${s.x}</div><div class="files">📂 ${s.f}</div><span class="gm">${FLOWG[el.dataset.k]}</span>`;
 }));
 
 /* ---------- sources (from webapp/assets/backbone/catalogue.json) ---------- */
 const G = [
-  ["Boundaries","state and district outlines everything is clipped to",0.05,[["GADM 4.1","non-commercial; credit required","a","2026-07-26"]]],
-  ["Terrain","height, and everything from its shape",1.19,[["Copernicus DEM GLO-30","free worldwide, credit required","g","2026-07-26"]]],
-  ["Soil & geology","soil, rock type, fault lines",2.08,[["SoilGrids 2.0 (ISRIC)","CC-BY 4.0","g","2026-07-26"],["SMAP soil moisture (NASA)","NASA open data","g","2026-07-27"],["APSSDI (APSAC)","unstated; confirm before sharing","r","2026-07-28"]]],
-  ["Land cover","what grows or is built on it",0.46,[["ESA WorldCover 2021","CC-BY 4.0","g","2026-07-26"]]],
-  ["Hydrology","rivers, catchments, river flow",1.88,[["HydroSHEDS (WWF)","free, credit required","g","2026-07-26"],["GloFAS v4 (Copernicus)","Copernicus licence","g","2026-07-27"],["APSSDI (APSAC)","unstated","r","2026-07-28"]]],
-  ["Weather","daily rain, what makes it a forecast",0.38,[["NOAA GFS + ONI","public domain","g","2026-07-26"],["NASA GPM IMERG","NASA open data","g","2026-07-27"],["ERA5-Land (Copernicus)","Copernicus licence","g","2026-07-27"]]],
-  ["Seismic","earthquakes, a second trigger",0.004,[["USGS + IRIS","public domain / open","g","2026-07-26"]]],
-  ["Evidence","mapped landslides and floods: the answer key",0.10,[["NASA Global Landslide Catalog","re-host terms unverified","a","2026-07-26"],["GSI landslide inventory + polygons","RESTRICTED: not to be published","r","2026-07-28"],["NRSC Bhuvan landslides","unstated (Bhuvan terms)","r","2026-07-29"],["NRSC Bhuvan flood extent 2003–20","unstated","r","2026-07-29"]]],
-  ["Exposure","roads, settlements, people",0.92,[["WorldPop + OpenStreetMap + WDPA","mixed; WDPA non-commercial","a","2026-07-26"],["APSSDI (APSAC)","unstated","r","2026-07-28"]]],
-  ["Context","official maps we're compared against",0.06,[["Macrostrat geology","CC-BY 4.0","g","2026-07-26"],["GSI susceptibility map (50 m)","unstated","r","2026-10-10"]]],
-  ["River gauges","measured river levels",0.14,[["CWC Flood Forecasting System","open, no login","g","2026-08-31"],["NWDP river discharge (NWIC)","open","g","2026-08-31"]]],
-  ["Satellite","radar scenes of flood dates",300.46,[["Sentinel-1 radar (Copernicus)","free, full, open","g","2026-09-05"]]],
-  ["Flood records","global archive of big floods",0.003,[["DFO Global Flood Records","CC0","g","2026-09-02"]]],
-  ["Flood reports","news-based flood reports to verify",0.67,[["Groundsource (Google)","CC-BY 4.0","g","2026-09-05"]]]
-];
+  ["Boundaries", "The state and district outlines every layer is clipped to", 0.083, [["GADM 4.1", "Free for academic/non-commercial use", "a", "2026-10-17", "held"],
+  ["Survey of India OVSF/1M/9 (state and districts with HQ, 1:1M)", "Survey of India", "g", "2026-10-20", "held"],
+  ["APSSDI / Arunachal Pradesh Space Application Centre (APSAC)", "UNSTATED", "r", "2026-11-04", "held"],
+  ["GeoNames country dump, India", "CC-BY 4.0", "g", "2026-10-26", "held"],
+  ["OpenStreetMap via Overpass (named places: city, town, village, hamlet)", "ODbL 1.0", "g", "2026-10-26", "held"]]],
+  ["Terrain", "Elevation, and everything derived from its shape — slope, curvature, wetness", 2.27, [["Copernicus DEM GLO-30", "Free, worldwide, non-exclusive (ESA/Copernicus)", "g", "2026-10-17", "held"],
+  ["NASADEM (NASA/USGS, from SRTM 2000)", "Public domain (NASA/USGS)", "g", "", "ready"],
+  ["ALOS World 3D 30 m v4.1 (JAXA)", "Free with attribution (c) JAXA", "g", "", "ready"]]],
+  ["Soil & geology", "What the slope is made of: soil texture and depth, rock type, fault lines", 18.586, [["SoilGrids 2.0 (ISRIC)", "CC-BY 4.0", "g", "2026-10-29", "held"],
+  ["SMAP SPL3SMP_E.006 (NSIDC DAAC)", "NASA open data", "g", "2026-07-27", "held"],
+  ["APSSDI / Arunachal Pradesh Space Application Centre (APSAC)", "UNSTATED", "r", "2026-11-04", "held"],
+  ["ISED Indian Soil Erodibility Dataset (Raj et al. 2023)", "CC-BY 4.0", "g", "2026-10-17", "held"],
+  ["SMAP L4 soil moisture, 3-hourly 9 km (NASA)", "Free and open (NASA)", "g", "", "ready"]]],
+  ["Land cover", "What is growing on it, or built on it", 1.02, [["ESA WorldCover v200 (2021)", "CC-BY 4.0", "g", "2026-10-17", "held"],
+  ["Dry-season cover (Sentinel-2 L2A + Cloud Score+) and Hansen GFC v1.13 test bands", "Copernicus Sentinel data: free and open (Copernicus licence)", "g", "2026-10-25", "held"],
+  ["Tree-split inputs (Meta 1 m canopy height, Hansen GFC v1.13, ETH 10 m)", "Meta CHM: CC-BY 4.0", "g", "2026-10-20", "held"],
+  ["NRSC Land Degradation 1:50,000 (2015-16), Bhuvan WMS ld:AS_LD50K_1516", "NRSC / ISRO, Bhuvan: viewing service", "r", "2026-10-25", "held"],
+  ["OpenStreetMap via Overpass (tea gardens, reserve/protected forests)", "ODbL 1.0", "g", "2026-10-19", "held"],
+  ["Dynamic World 10 m land cover, every scene (Google/WRI)", "CC-BY 4.0", "g", "", "ready"],
+  ["MODIS yearly land cover 500 m, 2001-now (MCD12Q1)", "Free and open (NASA)", "g", "", "ready"],
+  ["MODIS daily snow cover 500 m (MOD10A1)", "Free and open (NASA/NSIDC)", "g", "", "ready"],
+  ["NASA FIRMS active fires (MODIS/VIIRS)", "Free and open (NASA)", "g", "", "ready"],
+  ["MODIS burned area 500 m, monthly (MCD64A1)", "Free and open (NASA)", "g", "", "ready"]]],
+  ["Hydrology", "Rivers, catchments and river discharge — the flood module's foundation", 2.211, [["HydroSHEDS v1 (HydroRIVERS v10, HydroBASINS v1c)", "Free for non-commercial and commercial use with attributio…", "a", "2026-10-17", "held"],
+  ["GloFAS v4 (Copernicus EWDS)", "Copernicus / CEMS-FLOODS licence", "g", "2026-07-27", "held"],
+  ["APSSDI / Arunachal Pradesh Space Application Centre (APSAC)", "UNSTATED", "r", "2026-11-04", "held"],
+  ["JRC Global Surface Water v1.4 (1984-2021)", "Free and open (Copernicus)", "g", "2026-11-04", "held"],
+  ["Global Flood Database (MODIS flood events 2000-2018)", "CC-BY-NC 4.0 (Cloud to Street / Tellman et al", "a", "", "ready"],
+  ["Randolph Glacier Inventory 7.0 (NSIDC)", "CC-BY 4.0", "g", "", "ready"]]],
+  ["Weather", "Daily rainfall, the input that makes a forecast a forecast rather than a map", 17.464, [["NOAA GFS 0.25 (NOMADS) + NOAA CPC ONI", "Public domain (US Government)", "g", "2026-07-26", "held"],
+  ["GPM IMERG Late Daily V07B (GES DISC)", "NASA open data", "g", "2026-07-27", "held"],
+  ["ERA5-Land hourly (Copernicus CDS)", "Licence to use Copernicus Products", "g", "2026-07-27", "held"],
+  ["gpm-imerg-archive", "NASA open data", "g", "2026-10-27", "held"],
+  ["Open-Meteo historical weather archive (ERA5)", "CC BY 4.0 (data)", "a", "2026-11-04", "held"],
+  ["Open-Meteo previous model runs", "CC BY 4.0 (data)", "a", "2026-11-04", "held"],
+  ["CWC rainfall, manual and telemetry, hourly and daily (NWDP)", "Other (Open), as listed on nwdp.nwic.gov.in", "g", "2026-10-19", "held"],
+  ["InRESatE R-factor (Das, Jain & Gupta 2022)", "CC-BY 4.0", "g", "2026-10-19", "held"],
+  ["IRED Indian Rainfall Erosivity Dataset (Raj et al. 2022)", "CC-BY 4.0", "g", "2026-10-19", "held"],
+  ["IWED Indian Water Erosion Dataset (Raj, Saharia & Chakma)", "NONE STATED on Zenodo", "r", "2026-10-17", "held"],
+  ["IMD gridded daily rainfall 0.25 deg (Pai et al. 2014)", "No licence on the download page", "r", "2026-11-04", "held"],
+  ["NOAA PSL Dipole Mode Index (IOD), monthly, from HadISST", "Public domain (NOAA)", "g", "2026-11-04", "held"],
+  ["Bureau of Meteorology RMM index (MJO), daily since 1974", "Free with attribution (BoM)", "g", "2026-11-04", "held"],
+  ["CHIRPS v2.0 daily rainfall (UCSB Climate Hazards Center)", "Free and open", "g", "", "ready"],
+  ["GSMaP near-real-time rain (JAXA)", "Free with attribution (JAXA)", "g", "", "ready"],
+  ["NASA NEX-GDDP-CMIP6 climate projections", "Free and open (NASA)", "g", "", "ready"],
+  ["NOAA Global Summary of the Day (weather stations)", "Free and open (NOAA)", "g", "", "ready"]]],
+  ["Seismic", "Earthquake shaking, a second trigger for slope failure", 0.002, [["USGS FDSN event + IRIS FDSN station", "Public domain (USGS)", "g", "2026-07-26", "held"],
+  ["USGS ShakeMap shaking footprints for past quakes", "Public domain (USGS)", "g", "", "ready"]]],
+  ["Evidence", "Mapped landslides and observed flooding — the record every model is fitted and judged on", 0.098, [["NASA Global Landslide Catalog (unofficial ArcGIS re-host)", "NASA data is public domain", "a", "2026-07-26", "held"],
+  ["GSI National Landslide Forecasting Centre — national landslide inventory", "RESTRICTED", "r", "2026-07-28", "held"],
+  ["GSI National Landslide Forecasting Centre — mapped landslide polygons", "RESTRICTED", "r", "2026-07-28", "held"],
+  ["NRSC Bhuvan landslide inventory (ISRO/NRSC), Arunachal Pradesh", "UNSTATED", "r", "2026-07-29", "held"],
+  ["NRSC Bhuvan aggregated flood inundation 2003-2020 (agg_ar)", "UNSTATED", "r", "2026-07-29", "held"],
+  ["NASA Global Landslide Catalog, official copy via HDX", "Public domain (NASA)", "g", "", "ready"],
+  ["GDELT global news events", "Free and open (GDELT)", "g", "", "ready"]]],
+  ["Exposure", "Roads, settlements and population: what a hazard would actually reach", 0.927, [["WorldPop 2020 + OpenStreetMap + WDPA", "WorldPop CC-BY 4.0", "a", "2026-07-26", "held"],
+  ["APSSDI / Arunachal Pradesh Space Application Centre (APSAC)", "UNSTATED", "r", "2026-11-04", "held"],
+  ["Google Open Buildings v3 (South Asia)", "CC-BY 4.0 and ODbL", "g", "", "ready"],
+  ["GHSL built-up surface 1975-2030 (JRC)", "CC-BY 4.0 (European Commission)", "g", "", "ready"],
+  ["Overture Maps (places, buildings, roads)", "CDLA-Permissive 2.0 / ODbL by theme", "g", "", "ready"]]],
+  ["Context & benchmarks", "Official hazard products we are measured against, not trained on", 0.065, [["Macrostrat geologic_units/map API", "CC-BY 4.0 (Macrostrat)", "g", "2026-07-26", "held"],
+  ["GSI National Landslide Susceptibility Map (50 m)", "UNSTATED", "r", "2026-10-10", "held"],
+  ["APSSDI / Arunachal Pradesh Space Application Centre (APSAC)", "UNSTATED", "r", "2026-11-04", "held"]]],
+  ["River gauges", "Measured river levels and flows — what a river forecast is trained on and graded against", 0.242, [["CWC FFS (34 series)", "open, no login (ffs.india-water.gov.in)", "g", "2026-10-27", "held"],
+  ["CWC FFS rain readings (MPS)", "open, no login (ffs.india-water.gov.in)", "g", "2026-10-20", "held"],
+  ["CWC Suspended Sediments, Manual Daily (NWDP)", "Other (Open), as listed on nwdp.nwic.gov.in", "g", "2026-10-19", "held"],
+  ["NWDP river discharge telemetry (NWIC / CWC)", "other-open (NWDP: hydrological analysis, flood forecasting…", "g", "2026-08-31", "held"]]],
+  ["Satellite", "Radar scenes from flood dates, read by the water test that verifies the flood record", 300.463, [["Sentinel-1 GRD radar scenes (Copernicus Data Space)", "Copernicus Sentinel data", "g", "2026-09-05", "held"]]],
+  ["Flood records", "A global archive of dated large floods — candidates to verify, not labels", 0.005, [["DFO Global Flood Records", "CC0", "g", "2026-09-02", "held"]]],
+  ["Flood reports", "News-derived, dated, located flood reports — candidates to verify", 0.667, [["Groundsource flood reports (Google)", "CC-BY-4.0", "g", "2026-09-05", "held"]]]];
 const maxLog = Math.log10(301 * 1000);
 $("groups").innerHTML = G.map(([t, p, gb], i) => {
   const w = Math.max(3, 100 * Math.log10(Math.max(gb, 0.001) * 1000) / maxLog);
@@ -651,7 +1026,7 @@ $("groups").innerHTML = G.map(([t, p, gb], i) => {
 const DOT = {g:'<span class="lic-g">●</span>', a:'<span class="lic-a">●</span>', r:'<span class="lic-r">●</span>'};
 function showGroup(i){
   document.querySelectorAll(".grp").forEach(e => e.classList.toggle("on", +e.dataset.i === i));
-  $("srcs").innerHTML = G[i][3].map(([n, l, k, d]) => `<div class="src"><b>${n}</b><span class="lic">${DOT[k]} ${l}</span><span class="d">fetched ${d}</span></div>`).join("");
+  $("srcs").innerHTML = G[i][3].map(([n, l, k, d, st]) => `<div class="src${st === "ready" ? " ready" : ""}"><b>${n}</b><span class="lic">${DOT[k]} ${l}</span><span class="d">${st === "ready" ? "ready · not pulled" : "fetched " + d}</span></div>`).join("");
 }
 document.querySelectorAll(".grp").forEach(e => e.addEventListener("click", () => showGroup(+e.dataset.i)));
 showGroup(7);
@@ -680,7 +1055,7 @@ const FACTS = [
   ["💧 Water", "var(--flood)", "also from the height map", [["hydro_flowacc_cells","how many squares drain through here"],["hydro_twi","wetness index: big catchment + gentle floor = wet"]]],
   ["📏 Distances", "var(--bone)", "HydroSHEDS · OpenStreetMap · APSSDI", [["dist_river_m","to the nearest mapped river"],["dist_road_m","to the nearest road"],["dist_lineament_m","to the nearest fault or fracture line"]]],
   ["🌳 Cover", "#6aa84f", "ESA WorldCover 2021, 10 m", [["lc_class_cat","tree, shrub, grass, crop, built-up, bare, snow, water…"]]],
-  ["🪨 Rock", "#a64d79", "APSSDI (APSAC state portal)", [["geol_rockgr_cat","rock group, e.g. gneiss-granitoid complex"],["geol_lithunit_cat","rock type, e.g. granitoid gneiss"]]],
+  ["🧱 Rock", "#a64d79", "APSSDI (APSAC state portal)", [["geol_rockgr_cat","rock group, e.g. gneiss-granitoid complex"],["geol_lithunit_cat","rock type, e.g. granitoid gneiss"]]],
   ["🟫 Soil (6 × 3 depths)", "#b45f06", "SoilGrids 2.0, 250 m", [["clay","clay share (g/kg)"],["sand","sand share (g/kg)"],["silt","silt share (g/kg)"],["bdod","density (cg/cm³)"],["cfvo","stones (cm³/dm³)"],["soc","organic carbon (dg/kg)"],["@ 0–5 cm","top"],["@ 15–30 cm","middle"],["@ 60–100 cm","deep"]]]
 ];
 const counts = [8, 2, 3, 1, 2, 18];
@@ -738,7 +1113,7 @@ $("portals").innerHTML = PORTALS.map(([n, l, r]) => `<div class="portal"><span c
 const CODE = [
   ["scripts/common.py","paths, the REGION switch, record() which writes provenance"],
   ["scripts/build/grid.py","the grid every layer snaps to: encode, decode, test blocks"],
-  ["scripts/fetch/ (names only)","skim all ~56 names. Read 02 terrain, 04 land cover, 11 IMERG, 21 CWC gauges, 42 erosivity"],
+  ["scripts/fetch/ (names only)","skim all ~64 names. Read 02 terrain, 04 land cover, 11 IMERG, 21 CWC gauges, 42 erosivity"],
   ["scripts/build/terrain.py","why slope is worked out at 25 m first"],
   ["scripts/build/hydrology.py","why water is routed on the unmasked map"],
   ["scripts/build/features.py · distances.py","the outline → label and line → distance moves"],
@@ -784,6 +1159,35 @@ QUIZ.forEach(([q, who, a], i) => {
   }));
   quiz.appendChild(d);
 });
+
+/* ---------- word cards: [word, kid meaning, game name, comes back in] ---------- */
+const WORDS = [
+  ["Data Backbone","One shared system that collects, checks and lines up all the data, so every forecast can use it.","⚙️ the World Engine","back from Level 0 · every level"],
+  ["Pipeline","The steps data goes through, in order, like a factory belt.","🎁→🔐→🧲→📦→🛡️ the conveyor belt","back from Level 0 · Level 6"],
+  ["Geospatial","Anything that sits at a place on the map.","the whole of Blockland","Level 7"],
+  ["Source","One place data comes from: one satellite product, one agency's map, one gauge network.","🎁 a loot chest","every level"],
+  ["Held vs ready","Held = downloaded and in use. Ready = checked and listed, not downloaded yet.","an opened chest vs a spotted chest","Level 7"],
+  ["Provenance","The record of where a file came from: source, link, date, terms.","🏷️ the tag","Levels 6, 7"],
+  ["Checksum","A short code worked out from a file. Change one bit and it changes.","the tag's fingerprint","back from Level 0 · Level 6"],
+  ["Licence / terms of use","The rules for using and sharing a source.","the chest's colour","Level 7"],
+  ["Raw data","The file exactly as it arrived, never edited.","loot in the 🔐 Vault","back from Level 0"],
+  ["Projection (UTM)","A way to flatten the round Earth so distances can be measured in metres.","a ruler, not degrees","Level 3"],
+  ["Grid / cell","The 100 m squares every layer is snapped onto.","🧱 blocks","back from Level 0 · every level"],
+  ["Cell ID","A square's address: row × 100,000 + column.","a cinema seat number","Levels 3, 6"],
+  ["Raster vs vector","Raster = a grid of pixels. Vector = outlines and lines.","pixels vs shapes","Level 4"],
+  ["Resample","Fit one grid onto another grid of a different size.","pouring","Level 4"],
+  ["Point in polygon","Which outline does this square sit inside?","\"which country am I in?\"","Level 3"],
+  ["Distance to feature","How far each square is from the nearest road, river or fault.","\"how far to the nearest road?\"","Level 3"],
+  ["Feature table","One row per square, one column per fact, ready for a model.","📦 the Materials chest","Levels 3, 4"],
+  ["Rain index","Each square stores which rain cell it sits in, instead of the rain itself.","the rain slab note","Levels 3, 6"],
+  ["Spatial data infrastructure (SDI)","A shared system for publishing maps, like the NSDI and APSSDI.","📚 the Sky-Eye Guild's library","Level 7"],
+  ["Bundle","The small pack of files the app reads (about 16 MB).","🎒 the small backpack","Level 6"],
+  ["REGION switch","One setting that runs every script for Arunachal or Assam.","the world-2 switch","Level 5"],
+  ["Free / Ask / Paid","Open data today / data offices hold / data we generate.","open world / Guild quests / craft your own","Levels 4, 7"]
+];
+$("words").innerHTML = WORDS.map(([w, m, g, b]) =>
+  `<div class="wc"><div class="in"><div class="f"><b>${w}</b><span>tap to flip</span></div><div class="b">${m}<span class="gn">🎮 ${g}</span><span class="back">${b.startsWith("back") ? b : "comes back in: " + b}</span></div></div></div>`).join("");
+$("words").addEventListener("click", e => { const c = e.target.closest(".wc"); if (c) c.classList.toggle("on"); });
 
 function meter(){
   const ids = [...document.querySelectorAll("input[type=checkbox][data-id]")].map(e => e.dataset.id).concat(QUIZ.map((_, i) => "q"+i));

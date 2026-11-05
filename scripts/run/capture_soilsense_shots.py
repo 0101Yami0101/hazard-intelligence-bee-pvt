@@ -1,6 +1,7 @@
 """Screenshots of every SoilSense page, for the NESFIC Proof of Work PDF.
 
-    python scripts/run/capture_soilsense_shots.py
+    python scripts/run/capture_soilsense_shots.py            # all
+    python scripts/run/capture_soilsense_shots.py 11_whatif  # only the named shots
 
 Starts the app on a spare port, opens SoilSense, visits each page (and the map
 with one district picked), and saves full-width PNGs to docs/nesfic/shots/.
@@ -30,7 +31,7 @@ SHOTS = [("01_map", "Erosion map", None, 1250),
          ("03_change", "Change over time", None, 1700),
          ("04_change_district", "Change over time", "Dima Hasao", 1700),
          ("05_priority", "Priority list", None, 2600),
-         ("11_whatif", "What if we treat it?", None, 1700),
+         ("11_whatif", "What if we treat it?", "Dima Hasao", 1350),
          ("06_method", "How to read this", None, 2400)]
 
 
@@ -58,7 +59,10 @@ def main() -> None:
                 time.sleep(1)
         with sync_playwright() as p:
             b = p.chromium.launch(headless=True)
+            only = set(sys.argv[1:])
             for name, button, district, height, *run in SHOTS:
+                if only and name not in only:
+                    continue
                 pg = b.new_page(viewport={"width": 1440, "height": 1000}, device_scale_factor=1)
                 pg.goto(f"http://localhost:{PORT}/?m=erosion", timeout=90000)
                 nav = pg.locator("[data-testid='stSidebar'] button", has_text=button).first

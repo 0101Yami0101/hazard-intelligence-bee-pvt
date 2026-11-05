@@ -217,9 +217,9 @@ Assumptions stated plainly:
 {Confirm names, roles and qualifications before pasting; up to five members.}
 
 Team:
-- {Sonit Saikia}, Co-founder and CTO, technical lead. Geospatial data pipelines, satellite and terrain processing, machine learning and forecasting, web apps. Built the platform's data backbone and its live flood and landslide forecasts. Leads the erosion model, AI panel, monitoring, outlooks, app and validation design.
 - {Nabam Changriang}, Co-founder and CEO, partnerships and programme. Government and community engagement in the North East. Department liaison, field-test and data-sharing agreements, reporting.
 - Pankaj Kar, Co-founder and COO, Lead Applicant, operations and field. Field logistics and teams, sensor and plot installation, drone survey coordination, village outreach.
+- {Sonit Saikia}, Co-founder and CTO, technical lead. Geospatial data pipelines, satellite and terrain processing, machine learning and forecasting, web apps. Built the platform's data backbone and its live flood and landslide forecasts. Leads the erosion model, AI panel, monitoring, outlooks, app and validation design.
 - {Member 4}, GIS and remote-sensing analyst. Optical and radar satellite processing, AI training labels, field kit, GIS support for the department.
 - {Member 5}, soil-conservation or agronomy adviser. Treatment choices, class scheme, field protocol, soil-plot design.
 
