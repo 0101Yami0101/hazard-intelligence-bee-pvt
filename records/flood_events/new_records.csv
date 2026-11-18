@@ -1,1 +1,2 @@
 id,source,place,lat,lon,date,detail,radar,radar_scene_date,radar_new_water_pct
+gauge:078-UBDDIB:2026-11-04,gauge,Pare HEP,27.236944,93.815556,2026-11-04,reaches this river's own top 2% of days: 245.55 vs line 245.20; 1 day(s),radar did not show it,2026-11-02,0.021

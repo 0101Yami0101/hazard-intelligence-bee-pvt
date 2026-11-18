@@ -2897,3 +2897,1641 @@ issued_on,target_date,lead_days,district,high_plus_pct,peak_class,assessed_cells
 2026-11-05,2026-11-11,6,Upper Subansiri,0.0,moderate,23495
 2026-11-05,2026-11-11,6,West Kameng,0.0,moderate,26546
 2026-11-05,2026-11-11,6,West Siang,0.0,low,29021
+2026-11-06,2026-11-06,0,Anjaw,0.0,high,24135
+2026-11-06,2026-11-06,0,Changlang,0.0,high,16744
+2026-11-06,2026-11-06,0,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-06,0,East Kameng,0.0,moderate,15055
+2026-11-06,2026-11-06,0,East Siang,0.0,moderate,10084
+2026-11-06,2026-11-06,0,Kurung Kumey,0.2,high,20536
+2026-11-06,2026-11-06,0,Lohit,0.0,moderate,7567
+2026-11-06,2026-11-06,0,Longding,0.0,moderate,3427
+2026-11-06,2026-11-06,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-06,2026-11-06,0,Lower Subansiri,0.0,moderate,14049
+2026-11-06,2026-11-06,0,Namsai,0.0,very_low,94
+2026-11-06,2026-11-06,0,Papum Pare,0.0,moderate,12912
+2026-11-06,2026-11-06,0,Tawang,0.0,low,7944
+2026-11-06,2026-11-06,0,Tirap,0.0,moderate,3961
+2026-11-06,2026-11-06,0,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-06,0,Upper Subansiri,0.0,moderate,23495
+2026-11-06,2026-11-06,0,West Kameng,0.0,moderate,26546
+2026-11-06,2026-11-06,0,West Siang,0.0,high,29021
+2026-11-06,2026-11-07,1,Anjaw,0.0,moderate,24135
+2026-11-06,2026-11-07,1,Changlang,0.0,moderate,16744
+2026-11-06,2026-11-07,1,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-07,1,East Kameng,0.0,low,15055
+2026-11-06,2026-11-07,1,East Siang,0.0,moderate,10084
+2026-11-06,2026-11-07,1,Kurung Kumey,0.0,high,20536
+2026-11-06,2026-11-07,1,Lohit,0.0,moderate,7567
+2026-11-06,2026-11-07,1,Longding,0.0,low,3427
+2026-11-06,2026-11-07,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-06,2026-11-07,1,Lower Subansiri,0.0,moderate,14049
+2026-11-06,2026-11-07,1,Namsai,0.0,very_low,94
+2026-11-06,2026-11-07,1,Papum Pare,0.0,moderate,12912
+2026-11-06,2026-11-07,1,Tawang,0.0,low,7944
+2026-11-06,2026-11-07,1,Tirap,0.0,low,3961
+2026-11-06,2026-11-07,1,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-07,1,Upper Subansiri,0.0,moderate,23495
+2026-11-06,2026-11-07,1,West Kameng,0.0,low,26546
+2026-11-06,2026-11-07,1,West Siang,0.0,moderate,29021
+2026-11-06,2026-11-08,2,Anjaw,0.0,moderate,24135
+2026-11-06,2026-11-08,2,Changlang,0.0,moderate,16744
+2026-11-06,2026-11-08,2,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-08,2,East Kameng,0.0,low,15055
+2026-11-06,2026-11-08,2,East Siang,0.0,moderate,10084
+2026-11-06,2026-11-08,2,Kurung Kumey,0.0,high,20536
+2026-11-06,2026-11-08,2,Lohit,0.0,low,7567
+2026-11-06,2026-11-08,2,Longding,0.0,low,3427
+2026-11-06,2026-11-08,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-06,2026-11-08,2,Lower Subansiri,0.0,moderate,14049
+2026-11-06,2026-11-08,2,Namsai,0.0,very_low,94
+2026-11-06,2026-11-08,2,Papum Pare,0.0,moderate,12912
+2026-11-06,2026-11-08,2,Tawang,0.0,low,7944
+2026-11-06,2026-11-08,2,Tirap,0.0,low,3961
+2026-11-06,2026-11-08,2,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-08,2,Upper Subansiri,0.0,moderate,23495
+2026-11-06,2026-11-08,2,West Kameng,0.0,low,26546
+2026-11-06,2026-11-08,2,West Siang,0.0,moderate,29021
+2026-11-06,2026-11-09,3,Anjaw,0.0,moderate,24135
+2026-11-06,2026-11-09,3,Changlang,0.0,low,16744
+2026-11-06,2026-11-09,3,Dibang Valley,0.0,low,26998
+2026-11-06,2026-11-09,3,East Kameng,0.0,very_low,15055
+2026-11-06,2026-11-09,3,East Siang,0.0,low,10084
+2026-11-06,2026-11-09,3,Kurung Kumey,0.0,moderate,20536
+2026-11-06,2026-11-09,3,Lohit,0.0,low,7567
+2026-11-06,2026-11-09,3,Longding,0.0,low,3427
+2026-11-06,2026-11-09,3,Lower Dibang Valley,0.0,low,17057
+2026-11-06,2026-11-09,3,Lower Subansiri,0.0,low,14049
+2026-11-06,2026-11-09,3,Namsai,0.0,very_low,94
+2026-11-06,2026-11-09,3,Papum Pare,0.0,low,12912
+2026-11-06,2026-11-09,3,Tawang,0.0,low,7944
+2026-11-06,2026-11-09,3,Tirap,0.0,low,3961
+2026-11-06,2026-11-09,3,Upper Siang,0.0,low,25925
+2026-11-06,2026-11-09,3,Upper Subansiri,0.0,low,23495
+2026-11-06,2026-11-09,3,West Kameng,0.0,low,26546
+2026-11-06,2026-11-09,3,West Siang,0.0,low,29021
+2026-11-06,2026-11-10,4,Anjaw,0.1,high,24135
+2026-11-06,2026-11-10,4,Changlang,0.8,high,16744
+2026-11-06,2026-11-10,4,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-10,4,East Kameng,0.0,low,15055
+2026-11-06,2026-11-10,4,East Siang,0.0,high,10084
+2026-11-06,2026-11-10,4,Kurung Kumey,0.0,moderate,20536
+2026-11-06,2026-11-10,4,Lohit,0.6,high,7567
+2026-11-06,2026-11-10,4,Longding,0.0,low,3427
+2026-11-06,2026-11-10,4,Lower Dibang Valley,0.1,high,17057
+2026-11-06,2026-11-10,4,Lower Subansiri,0.0,low,14049
+2026-11-06,2026-11-10,4,Namsai,0.0,low,94
+2026-11-06,2026-11-10,4,Papum Pare,0.0,low,12912
+2026-11-06,2026-11-10,4,Tawang,0.0,low,7944
+2026-11-06,2026-11-10,4,Tirap,0.0,low,3961
+2026-11-06,2026-11-10,4,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-10,4,Upper Subansiri,0.0,low,23495
+2026-11-06,2026-11-10,4,West Kameng,0.0,moderate,26546
+2026-11-06,2026-11-10,4,West Siang,0.0,moderate,29021
+2026-11-06,2026-11-11,5,Anjaw,0.3,very_high,24135
+2026-11-06,2026-11-11,5,Changlang,1.0,high,16744
+2026-11-06,2026-11-11,5,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-11,5,East Kameng,0.0,low,15055
+2026-11-06,2026-11-11,5,East Siang,0.0,high,10084
+2026-11-06,2026-11-11,5,Kurung Kumey,0.0,moderate,20536
+2026-11-06,2026-11-11,5,Lohit,0.6,high,7567
+2026-11-06,2026-11-11,5,Longding,0.0,low,3427
+2026-11-06,2026-11-11,5,Lower Dibang Valley,0.1,high,17057
+2026-11-06,2026-11-11,5,Lower Subansiri,0.0,low,14049
+2026-11-06,2026-11-11,5,Namsai,0.0,low,94
+2026-11-06,2026-11-11,5,Papum Pare,0.0,low,12912
+2026-11-06,2026-11-11,5,Tawang,0.0,moderate,7944
+2026-11-06,2026-11-11,5,Tirap,0.0,low,3961
+2026-11-06,2026-11-11,5,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-11,5,Upper Subansiri,0.0,moderate,23495
+2026-11-06,2026-11-11,5,West Kameng,0.0,moderate,26546
+2026-11-06,2026-11-11,5,West Siang,0.0,moderate,29021
+2026-11-06,2026-11-12,6,Anjaw,0.4,very_high,24135
+2026-11-06,2026-11-12,6,Changlang,1.0,high,16744
+2026-11-06,2026-11-12,6,Dibang Valley,0.0,moderate,26998
+2026-11-06,2026-11-12,6,East Kameng,0.0,low,15055
+2026-11-06,2026-11-12,6,East Siang,0.0,high,10084
+2026-11-06,2026-11-12,6,Kurung Kumey,0.0,moderate,20536
+2026-11-06,2026-11-12,6,Lohit,0.6,high,7567
+2026-11-06,2026-11-12,6,Longding,0.0,low,3427
+2026-11-06,2026-11-12,6,Lower Dibang Valley,0.1,high,17057
+2026-11-06,2026-11-12,6,Lower Subansiri,0.0,moderate,14049
+2026-11-06,2026-11-12,6,Namsai,0.0,low,94
+2026-11-06,2026-11-12,6,Papum Pare,0.0,low,12912
+2026-11-06,2026-11-12,6,Tawang,0.0,moderate,7944
+2026-11-06,2026-11-12,6,Tirap,0.0,low,3961
+2026-11-06,2026-11-12,6,Upper Siang,0.0,moderate,25925
+2026-11-06,2026-11-12,6,Upper Subansiri,0.0,moderate,23495
+2026-11-06,2026-11-12,6,West Kameng,0.0,moderate,26546
+2026-11-06,2026-11-12,6,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-07,0,Anjaw,0.0,moderate,24135
+2026-11-07,2026-11-07,0,Changlang,0.0,moderate,16744
+2026-11-07,2026-11-07,0,Dibang Valley,0.0,moderate,26998
+2026-11-07,2026-11-07,0,East Kameng,0.0,low,15055
+2026-11-07,2026-11-07,0,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-07,0,Kurung Kumey,0.0,high,20536
+2026-11-07,2026-11-07,0,Lohit,0.0,moderate,7567
+2026-11-07,2026-11-07,0,Longding,0.0,low,3427
+2026-11-07,2026-11-07,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-07,2026-11-07,0,Lower Subansiri,0.0,moderate,14049
+2026-11-07,2026-11-07,0,Namsai,0.0,very_low,94
+2026-11-07,2026-11-07,0,Papum Pare,0.0,moderate,12912
+2026-11-07,2026-11-07,0,Tawang,0.0,low,7944
+2026-11-07,2026-11-07,0,Tirap,0.0,low,3961
+2026-11-07,2026-11-07,0,Upper Siang,0.0,moderate,25925
+2026-11-07,2026-11-07,0,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-07,0,West Kameng,0.0,low,26546
+2026-11-07,2026-11-07,0,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-08,1,Anjaw,0.0,moderate,24135
+2026-11-07,2026-11-08,1,Changlang,0.0,moderate,16744
+2026-11-07,2026-11-08,1,Dibang Valley,0.0,moderate,26998
+2026-11-07,2026-11-08,1,East Kameng,0.0,low,15055
+2026-11-07,2026-11-08,1,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-08,1,Kurung Kumey,0.0,high,20536
+2026-11-07,2026-11-08,1,Lohit,0.0,low,7567
+2026-11-07,2026-11-08,1,Longding,0.0,low,3427
+2026-11-07,2026-11-08,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-07,2026-11-08,1,Lower Subansiri,0.0,moderate,14049
+2026-11-07,2026-11-08,1,Namsai,0.0,very_low,94
+2026-11-07,2026-11-08,1,Papum Pare,0.0,moderate,12912
+2026-11-07,2026-11-08,1,Tawang,0.0,low,7944
+2026-11-07,2026-11-08,1,Tirap,0.0,low,3961
+2026-11-07,2026-11-08,1,Upper Siang,0.0,moderate,25925
+2026-11-07,2026-11-08,1,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-08,1,West Kameng,0.0,low,26546
+2026-11-07,2026-11-08,1,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-09,2,Anjaw,0.0,low,24135
+2026-11-07,2026-11-09,2,Changlang,0.0,low,16744
+2026-11-07,2026-11-09,2,Dibang Valley,0.0,low,26998
+2026-11-07,2026-11-09,2,East Kameng,0.0,very_low,15055
+2026-11-07,2026-11-09,2,East Siang,0.0,low,10084
+2026-11-07,2026-11-09,2,Kurung Kumey,0.0,moderate,20536
+2026-11-07,2026-11-09,2,Lohit,0.0,low,7567
+2026-11-07,2026-11-09,2,Longding,0.0,low,3427
+2026-11-07,2026-11-09,2,Lower Dibang Valley,0.0,low,17057
+2026-11-07,2026-11-09,2,Lower Subansiri,0.0,low,14049
+2026-11-07,2026-11-09,2,Namsai,0.0,very_low,94
+2026-11-07,2026-11-09,2,Papum Pare,0.0,low,12912
+2026-11-07,2026-11-09,2,Tawang,0.0,low,7944
+2026-11-07,2026-11-09,2,Tirap,0.0,low,3961
+2026-11-07,2026-11-09,2,Upper Siang,0.0,low,25925
+2026-11-07,2026-11-09,2,Upper Subansiri,0.0,low,23495
+2026-11-07,2026-11-09,2,West Kameng,0.0,low,26546
+2026-11-07,2026-11-09,2,West Siang,0.0,low,29021
+2026-11-07,2026-11-10,3,Anjaw,0.0,moderate,24135
+2026-11-07,2026-11-10,3,Changlang,0.4,high,16744
+2026-11-07,2026-11-10,3,Dibang Valley,0.0,moderate,26998
+2026-11-07,2026-11-10,3,East Kameng,0.0,very_low,15055
+2026-11-07,2026-11-10,3,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-10,3,Kurung Kumey,0.0,moderate,20536
+2026-11-07,2026-11-10,3,Lohit,0.0,moderate,7567
+2026-11-07,2026-11-10,3,Longding,0.0,low,3427
+2026-11-07,2026-11-10,3,Lower Dibang Valley,0.0,moderate,17057
+2026-11-07,2026-11-10,3,Lower Subansiri,0.0,moderate,14049
+2026-11-07,2026-11-10,3,Namsai,0.0,low,94
+2026-11-07,2026-11-10,3,Papum Pare,0.0,moderate,12912
+2026-11-07,2026-11-10,3,Tawang,0.0,low,7944
+2026-11-07,2026-11-10,3,Tirap,0.0,low,3961
+2026-11-07,2026-11-10,3,Upper Siang,0.0,moderate,25925
+2026-11-07,2026-11-10,3,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-10,3,West Kameng,0.0,moderate,26546
+2026-11-07,2026-11-10,3,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-11,4,Anjaw,0.0,high,24135
+2026-11-07,2026-11-11,4,Changlang,0.5,high,16744
+2026-11-07,2026-11-11,4,Dibang Valley,0.0,moderate,26998
+2026-11-07,2026-11-11,4,East Kameng,0.0,low,15055
+2026-11-07,2026-11-11,4,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-11,4,Kurung Kumey,0.0,moderate,20536
+2026-11-07,2026-11-11,4,Lohit,0.0,moderate,7567
+2026-11-07,2026-11-11,4,Longding,0.0,low,3427
+2026-11-07,2026-11-11,4,Lower Dibang Valley,0.0,moderate,17057
+2026-11-07,2026-11-11,4,Lower Subansiri,0.0,moderate,14049
+2026-11-07,2026-11-11,4,Namsai,0.0,low,94
+2026-11-07,2026-11-11,4,Papum Pare,0.0,moderate,12912
+2026-11-07,2026-11-11,4,Tawang,0.0,moderate,7944
+2026-11-07,2026-11-11,4,Tirap,0.0,low,3961
+2026-11-07,2026-11-11,4,Upper Siang,0.0,moderate,25925
+2026-11-07,2026-11-11,4,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-11,4,West Kameng,0.0,moderate,26546
+2026-11-07,2026-11-11,4,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-12,5,Anjaw,0.0,moderate,24135
+2026-11-07,2026-11-12,5,Changlang,0.6,high,16744
+2026-11-07,2026-11-12,5,Dibang Valley,0.0,moderate,26998
+2026-11-07,2026-11-12,5,East Kameng,0.0,low,15055
+2026-11-07,2026-11-12,5,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-12,5,Kurung Kumey,0.0,moderate,20536
+2026-11-07,2026-11-12,5,Lohit,0.0,moderate,7567
+2026-11-07,2026-11-12,5,Longding,0.0,low,3427
+2026-11-07,2026-11-12,5,Lower Dibang Valley,0.0,moderate,17057
+2026-11-07,2026-11-12,5,Lower Subansiri,0.0,moderate,14049
+2026-11-07,2026-11-12,5,Namsai,0.0,low,94
+2026-11-07,2026-11-12,5,Papum Pare,0.0,moderate,12912
+2026-11-07,2026-11-12,5,Tawang,0.0,moderate,7944
+2026-11-07,2026-11-12,5,Tirap,0.0,low,3961
+2026-11-07,2026-11-12,5,Upper Siang,0.0,moderate,25925
+2026-11-07,2026-11-12,5,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-12,5,West Kameng,0.0,moderate,26546
+2026-11-07,2026-11-12,5,West Siang,0.0,moderate,29021
+2026-11-07,2026-11-13,6,Anjaw,0.0,moderate,24135
+2026-11-07,2026-11-13,6,Changlang,0.0,moderate,16744
+2026-11-07,2026-11-13,6,Dibang Valley,0.0,low,26998
+2026-11-07,2026-11-13,6,East Kameng,0.0,low,15055
+2026-11-07,2026-11-13,6,East Siang,0.0,moderate,10084
+2026-11-07,2026-11-13,6,Kurung Kumey,0.0,moderate,20536
+2026-11-07,2026-11-13,6,Lohit,0.0,moderate,7567
+2026-11-07,2026-11-13,6,Longding,0.0,low,3427
+2026-11-07,2026-11-13,6,Lower Dibang Valley,0.0,low,17057
+2026-11-07,2026-11-13,6,Lower Subansiri,0.0,low,14049
+2026-11-07,2026-11-13,6,Namsai,0.0,very_low,94
+2026-11-07,2026-11-13,6,Papum Pare,0.0,low,12912
+2026-11-07,2026-11-13,6,Tawang,0.0,moderate,7944
+2026-11-07,2026-11-13,6,Tirap,0.0,low,3961
+2026-11-07,2026-11-13,6,Upper Siang,0.0,low,25925
+2026-11-07,2026-11-13,6,Upper Subansiri,0.0,moderate,23495
+2026-11-07,2026-11-13,6,West Kameng,0.0,moderate,26546
+2026-11-07,2026-11-13,6,West Siang,0.0,moderate,29021
+2026-11-08,2026-11-08,0,Anjaw,0.0,moderate,24135
+2026-11-08,2026-11-08,0,Changlang,0.0,moderate,16744
+2026-11-08,2026-11-08,0,Dibang Valley,0.0,moderate,26998
+2026-11-08,2026-11-08,0,East Kameng,0.0,low,15055
+2026-11-08,2026-11-08,0,East Siang,0.0,moderate,10084
+2026-11-08,2026-11-08,0,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-08,0,Lohit,0.0,low,7567
+2026-11-08,2026-11-08,0,Longding,0.0,low,3427
+2026-11-08,2026-11-08,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-08,2026-11-08,0,Lower Subansiri,0.0,moderate,14049
+2026-11-08,2026-11-08,0,Namsai,0.0,very_low,94
+2026-11-08,2026-11-08,0,Papum Pare,0.0,moderate,12912
+2026-11-08,2026-11-08,0,Tawang,0.0,low,7944
+2026-11-08,2026-11-08,0,Tirap,0.0,low,3961
+2026-11-08,2026-11-08,0,Upper Siang,0.0,moderate,25925
+2026-11-08,2026-11-08,0,Upper Subansiri,0.0,low,23495
+2026-11-08,2026-11-08,0,West Kameng,0.0,low,26546
+2026-11-08,2026-11-08,0,West Siang,0.0,moderate,29021
+2026-11-08,2026-11-09,1,Anjaw,0.0,low,24135
+2026-11-08,2026-11-09,1,Changlang,0.0,moderate,16744
+2026-11-08,2026-11-09,1,Dibang Valley,0.0,low,26998
+2026-11-08,2026-11-09,1,East Kameng,0.0,very_low,15055
+2026-11-08,2026-11-09,1,East Siang,0.0,low,10084
+2026-11-08,2026-11-09,1,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-09,1,Lohit,0.0,low,7567
+2026-11-08,2026-11-09,1,Longding,0.0,low,3427
+2026-11-08,2026-11-09,1,Lower Dibang Valley,0.0,low,17057
+2026-11-08,2026-11-09,1,Lower Subansiri,0.0,low,14049
+2026-11-08,2026-11-09,1,Namsai,0.0,very_low,94
+2026-11-08,2026-11-09,1,Papum Pare,0.0,low,12912
+2026-11-08,2026-11-09,1,Tawang,0.0,low,7944
+2026-11-08,2026-11-09,1,Tirap,0.0,low,3961
+2026-11-08,2026-11-09,1,Upper Siang,0.0,low,25925
+2026-11-08,2026-11-09,1,Upper Subansiri,0.0,low,23495
+2026-11-08,2026-11-09,1,West Kameng,0.0,low,26546
+2026-11-08,2026-11-09,1,West Siang,0.0,low,29021
+2026-11-08,2026-11-10,2,Anjaw,0.0,moderate,24135
+2026-11-08,2026-11-10,2,Changlang,0.0,high,16744
+2026-11-08,2026-11-10,2,Dibang Valley,0.0,moderate,26998
+2026-11-08,2026-11-10,2,East Kameng,0.0,low,15055
+2026-11-08,2026-11-10,2,East Siang,0.0,moderate,10084
+2026-11-08,2026-11-10,2,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-10,2,Lohit,0.0,moderate,7567
+2026-11-08,2026-11-10,2,Longding,0.0,low,3427
+2026-11-08,2026-11-10,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-08,2026-11-10,2,Lower Subansiri,0.0,moderate,14049
+2026-11-08,2026-11-10,2,Namsai,0.0,very_low,94
+2026-11-08,2026-11-10,2,Papum Pare,0.0,low,12912
+2026-11-08,2026-11-10,2,Tawang,0.0,low,7944
+2026-11-08,2026-11-10,2,Tirap,0.0,low,3961
+2026-11-08,2026-11-10,2,Upper Siang,0.0,low,25925
+2026-11-08,2026-11-10,2,Upper Subansiri,0.0,low,23495
+2026-11-08,2026-11-10,2,West Kameng,0.0,low,26546
+2026-11-08,2026-11-10,2,West Siang,0.0,moderate,29021
+2026-11-08,2026-11-11,3,Anjaw,0.2,high,24135
+2026-11-08,2026-11-11,3,Changlang,0.4,high,16744
+2026-11-08,2026-11-11,3,Dibang Valley,0.0,moderate,26998
+2026-11-08,2026-11-11,3,East Kameng,0.0,moderate,15055
+2026-11-08,2026-11-11,3,East Siang,0.1,high,10084
+2026-11-08,2026-11-11,3,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-11,3,Lohit,0.0,moderate,7567
+2026-11-08,2026-11-11,3,Longding,0.0,moderate,3427
+2026-11-08,2026-11-11,3,Lower Dibang Valley,0.0,moderate,17057
+2026-11-08,2026-11-11,3,Lower Subansiri,0.0,moderate,14049
+2026-11-08,2026-11-11,3,Namsai,0.0,low,94
+2026-11-08,2026-11-11,3,Papum Pare,0.0,moderate,12912
+2026-11-08,2026-11-11,3,Tawang,0.0,low,7944
+2026-11-08,2026-11-11,3,Tirap,0.0,low,3961
+2026-11-08,2026-11-11,3,Upper Siang,0.0,moderate,25925
+2026-11-08,2026-11-11,3,Upper Subansiri,0.0,moderate,23495
+2026-11-08,2026-11-11,3,West Kameng,0.0,moderate,26546
+2026-11-08,2026-11-11,3,West Siang,0.1,high,29021
+2026-11-08,2026-11-12,4,Anjaw,0.4,very_high,24135
+2026-11-08,2026-11-12,4,Changlang,0.6,high,16744
+2026-11-08,2026-11-12,4,Dibang Valley,0.0,moderate,26998
+2026-11-08,2026-11-12,4,East Kameng,0.0,moderate,15055
+2026-11-08,2026-11-12,4,East Siang,0.1,high,10084
+2026-11-08,2026-11-12,4,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-12,4,Lohit,0.0,moderate,7567
+2026-11-08,2026-11-12,4,Longding,0.0,moderate,3427
+2026-11-08,2026-11-12,4,Lower Dibang Valley,0.0,moderate,17057
+2026-11-08,2026-11-12,4,Lower Subansiri,0.0,moderate,14049
+2026-11-08,2026-11-12,4,Namsai,0.0,low,94
+2026-11-08,2026-11-12,4,Papum Pare,0.0,moderate,12912
+2026-11-08,2026-11-12,4,Tawang,0.0,low,7944
+2026-11-08,2026-11-12,4,Tirap,0.0,low,3961
+2026-11-08,2026-11-12,4,Upper Siang,0.0,moderate,25925
+2026-11-08,2026-11-12,4,Upper Subansiri,0.0,moderate,23495
+2026-11-08,2026-11-12,4,West Kameng,0.0,moderate,26546
+2026-11-08,2026-11-12,4,West Siang,0.1,high,29021
+2026-11-08,2026-11-13,5,Anjaw,0.2,high,24135
+2026-11-08,2026-11-13,5,Changlang,0.0,high,16744
+2026-11-08,2026-11-13,5,Dibang Valley,0.0,low,26998
+2026-11-08,2026-11-13,5,East Kameng,0.0,moderate,15055
+2026-11-08,2026-11-13,5,East Siang,0.0,moderate,10084
+2026-11-08,2026-11-13,5,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-13,5,Lohit,0.0,moderate,7567
+2026-11-08,2026-11-13,5,Longding,0.0,low,3427
+2026-11-08,2026-11-13,5,Lower Dibang Valley,0.0,moderate,17057
+2026-11-08,2026-11-13,5,Lower Subansiri,0.0,moderate,14049
+2026-11-08,2026-11-13,5,Namsai,0.0,low,94
+2026-11-08,2026-11-13,5,Papum Pare,0.0,low,12912
+2026-11-08,2026-11-13,5,Tawang,0.0,low,7944
+2026-11-08,2026-11-13,5,Tirap,0.0,low,3961
+2026-11-08,2026-11-13,5,Upper Siang,0.0,moderate,25925
+2026-11-08,2026-11-13,5,Upper Subansiri,0.0,moderate,23495
+2026-11-08,2026-11-13,5,West Kameng,0.0,moderate,26546
+2026-11-08,2026-11-13,5,West Siang,0.0,moderate,29021
+2026-11-08,2026-11-14,6,Anjaw,0.0,high,24135
+2026-11-08,2026-11-14,6,Changlang,0.0,moderate,16744
+2026-11-08,2026-11-14,6,Dibang Valley,0.0,low,26998
+2026-11-08,2026-11-14,6,East Kameng,0.0,moderate,15055
+2026-11-08,2026-11-14,6,East Siang,0.0,low,10084
+2026-11-08,2026-11-14,6,Kurung Kumey,0.0,moderate,20536
+2026-11-08,2026-11-14,6,Lohit,0.0,low,7567
+2026-11-08,2026-11-14,6,Longding,0.0,low,3427
+2026-11-08,2026-11-14,6,Lower Dibang Valley,0.0,low,17057
+2026-11-08,2026-11-14,6,Lower Subansiri,0.0,low,14049
+2026-11-08,2026-11-14,6,Namsai,0.0,very_low,94
+2026-11-08,2026-11-14,6,Papum Pare,0.0,low,12912
+2026-11-08,2026-11-14,6,Tawang,0.0,low,7944
+2026-11-08,2026-11-14,6,Tirap,0.0,low,3961
+2026-11-08,2026-11-14,6,Upper Siang,0.0,low,25925
+2026-11-08,2026-11-14,6,Upper Subansiri,0.0,low,23495
+2026-11-08,2026-11-14,6,West Kameng,0.0,moderate,26546
+2026-11-08,2026-11-14,6,West Siang,0.0,low,29021
+2026-11-09,2026-11-09,0,Anjaw,0.0,low,24135
+2026-11-09,2026-11-09,0,Changlang,0.0,moderate,16744
+2026-11-09,2026-11-09,0,Dibang Valley,0.0,low,26998
+2026-11-09,2026-11-09,0,East Kameng,0.0,very_low,15055
+2026-11-09,2026-11-09,0,East Siang,0.0,low,10084
+2026-11-09,2026-11-09,0,Kurung Kumey,0.0,moderate,20536
+2026-11-09,2026-11-09,0,Lohit,0.0,low,7567
+2026-11-09,2026-11-09,0,Longding,0.0,low,3427
+2026-11-09,2026-11-09,0,Lower Dibang Valley,0.0,low,17057
+2026-11-09,2026-11-09,0,Lower Subansiri,0.0,low,14049
+2026-11-09,2026-11-09,0,Namsai,0.0,very_low,94
+2026-11-09,2026-11-09,0,Papum Pare,0.0,low,12912
+2026-11-09,2026-11-09,0,Tawang,0.0,low,7944
+2026-11-09,2026-11-09,0,Tirap,0.0,low,3961
+2026-11-09,2026-11-09,0,Upper Siang,0.0,low,25925
+2026-11-09,2026-11-09,0,Upper Subansiri,0.0,low,23495
+2026-11-09,2026-11-09,0,West Kameng,0.0,low,26546
+2026-11-09,2026-11-09,0,West Siang,0.0,low,29021
+2026-11-09,2026-11-10,1,Anjaw,0.0,high,24135
+2026-11-09,2026-11-10,1,Changlang,0.1,high,16744
+2026-11-09,2026-11-10,1,Dibang Valley,0.0,moderate,26998
+2026-11-09,2026-11-10,1,East Kameng,0.0,moderate,15055
+2026-11-09,2026-11-10,1,East Siang,0.0,moderate,10084
+2026-11-09,2026-11-10,1,Kurung Kumey,0.0,moderate,20536
+2026-11-09,2026-11-10,1,Lohit,0.2,high,7567
+2026-11-09,2026-11-10,1,Longding,0.0,low,3427
+2026-11-09,2026-11-10,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-09,2026-11-10,1,Lower Subansiri,0.0,low,14049
+2026-11-09,2026-11-10,1,Namsai,0.0,low,94
+2026-11-09,2026-11-10,1,Papum Pare,0.0,low,12912
+2026-11-09,2026-11-10,1,Tawang,0.0,low,7944
+2026-11-09,2026-11-10,1,Tirap,0.0,low,3961
+2026-11-09,2026-11-10,1,Upper Siang,0.0,moderate,25925
+2026-11-09,2026-11-10,1,Upper Subansiri,0.0,low,23495
+2026-11-09,2026-11-10,1,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-10,1,West Siang,0.0,moderate,29021
+2026-11-09,2026-11-11,2,Anjaw,0.0,high,24135
+2026-11-09,2026-11-11,2,Changlang,0.2,high,16744
+2026-11-09,2026-11-11,2,Dibang Valley,0.0,moderate,26998
+2026-11-09,2026-11-11,2,East Kameng,0.0,moderate,15055
+2026-11-09,2026-11-11,2,East Siang,0.0,moderate,10084
+2026-11-09,2026-11-11,2,Kurung Kumey,0.0,moderate,20536
+2026-11-09,2026-11-11,2,Lohit,0.5,high,7567
+2026-11-09,2026-11-11,2,Longding,0.0,moderate,3427
+2026-11-09,2026-11-11,2,Lower Dibang Valley,0.2,high,17057
+2026-11-09,2026-11-11,2,Lower Subansiri,0.0,moderate,14049
+2026-11-09,2026-11-11,2,Namsai,0.0,low,94
+2026-11-09,2026-11-11,2,Papum Pare,0.0,moderate,12912
+2026-11-09,2026-11-11,2,Tawang,0.0,moderate,7944
+2026-11-09,2026-11-11,2,Tirap,0.0,moderate,3961
+2026-11-09,2026-11-11,2,Upper Siang,0.0,moderate,25925
+2026-11-09,2026-11-11,2,Upper Subansiri,0.0,moderate,23495
+2026-11-09,2026-11-11,2,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-11,2,West Siang,0.0,moderate,29021
+2026-11-09,2026-11-12,3,Anjaw,0.1,high,24135
+2026-11-09,2026-11-12,3,Changlang,0.7,high,16744
+2026-11-09,2026-11-12,3,Dibang Valley,0.0,moderate,26998
+2026-11-09,2026-11-12,3,East Kameng,0.0,moderate,15055
+2026-11-09,2026-11-12,3,East Siang,0.0,moderate,10084
+2026-11-09,2026-11-12,3,Kurung Kumey,0.0,high,20536
+2026-11-09,2026-11-12,3,Lohit,1.3,high,7567
+2026-11-09,2026-11-12,3,Longding,0.0,moderate,3427
+2026-11-09,2026-11-12,3,Lower Dibang Valley,0.3,high,17057
+2026-11-09,2026-11-12,3,Lower Subansiri,0.0,moderate,14049
+2026-11-09,2026-11-12,3,Namsai,0.0,low,94
+2026-11-09,2026-11-12,3,Papum Pare,0.0,moderate,12912
+2026-11-09,2026-11-12,3,Tawang,0.0,moderate,7944
+2026-11-09,2026-11-12,3,Tirap,0.0,moderate,3961
+2026-11-09,2026-11-12,3,Upper Siang,0.0,moderate,25925
+2026-11-09,2026-11-12,3,Upper Subansiri,0.0,moderate,23495
+2026-11-09,2026-11-12,3,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-12,3,West Siang,0.0,moderate,29021
+2026-11-09,2026-11-13,4,Anjaw,0.0,moderate,24135
+2026-11-09,2026-11-13,4,Changlang,0.0,moderate,16744
+2026-11-09,2026-11-13,4,Dibang Valley,0.0,moderate,26998
+2026-11-09,2026-11-13,4,East Kameng,0.0,moderate,15055
+2026-11-09,2026-11-13,4,East Siang,0.0,moderate,10084
+2026-11-09,2026-11-13,4,Kurung Kumey,0.0,high,20536
+2026-11-09,2026-11-13,4,Lohit,0.0,moderate,7567
+2026-11-09,2026-11-13,4,Longding,0.0,low,3427
+2026-11-09,2026-11-13,4,Lower Dibang Valley,0.2,high,17057
+2026-11-09,2026-11-13,4,Lower Subansiri,0.0,moderate,14049
+2026-11-09,2026-11-13,4,Namsai,0.0,very_low,94
+2026-11-09,2026-11-13,4,Papum Pare,0.0,moderate,12912
+2026-11-09,2026-11-13,4,Tawang,0.0,moderate,7944
+2026-11-09,2026-11-13,4,Tirap,0.0,moderate,3961
+2026-11-09,2026-11-13,4,Upper Siang,0.0,moderate,25925
+2026-11-09,2026-11-13,4,Upper Subansiri,0.0,moderate,23495
+2026-11-09,2026-11-13,4,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-13,4,West Siang,0.0,moderate,29021
+2026-11-09,2026-11-14,5,Anjaw,0.0,moderate,24135
+2026-11-09,2026-11-14,5,Changlang,0.0,moderate,16744
+2026-11-09,2026-11-14,5,Dibang Valley,0.0,low,26998
+2026-11-09,2026-11-14,5,East Kameng,0.0,low,15055
+2026-11-09,2026-11-14,5,East Siang,0.0,moderate,10084
+2026-11-09,2026-11-14,5,Kurung Kumey,0.0,moderate,20536
+2026-11-09,2026-11-14,5,Lohit,0.0,moderate,7567
+2026-11-09,2026-11-14,5,Longding,0.0,low,3427
+2026-11-09,2026-11-14,5,Lower Dibang Valley,0.0,moderate,17057
+2026-11-09,2026-11-14,5,Lower Subansiri,0.0,low,14049
+2026-11-09,2026-11-14,5,Namsai,0.0,very_low,94
+2026-11-09,2026-11-14,5,Papum Pare,0.0,low,12912
+2026-11-09,2026-11-14,5,Tawang,0.0,low,7944
+2026-11-09,2026-11-14,5,Tirap,0.0,low,3961
+2026-11-09,2026-11-14,5,Upper Siang,0.0,low,25925
+2026-11-09,2026-11-14,5,Upper Subansiri,0.0,low,23495
+2026-11-09,2026-11-14,5,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-14,5,West Siang,0.0,low,29021
+2026-11-09,2026-11-15,6,Anjaw,0.0,high,24135
+2026-11-09,2026-11-15,6,Changlang,0.0,high,16744
+2026-11-09,2026-11-15,6,Dibang Valley,0.0,high,26998
+2026-11-09,2026-11-15,6,East Kameng,0.0,moderate,15055
+2026-11-09,2026-11-15,6,East Siang,0.0,low,10084
+2026-11-09,2026-11-15,6,Kurung Kumey,0.0,moderate,20536
+2026-11-09,2026-11-15,6,Lohit,0.0,moderate,7567
+2026-11-09,2026-11-15,6,Longding,0.0,low,3427
+2026-11-09,2026-11-15,6,Lower Dibang Valley,0.0,low,17057
+2026-11-09,2026-11-15,6,Lower Subansiri,0.0,moderate,14049
+2026-11-09,2026-11-15,6,Namsai,0.0,very_low,94
+2026-11-09,2026-11-15,6,Papum Pare,0.0,moderate,12912
+2026-11-09,2026-11-15,6,Tawang,0.0,moderate,7944
+2026-11-09,2026-11-15,6,Tirap,0.0,low,3961
+2026-11-09,2026-11-15,6,Upper Siang,0.0,moderate,25925
+2026-11-09,2026-11-15,6,Upper Subansiri,0.0,moderate,23495
+2026-11-09,2026-11-15,6,West Kameng,0.0,moderate,26546
+2026-11-09,2026-11-15,6,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-10,0,Anjaw,0.2,high,24135
+2026-11-10,2026-11-10,0,Changlang,0.0,high,16744
+2026-11-10,2026-11-10,0,Dibang Valley,0.0,moderate,26998
+2026-11-10,2026-11-10,0,East Kameng,0.0,moderate,15055
+2026-11-10,2026-11-10,0,East Siang,0.0,moderate,10084
+2026-11-10,2026-11-10,0,Kurung Kumey,0.0,moderate,20536
+2026-11-10,2026-11-10,0,Lohit,1.6,high,7567
+2026-11-10,2026-11-10,0,Longding,0.0,low,3427
+2026-11-10,2026-11-10,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-10,0,Lower Subansiri,0.0,low,14049
+2026-11-10,2026-11-10,0,Namsai,0.0,low,94
+2026-11-10,2026-11-10,0,Papum Pare,0.0,moderate,12912
+2026-11-10,2026-11-10,0,Tawang,0.0,low,7944
+2026-11-10,2026-11-10,0,Tirap,0.0,low,3961
+2026-11-10,2026-11-10,0,Upper Siang,0.0,moderate,25925
+2026-11-10,2026-11-10,0,Upper Subansiri,0.0,low,23495
+2026-11-10,2026-11-10,0,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-10,0,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-11,1,Anjaw,0.4,high,24135
+2026-11-10,2026-11-11,1,Changlang,0.3,high,16744
+2026-11-10,2026-11-11,1,Dibang Valley,0.0,moderate,26998
+2026-11-10,2026-11-11,1,East Kameng,0.0,moderate,15055
+2026-11-10,2026-11-11,1,East Siang,0.0,moderate,10084
+2026-11-10,2026-11-11,1,Kurung Kumey,0.0,moderate,20536
+2026-11-10,2026-11-11,1,Lohit,2.0,high,7567
+2026-11-10,2026-11-11,1,Longding,0.0,moderate,3427
+2026-11-10,2026-11-11,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-11,1,Lower Subansiri,0.0,moderate,14049
+2026-11-10,2026-11-11,1,Namsai,0.0,low,94
+2026-11-10,2026-11-11,1,Papum Pare,0.0,moderate,12912
+2026-11-10,2026-11-11,1,Tawang,0.0,moderate,7944
+2026-11-10,2026-11-11,1,Tirap,0.0,low,3961
+2026-11-10,2026-11-11,1,Upper Siang,0.0,moderate,25925
+2026-11-10,2026-11-11,1,Upper Subansiri,0.0,moderate,23495
+2026-11-10,2026-11-11,1,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-11,1,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-12,2,Anjaw,0.6,high,24135
+2026-11-10,2026-11-12,2,Changlang,0.6,high,16744
+2026-11-10,2026-11-12,2,Dibang Valley,0.0,moderate,26998
+2026-11-10,2026-11-12,2,East Kameng,0.0,moderate,15055
+2026-11-10,2026-11-12,2,East Siang,0.0,moderate,10084
+2026-11-10,2026-11-12,2,Kurung Kumey,0.0,moderate,20536
+2026-11-10,2026-11-12,2,Lohit,2.2,high,7567
+2026-11-10,2026-11-12,2,Longding,0.0,moderate,3427
+2026-11-10,2026-11-12,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-12,2,Lower Subansiri,0.0,moderate,14049
+2026-11-10,2026-11-12,2,Namsai,0.0,low,94
+2026-11-10,2026-11-12,2,Papum Pare,0.0,moderate,12912
+2026-11-10,2026-11-12,2,Tawang,0.0,moderate,7944
+2026-11-10,2026-11-12,2,Tirap,0.0,low,3961
+2026-11-10,2026-11-12,2,Upper Siang,0.0,moderate,25925
+2026-11-10,2026-11-12,2,Upper Subansiri,0.0,moderate,23495
+2026-11-10,2026-11-12,2,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-12,2,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-13,3,Anjaw,0.1,high,24135
+2026-11-10,2026-11-13,3,Changlang,0.1,high,16744
+2026-11-10,2026-11-13,3,Dibang Valley,0.0,moderate,26998
+2026-11-10,2026-11-13,3,East Kameng,0.0,moderate,15055
+2026-11-10,2026-11-13,3,East Siang,0.0,moderate,10084
+2026-11-10,2026-11-13,3,Kurung Kumey,0.0,moderate,20536
+2026-11-10,2026-11-13,3,Lohit,0.0,moderate,7567
+2026-11-10,2026-11-13,3,Longding,0.0,moderate,3427
+2026-11-10,2026-11-13,3,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-13,3,Lower Subansiri,0.0,moderate,14049
+2026-11-10,2026-11-13,3,Namsai,0.0,very_low,94
+2026-11-10,2026-11-13,3,Papum Pare,0.0,moderate,12912
+2026-11-10,2026-11-13,3,Tawang,0.0,moderate,7944
+2026-11-10,2026-11-13,3,Tirap,0.0,low,3961
+2026-11-10,2026-11-13,3,Upper Siang,0.0,low,25925
+2026-11-10,2026-11-13,3,Upper Subansiri,0.0,moderate,23495
+2026-11-10,2026-11-13,3,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-13,3,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-14,4,Anjaw,0.0,moderate,24135
+2026-11-10,2026-11-14,4,Changlang,0.0,moderate,16744
+2026-11-10,2026-11-14,4,Dibang Valley,0.0,low,26998
+2026-11-10,2026-11-14,4,East Kameng,0.0,low,15055
+2026-11-10,2026-11-14,4,East Siang,0.0,low,10084
+2026-11-10,2026-11-14,4,Kurung Kumey,0.0,moderate,20536
+2026-11-10,2026-11-14,4,Lohit,0.0,moderate,7567
+2026-11-10,2026-11-14,4,Longding,0.0,moderate,3427
+2026-11-10,2026-11-14,4,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-14,4,Lower Subansiri,0.0,moderate,14049
+2026-11-10,2026-11-14,4,Namsai,0.0,very_low,94
+2026-11-10,2026-11-14,4,Papum Pare,0.0,low,12912
+2026-11-10,2026-11-14,4,Tawang,0.0,low,7944
+2026-11-10,2026-11-14,4,Tirap,0.0,low,3961
+2026-11-10,2026-11-14,4,Upper Siang,0.0,low,25925
+2026-11-10,2026-11-14,4,Upper Subansiri,0.0,moderate,23495
+2026-11-10,2026-11-14,4,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-14,4,West Siang,0.0,moderate,29021
+2026-11-10,2026-11-15,5,Anjaw,0.0,high,24135
+2026-11-10,2026-11-15,5,Changlang,0.0,high,16744
+2026-11-10,2026-11-15,5,Dibang Valley,0.0,high,26998
+2026-11-10,2026-11-15,5,East Kameng,0.0,moderate,15055
+2026-11-10,2026-11-15,5,East Siang,0.0,moderate,10084
+2026-11-10,2026-11-15,5,Kurung Kumey,0.3,high,20536
+2026-11-10,2026-11-15,5,Lohit,0.0,moderate,7567
+2026-11-10,2026-11-15,5,Longding,0.0,low,3427
+2026-11-10,2026-11-15,5,Lower Dibang Valley,0.0,moderate,17057
+2026-11-10,2026-11-15,5,Lower Subansiri,0.0,moderate,14049
+2026-11-10,2026-11-15,5,Namsai,0.0,very_low,94
+2026-11-10,2026-11-15,5,Papum Pare,0.0,moderate,12912
+2026-11-10,2026-11-15,5,Tawang,0.0,moderate,7944
+2026-11-10,2026-11-15,5,Tirap,0.0,low,3961
+2026-11-10,2026-11-15,5,Upper Siang,0.0,high,25925
+2026-11-10,2026-11-15,5,Upper Subansiri,0.3,high,23495
+2026-11-10,2026-11-15,5,West Kameng,0.0,moderate,26546
+2026-11-10,2026-11-15,5,West Siang,0.2,high,29021
+2026-11-10,2026-11-16,6,Anjaw,0.8,very_high,24135
+2026-11-10,2026-11-16,6,Changlang,0.0,high,16744
+2026-11-10,2026-11-16,6,Dibang Valley,0.4,very_high,26998
+2026-11-10,2026-11-16,6,East Kameng,0.3,high,15055
+2026-11-10,2026-11-16,6,East Siang,0.8,high,10084
+2026-11-10,2026-11-16,6,Kurung Kumey,1.2,very_high,20536
+2026-11-10,2026-11-16,6,Lohit,0.7,high,7567
+2026-11-10,2026-11-16,6,Longding,0.0,moderate,3427
+2026-11-10,2026-11-16,6,Lower Dibang Valley,0.4,high,17057
+2026-11-10,2026-11-16,6,Lower Subansiri,1.3,high,14049
+2026-11-10,2026-11-16,6,Namsai,0.0,very_low,94
+2026-11-10,2026-11-16,6,Papum Pare,0.0,high,12912
+2026-11-10,2026-11-16,6,Tawang,0.0,moderate,7944
+2026-11-10,2026-11-16,6,Tirap,0.0,moderate,3961
+2026-11-10,2026-11-16,6,Upper Siang,0.6,very_high,25925
+2026-11-10,2026-11-16,6,Upper Subansiri,2.5,very_high,23495
+2026-11-10,2026-11-16,6,West Kameng,0.4,high,26546
+2026-11-10,2026-11-16,6,West Siang,1.0,very_high,29021
+2026-11-11,2026-11-11,0,Anjaw,0.7,very_high,24135
+2026-11-11,2026-11-11,0,Changlang,0.5,high,16744
+2026-11-11,2026-11-11,0,Dibang Valley,0.0,moderate,26998
+2026-11-11,2026-11-11,0,East Kameng,0.1,high,15055
+2026-11-11,2026-11-11,0,East Siang,0.0,moderate,10084
+2026-11-11,2026-11-11,0,Kurung Kumey,0.0,moderate,20536
+2026-11-11,2026-11-11,0,Lohit,2.7,high,7567
+2026-11-11,2026-11-11,0,Longding,0.0,moderate,3427
+2026-11-11,2026-11-11,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-11,2026-11-11,0,Lower Subansiri,0.0,moderate,14049
+2026-11-11,2026-11-11,0,Namsai,0.0,low,94
+2026-11-11,2026-11-11,0,Papum Pare,0.0,moderate,12912
+2026-11-11,2026-11-11,0,Tawang,0.0,moderate,7944
+2026-11-11,2026-11-11,0,Tirap,0.0,low,3961
+2026-11-11,2026-11-11,0,Upper Siang,0.0,moderate,25925
+2026-11-11,2026-11-11,0,Upper Subansiri,0.0,moderate,23495
+2026-11-11,2026-11-11,0,West Kameng,1.1,high,26546
+2026-11-11,2026-11-11,0,West Siang,0.0,moderate,29021
+2026-11-11,2026-11-12,1,Anjaw,0.7,very_high,24135
+2026-11-11,2026-11-12,1,Changlang,0.6,high,16744
+2026-11-11,2026-11-12,1,Dibang Valley,0.0,moderate,26998
+2026-11-11,2026-11-12,1,East Kameng,0.1,high,15055
+2026-11-11,2026-11-12,1,East Siang,0.0,moderate,10084
+2026-11-11,2026-11-12,1,Kurung Kumey,0.0,moderate,20536
+2026-11-11,2026-11-12,1,Lohit,2.7,high,7567
+2026-11-11,2026-11-12,1,Longding,0.0,moderate,3427
+2026-11-11,2026-11-12,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-11,2026-11-12,1,Lower Subansiri,0.0,moderate,14049
+2026-11-11,2026-11-12,1,Namsai,0.0,low,94
+2026-11-11,2026-11-12,1,Papum Pare,0.0,moderate,12912
+2026-11-11,2026-11-12,1,Tawang,0.0,low,7944
+2026-11-11,2026-11-12,1,Tirap,0.0,moderate,3961
+2026-11-11,2026-11-12,1,Upper Siang,0.0,moderate,25925
+2026-11-11,2026-11-12,1,Upper Subansiri,0.0,moderate,23495
+2026-11-11,2026-11-12,1,West Kameng,1.1,high,26546
+2026-11-11,2026-11-12,1,West Siang,0.0,moderate,29021
+2026-11-11,2026-11-13,2,Anjaw,0.1,high,24135
+2026-11-11,2026-11-13,2,Changlang,0.0,high,16744
+2026-11-11,2026-11-13,2,Dibang Valley,0.0,low,26998
+2026-11-11,2026-11-13,2,East Kameng,0.1,high,15055
+2026-11-11,2026-11-13,2,East Siang,0.0,moderate,10084
+2026-11-11,2026-11-13,2,Kurung Kumey,0.0,moderate,20536
+2026-11-11,2026-11-13,2,Lohit,0.0,moderate,7567
+2026-11-11,2026-11-13,2,Longding,0.0,moderate,3427
+2026-11-11,2026-11-13,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-11,2026-11-13,2,Lower Subansiri,0.0,moderate,14049
+2026-11-11,2026-11-13,2,Namsai,0.0,very_low,94
+2026-11-11,2026-11-13,2,Papum Pare,0.0,low,12912
+2026-11-11,2026-11-13,2,Tawang,0.0,low,7944
+2026-11-11,2026-11-13,2,Tirap,0.0,low,3961
+2026-11-11,2026-11-13,2,Upper Siang,0.0,moderate,25925
+2026-11-11,2026-11-13,2,Upper Subansiri,0.0,low,23495
+2026-11-11,2026-11-13,2,West Kameng,1.0,high,26546
+2026-11-11,2026-11-13,2,West Siang,0.0,moderate,29021
+2026-11-11,2026-11-14,3,Anjaw,0.0,moderate,24135
+2026-11-11,2026-11-14,3,Changlang,0.0,moderate,16744
+2026-11-11,2026-11-14,3,Dibang Valley,0.0,low,26998
+2026-11-11,2026-11-14,3,East Kameng,0.0,low,15055
+2026-11-11,2026-11-14,3,East Siang,0.0,low,10084
+2026-11-11,2026-11-14,3,Kurung Kumey,0.0,moderate,20536
+2026-11-11,2026-11-14,3,Lohit,0.0,moderate,7567
+2026-11-11,2026-11-14,3,Longding,0.0,low,3427
+2026-11-11,2026-11-14,3,Lower Dibang Valley,0.0,low,17057
+2026-11-11,2026-11-14,3,Lower Subansiri,0.0,low,14049
+2026-11-11,2026-11-14,3,Namsai,0.0,very_low,94
+2026-11-11,2026-11-14,3,Papum Pare,0.0,low,12912
+2026-11-11,2026-11-14,3,Tawang,0.0,low,7944
+2026-11-11,2026-11-14,3,Tirap,0.0,low,3961
+2026-11-11,2026-11-14,3,Upper Siang,0.0,low,25925
+2026-11-11,2026-11-14,3,Upper Subansiri,0.0,low,23495
+2026-11-11,2026-11-14,3,West Kameng,0.0,low,26546
+2026-11-11,2026-11-14,3,West Siang,0.0,moderate,29021
+2026-11-11,2026-11-15,4,Anjaw,0.0,moderate,24135
+2026-11-11,2026-11-15,4,Changlang,0.0,moderate,16744
+2026-11-11,2026-11-15,4,Dibang Valley,0.0,high,26998
+2026-11-11,2026-11-15,4,East Kameng,0.0,low,15055
+2026-11-11,2026-11-15,4,East Siang,0.0,moderate,10084
+2026-11-11,2026-11-15,4,Kurung Kumey,0.1,high,20536
+2026-11-11,2026-11-15,4,Lohit,0.0,moderate,7567
+2026-11-11,2026-11-15,4,Longding,0.0,low,3427
+2026-11-11,2026-11-15,4,Lower Dibang Valley,0.0,moderate,17057
+2026-11-11,2026-11-15,4,Lower Subansiri,0.0,moderate,14049
+2026-11-11,2026-11-15,4,Namsai,0.0,very_low,94
+2026-11-11,2026-11-15,4,Papum Pare,0.0,moderate,12912
+2026-11-11,2026-11-15,4,Tawang,0.0,low,7944
+2026-11-11,2026-11-15,4,Tirap,0.0,moderate,3961
+2026-11-11,2026-11-15,4,Upper Siang,0.0,moderate,25925
+2026-11-11,2026-11-15,4,Upper Subansiri,0.0,moderate,23495
+2026-11-11,2026-11-15,4,West Kameng,0.0,moderate,26546
+2026-11-11,2026-11-15,4,West Siang,0.0,high,29021
+2026-11-11,2026-11-16,5,Anjaw,1.2,high,24135
+2026-11-11,2026-11-16,5,Changlang,0.0,high,16744
+2026-11-11,2026-11-16,5,Dibang Valley,0.2,very_high,26998
+2026-11-11,2026-11-16,5,East Kameng,0.0,moderate,15055
+2026-11-11,2026-11-16,5,East Siang,0.5,high,10084
+2026-11-11,2026-11-16,5,Kurung Kumey,0.4,high,20536
+2026-11-11,2026-11-16,5,Lohit,7.0,very_high,7567
+2026-11-11,2026-11-16,5,Longding,0.0,moderate,3427
+2026-11-11,2026-11-16,5,Lower Dibang Valley,4.8,very_high,17057
+2026-11-11,2026-11-16,5,Lower Subansiri,0.0,high,14049
+2026-11-11,2026-11-16,5,Namsai,0.0,very_low,94
+2026-11-11,2026-11-16,5,Papum Pare,0.1,high,12912
+2026-11-11,2026-11-16,5,Tawang,0.0,moderate,7944
+2026-11-11,2026-11-16,5,Tirap,0.0,moderate,3961
+2026-11-11,2026-11-16,5,Upper Siang,0.1,high,25925
+2026-11-11,2026-11-16,5,Upper Subansiri,0.2,high,23495
+2026-11-11,2026-11-16,5,West Kameng,0.0,moderate,26546
+2026-11-11,2026-11-16,5,West Siang,0.3,very_high,29021
+2026-11-11,2026-11-17,6,Anjaw,1.6,very_high,24135
+2026-11-11,2026-11-17,6,Changlang,0.1,very_high,16744
+2026-11-11,2026-11-17,6,Dibang Valley,0.4,very_high,26998
+2026-11-11,2026-11-17,6,East Kameng,0.0,moderate,15055
+2026-11-11,2026-11-17,6,East Siang,0.6,high,10084
+2026-11-11,2026-11-17,6,Kurung Kumey,0.5,very_high,20536
+2026-11-11,2026-11-17,6,Lohit,8.8,very_high,7567
+2026-11-11,2026-11-17,6,Longding,0.0,moderate,3427
+2026-11-11,2026-11-17,6,Lower Dibang Valley,6.8,very_high,17057
+2026-11-11,2026-11-17,6,Lower Subansiri,0.1,high,14049
+2026-11-11,2026-11-17,6,Namsai,0.0,very_low,94
+2026-11-11,2026-11-17,6,Papum Pare,0.2,high,12912
+2026-11-11,2026-11-17,6,Tawang,0.0,low,7944
+2026-11-11,2026-11-17,6,Tirap,0.0,moderate,3961
+2026-11-11,2026-11-17,6,Upper Siang,0.3,very_high,25925
+2026-11-11,2026-11-17,6,Upper Subansiri,0.5,high,23495
+2026-11-11,2026-11-17,6,West Kameng,0.0,moderate,26546
+2026-11-11,2026-11-17,6,West Siang,1.0,very_high,29021
+2026-11-12,2026-11-12,0,Anjaw,0.9,very_high,24135
+2026-11-12,2026-11-12,0,Changlang,0.7,high,16744
+2026-11-12,2026-11-12,0,Dibang Valley,0.0,moderate,26998
+2026-11-12,2026-11-12,0,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-12,0,East Siang,0.0,moderate,10084
+2026-11-12,2026-11-12,0,Kurung Kumey,0.0,high,20536
+2026-11-12,2026-11-12,0,Lohit,3.2,high,7567
+2026-11-12,2026-11-12,0,Longding,0.0,moderate,3427
+2026-11-12,2026-11-12,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-12,2026-11-12,0,Lower Subansiri,0.0,moderate,14049
+2026-11-12,2026-11-12,0,Namsai,0.0,low,94
+2026-11-12,2026-11-12,0,Papum Pare,0.0,moderate,12912
+2026-11-12,2026-11-12,0,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-12,0,Tirap,0.0,moderate,3961
+2026-11-12,2026-11-12,0,Upper Siang,0.0,moderate,25925
+2026-11-12,2026-11-12,0,Upper Subansiri,0.0,moderate,23495
+2026-11-12,2026-11-12,0,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-12,0,West Siang,0.2,high,29021
+2026-11-12,2026-11-13,1,Anjaw,0.3,very_high,24135
+2026-11-12,2026-11-13,1,Changlang,0.0,high,16744
+2026-11-12,2026-11-13,1,Dibang Valley,0.0,low,26998
+2026-11-12,2026-11-13,1,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-13,1,East Siang,0.0,moderate,10084
+2026-11-12,2026-11-13,1,Kurung Kumey,0.0,high,20536
+2026-11-12,2026-11-13,1,Lohit,0.0,moderate,7567
+2026-11-12,2026-11-13,1,Longding,0.0,moderate,3427
+2026-11-12,2026-11-13,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-12,2026-11-13,1,Lower Subansiri,0.0,moderate,14049
+2026-11-12,2026-11-13,1,Namsai,0.0,very_low,94
+2026-11-12,2026-11-13,1,Papum Pare,0.0,moderate,12912
+2026-11-12,2026-11-13,1,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-13,1,Tirap,0.0,low,3961
+2026-11-12,2026-11-13,1,Upper Siang,0.0,moderate,25925
+2026-11-12,2026-11-13,1,Upper Subansiri,0.0,moderate,23495
+2026-11-12,2026-11-13,1,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-13,1,West Siang,0.0,moderate,29021
+2026-11-12,2026-11-14,2,Anjaw,0.0,high,24135
+2026-11-12,2026-11-14,2,Changlang,0.0,moderate,16744
+2026-11-12,2026-11-14,2,Dibang Valley,0.0,low,26998
+2026-11-12,2026-11-14,2,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-14,2,East Siang,0.0,low,10084
+2026-11-12,2026-11-14,2,Kurung Kumey,0.0,moderate,20536
+2026-11-12,2026-11-14,2,Lohit,0.0,moderate,7567
+2026-11-12,2026-11-14,2,Longding,0.0,low,3427
+2026-11-12,2026-11-14,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-12,2026-11-14,2,Lower Subansiri,0.0,low,14049
+2026-11-12,2026-11-14,2,Namsai,0.0,very_low,94
+2026-11-12,2026-11-14,2,Papum Pare,0.0,low,12912
+2026-11-12,2026-11-14,2,Tawang,0.0,low,7944
+2026-11-12,2026-11-14,2,Tirap,0.0,low,3961
+2026-11-12,2026-11-14,2,Upper Siang,0.0,low,25925
+2026-11-12,2026-11-14,2,Upper Subansiri,0.0,low,23495
+2026-11-12,2026-11-14,2,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-14,2,West Siang,0.0,moderate,29021
+2026-11-12,2026-11-15,3,Anjaw,0.0,moderate,24135
+2026-11-12,2026-11-15,3,Changlang,0.0,moderate,16744
+2026-11-12,2026-11-15,3,Dibang Valley,0.0,high,26998
+2026-11-12,2026-11-15,3,East Kameng,0.0,low,15055
+2026-11-12,2026-11-15,3,East Siang,0.0,moderate,10084
+2026-11-12,2026-11-15,3,Kurung Kumey,0.4,high,20536
+2026-11-12,2026-11-15,3,Lohit,0.0,moderate,7567
+2026-11-12,2026-11-15,3,Longding,0.0,low,3427
+2026-11-12,2026-11-15,3,Lower Dibang Valley,0.0,moderate,17057
+2026-11-12,2026-11-15,3,Lower Subansiri,0.0,moderate,14049
+2026-11-12,2026-11-15,3,Namsai,0.0,very_low,94
+2026-11-12,2026-11-15,3,Papum Pare,0.0,moderate,12912
+2026-11-12,2026-11-15,3,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-15,3,Tirap,0.0,moderate,3961
+2026-11-12,2026-11-15,3,Upper Siang,0.0,moderate,25925
+2026-11-12,2026-11-15,3,Upper Subansiri,0.0,high,23495
+2026-11-12,2026-11-15,3,West Kameng,0.0,low,26546
+2026-11-12,2026-11-15,3,West Siang,0.0,high,29021
+2026-11-12,2026-11-16,4,Anjaw,0.7,very_high,24135
+2026-11-12,2026-11-16,4,Changlang,0.0,high,16744
+2026-11-12,2026-11-16,4,Dibang Valley,0.3,very_high,26998
+2026-11-12,2026-11-16,4,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-16,4,East Siang,0.0,high,10084
+2026-11-12,2026-11-16,4,Kurung Kumey,0.7,very_high,20536
+2026-11-12,2026-11-16,4,Lohit,3.1,very_high,7567
+2026-11-12,2026-11-16,4,Longding,0.0,moderate,3427
+2026-11-12,2026-11-16,4,Lower Dibang Valley,2.3,high,17057
+2026-11-12,2026-11-16,4,Lower Subansiri,0.0,high,14049
+2026-11-12,2026-11-16,4,Namsai,0.0,very_low,94
+2026-11-12,2026-11-16,4,Papum Pare,0.0,high,12912
+2026-11-12,2026-11-16,4,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-16,4,Tirap,0.0,moderate,3961
+2026-11-12,2026-11-16,4,Upper Siang,0.1,high,25925
+2026-11-12,2026-11-16,4,Upper Subansiri,0.3,high,23495
+2026-11-12,2026-11-16,4,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-16,4,West Siang,0.3,very_high,29021
+2026-11-12,2026-11-17,5,Anjaw,0.7,very_high,24135
+2026-11-12,2026-11-17,5,Changlang,0.0,high,16744
+2026-11-12,2026-11-17,5,Dibang Valley,0.4,very_high,26998
+2026-11-12,2026-11-17,5,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-17,5,East Siang,0.1,high,10084
+2026-11-12,2026-11-17,5,Kurung Kumey,0.9,very_high,20536
+2026-11-12,2026-11-17,5,Lohit,3.7,very_high,7567
+2026-11-12,2026-11-17,5,Longding,0.0,low,3427
+2026-11-12,2026-11-17,5,Lower Dibang Valley,3.8,high,17057
+2026-11-12,2026-11-17,5,Lower Subansiri,0.1,high,14049
+2026-11-12,2026-11-17,5,Namsai,0.0,very_low,94
+2026-11-12,2026-11-17,5,Papum Pare,0.0,high,12912
+2026-11-12,2026-11-17,5,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-17,5,Tirap,0.0,moderate,3961
+2026-11-12,2026-11-17,5,Upper Siang,0.2,very_high,25925
+2026-11-12,2026-11-17,5,Upper Subansiri,0.7,high,23495
+2026-11-12,2026-11-17,5,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-17,5,West Siang,0.5,very_high,29021
+2026-11-12,2026-11-18,6,Anjaw,0.5,very_high,24135
+2026-11-12,2026-11-18,6,Changlang,0.0,high,16744
+2026-11-12,2026-11-18,6,Dibang Valley,0.4,very_high,26998
+2026-11-12,2026-11-18,6,East Kameng,0.0,moderate,15055
+2026-11-12,2026-11-18,6,East Siang,0.0,high,10084
+2026-11-12,2026-11-18,6,Kurung Kumey,0.3,high,20536
+2026-11-12,2026-11-18,6,Lohit,3.4,very_high,7567
+2026-11-12,2026-11-18,6,Longding,0.0,low,3427
+2026-11-12,2026-11-18,6,Lower Dibang Valley,3.2,high,17057
+2026-11-12,2026-11-18,6,Lower Subansiri,0.0,moderate,14049
+2026-11-12,2026-11-18,6,Namsai,0.0,very_low,94
+2026-11-12,2026-11-18,6,Papum Pare,0.0,high,12912
+2026-11-12,2026-11-18,6,Tawang,0.0,moderate,7944
+2026-11-12,2026-11-18,6,Tirap,0.0,low,3961
+2026-11-12,2026-11-18,6,Upper Siang,0.1,very_high,25925
+2026-11-12,2026-11-18,6,Upper Subansiri,0.2,high,23495
+2026-11-12,2026-11-18,6,West Kameng,0.0,moderate,26546
+2026-11-12,2026-11-18,6,West Siang,0.4,very_high,29021
+2026-11-13,2026-11-13,0,Anjaw,0.3,high,24135
+2026-11-13,2026-11-13,0,Changlang,0.0,high,16744
+2026-11-13,2026-11-13,0,Dibang Valley,0.0,low,26998
+2026-11-13,2026-11-13,0,East Kameng,0.0,moderate,15055
+2026-11-13,2026-11-13,0,East Siang,0.0,moderate,10084
+2026-11-13,2026-11-13,0,Kurung Kumey,0.0,high,20536
+2026-11-13,2026-11-13,0,Lohit,0.0,high,7567
+2026-11-13,2026-11-13,0,Longding,0.0,low,3427
+2026-11-13,2026-11-13,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-13,2026-11-13,0,Lower Subansiri,0.0,moderate,14049
+2026-11-13,2026-11-13,0,Namsai,0.0,very_low,94
+2026-11-13,2026-11-13,0,Papum Pare,0.0,moderate,12912
+2026-11-13,2026-11-13,0,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-13,0,Tirap,0.0,low,3961
+2026-11-13,2026-11-13,0,Upper Siang,0.0,moderate,25925
+2026-11-13,2026-11-13,0,Upper Subansiri,0.0,moderate,23495
+2026-11-13,2026-11-13,0,West Kameng,0.0,moderate,26546
+2026-11-13,2026-11-13,0,West Siang,0.0,moderate,29021
+2026-11-13,2026-11-14,1,Anjaw,0.0,high,24135
+2026-11-13,2026-11-14,1,Changlang,0.0,moderate,16744
+2026-11-13,2026-11-14,1,Dibang Valley,0.0,low,26998
+2026-11-13,2026-11-14,1,East Kameng,0.0,moderate,15055
+2026-11-13,2026-11-14,1,East Siang,0.0,moderate,10084
+2026-11-13,2026-11-14,1,Kurung Kumey,0.0,moderate,20536
+2026-11-13,2026-11-14,1,Lohit,0.0,moderate,7567
+2026-11-13,2026-11-14,1,Longding,0.0,low,3427
+2026-11-13,2026-11-14,1,Lower Dibang Valley,0.0,low,17057
+2026-11-13,2026-11-14,1,Lower Subansiri,0.0,moderate,14049
+2026-11-13,2026-11-14,1,Namsai,0.0,very_low,94
+2026-11-13,2026-11-14,1,Papum Pare,0.0,moderate,12912
+2026-11-13,2026-11-14,1,Tawang,0.0,low,7944
+2026-11-13,2026-11-14,1,Tirap,0.0,low,3961
+2026-11-13,2026-11-14,1,Upper Siang,0.0,low,25925
+2026-11-13,2026-11-14,1,Upper Subansiri,0.0,low,23495
+2026-11-13,2026-11-14,1,West Kameng,0.0,moderate,26546
+2026-11-13,2026-11-14,1,West Siang,0.0,moderate,29021
+2026-11-13,2026-11-15,2,Anjaw,0.0,moderate,24135
+2026-11-13,2026-11-15,2,Changlang,0.0,moderate,16744
+2026-11-13,2026-11-15,2,Dibang Valley,0.0,high,26998
+2026-11-13,2026-11-15,2,East Kameng,0.0,moderate,15055
+2026-11-13,2026-11-15,2,East Siang,0.0,low,10084
+2026-11-13,2026-11-15,2,Kurung Kumey,0.1,high,20536
+2026-11-13,2026-11-15,2,Lohit,0.0,moderate,7567
+2026-11-13,2026-11-15,2,Longding,0.0,low,3427
+2026-11-13,2026-11-15,2,Lower Dibang Valley,0.0,moderate,17057
+2026-11-13,2026-11-15,2,Lower Subansiri,0.0,moderate,14049
+2026-11-13,2026-11-15,2,Namsai,0.0,very_low,94
+2026-11-13,2026-11-15,2,Papum Pare,0.0,moderate,12912
+2026-11-13,2026-11-15,2,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-15,2,Tirap,0.0,low,3961
+2026-11-13,2026-11-15,2,Upper Siang,0.0,high,25925
+2026-11-13,2026-11-15,2,Upper Subansiri,0.1,high,23495
+2026-11-13,2026-11-15,2,West Kameng,0.0,moderate,26546
+2026-11-13,2026-11-15,2,West Siang,0.1,high,29021
+2026-11-13,2026-11-16,3,Anjaw,1.5,very_high,24135
+2026-11-13,2026-11-16,3,Changlang,0.0,high,16744
+2026-11-13,2026-11-16,3,Dibang Valley,0.2,very_high,26998
+2026-11-13,2026-11-16,3,East Kameng,0.0,high,15055
+2026-11-13,2026-11-16,3,East Siang,1.5,very_high,10084
+2026-11-13,2026-11-16,3,Kurung Kumey,0.3,high,20536
+2026-11-13,2026-11-16,3,Lohit,4.3,very_high,7567
+2026-11-13,2026-11-16,3,Longding,0.0,low,3427
+2026-11-13,2026-11-16,3,Lower Dibang Valley,7.6,very_high,17057
+2026-11-13,2026-11-16,3,Lower Subansiri,0.8,high,14049
+2026-11-13,2026-11-16,3,Namsai,0.0,very_low,94
+2026-11-13,2026-11-16,3,Papum Pare,4.1,high,12912
+2026-11-13,2026-11-16,3,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-16,3,Tirap,0.0,moderate,3961
+2026-11-13,2026-11-16,3,Upper Siang,0.1,very_high,25925
+2026-11-13,2026-11-16,3,Upper Subansiri,0.5,high,23495
+2026-11-13,2026-11-16,3,West Kameng,1.9,high,26546
+2026-11-13,2026-11-16,3,West Siang,1.5,very_high,29021
+2026-11-13,2026-11-17,4,Anjaw,1.7,very_high,24135
+2026-11-13,2026-11-17,4,Changlang,0.1,very_high,16744
+2026-11-13,2026-11-17,4,Dibang Valley,0.5,very_high,26998
+2026-11-13,2026-11-17,4,East Kameng,0.0,high,15055
+2026-11-13,2026-11-17,4,East Siang,2.4,very_high,10084
+2026-11-13,2026-11-17,4,Kurung Kumey,0.6,high,20536
+2026-11-13,2026-11-17,4,Lohit,5.8,very_high,7567
+2026-11-13,2026-11-17,4,Longding,0.0,low,3427
+2026-11-13,2026-11-17,4,Lower Dibang Valley,13.3,very_high,17057
+2026-11-13,2026-11-17,4,Lower Subansiri,1.0,high,14049
+2026-11-13,2026-11-17,4,Namsai,0.0,very_low,94
+2026-11-13,2026-11-17,4,Papum Pare,4.2,high,12912
+2026-11-13,2026-11-17,4,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-17,4,Tirap,0.0,moderate,3961
+2026-11-13,2026-11-17,4,Upper Siang,0.4,very_high,25925
+2026-11-13,2026-11-17,4,Upper Subansiri,1.0,high,23495
+2026-11-13,2026-11-17,4,West Kameng,1.9,high,26546
+2026-11-13,2026-11-17,4,West Siang,1.5,very_high,29021
+2026-11-13,2026-11-18,5,Anjaw,1.4,very_high,24135
+2026-11-13,2026-11-18,5,Changlang,0.0,high,16744
+2026-11-13,2026-11-18,5,Dibang Valley,0.4,very_high,26998
+2026-11-13,2026-11-18,5,East Kameng,0.0,high,15055
+2026-11-13,2026-11-18,5,East Siang,1.6,very_high,10084
+2026-11-13,2026-11-18,5,Kurung Kumey,0.1,high,20536
+2026-11-13,2026-11-18,5,Lohit,5.7,very_high,7567
+2026-11-13,2026-11-18,5,Longding,0.0,low,3427
+2026-11-13,2026-11-18,5,Lower Dibang Valley,12.7,very_high,17057
+2026-11-13,2026-11-18,5,Lower Subansiri,0.4,high,14049
+2026-11-13,2026-11-18,5,Namsai,0.0,very_low,94
+2026-11-13,2026-11-18,5,Papum Pare,3.3,high,12912
+2026-11-13,2026-11-18,5,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-18,5,Tirap,0.0,low,3961
+2026-11-13,2026-11-18,5,Upper Siang,0.3,very_high,25925
+2026-11-13,2026-11-18,5,Upper Subansiri,0.2,high,23495
+2026-11-13,2026-11-18,5,West Kameng,1.1,high,26546
+2026-11-13,2026-11-18,5,West Siang,0.6,very_high,29021
+2026-11-13,2026-11-19,6,Anjaw,0.1,high,24135
+2026-11-13,2026-11-19,6,Changlang,0.0,moderate,16744
+2026-11-13,2026-11-19,6,Dibang Valley,0.2,very_high,26998
+2026-11-13,2026-11-19,6,East Kameng,0.0,low,15055
+2026-11-13,2026-11-19,6,East Siang,0.1,high,10084
+2026-11-13,2026-11-19,6,Kurung Kumey,0.0,high,20536
+2026-11-13,2026-11-19,6,Lohit,0.6,high,7567
+2026-11-13,2026-11-19,6,Longding,0.0,low,3427
+2026-11-13,2026-11-19,6,Lower Dibang Valley,5.1,very_high,17057
+2026-11-13,2026-11-19,6,Lower Subansiri,0.0,moderate,14049
+2026-11-13,2026-11-19,6,Namsai,0.0,very_low,94
+2026-11-13,2026-11-19,6,Papum Pare,0.0,moderate,12912
+2026-11-13,2026-11-19,6,Tawang,0.0,moderate,7944
+2026-11-13,2026-11-19,6,Tirap,0.0,low,3961
+2026-11-13,2026-11-19,6,Upper Siang,0.1,very_high,25925
+2026-11-13,2026-11-19,6,Upper Subansiri,0.0,high,23495
+2026-11-13,2026-11-19,6,West Kameng,0.0,low,26546
+2026-11-13,2026-11-19,6,West Siang,0.4,very_high,29021
+2026-11-14,2026-11-14,0,Anjaw,0.0,high,24135
+2026-11-14,2026-11-14,0,Changlang,0.0,moderate,16744
+2026-11-14,2026-11-14,0,Dibang Valley,0.0,low,26998
+2026-11-14,2026-11-14,0,East Kameng,0.0,moderate,15055
+2026-11-14,2026-11-14,0,East Siang,0.0,moderate,10084
+2026-11-14,2026-11-14,0,Kurung Kumey,0.0,moderate,20536
+2026-11-14,2026-11-14,0,Lohit,0.0,moderate,7567
+2026-11-14,2026-11-14,0,Longding,0.0,low,3427
+2026-11-14,2026-11-14,0,Lower Dibang Valley,0.0,low,17057
+2026-11-14,2026-11-14,0,Lower Subansiri,0.0,moderate,14049
+2026-11-14,2026-11-14,0,Namsai,0.0,very_low,94
+2026-11-14,2026-11-14,0,Papum Pare,0.0,moderate,12912
+2026-11-14,2026-11-14,0,Tawang,0.0,low,7944
+2026-11-14,2026-11-14,0,Tirap,0.0,low,3961
+2026-11-14,2026-11-14,0,Upper Siang,0.0,low,25925
+2026-11-14,2026-11-14,0,Upper Subansiri,0.0,moderate,23495
+2026-11-14,2026-11-14,0,West Kameng,0.0,moderate,26546
+2026-11-14,2026-11-14,0,West Siang,0.0,moderate,29021
+2026-11-14,2026-11-15,1,Anjaw,0.0,high,24135
+2026-11-14,2026-11-15,1,Changlang,0.0,moderate,16744
+2026-11-14,2026-11-15,1,Dibang Valley,0.1,high,26998
+2026-11-14,2026-11-15,1,East Kameng,0.0,moderate,15055
+2026-11-14,2026-11-15,1,East Siang,0.4,high,10084
+2026-11-14,2026-11-15,1,Kurung Kumey,0.7,very_high,20536
+2026-11-14,2026-11-15,1,Lohit,0.0,moderate,7567
+2026-11-14,2026-11-15,1,Longding,0.0,low,3427
+2026-11-14,2026-11-15,1,Lower Dibang Valley,0.0,moderate,17057
+2026-11-14,2026-11-15,1,Lower Subansiri,0.1,high,14049
+2026-11-14,2026-11-15,1,Namsai,0.0,very_low,94
+2026-11-14,2026-11-15,1,Papum Pare,0.0,moderate,12912
+2026-11-14,2026-11-15,1,Tawang,0.0,moderate,7944
+2026-11-14,2026-11-15,1,Tirap,0.0,low,3961
+2026-11-14,2026-11-15,1,Upper Siang,0.0,high,25925
+2026-11-14,2026-11-15,1,Upper Subansiri,0.3,high,23495
+2026-11-14,2026-11-15,1,West Kameng,0.0,moderate,26546
+2026-11-14,2026-11-15,1,West Siang,0.1,high,29021
+2026-11-14,2026-11-16,2,Anjaw,1.4,very_high,24135
+2026-11-14,2026-11-16,2,Changlang,0.0,high,16744
+2026-11-14,2026-11-16,2,Dibang Valley,0.4,very_high,26998
+2026-11-14,2026-11-16,2,East Kameng,0.0,high,15055
+2026-11-14,2026-11-16,2,East Siang,5.2,high,10084
+2026-11-14,2026-11-16,2,Kurung Kumey,1.1,very_high,20536
+2026-11-14,2026-11-16,2,Lohit,5.4,very_high,7567
+2026-11-14,2026-11-16,2,Longding,0.0,moderate,3427
+2026-11-14,2026-11-16,2,Lower Dibang Valley,8.3,very_high,17057
+2026-11-14,2026-11-16,2,Lower Subansiri,1.3,high,14049
+2026-11-14,2026-11-16,2,Namsai,0.0,very_low,94
+2026-11-14,2026-11-16,2,Papum Pare,4.6,high,12912
+2026-11-14,2026-11-16,2,Tawang,0.0,moderate,7944
+2026-11-14,2026-11-16,2,Tirap,0.0,moderate,3961
+2026-11-14,2026-11-16,2,Upper Siang,0.3,very_high,25925
+2026-11-14,2026-11-16,2,Upper Subansiri,1.4,very_high,23495
+2026-11-14,2026-11-16,2,West Kameng,0.0,moderate,26546
+2026-11-14,2026-11-16,2,West Siang,0.9,very_high,29021
+2026-11-14,2026-11-17,3,Anjaw,1.9,very_high,24135
+2026-11-14,2026-11-17,3,Changlang,0.0,high,16744
+2026-11-14,2026-11-17,3,Dibang Valley,0.6,very_high,26998
+2026-11-14,2026-11-17,3,East Kameng,0.0,high,15055
+2026-11-14,2026-11-17,3,East Siang,6.4,very_high,10084
+2026-11-14,2026-11-17,3,Kurung Kumey,1.4,very_high,20536
+2026-11-14,2026-11-17,3,Lohit,7.5,very_high,7567
+2026-11-14,2026-11-17,3,Longding,0.0,low,3427
+2026-11-14,2026-11-17,3,Lower Dibang Valley,12.9,very_high,17057
+2026-11-14,2026-11-17,3,Lower Subansiri,1.7,high,14049
+2026-11-14,2026-11-17,3,Namsai,0.0,very_low,94
+2026-11-14,2026-11-17,3,Papum Pare,4.8,high,12912
+2026-11-14,2026-11-17,3,Tawang,0.0,moderate,7944
+2026-11-14,2026-11-17,3,Tirap,0.0,moderate,3961
+2026-11-14,2026-11-17,3,Upper Siang,0.9,very_high,25925
+2026-11-14,2026-11-17,3,Upper Subansiri,1.9,very_high,23495
+2026-11-14,2026-11-17,3,West Kameng,0.0,moderate,26546
+2026-11-14,2026-11-17,3,West Siang,1.3,very_high,29021
+2026-11-14,2026-11-18,4,Anjaw,1.5,very_high,24135
+2026-11-14,2026-11-18,4,Changlang,0.0,high,16744
+2026-11-14,2026-11-18,4,Dibang Valley,0.5,very_high,26998
+2026-11-14,2026-11-18,4,East Kameng,0.0,moderate,15055
+2026-11-14,2026-11-18,4,East Siang,3.2,very_high,10084
+2026-11-14,2026-11-18,4,Kurung Kumey,0.7,very_high,20536
+2026-11-14,2026-11-18,4,Lohit,7.2,very_high,7567
+2026-11-14,2026-11-18,4,Longding,0.0,low,3427
+2026-11-14,2026-11-18,4,Lower Dibang Valley,12.1,very_high,17057
+2026-11-14,2026-11-18,4,Lower Subansiri,0.7,high,14049
+2026-11-14,2026-11-18,4,Namsai,0.0,very_low,94
+2026-11-14,2026-11-18,4,Papum Pare,4.3,high,12912
+2026-11-14,2026-11-18,4,Tawang,0.0,moderate,7944
+2026-11-14,2026-11-18,4,Tirap,0.0,low,3961
+2026-11-14,2026-11-18,4,Upper Siang,0.6,very_high,25925
+2026-11-14,2026-11-18,4,Upper Subansiri,0.5,high,23495
+2026-11-14,2026-11-18,4,West Kameng,0.0,moderate,26546
+2026-11-14,2026-11-18,4,West Siang,0.7,very_high,29021
+2026-11-14,2026-11-19,5,Anjaw,0.5,high,24135
+2026-11-14,2026-11-19,5,Changlang,0.0,moderate,16744
+2026-11-14,2026-11-19,5,Dibang Valley,0.2,very_high,26998
+2026-11-14,2026-11-19,5,East Kameng,0.0,low,15055
+2026-11-14,2026-11-19,5,East Siang,0.3,high,10084
+2026-11-14,2026-11-19,5,Kurung Kumey,0.3,high,20536
+2026-11-14,2026-11-19,5,Lohit,2.5,high,7567
+2026-11-14,2026-11-19,5,Longding,0.0,low,3427
+2026-11-14,2026-11-19,5,Lower Dibang Valley,4.8,very_high,17057
+2026-11-14,2026-11-19,5,Lower Subansiri,0.0,moderate,14049
+2026-11-14,2026-11-19,5,Namsai,0.0,very_low,94
+2026-11-14,2026-11-19,5,Papum Pare,0.0,moderate,12912
+2026-11-14,2026-11-19,5,Tawang,0.0,low,7944
+2026-11-14,2026-11-19,5,Tirap,0.0,low,3961
+2026-11-14,2026-11-19,5,Upper Siang,0.1,very_high,25925
+2026-11-14,2026-11-19,5,Upper Subansiri,0.1,high,23495
+2026-11-14,2026-11-19,5,West Kameng,0.0,low,26546
+2026-11-14,2026-11-19,5,West Siang,0.4,very_high,29021
+2026-11-14,2026-11-20,6,Anjaw,0.0,moderate,24135
+2026-11-14,2026-11-20,6,Changlang,0.0,low,16744
+2026-11-14,2026-11-20,6,Dibang Valley,0.0,high,26998
+2026-11-14,2026-11-20,6,East Kameng,0.0,low,15055
+2026-11-14,2026-11-20,6,East Siang,0.0,moderate,10084
+2026-11-14,2026-11-20,6,Kurung Kumey,0.0,high,20536
+2026-11-14,2026-11-20,6,Lohit,0.0,moderate,7567
+2026-11-14,2026-11-20,6,Longding,0.0,low,3427
+2026-11-14,2026-11-20,6,Lower Dibang Valley,0.1,high,17057
+2026-11-14,2026-11-20,6,Lower Subansiri,0.0,moderate,14049
+2026-11-14,2026-11-20,6,Namsai,0.0,very_low,94
+2026-11-14,2026-11-20,6,Papum Pare,0.0,moderate,12912
+2026-11-14,2026-11-20,6,Tawang,0.0,low,7944
+2026-11-14,2026-11-20,6,Tirap,0.0,low,3961
+2026-11-14,2026-11-20,6,Upper Siang,0.0,high,25925
+2026-11-14,2026-11-20,6,Upper Subansiri,0.0,moderate,23495
+2026-11-14,2026-11-20,6,West Kameng,0.0,low,26546
+2026-11-14,2026-11-20,6,West Siang,0.1,high,29021
+2026-11-15,2026-11-15,0,Anjaw,0.0,high,24135
+2026-11-15,2026-11-15,0,Changlang,0.0,moderate,16744
+2026-11-15,2026-11-15,0,Dibang Valley,0.0,high,26998
+2026-11-15,2026-11-15,0,East Kameng,0.0,moderate,15055
+2026-11-15,2026-11-15,0,East Siang,0.0,moderate,10084
+2026-11-15,2026-11-15,0,Kurung Kumey,0.8,very_high,20536
+2026-11-15,2026-11-15,0,Lohit,0.1,high,7567
+2026-11-15,2026-11-15,0,Longding,0.0,moderate,3427
+2026-11-15,2026-11-15,0,Lower Dibang Valley,0.0,moderate,17057
+2026-11-15,2026-11-15,0,Lower Subansiri,0.1,high,14049
+2026-11-15,2026-11-15,0,Namsai,0.0,very_low,94
+2026-11-15,2026-11-15,0,Papum Pare,0.0,moderate,12912
+2026-11-15,2026-11-15,0,Tawang,0.0,moderate,7944
+2026-11-15,2026-11-15,0,Tirap,0.0,low,3961
+2026-11-15,2026-11-15,0,Upper Siang,0.0,high,25925
+2026-11-15,2026-11-15,0,Upper Subansiri,0.3,high,23495
+2026-11-15,2026-11-15,0,West Kameng,0.0,moderate,26546
+2026-11-15,2026-11-15,0,West Siang,0.3,very_high,29021
+2026-11-15,2026-11-16,1,Anjaw,1.8,very_high,24135
+2026-11-15,2026-11-16,1,Changlang,0.0,high,16744
+2026-11-15,2026-11-16,1,Dibang Valley,0.4,very_high,26998
+2026-11-15,2026-11-16,1,East Kameng,0.1,high,15055
+2026-11-15,2026-11-16,1,East Siang,7.2,very_high,10084
+2026-11-15,2026-11-16,1,Kurung Kumey,1.1,very_high,20536
+2026-11-15,2026-11-16,1,Lohit,6.2,very_high,7567
+2026-11-15,2026-11-16,1,Longding,0.0,moderate,3427
+2026-11-15,2026-11-16,1,Lower Dibang Valley,9.6,very_high,17057
+2026-11-15,2026-11-16,1,Lower Subansiri,1.7,high,14049
+2026-11-15,2026-11-16,1,Namsai,0.0,very_low,94
+2026-11-15,2026-11-16,1,Papum Pare,2.2,high,12912
+2026-11-15,2026-11-16,1,Tawang,0.0,high,7944
+2026-11-15,2026-11-16,1,Tirap,0.0,moderate,3961
+2026-11-15,2026-11-16,1,Upper Siang,0.4,very_high,25925
+2026-11-15,2026-11-16,1,Upper Subansiri,1.4,very_high,23495
+2026-11-15,2026-11-16,1,West Kameng,1.3,high,26546
+2026-11-15,2026-11-16,1,West Siang,2.9,very_high,29021
+2026-11-15,2026-11-17,2,Anjaw,1.8,very_high,24135
+2026-11-15,2026-11-17,2,Changlang,0.0,high,16744
+2026-11-15,2026-11-17,2,Dibang Valley,0.6,very_high,26998
+2026-11-15,2026-11-17,2,East Kameng,0.2,high,15055
+2026-11-15,2026-11-17,2,East Siang,7.9,very_high,10084
+2026-11-15,2026-11-17,2,Kurung Kumey,1.3,very_high,20536
+2026-11-15,2026-11-17,2,Lohit,5.7,very_high,7567
+2026-11-15,2026-11-17,2,Longding,0.0,moderate,3427
+2026-11-15,2026-11-17,2,Lower Dibang Valley,14.3,very_high,17057
+2026-11-15,2026-11-17,2,Lower Subansiri,2.4,high,14049
+2026-11-15,2026-11-17,2,Namsai,0.0,very_low,94
+2026-11-15,2026-11-17,2,Papum Pare,2.4,high,12912
+2026-11-15,2026-11-17,2,Tawang,0.0,high,7944
+2026-11-15,2026-11-17,2,Tirap,0.0,low,3961
+2026-11-15,2026-11-17,2,Upper Siang,0.9,very_high,25925
+2026-11-15,2026-11-17,2,Upper Subansiri,1.7,very_high,23495
+2026-11-15,2026-11-17,2,West Kameng,1.3,high,26546
+2026-11-15,2026-11-17,2,West Siang,3.0,very_high,29021
+2026-11-15,2026-11-18,3,Anjaw,1.3,very_high,24135
+2026-11-15,2026-11-18,3,Changlang,0.0,high,16744
+2026-11-15,2026-11-18,3,Dibang Valley,0.5,very_high,26998
+2026-11-15,2026-11-18,3,East Kameng,0.1,high,15055
+2026-11-15,2026-11-18,3,East Siang,4.8,very_high,10084
+2026-11-15,2026-11-18,3,Kurung Kumey,0.6,very_high,20536
+2026-11-15,2026-11-18,3,Lohit,4.7,very_high,7567
+2026-11-15,2026-11-18,3,Longding,0.0,low,3427
+2026-11-15,2026-11-18,3,Lower Dibang Valley,13.3,very_high,17057
+2026-11-15,2026-11-18,3,Lower Subansiri,0.6,high,14049
+2026-11-15,2026-11-18,3,Namsai,0.0,very_low,94
+2026-11-15,2026-11-18,3,Papum Pare,1.6,high,12912
+2026-11-15,2026-11-18,3,Tawang,0.0,moderate,7944
+2026-11-15,2026-11-18,3,Tirap,0.0,low,3961
+2026-11-15,2026-11-18,3,Upper Siang,0.6,very_high,25925
+2026-11-15,2026-11-18,3,Upper Subansiri,0.7,high,23495
+2026-11-15,2026-11-18,3,West Kameng,1.0,high,26546
+2026-11-15,2026-11-18,3,West Siang,1.1,very_high,29021
+2026-11-15,2026-11-19,4,Anjaw,0.2,high,24135
+2026-11-15,2026-11-19,4,Changlang,0.0,moderate,16744
+2026-11-15,2026-11-19,4,Dibang Valley,0.3,very_high,26998
+2026-11-15,2026-11-19,4,East Kameng,0.0,low,15055
+2026-11-15,2026-11-19,4,East Siang,0.1,high,10084
+2026-11-15,2026-11-19,4,Kurung Kumey,0.3,high,20536
+2026-11-15,2026-11-19,4,Lohit,0.7,high,7567
+2026-11-15,2026-11-19,4,Longding,0.0,low,3427
+2026-11-15,2026-11-19,4,Lower Dibang Valley,6.4,very_high,17057
+2026-11-15,2026-11-19,4,Lower Subansiri,0.0,moderate,14049
+2026-11-15,2026-11-19,4,Namsai,0.0,very_low,94
+2026-11-15,2026-11-19,4,Papum Pare,0.0,moderate,12912
+2026-11-15,2026-11-19,4,Tawang,0.0,low,7944
+2026-11-15,2026-11-19,4,Tirap,0.0,low,3961
+2026-11-15,2026-11-19,4,Upper Siang,0.2,very_high,25925
+2026-11-15,2026-11-19,4,Upper Subansiri,0.1,high,23495
+2026-11-15,2026-11-19,4,West Kameng,0.0,low,26546
+2026-11-15,2026-11-19,4,West Siang,0.5,very_high,29021
+2026-11-15,2026-11-20,5,Anjaw,0.0,moderate,24135
+2026-11-15,2026-11-20,5,Changlang,0.0,low,16744
+2026-11-15,2026-11-20,5,Dibang Valley,0.0,high,26998
+2026-11-15,2026-11-20,5,East Kameng,0.0,low,15055
+2026-11-15,2026-11-20,5,East Siang,0.0,moderate,10084
+2026-11-15,2026-11-20,5,Kurung Kumey,0.0,high,20536
+2026-11-15,2026-11-20,5,Lohit,0.0,moderate,7567
+2026-11-15,2026-11-20,5,Longding,0.0,low,3427
+2026-11-15,2026-11-20,5,Lower Dibang Valley,0.4,high,17057
+2026-11-15,2026-11-20,5,Lower Subansiri,0.0,moderate,14049
+2026-11-15,2026-11-20,5,Namsai,0.0,very_low,94
+2026-11-15,2026-11-20,5,Papum Pare,0.0,moderate,12912
+2026-11-15,2026-11-20,5,Tawang,0.0,low,7944
+2026-11-15,2026-11-20,5,Tirap,0.0,low,3961
+2026-11-15,2026-11-20,5,Upper Siang,0.0,high,25925
+2026-11-15,2026-11-20,5,Upper Subansiri,0.0,moderate,23495
+2026-11-15,2026-11-20,5,West Kameng,0.0,low,26546
+2026-11-15,2026-11-20,5,West Siang,0.1,high,29021
+2026-11-15,2026-11-21,6,Anjaw,0.0,moderate,24135
+2026-11-15,2026-11-21,6,Changlang,0.0,low,16744
+2026-11-15,2026-11-21,6,Dibang Valley,0.0,high,26998
+2026-11-15,2026-11-21,6,East Kameng,0.0,low,15055
+2026-11-15,2026-11-21,6,East Siang,0.0,moderate,10084
+2026-11-15,2026-11-21,6,Kurung Kumey,0.0,moderate,20536
+2026-11-15,2026-11-21,6,Lohit,0.0,moderate,7567
+2026-11-15,2026-11-21,6,Longding,0.0,low,3427
+2026-11-15,2026-11-21,6,Lower Dibang Valley,0.4,high,17057
+2026-11-15,2026-11-21,6,Lower Subansiri,0.0,moderate,14049
+2026-11-15,2026-11-21,6,Namsai,0.0,very_low,94
+2026-11-15,2026-11-21,6,Papum Pare,0.0,moderate,12912
+2026-11-15,2026-11-21,6,Tawang,0.0,low,7944
+2026-11-15,2026-11-21,6,Tirap,0.0,low,3961
+2026-11-15,2026-11-21,6,Upper Siang,0.0,high,25925
+2026-11-15,2026-11-21,6,Upper Subansiri,0.0,moderate,23495
+2026-11-15,2026-11-21,6,West Kameng,0.0,low,26546
+2026-11-15,2026-11-21,6,West Siang,0.1,high,29021
+2026-11-16,2026-11-16,0,Anjaw,3.6,very_high,24135
+2026-11-16,2026-11-16,0,Changlang,1.2,high,16744
+2026-11-16,2026-11-16,0,Dibang Valley,0.5,very_high,26998
+2026-11-16,2026-11-16,0,East Kameng,1.1,high,15055
+2026-11-16,2026-11-16,0,East Siang,2.7,high,10084
+2026-11-16,2026-11-16,0,Kurung Kumey,1.5,very_high,20536
+2026-11-16,2026-11-16,0,Lohit,10.8,very_high,7567
+2026-11-16,2026-11-16,0,Longding,0.0,moderate,3427
+2026-11-16,2026-11-16,0,Lower Dibang Valley,8.2,very_high,17057
+2026-11-16,2026-11-16,0,Lower Subansiri,1.7,high,14049
+2026-11-16,2026-11-16,0,Namsai,0.0,low,94
+2026-11-16,2026-11-16,0,Papum Pare,8.1,very_high,12912
+2026-11-16,2026-11-16,0,Tawang,0.0,high,7944
+2026-11-16,2026-11-16,0,Tirap,0.0,moderate,3961
+2026-11-16,2026-11-16,0,Upper Siang,0.6,very_high,25925
+2026-11-16,2026-11-16,0,Upper Subansiri,2.4,very_high,23495
+2026-11-16,2026-11-16,0,West Kameng,0.0,moderate,26546
+2026-11-16,2026-11-16,0,West Siang,3.6,very_high,29021
+2026-11-16,2026-11-17,1,Anjaw,3.7,very_high,24135
+2026-11-16,2026-11-17,1,Changlang,1.1,high,16744
+2026-11-16,2026-11-17,1,Dibang Valley,0.6,very_high,26998
+2026-11-16,2026-11-17,1,East Kameng,1.4,high,15055
+2026-11-16,2026-11-17,1,East Siang,3.7,high,10084
+2026-11-16,2026-11-17,1,Kurung Kumey,1.8,very_high,20536
+2026-11-16,2026-11-17,1,Lohit,11.8,very_high,7567
+2026-11-16,2026-11-17,1,Longding,0.0,moderate,3427
+2026-11-16,2026-11-17,1,Lower Dibang Valley,10.9,very_high,17057
+2026-11-16,2026-11-17,1,Lower Subansiri,2.5,high,14049
+2026-11-16,2026-11-17,1,Namsai,0.0,low,94
+2026-11-16,2026-11-17,1,Papum Pare,8.6,very_high,12912
+2026-11-16,2026-11-17,1,Tawang,0.0,high,7944
+2026-11-16,2026-11-17,1,Tirap,0.0,moderate,3961
+2026-11-16,2026-11-17,1,Upper Siang,1.3,very_high,25925
+2026-11-16,2026-11-17,1,Upper Subansiri,3.2,very_high,23495
+2026-11-16,2026-11-17,1,West Kameng,0.1,high,26546
+2026-11-16,2026-11-17,1,West Siang,4.1,very_high,29021
+2026-11-16,2026-11-18,2,Anjaw,2.7,very_high,24135
+2026-11-16,2026-11-18,2,Changlang,0.5,high,16744
+2026-11-16,2026-11-18,2,Dibang Valley,0.5,very_high,26998
+2026-11-16,2026-11-18,2,East Kameng,0.4,high,15055
+2026-11-16,2026-11-18,2,East Siang,1.2,high,10084
+2026-11-16,2026-11-18,2,Kurung Kumey,0.7,very_high,20536
+2026-11-16,2026-11-18,2,Lohit,9.9,very_high,7567
+2026-11-16,2026-11-18,2,Longding,0.0,low,3427
+2026-11-16,2026-11-18,2,Lower Dibang Valley,9.8,very_high,17057
+2026-11-16,2026-11-18,2,Lower Subansiri,0.6,high,14049
+2026-11-16,2026-11-18,2,Namsai,0.0,very_low,94
+2026-11-16,2026-11-18,2,Papum Pare,6.9,very_high,12912
+2026-11-16,2026-11-18,2,Tawang,0.0,moderate,7944
+2026-11-16,2026-11-18,2,Tirap,0.0,low,3961
+2026-11-16,2026-11-18,2,Upper Siang,0.8,very_high,25925
+2026-11-16,2026-11-18,2,Upper Subansiri,1.6,very_high,23495
+2026-11-16,2026-11-18,2,West Kameng,0.0,moderate,26546
+2026-11-16,2026-11-18,2,West Siang,2.0,very_high,29021
+2026-11-16,2026-11-19,3,Anjaw,0.5,high,24135
+2026-11-16,2026-11-19,3,Changlang,0.0,moderate,16744
+2026-11-16,2026-11-19,3,Dibang Valley,0.2,very_high,26998
+2026-11-16,2026-11-19,3,East Kameng,0.0,moderate,15055
+2026-11-16,2026-11-19,3,East Siang,0.0,moderate,10084
+2026-11-16,2026-11-19,3,Kurung Kumey,0.3,high,20536
+2026-11-16,2026-11-19,3,Lohit,1.6,high,7567
+2026-11-16,2026-11-19,3,Longding,0.0,low,3427
+2026-11-16,2026-11-19,3,Lower Dibang Valley,1.7,very_high,17057
+2026-11-16,2026-11-19,3,Lower Subansiri,0.0,moderate,14049
+2026-11-16,2026-11-19,3,Namsai,0.0,very_low,94
+2026-11-16,2026-11-19,3,Papum Pare,0.0,moderate,12912
+2026-11-16,2026-11-19,3,Tawang,0.0,moderate,7944
+2026-11-16,2026-11-19,3,Tirap,0.0,low,3961
+2026-11-16,2026-11-19,3,Upper Siang,0.2,very_high,25925
+2026-11-16,2026-11-19,3,Upper Subansiri,0.5,high,23495
+2026-11-16,2026-11-19,3,West Kameng,0.0,moderate,26546
+2026-11-16,2026-11-19,3,West Siang,0.5,very_high,29021
+2026-11-16,2026-11-20,4,Anjaw,0.0,high,24135
+2026-11-16,2026-11-20,4,Changlang,0.0,moderate,16744
+2026-11-16,2026-11-20,4,Dibang Valley,0.0,high,26998
+2026-11-16,2026-11-20,4,East Kameng,0.0,low,15055
+2026-11-16,2026-11-20,4,East Siang,0.0,moderate,10084
+2026-11-16,2026-11-20,4,Kurung Kumey,0.0,high,20536
+2026-11-16,2026-11-20,4,Lohit,0.0,moderate,7567
+2026-11-16,2026-11-20,4,Longding,0.0,low,3427
+2026-11-16,2026-11-20,4,Lower Dibang Valley,0.0,moderate,17057
+2026-11-16,2026-11-20,4,Lower Subansiri,0.0,moderate,14049
+2026-11-16,2026-11-20,4,Namsai,0.0,very_low,94
+2026-11-16,2026-11-20,4,Papum Pare,0.0,moderate,12912
+2026-11-16,2026-11-20,4,Tawang,0.0,low,7944
+2026-11-16,2026-11-20,4,Tirap,0.0,low,3961
+2026-11-16,2026-11-20,4,Upper Siang,0.0,high,25925
+2026-11-16,2026-11-20,4,Upper Subansiri,0.0,high,23495
+2026-11-16,2026-11-20,4,West Kameng,0.0,low,26546
+2026-11-16,2026-11-20,4,West Siang,0.1,high,29021
+2026-11-16,2026-11-21,5,Anjaw,0.0,high,24135
+2026-11-16,2026-11-21,5,Changlang,0.0,moderate,16744
+2026-11-16,2026-11-21,5,Dibang Valley,0.0,high,26998
+2026-11-16,2026-11-21,5,East Kameng,0.0,low,15055
+2026-11-16,2026-11-21,5,East Siang,0.0,moderate,10084
+2026-11-16,2026-11-21,5,Kurung Kumey,0.0,moderate,20536
+2026-11-16,2026-11-21,5,Lohit,0.0,moderate,7567
+2026-11-16,2026-11-21,5,Longding,0.0,low,3427
+2026-11-16,2026-11-21,5,Lower Dibang Valley,0.0,moderate,17057
+2026-11-16,2026-11-21,5,Lower Subansiri,0.0,moderate,14049
+2026-11-16,2026-11-21,5,Namsai,0.0,very_low,94
+2026-11-16,2026-11-21,5,Papum Pare,0.0,moderate,12912
+2026-11-16,2026-11-21,5,Tawang,0.0,low,7944
+2026-11-16,2026-11-21,5,Tirap,0.0,low,3961
+2026-11-16,2026-11-21,5,Upper Siang,0.0,high,25925
+2026-11-16,2026-11-21,5,Upper Subansiri,0.0,high,23495
+2026-11-16,2026-11-21,5,West Kameng,0.0,low,26546
+2026-11-16,2026-11-21,5,West Siang,0.1,high,29021
+2026-11-16,2026-11-22,6,Anjaw,0.0,moderate,24135
+2026-11-16,2026-11-22,6,Changlang,0.0,low,16744
+2026-11-16,2026-11-22,6,Dibang Valley,0.0,high,26998
+2026-11-16,2026-11-22,6,East Kameng,0.0,low,15055
+2026-11-16,2026-11-22,6,East Siang,0.0,low,10084
+2026-11-16,2026-11-22,6,Kurung Kumey,0.0,moderate,20536
+2026-11-16,2026-11-22,6,Lohit,0.0,moderate,7567
+2026-11-16,2026-11-22,6,Longding,0.0,low,3427
+2026-11-16,2026-11-22,6,Lower Dibang Valley,0.0,moderate,17057
+2026-11-16,2026-11-22,6,Lower Subansiri,0.0,low,14049
+2026-11-16,2026-11-22,6,Namsai,0.0,very_low,94
+2026-11-16,2026-11-22,6,Papum Pare,0.0,moderate,12912
+2026-11-16,2026-11-22,6,Tawang,0.0,low,7944
+2026-11-16,2026-11-22,6,Tirap,0.0,low,3961
+2026-11-16,2026-11-22,6,Upper Siang,0.0,high,25925
+2026-11-16,2026-11-22,6,Upper Subansiri,0.0,moderate,23495
+2026-11-16,2026-11-22,6,West Kameng,0.0,low,26546
+2026-11-16,2026-11-22,6,West Siang,0.0,high,29021
+2026-11-17,2026-11-17,0,Anjaw,3.4,very_high,24135
+2026-11-17,2026-11-17,0,Changlang,0.5,very_high,16744
+2026-11-17,2026-11-17,0,Dibang Valley,0.6,very_high,26998
+2026-11-17,2026-11-17,0,East Kameng,0.9,high,15055
+2026-11-17,2026-11-17,0,East Siang,12.6,very_high,10084
+2026-11-17,2026-11-17,0,Kurung Kumey,1.6,very_high,20536
+2026-11-17,2026-11-17,0,Lohit,8.6,very_high,7567
+2026-11-17,2026-11-17,0,Longding,0.0,moderate,3427
+2026-11-17,2026-11-17,0,Lower Dibang Valley,12.6,very_high,17057
+2026-11-17,2026-11-17,0,Lower Subansiri,4.1,very_high,14049
+2026-11-17,2026-11-17,0,Namsai,0.0,low,94
+2026-11-17,2026-11-17,0,Papum Pare,6.5,very_high,12912
+2026-11-17,2026-11-17,0,Tawang,0.0,high,7944
+2026-11-17,2026-11-17,0,Tirap,0.0,moderate,3961
+2026-11-17,2026-11-17,0,Upper Siang,1.2,very_high,25925
+2026-11-17,2026-11-17,0,Upper Subansiri,3.2,very_high,23495
+2026-11-17,2026-11-17,0,West Kameng,0.2,high,26546
+2026-11-17,2026-11-17,0,West Siang,7.8,very_high,29021
+2026-11-17,2026-11-18,1,Anjaw,2.5,very_high,24135
+2026-11-17,2026-11-18,1,Changlang,0.0,high,16744
+2026-11-17,2026-11-18,1,Dibang Valley,0.5,very_high,26998
+2026-11-17,2026-11-18,1,East Kameng,0.1,high,15055
+2026-11-17,2026-11-18,1,East Siang,7.9,very_high,10084
+2026-11-17,2026-11-18,1,Kurung Kumey,0.5,high,20536
+2026-11-17,2026-11-18,1,Lohit,7.2,very_high,7567
+2026-11-17,2026-11-18,1,Longding,0.0,low,3427
+2026-11-17,2026-11-18,1,Lower Dibang Valley,11.6,very_high,17057
+2026-11-17,2026-11-18,1,Lower Subansiri,2.2,high,14049
+2026-11-17,2026-11-18,1,Namsai,0.0,very_low,94
+2026-11-17,2026-11-18,1,Papum Pare,4.9,very_high,12912
+2026-11-17,2026-11-18,1,Tawang,0.0,moderate,7944
+2026-11-17,2026-11-18,1,Tirap,0.0,low,3961
+2026-11-17,2026-11-18,1,Upper Siang,0.8,very_high,25925
+2026-11-17,2026-11-18,1,Upper Subansiri,1.7,very_high,23495
+2026-11-17,2026-11-18,1,West Kameng,0.0,moderate,26546
+2026-11-17,2026-11-18,1,West Siang,5.3,very_high,29021
+2026-11-17,2026-11-19,2,Anjaw,0.6,high,24135
+2026-11-17,2026-11-19,2,Changlang,0.0,moderate,16744
+2026-11-17,2026-11-19,2,Dibang Valley,0.2,very_high,26998
+2026-11-17,2026-11-19,2,East Kameng,0.0,moderate,15055
+2026-11-17,2026-11-19,2,East Siang,0.6,high,10084
+2026-11-17,2026-11-19,2,Kurung Kumey,0.2,high,20536
+2026-11-17,2026-11-19,2,Lohit,1.4,high,7567
+2026-11-17,2026-11-19,2,Longding,0.0,low,3427
+2026-11-17,2026-11-19,2,Lower Dibang Valley,2.8,very_high,17057
+2026-11-17,2026-11-19,2,Lower Subansiri,0.0,moderate,14049
+2026-11-17,2026-11-19,2,Namsai,0.0,very_low,94
+2026-11-17,2026-11-19,2,Papum Pare,0.0,moderate,12912
+2026-11-17,2026-11-19,2,Tawang,0.0,low,7944
+2026-11-17,2026-11-19,2,Tirap,0.0,low,3961
+2026-11-17,2026-11-19,2,Upper Siang,0.2,very_high,25925
+2026-11-17,2026-11-19,2,Upper Subansiri,0.7,high,23495
+2026-11-17,2026-11-19,2,West Kameng,0.0,moderate,26546
+2026-11-17,2026-11-19,2,West Siang,0.5,very_high,29021
+2026-11-17,2026-11-20,3,Anjaw,0.0,high,24135
+2026-11-17,2026-11-20,3,Changlang,0.0,low,16744
+2026-11-17,2026-11-20,3,Dibang Valley,0.0,high,26998
+2026-11-17,2026-11-20,3,East Kameng,0.0,low,15055
+2026-11-17,2026-11-20,3,East Siang,0.0,moderate,10084
+2026-11-17,2026-11-20,3,Kurung Kumey,0.0,high,20536
+2026-11-17,2026-11-20,3,Lohit,0.0,moderate,7567
+2026-11-17,2026-11-20,3,Longding,0.0,low,3427
+2026-11-17,2026-11-20,3,Lower Dibang Valley,0.0,high,17057
+2026-11-17,2026-11-20,3,Lower Subansiri,0.0,moderate,14049
+2026-11-17,2026-11-20,3,Namsai,0.0,very_low,94
+2026-11-17,2026-11-20,3,Papum Pare,0.0,moderate,12912
+2026-11-17,2026-11-20,3,Tawang,0.0,low,7944
+2026-11-17,2026-11-20,3,Tirap,0.0,low,3961
+2026-11-17,2026-11-20,3,Upper Siang,0.0,high,25925
+2026-11-17,2026-11-20,3,Upper Subansiri,0.0,high,23495
+2026-11-17,2026-11-20,3,West Kameng,0.0,low,26546
+2026-11-17,2026-11-20,3,West Siang,0.1,high,29021
+2026-11-17,2026-11-21,4,Anjaw,0.0,high,24135
+2026-11-17,2026-11-21,4,Changlang,0.0,low,16744
+2026-11-17,2026-11-21,4,Dibang Valley,0.0,high,26998
+2026-11-17,2026-11-21,4,East Kameng,0.0,low,15055
+2026-11-17,2026-11-21,4,East Siang,0.0,moderate,10084
+2026-11-17,2026-11-21,4,Kurung Kumey,0.0,moderate,20536
+2026-11-17,2026-11-21,4,Lohit,0.0,moderate,7567
+2026-11-17,2026-11-21,4,Longding,0.0,low,3427
+2026-11-17,2026-11-21,4,Lower Dibang Valley,0.0,high,17057
+2026-11-17,2026-11-21,4,Lower Subansiri,0.0,moderate,14049
+2026-11-17,2026-11-21,4,Namsai,0.0,very_low,94
+2026-11-17,2026-11-21,4,Papum Pare,0.0,moderate,12912
+2026-11-17,2026-11-21,4,Tawang,0.0,low,7944
+2026-11-17,2026-11-21,4,Tirap,0.0,low,3961
+2026-11-17,2026-11-21,4,Upper Siang,0.0,high,25925
+2026-11-17,2026-11-21,4,Upper Subansiri,0.0,high,23495
+2026-11-17,2026-11-21,4,West Kameng,0.0,low,26546
+2026-11-17,2026-11-21,4,West Siang,0.1,high,29021
+2026-11-17,2026-11-22,5,Anjaw,0.0,high,24135
+2026-11-17,2026-11-22,5,Changlang,0.0,moderate,16744
+2026-11-17,2026-11-22,5,Dibang Valley,0.0,high,26998
+2026-11-17,2026-11-22,5,East Kameng,0.0,low,15055
+2026-11-17,2026-11-22,5,East Siang,0.0,moderate,10084
+2026-11-17,2026-11-22,5,Kurung Kumey,0.0,low,20536
+2026-11-17,2026-11-22,5,Lohit,0.0,moderate,7567
+2026-11-17,2026-11-22,5,Longding,0.0,low,3427
+2026-11-17,2026-11-22,5,Lower Dibang Valley,0.0,high,17057
+2026-11-17,2026-11-22,5,Lower Subansiri,0.0,moderate,14049
+2026-11-17,2026-11-22,5,Namsai,0.0,very_low,94
+2026-11-17,2026-11-22,5,Papum Pare,0.0,moderate,12912
+2026-11-17,2026-11-22,5,Tawang,0.0,low,7944
+2026-11-17,2026-11-22,5,Tirap,0.0,low,3961
+2026-11-17,2026-11-22,5,Upper Siang,0.0,high,25925
+2026-11-17,2026-11-22,5,Upper Subansiri,0.0,moderate,23495
+2026-11-17,2026-11-22,5,West Kameng,0.0,low,26546
+2026-11-17,2026-11-22,5,West Siang,0.1,high,29021
+2026-11-17,2026-11-23,6,Anjaw,0.0,moderate,24135
+2026-11-17,2026-11-23,6,Changlang,0.0,moderate,16744
+2026-11-17,2026-11-23,6,Dibang Valley,0.0,low,26998
+2026-11-17,2026-11-23,6,East Kameng,0.0,very_low,15055
+2026-11-17,2026-11-23,6,East Siang,0.0,low,10084
+2026-11-17,2026-11-23,6,Kurung Kumey,0.0,low,20536
+2026-11-17,2026-11-23,6,Lohit,0.0,low,7567
+2026-11-17,2026-11-23,6,Longding,0.0,moderate,3427
+2026-11-17,2026-11-23,6,Lower Dibang Valley,0.0,moderate,17057
+2026-11-17,2026-11-23,6,Lower Subansiri,0.0,very_low,14049
+2026-11-17,2026-11-23,6,Namsai,0.0,very_low,94
+2026-11-17,2026-11-23,6,Papum Pare,0.0,low,12912
+2026-11-17,2026-11-23,6,Tawang,0.0,low,7944
+2026-11-17,2026-11-23,6,Tirap,0.0,low,3961
+2026-11-17,2026-11-23,6,Upper Siang,0.0,moderate,25925
+2026-11-17,2026-11-23,6,Upper Subansiri,0.0,low,23495
+2026-11-17,2026-11-23,6,West Kameng,0.0,low,26546
+2026-11-17,2026-11-23,6,West Siang,0.0,moderate,29021
+2026-11-18,2026-11-18,0,Anjaw,2.6,very_high,24135
+2026-11-18,2026-11-18,0,Changlang,0.0,high,16744
+2026-11-18,2026-11-18,0,Dibang Valley,0.5,very_high,26998
+2026-11-18,2026-11-18,0,East Kameng,0.0,high,15055
+2026-11-18,2026-11-18,0,East Siang,7.8,very_high,10084
+2026-11-18,2026-11-18,0,Kurung Kumey,0.5,high,20536
+2026-11-18,2026-11-18,0,Lohit,7.1,very_high,7567
+2026-11-18,2026-11-18,0,Longding,0.0,low,3427
+2026-11-18,2026-11-18,0,Lower Dibang Valley,11.4,very_high,17057
+2026-11-18,2026-11-18,0,Lower Subansiri,2.1,high,14049
+2026-11-18,2026-11-18,0,Namsai,0.0,very_low,94
+2026-11-18,2026-11-18,0,Papum Pare,5.0,very_high,12912
+2026-11-18,2026-11-18,0,Tawang,0.0,moderate,7944
+2026-11-18,2026-11-18,0,Tirap,0.0,low,3961
+2026-11-18,2026-11-18,0,Upper Siang,0.7,very_high,25925
+2026-11-18,2026-11-18,0,Upper Subansiri,1.5,very_high,23495
+2026-11-18,2026-11-18,0,West Kameng,0.0,moderate,26546
+2026-11-18,2026-11-18,0,West Siang,5.1,very_high,29021
+2026-11-18,2026-11-19,1,Anjaw,0.6,very_high,24135
+2026-11-18,2026-11-19,1,Changlang,0.0,moderate,16744
+2026-11-18,2026-11-19,1,Dibang Valley,0.2,very_high,26998
+2026-11-18,2026-11-19,1,East Kameng,0.0,moderate,15055
+2026-11-18,2026-11-19,1,East Siang,0.6,high,10084
+2026-11-18,2026-11-19,1,Kurung Kumey,0.2,high,20536
+2026-11-18,2026-11-19,1,Lohit,1.4,high,7567
+2026-11-18,2026-11-19,1,Longding,0.0,low,3427
+2026-11-18,2026-11-19,1,Lower Dibang Valley,2.5,very_high,17057
+2026-11-18,2026-11-19,1,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-19,1,Namsai,0.0,very_low,94
+2026-11-18,2026-11-19,1,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-19,1,Tawang,0.0,low,7944
+2026-11-18,2026-11-19,1,Tirap,0.0,low,3961
+2026-11-18,2026-11-19,1,Upper Siang,0.2,very_high,25925
+2026-11-18,2026-11-19,1,Upper Subansiri,0.4,high,23495
+2026-11-18,2026-11-19,1,West Kameng,0.0,moderate,26546
+2026-11-18,2026-11-19,1,West Siang,0.5,very_high,29021
+2026-11-18,2026-11-20,2,Anjaw,0.1,high,24135
+2026-11-18,2026-11-20,2,Changlang,0.0,low,16744
+2026-11-18,2026-11-20,2,Dibang Valley,0.0,high,26998
+2026-11-18,2026-11-20,2,East Kameng,0.0,low,15055
+2026-11-18,2026-11-20,2,East Siang,0.0,moderate,10084
+2026-11-18,2026-11-20,2,Kurung Kumey,0.0,high,20536
+2026-11-18,2026-11-20,2,Lohit,0.0,moderate,7567
+2026-11-18,2026-11-20,2,Longding,0.0,low,3427
+2026-11-18,2026-11-20,2,Lower Dibang Valley,0.0,high,17057
+2026-11-18,2026-11-20,2,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-20,2,Namsai,0.0,very_low,94
+2026-11-18,2026-11-20,2,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-20,2,Tawang,0.0,low,7944
+2026-11-18,2026-11-20,2,Tirap,0.0,low,3961
+2026-11-18,2026-11-20,2,Upper Siang,0.0,high,25925
+2026-11-18,2026-11-20,2,Upper Subansiri,0.0,high,23495
+2026-11-18,2026-11-20,2,West Kameng,0.0,low,26546
+2026-11-18,2026-11-20,2,West Siang,0.1,high,29021
+2026-11-18,2026-11-21,3,Anjaw,0.0,high,24135
+2026-11-18,2026-11-21,3,Changlang,0.0,low,16744
+2026-11-18,2026-11-21,3,Dibang Valley,0.0,high,26998
+2026-11-18,2026-11-21,3,East Kameng,0.0,low,15055
+2026-11-18,2026-11-21,3,East Siang,0.0,moderate,10084
+2026-11-18,2026-11-21,3,Kurung Kumey,0.0,moderate,20536
+2026-11-18,2026-11-21,3,Lohit,0.0,moderate,7567
+2026-11-18,2026-11-21,3,Longding,0.0,low,3427
+2026-11-18,2026-11-21,3,Lower Dibang Valley,0.0,high,17057
+2026-11-18,2026-11-21,3,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-21,3,Namsai,0.0,very_low,94
+2026-11-18,2026-11-21,3,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-21,3,Tawang,0.0,low,7944
+2026-11-18,2026-11-21,3,Tirap,0.0,low,3961
+2026-11-18,2026-11-21,3,Upper Siang,0.0,high,25925
+2026-11-18,2026-11-21,3,Upper Subansiri,0.0,moderate,23495
+2026-11-18,2026-11-21,3,West Kameng,0.0,low,26546
+2026-11-18,2026-11-21,3,West Siang,0.1,high,29021
+2026-11-18,2026-11-22,4,Anjaw,0.8,high,24135
+2026-11-18,2026-11-22,4,Changlang,0.0,moderate,16744
+2026-11-18,2026-11-22,4,Dibang Valley,0.0,high,26998
+2026-11-18,2026-11-22,4,East Kameng,0.0,low,15055
+2026-11-18,2026-11-22,4,East Siang,0.0,moderate,10084
+2026-11-18,2026-11-22,4,Kurung Kumey,0.0,moderate,20536
+2026-11-18,2026-11-22,4,Lohit,1.7,very_high,7567
+2026-11-18,2026-11-22,4,Longding,0.0,moderate,3427
+2026-11-18,2026-11-22,4,Lower Dibang Valley,0.3,high,17057
+2026-11-18,2026-11-22,4,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-22,4,Namsai,0.0,low,94
+2026-11-18,2026-11-22,4,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-22,4,Tawang,0.0,low,7944
+2026-11-18,2026-11-22,4,Tirap,0.0,moderate,3961
+2026-11-18,2026-11-22,4,Upper Siang,0.0,high,25925
+2026-11-18,2026-11-22,4,Upper Subansiri,0.0,moderate,23495
+2026-11-18,2026-11-22,4,West Kameng,0.0,low,26546
+2026-11-18,2026-11-22,4,West Siang,0.1,high,29021
+2026-11-18,2026-11-23,5,Anjaw,1.3,very_high,24135
+2026-11-18,2026-11-23,5,Changlang,1.0,high,16744
+2026-11-18,2026-11-23,5,Dibang Valley,0.1,high,26998
+2026-11-18,2026-11-23,5,East Kameng,0.0,low,15055
+2026-11-18,2026-11-23,5,East Siang,2.2,high,10084
+2026-11-18,2026-11-23,5,Kurung Kumey,0.0,moderate,20536
+2026-11-18,2026-11-23,5,Lohit,2.6,high,7567
+2026-11-18,2026-11-23,5,Longding,0.8,high,3427
+2026-11-18,2026-11-23,5,Lower Dibang Valley,3.4,very_high,17057
+2026-11-18,2026-11-23,5,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-23,5,Namsai,0.0,low,94
+2026-11-18,2026-11-23,5,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-23,5,Tawang,0.0,low,7944
+2026-11-18,2026-11-23,5,Tirap,0.4,high,3961
+2026-11-18,2026-11-23,5,Upper Siang,0.0,moderate,25925
+2026-11-18,2026-11-23,5,Upper Subansiri,0.0,moderate,23495
+2026-11-18,2026-11-23,5,West Kameng,0.0,low,26546
+2026-11-18,2026-11-23,5,West Siang,0.0,high,29021
+2026-11-18,2026-11-24,6,Anjaw,1.4,very_high,24135
+2026-11-18,2026-11-24,6,Changlang,1.5,high,16744
+2026-11-18,2026-11-24,6,Dibang Valley,0.0,high,26998
+2026-11-18,2026-11-24,6,East Kameng,0.0,low,15055
+2026-11-18,2026-11-24,6,East Siang,2.2,high,10084
+2026-11-18,2026-11-24,6,Kurung Kumey,0.0,moderate,20536
+2026-11-18,2026-11-24,6,Lohit,4.4,high,7567
+2026-11-18,2026-11-24,6,Longding,0.3,high,3427
+2026-11-18,2026-11-24,6,Lower Dibang Valley,3.6,very_high,17057
+2026-11-18,2026-11-24,6,Lower Subansiri,0.0,moderate,14049
+2026-11-18,2026-11-24,6,Namsai,0.0,low,94
+2026-11-18,2026-11-24,6,Papum Pare,0.0,moderate,12912
+2026-11-18,2026-11-24,6,Tawang,0.0,low,7944
+2026-11-18,2026-11-24,6,Tirap,0.4,high,3961
+2026-11-18,2026-11-24,6,Upper Siang,0.0,moderate,25925
+2026-11-18,2026-11-24,6,Upper Subansiri,0.0,moderate,23495
+2026-11-18,2026-11-24,6,West Kameng,0.0,low,26546
+2026-11-18,2026-11-24,6,West Siang,0.0,moderate,29021
